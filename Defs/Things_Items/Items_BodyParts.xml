@@ -37,7 +37,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>SteelPlating</defName>
     <label>steel framing</label>
-    <description>A simple concept: add stronger frames to your androids because circuitry isn't exactly bulletproof.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>A simple concept: add stronger frames to your androids because circuitry isn't exactly bulletproof.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/ArmourPlateBasic</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -54,7 +54,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>PlasteelPlating</defName>
     <label>plasteel frame coverings</label>
-    <description>by adding plasteel coverings to weakspots on the android's frame; this simple addition should vastly increase an android's damage resistance.\n\n Can be installed on \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>by adding plasteel coverings to weakspots on the android's frame; this simple addition should vastly increase an android's damage resistance.\n\n Can be installed on \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/ArmourPlateAdv</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -71,7 +71,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>CompositePlating</defName>
     <label>composite frame plating</label>
-    <description>This plating acts just as any other would but with increased damage resistance thanks to it's composite nature.\n\n Can be installed on \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>This plating acts just as any other would but with increased damage resistance thanks to it's composite nature.\n\n Can be installed on \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/ArmourPlateAdv2</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -89,7 +89,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>HydraulicFrame</defName>
     <label>hydraulic frame</label>
-    <description>This kit contains enough components to enhance the framework of an android without causing major rearrangement, increasing carrying capacity by utilising several high power hydraulic pumps. Although strong, they do restrict the user to lesser movements. \n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids\n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>This kit contains enough components to enhance the framework of an android without causing major rearrangement, increasing carrying capacity by utilising several high power hydraulic pumps. Although strong, they do restrict the user to lesser movements. \n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids\n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organorange</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -106,7 +106,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>HydraulicLeg</defName>
     <label>hydraulic leg</label>
-    <description>A tough leg replacement that consists of 2 strong hydraulic pumps, allowing for more carrying capacity, at the expense of agility. \n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids\n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>A tough leg replacement that consists of 2 strong hydraulic pumps, allowing for more carrying capacity, at the expense of agility. \n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids\n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organorange</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -177,7 +177,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>BasicReplacementLeg</defName>
     <label>basic replacement leg</label>
-    <description>A relatively simple leg that is usually mass produced to cater to entire droid armies on warring planets.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids\n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>A relatively simple leg that is usually mass produced to cater to entire droid armies on warring planets.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids\n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -194,7 +194,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>CrudeHeatsink</defName>
     <label>crude heatsink</label>
-    <description>A very crude heatsink made form scrap metal roughly arranged into an array.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>A very crude heatsink made form scrap metal roughly arranged into an array.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -228,7 +228,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>FlimsyCoolantPump</defName>
     <label>crude coolant pump</label>
-    <description>This coolant pump operates through differential pressure; which isn't a bad mechanism for operation but, the ability for this pump to even hold pressure is questionable.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>This coolant pump operates through differential pressure; which isn't a bad mechanism for operation but, the ability for this pump to even hold pressure is questionable.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -245,7 +245,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>SmallBatteryPack</defName>
     <label>crude battery pack</label>
-    <description>An array of small batteries lined up end-to-end to produce the most voltage. Which unsurprisingly; still isn't a lot.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>An array of small batteries lined up end-to-end to produce the most voltage. Which unsurprisingly; still isn't a lot.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -262,7 +262,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>TubeSealantTank</defName>
     <label>crude mechanite storage</label>
-    <description>A small tank that holds a gel like fluid capable of plugging up holes in mechanisms as it flows through the tubing of the android it is connected to.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>A small tank that holds a gel like fluid capable of plugging up holes in mechanisms as it flows through the tubing of the android it is connected to.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -279,7 +279,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>LowPowerTransformer</defName>
     <label>crude bio-reactor</label>
-    <description>This bio-processor is highly inefficient, only able to obtain energy from the cellulose of organic matter - leaving a lot of what could be gained behind.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>This bio-processor is highly inefficient, only able to obtain energy from the cellulose of organic matter - leaving a lot of what could be gained behind.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -296,7 +296,7 @@
   <ThingDef ParentName="BodyPartAndroidBase">
     <defName>BasicDCConverter</defName>
     <label>crude power converter</label>
-    <description>A simple ac / dc converter that only effectively works one way.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit \n - M.U.F.F Unit</description>
+    <description>A simple ac / dc converter that only effectively works one way.\n\n Can be installed on \n - T1 Androids \n - T2 Androids \n - T3 Androids \n - T4 Androids \n - T5 Androids \n - K9 Cybernetic Unit </description>
     <graphicData>
       <texPath>Things/Item/Organblack</texPath>
       <graphicClass>Graphic_Single</graphicClass>

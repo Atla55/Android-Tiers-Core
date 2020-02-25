@@ -14,39 +14,15 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>BasicRoboticAnimals</defName>
-		<label>Basic Artificial creatures</label>
-		<tab>AtlasAndroids</tab>
-		<description>Research into the development of simple recreations of biological animals. Allowing the development of M.U.F.F Units; strong caravaning creatures that can carry lots of weight on their back.</description>
-		<baseCost>500</baseCost>
-		<techLevel>Industrial</techLevel>
-		<prerequisites><li>BasicRobotics</li></prerequisites>
-		<researchViewY>1</researchViewY>
-		<researchViewX>1</researchViewX>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef>
-		<defName>AdvRoboticAnimals</defName>
-		<label>Advanced Artificial creatures</label>
-		<tab>AtlasAndroids</tab>
-		<description>Developing further on the previous research, this project will look into utility based creatures. Imiations of common farmland animals from Earth, such as the Phytomining Unit.</description>
-		<baseCost>500</baseCost>
-		<techLevel>Spacer</techLevel>
-		<prerequisites><li>BasicRoboticAnimals</li></prerequisites>
-		<researchViewY>1</researchViewY>
-		<researchViewX>2</researchViewX>
-	</ResearchProjectDef>
-
-	<ResearchProjectDef>
-		<defName>UltimateRoboticAnimals</defName>
+		<defName>RoboticAnimals</defName>
 		<label>Experimental Artificial creatures</label>
 		<tab>AtlasAndroids</tab>
 		<description>Extremely complex robotic creatures that have never been more than a concept for most planets. These include Swarm Mortar shells, small capsules filled with hunter-seeker drones and the K-9 Cybernetic unit, a strong and quick creature once designed for extreme crowd control.</description>
 		<baseCost>1000</baseCost>
 		<techLevel>Spacer</techLevel>
-		<prerequisites><li>AdvRoboticAnimals</li></prerequisites>
+		<prerequisites><li>BasicRobotics</li></prerequisites>
 		<researchViewY>1</researchViewY>
-		<researchViewX>3</researchViewX>
+		<researchViewX>1</researchViewX>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>

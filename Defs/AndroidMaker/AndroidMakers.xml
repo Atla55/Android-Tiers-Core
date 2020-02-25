@@ -87,50 +87,6 @@
 		</li>
         </comps>
     </ThingDef>
-
-    <ThingDef ParentName="BuildingCreatorBase">
-        <defName>MuffAndroidGeneratorAI</defName>
-        <label>M.U.F.F Unit</label>
-        <comps>
-		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
-            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
-			<Pawnkind>AndroidMuff</Pawnkind>
-		</li>
-        </comps>
-    </ThingDef>
-
-    <ThingDef ParentName="BuildingCreatorBase">
-        <defName>ChickAndroidGeneratorAI</defName>
-        <label>Chemical processing unit</label>
-        <comps>
-		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
-            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
-			<Pawnkind>AndroidChicken</Pawnkind>
-		</li>
-        </comps>
-    </ThingDef>
-
-    <ThingDef ParentName="BuildingCreatorBase">
-        <defName>SheepAndroidGeneratorAI</defName>
-        <label>Phytomining Unit</label>
-        <comps>
-		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
-            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
-			<Pawnkind>AndroidSheep</Pawnkind>
-		</li>
-        </comps>
-    </ThingDef>
-
-    <ThingDef ParentName="BuildingCreatorBase">
-        <defName>CowAndroidGeneratorAI</defName>
-        <label>N.Solution Unit</label>
-        <comps>
-		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
-            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
-			<Pawnkind>AndroidCow</Pawnkind>
-		</li>
-        </comps>
-    </ThingDef>
 	
     <ThingDef ParentName="BuildingCreatorBase">
         <defName>MicroScytherGeneratorAI</defName>

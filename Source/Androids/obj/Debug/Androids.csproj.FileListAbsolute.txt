@@ -23,3 +23,6 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Assem
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll

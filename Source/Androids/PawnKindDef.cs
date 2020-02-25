@@ -26,7 +26,6 @@ namespace MOARANDROIDS
 
         public static PawnKindDef AndroidDog;
 
-        public static PawnKindDef AndroidMuff;
 
         public static PawnKindDef AndroidT5Colonist;
 
@@ -36,7 +35,6 @@ namespace MOARANDROIDS
 
         public static PawnKindDef MicroScyther;
 
-        public static PawnKindDef AndroidSheep;
         
     }
 }
