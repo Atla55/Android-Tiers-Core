@@ -20,17 +20,6 @@ namespace BlueLeakTest
             HarmonyInstance harmony = HarmonyInstance.Create("rimworld.rwmods.androidtiers");
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
-
-            {
-                Type type = typeof(Caravan);
-
-                harmony.Patch(
-                    AccessTools.Property(type, "NightResting").GetGetMethod(),
-                    new HarmonyMethod(typeof(HarmonyPatches).GetMethod(nameof(Patch_Caravan_NightResting))),
-                    null);
-            }
-
-
             /*DefDatabase<ThingDef_AlienRace>.AllDefsListForReading.ForEach(delegate (ThingDef_AlienRace ar)
             {
                 if (ar.race.FleshType == DefDatabase<FleshTypeDef>.GetNamed("Android") || ar.race.FleshType == DefDatabase<FleshTypeDef>.GetNamed("MechanisedInfantry"))
@@ -45,16 +34,6 @@ namespace BlueLeakTest
             DefDatabase<RecipeDef>.GetNamed("ButcherCorpseAndroidAT").fixedIngredientFilter.SetAllow(MOARANDROIDS.ThingCategoryDefOf.androidCorpseCategory, true, null, null);
             DefDatabase<RecipeDef>.GetNamed("ButcherCorpseFlesh").fixedIngredientFilter.SetAllow(MOARANDROIDS.ThingCategoryDefOf.androidCorpseCategory, false);*/
 
-        }
-
-        public static bool Patch_Caravan_NightResting(ref bool __result, ref Caravan __instance)
-        {
-            if (__instance.pawns.InnerListForReading.Any(pawn => pawn.IsNotAndroid()))
-            {
-                return true;
-            }
-            __result = false;
-            return false;
         }
 
     }
@@ -346,4 +325,5 @@ namespace BlueLeakTest
             }
         }
     }
+    
 }

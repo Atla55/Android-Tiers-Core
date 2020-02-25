@@ -1326,7 +1326,7 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<GeneralLaborSpeed>1.5</GeneralLaborSpeed>
+					<UnskilledLaborSpeed>1.5</UnskilledLaborSpeed>
 					<SmoothingSpeed>0.5</SmoothingSpeed>
 				</statOffsets>
 			</li>

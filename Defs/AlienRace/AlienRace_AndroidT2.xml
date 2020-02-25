@@ -4,7 +4,7 @@
 
 		<defName>Android2Tier</defName>
 		<label>T2 Android</label>
-		<description>A somewhat advanced android, capable of storing a somewhat powerful AI consciousness and with reasonable levels of motor skills. A good all round android that is uses extensively on glitterworlds for basic maintenance and cleaning.</description>
+		<description>A somewhat advanced android, capable of almost perfectly storing an AI consciousness and with reasonable levels of motor skills. A good all round android that is uses extensively on glitterworlds for basic maintenance and cleaning.</description>
 		<alienRace>
 
 			<raceRestriction>
@@ -125,17 +125,17 @@
 		</alienRace>
 
 		<statBases>
-			<MarketValue>2200</MarketValue>
-			<MoveSpeed>4</MoveSpeed>
+			<MarketValue>2500</MarketValue>
+			<MoveSpeed>4.50</MoveSpeed>
 			<Flammability>0.2</Flammability>
 			<PsychicSensitivity>0.2</PsychicSensitivity>
-			<ComfyTemperatureMin>-35</ComfyTemperatureMin>
-			<ComfyTemperatureMax>35</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+			<ComfyTemperatureMax>40</ComfyTemperatureMax>
 			<PainShockThreshold>5</PainShockThreshold>
 			<ToxicSensitivity>0.15</ToxicSensitivity>
-			<WorkSpeedGlobal>0.75</WorkSpeedGlobal>
+			<WorkSpeedGlobal>0.8</WorkSpeedGlobal>
 			<MentalBreakThreshold>0.08</MentalBreakThreshold>
-			<GlobalLearningFactor>0.85</GlobalLearningFactor>
+			<GlobalLearningFactor>0.9</GlobalLearningFactor>
 			<ImmunityGainSpeed>10</ImmunityGainSpeed>
 			<LeatherAmount>0</LeatherAmount>
 			<MeatAmount>0</MeatAmount>
@@ -146,7 +146,6 @@
 			<ButcheryFleshEfficiency>0.7</ButcheryFleshEfficiency>
 			<MedicalTendQuality>0.6</MedicalTendQuality>
 			<MedicalSurgerySuccessChance>0.8</MedicalSurgerySuccessChance>
-			<EatingSpeed>0.80</EatingSpeed>
 			<Mass>62.5</Mass>
 		</statBases>
 		<tools>

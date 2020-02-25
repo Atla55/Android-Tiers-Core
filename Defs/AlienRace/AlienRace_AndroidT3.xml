@@ -3,7 +3,7 @@
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>Android3Tier</defName>
 		<label>T3 Android</label>
-		<description>A Prototype android exclusivly used for battle on rimworlds; developed by a secret R/D Laboratory, away from the eye of the rest of the planet and cosmos. This android features highly advanced locomotive and motor abilities, perfectly mimicing that of an average human. Although clunky and somewhat slow - this android features a modular component design, allowing for upgrades to be made to current parts at any point.</description>
+		<description>A Prototype android exclusive to this rimworld; developed by a secret R/D Laboratory, away from the eye of the rest of the planet and cosmos. This android features highly advanced locomotive and motor abilities, perfectly mimicing that of an average human. Although clunky and somewhat slow - this android features a modular component design, allowing for upgrades to be made to current parts at any point.</description>
 		<alienRace>
 
 			<raceRestriction>
@@ -105,12 +105,12 @@
 		</relationSettings>
 		</alienRace>
 		<statBases>
-			<MarketValue>4000</MarketValue>
-			<MoveSpeed>4.50</MoveSpeed>
+			<MarketValue>4800</MarketValue>
+			<MoveSpeed>5.00</MoveSpeed>
 			<Flammability>0</Flammability>
 			<PsychicSensitivity>0.15</PsychicSensitivity>
-			<ComfyTemperatureMin>-50</ComfyTemperatureMin>
-			<ComfyTemperatureMax>50</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-60</ComfyTemperatureMin>
+			<ComfyTemperatureMax>60</ComfyTemperatureMax>
 			<PainShockThreshold>5</PainShockThreshold>
 			<ToxicSensitivity>0.1</ToxicSensitivity>
 			<WorkSpeedGlobal>1</WorkSpeedGlobal>
@@ -122,8 +122,7 @@
 			<SocialImpact>0.9</SocialImpact>
 			<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.40</ArmorRating_Sharp>
-			<EatingSpeed>0.85</EatingSpeed>
-			<Mass>82.5</Mass>
+			<Mass>92.5</Mass>
 			<MedicalSurgerySuccessChance>1</MedicalSurgerySuccessChance>
 		</statBases>
 		<tools>

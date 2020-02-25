@@ -3,8 +3,8 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>RepairKitAT</defName>
-    <label>Upgrade Kit</label>
-    <description>This kit is specifically made to help in the modification of androids.</description>
+    <label>Repair Kit</label>
+    <description>This kit is specifically made to help in the repair and modification of androids.</description>
     <graphicData>
       <texPath>Things/RepairKit</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -13,7 +13,7 @@
     <soundDrop>Standard_Drop</soundDrop>
 		<statBases>
       <MaxHitPoints>60</MaxHitPoints>
-      <MarketValue>20</MarketValue>
+      <MarketValue>30</MarketValue>
       <Mass>0.45</Mass>
       <Flammability>0</Flammability>
     </statBases>
@@ -33,9 +33,9 @@
   
    <RecipeDef>
       <defName>RepairKitAT</defName>
-      <label>Make a upgrade kit</label>
-      <description>Create a simple set of tools and materials for an android upgrade kit.</description>
-      <jobString>Making upgrade kit</jobString>  
+      <label>Make a repair kit</label>
+      <description>Create a simple set of tools and materials for an android repair kit.</description>
+      <jobString>Making repair kit</jobString>  
       <allowMixingIngredients>false</allowMixingIngredients>
       <ingredients>
          <li>
@@ -51,7 +51,7 @@
          <RepairKitAT>1</RepairKitAT>
       </products>
       <workAmount>1650</workAmount>
-      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSpeedStat>SculptingSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
@@ -107,7 +107,7 @@
       </products>
       <workAmount>8650</workAmount>
 	  <researchPrerequisite>AiPersonaFab</researchPrerequisite>
-      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSpeedStat>SculptingSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
@@ -317,4 +317,106 @@
       </recipeUsers>
 	</RecipeDef>
 	
+	<!--
+	<ThingDef ParentName="ResourceBase">
+		<defName>ColonyMechKit</defName>
+		<label>Mechanised Infantry Parts</label>
+		<thingClass>ThingWithComps</thingClass>
+		<description>A Collection of every part and tool needed to assemble a unit of mechanised infantry on the spot. This process takes a long amount of time however.</description>
+		<graphicData>
+			<texPath>Things/MechBox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>25000</MarketValue>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>120.0</Mass>
+		</statBases>
+		<thingCategories>
+			<li>Items</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<techLevel>Ultra</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<useJob>UseItem</useJob>
+				<useLabel>Construct Mechanised Infantry</useLabel>
+				<useDuration>8000</useDuration>
+			</li>
+			<li Class="MOARANDROIDS.CompProperties_SpawnPawn">
+				<compClass>MOARANDROIDS.CompUseEffect_SpawnAndroid</compClass>
+				<pawnKind>ColonyMechPawn</pawnKind>
+
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>CompUseEffect_DestroySelf</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+   <RecipeDef>
+      <defName>CreateColonyMechKit</defName>
+      <label>Create Mechanised Infantry Parts</label>
+      <description>Create Mechanised Infantry Parts from raw materials.</description>
+      <jobString>Making Parts</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>18</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>245</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>185</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>42</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+      <products>
+         <ColonyMechKit>1</ColonyMechKit>
+      </products>
+	  <researchPrerequisite>MechCreationBasic</researchPrerequisite>
+      <workAmount>68500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	-->
 </Defs>

@@ -126,16 +126,16 @@
 		</alienRace>
 
 		<statBases>
-			<MarketValue>1200</MarketValue>
+			<MarketValue>1400</MarketValue>
 			<MoveSpeed>3.00</MoveSpeed>
 			<Flammability>0.2</Flammability>
 			<PsychicSensitivity>0.3</PsychicSensitivity>
-			<ComfyTemperatureMin>-20</ComfyTemperatureMin>
-			<ComfyTemperatureMax>25</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+			<ComfyTemperatureMax>35</ComfyTemperatureMax>
 			<PainShockThreshold>5</PainShockThreshold>
 			<ToxicSensitivity>0.3</ToxicSensitivity>
 			<MentalBreakThreshold>0.08</MentalBreakThreshold>
-			<GlobalLearningFactor>0.75</GlobalLearningFactor>
+			<GlobalLearningFactor>0.8</GlobalLearningFactor>
 			<WorkSpeedGlobal>0.55</WorkSpeedGlobal>
 			<ImmunityGainSpeed>10</ImmunityGainSpeed>
 			<LeatherAmount>0</LeatherAmount>
@@ -147,7 +147,6 @@
 			<ButcheryFleshEfficiency>0.6</ButcheryFleshEfficiency>
 			<MedicalTendQuality>0.4</MedicalTendQuality>
 			<MedicalSurgerySuccessChance>0.6</MedicalSurgerySuccessChance>
-			<EatingSpeed>0.75</EatingSpeed>
 			<Mass>32.5</Mass>
 		</statBases>
 		<tools>

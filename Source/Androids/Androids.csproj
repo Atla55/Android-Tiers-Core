@@ -100,7 +100,6 @@
     <Compile Include="StockGenerator_SlaveAndroids.cs" />
     <Compile Include="T5Event.cs" />
     <Compile Include="ThingDefOfAtlascs.cs" />
-    <Compile Include="ThoughtDefOf.cs" />
     <Compile Include="ThoughtWorker_FeelingsTowardHumanity.cs" />
     <Compile Include="ThoughtWorker_UncomfortableClothing.cs" />
     <Compile Include="TraitDefOf.cs" />

@@ -2,21 +2,6 @@
 <Defs>
 
   <ThoughtDef>
-    <defName>BotchedMyUpgrade</defName>
-    <thoughtClass>Thought_MemorySocial</thoughtClass>
-    <durationDays>50</durationDays>
-    <stackLimit>300</stackLimit>
-    <stackLimitForSameOtherPawn>5</stackLimitForSameOtherPawn>
-    <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
-    <stages>
-      <li>
-        <label>botched my upgrade</label>
-        <baseOpinionOffset>-15</baseOpinionOffset>
-      </li>
-    </stages>
-  </ThoughtDef>
-  
-  <ThoughtDef>
     <defName>MoodOffsetT5</defName>
     <workerClass>ThoughtWorker_AlwaysActive</workerClass>
     <validWhileDespawned>true</validWhileDespawned>

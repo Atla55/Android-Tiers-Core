@@ -10,12 +10,23 @@ namespace MOARANDROIDS
         protected bool CheckSurgeryFailAndroid(Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill)
         {
             float num = 1f;
-            num *= StatExtension.GetStatValue(surgeon, StatDefOf.AndroidSurgerySuccessChance, true);
-            if (RestUtility.InBed(patient))
+            if (!patient.RaceProps.IsMechanoid)
+            {
+                num *= surgeon.GetStatValue(StatDefOf.AndroidSurgerySuccessChance, true);
+            }
+            if (patient.InBed())
             {
                 num *= patient.CurrentBed().GetStatValue(StatDefOf.AndroidSurgerySuccessChance, true);
             }
             num *= this.recipe.surgerySuccessChanceFactor;
+            if (surgeon.InspirationDef == InspirationDefOf.Inspired_Surgery && !patient.RaceProps.IsMechanoid)
+            {
+                if (num < 1f)
+                {
+                    num = 1f - (1f - num) * 0.1f;
+                }
+                surgeon.mindState.inspirationHandler.EndInspiration(InspirationDefOf.Inspired_Surgery);
+            }
             if (!Rand.Chance(num))
             {
                 if (Rand.Chance(this.recipe.deathOnFailedSurgeryChance))
@@ -61,7 +72,7 @@ namespace MOARANDROIDS
             {
                 return;
             }
-            patient.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.BotchedMyUpgrade, surgeon);
+            patient.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.BotchedMySurgery, surgeon);
         }
 
 
@@ -73,5 +84,22 @@ namespace MOARANDROIDS
 
         // Token: 0x04000B5A RID: 2906
         private const float InspiredSurgeryFailChanceFactor = 0.1f;
+
+        // Token: 0x04000B5B RID: 2907
+        private static readonly SimpleCurve MedicineMedicalPotencyToSurgeryChanceFactor = new SimpleCurve
+        {
+            {
+                new CurvePoint(0f, 0.7f),
+                true
+            },
+            {
+                new CurvePoint(1f, 1f),
+                true
+            },
+            {
+                new CurvePoint(2f, 1.3f),
+                true
+            }
+        };
     }
 }

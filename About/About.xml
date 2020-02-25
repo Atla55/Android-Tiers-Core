@@ -1,11 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>Android tiers</name>
+  <name>[1.0] Android tiers</name>
   <author>Atlas</author>
-  <supportedVersions>
-  <li>1.0</li>
-  <li>1.1</li>
-  </supportedVersions>
+  <supportedVersions><li>1.0</li></supportedVersions>
   <description>
 	Adds 4 tiers of android along with an android doggo
 	- a new android faction

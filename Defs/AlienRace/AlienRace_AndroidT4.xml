@@ -3,7 +3,7 @@
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawn">
 		<defName>Android4Tier</defName>
 		<label>T4 Android</label>
-		<description>The most advanced form of android conceivable; this tier is able to efficiently hold an extremely powerful AI, with advanced locomotive abilities and manipulation; this android vastly suprasses most humans.</description>
+		<description>The most advanced form of android conceivable; this tier is able to efficiently hold the consciousness of any AI uploaded onto it, with advanced locomotive abilities and manipulation; this android vastly suprasses most humans.</description>
 		<alienRace>
 
 			<raceRestriction>
@@ -102,23 +102,22 @@
 		</alienRace>
 		<statBases>
 			<MarketValue>6000</MarketValue>
-			<MoveSpeed>6.20</MoveSpeed>
-			<Flammability>0</Flammability>
+			<MoveSpeed>7.20</MoveSpeed>
+			<Flammability>0.25</Flammability>
 			<PsychicSensitivity>0.1</PsychicSensitivity>
-			<ComfyTemperatureMin>-60</ComfyTemperatureMin>
-			<ComfyTemperatureMax>60</ComfyTemperatureMax>
+			<ComfyTemperatureMin>-70</ComfyTemperatureMin>
+			<ComfyTemperatureMax>70</ComfyTemperatureMax>
 			<PainShockThreshold>5</PainShockThreshold>
 			<ToxicSensitivity>0.05</ToxicSensitivity>
 			<MentalBreakThreshold>0.04</MentalBreakThreshold>
-			<GlobalLearningFactor>1.8</GlobalLearningFactor>
-			<WorkSpeedGlobal>1.6</WorkSpeedGlobal>
+			<GlobalLearningFactor>2</GlobalLearningFactor>
+			<WorkSpeedGlobal>1.8</WorkSpeedGlobal>
 			<ImmunityGainSpeed>10</ImmunityGainSpeed>
 			<LeatherAmount>0</LeatherAmount>
 			<MeatAmount>0</MeatAmount>
 			<SocialImpact>0.8</SocialImpact>
-			<ArmorRating_Blunt>0.35</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
-			<EatingSpeed>0.95</EatingSpeed>
+			<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.50</ArmorRating_Sharp>
 			<ButcheryFleshEfficiency>0.8</ButcheryFleshEfficiency>
 			<MedicalSurgerySuccessChance>1.2</MedicalSurgerySuccessChance>
 			<Mass>72.5</Mass>

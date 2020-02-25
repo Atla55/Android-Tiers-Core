@@ -98,19 +98,7 @@
 					<AndroidT2RaiderFactionSpecific>6</AndroidT2RaiderFactionSpecific>
 					<AndroidT3RaiderFactionSpecific>4</AndroidT3RaiderFactionSpecific>
 					<AndroidT4RaiderFactionSpecific>1</AndroidT4RaiderFactionSpecific>
-					<AndroidT1SlaveFactionSpecific>6</AndroidT1SlaveFactionSpecific>
-					<AndroidT2SniperFactionSpecific>1</AndroidT2SniperFactionSpecific>
-				</options>
-			</li>
-			<li>
-				<!-- Sniper fight -->
-				<kindDef>Combat</kindDef>
-				<commonality>10</commonality>
-				<options>
-					<AndroidT1RaiderFactionSpecific>1</AndroidT1RaiderFactionSpecific>
-					<AndroidT2RaiderFactionSpecific>0.5</AndroidT2RaiderFactionSpecific>
-					<AndroidT2SniperFactionSpecific>10</AndroidT2SniperFactionSpecific>
-					<AndroidT4SniperFactionSpecific>1</AndroidT4SniperFactionSpecific>
+					<AndroidT1SlaveFactionSpecific>8</AndroidT1SlaveFactionSpecific>
 				</options>
 			</li>
 			<li>
@@ -178,8 +166,8 @@
 			<li>Base_AndroidCollective_Standard</li>
 		</baseTraderKinds>
 		<allowedArrivalTemperatureRange>
-			<min>-60</min>
-			<max>65</max>
+			<min>-50</min>
+			<max>55</max>
 		</allowedArrivalTemperatureRange>
 		<maxPawnCostPerTotalPointsCurve>
 			<points>
