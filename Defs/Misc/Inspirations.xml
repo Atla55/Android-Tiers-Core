@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <InspirationDef>
+    <defName>ATInspired_Upgrade</defName>
+    <label>inspired upgrade</label>
+    <baseDurationDays>8</baseDurationDays>
+    <beginLetter>[PAWN_nameIndef] has experienced an inspiration!\n\nThe next time [PAWN_pronoun] performs a operation on an android, [PAWN_possessive] chance of success will be doubled. A small minimum chance of failure still applies.\n\nThe inspiration will end after 8 days, or when the operation is performed.</beginLetter>
+    <beginLetterDef>PositiveEvent</beginLetterDef>
+    <endMessage>{0} is no longer inspired (inspired upgrade).</endMessage>
+    <baseInspectLine>Inspired: Inspired upgrade</baseInspectLine>
+    <statFactors>
+      <AndroidSurgerySuccessChance>2</AndroidSurgerySuccessChance>
+    </statFactors>
+    <requiredNonDisabledStats>
+      <li>AndroidSurgerySuccessChance</li>
+    </requiredNonDisabledStats>
+    <requiredNonDisabledWorkTypes>
+      <li>Doctor</li>
+    </requiredNonDisabledWorkTypes>
+    <requiredSkills>
+      <Crafting>5</Crafting>
+    </requiredSkills>
+    <associatedSkills>
+      <li>Crafting</li>
+    </associatedSkills>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </InspirationDef>
+
+
+</Defs>

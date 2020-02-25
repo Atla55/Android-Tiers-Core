@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<AndroidFactionGreetingHostileI>An automated message plays, demanding that you make a gesture of goodwill, giving examples such as; bringing gifts to one of {0_possessive} settlements or releasing {0_possessive} faction's prisoners unharmed. Until then, {0} is unwilling to talk.</AndroidFactionGreetingHostileI>
+	<AndroidFactionGreetingHostileII>{0} compares your colony to the tribes in your savagery, stating that if you wish to better yourself you can bring gifts to one of {0_possessive} settlements or releasing {0_possessive} faction's prisoners unharmed.</AndroidFactionGreetingHostileII>
+	<AndroidFactionGreetingHostileIII>{0} calls you cold, monstrous beings before quickly cutting all communications.</AndroidFactionGreetingHostileIII>
+	
+	<AndroidFactionGreetingWaryI>The deep mechanical voice of {0} greets {NEGOTIATOR_labelShort}, asking what business you want to handle.</AndroidFactionGreetingWaryI>
+	<AndroidFactionGreetingWaryII>An automated message starts, asking {NEGOTIATOR_labelShort} what business they have.</AndroidFactionGreetingWaryII>
+	<AndroidFactionGreetingWaryIII>{0} opens communications to {NEGOTIATOR_labelShort} warily, asking what business you wish to talk about.</AndroidFactionGreetingWaryIII>
+	
+	<AndroidFactionGreetingWarmI>{0} warmly greets {NEGOTIATOR_labelShort}, asking what they can do to help you.</AndroidFactionGreetingWarmI>
+	<AndroidFactionGreetingWarmII>{NEGOTIATOR_labelShort} is met with kind words as communications are opened, {0} asking what they can do for a fellow ally.</AndroidFactionGreetingWarmII>
+	<AndroidFactionGreetingWarmIII>{0} greets {NEGOTIATOR_labelShort} with open arms, asking what they can do for you.</AndroidFactionGreetingWarmIII>
+	
+</LanguageData>

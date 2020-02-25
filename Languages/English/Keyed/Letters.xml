@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<Atlas_FactionChange>{0} was successfully reprogrammed. They are now part of the colony.</Atlas_FactionChange>
+	<LetterLabelAtlas_FactionChange>New Colonist</LetterLabelAtlas_FactionChange>
+	
+	<Atlas_LossOfSelfWill>{0} has had their free will dampened. As such they are now incapable of thinking freely or feeling emotion and will not interact with other colonists as commonly. To add to this: they have lost all their traits during the process. Making them nothing more than an obedient machine</Atlas_LossOfSelfWill>
+	<LetterLabelAtlas_LossOfSelfWill>Android Free Will</LetterLabelAtlas_LossOfSelfWill>
+	
+	<Atlas_Mutation>{0} has mutated into a fractal. A beast of contorted flesh, caused by the fractal pill!.</Atlas_Mutation>
+	<LetterLabelAtlas_Mutation>Colonist Mutation</LetterLabelAtlas_Mutation>
+
+	<Atlas_TraitReroll>{0} has had their personality altered and their traits have been rerolled.</Atlas_TraitReroll>
+	<LetterLabelAtlas_TraitReroll>Android Personality Change</LetterLabelAtlas_TraitReroll>
+	
+</LanguageData>

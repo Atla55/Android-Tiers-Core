@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <NeedMechanic>Need mechanic</NeedMechanic>
+  <NeedMechanicDesc>These androids need repairs, but you have no healthy colonists assigned as mechanics.\n\n{0}\nAssign a healthy colonist to the Mechanic work type. If left untreated, damages may never repair properly and may become permanent.</NeedMechanicDesc>
+  
+</LanguageData>

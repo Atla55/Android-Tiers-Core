@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="BasePawn" Name="AnimalAndroidThingBase" Abstract="True">
+		<statBases>
+			<Flammability>0</Flammability>
+			<LeatherAmount>0</LeatherAmount>
+		</statBases>
+		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+		<race>
+			<thinkTreeMain>Animal</thinkTreeMain>
+			<thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+			<hasGenders>false</hasGenders>
+			<herdAnimal>false</herdAnimal>
+			<useMeatFrom>Alpaca</useMeatFrom>
+			<nameGenerator>NamerAnimalGenericMale</nameGenerator>
+			<manhunterOnDamageChance>0</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+			<nameOnNuzzleChance>1</nameOnNuzzleChance>
+			<hediffGiverSets>
+				<li>AndroidStandardAtlas</li>
+			</hediffGiverSets>
+			<fleshType>Android</fleshType>
+		</race>
+		<modExtensions>
+			<li Class="MOARANDROIDS.AndroidTweaker">
+				<tweakCorpseRot>true</tweakCorpseRot>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<PawnKindDef Name="AnimalAndroidKindBase" Abstract="True">
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="AnimalAndroidKindBase" Name="AnimalAndroidKindBaseDog" Abstract="True">
+		<combatPower>80</combatPower>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.8</ecoSystemWeight>
+	</PawnKindDef>
+
+</Defs>

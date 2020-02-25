@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4387268-4E97-4CB5-8E19-BB7A2344454B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOARANDROIDS</RootNamespace>
+    <AssemblyName>AndroidsAtlasTiers</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony, Version=1.0.9.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AlienRace">
+      <HintPath>..\..\..\AlienRace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AndroidCapacityLabel.cs" />
+    <Compile Include="BodyPartTagDefOf.cs" />
+    <Compile Include="FactionDefOf.cs" />
+    <Compile Include="HealOldWoundsAdv.cs" />
+    <Compile Include="CompProperties_SpawnPawn.cs" />
+    <Compile Include="CompUseEffect_SpawnAndroid.cs" />
+    <Compile Include="DownedT5AndroidComp.cs" />
+    <Compile Include="DownedT5Utility.cs" />
+    <Compile Include="GenStep_DownedRefugee.cs" />
+    <Compile Include="HediffCompProperties_HealOldWoundsAdv.cs" />
+    <Compile Include="HediffGiver_Android.cs" />
+    <Compile Include="Hediffs.cs" />
+    <Compile Include="IngestionOutcomeDoer_GiveTwoHediffs.cs" />
+    <Compile Include="JobGiver_Targetenemies.cs" />
+    <Compile Include="Patches\AndroidLabelOverwrite.cs" />
+    <Compile Include="Patches\HarmonyPatches.cs" />
+    <Compile Include="Patches\PawnGatheringPatch.cs" />
+    <Compile Include="Recipe_InstallNaturalAndroidPart.cs" />
+    <Compile Include="SpawnerCompProperties_GenericSpawner.cs" />
+    <Compile Include="Spawner_Generic.cs" />
+    <Compile Include="Spawner_LightSwarmSpawner.cs" />
+    <Compile Include="MechFallClass.cs" />
+    <Compile Include="MechFallMote.cs" />
+    <Compile Include="MentalStateDefOf.cs" />
+    <Compile Include="MentalState_TargetEnemies.cs" />
+    <Compile Include="ModExtensionATweaks.cs" />
+    <Compile Include="MutantSpawn.cs" />
+    <Compile Include="PostInitTweaks.cs" />
+    <Compile Include="Recipe_InstallAndroidPart.cs" />
+    <Compile Include="Recipe_InstallimplantAndroid.cs" />
+    <Compile Include="Recipe_PrisonerConversionReprogram.cs" />
+    <Compile Include="Recipe_CorruptionChance.cs" />
+    <Compile Include="Recipe_RemoveSentience.cs" />
+    <Compile Include="Recipe_RerollTraits.cs" />
+    <Compile Include="Recipe_SurgeryAndroids.cs" />
+    <Compile Include="RestOverride.cs" />
+    <Compile Include="SiteCoreDefOf.cs" />
+    <Compile Include="DoggoSpawner.cs" />
+    <Compile Include="PawnKindDef.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatDefOf.cs" />
+    <Compile Include="StockGenerator_SlaveAndroids.cs" />
+    <Compile Include="T5Event.cs" />
+    <Compile Include="ThingDefOfAtlascs.cs" />
+    <Compile Include="ThoughtDefOf.cs" />
+    <Compile Include="ThoughtWorker_FeelingsTowardHumanity.cs" />
+    <Compile Include="ThoughtWorker_UncomfortableClothing.cs" />
+    <Compile Include="TraitDefOf.cs" />
+    <Compile Include="Verb_MechFall.cs" />
+    <Compile Include="WorldObjectDef_DownedT5Android.cs" />
+    <Compile Include="Patches\HealthCardUtility_DrawHediffRow.cs" />
+    <Compile Include="Patches\HealthCardUtility_GetTooltip.cs" />
+    <Compile Include="Extensions\PawnExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\About\About.xml">
+      <Link>About\About.xml</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

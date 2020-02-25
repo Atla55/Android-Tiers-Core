@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.PawnBioDef>
+		<defName>AtlasTheCreator</defName>
+		<childhoodDef>AndroidBackstory</childhoodDef>
+		<adulthoodDef>T5Backstory</adulthoodDef>
+		<gender>Male</gender>
+		<name>
+			<first>Atlas</first>
+			<last>#001</last>
+			<nick>Atlas</nick>
+		</name>
+		<factionLeader>false</factionLeader>
+		<validRaces>
+			<li>Android1Tier</li>
+		</validRaces>
+		<forcedHediffs>
+			<li>PositronMind</li>
+		</forcedHediffs>
+	</AlienRace.PawnBioDef>
+
+</Defs>

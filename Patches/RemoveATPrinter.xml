@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <li Class="PatchOperationTest">
+                <xpath>/Defs/ThingDef[defName="ChJAndroidPrinter"]/modExtensions/li[@Class="Androids.PawnCrafterProperties"]/disabledRaces</xpath>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>/Defs/ThingDef[defName="ChJAndroidPrinter"]/modExtensions/li[@Class="Androids.PawnCrafterProperties"]/disabledRaces</xpath>
+                <order>Prepend</order>
+                <value>
+                    <li>Android1Tier</li>
+                    <li>Android2Tier</li>
+                    <li>Android3Tier</li>
+                    <li>Android4Tier</li>
+                    <li>Android5Tier</li>
+                    <li>M7Mech</li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+</Patch>
