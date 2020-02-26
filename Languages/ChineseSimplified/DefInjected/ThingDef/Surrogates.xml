@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- HellDrone -->
+
+  <ATPP_S1SurrogateGeneratorAI.label>S1智能人形</ATPP_S1SurrogateGeneratorAI.label>
+  <ATPP_S1SurrogateGeneratorAI.description>制造一个S1智能人形。</ATPP_S1SurrogateGeneratorAI.description>
+
+  <ATPP_S2SurrogateGeneratorAI.label>S2智能人形</ATPP_S2SurrogateGeneratorAI.label>
+  <ATPP_S2SurrogateGeneratorAI.description>制造一个S2智能人形。</ATPP_S2SurrogateGeneratorAI.description>
+
+  <ATPP_S3SurrogateGeneratorAI.label>S3智能人形</ATPP_S3SurrogateGeneratorAI.label>
+  <ATPP_S3SurrogateGeneratorAI.description>制造一个S3智能人形。</ATPP_S3SurrogateGeneratorAI.description>
+
+  <ATPP_S4SurrogateGeneratorAI.label>S4智能人形</ATPP_S4SurrogateGeneratorAI.label>
+  <ATPP_S4SurrogateGeneratorAI.description>制造一个S4智能人形。</ATPP_S4SurrogateGeneratorAI.description>
+
+  <ATPP_M7SurrogateGeneratorAI.label>M7机甲智能人形</ATPP_M7SurrogateGeneratorAI.label>
+  <ATPP_M7SurrogateGeneratorAI.description>制造一个M7智能人形。</ATPP_M7SurrogateGeneratorAI.description>
+
+  <ATPP_SHUSurrogateGeneratorAI.label>S-炼狱部队智能人形</ATPP_SHUSurrogateGeneratorAI.label>
+  <ATPP_SHUSurrogateGeneratorAI.description>制造一个S-炼狱部队智能人形。</ATPP_SHUSurrogateGeneratorAI.description>
+
+
+</LanguageData>

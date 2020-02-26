@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<ATPP_Android2KTX.label>Androide TX2K</ATPP_Android2KTX.label>
+	<ATPP_Android2KTX.description>Un prototype d'androide désigné pour être utilisé exclusivement sur les champs de bataille comme infantrie lourde, très résistant et inflige de sévéres dégâts au corps à corps, cependant assez lents due à son blindage et il est in capable d'effectuer des tâches avancées à cause de son processeur essentiellement optimisé pour le combat.</ATPP_Android2KTX.description>
+	
+	<ATPP_Android2KITX.label>Androide TX2KI</ATPP_Android2KITX.label>
+	<ATPP_Android2KITX.description>Un prototype d'androide désigné pour être utilisé exclusivement sur les champs de bataille comme infantrie lourde, très résistant et inflige de sévéres dégâts au corps à corps, cependant assez lents due à son blindage et il est in capable d'effectuer des tâches avancées à cause de son processeur essentiellement optimisé pour le combat.</ATPP_Android2KITX.description>
+	
+	<ATPP_Android2ITX.label>Androide TX2I</ATPP_Android2ITX.label>
+	<ATPP_Android2ITX.description>Une série de TX2 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T2, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière.</ATPP_Android2ITX.description>
+	
+	<ATPP_Android3ITX.label>Androide TX3I</ATPP_Android3ITX.label>
+	<ATPP_Android3ITX.description>Une série de TX2 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T2, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière.</ATPP_Android3ITX.description>
+	
+	<ATPP_Android4ITX.label>Androide TX4I</ATPP_Android4ITX.label>
+	<ATPP_Android4ITX.description>Une série de TX2 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T2, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière.</ATPP_Android4ITX.description>
+	
+	<ATPP_Android4TX.label>Androide TX4</ATPP_Android4TX.label>
+	<ATPP_Android4TX.description>Une série spéciale de T4 conçue pour les missions d'infiltration, son exosquelette de T4 légèrement modifié est recouvert de tissus vivants qui l'empêchent de rouiller, ont un meilleur impact social et sont résistant aux EMP/éruptions solaires, il est cependant plus inflammable.</ATPP_Android4TX.description>
+	
+	<ATPP_Android3TX.label>Androide TX3</ATPP_Android3TX.label>
+	<ATPP_Android3TX.description>Une série spéciale de T3 conçue pour les missions d'infiltration, son exosquelette de T3 légèrement modifié est recouvert de tissus vivants qui l'empêchent de rouiller, ont un meilleur impact social et sont résistant aux EMP/éruptions solaires, il est cependant plus inflammable.</ATPP_Android3TX.description>
+	
+	<ATPP_Android2TX.label>Androide TX2</ATPP_Android2TX.label>
+	<ATPP_Android2TX.description>Une série spéciale de T2 conçue pour les missions d'infiltration, son exosquelette T2 légèrement modifié est recouvert d'une peau en caoutchouc synthétique qui l'empêche de rouiller, lui permet d'avoir un meilleur impact social et d'être à l'épreuve des EMP / éruptions solaires, il est cependant plus inflammable.</ATPP_Android2TX.description>
+	
+	<ATPP_Android2TX.tools.right_fist.label>Poing droit</ATPP_Android2TX.tools.right_fist.label>
+	<ATPP_Android2TX.tools.left_fist.label>Poing gauche</ATPP_Android2TX.tools.left_fist.label>
+	
+	<ATPP_Android3TX.tools.right_fist.label>Poing droit</ATPP_Android3TX.tools.right_fist.label>
+	<ATPP_Android3TX.tools.left_fist.label>Poing gauche</ATPP_Android3TX.tools.left_fist.label>
+	
+	<ATPP_Android4TX.tools.right_fist.label>Poing droit</ATPP_Android4TX.tools.right_fist.label>
+	<ATPP_Android4TX.tools.left_fist.label>Poing gauche</ATPP_Android4TX.tools.left_fist.label>
+	
+	
+  <!-- AI Generator description -->
+  <ATPP_T4BlankGeneratorAI.label>Androide T4 avec réseau neuronal vide</ATPP_T4BlankGeneratorAI.label>
+  <ATPP_T4BlankGeneratorAI.description>Créer un androide T4 avec réseau neuronal vierge</ATPP_T4BlankGeneratorAI.description>
+  
+  <ATPP_T3BlankGeneratorAI.label>Androide T3 avec réseau neuronal vide</ATPP_T3BlankGeneratorAI.label>
+  <ATPP_T3BlankGeneratorAI.description>Créer un androide T3 avec réseau neuronal vierge</ATPP_T3BlankGeneratorAI.description>
+  
+  
+  <ATPP_TX4AndroidGeneratorAI.label>Androide TX4 male</ATPP_TX4AndroidGeneratorAI.label>
+  <ATPP_TX4AndroidGeneratorAI.description>Créer un TX4, une série spéciale de T4 conçue pour les missions d'infiltration, son exosquelette de T4 légèrement modifié est recouvert de tissus vivants qui l'empêchent de rouiller, ont un meilleur impact social et sont résistant aux EMP/éruptions solaires, il est cependant plus inflammable.</ATPP_TX4AndroidGeneratorAI.description>
+  
+  <ATPP_TX4FemaleAndroidGeneratorAI.label>Androide TX4 femelle</ATPP_TX4FemaleAndroidGeneratorAI.label>
+  <ATPP_TX4FemaleAndroidGeneratorAI.description>Créer un TX4, une série spéciale de T4 conçue pour les missions d'infiltration, son exosquelette de T4 légèrement modifié est recouvert de tissus vivants qui l'empêchent de rouiller, ont un meilleur impact social et sont résistant aux EMP/éruptions solaires, il est cependant plus inflammable.</ATPP_TX4FemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX3AndroidGeneratorAI.label>Androide TX3 male</ATPP_TX3AndroidGeneratorAI.label>
+  <ATPP_TX3AndroidGeneratorAI.description>Créer un TX3, une série spéciale de T3 conçue pour les missions d'infiltration, son exosquelette de T3 légèrement modifié est recouvert de tissus vivants qui l'empêchent de rouiller, ont un meilleur impact social et sont résistant aux EMP/éruptions solaires, il est cependant plus inflammable.</ATPP_TX3AndroidGeneratorAI.description>
+  
+  <ATPP_TX3FemaleAndroidGeneratorAI.label>Androide TX3 femelle</ATPP_TX3FemaleAndroidGeneratorAI.label>
+  <ATPP_TX3FemaleAndroidGeneratorAI.description>Créer un TX3, une série spéciale de T3 conçue pour les missions d'infiltration, son exosquelette de T3 légèrement modifié est recouvert de tissus vivants qui l'empêchent de rouiller, ont un meilleur impact social et sont résistant aux EMP/éruptions solaires, il est cependant plus inflammable.</ATPP_TX3FemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2AndroidGeneratorAI.label>Androide TX2 male</ATPP_TX2AndroidGeneratorAI.label>
+  <ATPP_TX2AndroidGeneratorAI.description>Créer un TX2, une série spéciale de T2 conçue pour les missions d'infiltration, son exosquelette T2 légèrement modifié est recouvert d'une peau en caoutchouc synthétique qui l'empêche de rouiller, lui permet d'avoir un meilleur impact social et d'être à l'épreuve des EMP / éruptions solaires, il est cependant plus inflammable.</ATPP_TX2AndroidGeneratorAI.description>
+  
+  <ATPP_TX2FemaleAndroidGeneratorAI.label>Androide TX2 femelle</ATPP_TX2FemaleAndroidGeneratorAI.label>
+  <ATPP_TX2FemaleAndroidGeneratorAI.description>Créer un TX2, une série spéciale de T2 conçue pour les missions d'infiltration, son exosquelette T2 légèrement modifié est recouvert d'une peau en caoutchouc synthétique qui l'empêche de rouiller, lui permet d'avoir un meilleur impact social et d'être à l'épreuve des EMP / éruptions solaires, il est cependant plus inflammable.</ATPP_TX2FemaleAndroidGeneratorAI.description>
+  
+    <ATPP_TX2KAndroidGeneratorAI.label>Androide TX2K male</ATPP_TX2KAndroidGeneratorAI.label>
+  <ATPP_TX2KAndroidGeneratorAI.description>Créer un TX2K, un prototype d'androide désigné pour être utilisé exclusivement sur les champs de bataille comme infantrie lourde, très résistant et inflige de sévéres dégâts au corps à corps, cependant assez lents due à son blindage et il est in capable d'effectuer des tâches avancées à cause de son processeur essentiellement optimisé pour le combat.</ATPP_TX2KAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KFemaleAndroidGeneratorAI.label>Androide TX2K femelle</ATPP_TX2KFemaleAndroidGeneratorAI.label>
+  <ATPP_TX2KFemaleAndroidGeneratorAI.description>Créer un TX2K, un prototype d'androide désigné pour être utilisé exclusivement sur les champs de bataille comme infantrie lourde, très résistant et inflige de sévéres dégâts au corps à corps, cependant assez lents due à son blindage et il est in capable d'effectuer des tâches avancées à cause de son processeur essentiellement optimisé pour le combat.</ATPP_TX2KFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KIAndroidGeneratorAI.label>Androide TX2KI male</ATPP_TX2KIAndroidGeneratorAI.label>
+  <ATPP_TX2KIAndroidGeneratorAI.description>Créer un TX2KI, un prototype d'androide (sans peau) désigné pour être utilisé exclusivement sur les champs de bataille comme infantrie lourde, très résistant et inflige de sévéres dégâts au corps à corps, cependant assez lents due à son blindage et il est in capable d'effectuer des tâches avancées à cause de son processeur essentiellement optimisé pour le combat.</ATPP_TX2KIAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KIFemaleAndroidGeneratorAI.label>Androide TX2KI femelle</ATPP_TX2KIFemaleAndroidGeneratorAI.label>
+  <ATPP_TX2KIFemaleAndroidGeneratorAI.description>Créer un TX2KI, un prototype d'androide (sans peau) désigné pour être utilisé exclusivement sur les champs de bataille comme infantrie lourde, très résistant et inflige de sévéres dégâts au corps à corps, cependant assez lents due à son blindage et il est in capable d'effectuer des tâches avancées à cause de son processeur essentiellement optimisé pour le combat.</ATPP_TX2KIFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2IAndroidGeneratorAI.label>Androide TX2I male</ATPP_TX2IAndroidGeneratorAI.label>
+  <ATPP_TX2IAndroidGeneratorAI.description>Créer un TX2I, une série de TX2 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T2, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière.</ATPP_TX2IAndroidGeneratorAI.description>
+  
+  <ATPP_TX2IFemaleAndroidGeneratorAI.label>Androide TX2I femelle</ATPP_TX2IFemaleAndroidGeneratorAI.label>
+  <ATPP_TX2IFemaleAndroidGeneratorAI.description>Créer un TX2I, une série de TX2 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T2, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière.</ATPP_TX2IFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX3IAndroidGeneratorAI.label>Androide TX3I male</ATPP_TX3IAndroidGeneratorAI.label>
+  <ATPP_TX3IAndroidGeneratorAI.description>Créer un TX3I, une série de TX3 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T3, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière..</ATPP_TX3IAndroidGeneratorAI.description>
+  
+  <ATPP_TX3IFemaleAndroidGeneratorAI.label>Androide TX3I femelle</ATPP_TX3IFemaleAndroidGeneratorAI.label>
+  <ATPP_TX3IFemaleAndroidGeneratorAI.description>Créer un TX3I, une série de TX3 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T3, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière..</ATPP_TX3IFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX4IAndroidGeneratorAI.label>Androide TX4I male</ATPP_TX4IAndroidGeneratorAI.label>
+  <ATPP_TX4IAndroidGeneratorAI.description>Créer un TX4I, une série de TX4 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T4, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière..</ATPP_TX4IAndroidGeneratorAI.description>
+  
+  <ATPP_TX4IFemaleAndroidGeneratorAI.label>Androide TX4I femelle</ATPP_TX4IFemaleAndroidGeneratorAI.label>
+  <ATPP_TX4IFemaleAndroidGeneratorAI.description>Créer un TX4I, une série de TX4 recyclé pour être utilisée comme infanterie sur les champs de bataille plutôt que T4, principalement en raison de la peur inspirée à leurs ennemis organiques en raison de leur apparence particulière..</ATPP_TX4IFemaleAndroidGeneratorAI.description>
+	
+</LanguageData>

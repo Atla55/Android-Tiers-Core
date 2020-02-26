@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ATPP_CreateS1.label>制造T1智能人形</ATPP_CreateS1.label>
+  <ATPP_CreateS1.description>使用玻璃钢和零部件制造一个初始设置的S1智能人形。</ATPP_CreateS1.description>
+  <ATPP_CreateS1.jobString>正在制造智能人形。</ATPP_CreateS1.jobString>
+
+  <ATPP_CreateS2.label>制造T2智能人形</ATPP_CreateS2.label>
+  <ATPP_CreateS2.description>使用玻璃钢和零部件制造一个初始设置的S2智能人形。</ATPP_CreateS2.description>
+  <ATPP_CreateS2.jobString>正在制造智能人形。</ATPP_CreateS2.jobString>
+
+  <ATPP_CreateS3.label>制造T3智能人形</ATPP_CreateS3.label>
+  <ATPP_CreateS3.description>使用玻璃钢和零部件制造一个初始设置的S3智能人形。</ATPP_CreateS3.description>
+  <ATPP_CreateS3.jobString>正在制造智能人形。</ATPP_CreateS3.jobString>
+
+  <ATPP_CreateS4.label>制造T4智能人形</ATPP_CreateS4.label>
+  <ATPP_CreateS4.description>使用玻璃钢和零部件制造一个初始设置的S4智能人形。</ATPP_CreateS4.description>
+  <ATPP_CreateS4.jobString>正在制造智能人形。</ATPP_CreateS4.jobString>
+
+
+  <!-- SM7 -->
+
+  <ATPP_CreateM7.label>制造M7智能人形</ATPP_CreateM7.label>
+  <ATPP_CreateM7.description>使用玻璃钢和零部件制造一个初始设置的M7智能人形。</ATPP_CreateM7.description>
+  <ATPP_CreateM7.jobString>正在制造智能人形。</ATPP_CreateM7.jobString>
+
+
+  <!-- HellDrone -->
+
+  <ATPP_CreateHellDrone.label>制造炼狱部队智能人形</ATPP_CreateHellDrone.label>
+  <ATPP_CreateHellDrone.description>使用玻璃钢和零部件制造一个初始设置的S-炼狱部队智能人形。</ATPP_CreateHellDrone.description>
+  <ATPP_CreateHellDrone.jobString>正在制造智能人形。</ATPP_CreateHellDrone.jobString>
+
+
+</LanguageData>

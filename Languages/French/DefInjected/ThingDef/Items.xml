@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<ATPP_NanitesHydraulicSerum.label>Slot de nanites ( hydraulique )</ATPP_NanitesHydraulicSerum.label>
+	<ATPP_NanitesHydraulicSerum.description>Une banque de nanites à usage unique conçue pour réparer les systèmes hydrauliques d'androïdes en panne (lié au grand âge).</ATPP_NanitesHydraulicSerum.description>
+	<ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>Utiliser ce slot de nanites pour réparer des problèmes liés au grand âge.</ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesCPUSerum.label>Slot de nanites ( CPU )</ATPP_NanitesCPUSerum.label>
+	<ATPP_NanitesCPUSerum.description>Une banque de nanites à usage unique conçue pour réparer les système cérébral artificiel d'androides endommagé (lié au grand âge).</ATPP_NanitesCPUSerum.description>
+	<ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>Utiliser ce slot de nanites pour réparer des problèmes liés au grand âge.</ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesCoolingSerum.label>Slot de nanites ( refroidissement )</ATPP_NanitesCoolingSerum.label>
+	<ATPP_NanitesCoolingSerum.description>Une banque de nanites à usage unique conçue pour réparer le système de refroidissement des androïdes en cas de surchauffe (lié au grand âge).</ATPP_NanitesCoolingSerum.description>
+	<ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>Utiliser ce slot de nanites pour réparer des problèmes liés au grand âge.</ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesFrameSerum.label>Slot de nanites ( exosquelette )</ATPP_NanitesFrameSerum.label>
+	<ATPP_NanitesFrameSerum.description>Une banque de nanites à usage unique conçue pour réparer l'exosquelette d'androïdes brisés (lié au grand âge ou suite à des accidents).</ATPP_NanitesFrameSerum.description>
+	<ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>Utiliser ce slot de nanites pour réparer des problèmes liés au grand âge.</ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>
+
+	<ATPP_AndroidNanokitBasic.label>Nanokit basique</ATPP_AndroidNanokitBasic.label>
+	<ATPP_AndroidNanokitBasic.description>Un kit contenant des nanobots pour traiter les blessures d'un androïde.</ATPP_AndroidNanokitBasic.description>
+	
+	<ATPP_AndroidNanokitIntermediate.label>Nanokit intermédiaire</ATPP_AndroidNanokitIntermediate.label>
+	<ATPP_AndroidNanokitIntermediate.description>Un kit contenant des nanobots pour traiter les blessures d'un androïde.</ATPP_AndroidNanokitIntermediate.description>
+	
+	<ATPP_AndroidNanokitAdvanced.label>Nanokit avancé</ATPP_AndroidNanokitAdvanced.label>
+	<ATPP_AndroidNanokitAdvanced.description>Un kit contenant des nanobots pour traiter les blessures d'un androïde.</ATPP_AndroidNanokitAdvanced.description>
+	
+	<ATPP_RXChip.label>Puce neuronal RX</ATPP_RXChip.label>
+	<ATPP_RXChip.description>Une puce neuronale servant de relais SkyMind personnel.</ATPP_RXChip.description>
+	
+	<ATPP_VX0Chip.label>Puce neuronal VX0</ATPP_VX0Chip.label>
+	<ATPP_VX0Chip.description>Une puce neuronale qui transforme son hôte en un androide de substitution biologique.</ATPP_VX0Chip.description>
+	
+	<ATPP_VX1Chip.label>Puce neuronal VX1</ATPP_VX1Chip.label>
+	<ATPP_VX1Chip.description>Une puce neuronal permettant à son hôte de contrôler à distance des androides de substitution.</ATPP_VX1Chip.description>
+	
+	<ATPP_VX2Chip.label>Puce neuronal VX2</ATPP_VX2Chip.label>
+	<ATPP_VX2Chip.description>Une puce neuronal permettant à son hôte de contrôler à distance des androides de substitution et de permutter/dupliquer sa conscience.</ATPP_VX2Chip.description>
+	
+	<ATPP_VX3Chip.label>Puce neuronal VX3</ATPP_VX3Chip.label>
+	<ATPP_VX3Chip.description>Une puce neuronal permettant à son hôte de contrôler à distance plusieurs androides de substitution en même temps et de permutter/dupliquer sa conscience.</ATPP_VX3Chip.description>
+	
+	<ATPP_T1ArtificialBrain.label>Cerveau artificiel de T1</ATPP_T1ArtificialBrain.label>
+	<ATPP_T1ArtificialBrain.description>Un cerveau artificiel de T1, permettant de transformer un androide de substitution T1 en un androide avec réseau neuronal vide</ATPP_T1ArtificialBrain.description>
+	
+	<ATPP_T2ArtificialBrain.label>Cerveau artificiel de T2</ATPP_T2ArtificialBrain.label>
+	<ATPP_T2ArtificialBrain.description>Un cerveau artificiel de T2, permettant de transformer un androide de substitution T2 en un androide avec réseau neuronal vide</ATPP_T2ArtificialBrain.description>
+	
+	<ATPP_T3ArtificialBrain.label>Cerveau artificiel de T3</ATPP_T3ArtificialBrain.label>
+	<ATPP_T3ArtificialBrain.description>Un cerveau artificiel de T3, permettant de transformer un androide de substitution T3 en un androide avec réseau neuronal vide</ATPP_T3ArtificialBrain.description>
+	
+	<ATPP_T4ArtificialBrain.label>Cerveau artificiel de T4</ATPP_T4ArtificialBrain.label>
+	<ATPP_T4ArtificialBrain.description>Un cerveau artificiel de T4, permettant de transformer un androide de substitution T4 en un androide avec réseau neuronal vide</ATPP_T4ArtificialBrain.description>
+	
+</LanguageData>

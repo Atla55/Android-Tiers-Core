@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<ATPP_Android2KTX.label>TX2K Android</ATPP_Android2KTX.label>
+	<ATPP_Android2KTX.description>A prototype android designed to be used exclusively on the battlefield as heavy infantry, very resistant and inflicts severe melee damage, however quite slow due to its armor and he is unable to perform advanced tasks because of its limited processor essentially optimized for combat.</ATPP_Android2KTX.description>
+	
+	<ATPP_Android2KITX.label>TX2KI Android</ATPP_Android2KITX.label>
+	<ATPP_Android2KITX.description>A prototype android (without skin) designed to be used exclusively on the battlefield as heavy infantry, very resistant and inflicts severe melee damage, however quite slow due to its armor and he is unable to perform advanced tasks because of its limited processor essentially optimized for combat.</ATPP_Android2KITX.description>
+	
+	<ATPP_Android2ITX.label>TX2I Android</ATPP_Android2ITX.label>
+	<ATPP_Android2ITX.description>A serie of TX2 refurbished to be used as infantry on battlefields rather than T2, mainly due to the fear inspired on their organic enemies due to their particular appearance.</ATPP_Android2ITX.description>
+	
+	<ATPP_Android3ITX.label>TX3I Android</ATPP_Android3ITX.label>
+	<ATPP_Android3ITX.description>A serie of TX3 refurbished to be used as infantry on battlefields rather than T3, mainly due to the fear inspired on their organic enemies due to their particular appearance.</ATPP_Android3ITX.description>
+	
+	<ATPP_Android4ITX.label>TX4I Android</ATPP_Android4ITX.label>
+	<ATPP_Android4ITX.description>A serie of TX4 refurbished to be used as infantry on battlefields rather than T4, mainly due to the fear inspired on their organic enemies due to their particular appearance.</ATPP_Android4ITX.description>
+	
+	<ATPP_Android4TX.label>TX4 Android</ATPP_Android4TX.label>
+	<ATPP_Android4TX.description>A special serie of T4 designed for infiltration missions, his slightly modified T4 exoskeleton is covered with living tissues which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable.</ATPP_Android4TX.description>
+	
+	<ATPP_Android3TX.label>TX3 Android</ATPP_Android3TX.label>
+	<ATPP_Android3TX.description>A special serie of T3 designed for infiltration missions, his slightly modified T3 exoskeleton is covered with living tissues which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable.</ATPP_Android3TX.description>
+	
+	<ATPP_Android2TX.label>TX2 Android</ATPP_Android2TX.label>
+	<ATPP_Android2TX.description>A special serie of T2 designed for infiltration missions, his slightly modified T2 exoskeleton is covered with a synthetic rubber skin which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable.</ATPP_Android2TX.description>
+	
+	<ATPP_Android2TX.tools.right_fist.label>right fist</ATPP_Android2TX.tools.right_fist.label>
+	<ATPP_Android2TX.tools.left_fist.label>left fist</ATPP_Android2TX.tools.left_fist.label>
+	
+	<ATPP_Android2ITX.tools.right_fist.label>right fist</ATPP_Android2ITX.tools.right_fist.label>
+	<ATPP_Android2ITX.tools.left_fist.label>left fist</ATPP_Android2ITX.tools.left_fist.label>
+	
+	<ATPP_Android2KITX.tools.right_fist.label>right fist</ATPP_Android2KITX.tools.right_fist.label>
+	<ATPP_Android2KITX.tools.left_fist.label>left fist</ATPP_Android2KITX.tools.left_fist.label>
+	
+	<ATPP_Android2KTX.tools.right_fist.label>right fist</ATPP_Android2KTX.tools.right_fist.label>
+	<ATPP_Android2KTX.tools.left_fist.label>left fist</ATPP_Android2KTX.tools.left_fist.label>
+	
+	<ATPP_Android3TX.tools.right_fist.label>right fist</ATPP_Android3TX.tools.right_fist.label>
+	<ATPP_Android3TX.tools.left_fist.label>left fist</ATPP_Android3TX.tools.left_fist.label>
+	
+	<ATPP_Android3ITX.tools.right_fist.label>right fist</ATPP_Android3ITX.tools.right_fist.label>
+	<ATPP_Android3ITX.tools.left_fist.label>left fist</ATPP_Android3ITX.tools.left_fist.label>
+	
+	<ATPP_Android4TX.tools.right_fist.label>right fist</ATPP_Android4TX.tools.right_fist.label>
+	<ATPP_Android4TX.tools.left_fist.label>left fist</ATPP_Android4TX.tools.left_fist.label>
+	
+	<ATPP_Android4ITX.tools.right_fist.label>right fist</ATPP_Android4ITX.tools.right_fist.label>
+	<ATPP_Android4ITX.tools.left_fist.label>left fist</ATPP_Android4ITX.tools.left_fist.label>
+	
+	
+  <!-- AI Generator description -->
+  
+  <ATPP_T4BlankGeneratorAI.label>T4 Blank android</ATPP_T4BlankGeneratorAI.label>
+  <ATPP_T4BlankGeneratorAI.description>Create a blank neural network android</ATPP_T4BlankGeneratorAI.description>
+  
+  <ATPP_T3BlankGeneratorAI.label>T3 Blank android</ATPP_T3BlankGeneratorAI.label>
+  <ATPP_T3BlankGeneratorAI.description>Create a blank neural network android</ATPP_T3BlankGeneratorAI.description>
+  
+  <ATPP_TX4AndroidGeneratorAI.label>TX4 male android</ATPP_TX4AndroidGeneratorAI.label>
+  <ATPP_TX4AndroidGeneratorAI.description>Create a TX4, a special serie of T4 designed for infiltration missions, his slightly modified T4 exoskeleton is covered with living tissues which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable</ATPP_TX4AndroidGeneratorAI.description>
+  
+  <ATPP_TX4FemaleAndroidGeneratorAI.label>TX4 female android</ATPP_TX4FemaleAndroidGeneratorAI.label>
+  <ATPP_TX4FemaleAndroidGeneratorAI.description>Create a TX4, a special serie of T4 designed for infiltration missions, his slightly modified T4 exoskeleton is covered with living tissues which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable</ATPP_TX4FemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX3AndroidGeneratorAI.label>TX3 male android</ATPP_TX3AndroidGeneratorAI.label>
+  <ATPP_TX3AndroidGeneratorAI.description>Create a TX3, a special serie of T3 designed for infiltration missions, his slightly modified T4 exoskeleton is covered with living tissues which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable</ATPP_TX3AndroidGeneratorAI.description>
+
+  <ATPP_TX3FemaleAndroidGeneratorAI.label>TX3 female android</ATPP_TX3FemaleAndroidGeneratorAI.label>
+  <ATPP_TX3FemaleAndroidGeneratorAI.description>Create a TX3, a special serie of T3 designed for infiltration missions, his slightly modified T4 exoskeleton is covered with living tissues which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable</ATPP_TX3FemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2AndroidGeneratorAI.label>TX2 male android</ATPP_TX2AndroidGeneratorAI.label>
+  <ATPP_TX2AndroidGeneratorAI.description>Create a TX2, a special serie of T2 designed for infiltration missions, his slightly modified T2 exoskeleton is covered with a synthetic rubber skin which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable.</ATPP_TX2AndroidGeneratorAI.description>
+  
+  <ATPP_TX2FemaleAndroidGeneratorAI.label>TX2 female android</ATPP_TX2FemaleAndroidGeneratorAI.label>
+  <ATPP_TX2FemaleAndroidGeneratorAI.description>Create a TX2, a special serie of T2 designed for infiltration missions, his slightly modified T2 exoskeleton is covered with a synthetic rubber skin which prevent him to rust, have a better social impact and to be EMP/solar flare proof, he is however more flammable.</ATPP_TX2FemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KAndroidGeneratorAI.label>TX2K male android</ATPP_TX2KAndroidGeneratorAI.label>
+  <ATPP_TX2KAndroidGeneratorAI.description>Create a TX2K, a prototype android designed to be used exclusively on the battlefield as heavy infantry, very resistant and inflicts severe melee damage, however quite slow due to its armor and he is unable to perform advanced tasks because of its limited processor essentially optimized for combat.</ATPP_TX2KAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KFemaleAndroidGeneratorAI.label>TX2K female android</ATPP_TX2KFemaleAndroidGeneratorAI.label>
+  <ATPP_TX2KFemaleAndroidGeneratorAI.description>Create a TX2K, a prototype android designed to be used exclusively on the battlefield as heavy infantry, very resistant and inflicts severe melee damage, however quite slow due to its armor and he is unable to perform advanced tasks because of its limited processor essentially optimized for combat.</ATPP_TX2KFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KIAndroidGeneratorAI.label>TX2KI male android</ATPP_TX2KIAndroidGeneratorAI.label>
+  <ATPP_TX2KIAndroidGeneratorAI.description>Create a TX2KI, a prototype android designed to be used exclusively on the battlefield as heavy infantry, very resistant and inflicts severe melee damage, however quite slow due to its armor and he is unable to perform advanced tasks because of its limited processor essentially optimized for combat.</ATPP_TX2KIAndroidGeneratorAI.description>
+  
+  <ATPP_TX2KIFemaleAndroidGeneratorAI.label>TX2KI female android</ATPP_TX2KIFemaleAndroidGeneratorAI.label>
+  <ATPP_TX2KIFemaleAndroidGeneratorAI.description>Create a TX2KI, a prototype android designed to be used exclusively on the battlefield as heavy infantry, very resistant and inflicts severe melee damage, however quite slow due to its armor and he is unable to perform advanced tasks because of its limited processor essentially optimized for combat.</ATPP_TX2KIFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX2IAndroidGeneratorAI.label>TX2I male android</ATPP_TX2IAndroidGeneratorAI.label>
+  <ATPP_TX2IAndroidGeneratorAI.description>Create a TX2I, a serie of TX2 refurbished to be used as infantry on battlefields rather than T2, mainly due to the fear inspired on their enemies due to their particular appearance.</ATPP_TX2IAndroidGeneratorAI.description>
+  
+  <ATPP_TX2IFemaleAndroidGeneratorAI.label>TX2I female android</ATPP_TX2IFemaleAndroidGeneratorAI.label>
+  <ATPP_TX2IFemaleAndroidGeneratorAI.description>Create a TX2I, a serie of TX2 refurbished to be used as infantry on battlefields rather than T2, mainly due to the fear inspired on their enemies due to their particular appearance.</ATPP_TX2IFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX3IAndroidGeneratorAI.label>TX3I male android</ATPP_TX3IAndroidGeneratorAI.label>
+  <ATPP_TX3IAndroidGeneratorAI.description>Create a TX3I, a serie of TX3 refurbished to be used as infantry on battlefields rather than T3, mainly due to the fear inspired on their enemies due to their particular appearance.</ATPP_TX3IAndroidGeneratorAI.description>
+
+  <ATPP_TX3IFemaleAndroidGeneratorAI.label>TX3I female android</ATPP_TX3IFemaleAndroidGeneratorAI.label>
+  <ATPP_TX3IFemaleAndroidGeneratorAI.description>Create a TX3I, a serie of TX3 refurbished to be used as infantry on battlefields rather than T3, mainly due to the fear inspired on their enemies due to their particular appearance.</ATPP_TX3IFemaleAndroidGeneratorAI.description>
+  
+  <ATPP_TX4IAndroidGeneratorAI.label>TX4I male android</ATPP_TX4IAndroidGeneratorAI.label>
+  <ATPP_TX4IAndroidGeneratorAI.description>Create a TX4I, a serie of TX4 refurbished to be used as infantry on battlefields rather than T4, mainly due to the fear inspired on their enemies due to their particular appearance.</ATPP_TX4IAndroidGeneratorAI.description>
+  
+  <ATPP_TX4IFemaleAndroidGeneratorAI.label>TX4I female android</ATPP_TX4IFemaleAndroidGeneratorAI.label>
+  <ATPP_TX4IFemaleAndroidGeneratorAI.description>Create a TX4I, a serie of TX4 refurbished to be used as infantry on battlefields rather than T4, mainly due to the fear inspired on their enemies due to their particular appearance.</ATPP_TX4IFemaleAndroidGeneratorAI.description>
+  
+</LanguageData>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<ATPP_ReloadStation.label>Android Charging Station</ATPP_ReloadStation.label>
+	<ATPP_ReloadStation.description>A charging station for androids, it can simultaneously accommodate up to 8 androids.</ATPP_ReloadStation.description>
+	
+	<ATPP_SkyMindLAN.label>SkyMind V1 Antenna</ATPP_SkyMindLAN.label>
+	<ATPP_SkyMindLAN.description>The SkyMind V1 Antenna accepts up to 3 simultaneous clients, it emits a wireless network which allows the upload of a colonist's mind to another and remotely control any SX series android or biological surrogate.</ATPP_SkyMindLAN.description>
+	
+	<ATPP_SkyMindWAN.label>SkyMind V2 Antenna</ATPP_SkyMindWAN.label>
+	<ATPP_SkyMindWAN.description>The SkyMind V2 Antenna accepts up to 15 simultaneous clients, it emits a wireless network which allows the upload of a colonist's mind to another and remotely control any SX series android or biological surrogate.</ATPP_SkyMindWAN.description>
+	
+	<ATPP_SkyMindRelayTower.label>SkyMind Relay Tower</ATPP_SkyMindRelayTower.label>
+	<ATPP_SkyMindRelayTower.description>The SkyMind Relay Tower amplifies the signal of antennas and prevents degradation of surrogate control over long distances.</ATPP_SkyMindRelayTower.description>
+	
+	<ATPP_I100Security.label>I-100 (Security)</ATPP_I100Security.label>
+	<ATPP_I100Security.description>Firewall server responsible for securing your SkyMind network against cyberattacks and viruses.</ATPP_I100Security.description>
+	
+	<ATPP_I100Hacking.label>I-100 (Hacking)</ATPP_I100Hacking.label>
+	<ATPP_I100Hacking.description>Hacking server allowing you to hack clients connected to a SkyMind network.</ATPP_I100Hacking.description>
+	
+	<ATPP_I100Skill.label>I-100 (Skill)</ATPP_I100Skill.label>
+	<ATPP_I100Skill.description>Skill server allowing you to increase skill points of connected androids on a SkyMind network.</ATPP_I100Skill.description>
+	
+	<ATPP_I300Security.label>I-300 (Security)</ATPP_I300Security.label>
+	<ATPP_I300Security.description>Firewall server responsible for securing your SkyMind network against cyberattacks and viruses.</ATPP_I300Security.description>
+	
+	<ATPP_I300Hacking.label>I-300 (Hacking)</ATPP_I300Hacking.label>
+	<ATPP_I300Hacking.description>Hacking server allowing you to hack clients connected to a SkyMind network.</ATPP_I300Hacking.description>
+	
+	<ATPP_I300Skill.label>I-300 (Skill)</ATPP_I300Skill.label>
+	<ATPP_I300Skill.description>Skill server allowing you to increase skill points of connected androids on a SkyMind network.</ATPP_I300Skill.description>
+	
+	<ATPP_I500Security.label>I-500 (Security)</ATPP_I500Security.label>
+	<ATPP_I500Security.description>Firewall server responsible for securing your SkyMind network against cyberattacks and viruses.</ATPP_I500Security.description>
+	
+	<ATPP_I500Hacking.label>I-500 (Hacking)</ATPP_I500Hacking.label>
+	<ATPP_I500Hacking.description>Hacking server allowing you to hack clients connected to a SkyMind network.</ATPP_I500Hacking.description>
+	
+	<ATPP_I500Skill.label>I-500 (Skill)</ATPP_I500Skill.label>
+	<ATPP_I500Skill.description>Skill server allowing you to increase skill points of connected androids on a SkyMind network.</ATPP_I500Skill.description>
+	
+	<ATPP_AndroidPod.label>Android Pod</ATPP_AndroidPod.label>
+	<ATPP_AndroidPod.description>An android pod where androids can be repaired, stored whilst waiting for a host (case of surrogates) and charged if connected to power.</ATPP_AndroidPod.description>
+	
+	<ATPP_AndroidPodMech.label>M7 Pod</ATPP_AndroidPodMech.label>
+	<ATPP_AndroidPodMech.description>A giant pod where M7 mechanoids can be repaired, stored whilst waiting for a host (case of surrogates) and charged if connected to power.</ATPP_AndroidPodMech.description>
+	
+	<ATPP_SkyCloudCore.label>SkyCloud Core</ATPP_SkyCloudCore.label>
+	<ATPP_SkyCloudCore.description>A supercomputer allowing control of all devices connected to the SkyMind network as well as uploading digitalized brains of your colonists to it's memory in order to make them almost immortal and omniscient</ATPP_SkyCloudCore.description>
+	
+</LanguageData>

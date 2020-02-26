@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.BackstoryDef>
+		<defName>AndroidBackstory</defName>
+		<title>Mechanical colonist</title>
+		<titleShort>Android</titleShort>
+		<baseDescription>{PAWN_nameDef} is a sentient machine that is capable of displaying higher intelligence, newly birthed from their construction pod. What they make of their life is now up to them.</baseDescription>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>AndroidTiers</li>
+		</spawnCategories>
+		<skillGains>
+          <li>
+            <defName>Shooting</defName>
+            <amount>2</amount>
+          </li>
+          <li>
+            <defName>Melee</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Construction</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Mining</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Cooking</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Plants</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Animals</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Crafting</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Artistic</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Medicine</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Social</defName>
+            <amount>2</amount>
+          </li>
+		  <li>
+            <defName>Intellectual</defName>
+            <amount>2</amount>
+          </li>
+        </skillGains>
+	</AlienRace.BackstoryDef>
+
+	<AlienRace.BackstoryDef>
+		<defName>T5Backstory</defName>
+		<title>Transcendant android</title>
+		<titleShort>Transcendant</titleShort>
+		<baseDescription>{PAWN_nameDef} is an highly advanced android, they come from a civilisation where the human population had transcended into mechanical or quantum forms of pure perfection.</baseDescription>
+				<bodyTypeMale>Male</bodyTypeMale>
+		<bodyTypeFemale>Female</bodyTypeFemale>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>AndroidTiers</li>
+		</spawnCategories>
+		<skillGains>
+          <li>
+            <defName>Intellectual</defName>
+            <amount>15</amount>
+          </li>
+          <li>
+            <defName>Crafting</defName>
+            <amount>10</amount>
+          </li>
+          <li>
+            <defName>Artistic</defName>
+            <amount>5</amount>
+          </li>
+          <li>
+            <defName>Medicine</defName>
+            <amount>5</amount>
+          </li>
+        </skillGains>
+	</AlienRace.BackstoryDef>
+
+</Defs>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<ATPP_Android2TXKind.label>TX2 Android Colonist</ATPP_Android2TXKind.label>
+	<ATPP_Android2TXKind.labelPlural>TX2 Android Colonists</ATPP_Android2TXKind.labelPlural>
+	
+	<ATPP_Android3TXKind.label>TX3 Android Colonist</ATPP_Android3TXKind.label>
+	<ATPP_Android3TXKind.labelPlural>TX3 Android Colonists</ATPP_Android3TXKind.labelPlural>
+	
+	<ATPP_Android4TXKind.label>TX4 Android Colonist</ATPP_Android4TXKind.label>
+	<ATPP_Android4TXKind.labelPlural>TX4 Android Colonists</ATPP_Android4TXKind.labelPlural>
+	
+	<ATPP_Android2KTXKind.label>TX2K Android Colonist</ATPP_Android2KTXKind.label>
+	<ATPP_Android2KTXKind.labelPlural>TX2K Android Colonists</ATPP_Android2KTXKind.labelPlural>
+	
+	<ATPP_Android2KITXKind.label>TX2KI Android Colonist</ATPP_Android2KITXKind.label>
+	<ATPP_Android2KITXKind.labelPlural>TX2KI Android Colonists</ATPP_Android2KITXKind.labelPlural>
+	
+	<ATPP_Android3ITXKind.label>TX3I Android Colonist</ATPP_Android3ITXKind.label>
+	<ATPP_Android3ITXKind.labelPlural>TX3I Android Colonists</ATPP_Android3ITXKind.labelPlural>
+	
+	<ATPP_Android4ITXKind.label>TX4I Android Colonist</ATPP_Android4ITXKind.label>
+	<ATPP_Android4ITXKind.labelPlural>TX4I Android Colonists</ATPP_Android4ITXKind.labelPlural>
+</LanguageData>

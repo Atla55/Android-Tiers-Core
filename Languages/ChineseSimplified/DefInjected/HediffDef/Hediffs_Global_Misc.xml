@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ATPP_ConsciousnessUpload.label>思维上传</ATPP_ConsciousnessUpload.label>
+  <ATPP_ConsciousnessUpload.labelNoun>思维上传中</ATPP_ConsciousnessUpload.labelNoun>
+
+  <ATPP_NoHost.label>未链接宿主</ATPP_NoHost.label>
+  <ATPP_NoHost.labelNoun>未链接宿主</ATPP_NoHost.labelNoun>
+
+  <ATPP_InRemoteControlMode.label>启用远程控制模式</ATPP_InRemoteControlMode.label>
+  <ATPP_InRemoteControlMode.labelNoun>启用远程控制模式</ATPP_InRemoteControlMode.labelNoun>
+
+  <ATPP_RemotelyControlled.label>远程控制中</ATPP_RemotelyControlled.label>
+  <ATPP_RemotelyControlled.labelNoun>远程控制中</ATPP_RemotelyControlled.labelNoun>
+
+  <ATPP_SolarFlareAndroidImpact.label>太阳耀斑</ATPP_SolarFlareAndroidImpact.label>
+  <ATPP_SolarFlareAndroidImpact.labelNoun>太阳耀斑</ATPP_SolarFlareAndroidImpact.labelNoun>
+
+  <ATPP_LowNetworkSignal.label>思维控制网络信号弱</ATPP_LowNetworkSignal.label>
+  <ATPP_LowNetworkSignal.labelNoun>思维控制网络信号弱</ATPP_LowNetworkSignal.labelNoun>
+
+  <ATPP_HediffVX0Chip.label>VX0 神经芯片</ATPP_HediffVX0Chip.label>
+  <ATPP_HediffVX0Chip.labelNoun>一种将宿主思维转化为生物植入的神经芯片</ATPP_HediffVX0Chip.labelNoun>
+
+  <ATPP_HediffVX1Chip.label>VX1 神经芯片</ATPP_HediffVX1Chip.label>
+  <ATPP_HediffVX1Chip.labelNoun>一种允许宿主远程控制智能人形的神经芯片</ATPP_HediffVX1Chip.labelNoun>
+
+  <ATPP_HediffVX2Chip.label>VX2 神经芯片</ATPP_HediffVX2Chip.label>
+  <ATPP_HediffVX2Chip.labelNoun>一种允许宿主遥控智能人形，传输复制思维的神经芯片</ATPP_HediffVX2Chip.labelNoun>
+
+  <ATPP_DummyHediff.label>DummyHediff</ATPP_DummyHediff.label>
+  <ATPP_DummyHediff.stages.0.label>早期版本</ATPP_DummyHediff.stages.0.label>
+  <ATPP_DummyHediff.labelNoun>DummyHediff</ATPP_DummyHediff.labelNoun>
+
+
+</LanguageData>

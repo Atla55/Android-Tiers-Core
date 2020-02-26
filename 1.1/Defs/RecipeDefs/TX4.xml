@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef Abstract="True" Name="ATPP_BaseCreateSX4">
+      <description>Create a TX4 Surrogate Android.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>150</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>24</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>90</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Meat_Human</li>
+               </thingDefs>
+            </filter>
+            <count>175</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>MedicineIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+	  <researchPrerequisite>T4Androids</researchPrerequisite>
+      <workAmount>22000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_BaseCreateSX4">
+	    <defName>ATPP_CreateSX4</defName>
+		<label>Create TX4 male surrogate Android</label>
+		<products>
+			<ATPP_SX4SurrogateGeneratorAI>1</ATPP_SX4SurrogateGeneratorAI>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="ATPP_BaseCreateSX4">
+	    <defName>ATPP_CreateSX4Female</defName>
+		<label>Create TX4 female surrogate Android</label>
+		<products>
+			<ATPP_SX4FemaleSurrogateGeneratorAI>1</ATPP_SX4FemaleSurrogateGeneratorAI>
+		</products>
+	</RecipeDef>
+	
+	
+	<RecipeDef Name="ATPP_BaseCreateTX4" Abstract="True">
+      <description>Create a TX4 Android.</description>
+      <jobString>Making Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>150</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>90</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>AIPersonaCore</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Meat_Human</li>
+               </thingDefs>
+            </filter>
+            <count>175</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>MedicineIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+	  <researchPrerequisite>T4Androids</researchPrerequisite>
+      <workAmount>32000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_BaseCreateTX4">
+	      <defName>ATPP_CreateTX4Android</defName>
+		<label>Create TX4 male Android</label>
+		<products>
+			<ATPP_TX4AndroidGeneratorAI>1</ATPP_TX4AndroidGeneratorAI>
+        </products>
+	</RecipeDef>
+	<RecipeDef ParentName="ATPP_BaseCreateTX4">
+	    <defName>ATPP_CreateTX4FemaleAndroid</defName>
+		<label>Create TX4 female Android</label>
+		<products>
+			<ATPP_TX4FemaleAndroidGeneratorAI>1</ATPP_TX4FemaleAndroidGeneratorAI>
+        </products>
+	</RecipeDef>
+	
+	
+	
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SX4SurrogateGeneratorAI</defName>
+        <label>SX4 male Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>ATPP_Android4TXKind</Pawnkind>
+			<gender>0</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SX4FemaleSurrogateGeneratorAI</defName>
+        <label>SX4 female Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>ATPP_Android4TXKind</Pawnkind>
+			<gender>1</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_TX4AndroidGeneratorAI</defName>
+        <label>TX4 male Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>ATPP_Android4TXKind</Pawnkind>
+			<gender>0</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_TX4FemaleAndroidGeneratorAI</defName>
+        <label>TX4 female Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>ATPP_Android4TXKind</Pawnkind>
+			<gender>1</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	
+</Defs>

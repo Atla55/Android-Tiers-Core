@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>ATPP_VX0PuppetThought</defName>
+    <durationDays>6</durationDays>
+	<stackLimit>5</stackLimit>
+    <nullifyingTraits>
+      <li>Psychopath</li>
+      <li>Bloodlust</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>someone was turned into a puppet</label>
+        <description>Someone has been transformed by the colony into a technological puppet with a VX0 neural chip, he is trapped in his body, it's horrible</description>
+        <baseMoodEffect>-3</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

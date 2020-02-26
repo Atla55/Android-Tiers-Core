@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <ThingDef Name="BuildingCreatorBase" Abstract="True">
+        <thingClass>ThingWithComps</thingClass>
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <selectable>true</selectable>
+		<category>Filth</category>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <repairEffect>Repair</repairEffect>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <description>Creates an android colonist.</description>
+        <graphicData>
+            <texPath>Things/Alpha</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <altitudeLayer>Filth</altitudeLayer>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToMake>550</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <size>(1,1)</size>
+        <passability>Standable</passability>
+        <pathCost>200</pathCost>
+        <hasInteractionCell>false</hasInteractionCell>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+
+        <!-- TESTING  
+        <DesignationCategory>Production</DesignationCategory> -->
+    </ThingDef>
+	  
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>T1AndroidGeneratorAI</defName>
+        <label>T1 Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidT1Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>T2AndroidGeneratorAI</defName>
+        <label>T2 Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidT2Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>T3AndroidGeneratorAI</defName>
+        <label>T3 Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidT3Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>T4AndroidGeneratorAI</defName>
+        <label>T4 Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidT4Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>DoggoAndroidGeneratorAI</defName>
+        <label>K-9 Unit</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidDog</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>MuffAndroidGeneratorAI</defName>
+        <label>M.U.F.F Unit</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidMuff</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>ChickAndroidGeneratorAI</defName>
+        <label>Chemical processing unit</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidChicken</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>SheepAndroidGeneratorAI</defName>
+        <label>Phytomining Unit</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidSheep</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>CowAndroidGeneratorAI</defName>
+        <label>N.Solution Unit</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>AndroidCow</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+    <ThingDef ParentName="BuildingCreatorBase">
+        <defName>MicroScytherGeneratorAI</defName>
+        <label>MicroScyther</label>
+        <comps>
+            <li>
+            <compClass>MOARANDROIDS.CompAndroidSpawnerLightSwarm</compClass>
+            </li>
+        </comps>
+    </ThingDef>
+</Defs>

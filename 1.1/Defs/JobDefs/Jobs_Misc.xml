@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+		<defName>ATPP_GoReloadBattery</defName>
+		<driverClass>MOARANDROIDS.JobDriver_GoReloadBattery</driverClass>
+		<reportString>recharching battery.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>

@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SoundDef>
+  <defName>ATPP_Computer_Ambience</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <sustainStartSound>ATPP_Computer_Ambience_Start</sustainStartSound>  
+    <sustainStopSound>ATPP_Computer_Ambience_Stop</sustainStopSound>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>False</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/run</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>16</min>        
+          <max>16</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>1</min>        
+          <max>1.015</max>
+        </pitchRange>      
+        <distRange>
+          <min>0</min>        
+          <max>30</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_Start</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/start</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>16</min>        
+          <max>16</max>
+        </volumeRange>      
+        <distRange>
+          <min>0</min>        
+          <max>50.27907</max>
+        </distRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_Stop</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/stop</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>16</min>        
+          <max>16</max>
+        </volumeRange>      
+        <distRange>
+          <min>0</min>        
+          <max>50.27907</max>
+        </distRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <!-- SkyCloud Core -->
+  <SoundDef>
+    <defName>ATPP_SkyCloudCore_Ambience</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+	<sustainFadeoutTime>1</sustainFadeoutTime> 
+    <sustainStartSound>ATPP_Computer_Ambience_AdvancedServer_Start</sustainStartSound>  
+    <sustainStopSound>ATPP_Computer_Ambience_AdvancedServer_Stop</sustainStopSound>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>False</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/run</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>26</min>        
+          <max>26</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>1</min>        
+          <max>1.015</max>
+        </pitchRange>      
+        <distRange>
+          <min>0</min>        
+          <max>40</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
+  
+  <!-- Server I500 -->
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_I500Server</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+	<sustainFadeoutTime>1</sustainFadeoutTime> 
+    <sustainStartSound>ATPP_Computer_Ambience_AdvancedServer_Start</sustainStartSound>  
+    <sustainStopSound>ATPP_Computer_Ambience_AdvancedServer_Stop</sustainStopSound>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>False</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/run</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>6</min>        
+          <max>6</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>1</min>        
+          <max>1.015</max>
+        </pitchRange>      
+        <distRange>
+          <min>0</min>        
+          <max>30</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_AdvancedServer_Start</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/start</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>13</min>        
+          <max>13</max>
+        </volumeRange>      
+        <distRange>
+          <min>0</min>        
+          <max>50.27907</max>
+        </distRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_AdvancedServer_Stop</defName>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/stop</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>13</min>        
+          <max>13</max>
+        </volumeRange>      
+        <distRange>
+          <min>0</min>        
+          <max>50.27907</max>
+        </distRange>      
+        <sustainLoop>False</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
+  
+  <!-- Server I300 -->
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_I300Server</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+	<sustainFadeoutTime>1</sustainFadeoutTime> 
+    <sustainStartSound>ATPP_Computer_Ambience_AdvancedServer_Start</sustainStartSound>  
+    <sustainStopSound>ATPP_Computer_Ambience_AdvancedServer_Stop</sustainStopSound>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>False</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/run</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>13</min>        
+          <max>13</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>1</min>        
+          <max>1.015</max>
+        </pitchRange>      
+        <distRange>
+          <min>0</min>        
+          <max>30</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <!-- Server I100 -->
+  <SoundDef>
+    <defName>ATPP_Computer_Ambience_I100Server</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <eventNames />  
+    <priorityMode>PrioritizeNearest</priorityMode>  
+	<sustainFadeoutTime>1</sustainFadeoutTime> 
+    <sustainStartSound>ATPP_Computer_Ambience_AdvancedServer_Start</sustainStartSound>  
+    <sustainStopSound>ATPP_Computer_Ambience_AdvancedServer_Stop</sustainStopSound>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>False</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/run</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>22</min>        
+          <max>22</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>1</min>        
+          <max>1.015</max>
+        </pitchRange>      
+        <distRange>
+          <min>0</min>        
+          <max>30</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <!-- Alarme de temperature elevee -->
+  <SoundDef>
+    <defName>ATPP_Computer_Hot_Ambience</defName>  
+    <sustain>True</sustain>  
+    <context>MapOnly</context>
+    <eventNames />  
+	<maxSimultaneous>1</maxSimultaneous>
+	<maxVoices>1</maxVoices>
+    <priorityMode>PrioritizeNearest</priorityMode>  
+    <subSounds>
+      <li>
+        <muteWhenPaused>False</muteWhenPaused>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Computer/hot</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>18</min>        
+          <max>18</max>
+        </volumeRange>      
+        <pitchRange>
+          <min>1</min>        
+          <max>1.015</max>
+        </pitchRange>      
+        <distRange>
+          <min>0</min>        
+          <max>40</max>
+        </distRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+
+</Defs>

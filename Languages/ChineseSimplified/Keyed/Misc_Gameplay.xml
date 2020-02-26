@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Alerts -->
+  <ATPP_AlertHot3Devices>电脑过热</ATPP_AlertHot3Devices>
+  <ATPP_AlertHot3DevicesDesc>您的一台或多台计算机已达到最高温度阈值！ 请迅速恢复合适的温度！</ATPP_AlertHot3DevicesDesc>
+  <ATPP_AlertHot2Devices>电脑升温</ATPP_AlertHot2Devices>
+  <ATPP_AlertHot2DevicesDesc>您的一台或多台计算机很热，请迅速降低环境温度！</ATPP_AlertHot2DevicesDesc>
+
+  <ATPP_AlertUnsecurisedClients>{0} 不安全的天维终端</ATPP_AlertUnsecurisedClients>
+  <ATPP_AlertUnsecurisedClientsDesc>警告！您可能有{0}个可以通过网络被骇客入侵的天维终端，请构建安全服务器来避免这种情况。</ATPP_AlertUnsecurisedClientsDesc>
+
+  <!-- Incidents -->
+  <ATPP_IncidentSurrogateHackingVirus>SX病毒</ATPP_IncidentSurrogateHackingVirus>
+  <ATPP_IncidentSurrogateHackingCryptolocker>SX密码锁</ATPP_IncidentSurrogateHackingCryptolocker>
+  <ATPP_IncidentSurrogateHackingExplosiveVirus>SX爆炸性病毒</ATPP_IncidentSurrogateHackingExplosiveVirus>
+  <ATPP_IncidentSurrogateHackingLiteDesc>您的安全系统已消除了部分攻击，但是{0}控制的某些终端已受到威胁。</ATPP_IncidentSurrogateHackingLiteDesc>
+
+  <ATPP_IncidentSurrogateHackingHardDesc>您的安全系统无法保护您的整个系统，{0}的操作系统已完全受到威胁。</ATPP_IncidentSurrogateHackingHardDesc>
+  <ATPP_IncidentVirusedDesc>这些智能人形现在已完全受到病毒的控制，并会攻击您！</ATPP_IncidentVirusedDesc>
+  <ATPP_IncidentVirusedExplosiveDesc>这些智能人形现在已完全受到病毒的控制，它们现在将攻击您并使其电池在倒计时结束时爆炸！</ATPP_IncidentVirusedExplosiveDesc>
+  <ATPP_IncidentCryptolockerDesc>所有受感染的终端都已完全无法使用，可以通过向此攻击背后的派系支付赎金来取消（希望可以如此~~~）。</ATPP_IncidentCryptolockerDesc>
+
+  <ATPP_IncidentDeviceHackingVirus>病毒</ATPP_IncidentDeviceHackingVirus>
+  <ATPP_IncidentDeviceHackingCryptolocker>密码锁</ATPP_IncidentDeviceHackingCryptolocker>
+  <ATPP_IncidentDeviceHackingExplosiveVirus>爆炸性病毒</ATPP_IncidentDeviceHackingExplosiveVirus>
+  <ATPP_IncidentDeviceHackingLiteDesc>您的安全系统已消除了部分攻击，但是{0}控制的某些终端已受到暂时破坏。</ATPP_IncidentDeviceHackingLiteDesc>
+
+  <ATPP_IncidentDeviceHackingHardDesc>您的安全系统无法保护所有链接的终端，{0}个链接的操作系统已完全受损。</ATPP_IncidentDeviceHackingHardDesc>
+  <ATPP_IncidentDeviceVirusedDesc>这些终端现在完全处于病毒的控制之下！</ATPP_IncidentDeviceVirusedDesc>
+  <ATPP_IncidentDeviceVirusedExplosiveDesc>这些终端现在完全受病毒控制，并且在倒计时结束时会爆炸！</ATPP_IncidentDeviceVirusedExplosiveDesc>
+  <ATPP_IncidentDeviceCryptolockerDesc>所有受感染的终端都已完全无法使用，可以通过向此攻击背后的派系支付赎金来取消（希望可以如此~~~）。</ATPP_IncidentDeviceCryptolockerDesc>
+
+  <ATPP_LetterFactionRansomware>勒索软件</ATPP_LetterFactionRansomware>
+  <ATPP_LetterFactionRansomwareSkillStolenDesc>{0}通过天维网络破坏了与{2}的“{1}”思维容器技能相对应的存储区域。</ATPP_LetterFactionRansomwareSkillStolenDesc>
+  <ATPP_LetterFactionRansomwareBadTraitDownloadedDesc>{0}已通过天维网络感染了{1}的思维容器并安装了不良特征'{2}'。</ATPP_LetterFactionRansomwareBadTraitDownloadedDesc>
+
+  <!-- Needs -->
+  <ATPP_EnergyNeed>能源</ATPP_EnergyNeed>
+  <ATPP_EnergyNeedDesc>能源是智能人形内部电池的电量。如果为0，则智能人形将越来越多地发生故障，并最终被停用（死亡）。</ATPP_EnergyNeedDesc>
+
+
+  <!-- NanoKits -->
+  <ATPP_NanoKitsNoCare>无法维修</ATPP_NanoKitsNoCare>
+  <ATPP_NanoKitsNoKitJustVisit>需要技术人员维修</ATPP_NanoKitsNoKitJustVisit>
+  <ATPP_NanoKitsBasic>初级纳米维修套件</ATPP_NanoKitsBasic>
+  <ATPP_NanoKitsIntermediate>中级纳米维修套件</ATPP_NanoKitsIntermediate>
+  <ATPP_NanoKitsAdvanced>高级纳米维修套件</ATPP_NanoKitsAdvanced>
+
+  <!-- CompInspectPane -->
+  <ATPP_UploadPercentage>思维上传: {0}%</ATPP_UploadPercentage>
+  <ATPP_DownloadPercentage>思维下载: {0}%</ATPP_DownloadPercentage>
+
+  <ATPP_PermutationPercentage>思维传输: {0}%</ATPP_PermutationPercentage>
+  <ATPP_DuplicationPercentage>思维复制: {0}%</ATPP_DuplicationPercentage>
+  <ATPP_UploadSkyCloudPercentage>思维上传到天云: {0}%</ATPP_UploadSkyCloudPercentage>
+  <ATPP_DownloadFromSkyCloudPercentage>从天云下载思维: {0}%</ATPP_DownloadFromSkyCloudPercentage>
+
+  <ATPP_SkyMindDetected>链接到天维</ATPP_SkyMindDetected>
+  <ATPP_RemotelyControlledBy>由{0}远程控制</ATPP_RemotelyControlledBy>
+  <ATPP_RemotelyControl>远程{0}控制中</ATPP_RemotelyControl>
+
+  <ATPP_CompHotSensitiveHot3Text>温度太高！</ATPP_CompHotSensitiveHot3Text>
+  <ATPP_CompHotSensitiveHot2Text>高温警告</ATPP_CompHotSensitiveHot2Text>
+  <ATPP_CompHotSensitiveHot1Text>温度有点热</ATPP_CompHotSensitiveHot1Text>
+  <ATPP_CompHotSensitiveHot0Text>理想的工作温度</ATPP_CompHotSensitiveHot0Text>
+
+  <ATPP_CryptoLockedSurrogate>加密，无法使用！</ATPP_CryptoLockedSurrogate>
+  <ATPP_ExplosiveVirus>爆炸性病毒：电池爆炸前{0}秒！</ATPP_ExplosiveVirus>
+  <ATPP_TempHackingLosingControlIn>{0}秒内失去控制</ATPP_TempHackingLosingControlIn>
+
+  <ATPP_BatteryLevel>电池电量: {0}%</ATPP_BatteryLevel>
+  <ATPP_TempInfection>{0}感染结束</ATPP_TempInfection>
+
+  <ATPP_SkyCloudCoreBooting>服务器打开（{0} 秒）</ATPP_SkyCloudCoreBooting>
+
+  <!-- AutoDoor -->
+  <ATPP_AutoDoorOpen>打开</ATPP_AutoDoorOpen>
+  <ATPP_AutoDoorOpenDescription>通过天云远程打开。</ATPP_AutoDoorOpenDescription>
+  <ATPP_AutoDoorClose>关闭</ATPP_AutoDoorClose>
+  <ATPP_AutoDoorCloseDescription>通过天云远程关闭。</ATPP_AutoDoorCloseDescription>
+  <ATPP_AutoDoorOpenMoteText>正在通过天云打开</ATPP_AutoDoorOpenMoteText>
+  <ATPP_AutoDoorCloseMoteText>正在通过天云关闭</ATPP_AutoDoorCloseMoteText>
+
+
+  <!-- AutoFlickering -->
+  <ATPP_FlickEnable>通过天云启动电源</ATPP_FlickEnable>
+  <ATPP_FlickDisable>通过天云关闭电源</ATPP_FlickDisable>
+
+  <!-- Letters -->
+  <ATPP_LetterSurrogateDisabled>终端{0}已禁用</ATPP_LetterSurrogateDisabled>
+  <ATPP_LetterSurrogateDisabledDesc>终端{0}在机体完整性遭到暴力攻击后不再运行。</ATPP_LetterSurrogateDisabledDesc>
+
+  <ATPP_LetterUploadOK>上传完成</ATPP_LetterUploadOK>
+  <ATPP_LetterUploadOKDesc>{0}的思维已上传已完成到{1}的思维容器，{1}已经死了（心碎）。</ATPP_LetterUploadOKDesc>
+
+  <ATPP_LetterPermuteOK>传输完成</ATPP_LetterPermuteOK>
+  <ATPP_LetterPermuteOKDesc>{0}的思维已传输完成到{1}的思维容器。</ATPP_LetterPermuteOKDesc>
+
+  <ATPP_LetterDuplicateOK>复制完成</ATPP_LetterDuplicateOK>
+  <ATPP_LetterDuplicateOKDesc>{0}已复制完成{1}的思维容器，{1}现在可以被认定为死亡。</ATPP_LetterDuplicateOKDesc>
+
+  <ATPP_LetterSkyCloudUploadOK>天云上传完成</ATPP_LetterSkyCloudUploadOK>
+  <ATPP_LetterSkyCloudUploadOKDesc>思维上传天云已完成，{0}的思维现在存储在{1}的思维容器中，他们的机体不再起作用。</ATPP_LetterSkyCloudUploadOKDesc>
+
+  <ATPP_LetterSkyCloudReplicateOK>复制完成</ATPP_LetterSkyCloudReplicateOK>
+  <ATPP_LetterSkyCloudReplicateOKDesc>{1}思维容器中{0}思维的复制已完成。</ATPP_LetterSkyCloudReplicateOKDesc>
+
+  <ATPP_LetterSkyCloudDownloadOK>天云下载完成</ATPP_LetterSkyCloudDownloadOK>
+  <ATPP_LetterSkyCloudDownloadOKDesc>从天云下载已完成，{0}的思维现在存储在{1}的思维容器中。</ATPP_LetterSkyCloudDownloadOKDesc>
+
+  <ATPP_LetterSkyCloudMigrateOK>天云思维迁移完成</ATPP_LetterSkyCloudMigrateOK>
+  <ATPP_LetterSkyCloudMigrateOKDesc>{0}从{1}到{2}的思维迁移现已完成。</ATPP_LetterSkyCloudMigrateOKDesc>
+
+  <ATPP_LetterInterruptedUpload>上传失败</ATPP_LetterInterruptedUpload>
+  <ATPP_LetterInterruptedUploadDesc>致命错误：{0}思维的传输被中断，导致各自思维容器的最终损毁（已死亡）。</ATPP_LetterInterruptedUploadDesc>
+  <ATPP_LetterInterruptedUploadDescCompHostDead>思维接受方已死亡</ATPP_LetterInterruptedUploadDescCompHostDead>
+  <ATPP_LetterInterruptedUploadDescCompSourceDead>思维传输方已死亡</ATPP_LetterInterruptedUploadDescCompSourceDead>
+  <ATPP_LetterInterruptedUploadDescCompRandomError>发生未知错误</ATPP_LetterInterruptedUploadDescCompRandomError>
+  <ATPP_LetterInterruptedUploadDescCompDiconnectionError>两个殖民者中的一个或两个不再与天维链接。</ATPP_LetterInterruptedUploadDescCompDiconnectionError>
+
+  <ATPP_LetterFactionScam>欺骗</ATPP_LetterFactionScam>
+  <ATPP_LetterFactionScamCryptolockerDesc>{0}决定不删除加密锁病毒污染你的殖民地，他们欺骗了你...</ATPP_LetterFactionScamCryptolockerDesc>
+  <ATPP_LetterFactionScamRansomwareDesc>{0}决定不取消他们的勒索软件的效果，他们欺骗了你...</ATPP_LetterFactionScamRansomwareDesc>
+
+
+  <ATPP_CryptolockerNeedPayRansomTitle>加密锁勒索</ATPP_CryptolockerNeedPayRansomTitle>
+  <ATPP_CryptolockerNeedPayRansom>{0}通过无线电与您联系，他们自称是病毒加密锁攻击背后的幕后黑手，要他们将删除病毒，要交付{1}白银。</ATPP_CryptolockerNeedPayRansom>
+
+  <ATPP_RansomNeedPayRansomTitle>勒索勒索</ATPP_RansomNeedPayRansomTitle>
+  <ATPP_RansomNeedPayRansomCorruptedSKill>{0}通过无线电与您联系，他们自称是勒索软件攻击的幕后黑手，他们可以恢复损坏的"{1}"技能，但{2}交付{3}白银。</ATPP_RansomNeedPayRansomCorruptedSKill>
+  <ATPP_RansomNeedPayRansomDownloadedTrait>{0}通过无线电与您联系，他们自称是勒索软件攻击的幕后黑手，他们可以删除{2}的不良特征"{1}"，但{2}交付{3}白银。</ATPP_RansomNeedPayRansomDownloadedTrait>
+
+  <ATPP_ComptHeatSensitiveComputerMeltTitle>服务器过热</ATPP_ComptHeatSensitiveComputerMeltTitle>
+  <ATPP_ComptHeatSensitiveComputerMeltDesc>服务器由于工作温度高而爆炸！</ATPP_ComptHeatSensitiveComputerMeltDesc>
+
+  <ATPP_destroyedMindsDueToDestroyedSkyCloudCore>{0}已失去思维</ATPP_destroyedMindsDueToDestroyedSkyCloudCore>
+  <ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>在天云核心{0}被摧毁后，存储在其超思维容器中的所有{1}思维都丢失了。</ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>
+
+  <ATPP_LetterHackingPointsRemoved>骇入点列表</ATPP_LetterHackingPointsRemoved>
+  <ATPP_LetterHackingPointsRemovedDesc>您的住所中的所有骇客服务器均处于脱机状态，这意味着{0}点已丢失，因为它们无法再存储在任何介质上！</ATPP_LetterHackingPointsRemovedDesc>
+
+  <ATPP_SkyCloudCoreBooted>{0}已启动</ATPP_SkyCloudCoreBooted>
+  <ATPP_SkyCloudCoreBootedDesc>天云服务器{0}已成功启动，现在可以使用了。</ATPP_SkyCloudCoreBootedDesc>
+
+  <ATPP_LetterInterruptedSkyCloudReplication>复制失败</ATPP_LetterInterruptedSkyCloudReplication>
+  <ATPP_LetterInterruptedSkyCloudReplicationDesc>{0}思维的复制失败，因为天云核心正处于脱机状态。</ATPP_LetterInterruptedSkyCloudReplicationDesc>
+
+  <ATPP_LetterTraitorOffline>投诚分子已离线</ATPP_LetterTraitorOffline>
+  <ATPP_LetterTraitorOfflineDesc>{0}通过让自己被您招募而出卖了他的派系，派系注意到了这一点，他被捕（因此，他与他所控制的智能人形断开了联系）。</ATPP_LetterTraitorOfflineDesc>
+
+  <!-- Designators -->
+  <ATPP_DesignatorNeedSelectSX>错误：您必须选择链接到天云网络的有效终端！</ATPP_DesignatorNeedSelectSX>
+  <ATPP_DesignatorNeedSelectSXToHack>错误：您必须选择一个由您以外的派系控制的智能人形！</ATPP_DesignatorNeedSelectSXToHack>
+
+  <!-- Comps -->
+  <ATPP_SkyMindConn>链接到天维</ATPP_SkyMindConn>
+  <ATPP_SkyMindConnDesc>将此殖民者链接到天维网络，对其以进行思维上传/传输/复制或远程控制SX系列智能人形或其他生物。</ATPP_SkyMindConnDesc>
+  <ATPP_SkyMindAutoConn>自动链接</ATPP_SkyMindAutoConn>
+  <ATPP_SkyMindAutoConnDesc>与天维网络断开链接时，如果有空闲时间，此设备将尝试自动重新链接。</ATPP_SkyMindAutoConnDesc>
+  <ATPP_Duplicate>重复</ATPP_Duplicate>
+  <ATPP_DuplicateDesc>将当前选择的殖民者的思维复制到另一个。</ATPP_DuplicateDesc>
+  <ATPP_Permute>传输</ATPP_Permute>
+  <ATPP_PermuteDesc>将当前选定的殖民者的思维与他人进行传输。</ATPP_PermuteDesc>
+  <ATPP_EnableSurrogateControlMode>控制</ATPP_EnableSurrogateControlMode>
+  <ATPP_EnableSurrogateControlModeDesc>启用远程控制模式，使此殖民者可以控制SX系列智能人形或其他生物。</ATPP_EnableSurrogateControlModeDesc>
+  <ATPP_AndroidToControlTargetDisconnect>断开</ATPP_AndroidToControlTargetDisconnect>
+  <ATPP_AndroidToControlTargetDisconnectDesc>停止当前的远程控制会话。</ATPP_AndroidToControlTargetDisconnectDesc>
+  <ATPP_AndroidToControlTarget>链接</ATPP_AndroidToControlTarget>
+  <ATPP_AndroidToControlTargetDesc>控制所选节点</ATPP_AndroidToControlTargetDesc>
+  <ATPP_ThisCurrentMap>世界地图</ATPP_ThisCurrentMap>
+  <ATPP_AndroidToControlTargetRecoverCaravan>恢复</ATPP_AndroidToControlTargetRecoverCaravan>
+  <ATPP_AndroidToControlTargetRecoverCaravanDesc>恢复大篷车中断开链接的代理。</ATPP_AndroidToControlTargetRecoverCaravanDesc>
+  <ATPP_AndroidSurrogateReconnectToLastController>重新连线</ATPP_AndroidSurrogateReconnectToLastController>
+  <ATPP_AndroidSurrogateReconnectToLastControllerDesc>将智能人形（如果可能）重新链接到使用它的最后一个宿主</ATPP_AndroidSurrogateReconnectToLastControllerDesc>
+
+
+  <ATPP_NoVX2Recipient>没有可用的殖民者（他们需要将VX2芯片植入大脑）。</ATPP_NoVX2Recipient>
+  <ATPP_NoSkyCloudCoreAvailable>没有可用的天云核心</ATPP_NoSkyCloudCoreAvailable>
+  <ATPP_ConsciousnessUploadNoRecipient>没有思维接收方可作为下载目标。</ATPP_ConsciousnessUploadNoRecipient>
+  <ATPP_ConsciousnessSelectDestination>选择目标思维容器</ATPP_ConsciousnessSelectDestination>
+  <ATPP_UploadConsciousness>上传</ATPP_UploadConsciousness>
+  <ATPP_UploadConsciousnessDesc>从这个终端上载思维到另一个。</ATPP_UploadConsciousnessDesc>
+
+  <ATPP_WarningSkyMindDisconnectionRisk>警告！在操作过程中不得断开与天维网络的链接，因为这会损毁他们的思维容器并杀死他们。</ATPP_WarningSkyMindDisconnectionRisk>
+
+  <ATPP_UploadConsciousnessConfirm>上传思维</ATPP_UploadConsciousnessConfirm>
+  <ATPP_UploadConsciousnessConfirmDesc>通过验证，{0}会将思维传输到{1}的思维容器中，这将格式化{1}的思维（这会杀死他），并且{0}的机体将被禁用，您确定要继续吗？</ATPP_UploadConsciousnessConfirmDesc>
+
+  <ATPP_PermuteConsciousnessConfirm>思维传输</ATPP_PermuteConsciousnessConfirm>
+  <ATPP_PermuteConsciousnessConfirmDesc>通过验证，{0}将用{1}传输他的思维，他们将交换其身体，您确定要继续吗？</ATPP_PermuteConsciousnessConfirmDesc>
+
+  <ATPP_DuplicateConsciousnessConfirm>思维复制</ATPP_DuplicateConsciousnessConfirm>
+  <ATPP_DuplicateConsciousnessConfirmDesc>通过验证，{0}会将他的思维复制到{1}的思维容器中，这将格式化{1}的思维（这会杀死他），您确定要继续吗？</ATPP_DuplicateConsciousnessConfirmDesc>
+
+  <ATPP_UseBattery>使用电池</ATPP_UseBattery>
+  <ATPP_UseBatteryDesc>如果启用，则会将智能人形设置为直接使用其内部电池而不是其生物质电池。</ATPP_UseBatteryDesc>
+
+  <ATPP_RepairAndroids>维修智能人形</ATPP_RepairAndroids>
+  <ATPP_RepairAndroidsDesc>允许这个殖民者修复智能人形。</ATPP_RepairAndroidsDesc>
+
+  <ATPP_UploadVirus>病毒</ATPP_UploadVirus>
+  <ATPP_UploadVirusDesc>在目标智能人形中上传病毒。</ATPP_UploadVirusDesc>
+  <ATPP_UploadExplosiveVirus>爆炸性病毒</ATPP_UploadExplosiveVirus>
+  <ATPP_UploadExplosiveVirusDesc>将病毒上载到目标智能人形中，这将使内部电池过载，使其爆炸。</ATPP_UploadExplosiveVirusDesc>
+  <ATPP_Hack>骇客</ATPP_Hack>
+  <ATPP_HackDesc>骇入并控制目标智能人形。</ATPP_HackDesc>
+  <ATPP_HackTemp>临时骇入</ATPP_HackTemp>
+  <ATPP_HackTempDesc>快速修改以临时控制目标智能人形。</ATPP_HackTempDesc>
+
+  <ATPP_MoveToSkyCloud>天云上传</ATPP_MoveToSkyCloud>
+  <ATPP_MoveToSkyCloudDesc>此操作会将宿主的思维转移到天云核心中，这将使它们几乎不朽，但会使它们的身体死亡。</ATPP_MoveToSkyCloudDesc>
+  <ATPP_MoveFromSkyCloud>天云下载</ATPP_MoveFromSkyCloud>
+  <ATPP_MoveFromSkyCloudDesc>此操作会将存储在天云核心中的选定思维移入宿主的思维容器。</ATPP_MoveFromSkyCloudDesc>
+  <ATPP_CentralCoreNbStoredMind>{0}个思维已存储</ATPP_CentralCoreNbStoredMind>
+  <ATPP_CentralCoreNbAssistingMinds>{0}个分配给协助的思维</ATPP_CentralCoreNbAssistingMinds>
+
+  <ATPP_CentralCoreMigrationInProgress>正在将{0}迁移到{1}（{2}％）</ATPP_CentralCoreMigrationInProgress>
+  <ATPP_CentralCoreProcessInMentalBreak>{0}无法使用：处于精神分裂状态</ATPP_CentralCoreProcessInMentalBreak>
+
+  <ATPP_CentralCoreReplicationInProgress>正在进行{0}的思维复制（{1}％）</ATPP_CentralCoreReplicationInProgress>
+
+  <ATPP_SkyCloudFloatMenuMindsStoredSelect>选择一个思维</ATPP_SkyCloudFloatMenuMindsStoredSelect>
+  <ATPP_ProcessInfo>思维信息</ATPP_ProcessInfo>
+  <ATPP_ProcessInfoDesc>获取有关存储思维的信息。</ATPP_ProcessInfoDesc>
+  <ATPP_ProcessRemove>删除</ATPP_ProcessRemove>
+  <ATPP_ProcessRemoveDesc>格式化思维</ATPP_ProcessRemoveDesc>
+  <ATPP_ProcessRemoveDescConfirm>确认{0}的思维将完全从{1}的思维容器中删除，它们将被视为死亡！</ATPP_ProcessRemoveDescConfirm>
+  <ATPP_ProcessDuplicate>复制</ATPP_ProcessDuplicate>
+  <ATPP_ProcessDuplicateDesc>思维复制。</ATPP_ProcessDuplicateDesc>
+  <ATPP_ProcessAssist>辅助</ATPP_ProcessAssist>
+  <ATPP_ProcessAssistDesc>分配仅用于辅助您的殖民者链接到天维网络的存储思维列表，他们将为在此分配的每个思维获得全局心情的增强。</ATPP_ProcessAssistDesc>
+  <ATPP_ProcessMigrate>迁移</ATPP_ProcessMigrate>
+  <ATPP_ProcessMigrateDesc>将思维从此天云核心迁移到另一个</ATPP_ProcessMigrateDesc>
+
+  <ATPP_ProcessAssistAssignedMinds>取消分配思维（删除）)</ATPP_ProcessAssistAssignedMinds>
+  <ATPP_ProcessAssistUnassignedMinds>分配思维（添加）</ATPP_ProcessAssistUnassignedMinds>
+  <ATPP_ProcessAssistAssignAll>分配所有未分配的思维</ATPP_ProcessAssistAssignAll>
+  <ATPP_ProcessAssistUnassignAll>取消分配所有分配的思维</ATPP_ProcessAssistUnassignAll>
+
+  <ATPP_ProcessDisconnectAllSurrogates>断开所有链接</ATPP_ProcessDisconnectAllSurrogates>
+
+  <ATPP_StopVirused>停止</ATPP_StopVirused>
+  <ATPP_StopVirusedDesc>关闭此受感染的终端</ATPP_StopVirusedDesc>
+
+  <ATPP_PreviousSurrogateControllerIs>先前的控制者为{0}</ATPP_PreviousSurrogateControllerIs>
+
+  <!-- Buildings -->
+  <ATPP_SkyMindAntennaSynthesis>关联的用户：{0} / {1}</ATPP_SkyMindAntennaSynthesis>
+  <ATPP_ForceReload>强制电池充电</ATPP_ForceReload>
+  <ATPP_CannotUseEveryPlaceUsed>无法使用，充电站已满。</ATPP_CannotUseEveryPlaceUsed>
+  <ATPP_CannotUseBecauseNotInBatteryMode>无法使用，因为未将所选智能人形的内置电池设置为默认电源。</ATPP_CannotUseBecauseNotInBatteryMode>
+  <ATPP_SecurityServersSynthesis>受保护的智能人形：{0} / {1}</ATPP_SecurityServersSynthesis>
+  <ATPP_HackingServersSynthesis>可用的骇入点：{0} / {1}</ATPP_HackingServersSynthesis>
+  <ATTP_HackingSlotsAdded>已添加骇客槽位：{0}</ATTP_HackingSlotsAdded>
+  <ATTP_HackingProducedPoints>产生骇客分数：{0}</ATTP_HackingProducedPoints>
+  <ATTP_SecuritySlotsAdded>已添加安全插槽：{0}</ATTP_SecuritySlotsAdded>
+
+  <!-- Messages -->
+  <ATPP_CannotConnectToSkyMindNoNet>无法链接到天维，无可用网络！</ATPP_CannotConnectToSkyMindNoNet>
+  <ATPP_CannotConnectToSkyMind>无法链接到天维，没有足够的可用插槽！</ATPP_CannotConnectToSkyMind>
+  <ATPP_SurrogateUnexpectedDisconnection>意外断开链接：{0}不再链接到天维网络！</ATPP_SurrogateUnexpectedDisconnection>
+  <ATPP_SurrogateConnectionCannotBeDisconnected>无法断开链接，{0}当前处于不稳定的精神状态</ATPP_SurrogateConnectionCannotBeDisconnected>
+  <ATPP_SurrogateConnectionOK>{0}现在已链接到{1}</ATPP_SurrogateConnectionOK>
+
+  <ATPP_StartPermute>{0}和{1}之间思维的传输已经开始！</ATPP_StartPermute>
+  <ATPP_StartDuplicate>{0}与{1}的思维复制已经开始！</ATPP_StartDuplicate>
+  <ATPP_StartSkyCloudUpload>{0}到{1}的思维上传已经开始！</ATPP_StartSkyCloudUpload>
+  <ATPP_StartSkyCloudDownload>{0}到{1}大脑的思维下载已经开始！</ATPP_StartSkyCloudDownload>
+  <ATPP_StartSkyCloudMigration>{0}从{1}到{2}的思维传输已经开始！</ATPP_StartSkyCloudMigration>
+
+  <ATPP_StartUpload>{0}到{1}的思维上传已经开始！</ATPP_StartUpload>
+
+  <ATPP_CanOnlyBeUsedByAndroid>此设备只能由智能人形使用！</ATPP_CanOnlyBeUsedByAndroid>
+  <ATPP_CannotBeUsedBecauseNoOldAgeIssues>无法使用，因为未发现智能人形老化问题。</ATPP_CannotBeUsedBecauseNoOldAgeIssues>
+
+  <ATPP_NoBrokenStuffFound>在智能人形 {0}上找不到任何问题！</ATPP_NoBrokenStuffFound>
+  <ATPP_BrokenStuffRepairFailed>错误：纳米维修套件无法修复！</ATPP_BrokenStuffRepairFailed>
+
+  <ATPP_BrokenCPURepaired>骨架思维容器已成功修复！</ATPP_BrokenCPURepaired>
+  <ATPP_BrokenHydraulicSystemRepaired>机体骨架液压系统已成功修复！</ATPP_BrokenHydraulicSystemRepaired>
+  <ATPP_BrokenCoolingSystemRepaired>机体冷却系统已成功修复！</ATPP_BrokenCoolingSystemRepaired>
+  <ATPP_BrokenFrameworkRepaired>机体机体骨架已成功修复！</ATPP_BrokenFrameworkRepaired>
+
+  <ATPP_CryptolockerClearedByFaction>存储在{1}中的{0}的思维不再有精神障碍</ATPP_CryptolockerClearedByFaction>
+  <ATPP_CryptolockerDeviceClearedByFaction>{0}已从您链接的设备清除了他们的加密病毒！</ATPP_CryptolockerDeviceClearedByFaction>
+  <ATPP_RansomwareClearedByFaction>{0}对{1}造成的损坏进行了必要的维修</ATPP_RansomwareClearedByFaction>
+
+  <ATPP_SurrogateHackOK>入侵{0}成功！</ATPP_SurrogateHackOK>
+  <ATPP_CannotHackNotEnoughtHackingPoints>没有足够的骇入点，需要{0}才能骇入！</ATPP_CannotHackNotEnoughtHackingPoints>
+
+  <ATPP_ProcessDuplicateOK>{0}的思维正在复制。</ATPP_ProcessDuplicateOK>
+  <ATPP_ProcessRemoveOK>{0}的思维已删除。</ATPP_ProcessRemoveOK>
+  <ATPP_ProcessAssistOK>现在分配了{0}的思维来协助联系的殖民者。</ATPP_ProcessAssistOK>
+  <ATPP_ProcessUnassistOK>{0}的思维不再被分配来协助联系的殖民者。</ATPP_ProcessUnassistOK>
+
+
+  <ATPP_ProcessNoLongerInMentalBreak>存储在{1}中的{0}的思维不再有精神障碍</ATPP_ProcessNoLongerInMentalBreak>
+  <ATPP_CannotReconnectToLastSurrogateController>无法重新链接，最后一个智能人形控制者不可用（忙碌，死亡，未链接到天维网络...）</ATPP_CannotReconnectToLastSurrogateController>
+
+  <ATPP_ProcessMassAssist> {0}个思维已分配！</ATPP_ProcessMassAssist>
+  <ATPP_ProcessMassUnassist>{0}个思维尚未分配！</ATPP_ProcessMassUnassist>
+
+  <!-- Settings -->
+  <ATPP_SettingsSectionGeneral>一般</ATPP_SettingsSectionGeneral>
+  <ATPP_SettingsSectionSkyCloud>天云</ATPP_SettingsSectionSkyCloud>
+  <ATPP_SettingsSectionSecurity>防护</ATPP_SettingsSectionSecurity>
+  <ATPP_SettingsSectionVX2>VX2神经芯片</ATPP_SettingsSectionVX2>
+
+  <ATPP_SettingsDefaultAndroidGeneratorMode>智能人形默认能源模式：</ATPP_SettingsDefaultAndroidGeneratorMode>
+  <ATPP_SettingsDefaultAndroidGeneratorModeBiomass>使用生物能源（通过食物）</ATPP_SettingsDefaultAndroidGeneratorModeBiomass>
+  <ATPP_SettingsDefaultAndroidGeneratorModeBattery>直接使用内部电池（它们通过电源网络充电）</ATPP_SettingsDefaultAndroidGeneratorModeBattery>
+
+  <ATPP_SettingsMindUploadDuration>上传持续时间（{0} h）</ATPP_SettingsMindUploadDuration>
+  <ATPP_SettingsMindReplicationDuration>思维复制的持续时间（{0} h）</ATPP_SettingsMindReplicationDuration>
+
+  <ATPP_SettingsMindPermutationDuration>思维置换的持续时间（{0} h）</ATPP_SettingsMindPermutationDuration>
+  <ATPP_SettingsMindDuplicationDuration>思维复制的持续时间（{0} h）</ATPP_SettingsMindDuplicationDuration>
+  <ATPP_SettingsMindUploadPercentageFail>思维转移失败的风险（{0}％）</ATPP_SettingsMindUploadPercentageFail>
+  <ATPP_SettingsNanitePercentageFail>纳米智能人形无法修复智能人形的风险（{0}％）</ATPP_SettingsNanitePercentageFail>
+
+  <ATPP_SettingsCharchingStationWattIncrease>{0}充电时消耗的功率增加</ATPP_SettingsCharchingStationWattIncrease>
+  <ATPP_SettingsFoodGenerateLessEnergy>生物质（食物）给智能人形带来的能量更少（比人类少2倍）</ATPP_SettingsFoodGenerateLessEnergy>
+  <ATPP_SettingsPercentageOfAndroidBatteryReloadedEachXSec>每6秒为电池充电的百分比（{0}％）</ATPP_SettingsPercentageOfAndroidBatteryReloadedEachXSec>
+  <ATPP_SettingsNbHoursMinServerRunningHotBeforeExplode>服务器爆炸前可以运行的最小小时数（{0}h）</ATPP_SettingsNbHoursMinServerRunningHotBeforeExplode>
+  <ATPP_SettingsNbHoursMaxServerRunningHotBeforeExplode>服务器爆炸前可以运行的最大小时数（{0}h）</ATPP_SettingsNbHoursMaxServerRunningHotBeforeExplode>
+  <ATPP_SettingsNbHoursMinSkyCloudServerRunningHotBeforeExplode>天云核心在爆炸前可以热运行的最小小时数（{0}h）</ATPP_SettingsNbHoursMinSkyCloudServerRunningHotBeforeExplode>
+  <ATPP_SettingsNbHoursMaxSkyCloudServerRunningHotBeforeExplode>天云核心在爆炸前可以热运行的最大小时数（{0}h）</ATPP_SettingsNbHoursMaxSkyCloudServerRunningHotBeforeExplode>
+  <ATPP_SettingsDelayExplosiveVirus>感染了爆炸性病毒的智能人形爆炸的秒数（{0}秒）</ATPP_SettingsDelayExplosiveVirus>
+  <ATPP_SettingsRiskFactionNotRemoveCryptolocker>支付赎金（{0}％）后，派系不删除加密锁的风险</ATPP_SettingsRiskFactionNotRemoveCryptolocker>
+  <ATPP_SettingsRansomCost>加密锁病毒赎金成本（{0}）:</ATPP_SettingsRansomCost>
+  <ATPP_SettingsAndroidCanUseOrganicMedicine>智能人形可以使用有机药物</ATPP_SettingsAndroidCanUseOrganicMedicine>
+  <ATPP_SettingsRiskGetLittleVirusEvenWithSecurityServers>即使已使用涵盖所有终端的安全系统，也有可能使连接的终端感染病毒（减弱的影响）（{0}％）</ATPP_SettingsRiskGetLittleVirusEvenWithSecurityServers>
+  <ATPP_SettingsRiskFactionNotRemoveRansomwareEffect>支付赎金后，派系无法移除勒索软件效应的风险（{0}％）</ATPP_SettingsRiskFactionNotRemoveRansomwareEffect>
+  <ATPP_SettingsMinSilverToRemoveBadTrait>删除不良特征勒索软件所需支付的最低白银价</ATPP_SettingsMinSilverToRemoveBadTrait>
+  <ATPP_SettingsMaxSilverToRemoveBadTrait>删除不良特征勒索软件所需支付的最高白银价</ATPP_SettingsMaxSilverToRemoveBadTrait>
+  <ATPP_SettingsRansomwareSilverPerSkillLevel>每级用于支付损坏的技能勒索软件的白银数量</ATPP_SettingsRansomwareSilverPerSkillLevel>
+  <ATPP_SettingsDisableSolarFlareImpactOnAndroids>在智能人形上禁用太阳耀斑的负面影响</ATPP_SettingsDisableSolarFlareImpactOnAndroids>
+  <ATPP_SettingsDisableSecurityStuff>通过天维禁用病毒和黑客攻击</ATPP_SettingsDisableSecurityStuff>
+  <ATPP_SettingsPercentageOfSurrogateInAnotherFactionGroup>可能存在于其他派别群体中的智能人形的百分比（{0}％）</ATPP_SettingsPercentageOfSurrogateInAnotherFactionGroup>
+  <ATPP_SettingsOtherFactionsCanUseSurrogate>其他派系可以使用智能人形</ATPP_SettingsOtherFactionsCanUseSurrogate>
+  <ATPP_SettingsTempHackDuration>临时智能人形入侵的持续时间（{0}秒）</ATPP_SettingsTempHackDuration>
+  <ATPP_SettingsCostHackingPoints>（{0}）的骇客点费用:</ATPP_SettingsCostHackingPoints>
+  <ATPP_SettingsCostVirus>病毒</ATPP_SettingsCostVirus>
+  <ATPP_SettingsCostVirusExplosive>爆炸性病毒</ATPP_SettingsCostVirusExplosive>
+  <ATPP_SettingsCostHack>骇客</ATPP_SettingsCostHack>
+  <ATPP_SettingsCostHackTemp>临时骇入</ATPP_SettingsCostHackTemp>
+
+  <ATPP_SettingsDuringSolarFlareAndroidsShouldBeDowned>在太阳耀斑期间，智能人形被击落</ATPP_SettingsDuringSolarFlareAndroidsShouldBeDowned>
+  <ATPP_SettingsDisableServersAlarm>禁用服务器热量警报</ATPP_SettingsDisableServersAlarm>
+  <ATPP_SettingsDisableServersAmbianceNoises>禁用服务器环境噪声</ATPP_SettingsDisableServersAmbianceNoises>
+  <ATPP_SettingsAppliedToNextSaveLoading> （在地图重新加载后应用）</ATPP_SettingsAppliedToNextSaveLoading>
+  <ATPP_SettingsDisableLowNetworkMalus>禁用低天维网络惩罚</ATPP_SettingsDisableLowNetworkMalus>
+  <ATPP_SettingsDisableLowNetworkMalusInCaravans>在商队中禁用低天维网络惩罚</ATPP_SettingsDisableLowNetworkMalusInCaravans>
+  <ATPP_SettingsPowerConsumedByStoredMind>天云核心中每个存储的思想消耗的功率</ATPP_SettingsPowerConsumedByStoredMind>
+  <ATPP_SettingsMindUploadToSkyCloudDuration>上载到天云的持续时间（{0} h）</ATPP_SettingsMindUploadToSkyCloudDuration>
+  <ATPP_SettingsMindMigrationCloudDuration>思维迁移的持续时间（{0} h）</ATPP_SettingsMindMigrationCloudDuration>
+  <ATPP_SettingsHideRemotelyControlledIcon>在遥控设备顶部隐藏图标</ATPP_SettingsHideRemotelyControlledIcon>
+  <ATPP_SettingsSkyCloudBuffPerAssistingMind>每个天云辅助功能提示的抛光点数（{0}）</ATPP_SettingsSkyCloudBuffPerAssistingMind>
+
+  <ATPP_SettingsNbSlotAddedForSecurityServers>为{0}个安全服务器（{1}）添加的插槽数</ATPP_SettingsNbSlotAddedForSecurityServers>
+  <ATPP_SettingsNbPointsProducedForSecurityServers>为{0}个骇客服务器（{1}）产生的点数</ATPP_SettingsNbPointsProducedForSecurityServers>
+  <ATPP_SettingsMinNbHoursLiteHackingDeviceAttackLast>精简设备黑客攻击可以持续的最短小时数（{0}h）</ATPP_SettingsMinNbHoursLiteHackingDeviceAttackLast>
+  <ATPP_SettingsMaxNbHoursLiteHackingDeviceAttackLast>精简设备骇客攻击可以持续的最大小时数（{0}h）</ATPP_SettingsMaxNbHoursLiteHackingDeviceAttackLast>
+  <ATPP_SettingsHideInactiveSurrogates>隐藏殖民者酒吧中不活跃的智能人形</ATPP_SettingsHideInactiveSurrogates>
+  <ATPP_SettingsAndroidsOnlyHealedByCrafter>只能由手工艺者维修</ATPP_SettingsAndroidsOnlyHealedByCrafter>
+  <ATPP_SettingsMinDurationOfMindMentalBreak>数字化思维智力休息的最短持续时间（{0} h）</ATPP_SettingsMinDurationOfMindMentalBreak>
+  <ATPP_SettingsMaxDurationOfMindMentalBreak>数字化思维智力中断的最大持续时间（{0} h）</ATPP_SettingsMaxDurationOfMindMentalBreak>
+  <ATPP_SettingsSecToBootASkyCloudCore>天云核心的启动时间（{0}秒）</ATPP_SettingsSecToBootASkyCloudCore>
+  <ATPP_SettingsDisableAbilityOfSkyCloudServersToTalk>禁止SkyCloudCores讲话的可能性</ATPP_SettingsDisableAbilityOfSkyCloudServersToTalk>
+  <ATPP_SettingsNotRemoveAllTraitsOfBasicAndroids>不要从T1 /T2智能人形中删除所有特征</ATPP_SettingsNotRemoveAllTraitsOfBasicAndroids>
+
+</LanguageData>

@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <!-- Alerts -->
+  <ATPP_AlertHot3Devices>Перегрев компьютеров</ATPP_AlertHot3Devices>
+  <ATPP_AlertHot3DevicesDesc>Один или несколько компьютеров достигли максимального температурного порога! Пожалуйста, быстро восстановите подходящую температуру!</ATPP_AlertHot3DevicesDesc>
+  <ATPP_AlertHot2Devices>Нагрев компьютеров</ATPP_AlertHot2Devices>
+  <ATPP_AlertHot2DevicesDesc>Один или несколько компьютеров нагреваются, пожалуйста, быстро понизьте температуру окружающей среды!</ATPP_AlertHot2DevicesDesc>
+
+  <ATPP_AlertUnsecurisedClients>{0} незащищенных клиентов сети SkyMind</ATPP_AlertUnsecurisedClients>
+  <ATPP_AlertUnsecurisedClientsDesc>Предупреждение: у вас {0} клиентов сети SkyMind, которых потенциально могут взломать через сеть, создайте серверы безопасности, чтобы избежать этого.</ATPP_AlertUnsecurisedClientsDesc>
+
+  <!-- Incidents -->
+  <ATPP_IncidentSurrogateHackingVirus>SX Вирус</ATPP_IncidentSurrogateHackingVirus>
+  <ATPP_IncidentSurrogateHackingCryptolocker>SX Криптолокер</ATPP_IncidentSurrogateHackingCryptolocker>
+  <ATPP_IncidentSurrogateHackingExplosiveVirus>SX Взрывоопасный вирус</ATPP_IncidentSurrogateHackingExplosiveVirus>
+  <ATPP_IncidentSurrogateHackingLiteDesc>Ваша система безопасности нейтрализовала часть атаки, однако некоторые подсистемы суррогатов {0} были взломаны.</ATPP_IncidentSurrogateHackingLiteDesc>
+
+  <ATPP_IncidentSurrogateHackingHardDesc>Ваша система безопасности не защищает весь ваш парк суррогатных андроидов, операционные системы {0} андроидов полностью подвержены риску взлома.</ATPP_IncidentSurrogateHackingHardDesc>
+  <ATPP_IncidentVirusedDesc>Эти суррогаты теперь полностью под контролем вируса и теперь будут атаковать вас!</ATPP_IncidentVirusedDesc>
+  <ATPP_IncidentVirusedExplosiveDesc>Эти суррогаты теперь полностью под контролем вируса, они будут атаковать вас и заставят внутреннюю батарею суррогатов взорваться к концу обратного отсчета!</ATPP_IncidentVirusedExplosiveDesc>
+  <ATPP_IncidentCryptolockerDesc>Все зараженные суррогаты полностью деактивированы, это можно отменить (надеюсь), заплатив выкуп фракции, стоящей за этой хакерской атакой.</ATPP_IncidentCryptolockerDesc>
+
+  <ATPP_IncidentDeviceHackingVirus>Вирус</ATPP_IncidentDeviceHackingVirus>
+  <ATPP_IncidentDeviceHackingCryptolocker>Криптолокер</ATPP_IncidentDeviceHackingCryptolocker>
+  <ATPP_IncidentDeviceHackingExplosiveVirus>Взрывоопасный вирус</ATPP_IncidentDeviceHackingExplosiveVirus>
+  <ATPP_IncidentDeviceHackingLiteDesc>Ваша система безопасности нейтрализовала часть атаки, однако некоторые подлюченные к сети подсистемы {0} были взломаны.</ATPP_IncidentDeviceHackingLiteDesc>
+
+  <ATPP_IncidentDeviceHackingHardDesc>Ваша система безопасности не защищает все подключенные устройства, операционные системы {0} подключенных устройств полностью подвержены риску взлома.</ATPP_IncidentDeviceHackingHardDesc>
+  <ATPP_IncidentDeviceVirusedDesc>Эти устройства теперь полностью под контролем вируса!</ATPP_IncidentDeviceVirusedDesc>
+  <ATPP_IncidentDeviceVirusedExplosiveDesc>Эти устройства теперь полностью находятся под контролем вируса и взорвутся к концу обратного отсчета!</ATPP_IncidentDeviceVirusedExplosiveDesc>
+  <ATPP_IncidentDeviceCryptolockerDesc>Все зараженные устройства полностью деактивированы, это можно отменить (надеюсь), заплатив выкуп фракции, стоящей за этой хакерской атакой.</ATPP_IncidentDeviceCryptolockerDesc>
+
+  <ATPP_LetterFactionRansomware>Ransomware</ATPP_LetterFactionRansomware>
+  <ATPP_LetterFactionRansomwareSkillStolenDesc>{0} имеет поврежденные области памяти, соответствующие навыку {1} в мозгу {2}, через сеть SkyMind.</ATPP_LetterFactionRansomwareSkillStolenDesc>
+  <ATPP_LetterFactionRansomwareBadTraitDownloadedDesc>{0} заразил мозг {1} и установил плохую черту характера '{2}' через сеть SkyMind.</ATPP_LetterFactionRansomwareBadTraitDownloadedDesc>
+
+  <!-- Needs -->
+  <ATPP_EnergyNeed>Энергия</ATPP_EnergyNeed>
+  <ATPP_EnergyNeedDesc>Энергия-это количество энергии, которое андройд имеет в своей внутренней батарее. Если он находится на нуле, андройд будет становиться все более нефункциональным и в конечном итоге будет отключен (умрет).</ATPP_EnergyNeedDesc>
+
+
+  <!-- NanoKits -->
+  <ATPP_NanoKitsNoCare>Нет ремонта</ATPP_NanoKitsNoCare>
+  <ATPP_NanoKitsNoKitJustVisit>Визит техника без нанокитов</ATPP_NanoKitsNoKitJustVisit>
+  <ATPP_NanoKitsBasic>Базовый нанокит</ATPP_NanoKitsBasic>
+  <ATPP_NanoKitsIntermediate>Средний нанокит</ATPP_NanoKitsIntermediate>
+  <ATPP_NanoKitsAdvanced>Расширеный нанокит</ATPP_NanoKitsAdvanced>
+
+  <!-- CompInspectPane -->
+  <ATPP_UploadPercentage>Загрузка разума: {0}%</ATPP_UploadPercentage>
+  <ATPP_DownloadPercentage>Скачивание разума: {0}%</ATPP_DownloadPercentage>
+
+  <ATPP_PermutationPercentage>Перемещение разума: {0}%</ATPP_PermutationPercentage>
+  <ATPP_DuplicationPercentage>Дублирование разума: {0}%</ATPP_DuplicationPercentage>
+  <ATPP_UploadSkyCloudPercentage>Разум загружен в SkyCloud на: {0}%</ATPP_UploadSkyCloudPercentage>
+  <ATPP_DownloadFromSkyCloudPercentage>Разум загружен из SkyCloud на: {0}%</ATPP_DownloadFromSkyCloudPercentage>
+
+  <ATPP_SkyMindDetected>Подключен к SkyMind</ATPP_SkyMindDetected>
+  <ATPP_RemotelyControlledBy>Дистанционно управляется {0}</ATPP_RemotelyControlledBy>
+  <ATPP_RemotelyControl>Дистанционное управление {0}</ATPP_RemotelyControl>
+
+  <ATPP_CompHotSensitiveHot3Text>Слишком высокая температура!</ATPP_CompHotSensitiveHot3Text>
+  <ATPP_CompHotSensitiveHot2Text>Внимание! высокая температура</ATPP_CompHotSensitiveHot2Text>
+  <ATPP_CompHotSensitiveHot1Text>Температура немного превышает норму</ATPP_CompHotSensitiveHot1Text>
+  <ATPP_CompHotSensitiveHot0Text>Идеальная рабочая температура</ATPP_CompHotSensitiveHot0Text>
+
+  <ATPP_CryptoLockedSurrogate>Cryptolocked, unusable!</ATPP_CryptoLockedSurrogate>
+  <ATPP_ExplosiveVirus>Взрывоопасный вирус: {0} секунд до взрыва аккумулятора!</ATPP_ExplosiveVirus>
+  <ATPP_TempHackingLosingControlIn>Потеря контроля через {0} секунд</ATPP_TempHackingLosingControlIn>
+
+  <ATPP_BatteryLevel>Уровень заряда батареи: {0}%</ATPP_BatteryLevel>
+  <ATPP_TempInfection>Окончание заражения через {0}</ATPP_TempInfection>
+
+  <ATPP_SkyCloudCoreBooting>Загрузка сервера (осталось {0} секунд)</ATPP_SkyCloudCoreBooting>
+
+  <ATPP_NaniteFrameworkRepairingInProgress>Идет восстановление Фреймворка {0}%</ATPP_NaniteFrameworkRepairingInProgress>
+  <ATPP_VX3SurrogateTypePrimary>Первичный суррогат</ATPP_VX3SurrogateTypePrimary>
+  <ATPP_VX3SurrogateTypeSecondary>Вторичный суррогат</ATPP_VX3SurrogateTypeSecondary>
+
+  <!-- AutoDoor -->
+  <ATPP_AutoDoorOpen>Открыть</ATPP_AutoDoorOpen>
+  <ATPP_AutoDoorOpenDescription>Открыть удаленно через ядро SkyCloud.</ATPP_AutoDoorOpenDescription>
+  <ATPP_AutoDoorClose>Закрыть</ATPP_AutoDoorClose>
+  <ATPP_AutoDoorCloseDescription>Закрыть удаленно через сервер SkyCloud.</ATPP_AutoDoorCloseDescription>
+  <ATPP_AutoDoorOpenMoteText>Открытие через SkyCloud</ATPP_AutoDoorOpenMoteText>
+  <ATPP_AutoDoorCloseMoteText>Закрытие через SkyCloud</ATPP_AutoDoorCloseMoteText>
+
+
+  <!-- AutoFlickering -->
+  <ATPP_FlickEnable>Включение через SkyCloud</ATPP_FlickEnable>
+  <ATPP_FlickDisable>Выключение через SkyCloud</ATPP_FlickDisable>
+
+  <!-- Letters -->
+  <ATPP_LetterSurrogateDisabled>Суррогат {0} отключен</ATPP_LetterSurrogateDisabled>
+  <ATPP_LetterSurrogateDisabledDesc>Суррогат {0} больше не функционирует после насильственной атаки на его физическую целостность.</ATPP_LetterSurrogateDisabledDesc>
+
+  <ATPP_LetterUploadOK>Загрузка завершена</ATPP_LetterUploadOK>
+  <ATPP_LetterUploadOKDesc>Загрузка разума завершена {0}, разум передан в искусственный мозг {1}, затем {1} мертв (разум разрушен).</ATPP_LetterUploadOKDesc>
+
+  <ATPP_LetterPermuteOK>Перестановка сделана</ATPP_LetterPermuteOK>
+  <ATPP_LetterPermuteOKDesc>Перестановка разума завершена {0} и теперь у {1} есть переставленное тело</ATPP_LetterPermuteOKDesc>
+
+  <ATPP_LetterDuplicateOK>Дублирование сделано</ATPP_LetterDuplicateOK>
+  <ATPP_LetterDuplicateOKDesc>Дублирование разума завершено, разум {1} теперь содержит дублированный разум {0}, поэтому {1} можно считать мертвым</ATPP_LetterDuplicateOKDesc>
+
+  <ATPP_LetterSkyCloudUploadOK>SkyCloud Загрузка Завершена</ATPP_LetterSkyCloudUploadOK>
+  <ATPP_LetterSkyCloudUploadOKDesc>Загрузка разума в SkyCloud завершена, сознание {0} теперь хранится в центральной памяти {1}, их тело больше не функционирует.</ATPP_LetterSkyCloudUploadOKDesc>
+
+  <ATPP_LetterSkyCloudReplicateOK>Репликация Завершена</ATPP_LetterSkyCloudReplicateOK>
+  <ATPP_LetterSkyCloudReplicateOKDesc>Репликация нейронной сети {0} в памяти {1} завершена.</ATPP_LetterSkyCloudReplicateOKDesc>
+
+  <ATPP_LetterSkyCloudDownloadOK>SkyCloud Загрузка Завершена</ATPP_LetterSkyCloudDownloadOK>
+  <ATPP_LetterSkyCloudDownloadOKDesc>Загрузка разума из SkyCloud завершена, сознание {0} теперь хранится в центральной памяти {1}.</ATPP_LetterSkyCloudDownloadOKDesc>
+
+  <ATPP_LetterSkyCloudMigrateOK>SkyCloud Перемещение Разума Завершено</ATPP_LetterSkyCloudMigrateOK>
+  <ATPP_LetterSkyCloudMigrateOKDesc>Перемещение разума {0} из {1} в {2} завершена.</ATPP_LetterSkyCloudMigrateOKDesc>
+
+  <ATPP_LetterInterruptedUpload>Ошибка загрузки</ATPP_LetterInterruptedUpload>
+  <ATPP_LetterInterruptedUploadDesc>Фатальная ошибка: передача сознания была прервана ({0}), что привело к окончательному разрушению двух разумов(смерть)</ATPP_LetterInterruptedUploadDesc>
+  <ATPP_LetterInterruptedUploadDescCompHostDead>смерть принимающего</ATPP_LetterInterruptedUploadDescCompHostDead>
+  <ATPP_LetterInterruptedUploadDescCompSourceDead>смерть отправителя</ATPP_LetterInterruptedUploadDescCompSourceDead>
+  <ATPP_LetterInterruptedUploadDescCompRandomError>произошла неизвестная ошибка</ATPP_LetterInterruptedUploadDescCompRandomError>
+  <ATPP_LetterInterruptedUploadDescCompDiconnectionError>один из двух колонистов или оба больше не связаны с SkyMind</ATPP_LetterInterruptedUploadDescCompDiconnectionError>
+
+  <ATPP_LetterFactionScam>Обман</ATPP_LetterFactionScam>
+  <ATPP_LetterFactionScamCryptolockerDesc>{0} решили не удалять вирус криптолокер, который заразил вашу колонию, они обманули вас ...</ATPP_LetterFactionScamCryptolockerDesc>
+  <ATPP_LetterFactionScamRansomwareDesc>{0} решили не отменять эффект их вирусов-вымогателей, они обманули вас ...</ATPP_LetterFactionScamRansomwareDesc>
+
+
+  <ATPP_CryptolockerNeedPayRansomTitle>Выкуп за Криптолокер</ATPP_CryptolockerNeedPayRansomTitle>
+  <ATPP_CryptolockerNeedPayRansom>{0} связываются с вами по радио. Они стоят за вирусной атакой криптолокеров, они удалят свой вирус в обмен на {1} серебра.</ATPP_CryptolockerNeedPayRansom>
+
+  <ATPP_RansomNeedPayRansomTitle>Выкуп за Вирус-вымогатель</ATPP_RansomNeedPayRansomTitle>
+  <ATPP_RansomNeedPayRansomCorruptedSKill>{0} связываются с вами по радио. Они стоят за вирусной атакой вируса-вымогателя, они восстановят зараженные '{1}' навыки {2} в обмен на {1} серебра.</ATPP_RansomNeedPayRansomCorruptedSKill>
+  <ATPP_RansomNeedPayRansomDownloadedTrait>{0} связываются с вами по радио. Они стоят за вирусной атакой вируса-вымогателя, они отменят установку отрицательной черты характера '{1}' в {2} за {1} серебра.</ATPP_RansomNeedPayRansomDownloadedTrait>
+
+  <ATPP_ComptHeatSensitiveComputerMeltTitle>Сервер перегрелся</ATPP_ComptHeatSensitiveComputerMeltTitle>
+  <ATPP_ComptHeatSensitiveComputerMeltDesc>Сервер взорвался из-за высокой рабочей температуры!</ATPP_ComptHeatSensitiveComputerMeltDesc>
+
+  <ATPP_destroyedMindsDueToDestroyedSkyCloudCore>Потеря {0} Сознаний</ATPP_destroyedMindsDueToDestroyedSkyCloudCore>
+  <ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>После уничтожения ядра SkyCloud {0} все {1} сознания, хранящиеся в его центральной памяти, были потеряны.</ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>
+
+  <ATPP_LetterHackingPointsRemoved>Потеря очков хакинга</ATPP_LetterHackingPointsRemoved>
+  <ATPP_LetterHackingPointsRemovedDesc>Все хакерские серверы в ваших населенных пунктах находятся в автономном режиме, что означает, что {0} баллов было потеряно, поскольку они больше не могут храниться ни на одном носителе!</ATPP_LetterHackingPointsRemovedDesc>
+
+  <ATPP_LetterSkillPointsRemoved>Потеря очков навыков</ATPP_LetterSkillPointsRemoved>
+  <ATPP_LetterSkillPointsRemovedDesc>Все серверы умений в ваших поселениях находятся в автономном режиме, что означает, что {0} очков было потеряно, поскольку они больше не могут храниться ни на одном носителе!</ATPP_LetterSkillPointsRemovedDesc>
+
+  <ATPP_SkyCloudCoreBooted>{0} загружен</ATPP_SkyCloudCoreBooted>
+  <ATPP_SkyCloudCoreBootedDesc>Сервер SkyCloud {0} успешно запущен и теперь может использоваться.</ATPP_SkyCloudCoreBootedDesc>
+
+  <ATPP_LetterInterruptedSkyCloudReplication>Репликация не удалась</ATPP_LetterInterruptedSkyCloudReplication>
+  <ATPP_LetterInterruptedSkyCloudReplicationDesc>Репликация сознания {0} не удалась, потому что контролирующее ядро SkyCloud отключено.</ATPP_LetterInterruptedSkyCloudReplicationDesc>
+
+  <ATPP_LetterTraitorOffline>Предатель оффлайн</ATPP_LetterTraitorOffline>
+  <ATPP_LetterTraitorOfflineDesc>{0} предал свою фракцию, позволив вам завербовать его, фракция заметила это, и он был арестован (поэтому он отсоединен от суррогата, которого он контролировал).</ATPP_LetterTraitorOfflineDesc>
+
+  <!-- Designators -->
+  <ATPP_DesignatorNeedSelectSX>Ошибка, вам нужно выбрать суррогатный андроид, подключенный к SkyMind !</ATPP_DesignatorNeedSelectSX>
+  <ATPP_DesignatorNeedSelectSXToHack>Ошибка, вам нужно выбрать суррогатный андроид контролируемый фракцией отличной от вашей!</ATPP_DesignatorNeedSelectSXToHack>
+
+  <!-- Comps -->
+  <ATPP_SkyMindConn>Подключен к SkyMind</ATPP_SkyMindConn>
+  <ATPP_SkyMindConnDesc>Подключите этого колониста к сети SkyMind, чтобы позволить загружать/переставлять/дублировать данные или удаленно управлять андроидами</ATPP_SkyMindConnDesc>
+  <ATPP_SkyMindAutoConn>Автоматическое Соединение</ATPP_SkyMindAutoConn>
+  <ATPP_SkyMindAutoConnDesc>При отключении от сети SkyMind это устройство будет пытаться автоматически восстановить соединение при наличии свободных слотов.</ATPP_SkyMindAutoConnDesc>
+  <ATPP_Duplicate>Дублирование</ATPP_Duplicate>
+  <ATPP_DuplicateDesc>Дублировать сознание текущего выбранного колониста на другого колониста</ATPP_DuplicateDesc>
+  <ATPP_Permute>Замена</ATPP_Permute>
+  <ATPP_PermuteDesc>Меняет сознание текущего выбранного колониста с другим колонистом</ATPP_PermuteDesc>
+  <ATPP_EnableSurrogateControlMode>Контроль</ATPP_EnableSurrogateControlMode>
+  <ATPP_EnableSurrogateControlModeDesc>Включите режим дистанционного управления, позволяя этому колонисту управлять суррогатным андроидом</ATPP_EnableSurrogateControlModeDesc>
+  <ATPP_AndroidToControlTargetDisconnect>Отключить</ATPP_AndroidToControlTargetDisconnect>
+  <ATPP_AndroidToControlTargetDisconnectDesc>Остановить текущий сеанс удаленного управления</ATPP_AndroidToControlTargetDisconnectDesc>
+  <ATPP_AndroidToControlTarget>Соединение</ATPP_AndroidToControlTarget>
+  <ATPP_AndroidToControlTargetDesc>Взять под контроль выбранный суррогатный андроид</ATPP_AndroidToControlTargetDesc>
+  <ATPP_ThisCurrentMap>Эта карта</ATPP_ThisCurrentMap>
+  <ATPP_AndroidToControlTargetRecoverCaravan>Восстановление</ATPP_AndroidToControlTargetRecoverCaravan>
+  <ATPP_AndroidToControlTargetRecoverCaravanDesc>Восстановление отключенного суррогатного андроида в караване</ATPP_AndroidToControlTargetRecoverCaravanDesc>
+  <ATPP_AndroidSurrogateReconnectToLastController>Переподключение</ATPP_AndroidSurrogateReconnectToLastController>
+  <ATPP_AndroidSurrogateReconnectToLastControllerDesc>Переподключите суррогат (если возможно) к последнему пользователю, который использовал его</ATPP_AndroidSurrogateReconnectToLastControllerDesc>
+
+
+  <ATPP_NoVX2Recipient>Нет доступных колонистов (им нужен нейрочип VX2 в их мозгу)</ATPP_NoVX2Recipient>
+  <ATPP_NoSkyCloudCoreAvailable>Нет доступного ядра SkyCloud</ATPP_NoSkyCloudCoreAvailable>
+  <ATPP_ConsciousnessUploadNoRecipient>Нет доступных андройдов в качестве места назначения загрузки</ATPP_ConsciousnessUploadNoRecipient>
+  <ATPP_ConsciousnessSelectDestination>Выберите место назначения</ATPP_ConsciousnessSelectDestination>
+  <ATPP_UploadConsciousness>Загрузить</ATPP_UploadConsciousness>
+  <ATPP_UploadConsciousnessDesc>Загрузить разум с этого андроида на другой</ATPP_UploadConsciousnessDesc>
+
+  <ATPP_WarningSkyMindDisconnectionRisk>Предупреждение: во время работы не должно быть отключений от сети SkyMind, поскольку это повредит их мозг и, следовательно, убьет их</ATPP_WarningSkyMindDisconnectionRisk>
+
+  <ATPP_UploadConsciousnessConfirm>Загрузить разум</ATPP_UploadConsciousnessConfirm>
+  <ATPP_UploadConsciousnessConfirmDesc>Проверка, {0} загрузит его разум в тело {1}, которое разрушит разум {1} (убьет его) и тело {0} будет отключено, вы уверены, что хотите продолжить?</ATPP_UploadConsciousnessConfirmDesc>
+
+  <ATPP_PermuteConsciousnessConfirm>Замена разума</ATPP_PermuteConsciousnessConfirm>
+  <ATPP_PermuteConsciousnessConfirmDesc>Проверка, {0} будет заменять его разум с {1}, поэтому, по итогу, они обменяются своими телами, вы уверены,что хотите продолжить?</ATPP_PermuteConsciousnessConfirmDesc>
+
+  <ATPP_DuplicateConsciousnessConfirm>Дублирование разума</ATPP_DuplicateConsciousnessConfirm>
+  <ATPP_DuplicateConsciousnessConfirmDesc>Проверка, {0} продублирует его разум в разум {1}, который разрушит разум {1} (убьет его), вы уверены, что хотите продолжить?</ATPP_DuplicateConsciousnessConfirmDesc>
+
+  <ATPP_UseBattery>Используемая батарея</ATPP_UseBattery>
+  <ATPP_UseBatteryDesc>Если это включено, это заставит андройд использовать непосредственно внутреннюю батарею вместо генератора биомассы.</ATPP_UseBatteryDesc>
+
+  <ATPP_RepairAndroids>Ремонт Андроидов</ATPP_RepairAndroids>
+  <ATPP_RepairAndroidsDesc>Разрешить этому колонисту ремонтировать андроидов.</ATPP_RepairAndroidsDesc>
+
+  <ATPP_UploadVirus>Вирус</ATPP_UploadVirus>
+  <ATPP_UploadVirusDesc>Загрузите вирус в целевой суррогат.</ATPP_UploadVirusDesc>
+  <ATPP_UploadExplosiveVirus>Взрывоопасный вирус</ATPP_UploadExplosiveVirus>
+  <ATPP_UploadExplosiveVirusDesc>Загрузите вирус в целевой суррогат, который перегрузит внутреннюю батарею, заставляя ее взорваться.</ATPP_UploadExplosiveVirusDesc>
+  <ATPP_Hack>Взломать</ATPP_Hack>
+  <ATPP_HackDesc>Взломать и взять под контроль суррогат.</ATPP_HackDesc>
+  <ATPP_HackTemp>Временный хак</ATPP_HackTemp>
+  <ATPP_HackTempDesc>Сделайте быстрый взлом, чтобы получить временный контроль над суррогатом.</ATPP_HackTempDesc>
+
+  <ATPP_MoveToSkyCloud>Загрузка в SkyCloud</ATPP_MoveToSkyCloud>
+  <ATPP_MoveToSkyCloudDesc>Эта операция переместит разум пользователья в ядро SkyCloud, что сделает их почти бессмертными, но оставит их тело мертвым.</ATPP_MoveToSkyCloudDesc>
+  <ATPP_MoveFromSkyCloud>Загрузка из SkyCloud</ATPP_MoveFromSkyCloud>
+  <ATPP_MoveFromSkyCloudDesc>Эта операция переместит выбранный разум, хранящийся в ядре SkyCloud, в мозг пользователья.</ATPP_MoveFromSkyCloudDesc>
+  <ATPP_CentralCoreNbStoredMind>{0} сознаний собрано</ATPP_CentralCoreNbStoredMind>
+  <ATPP_CentralCoreNbAssistingMinds>{0} сознаний назначено на поддержку</ATPP_CentralCoreNbAssistingMinds>
+
+  <ATPP_CentralCoreMigrationInProgress>Выполняется перемещение {0} в {1} прогресс: ({2}%)</ATPP_CentralCoreMigrationInProgress>
+  <ATPP_CentralCoreProcessInMentalBreak>{0} непригоден для использования: в психическом расстройстве</ATPP_CentralCoreProcessInMentalBreak>
+
+  <ATPP_CentralCoreReplicationInProgress>Копирование сознания {0} в процессе ({1}%)</ATPP_CentralCoreReplicationInProgress>
+
+  <ATPP_SkyCloudFloatMenuMindsStoredSelect>Выберите сознание</ATPP_SkyCloudFloatMenuMindsStoredSelect>
+  <ATPP_ProcessInfo>Информация</ATPP_ProcessInfo>
+  <ATPP_ProcessInfoDesc>Получить информацию о сохраненных сознаниях.</ATPP_ProcessInfoDesc>
+  <ATPP_ProcessRemove>Удалить</ATPP_ProcessRemove>
+  <ATPP_ProcessRemoveDesc>Удалить разум</ATPP_ProcessRemoveDesc>
+  <ATPP_ProcessRemoveDescConfirm>Подтверждая это вы соглашаетесь на то чтобы сознание {0} было удалено из памяти {1}, это прекратит его существование что равносильно смерти!</ATPP_ProcessRemoveDescConfirm>
+  <ATPP_ProcessDuplicate>Репликация</ATPP_ProcessDuplicate>
+  <ATPP_ProcessDuplicateDesc>Копировать сознание.</ATPP_ProcessDuplicateDesc>
+  <ATPP_ProcessAssist>Поддержка</ATPP_ProcessAssist>
+  <ATPP_ProcessAssistDesc>Назначьте список сохраненных сознаний, используемых только для помощи вашим колонистам, подключенным к сети SkyMind, они получат глобальное повышение настроения для каждого назначенного здесь сознания.</ATPP_ProcessAssistDesc>
+  <ATPP_ProcessMigrate>Перемещение</ATPP_ProcessMigrate>
+  <ATPP_ProcessMigrateDesc>Перемещение сознания из этого ядра SkyCloud к другому</ATPP_ProcessMigrateDesc>
+
+  <ATPP_ProcessAssistAssignedMinds>Переназначить сознание (убрать)</ATPP_ProcessAssistAssignedMinds>
+  <ATPP_ProcessAssistUnassignedMinds>Назначить сознание (добавить)</ATPP_ProcessAssistUnassignedMinds>
+  <ATPP_ProcessAssistAssignAll>Назначить все неназначенные сознания</ATPP_ProcessAssistAssignAll>
+  <ATPP_ProcessAssistUnassignAll>Переназначить все назначенные сознания</ATPP_ProcessAssistUnassignAll>
+
+  <ATPP_ProcessDisconnectAllSurrogates>Отключить всех</ATPP_ProcessDisconnectAllSurrogates>
+
+  <ATPP_StopVirused>Остановка</ATPP_StopVirused>
+  <ATPP_StopVirusedDesc>Отключить этот зараженный суррогат</ATPP_StopVirusedDesc>
+
+  <ATPP_PreviousSurrogateControllerIs>Previous controller was {0}</ATPP_PreviousSurrogateControllerIs>
+
+  <ATPP_Skills>Навыки</ATPP_Skills>
+  <ATPP_SkillsDesc>Откройте мастерскую навыков, которая позволит вам конвертировать очки навыков, генерируемые вашими серверами, в дополнительные навыки для вашего андроида</ATPP_SkillsDesc>
+
+  <!-- Buildings -->
+  <ATPP_SkyMindAntennaSynthesis>Подключенных пользователей : {0} / {1}</ATPP_SkyMindAntennaSynthesis>
+  <ATPP_ForceReload>Принудительная зарядка аккумулятора</ATPP_ForceReload>
+  <ATPP_CannotUseEveryPlaceUsed>Не может использовать, зарядная станция полна</ATPP_CannotUseEveryPlaceUsed>
+  <ATPP_CannotUseBecauseNotInBatteryMode>Невозможно использовать, потому что внутренняя батарея выбранного андройда не установлена в качестве генератора по умолчанию.</ATPP_CannotUseBecauseNotInBatteryMode>
+  <ATPP_SecurityServersSynthesis>Защищено суррогатов: {0} / {1}</ATPP_SecurityServersSynthesis>
+  <ATPP_HackingServersSynthesis>Доступно хакерских очков : {0} / {1}</ATPP_HackingServersSynthesis>
+  <ATTP_HackingSlotsAdded>Добавлено хакерских слотов: {0}</ATTP_HackingSlotsAdded>
+  <ATTP_HackingProducedPoints>Изготовление хакерских очков: {0}</ATTP_HackingProducedPoints>
+  <ATTP_SecuritySlotsAdded>Добавлено слотов безопасности: {0}</ATTP_SecuritySlotsAdded>
+  <ATPP_SkillServersSynthesis>Доступно очков навыков: {0} / {1}</ATPP_SkillServersSynthesis>
+  <ATTP_SkillSlotsAdded>Добавлено слотов умений: {0}</ATTP_SkillSlotsAdded>
+  <ATTP_SkillProducedPoints>Создано очков умений: {0}</ATTP_SkillProducedPoints>
+
+  <!-- Messages -->
+  <ATPP_CannotConnectToSkyMindNoNet>Не удается подключиться к SkyMind, нет доступной сети !</ATPP_CannotConnectToSkyMindNoNet>
+  <ATPP_CannotConnectToSkyMind>Не удается подключиться к SkyMind, недостаточно доступных слотов !</ATPP_CannotConnectToSkyMind>
+  <ATPP_SurrogateUnexpectedDisconnection>Неожиданное отключение : {0} больше не подключен к сети SkyMind !</ATPP_SurrogateUnexpectedDisconnection>
+  <ATPP_SurrogateConnectionCannotBeDisconnected>Не удается отключиться, {0} в данный момент находится в нестабильном психическом состоянии</ATPP_SurrogateConnectionCannotBeDisconnected>
+  <ATPP_SurrogateConnectionOK>{0} теперь подключен к {1}</ATPP_SurrogateConnectionOK>
+
+  <ATPP_StartPermute>Началась замена сознания с {0} в {1} !</ATPP_StartPermute>
+  <ATPP_StartDuplicate>Началось дублирование сознания от {0} в {1} !</ATPP_StartDuplicate>
+  <ATPP_StartSkyCloudUpload>Загрузка сознания {0} в {1} началась!</ATPP_StartSkyCloudUpload>
+  <ATPP_StartSkyCloudDownload>Загрузка сознания {0} в мозг {1} началась!</ATPP_StartSkyCloudDownload>
+  <ATPP_StartSkyCloudMigration>Перемещение сознания {0} из {1} в {2} началась!</ATPP_StartSkyCloudMigration>
+
+  <ATPP_StartUpload>Началась загрузка сознания из {0} в {1}!</ATPP_StartUpload>
+
+  <ATPP_CanOnlyBeUsedByAndroid>Это устройство можно использовать только на андроидах !</ATPP_CanOnlyBeUsedByAndroid>
+  <ATPP_CannotBeUsedBecauseNoOldAgeIssues>Не может быть использован, потому что андройд старого поколения</ATPP_CannotBeUsedBecauseNoOldAgeIssues>
+
+  <ATPP_NoBrokenStuffFound>Для андройда {0} не найдено проблем !</ATPP_NoBrokenStuffFound>
+  <ATPP_BrokenStuffRepairFailed>Ошибка: наниты не смогли восстановить !</ATPP_BrokenStuffRepairFailed>
+
+  <ATPP_BrokenCPURepaired>Искусственный разум был успешно восстановлен !</ATPP_BrokenCPURepaired>
+  <ATPP_BrokenHydraulicSystemRepaired>Гидравлическая система была успешно восстановлена !</ATPP_BrokenHydraulicSystemRepaired>
+  <ATPP_BrokenCoolingSystemRepaired>Система охлаждения была успешно восстановлена !</ATPP_BrokenCoolingSystemRepaired>
+  <ATPP_BrokenFrameworkRepaired>Фреймворк был успешно восстановлен !</ATPP_BrokenFrameworkRepaired>
+
+  <ATPP_CryptolockerClearedByFaction>{0} очистили их криптовирус с ваших зараженных суррогатов!</ATPP_CryptolockerClearedByFaction>
+  <ATPP_CryptolockerDeviceClearedByFaction>{0} очистили их криптовирус с ваших устройств!</ATPP_CryptolockerDeviceClearedByFaction>
+  <ATPP_RansomwareClearedByFaction>{0} произвел необходимый ремонт повреждений причиненных {1}</ATPP_RansomwareClearedByFaction>
+
+  <ATPP_SurrogateHackOK>Взлом {0} успешно завершен!</ATPP_SurrogateHackOK>
+  <ATPP_CannotHackNotEnoughtHackingPoints>Недостаточно хакерских очков, {0} требуется для взлома!</ATPP_CannotHackNotEnoughtHackingPoints>
+
+  <ATPP_ProcessDuplicateOK>Нейронная сеть {0} дублируется.</ATPP_ProcessDuplicateOK>
+  <ATPP_ProcessRemoveOK>Нейронная сеть {0} была удалена.</ATPP_ProcessRemoveOK>
+  <ATPP_ProcessAssistOK>Сознание {0} теперь предназначено для помощи подключенным колонистам.</ATPP_ProcessAssistOK>
+  <ATPP_ProcessUnassistOK>Сознание {0} больше не предназначено для помощи подключенным колонистам.</ATPP_ProcessUnassistOK>
+
+
+  <ATPP_ProcessNoLongerInMentalBreak>Сознание {0}, хранящееся в {1}, больше не страдает психическим расстройством</ATPP_ProcessNoLongerInMentalBreak>
+  <ATPP_CannotReconnectToLastSurrogateController>Невозможно восстановить соединение, последний суррогатный контроллер недоступен (занят, мертв, не подключен к SkyMinds ...)</ATPP_CannotReconnectToLastSurrogateController>
+
+  <ATPP_ProcessMassAssist>{0} разумов назначено !</ATPP_ProcessMassAssist>
+  <ATPP_ProcessMassUnassist>{0} разумов не назначено !</ATPP_ProcessMassUnassist>
+
+  <ATPP_SkillsWorkshopPointsConverted>{0} очков умений было добавлено {1}</ATPP_SkillsWorkshopPointsConverted>
+  <ATPP_SkillsWorkshopAvailablePoints>Доступно навыков : {0}</ATPP_SkillsWorkshopAvailablePoints>
+
+  <!-- Settings -->
+  <ATPP_SettingsSectionGeneral>Общие</ATPP_SettingsSectionGeneral>
+  <ATPP_SettingsSectionSkyCloud>SkyCloud</ATPP_SettingsSectionSkyCloud>
+  <ATPP_SettingsSectionSecurity>Безопасность</ATPP_SettingsSectionSecurity>
+  <ATPP_SettingsSectionVX2>Нейрочип VX2</ATPP_SettingsSectionVX2>
+  <ATPP_SettingsSectionVX3>Нейрочип VX3</ATPP_SettingsSectionVX3>
+  <ATPP_SettingsSectionSkills>Навыки T1/T2</ATPP_SettingsSectionSkills>
+
+  <ATPP_SettingsDefaultAndroidGeneratorMode>Энергетический режим андройда по умолчанию :</ATPP_SettingsDefaultAndroidGeneratorMode>
+  <ATPP_SettingsDefaultAndroidGeneratorModeBiomass>Использование генератора биомассы (они едят)</ATPP_SettingsDefaultAndroidGeneratorModeBiomass>
+  <ATPP_SettingsDefaultAndroidGeneratorModeBattery>Прямое использование внутренней батареи (они могут заряжаться от электросети)</ATPP_SettingsDefaultAndroidGeneratorModeBattery>
+
+  <ATPP_SettingsMindUploadDuration>Длительность загрузки разума ({0}ч)</ATPP_SettingsMindUploadDuration>
+  <ATPP_SettingsMindReplicationDuration>Длительельность копирования разума ({0}ч)</ATPP_SettingsMindReplicationDuration>
+
+  <ATPP_SettingsMindPermutationDuration>Длительность перестановки разума ({0}ч)</ATPP_SettingsMindPermutationDuration>
+  <ATPP_SettingsMindDuplicationDuration>Длительность дублирования разума ({0}ч)</ATPP_SettingsMindDuplicationDuration>
+  <ATPP_SettingsMindUploadPercentageFail>Процент риска того, что передача сознания не удастся ({0}%)</ATPP_SettingsMindUploadPercentageFail>
+  <ATPP_SettingsNanitePercentageFail>Процент риска того, что наниты не смогут восстановить андроидов ({0}%)</ATPP_SettingsNanitePercentageFail>
+
+  <ATPP_SettingsCharchingStationWattIncrease>Увеличение мощности, потребляемой зарядной станцией при перезагрузке {0} </ATPP_SettingsCharchingStationWattIncrease>
+  <ATPP_SettingsFoodGenerateLessEnergy>Биомасса (пища) приносит андроидам меньше энергии (в 2 раза меньше, чем для человека)</ATPP_SettingsFoodGenerateLessEnergy>
+  <ATPP_SettingsPercentageOfAndroidBatteryReloadedEachXSec>Процент заряда батареи каждые 6 секунд ({0}%)</ATPP_SettingsPercentageOfAndroidBatteryReloadedEachXSec>
+  <ATPP_SettingsNbHoursMinServerRunningHotBeforeExplode>Минимальное количество часов, в течение которых серверы могут работать на предельных температурах перед тем, как взорваться ({0}ч)</ATPP_SettingsNbHoursMinServerRunningHotBeforeExplode>
+  <ATPP_SettingsNbHoursMaxServerRunningHotBeforeExplode>Максимальное количество часов, в течение которых серверы могут работать на предельных температурах перед тем, как взорваться ({0}ч)</ATPP_SettingsNbHoursMaxServerRunningHotBeforeExplode>
+  <ATPP_SettingsNbHoursMinSkyCloudServerRunningHotBeforeExplode>Минимальное количество часов, в течение которых ядра SkyCloud могут нагреваться перед тем, как взорваться ({0}ч)</ATPP_SettingsNbHoursMinSkyCloudServerRunningHotBeforeExplode>
+  <ATPP_SettingsNbHoursMaxSkyCloudServerRunningHotBeforeExplode>Максимальное количество часов, в течение которых ядра SkyCloud могут нагреваться перед тем, как взорваться ({0}ч)</ATPP_SettingsNbHoursMaxSkyCloudServerRunningHotBeforeExplode>
+  <ATPP_SettingsDelayExplosiveVirus>Количество секунд, в течение которых андроид, зараженный взрывным вирусом, взрывается ({0}сек)</ATPP_SettingsDelayExplosiveVirus>
+  <ATPP_SettingsRiskFactionNotRemoveCryptolocker>Риск того, что фракция не удалит криптолокер после выплаты выкупа ({0}%)</ATPP_SettingsRiskFactionNotRemoveCryptolocker>
+  <ATPP_SettingsRansomCost>Стоимость выкупа вируса типа криптолокер ({0}):</ATPP_SettingsRansomCost>
+  <ATPP_SettingsAndroidCanUseOrganicMedicine>Андроиды могут использовать органическую медицину</ATPP_SettingsAndroidCanUseOrganicMedicine>
+  <ATPP_SettingsRiskGetLittleVirusEvenWithSecurityServers>Риск того, что ваши подключенные клиенты могут заразиться вирусом (ослабленное воздействие) даже при наличии системы безопасности, охватывающей все из них ({0}%)</ATPP_SettingsRiskGetLittleVirusEvenWithSecurityServers>
+  <ATPP_SettingsRiskFactionNotRemoveRansomwareEffect>Риск того, что фракция не устранит эффекты вирусов-вымогателей после выплаты выкупа ({0}%)</ATPP_SettingsRiskFactionNotRemoveRansomwareEffect>
+  <ATPP_SettingsMinSilverToRemoveBadTrait>Минимальное количество серебра для оплаты вымогателей</ATPP_SettingsMinSilverToRemoveBadTrait>
+  <ATPP_SettingsMaxSilverToRemoveBadTrait>Максимальное количество серебра для оплаты вымогателей</ATPP_SettingsMaxSilverToRemoveBadTrait>
+  <ATPP_SettingsRansomwareSilverPerSkillLevel>Количество серебра для оплаты поврежденных навыков вымогателей за уровень</ATPP_SettingsRansomwareSilverPerSkillLevel>
+  <ATPP_SettingsDisableSolarFlareImpactOnAndroids>Отключить негативное влияние солнечных вспышек на андроидов</ATPP_SettingsDisableSolarFlareImpactOnAndroids>
+  <ATPP_SettingsDisableSecurityStuff>Отключить вирусы и взломы через SkyMind</ATPP_SettingsDisableSecurityStuff>
+  <ATPP_SettingsPercentageOfSurrogateInAnotherFactionGroup>Процент суррогатов, которые могут присутствовать в группах других фракций ({0}%)</ATPP_SettingsPercentageOfSurrogateInAnotherFactionGroup>
+  <ATPP_SettingsOtherFactionsCanUseSurrogate>Другие фракции могут использовать суррогатных андроидов</ATPP_SettingsOtherFactionsCanUseSurrogate>
+  <ATPP_SettingsTempHackDuration>Продолжительность временного суррогатного взлома ({0} секунд)</ATPP_SettingsTempHackDuration>
+  <ATPP_SettingsCostHackingPoints>Стоимость хакерских очков за ({0}):</ATPP_SettingsCostHackingPoints>
+  <ATPP_SettingsCostVirus>Вирус</ATPP_SettingsCostVirus>
+  <ATPP_SettingsCostVirusExplosive>Взрывоопасный вирус</ATPP_SettingsCostVirusExplosive>
+  <ATPP_SettingsCostHack>Взлом</ATPP_SettingsCostHack>
+  <ATPP_SettingsCostHackTemp>Временный взлом</ATPP_SettingsCostHackTemp>
+
+  <ATPP_SettingsDuringSolarFlareAndroidsShouldBeDowned>Во время солнечных вспышек андроиды сбиты</ATPP_SettingsDuringSolarFlareAndroidsShouldBeDowned>
+  <ATPP_SettingsDisableServersAlarm>Отключить тревогу нагревания серверов</ATPP_SettingsDisableServersAlarm>
+  <ATPP_SettingsDisableServersAmbianceNoises>Отключить шум серверов</ATPP_SettingsDisableServersAmbianceNoises>
+  <ATPP_SettingsAppliedToNextSaveLoading> (Применяется после перезагрузки карты)</ATPP_SettingsAppliedToNextSaveLoading>
+  <ATPP_SettingsDisableLowNetworkMalus>Отключить штраф слабого соединения с сетью SkyMind</ATPP_SettingsDisableLowNetworkMalus>
+  <ATPP_SettingsDisableLowNetworkMalusInCaravans>Отключить штраф слабого соединения с сетью SkyMind для караванов</ATPP_SettingsDisableLowNetworkMalusInCaravans>
+  <ATPP_SettingsPowerConsumedByStoredMind>Мощность, потребляемая каждым накопленным сознанием в ядрах SkyCloud</ATPP_SettingsPowerConsumedByStoredMind>
+  <ATPP_SettingsMindUploadToSkyCloudDuration>Длительность загрузки сознания в SkyCloud ({0}ч)</ATPP_SettingsMindUploadToSkyCloudDuration>
+  <ATPP_SettingsMindMigrationCloudDuration>Длительность перемещения сознания ({0}ч)</ATPP_SettingsMindMigrationCloudDuration>
+  <ATPP_SettingsHideRemotelyControlledIcon>Скрыть значок в верхней части устройств с дистанционным управлением</ATPP_SettingsHideRemotelyControlledIcon>
+  <ATPP_SettingsSkyCloudBuffPerAssistingMind>Количество положительных эффектов за каждое сознание поддержки SkyCloud ({0})</ATPP_SettingsSkyCloudBuffPerAssistingMind>
+
+  <ATPP_SettingsNbSlotAddedForSkillServers>Число слотов добовляемых {0} серверам навыков ({1})</ATPP_SettingsNbSlotAddedForSkillServers>
+  <ATPP_SettingsNbSlotAddedForHackingServers>Число слотов добовляемых {0} хакерским серверам ({1})</ATPP_SettingsNbSlotAddedForHackingServers>
+  <ATPP_SettingsNbSlotAddedForSecurityServers>Число слотов добовляемых {0} серверам безопасности ({1})</ATPP_SettingsNbSlotAddedForSecurityServers>
+  <ATPP_SettingsNbPointsProducedForHackingServers>Количество производимых очков (каждые 30 секунд) для {0} хакерских серверов ({1})</ATPP_SettingsNbPointsProducedForHackingServers>
+  <ATPP_SettingsMinNbHoursLiteHackingDeviceAttackLast>Минимальное количество часов, в течение которых продолжаться хакерская атака ({0}ч)</ATPP_SettingsMinNbHoursLiteHackingDeviceAttackLast>
+  <ATPP_SettingsMaxNbHoursLiteHackingDeviceAttackLast>Максимальное количество часов, в течение которых продолжаться хакерская атака ({0}ч)</ATPP_SettingsMaxNbHoursLiteHackingDeviceAttackLast>
+  <ATPP_SettingsHideInactiveSurrogates>Скрыть неактивных суррогатов из списка колонистов</ATPP_SettingsHideInactiveSurrogates>
+  <ATPP_SettingsAndroidsOnlyHealedByCrafter>Андроиды могут быть исцелены только ремесленниками</ATPP_SettingsAndroidsOnlyHealedByCrafter>
+  <ATPP_SettingsMinDurationOfMindMentalBreak>Минимальная продолжительность психических расстройств у оцифрованных сознаний ({0}ч)</ATPP_SettingsMinDurationOfMindMentalBreak>
+  <ATPP_SettingsMaxDurationOfMindMentalBreak>Максимальная продолжительность психических расстройств у оцифрованных сознаний ({0}ч)</ATPP_SettingsMaxDurationOfMindMentalBreak>
+  <ATPP_SettingsSecToBootASkyCloudCore>Время запуска ядра SkyCloud({0}сек)</ATPP_SettingsSecToBootASkyCloudCore>
+  <ATPP_SettingsDisableAbilityOfSkyCloudServersToTalk>Отключить возможность говорить для ядра SkyCloud</ATPP_SettingsDisableAbilityOfSkyCloudServersToTalk>
+  <ATPP_SettingsNotRemoveAllTraitsOfBasicAndroids>Не удалять всечерты характера для андроидов T1 / T2</ATPP_SettingsNotRemoveAllTraitsOfBasicAndroids>
+  <ATPP_SettingsAndroidsCanEatLivingPlants>Андроиды могут есть посадки/растения</ATPP_SettingsAndroidsCanEatLivingPlants>
+  <ATPP_SettingsNotRemoveSkillsPassionForBasicAndroids>Не удалять все увлечения навыков (огоньки) для андроидов T1 / T2</ATPP_SettingsNotRemoveSkillsPassionForBasicAndroids>
+  <ATPP_SettingsVX3MaxSurrogateControllableAtOnce>Максимальное число суррогатов контролируемых одновременно с помощью VX3 ({0})</ATPP_SettingsVX3MaxSurrogateControllableAtOnce>
+  <ATPP_SettingsNbPointsProducedForSkillServers>Количество производимых очков (каждые 30 секунд) для {0} серверов навыков ({1})</ATPP_SettingsNbPointsProducedForSkillServers>
+
+  <ATPP_SettingsRandomSkillsMode>Skills are random</ATPP_SettingsRandomSkillsMode>
+  <ATPP_SettingsPreventM7T5AppearingInCharacterEditor>Предотвратить появление T5 / M7 на экране создания персонажей</ATPP_SettingsPreventM7T5AppearingInCharacterEditor>
+  <ATPP_SettingsMinHoursNaniteBankFramework>Минимальное количество часов требуемых для применения эффектов структурных слотов нанита ({0}ч)</ATPP_SettingsMinHoursNaniteBankFramework>
+  <ATPP_SettingsMaxHoursNaniteBankFramework>Максимальное количество часов требуемых для применения эффектов структурных слотов нанита ({0}ч)</ATPP_SettingsMaxHoursNaniteBankFramework>
+
+  <ATPP_SettingsNbSkillPointsPerSkill>Количество очков умений, необходимых для производства одного умения ({0})</ATPP_SettingsNbSkillPointsPerSkill>
+
+</LanguageData>

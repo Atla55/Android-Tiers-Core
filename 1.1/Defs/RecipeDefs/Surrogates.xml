@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+   <RecipeDef>
+      <defName>ATPP_CreateS1</defName>
+      <label>Create T1 Surrogate Android</label>
+      <description>Create a blank S1 Surrogate android from Plasteel and components.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSurrogateHost</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>75</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_S1SurrogateGeneratorAI>1</ATPP_S1SurrogateGeneratorAI>
+      </products>
+      <workAmount>11500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+      <defName>ATPP_CreateS2</defName>
+      <label>Create T2 Surrogate Android</label>
+      <description>Create a blank S2 Surrogate android from Plasteel and components.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSurrogateHost</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_S2SurrogateGeneratorAI>1</ATPP_S2SurrogateGeneratorAI>
+      </products>
+      <workAmount>13500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+
+	<RecipeDef>
+      <defName>ATPP_CreateS3</defName>
+      <label>Create T3 Surrogate Android</label>
+      <description>Create a blank S3 Surrogate android from Plasteel and components.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSurrogateHost</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>100</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>16</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>70</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_S3SurrogateGeneratorAI>1</ATPP_S3SurrogateGeneratorAI>
+      </products>
+      <workAmount>16500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+
+	
+	<RecipeDef>
+      <defName>ATPP_CreateS4</defName>
+      <label>Create T4 Surrogate Android</label>
+      <description>Create a blank S4 Surrogate android from Plasteel and components.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSurrogateHost</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>150</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>24</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>90</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_S4SurrogateGeneratorAI>1</ATPP_S4SurrogateGeneratorAI>
+      </products>
+      <workAmount>20000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	
+	
+	
+	
+	
+	
+
+   
+	
+	
+
+   
+	
+	
+	
+	
+	
+	<!-- Blank Androids -->
+	
+	<RecipeDef>
+      <defName>ATPP_CreateBlankT3</defName>
+      <label>Create blank neural network T3 Android</label>
+      <description>Create a blank (without initialized neural network) T3 android from Plasteel and components.</description>
+      <jobString>Making Blank Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>T3Androids</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>100</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>70</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_T3BlankGeneratorAI>1</ATPP_T3BlankGeneratorAI>
+      </products>
+      <workAmount>16500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+
+	
+	<RecipeDef>
+      <defName>ATPP_CreateBlankT4</defName>
+      <label>Create blank neural network T4 Surrogate Android</label>
+      <description>Create a blank (without initialized neural network) T4 Surrogate android from Plasteel and components.</description>
+      <jobString>Making Blank Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>T4Androids</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>125</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>5</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>90</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>AIPersonaCore</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_T4BlankGeneratorAI>1</ATPP_T4BlankGeneratorAI>
+      </products>
+      <workAmount>20000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<!-- TX Serie -->
+
+	
+	
+
+
+   
+	
+	
+
+   
+	
+	
+	
+	<!-- SM7 -->
+	<RecipeDef>
+      <defName>ATPP_CreateM7</defName>
+      <label>Create M7 Surrogate Mechanoid</label>
+      <description>Create a blank M7 Surrogate mechanoid from Plasteel and components.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSM7</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>250</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>600</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>32</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>12</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_M7SurrogateGeneratorAI>1</ATPP_M7SurrogateGeneratorAI>
+      </products>
+      <workAmount>55000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<!-- HellDrone -->
+	<RecipeDef>
+      <defName>ATPP_CreateHellDrone</defName>
+      <label>Create HellUnit Surrogate Android</label>
+      <description>Create a blank S-HellUnit Surrogate android from Plasteel and components.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSurrogateHost</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>150</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>38</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>90</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>5</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_SHUSurrogateGeneratorAI>1</ATPP_SHUSurrogateGeneratorAI>
+      </products>
+      <workAmount>20000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	
+	<ThingDef Name="ATPP_GeneratorAI" Abstract="True">
+        <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+        <selectable>true</selectable>
+        <drawerType>MapMeshAndRealTime</drawerType>
+        <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+        <repairEffect>Repair</repairEffect>
+        <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+        <filthLeaving>Filth_RubbleRock</filthLeaving>
+        <description>Creates an surrogate android.</description>
+        <graphicData>
+            <texPath>Things/Alpha</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <thingClass>ThingWithComps</thingClass>
+		<category>Filth</category>
+		<altitudeLayer>Filth</altitudeLayer>
+        <useHitPoints>True</useHitPoints>
+        <statBases>
+            <WorkToMake>550</WorkToMake>
+            <MaxHitPoints>150</MaxHitPoints>
+            <Flammability>0.1</Flammability>
+        </statBases>
+        <size>(1,1)</size>
+        <passability>Standable</passability>
+        <pathCost>200</pathCost>
+        <hasInteractionCell>false</hasInteractionCell>
+        <surfaceType>Item</surfaceType>
+        <tickerType>Normal</tickerType>
+    </ThingDef>
+
+    <ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_S1SurrogateGeneratorAI</defName>
+        <label>S1 Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>AndroidT1Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_S2SurrogateGeneratorAI</defName>
+        <label>S2 Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>AndroidT2Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_S3SurrogateGeneratorAI</defName>
+        <label>S3 Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>AndroidT3Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_S4SurrogateGeneratorAI</defName>
+        <label>S4 Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>AndroidT4Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_M7SurrogateGeneratorAI</defName>
+        <label>M7 Surrogate Mech</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>M7MechPawn</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SHUSurrogateGeneratorAI</defName>
+        <label>S-HellUnit Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>AndroidT4Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_T3BlankGeneratorAI</defName>
+        <label>T3 Blank Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_BlankAndroidSpawner">
+            <compClass>MOARANDROIDS.CompBlankAndroidSpawner</compClass>
+			<Pawnkind>AndroidT3Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_T4BlankGeneratorAI</defName>
+        <label>T4 Blank Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_BlankAndroidSpawner">
+            <compClass>MOARANDROIDS.CompBlankAndroidSpawner</compClass>
+			<Pawnkind>AndroidT4Colonist</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
+	
+</Defs>

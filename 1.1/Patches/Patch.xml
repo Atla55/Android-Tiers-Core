@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>	
+
+   <!-- VXX neural chip installations for vanilla humans -->
+   <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef/race[intelligence = "Humanlike"]/../recipes</xpath>
+    <value>
+	  <li>ATPP_InstallRXChip</li>
+	  <li>ATPP_InstallVX0Chip</li>
+      <li>ATPP_InstallVX1Chip</li>
+	  <li>ATPP_InstallVX2Chip</li>
+	  <li>ATPP_InstallVX3Chip</li>
+    </value>
+  </Operation>
+ 
+  
+  <!-- Painting and VXX neural chip installations -->
+    <Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		   <li Class="PatchOperationAdd">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName="AT_HellUnit"]/recipes</xpath>
+			<value>
+			  <li>ATPP_ApplyHealCPUSerum</li>
+			  <li>ATPP_ApplyHealCoolingSystem</li>
+			  <li>ATPP_ApplyHealFrameworkSystem</li>
+			  <li>ATPP_ApplyHydraulicNaniteBank</li>
+			  <li>ATPP_InstallRXChipOnAndroid</li>
+			  <li>ATPP_InstallVX0ChipOnAndroid</li>
+			  <li>ATPP_InstallVX1ChipOnAndroid</li>
+			  <li>ATPP_InstallVX2ChipOnAndroid</li>
+			  <li>ATPP_InstallVX3ChipOnAndroid</li>
+			  <li>ATPP_PaintAndroidFrameworkDefault</li>
+			  <li>ATPP_PaintAndroidFrameworkRed</li>
+			  <li>ATPP_PaintAndroidFrameworkOrange</li>
+			  <li>ATPP_PaintAndroidFrameworkYellow</li>
+			  <li>ATPP_PaintAndroidFrameworkKhaki</li>
+			  <li>ATPP_PaintAndroidFrameworkGreen</li>
+			  <li>ATPP_PaintAndroidFrameworkBlue</li>
+			  <li>ATPP_PaintAndroidFrameworkCyan</li>
+			  <li>ATPP_PaintAndroidFrameworkPurple</li>
+			  <li>ATPP_PaintAndroidFrameworkPink</li>
+			  <li>ATPP_PaintAndroidFrameworkBlack</li>
+			  <li>ATPP_PaintAndroidFrameworkWhite</li>
+			</value>
+		</li>
+	  </operations>
+    </Operation>
+  
+  	<Operation Class="PatchOperationSequence">
+		<success>Always</success>
+		<operations>
+		   <!-- VXX neural chip installations for modded humanoid alien races -->
+		   <li Class="PatchOperationAdd">
+			<xpath>Defs/AlienRace.ThingDef_AlienRace[defName != "Android1Tier" and defName != "Android2Tier" and defName != "Android3Tier" and defName != "Android4Tier" and defName != "Android5Tier" and defName != "AT_HellUnit"]/race[intelligence = "Humanlike"]/../recipes</xpath>
+			<value>
+			  <li>ATPP_InstallRXChip</li>
+			  <li>ATPP_InstallVX0Chip</li>
+			  <li>ATPP_InstallVX1Chip</li>
+			  <li>ATPP_InstallVX2Chip</li>
+			  <li>ATPP_InstallVX3Chip</li>
+			</value>
+		   </li>
+		  </operations>
+	</Operation>
+	
+	<Operation Class="PatchOperationSequence">
+  	<success>Always</success>
+		<operations>
+			<li Class="PatchOperationAdd">
+			<xpath>*/ThingDef[defName="TableMachining"]/recipes</xpath>
+				<value>
+					<li>ATPP_DisassembleAndroid</li>
+				</value>
+			</li>
+		</operations>
+    </Operation>
+</Patch>

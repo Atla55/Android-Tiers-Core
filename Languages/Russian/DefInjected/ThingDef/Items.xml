@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<ATPP_NanitesHydraulicSerum.label>Банк нанитов (гидравлические)</ATPP_NanitesHydraulicSerum.label>
+	<ATPP_NanitesHydraulicSerum.description>Одноразовый банк нанитов, настроенный на ремонт сломанных гидравлических систем андроидов (связанных со старостью).</ATPP_NanitesHydraulicSerum.description>
+	<ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>Используйте эту нанитную сыворотку, чтобы исправить возрастные проблемы андроидов</ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesCPUSerum.label>Банк нанитов (CPU)</ATPP_NanitesCPUSerum.label>
+	<ATPP_NanitesCPUSerum.description>Одноразовый банк нанитов, настроенный на восстановление сломанного искусственного разума системы андройда (связанной со старостью).</ATPP_NanitesCPUSerum.description>
+	<ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>Используйте эту нанитную сыворотку, чтобы исправить возрастные проблемы андроидов</ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesCoolingSerum.label>Банк нанитов (охлаждение)</ATPP_NanitesCoolingSerum.label>
+	<ATPP_NanitesCoolingSerum.description>Одноразовый банк нанитов, настроенный на ремонт сломанной системы охлаждения андроидов в случае перегрева (связанного со старостью).</ATPP_NanitesCoolingSerum.description>
+	<ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>Используйте эту нанитную сыворотку, чтобы исправить возрастные проблемы андроидов</ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesFrameSerum.label>Банк нанитов (каркас)</ATPP_NanitesFrameSerum.label>
+	<ATPP_NanitesFrameSerum.description>Одноразовый банк нанитов, настроенный на восстановление сломанного экзоскелета андроидов (связанного со старостью).</ATPP_NanitesFrameSerum.description>
+	<ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>Используйте эту нанитную сыворотку, чтобы исправить возрастные проблемы андроидов</ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>
+
+	<ATPP_AndroidNanokitBasic.label>Базовый нанокит </ATPP_AndroidNanokitBasic.label>
+	<ATPP_AndroidNanokitBasic.description>Набор, содержащий наноботов для лечения ран андроидов</ATPP_AndroidNanokitBasic.description>
+	
+	<ATPP_AndroidNanokitIntermediate.label>Средний нанокит</ATPP_AndroidNanokitIntermediate.label>
+	<ATPP_AndroidNanokitIntermediate.description>Набор, содержащий наноботов для лечения ран андроидов</ATPP_AndroidNanokitIntermediate.description>
+	
+	<ATPP_AndroidNanokitAdvanced.label>Расширенный нанокит</ATPP_AndroidNanokitAdvanced.label>
+	<ATPP_AndroidNanokitAdvanced.description>Набор, содержащий наноботов для лечения ран андроидов</ATPP_AndroidNanokitAdvanced.description>
+	
+	<ATPP_VX0Chip.label>Нейрочип VX0</ATPP_VX0Chip.label>
+	<ATPP_VX0Chip.description>Нейронный чип, который превращает его хозяина в биологический суррогат.</ATPP_VX0Chip.description>
+	
+	<ATPP_VX1Chip.label>Нейрочип VX1</ATPP_VX1Chip.label>
+	<ATPP_VX1Chip.description>Нейронный чип, позволяющий его хозяину дистанционно управлять суррогатными андроидами.</ATPP_VX1Chip.description>
+	
+	<ATPP_VX2Chip.label>Нейрочип VX2</ATPP_VX2Chip.label>
+	<ATPP_VX2Chip.description>Нейронный чип, позволяющий его хозяину дистанционно управлять суррогатными андроидами и переставлять/дублировать его сознание.</ATPP_VX2Chip.description>
+	
+	<ATPP_VX3Chip.label>Нейрочип VX3</ATPP_VX3Chip.label>
+	<ATPP_VX3Chip.description>Нейронный чип, позволяющий его хозяину дистанционно управлять несколькими андроидами серии SX или биологическими суррогатами одновременно и дублировать / переставлять их разум.</ATPP_VX3Chip.description>
+</LanguageData>

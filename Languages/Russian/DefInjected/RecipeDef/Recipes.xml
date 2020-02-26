@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ATPP_DisassembleAndroid.label>Разобрать тело мертвого андроида</ATPP_DisassembleAndroid.label>
+  <ATPP_DisassembleAndroid.description>Разобрать мертвого андроида на составные части.</ATPP_DisassembleAndroid.description>
+  <ATPP_DisassembleAndroid.jobString>Разборка андроида.</ATPP_DisassembleAndroid.jobString>
+  
+  <ATPP_Make_NanitesHydraulicSerum.label>сделать нанитный слот (гидравлический)</ATPP_Make_NanitesHydraulicSerum.label>
+  <ATPP_Make_NanitesHydraulicSerum.description>Сделать андроид гидравлическую нанитную сыворотку, позволяющую восстановить ваши андроиды (связанные со старостью).</ATPP_Make_NanitesHydraulicSerum.description>
+  <ATPP_Make_NanitesHydraulicSerum.jobString>Создание андроид нанит сыворотки</ATPP_Make_NanitesHydraulicSerum.jobString>
+  
+  <ATPP_Make_NanitesCPUSerum.label>сделать нанитный слот(CPU)</ATPP_Make_NanitesCPUSerum.label>
+  <ATPP_Make_NanitesCPUSerum.description>Сделайте андройд CPU нанитный слот, позволяющий восстанавливать CPU ваших андроидов (связанный с возрастом).</ATPP_Make_NanitesCPUSerum.description>
+  <ATPP_Make_NanitesCPUSerum.jobString>Создание андроид нанит сыворотки</ATPP_Make_NanitesCPUSerum.jobString>
+  
+  <ATPP_Make_NanitesCoolingSerum.label>сделать нанитный слот (охлаждение)</ATPP_Make_NanitesCoolingSerum.label>
+  <ATPP_Make_NanitesCoolingSerum.description>Сделать андроид охлаждающую нанитную сыворотку, позволяющую восстановить систему охлаждения ваших андроидов (связана со старостью).</ATPP_Make_NanitesCoolingSerum.description>
+  <ATPP_Make_NanitesCoolingSerum.jobString>Создание андроид нанит сыворотки</ATPP_Make_NanitesCoolingSerum.jobString>
+  
+  <ATPP_Make_NanitesFrameSerum.label>сделать нанитовый слот (каркас)</ATPP_Make_NanitesFrameSerum.label>
+  <ATPP_Make_NanitesFrameSerum.description>Сделать андроид каркас из нанитной сыворотки, позволяющей восстановить экзоскелет вашего андроида (связанный со старостью).</ATPP_Make_NanitesFrameSerum.description>
+  <ATPP_Make_NanitesFrameSerum.jobString>Создание андроид нанит сыворотки</ATPP_Make_NanitesFrameSerum.jobString>
+  
+  <ATPP_Make_VX0Chip.label>сделать нейрочип VX0</ATPP_Make_VX0Chip.label>
+  <ATPP_Make_VX0Chip.description>Сделать чип VX0, нейронный чип, который превращает его хозяина в биологический суррогат.</ATPP_Make_VX0Chip.description>
+  <ATPP_Make_VX0Chip.jobString>Создание нейрочипа VX0.</ATPP_Make_VX0Chip.jobString>
+  
+  <ATPP_Make_VX1Chip.label>сделать нейрочип VX1</ATPP_Make_VX1Chip.label>
+  <ATPP_Make_VX1Chip.description>Сделать чип VX1, позволяющий хозяйну удаленно управлять любой суррогатной андроидной серией.</ATPP_Make_VX1Chip.description>
+  <ATPP_Make_VX1Chip.jobString>Создание нейрочипа VX1.</ATPP_Make_VX1Chip.jobString>
+  
+  <ATPP_Make_VX2Chip.label>создание нейрочипа VX2</ATPP_Make_VX2Chip.label>
+  <ATPP_Make_VX2Chip.description>Сделать чип VX2, позволяющий хозяйну дистанционно управлять любой суррогатной андроидной серией и продублировать / переставить разум.</ATPP_Make_VX2Chip.description>
+  <ATPP_Make_VX2Chip.jobString>Создание нейрочипа VX2.</ATPP_Make_VX2Chip.jobString>
+  
+  <ATPP_Make_VX3Chip.label>создание нейрочипа VX3</ATPP_Make_VX3Chip.label>
+  <ATPP_Make_VX3Chip.description>Сделать чип VX3, позволяющий хозяину удаленно управлять несколькими андроидами серии SX или биологическими суррогатами одновременно и дублировать / переставлять их разум.</ATPP_Make_VX3Chip.description>
+  <ATPP_Make_VX3Chip.jobString>Создание нейрочипа VX3.</ATPP_Make_VX3Chip.jobString>
+  
+  <ATPP_InstallVX2Chip.label>установка нейрочипа VX2</ATPP_InstallVX2Chip.label>
+  <ATPP_InstallVX2Chip.description>Установите нейрочип VX2, позволяющий хозяйну удаленно управлять суррогатными андроидами и продублировать их.</ATPP_InstallVX2Chip.description>
+  <ATPP_InstallVX2Chip.jobString>Установка нейрочипа VX2.</ATPP_InstallVX2Chip.jobString>
+  
+  <ATPP_InstallVX2ChipOnAndroid.label>установка нейрочипа VX2</ATPP_InstallVX2ChipOnAndroid.label>
+  <ATPP_InstallVX2ChipOnAndroid.description>Установите нейронный чип VX2, позволяющий хозяйну удаленно управлять суррогатными андроидами и продублировать их.</ATPP_InstallVX2ChipOnAndroid.description>
+  <ATPP_InstallVX2ChipOnAndroid.jobString>Установка нейрочипа VX2.</ATPP_InstallVX2ChipOnAndroid.jobString>
+  
+  <ATPP_InstallVX3Chip.label>установка нейрочипа VX3</ATPP_InstallVX3Chip.label>
+  <ATPP_InstallVX3Chip.description>Установите нейрочип VX3, позволяющий хозяину удаленно управлять несколькими андроидами или биологическими суррогатами серии SX одновременно и дублировать / переставлять их разум.</ATPP_InstallVX3Chip.description>
+  <ATPP_InstallVX3Chip.jobString>Установка нейрочипа VX3.</ATPP_InstallVX3Chip.jobString>
+  
+  <ATPP_InstallVX3ChipOnAndroid.label>установка нейрочипа VX3</ATPP_InstallVX3ChipOnAndroid.label>
+  <ATPP_InstallVX3ChipOnAndroid.description>Установите нейронный чип VX3, позволяющий хозяину удаленно управлять несколькими андроидами или биологическими суррогатами серии SX одновременно и дублировать / переставлять их разум.</ATPP_InstallVX3ChipOnAndroid.description>
+  <ATPP_InstallVX3ChipOnAndroid.jobString>Установка нейрочипа VX3.</ATPP_InstallVX3ChipOnAndroid.jobString>
+  
+  <ATPP_InstallVX0Chip.label>установка нейрочипа VX0</ATPP_InstallVX0Chip.label>
+  <ATPP_InstallVX0Chip.description>Установите нейрочип VX0, нейронный чип, который превращает его хозяина в биологический суррогат.</ATPP_InstallVX0Chip.description>
+  <ATPP_InstallVX0Chip.jobString>Установка нейрочипа VX0.</ATPP_InstallVX0Chip.jobString>
+  
+  <ATPP_InstallVX1Chip.label>установка нейрочипа VX1</ATPP_InstallVX1Chip.label>
+  <ATPP_InstallVX1Chip.description>Установите нейрочип VX1, позволяющий хозяйну удаленно управлять серией суррогатных андроидов.</ATPP_InstallVX1Chip.description>
+  <ATPP_InstallVX1Chip.jobString>Установка нейрочипа VX1.</ATPP_InstallVX1Chip.jobString>
+  
+  <ATPP_InstallVX1ChipOnAndroid.label>установка нейрочипа VX1</ATPP_InstallVX1ChipOnAndroid.label>
+  <ATPP_InstallVX1ChipOnAndroid.description>Установите нейрочип VX1, позволяющий хозяйну удаленно управлять серией суррогатных андроидов.</ATPP_InstallVX1ChipOnAndroid.description>
+  <ATPP_InstallVX1ChipOnAndroid.jobString>Установка нейрочипа VX1.</ATPP_InstallVX1ChipOnAndroid.jobString>
+  
+  <ATPP_CreateS1.label>Создать T1 суррогатного андройда (S1)</ATPP_CreateS1.label>
+  <ATPP_CreateS1.description>Создать пустой S1 суррогат андройд из пластили и компонентов.</ATPP_CreateS1.description>
+  <ATPP_CreateS1.jobString>Создание суррогатного андройда S1</ATPP_CreateS1.jobString>
+  
+  <ATPP_CreateS2.label>Создать T2 суррогатного андройда (S2)</ATPP_CreateS2.label>
+  <ATPP_CreateS2.description>Создать пустой S2 суррогат андройд из пластили и компонентов.</ATPP_CreateS2.description>
+  <ATPP_CreateS2.jobString>Создание суррогатного андройда S2</ATPP_CreateS2.jobString>
+  
+  <ATPP_CreateS3.label>Создать T3 суррогатного андройда (S3)</ATPP_CreateS3.label>
+  <ATPP_CreateS3.description>Создать пустой S3 суррогат андройд из пластили и компонентов.</ATPP_CreateS3.description>
+  <ATPP_CreateS3.jobString>Создание суррогатного андройда S4</ATPP_CreateS3.jobString>
+
+  <ATPP_CreateS4.label>Создать T4 суррогатного андройда (S4)</ATPP_CreateS4.label>
+  <ATPP_CreateS4.description>Создать пустой S4 суррогат андройд из пластили и компонентов.</ATPP_CreateS4.description>
+  <ATPP_CreateS4.jobString>Создание суррогатного андройда S4</ATPP_CreateS4.jobString>  
+  
+  <ATPP_CreateHellDrone.label>Создать HellUnit суррогатного андройда (S-HU)</ATPP_CreateHellDrone.label>
+  <ATPP_CreateHellDrone.description>Создать пустой S-HU андройд из пластили и компонентов.</ATPP_CreateHellDrone.description>
+  <ATPP_CreateHellDrone.jobString>Создание S-HU андройда.</ATPP_CreateHellDrone.jobString>  
+  
+  <ATPP_CreateM7.label>Создать M7 суррогатного механоида (SM7)</ATPP_CreateM7.label>
+  <ATPP_CreateM7.description>Создать пустой SM7 механоид из пластили и компонентов.</ATPP_CreateM7.description>
+  <ATPP_CreateM7.jobString>Создание SM7 механоида.</ATPP_CreateM7.jobString>  
+  
+</LanguageData>

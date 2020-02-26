@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<ATPP_Android2TXKind.label>Colons androide TX2</ATPP_Android2TXKind.label>
+	<ATPP_Android2TXKind.labelPlural>Colon androide TX2</ATPP_Android2TXKind.labelPlural>
+	
+	<ATPP_Android3TXKind.label>Colon androide TX3</ATPP_Android3TXKind.label>
+	<ATPP_Android3TXKind.labelPlural>Colons androide TX3</ATPP_Android3TXKind.labelPlural>
+	
+	<ATPP_Android4TXKind.label>Colon androide TX4</ATPP_Android4TXKind.label>
+	<ATPP_Android4TXKind.labelPlural>Colons androide TX4</ATPP_Android4TXKind.labelPlural>
+	
+	<ATPP_Android2KTXKind.label>Colon androide TX2K</ATPP_Android2KTXKind.label>
+	<ATPP_Android2KTXKind.labelPlural>Colons androide TX2K</ATPP_Android2KTXKind.labelPlural>
+	
+	<ATPP_Android2KITXKind.label>Colon androide TX2KI</ATPP_Android2KITXKind.label>
+	<ATPP_Android2KITXKind.labelPlural>Colons androide TX2KI</ATPP_Android2KITXKind.labelPlural>
+	
+	<ATPP_Android3ITXKind.label>Colon androide TX3I</ATPP_Android3ITXKind.label>
+	<ATPP_Android3ITXKind.labelPlural>Colons androide TX3I</ATPP_Android3ITXKind.labelPlural>
+	
+	<ATPP_Android4ITXKind.label>Colon androide TX4I</ATPP_Android4ITXKind.label>
+	<ATPP_Android4ITXKind.labelPlural>Colons androide TX4I</ATPP_Android4TXKind.labelPlural>
+	
+</LanguageData>

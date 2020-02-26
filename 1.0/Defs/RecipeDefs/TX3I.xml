@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef Abstract="True" Name="ATPP_BaseCreateSX3I">
+      <description>Create a TX3I surrogate Android.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>100</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>16</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>70</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+
+	  <researchPrerequisite>T3Androids</researchPrerequisite>
+      <workAmount>18500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_BaseCreateSX3I">
+	    <defName>ATPP_CreateSX3I</defName>
+		<label>Create TX3I surrogate Android</label>
+		<products>
+			<ATPP_SX3ISurrogateGeneratorAI>1</ATPP_SX3ISurrogateGeneratorAI>
+		</products>
+	</RecipeDef>
+	<RecipeDef ParentName="ATPP_BaseCreateSX3I">
+	    <defName>ATPP_CreateSX3IFemale</defName>
+		<label>Create TX3I female surrogate Android</label>
+		<products>
+			<ATPP_SX3IFemaleSurrogateGeneratorAI>1</ATPP_SX3IFemaleSurrogateGeneratorAI>
+		</products>
+	</RecipeDef>
+	
+	
+	<RecipeDef Name="ATPP_BaseCreateTX3I" Abstract="True">
+      <description>Create a TX3I Android.</description>
+      <jobString>Making Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>100</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>10</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>70</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+	  <researchPrerequisite>T3Androids</researchPrerequisite>
+      <workAmount>26500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_BaseCreateTX3I">
+	  <defName>ATPP_CreateTX3IAndroid</defName>
+      <label>Create TX3I male Android</label>
+	  <products>
+         <ATPP_TX3IAndroidGeneratorAI>1</ATPP_TX3IAndroidGeneratorAI>
+      </products>
+	</RecipeDef>
+	<RecipeDef ParentName="ATPP_BaseCreateTX3I">
+	  <defName>ATPP_CreateTX3IFemaleAndroid</defName>
+      <label>Create TX3I female Android</label>
+	  <products>
+         <ATPP_TX3IFemaleAndroidGeneratorAI>1</ATPP_TX3IFemaleAndroidGeneratorAI>
+      </products>
+	</RecipeDef>
+	
+	
+	
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_TX3IAndroidGeneratorAI</defName>
+        <label>TX3I male Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>ATPP_Android3ITXKind</Pawnkind>
+			<gender>0</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_TX3IFemaleAndroidGeneratorAI</defName>
+        <label>TX3I female Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>ATPP_Android3ITXKind</Pawnkind>
+			<gender>1</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SX3ISurrogateGeneratorAI</defName>
+        <label>SX3I male Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>ATPP_Android3ITXKind</Pawnkind>
+			<gender>0</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SX3IFemaleSurrogateGeneratorAI</defName>
+        <label>SX3I female Surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>ATPP_Android3ITXKind</Pawnkind>
+			<gender>1</gender>
+		</li>
+        </comps>
+    </ThingDef>
+</Defs>

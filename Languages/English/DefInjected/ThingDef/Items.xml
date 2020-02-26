@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<ATPP_NanitesHydraulicSerum.label>Nanites Bank (Hydraulic)</ATPP_NanitesHydraulicSerum.label>
+	<ATPP_NanitesHydraulicSerum.description>A one-use bank of nanites tuned to repair broken android hydraulic systems (related to old age).</ATPP_NanitesHydraulicSerum.description>
+	<ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>Use this nanite serum to fix android age issues</ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesCPUSerum.label>Nanites Bank (CPU)</ATPP_NanitesCPUSerum.label>
+	<ATPP_NanitesCPUSerum.description>A one-use bank of nanites tuned to repair broken android artificial brain systems (related to old age).</ATPP_NanitesCPUSerum.description>
+	<ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>Use this nanite serum to fix android age issues</ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesCoolingSerum.label>Nanites Bank (Cooling)</ATPP_NanitesCoolingSerum.label>
+	<ATPP_NanitesCoolingSerum.description>A one-use bank of nanites tuned to repair broken android cooling systems in case of overheating (related to old age).</ATPP_NanitesCoolingSerum.description>
+	<ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>Use this nanite serum to fix android age issues</ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>
+	
+	<ATPP_NanitesFrameSerum.label>Nanites Bank (Framework)</ATPP_NanitesFrameSerum.label>
+	<ATPP_NanitesFrameSerum.description>A one-use bank of nanites tuned to repair broken android exoskeletons (related to old age).</ATPP_NanitesFrameSerum.description>
+	<ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>Use this nanite serum to fix android age issues</ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>
+
+	<ATPP_AndroidNanokitBasic.label>Basic Nanokit</ATPP_AndroidNanokitBasic.label>
+	<ATPP_AndroidNanokitBasic.description>A kit containing nanobots to treat the wounds of androids</ATPP_AndroidNanokitBasic.description>
+	
+	<ATPP_AndroidNanokitIntermediate.label>Intermediate Nanokit</ATPP_AndroidNanokitIntermediate.label>
+	<ATPP_AndroidNanokitIntermediate.description>A kit containing nanobots to treat the wounds of androids</ATPP_AndroidNanokitIntermediate.description>
+	
+	<ATPP_AndroidNanokitAdvanced.label>Advanced Nanokit</ATPP_AndroidNanokitAdvanced.label>
+	<ATPP_AndroidNanokitAdvanced.description>A kit containing nanobots to treat the wounds of androids</ATPP_AndroidNanokitAdvanced.description>
+	
+	<ATPP_RXChip.label>RX Neural Chip</ATPP_RXChip.label>
+	<ATPP_RXChip.description>A neural chip acting as a personal SkyMind relay.</ATPP_RXChip.description>
+	
+	<ATPP_VX0Chip.label>VX0 Neural Chip</ATPP_VX0Chip.label>
+	<ATPP_VX0Chip.description>A neural chip which transforms it's host into a biological surrogate.</ATPP_VX0Chip.description>
+	
+	<ATPP_VX1Chip.label>VX1 Neural Chip</ATPP_VX1Chip.label>
+	<ATPP_VX1Chip.description>A neural chip allowing it's host to remotely control any SX series android or biological surrogate.</ATPP_VX1Chip.description>
+	
+	<ATPP_VX2Chip.label>VX2 Neural Chip</ATPP_VX2Chip.label>
+	<ATPP_VX2Chip.description>A neural chip allowing it's host to remotely control any SX series android or biological surrogate and permute/duplicate their mind.</ATPP_VX2Chip.description>
+	
+	<ATPP_VX3Chip.label>VX3 Neural Chip</ATPP_VX3Chip.label>
+	<ATPP_VX3Chip.description>A neural chip allowing it's host to remotely control mulitple SX series androids or biological surrogates at the same time and permute/duplicate their mind.</ATPP_VX3Chip.description>
+	
+	<ATPP_T1ArtificialBrain.label>Artificial Brain T1</ATPP_T1ArtificialBrain.label>
+	<ATPP_T1ArtificialBrain.description>An artificial T1 brain, allowing to transform a T1 surrogate into a blank neural network android</ATPP_T1ArtificialBrain.description>
+	
+	<ATPP_T2ArtificialBrain.label>Artificial Brain T2</ATPP_T2ArtificialBrain.label>
+	<ATPP_T2ArtificialBrain.description>An artificial T2 brain, allowing to transform a T2 surrogate into a blank neural network android</ATPP_T2ArtificialBrain.description>
+	
+	<ATPP_T3ArtificialBrain.label>Artificial Brain T3</ATPP_T3ArtificialBrain.label>
+	<ATPP_T3ArtificialBrain.description>An artificial T3 brain, allowing to transform a T3 surrogate into a blank neural network android</ATPP_T3ArtificialBrain.description>
+	
+	<ATPP_T4ArtificialBrain.label>Artificial Brain T4</ATPP_T4ArtificialBrain.label>
+	<ATPP_T4ArtificialBrain.description>An artificial T4 brain, allowing to transform a T4 surrogate into a blank neural network android</ATPP_T4ArtificialBrain.description>
+</LanguageData>

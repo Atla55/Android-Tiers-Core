@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ATPP_ConsciousnessUpload.label>Загрузка разума</ATPP_ConsciousnessUpload.label>
+  <ATPP_ConsciousnessUpload.labelNoun>Загрузка разума</ATPP_ConsciousnessUpload.labelNoun>
+  
+  <ATPP_NoHost.label>Нет соединения</ATPP_NoHost.label>
+  <ATPP_NoHost.labelNoun>Нет соединения</ATPP_NoHost.labelNoun>
+  
+  <ATPP_HediffVX0Chip.label>Нейрочип VX0</ATPP_HediffVX0Chip.label>
+  <ATPP_HediffVX0Chip.labelNoun>Нейронный чип для превращения хозяина в биологического суррогата</ATPP_HediffVX0Chip.labelNoun>
+  
+  <ATPP_HediffVX1Chip.label>Нейрочип VX1</ATPP_HediffVX1Chip.label>
+  <ATPP_HediffVX1Chip.labelNoun>Нейрочип VX1</ATPP_HediffVX1Chip.labelNoun>
+  
+  <ATPP_HediffVX2Chip.label>Нейрочип VX2</ATPP_HediffVX2Chip.label>
+  <ATPP_HediffVX2Chip.labelNoun>Нейрочип VX2</ATPP_HediffVX2Chip.labelNoun>
+  
+  <ATPP_HediffVX3Chip.label>Нейрочип VX3</ATPP_HediffVX3Chip.label>
+  <ATPP_HediffVX3Chip.labelNoun>Нейрочип VX3</ATPP_HediffVX3Chip.labelNoun>
+  
+  <ATPP_InRemoteControlMode.label>Включен режим дистанционного управления</ATPP_InRemoteControlMode.label>
+  <ATPP_InRemoteControlMode.labelNoun>Включен режим дистанционного управления</ATPP_InRemoteControlMode.labelNoun>
+  
+  <ATPP_RemotelyControlled.label>Дистанционно управляемый</ATPP_RemotelyControlled.label>
+  <ATPP_RemotelyControlled.labelNoun>Дистанционно управляемый</ATPP_RemotelyControlled.labelNoun>
+  
+  <ATPP_SolarFlareAndroidImpact.label>Солнечная вспышка</ATPP_SolarFlareAndroidImpact.label>
+  <ATPP_SolarFlareAndroidImpact.Noun>Солнечная вспышка</ATPP_SolarFlareAndroidImpact.Noun>
+  
+  <ATPP_LowNetworkSignal.label>Низкий сишнал сети SkyMind</ATPP_LowNetworkSignal.label>
+  <ATPP_LowNetworkSignal.LabelNoun>Низкий сигнал сети SkyMind</ATPP_LowNetworkSignal.LabelNoun>
+  
+</LanguageData>

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ATPP_ResearchSM7.label>SM7战斗智能人形</ATPP_ResearchSM7.label>
+  <ATPP_ResearchSM7.description>研究如何制造SM7战斗智能人形。</ATPP_ResearchSM7.description>
+
+  <ATPP_ResearchServerI100Serie.label>I100服务器</ATPP_ResearchServerI100Serie.label>
+  <ATPP_ResearchServerI100Serie.description>研究制造I100安全防护服务器，便宜但嘈杂，体积大且效率不高。</ATPP_ResearchServerI100Serie.description>
+
+  <ATPP_ResearchServerI300Serie.label>I300服务器</ATPP_ResearchServerI300Serie.label>
+  <ATPP_ResearchServerI300Serie.description>研究制造I300安全防护服务器，嘈杂但效率中等。</ATPP_ResearchServerI300Serie.description>
+
+  <ATPP_ResearchServerI500Serie.label>I500服务器</ATPP_ResearchServerI500Serie.label>
+  <ATPP_ResearchServerI500Serie.description>研究制造I300安全防护服务器，造价昂贵，但效率很高。</ATPP_ResearchServerI500Serie.description>
+
+  <ATPP_ResearchSkyCloudCore.label>天云核心服务器</ATPP_ResearchSkyCloudCore.label>
+  <ATPP_ResearchSkyCloudCore.description>研究制造天云核心服务器，这是一台功能齐全的超级计算机，可以运行多个数字化思维线程，并让通过链接到天维网络的每个设备与现实世界进行交互沟通。</ATPP_ResearchSkyCloudCore.description>
+
+  <ATPP_ResearchVX2Chip.label>VX2神经芯片</ATPP_ResearchVX2Chip.label>
+  <ATPP_ResearchVX2Chip.description>研究制造VX2芯片，该芯片允许宿主远程控制SX智能人形，并通过天维网络传输复制思维</ATPP_ResearchVX2Chip.description>
+
+  <ATPP_ResearchVX1Chip.label>VX1神经芯片</ATPP_ResearchVX1Chip.label>
+  <ATPP_ResearchVX1Chip.description>研究制造VX1芯片，该芯片允许宿主通过天维网络远程控制SX智能人形。</ATPP_ResearchVX1Chip.description>
+
+  <ATPP_ResearchVX0Chip.label>VX0神经芯片</ATPP_ResearchVX0Chip.label>
+  <ATPP_ResearchVX0Chip.description>研究制造VX1芯片，该芯片允许将宿主思维转化为生物植入。</ATPP_ResearchVX0Chip.description>
+
+  <ATPP_ResearchSkyMindWAN.label>天维V2天线</ATPP_ResearchSkyMindWAN.label>
+  <ATPP_ResearchSkyMindWAN.description>研究如何制造天维V2天线，作为思维传输的基础，并允许最多15个思维线程同时通过V2天线链接。</ATPP_ResearchSkyMindWAN.description>
+
+  <ATPP_ResearchSurrogateHost.label>SX智能人形</ATPP_ResearchSurrogateHost.label>
+  <ATPP_ResearchSurrogateHost.description>研究制造SX智能人形，这是类似于TX型，但思维容器被更先进的遥控系统所取代。</ATPP_ResearchSurrogateHost.description>
+
+  <ATPP_ResearchSkyMindLAN.label>天维V1天线</ATPP_ResearchSkyMindLAN.label>
+  <ATPP_ResearchSkyMindLAN.description>研究制造天维V1天线，作为思维传输的基础，并允许最多3个思维线程同时通过V1天线链接。</ATPP_ResearchSkyMindLAN.description>
+
+  <ATPP_ResearchCharchingStation.label>充电站</ATPP_ResearchCharchingStation.label>
+  <ATPP_ResearchCharchingStation.description>允许最多8个智能人形同时充电，而不是通过其生物质电池进行充电。</ATPP_ResearchCharchingStation.description>
+
+  <ATPP_ResearchCraftBasicNanoKit.label>初级纳米修复套件</ATPP_ResearchCraftBasicNanoKit.label>
+  <ATPP_ResearchCraftBasicNanoKit.description>允许制造初级纳米修复套件，以修复受损的智能人形。</ATPP_ResearchCraftBasicNanoKit.description>
+
+  <ATPP_ResearchCraftIntermediateNanoKit.label>中级纳米修复套件</ATPP_ResearchCraftIntermediateNanoKit.label>
+  <ATPP_ResearchCraftIntermediateNanoKit.description>允许制造中级纳米修复套件，以修复受损的智能人形。</ATPP_ResearchCraftIntermediateNanoKit.description>
+
+  <ATPP_ResearchCraftAdvancedNanoKit.label>级纳米修复套件</ATPP_ResearchCraftAdvancedNanoKit.label>
+  <ATPP_ResearchCraftAdvancedNanoKit.description>允许制造高级纳米修复套件，以修复受损的智能人形。</ATPP_ResearchCraftAdvancedNanoKit.description>
+
+  <ATPP_ResearchCraftRepairNaniteBanks.label>修理老化故障</ATPP_ResearchCraftRepairNaniteBanks.label>
+  <ATPP_ResearchCraftRepairNaniteBanks.description>允许用纳米级工艺修复老化智能人形故障。</ATPP_ResearchCraftRepairNaniteBanks.description>
+
+
+</LanguageData>

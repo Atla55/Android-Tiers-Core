@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <ATPP_DisassembleAndroid.label>拆卸智能人形</ATPP_DisassembleAndroid.label>
+  <ATPP_DisassembleAndroid.description>将坏掉的智能人形拆卸成其组成部分。</ATPP_DisassembleAndroid.description>
+  <ATPP_DisassembleAndroid.jobString>正在拆卸智能人形。</ATPP_DisassembleAndroid.jobString>
+
+  <ATPP_Make_VX0Chip.label>制作VX0神经芯片</ATPP_Make_VX0Chip.label>
+  <ATPP_Make_VX0Chip.description>制作VX0芯片，宿主思维转变为生物植入。</ATPP_Make_VX0Chip.description>
+  <ATPP_Make_VX0Chip.jobString>正在制作VX0神经芯片。</ATPP_Make_VX0Chip.jobString>
+
+  <ATPP_Make_VX1Chip.label>制作VX1神经芯片</ATPP_Make_VX1Chip.label>
+  <ATPP_Make_VX1Chip.description>制作VX1芯片，宿主可以远程控制智能人形。</ATPP_Make_VX1Chip.description>
+  <ATPP_Make_VX1Chip.jobString>正在制作VX1神经芯片。</ATPP_Make_VX1Chip.jobString>
+
+  <ATPP_Make_VX2Chip.label>制作VX2神经芯片</ATPP_Make_VX2Chip.label>
+  <ATPP_Make_VX2Chip.description>制作VX2芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_Make_VX2Chip.description>
+  <ATPP_Make_VX2Chip.jobString>正在制作VX2神经芯片。</ATPP_Make_VX2Chip.jobString>
+
+  <ATPP_Make_NanitesHydraulicSerum.label>制作智能人形纳米液</ATPP_Make_NanitesHydraulicSerum.label>
+  <ATPP_Make_NanitesHydraulicSerum.description>实用智能人形纳米液可以修复智能人形。</ATPP_Make_NanitesHydraulicSerum.description>
+  <ATPP_Make_NanitesHydraulicSerum.jobString>正在制作智能人形纳米液。</ATPP_Make_NanitesHydraulicSerum.jobString>
+
+  <ATPP_Make_NanitesCPUSerum.label>制作智能人形思维容器纳米液</ATPP_Make_NanitesCPUSerum.label>
+  <ATPP_Make_NanitesCPUSerum.description>制作智能人形思维容器纳米液。</ATPP_Make_NanitesCPUSerum.description>
+  <ATPP_Make_NanitesCPUSerum.jobString>正在制作智能人形思维容器纳米液。</ATPP_Make_NanitesCPUSerum.jobString>
+
+  <ATPP_Make_NanitesCoolingSerum.label>制作智能人形纳米冷却液</ATPP_Make_NanitesCoolingSerum.label>
+  <ATPP_Make_NanitesCoolingSerum.description>制作智能人形纳米冷却液。</ATPP_Make_NanitesCoolingSerum.description>
+  <ATPP_Make_NanitesCoolingSerum.jobString>正在制作智能人形纳米冷却液。</ATPP_Make_NanitesCoolingSerum.jobString>
+
+  <ATPP_Make_NanitesFrameSerum.label>制作智能人形纳米骨架液</ATPP_Make_NanitesFrameSerum.label>
+  <ATPP_Make_NanitesFrameSerum.description>制作智能人形纳米骨架液。</ATPP_Make_NanitesFrameSerum.description>
+  <ATPP_Make_NanitesFrameSerum.jobString>正在制作智能人形纳米骨架液。</ATPP_Make_NanitesFrameSerum.jobString>
+
+
+</LanguageData>

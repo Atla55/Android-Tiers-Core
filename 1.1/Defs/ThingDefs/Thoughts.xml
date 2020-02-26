@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  
+  <ThoughtDef>
+    <defName>ATPP_AssistingMindBoost</defName>
+	<thoughtClass>MOARANDROIDS.Thought_AssistedByMinds</thoughtClass>
+    <workerClass>MOARANDROIDS.ThoughtWorker_AssistedByMinds</workerClass>
+    <stages>
+      <li>
+        <label>Assisting minds from SkyCloud</label>
+        <description>I am assisted by SkyCloud minds in my work i feel guided</description>
+        <baseMoodEffect>1</baseMoodEffect>
+      </li>
+    </stages>
+	<validWhileDespawned>true</validWhileDespawned>
+  </ThoughtDef>
+  
+ </Defs>

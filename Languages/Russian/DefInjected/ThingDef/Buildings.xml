@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<ATPP_ReloadStation.label>Зарядная станция андроида</ATPP_ReloadStation.label>
+	<ATPP_ReloadStation.description>Зарядная станция для андроидов, она может одновременно вместить до 8 андроидов.</ATPP_ReloadStation.description>
+	
+	<ATPP_SkyMindLAN.label>SkyMind антенна V1</ATPP_SkyMindLAN.label>
+	<ATPP_SkyMindLAN.description>Антенна SkyMind V1 принимает до 3 одновременных клиентов, она излучает беспроводную сеть, которая позволяет загружать разум от одного колониста к другому и дистанционно управлять андроидами серии SX.</ATPP_SkyMindLAN.description>
+	
+	<ATPP_SkyMindWAN.label>SkyMind антенна V2</ATPP_SkyMindWAN.label>
+	<ATPP_SkyMindWAN.description>Антенна SkyMind V2 принимает до 15 одновременных клиентов, она излучает беспроводную сеть, которая позволяет загружать разум от одного колониста к другому и дистанционно управлять андроидами серии SX.</ATPP_SkyMindWAN.description>
+	
+	<ATPP_SkyMindRelayTower.label>SkyMind ретранслятор</ATPP_SkyMindRelayTower.label>
+	<ATPP_SkyMindRelayTower.description>Ретрансляционная вышка SkyMind усиливает сигнал антенн и предотвращает ухудшение контроля суррогатов на больших расстояниях.</ATPP_SkyMindRelayTower.description>
+	
+	<ATPP_I100Security.label>I-100 (Безопасность)</ATPP_I100Security.label>
+	<ATPP_I100Security.description>Файрвол сервер, отвечающий за защиту вашей сети SkyMind от кибератак и вирусов.</ATPP_I100Security.description>
+	
+	<ATPP_I100Hacking.label>I-100 (Хакинг)</ATPP_I100Hacking.label>
+	<ATPP_I100Hacking.description>Сервер взлома, позволяющий взломать клиентов, подключенных к сети SkyMind.</ATPP_I100Hacking.description>
+	
+	<ATPP_I100Skill.label>I-100 (Умения)</ATPP_I100Skill.label>
+	<ATPP_I100Skill.description>Сервер навыков позволяет увеличивать очки навыков андроидам подключенным к сети SkyMind.</ATPP_I100Skill.description>
+	
+	<ATPP_I300Security.label>I-300 (Безопасность)</ATPP_I300Security.label>
+	<ATPP_I300Security.description>Файрвол сервер, отвечающий за защиту вашей сети SkyMind от кибератак и вирусов.</ATPP_I300Security.description>
+	
+	<ATPP_I300Hacking.label>I-300 (Хакинг)</ATPP_I300Hacking.label>
+	<ATPP_I300Hacking.description>Сервер взлома, позволяющий взломать клиентов, подключенных к сети SkyMind.</ATPP_I300Hacking.description>
+	
+	<ATPP_I300Skill.label>I-300 (Умения)</ATPP_I300Skill.label>
+	<ATPP_I300Skill.description>Сервер навыков позволяет увеличивать очки навыков андроидам подключенным к сети SkyMind.</ATPP_I300Skill.description>
+	
+	<ATPP_I500Security.label>I-500 (Безопасность)</ATPP_I500Security.label>
+	<ATPP_I500Security.description>Файрвол сервер, отвечающий за защиту вашей сети SkyMind от кибератак и вирусов.</ATPP_I500Security.description>
+	
+	<ATPP_I500Hacking.label>I-500 (Хакинг)</ATPP_I500Hacking.label>
+	<ATPP_I500Hacking.description>Сервер взлома, позволяющий взломать клиентов, подключенных к сети SkyMind.</ATPP_I500Hacking.description>
+	
+	<ATPP_I500Skill.label>I-500 (Умения)</ATPP_I500Skill.label>
+	<ATPP_I500Skill.description>Сервер навыков позволяет увеличивать очки навыков андроидам подключенным к сети SkyMind.</ATPP_I500Skill.description>
+	
+	<ATPP_AndroidPod.label>Капсула Андроидов</ATPP_AndroidPod.label>
+	<ATPP_AndroidPod.description>Капсула андроидов, где андроиды могут быть отремонтированы, храниться в ожидании оператора (в случае суррогатов) и заряжаться при подключении к источнику питания.</ATPP_AndroidPod.description>
+	
+	<ATPP_AndroidPodMech.label>Капсула M7</ATPP_AndroidPodMech.label>
+	<ATPP_AndroidPodMech.description>Гиганская капсула для M7 механоидов где они могут быть отремонтированы, храниться в ожидании оператора (в случае суррогатов) и заряжаться при подключении к источнику питания.</ATPP_AndroidPodMech.description>
+	
+	<ATPP_SkyCloudCore.label>Ядро SkyCloud</ATPP_SkyCloudCore.label>
+	<ATPP_SkyCloudCore.description>Суперкомпьютер, позволяющий управлять всеми устройствами, подключенными к сети SkyMind, а также загружать в память оцифрованные мозги ваших колонистов, чтобы сделать их почти бессмертными и всезнающими.</ATPP_SkyCloudCore.description>
+	
+</LanguageData>

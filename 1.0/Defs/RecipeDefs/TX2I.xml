@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<RecipeDef Abstract="True" Name="ATPP_BaseCreateSX2I">
+      <description>Create a blank TX2I surrogate Android from Plasteel.</description>
+      <jobString>Making Surrogate Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+	  <researchPrerequisite>T2Androids</researchPrerequisite>
+      <workAmount>15500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_BaseCreateSX2I">
+	    <defName>ATPP_CreateSX2I</defName>
+		<label>Create TX2I male surrogate Android</label>
+		  <products>
+			 <ATPP_SX2ISurrogateGeneratorAI>1</ATPP_SX2ISurrogateGeneratorAI>
+		  </products>
+	</RecipeDef>
+	<RecipeDef ParentName="ATPP_BaseCreateSX2I">
+	    <defName>ATPP_CreateSX2IFemale</defName>
+		<label>Create TX2I female surrogate Android</label>
+		  <products>
+			 <ATPP_SX2IFemaleSurrogateGeneratorAI>1</ATPP_SX2IFemaleSurrogateGeneratorAI>
+		  </products>
+	</RecipeDef>
+	
+	
+	<RecipeDef Abstract="true" Name="ATPP_BaseCreateTX2I">
+      <description>Create a blank TX2I Android from Plasteel.</description>
+      <jobString>Making Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>16</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+	  <researchPrerequisite>T2Androids</researchPrerequisite>
+      <workAmount>22500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_BaseCreateTX2I">
+	  <defName>ATPP_CreateTX2IAndroid</defName>
+      <label>Create TX2I male Android</label>
+	  <products>
+         <ATPP_TX2IAndroidGeneratorAI>1</ATPP_TX2IAndroidGeneratorAI>
+      </products>
+	</RecipeDef>
+	<RecipeDef ParentName="ATPP_BaseCreateTX2I">
+	  <defName>ATPP_CreateTX2IFemaleAndroid</defName>
+      <label>Create TX2I female Android</label>
+	  <products>
+         <ATPP_TX2IFemaleAndroidGeneratorAI>1</ATPP_TX2IFemaleAndroidGeneratorAI>
+      </products>
+	</RecipeDef>
+	
+
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SX2ISurrogateGeneratorAI</defName>
+        <label>SX2I male surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>ATPP_Android2ITXKind</Pawnkind>
+			<gender>0</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_SX2IFemaleSurrogateGeneratorAI</defName>
+        <label>SX2I female surrogate Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.CompProperties_SurrogateSpawner">
+            <compClass>MOARANDROIDS.CompSurrogateSpawner</compClass>
+			<Pawnkind>ATPP_Android2ITXKind</Pawnkind>
+			<gender>1</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_TX2IAndroidGeneratorAI</defName>
+        <label>TX2I male Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>ATPP_Android2ITXKind</Pawnkind>
+			<gender>0</gender>
+		</li>
+        </comps>
+    </ThingDef>
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_TX2IFemaleAndroidGeneratorAI</defName>
+        <label>TX2I female Android</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>ATPP_Android2ITXKind</Pawnkind>
+			<gender>1</gender>
+		</li>
+        </comps>
+    </ThingDef>
+</Defs>

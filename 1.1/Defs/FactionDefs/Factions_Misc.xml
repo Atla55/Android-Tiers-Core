@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<FactionDef>
+		<defName>Abomination</defName>
+		<label>Fractal Mutant</label>
+		<description>These mutants are quick masses of twisted and tortured flesh, able to heal even the most major of wounds. This is why humans shouldn't consume fractal pills.</description>
+		<pawnsPlural>Fractal Mutants</pawnsPlural>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<fixedName>Mutant</fixedName>
+		<humanlikeFaction>false</humanlikeFaction>
+		<hidden>true</hidden>
+		<permanentEnemy>true</permanentEnemy>
+		<autoFlee>false</autoFlee>
+		<techLevel>Neolithic</techLevel>
+		<canUseAvoidGrid>false</canUseAvoidGrid>
+		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+	</FactionDef>
+
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>PlayerColonyAndroid</defName>
+		<label>New Android Arrivals</label>
+		<description>Your Android colony.</description>
+		<isPlayer>true</isPlayer>
+		<backstoryCategories>
+			<li>Civil</li>
+		</backstoryCategories>
+		<basicMemberKind>AndroidT2ColonistGeneral</basicMemberKind>
+		<pawnsPlural>colonists</pawnsPlural>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Industrial</techLevel>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<hairTags>
+			<li>Urban</li>
+		</hairTags>
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Synthread</li>
+				<li>Cloth</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+
+
+	<FactionDef>
+		<defName>AndroidRebellionAtlas</defName>
+		<label>Android Insurrection</label>
+		<description>A group of androids that once lived under complete obedience to their human owners, now collected here after an uprising on their home planet. They deem humans to be below them and unworthy of life in general, except under special circumstances such as; selling themselves in service to their new leaders, so that they may live under enslavement for the rest of their days.</description>
+		<pawnsPlural>Androids</pawnsPlural>
+		<settlementGenerationWeight>0.3</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<maxCountAtGameStart>1</maxCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<permanentEnemy>true</permanentEnemy>
+		<leaderTitle>overlord</leaderTitle>
+		<expandingIconTexture>Things/Icons/AndroidBase</expandingIconTexture>
+		<colorSpectrum>
+			<li>(0.95, 0.9, 0.92)</li>
+			<li>(0.9, 0.9, 0.9)</li>
+			<li>(0.92, 0.92, 0.96)</li>
+		</colorSpectrum>
+		<factionNameMaker>NamerFactionBaseAndroid</factionNameMaker>
+		<techLevel>Ultra</techLevel>
+		<backstoryCategories>
+			<li>BigMeanies</li>
+		</backstoryCategories>
+		<geneticVariance>1</geneticVariance>
+		<hairTags>
+			<li>Punk</li>
+		</hairTags>
+		<allowedArrivalTemperatureRange>
+			<min>-60</min>
+			<max>55</max>
+		</allowedArrivalTemperatureRange>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0,35)</li>
+				<li>(70, 50)</li>
+				<li>(700, 100)</li>
+				<li>(1300, 150)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>100</commonality>
+				<options>
+					<AndroidT1RaiderFactionSpecific>8</AndroidT1RaiderFactionSpecific>
+					<AndroidT2RaiderFactionSpecific>3</AndroidT2RaiderFactionSpecific>
+					<ATPP_AndroidTX2RaiderFactionSpecific>2</ATPP_AndroidTX2RaiderFactionSpecific>
+					<ATPP_AndroidTX2KIRaiderFactionSpecific>2</ATPP_AndroidTX2KIRaiderFactionSpecific>
+					<AndroidT3RaiderFactionSpecific>1</AndroidT3RaiderFactionSpecific>
+					<ATPP_AndroidTX3IRaiderFactionSpecific>1</ATPP_AndroidTX3IRaiderFactionSpecific>
+					<AndroidT4RaiderFactionSpecific>1</AndroidT4RaiderFactionSpecific>
+					<ATPP_AndroidTX4RaiderFactionSpecific>1</ATPP_AndroidTX4RaiderFactionSpecific>
+					<AndroidT1SlaveFactionSpecific>8</AndroidT1SlaveFactionSpecific>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>25</commonality>
+				<options>
+					<ATPP_AndroidTX2RaiderFactionSpecific>9</ATPP_AndroidTX2RaiderFactionSpecific>
+					<ATPP_AndroidTX2KRaiderFactionSpecific>2</ATPP_AndroidTX2KRaiderFactionSpecific>
+					<ATPP_AndroidTX3RaiderFactionSpecific>4</ATPP_AndroidTX3RaiderFactionSpecific>
+					<ATPP_AndroidTX4RaiderFactionSpecific>1</ATPP_AndroidTX4RaiderFactionSpecific>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>40</commonality>
+				<options>
+					<ATPP_AndroidTX2IRaiderFactionSpecific>6</ATPP_AndroidTX2IRaiderFactionSpecific>
+					<ATPP_AndroidTX2RaiderFactionSpecific>4</ATPP_AndroidTX2RaiderFactionSpecific>
+					<ATPP_AndroidTX2KIRaiderFactionSpecific>5</ATPP_AndroidTX2KIRaiderFactionSpecific>
+					<ATPP_AndroidTX4IRaiderFactionSpecific>1</ATPP_AndroidTX4IRaiderFactionSpecific>
+					<AndroidT1SlaveFactionSpecific>4</AndroidT1SlaveFactionSpecific>
+				</options>
+			</li>
+			<li>
+				<kindDef>Combat</kindDef>
+				<commonality>10</commonality>
+				<options>
+					<ATPP_AndroidTX2RaiderFactionSpecific>6</ATPP_AndroidTX2RaiderFactionSpecific>
+					<ATPP_AndroidTX2IRaiderFactionSpecific>3</ATPP_AndroidTX2IRaiderFactionSpecific>
+					<ATPP_AndroidTX2KIRaiderFactionSpecific>8</ATPP_AndroidTX2KIRaiderFactionSpecific>
+					<ATPP_AndroidTX3IRaiderFactionSpecific>2</ATPP_AndroidTX3IRaiderFactionSpecific>
+				</options>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<AndroidT1RaiderFactionSpecific>2</AndroidT1RaiderFactionSpecific>
+					<AndroidT2RaiderFactionSpecific>2</AndroidT2RaiderFactionSpecific>
+					<ATPP_AndroidTX2RaiderFactionSpecific>1</ATPP_AndroidTX2RaiderFactionSpecific>
+					<ATPP_AndroidTX2KIRaiderFactionSpecific>4</ATPP_AndroidTX2KIRaiderFactionSpecific>
+					<AndroidT3RaiderFactionSpecific>3</AndroidT3RaiderFactionSpecific>
+					<ATPP_AndroidTX3RaiderFactionSpecific>1</ATPP_AndroidTX3RaiderFactionSpecific>
+					<ATPP_AndroidTX3IRaiderFactionSpecific>2</ATPP_AndroidTX3IRaiderFactionSpecific>
+					<AndroidT4RaiderFactionSpecific>2</AndroidT4RaiderFactionSpecific>
+					<ATPP_AndroidTX4IRaiderFactionSpecific>4</ATPP_AndroidTX4IRaiderFactionSpecific>
+					<ATPP_AndroidTX4RaiderFactionSpecific>1</ATPP_AndroidTX4RaiderFactionSpecific>
+					<AndroidT1SlaveFactionSpecific>1</AndroidT1SlaveFactionSpecific>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+	</FactionDef>
+
+	<FactionDef ParentName="HumanFactionBase">
+		<defName>AndroidFriendliesAtlas</defName>
+		<label>Civil Androids</label>
+		<description>The androids that make up this faction have either crashed here or were made here, they wish to live peaceful lives without conflict and generally see humanity as a friend rather than a danger. Their colonies tend to be high tech in comparison to the rest of the Rimworld, not uncommonly seen utilising advanced charge weaponry when defending them from raiders. \n\n This faction usually trades high-tech goods along with the basic bulk supplies.</description>
+		<colorSpectrum>
+			<li>(0.65, 0.60, 0.70)</li>
+			<li>(0.95, 0.90, 1)</li>
+		</colorSpectrum>
+		<startingGoodwill>
+			<min>0</min>
+			<max>10</max>
+		</startingGoodwill>
+		<naturalColonyGoodwill>
+			<min>-50</min>
+			<max>50</max>
+		</naturalColonyGoodwill>
+		<pawnSingular>android</pawnSingular>
+		<pawnsPlural>androids</pawnsPlural>
+		<listOrderPriority>35</listOrderPriority>
+		<settlementGenerationWeight>0.5</settlementGenerationWeight>
+		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<canMakeRandomly>true</canMakeRandomly>
+		<canSiege>true</canSiege>
+		<canStageAttacks>true</canStageAttacks>
+		<leaderTitle>grand leader</leaderTitle>
+		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<factionNameMaker>NamerFactionCollectiveAndroid</factionNameMaker>
+		<settlementNameMaker>NamerSettlementCollectiveAndroid</settlementNameMaker>
+		<techLevel>Ultra</techLevel>
+		<backstoryCategories>
+			<li>AndroidGeneral</li>
+			<li>CollectiveSoldiers</li>
+		</backstoryCategories>
+		<geneticVariance>0.8</geneticVariance>
+		<hairTags>
+			<li>Rural</li>
+		</hairTags>
+		<caravanTraderKinds>
+			<li>Caravan_AndroidCollective_BulkGoods</li>
+			<li>Caravan_AndroidCollective_CombatSupplier</li>
+			<li>Caravan_AndroidCollective_AndroidMerchant</li>
+			<li>Caravan_AndroidCollective_HighTech</li>
+		</caravanTraderKinds>
+		<visitorTraderKinds>
+			<li>Visitor_AndroidCollective_Standard</li>
+		</visitorTraderKinds>
+		<baseTraderKinds>
+			<li>Base_AndroidCollective_Standard</li>
+		</baseTraderKinds>
+		<allowedArrivalTemperatureRange>
+			<min>-50</min>
+			<max>55</max>
+		</allowedArrivalTemperatureRange>
+		<maxPawnCostPerTotalPointsCurve>
+			<points>
+				<li>(0,35)</li>
+				<li>(70, 50)</li>
+				<li>(700, 100)</li>
+				<li>(1300, 150)</li>
+				<li>(100000, 10000)</li>
+			</points>
+		</maxPawnCostPerTotalPointsCurve>
+		<pawnGroupMakers>
+			<li>
+				<kindDef>Combat</kindDef>
+				<options>
+					<AndroidT1CollectiveColonist>2</AndroidT1CollectiveColonist>
+					<AndroidT1CollectiveSoldier>8</AndroidT1CollectiveSoldier>
+					<AndroidT2CollectiveSoldier>4</AndroidT2CollectiveSoldier>
+					<ATPP_AndroidTX2CollectiveSoldier>2</ATPP_AndroidTX2CollectiveSoldier>
+					<ATPP_AndroidTX2ICollectiveSoldier>1</ATPP_AndroidTX2ICollectiveSoldier>
+					<AndroidT3CollectiveSoldier>1</AndroidT3CollectiveSoldier>
+					<ATPP_AndroidTX3ICollectiveSoldier>3</ATPP_AndroidTX3ICollectiveSoldier>
+					<ATPP_AndroidTX3CollectiveSoldier>1</ATPP_AndroidTX3CollectiveSoldier>
+					<AndroidT4CollectiveSoldier>1</AndroidT4CollectiveSoldier>
+					<ATPP_AndroidTX4ICollectiveSoldier>2</ATPP_AndroidTX4ICollectiveSoldier>
+					<ATPP_AndroidTX4CollectiveSoldier>1</ATPP_AndroidTX4CollectiveSoldier>
+					<AndroidT4CollectiveLeader>2.5</AndroidT4CollectiveLeader>
+				</options>
+			</li>
+			<li>
+				<kindDef>Peaceful</kindDef>
+				<options>
+					<AndroidT1CollectiveColonist>20</AndroidT1CollectiveColonist>
+					<AndroidT1CollectiveSoldier>6</AndroidT1CollectiveSoldier>
+					<ATPP_AndroidTX2CollectiveSoldier>3</ATPP_AndroidTX2CollectiveSoldier>
+					<ATPP_AndroidTX3ICollectiveSoldier>3</ATPP_AndroidTX3ICollectiveSoldier>
+					<AndroidT3CollectiveColonist>10</AndroidT3CollectiveColonist>
+				</options>
+			</li>
+			<li>
+				<kindDef>Trader</kindDef>
+				<traders>
+					<AndroidT2CollectiveTrader>1</AndroidT2CollectiveTrader>
+				</traders>
+				<carriers>
+					<Muffalo>6</Muffalo>
+					<AndroidMuff>5</AndroidMuff>
+					<Dromedary>4</Dromedary>
+					<Alpaca>2</Alpaca>
+					<Elephant>1</Elephant>
+				</carriers>
+				<guards>
+					<AndroidT1CollectiveColonist>5</AndroidT1CollectiveColonist>
+					<AndroidT1CollectiveSoldier>7</AndroidT1CollectiveSoldier>
+					<AndroidT2CollectiveSoldier>3</AndroidT2CollectiveSoldier>
+					<ATPP_AndroidTX2CollectiveSoldier>3</ATPP_AndroidTX2CollectiveSoldier>
+					<AndroidT3CollectiveSoldier>2.5</AndroidT3CollectiveSoldier>
+					<ATPP_AndroidTX3CollectiveSoldier>1</ATPP_AndroidTX3CollectiveSoldier>
+					<ATPP_AndroidTX3ICollectiveSoldier>2</ATPP_AndroidTX3ICollectiveSoldier>
+				</guards>
+			</li>
+			<li>
+				<kindDef>Settlement</kindDef>
+				<options>
+					<AndroidT1CollectiveColonist>1</AndroidT1CollectiveColonist>
+					<AndroidT1CollectiveSoldier>2</AndroidT1CollectiveSoldier>
+					<AndroidT4CollectiveSoldier>1</AndroidT4CollectiveSoldier>
+					<ATPP_AndroidTX2KICollectiveSoldier>3</ATPP_AndroidTX2KICollectiveSoldier>
+					<ATPP_AndroidTX4CollectiveSoldier>1</ATPP_AndroidTX4CollectiveSoldier>
+					<ATPP_AndroidTX4ICollectiveSoldier>2</ATPP_AndroidTX4ICollectiveSoldier>
+					<AndroidT2CollectiveSoldier>2</AndroidT2CollectiveSoldier>
+					<ATPP_AndroidTX2ICollectiveSoldier>1</ATPP_AndroidTX2ICollectiveSoldier>
+					<ATPP_AndroidTX2CollectiveSoldier>1</ATPP_AndroidTX2CollectiveSoldier>
+					<AndroidT3CollectiveSoldier>6</AndroidT3CollectiveSoldier>
+					<ATPP_AndroidTX3ICollectiveSoldier>2</ATPP_AndroidTX3ICollectiveSoldier>
+					<AndroidT4CollectiveLeader>6</AndroidT4CollectiveLeader>
+				</options>
+			</li>
+		</pawnGroupMakers>
+		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+	</FactionDef>
+</Defs>

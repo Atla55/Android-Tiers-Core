@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ATPP_ConsciousnessUpload.label>Téléchargement de conscience</ATPP_ConsciousnessUpload.label>
+  <ATPP_ConsciousnessUpload.labelNoun>Téléchargement de conscience</ATPP_ConsciousnessUpload.labelNoun>
+  
+  <ATPP_NoHost.label>Aucun hôte connecté</ATPP_NoHost.label>
+  <ATPP_NoHost.labelNoun>Aucun hôte connecté</ATPP_NoHost.labelNoun>
+  
+  <ATPP_HediffRXChip.label>Puce neuronal RX</ATPP_HediffRXChip.label>
+  <ATPP_HediffRXChip.labelNoun>Une puce neuronale servant de relais SkyMind personnel.</ATPP_HediffRXChip.labelNoun>
+  
+  <ATPP_HediffVX0Chip.label>Puce neuronal VX0</ATPP_HediffVX0Chip.label>
+  <ATPP_HediffVX0Chip.labelNoun>Une puce neuronale permettant de transformer l'hôte en un androide de substitution biologique</ATPP_HediffVX0Chip.labelNoun>
+  
+  <ATPP_HediffVX1Chip.label>Puce neuronal VX1</ATPP_HediffVX1Chip.label>
+  <ATPP_HediffVX1Chip.labelNoun>Puce neuronal VX1</ATPP_HediffVX1Chip.labelNoun>
+  
+  <ATPP_HediffVX2Chip.label>Puce neuronal VX2</ATPP_HediffVX2Chip.label>
+  <ATPP_HediffVX2Chip.labelNoun>Puce neuronal VX2</ATPP_HediffVX2Chip.labelNoun>
+  
+  <ATPP_HediffVX3Chip.label>Puce neuronal VX3</ATPP_HediffVX3Chip.label>
+  <ATPP_HediffVX3Chip.labelNoun>Puce neuronal VX3</ATPP_HediffVX3Chip.labelNoun>
+  
+  <ATPP_InRemoteControlMode.label>Mode contrôle à distance activé</ATPP_InRemoteControlMode.label>
+  <ATPP_InRemoteControlMode.labelNoun>Mode contrôle à distance activé</ATPP_InRemoteControlMode.labelNoun>
+  
+  <ATPP_RemotelyControlled.label>Contrôlé à distance</ATPP_RemotelyControlled.label>
+  <ATPP_RemotelyControlled.labelNoun>Contrôlé à distance</ATPP_RemotelyControlled.labelNoun>
+  
+  <ATPP_SolarFlareAndroidImpact.label>Eruption solaire</ATPP_SolarFlareAndroidImpact.label>
+  <ATPP_SolarFlareAndroidImpact.labelNoun>Eruption solaire</ATPP_SolarFlareAndroidImpact.labelNoun>
+  
+  <ATPP_LowNetworkSignal.label>Signal réseau SkyMind faible</ATPP_LowNetworkSignal.label>
+  <ATPP_LowNetworkSignal.labelNoun>Signal réseau SkyMind faible</ATPP_LowNetworkSignal.labelNoun>
+  
+  <ATPP_Rusted.label>Rouillé</ATPP_Rusted.label>
+  <ATPP_Rusted.labelNoun>Rouillé</ATPP_Rusted.labelNoun>
+  
+  <ATPP_BlankAndroid.label>Réseau de neurone vide</ATPP_BlankAndroid.label>
+  <ATPP_BlankAndroid.labelNoun>Réseau de neurone vide</ATPP_BlankAndroid.labelNoun>
+</LanguageData>

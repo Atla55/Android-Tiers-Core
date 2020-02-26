@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted12TX</defName>
+    <headOffset>(0.04, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2/Body/Naked_MaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Male</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted22TX</defName>
+    <headOffset>(0.04, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2/Body/Naked_MaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Male</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted12TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2/Body/Naked_FemaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted22TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2/Body/Naked_FemaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+   <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted12KTX</defName>
+    <headOffset>(0.04, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2K/Body/Naked_MaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Male</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted22KTX</defName>
+    <headOffset>(0.04, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2K/Body/Naked_MaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Male</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted12KTX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2K/Body/Naked_FemaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted22KTX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX2K/Body/Naked_FemaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+   <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted13TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX3/Body/Naked_MaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted23TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX3/Body/Naked_MaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+   <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted13TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX3/Body/Naked_FemaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted23TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX3/Body/Naked_FemaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted14TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX4/Body/Naked_MaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeMaleHurted24TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX4/Body/Naked_MaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+   <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted14TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX4/Body/Naked_FemaleHurted1</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+  <BodyTypeDef>
+    <defName>ATPP_BodyTypeFemaleHurted24TX</defName>
+    <headOffset>(0.10, 0.34)</headOffset>
+    <bodyNakedGraphicPath>Androids/Models/TX4/Body/Naked_FemaleHurted2</bodyNakedGraphicPath>
+    <bodyDessicatedGraphicPath>Things/Pawn/Humanlike/Bodies/Dessicated/Dessicated_Thin</bodyDessicatedGraphicPath>
+  </BodyTypeDef>
+  
+</Defs>

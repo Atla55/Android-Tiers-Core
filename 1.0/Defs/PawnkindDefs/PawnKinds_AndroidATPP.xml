@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!-- Player faction -->
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android2TXKind</defName>
+		<label>TX2 Android Colonist</label>
+		<race>ATPP_Android2TX</race>
+		<backstoryCategories>
+			<li>AndroidTiers</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android3TXKind</defName>
+		<label>TX3 Android Colonist</label>
+		<race>ATPP_Android3TX</race>
+		<backstoryCategories>
+			<li>AndroidTiers</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android4TXKind</defName>
+		<label>TX4 Android Colonist</label>
+		<race>ATPP_Android4TX</race>
+		<backstoryCategories>
+			<li>AndroidTiers</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android2KTXKind</defName>
+		<label>TX2K Android Colonist</label>
+		<race>ATPP_Android2KTX</race>
+		<backstoryCategories>
+			<li>ATPP_T2KBackstory</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android2KITXKind</defName>
+		<label>TX2KI Android Colonist</label>
+		<race>ATPP_Android2KITX</race>
+		<backstoryCategories>
+			<li>ATPP_T2KBackstory</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android2ITXKind</defName>
+		<label>TX2I Android Colonist</label>
+		<race>ATPP_Android2ITX</race>
+		<backstoryCategories>
+			<li>AndroidTiers</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android3ITXKind</defName>
+		<label>TX3I Android Colonist</label>
+		<race>ATPP_Android3ITX</race>
+		<backstoryCategories>
+			<li>AndroidTiers</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>ATPP_Android4ITXKind</defName>
+		<label>TX4I Android Colonist</label>
+		<race>ATPP_Android4ITX</race>
+		<backstoryCategories>
+			<li>AndroidTiers</li>
+		</backstoryCategories>
+		<maxGenerationAge>1</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+	
+	<!-- TX RAIDERS -->
+	
+	<PawnKindDef Abstract="True" Name="ATPP_AndroidTX2RaiderBase">
+    <labelPlural>Raider androids</labelPlural>
+	    <backstoryCategories>
+	  <li>BigMeanies</li>
+    </backstoryCategories>
+	    <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
+    <combatPower>120</combatPower>
+	<maxGenerationAge>17</maxGenerationAge>
+			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.4</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialMilitaryBasic</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>300</min>
+      <max>550</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0.05</apparelAllowHeadgearChance>
+    <weaponMoney>
+      <min>500</min>
+      <max>1000</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+    <techHediffsMoney>
+      <min>2000</min>
+      <max>3000</max>
+    </techHediffsMoney>
+    <combatEnhancingDrugsCount>
+      <min>0</min>
+      <max>2</max>
+    </combatEnhancingDrugsCount>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.08</techHediffsChance>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="ATPP_AndroidTX2RaiderBase">
+	<defName>ATPP_AndroidTX2RaiderFactionSpecific</defName>
+    <label>TX2 Android Raider</label>
+	<race>ATPP_Android2TX</race>
+  </PawnKindDef>
+  <PawnKindDef ParentName="ATPP_AndroidTX2RaiderBase">
+	<defName>ATPP_AndroidTX2IRaiderFactionSpecific</defName>
+    <label>TX2I Android Raider</label>
+	<race>ATPP_Android2ITX</race>
+  </PawnKindDef>
+
+  
+  <PawnKindDef Abstract="True" Name="ATPP_AndroidTX2KRaiderBase">
+	<labelPlural>Raider androids</labelPlural>
+	    <backstoryCategories>
+      <li>BigMeanies</li>
+    </backstoryCategories>
+	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
+    <combatPower>180</combatPower>
+	<maxGenerationAge>17</maxGenerationAge>
+			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.4</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>500</min>
+      <max>850</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0.05</apparelAllowHeadgearChance>
+    <weaponMoney>
+      <min>600</min>
+      <max>1200</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+	  <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <techHediffsMoney>
+      <min>2000</min>
+      <max>3000</max>
+    </techHediffsMoney>
+    <combatEnhancingDrugsCount>
+      <min>0</min>
+      <max>2</max>
+    </combatEnhancingDrugsCount>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.28</techHediffsChance>
+  </PawnKindDef>
+  
+  
+  <PawnKindDef ParentName="ATPP_AndroidTX2KRaiderBase">
+	<defName>ATPP_AndroidTX2KRaiderFactionSpecific</defName>
+    <label>TX2K Android Raider</label>
+	<race>ATPP_Android2KTX</race>
+  </PawnKindDef>
+  <PawnKindDef ParentName="ATPP_AndroidTX2KRaiderBase">
+	<defName>ATPP_AndroidTX2KIRaiderFactionSpecific</defName>
+    <label>TX2KI Android Raider</label>
+	<race>ATPP_Android2KITX</race>
+  </PawnKindDef>
+
+
+  <PawnKindDef Abstract="True" Name="ATPP_AndroidTX3RaiderBase">
+    <labelPlural>Raider androids</labelPlural>
+	    <backstoryCategories>
+      <li>BigMeanies</li>
+    </backstoryCategories>
+	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
+    <combatPower>170</combatPower>
+	<maxGenerationAge>17</maxGenerationAge>
+			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+    <gearHealthRange>
+      <min>0.5</min>
+      <max>1.4</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+      <li>IndustrialMilitaryBasic</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>500</min>
+      <max>850</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0.05</apparelAllowHeadgearChance>
+    <weaponMoney>
+      <min>600</min>
+      <max>1200</max>
+    </weaponMoney>
+    <weaponTags>
+      <li>Gun</li>
+	  <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <techHediffsMoney>
+      <min>2000</min>
+      <max>3000</max>
+    </techHediffsMoney>
+    <combatEnhancingDrugsCount>
+      <min>0</min>
+      <max>2</max>
+    </combatEnhancingDrugsCount>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.28</techHediffsChance>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="ATPP_AndroidTX3RaiderBase">
+    <defName>ATPP_AndroidTX3RaiderFactionSpecific</defName>
+    <label>TX3 Android Raider</label>
+	<race>ATPP_Android3TX</race>
+  </PawnKindDef>
+  <PawnKindDef ParentName="ATPP_AndroidTX3RaiderBase">
+    <defName>ATPP_AndroidTX3IRaiderFactionSpecific</defName>
+    <label>TX3I Android Raider</label>
+	<race>ATPP_Android3ITX</race>
+  </PawnKindDef>
+ 
+  <PawnKindDef Abstract="True" Name="ATPP_AndroidTX4RaiderBase">
+    <labelPlural>Raider androids</labelPlural>
+	    <backstoryCategories>
+      <li>BigMeanies</li>
+    </backstoryCategories>
+	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
+    <combatPower>220</combatPower>
+	<maxGenerationAge>17</maxGenerationAge>
+			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+    <gearHealthRange>
+      <min>0.8</min>
+      <max>1.4</max>
+    </gearHealthRange>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+      <li>IndustrialAdvanced</li>
+   	  <li>IndustrialMilitaryBasic</li>
+      <li>IndustrialMilitaryAdvanced</li>
+    </apparelTags>
+    <apparelMoney>
+      <min>600</min>
+      <max>2650</max>
+    </apparelMoney>
+    <apparelAllowHeadgearChance>0.05</apparelAllowHeadgearChance>
+    <weaponMoney>
+      <min>1600</min>
+      <max>4000</max>
+    </weaponMoney>
+    <weaponTags>
+	  <li>IndustrialGunAdvanced</li>
+    </weaponTags>
+    <techHediffsMoney>
+      <min>2000</min>
+      <max>8000</max>
+    </techHediffsMoney>
+    <combatEnhancingDrugsCount>
+      <min>0</min>
+      <max>2</max>
+    </combatEnhancingDrugsCount>
+    <techHediffsTags>
+      <li>Advanced</li>
+    </techHediffsTags>
+    <techHediffsChance>0.5</techHediffsChance>
+  </PawnKindDef>
+  
+  <PawnKindDef ParentName="ATPP_AndroidTX4RaiderBase">
+	<defName>ATPP_AndroidTX4RaiderFactionSpecific</defName>
+    <label>TX4 Android Raider</label>
+	<race>ATPP_Android4TX</race>
+  </PawnKindDef>
+  <PawnKindDef ParentName="ATPP_AndroidTX4RaiderBase">
+	<defName>ATPP_AndroidTX4IRaiderFactionSpecific</defName>
+    <label>TX4I Android Raider</label>
+	<race>ATPP_Android4ITX</race>
+  </PawnKindDef>
+  
+  <!-- Collective TX soldiers -->
+  
+  <PawnKindDef Abstract="True" Name="ATPP_AndroidTX2CollectiveBase">
+		<labelPlural>Android Soldiers</labelPlural>
+		<backstoryCategories>
+			<li>CollectiveSoldiers</li>
+		</backstoryCategories>
+		<baseRecruitDifficulty>0.70</baseRecruitDifficulty>
+		<combatPower>120</combatPower>
+		<maxGenerationAge>17</maxGenerationAge>
+		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
+		<aiAvoidCover>false</aiAvoidCover>
+		<gearHealthRange>
+			<min>0.5</min>
+			<max>1.4</max>
+		</gearHealthRange>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialMilitaryBasic</li>
+			<li>Outlander</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>200</min>
+			<max>850</max>
+		</apparelMoney>
+		<apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+		<weaponMoney>
+			<min>1600</min>
+			<max>2000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>Gun</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>2000</min>
+			<max>3000</max>
+		</techHediffsMoney>
+		<combatEnhancingDrugsCount>
+			<min>0</min>
+			<max>2</max>
+		</combatEnhancingDrugsCount>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsChance>0.08</techHediffsChance>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="ATPP_AndroidTX2CollectiveBase">
+		<defName>ATPP_AndroidTX2CollectiveSoldier</defName>
+		<label>TX2 Android Soldier</label>
+		<race>ATPP_Android2TX</race>
+	</PawnKindDef>
+		<PawnKindDef ParentName="ATPP_AndroidTX2CollectiveBase">
+		<defName>ATPP_AndroidTX2ICollectiveSoldier</defName>
+		<label>TX2I Android Soldier</label>
+		<race>ATPP_Android2ITX</race>
+	</PawnKindDef>
+  
+    <PawnKindDef Abstract="True" Name="ATPP_AndroidTX2KCollectiveBase">
+		<labelPlural>Android Soldiers</labelPlural>
+		<backstoryCategories>
+			<li>CollectiveSoldiers</li>
+		</backstoryCategories>
+		<baseRecruitDifficulty>0.80</baseRecruitDifficulty>
+		<combatPower>190</combatPower>
+		<maxGenerationAge>17</maxGenerationAge>
+		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
+		<aiAvoidCover>false</aiAvoidCover>
+		<gearHealthRange>
+			<min>0.5</min>
+			<max>1.4</max>
+		</gearHealthRange>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
+			<li>SpacerMilitary</li>
+			<li>Outlander</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>200</min>
+			<max>2550</max>
+		</apparelMoney>
+		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+		<weaponMoney>
+			<min>1600</min>
+			<max>2000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>IndustrialGunAdvanced</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>2000</min>
+			<max>3000</max>
+		</techHediffsMoney>
+		<combatEnhancingDrugsCount>
+			<min>0</min>
+			<max>2</max>
+		</combatEnhancingDrugsCount>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsChance>0.1</techHediffsChance>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="ATPP_AndroidTX2KCollectiveBase">
+		<defName>ATPP_AndroidTX2KCollectiveSoldier</defName>
+		<label>TX2K Android Soldier</label>
+		<race>ATPP_Android2KTX</race>
+	</PawnKindDef>
+	<PawnKindDef ParentName="ATPP_AndroidTX2KCollectiveBase">
+		<defName>ATPP_AndroidTX2KICollectiveSoldier</defName>
+		<label>TX2KI Android Soldier</label>
+		<race>ATPP_Android2KITX</race>
+	</PawnKindDef>
+  
+  
+  <PawnKindDef Abstract="True" Name="ATPP_AndroidTX3CollectiveBase">
+		<labelPlural>Android Soldiers</labelPlural>
+		<backstoryCategories>
+			<li>CollectiveSoldiers</li>
+		</backstoryCategories>
+		<baseRecruitDifficulty>0.80</baseRecruitDifficulty>
+		<combatPower>180</combatPower>
+		<maxGenerationAge>17</maxGenerationAge>
+		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
+		<aiAvoidCover>false</aiAvoidCover>
+		<gearHealthRange>
+			<min>0.5</min>
+			<max>1.4</max>
+		</gearHealthRange>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
+			<li>SpacerMilitary</li>
+			<li>Outlander</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>200</min>
+			<max>2550</max>
+		</apparelMoney>
+		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+		<weaponMoney>
+			<min>1600</min>
+			<max>2000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>IndustrialGunAdvanced</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>2000</min>
+			<max>3000</max>
+		</techHediffsMoney>
+		<combatEnhancingDrugsCount>
+			<min>0</min>
+			<max>2</max>
+		</combatEnhancingDrugsCount>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsChance>0.1</techHediffsChance>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="ATPP_AndroidTX3CollectiveBase">
+		<defName>ATPP_AndroidTX3CollectiveSoldier</defName>
+		<label>TX3 Android Soldier</label>
+		<race>ATPP_Android3TX</race>
+	</PawnKindDef>
+	<PawnKindDef ParentName="ATPP_AndroidTX3CollectiveBase">
+		<defName>ATPP_AndroidTX3ICollectiveSoldier</defName>
+		<label>TX3I Android Soldier</label>
+		<race>ATPP_Android3ITX</race>
+	</PawnKindDef>
+	
+  
+  <PawnKindDef Abstract="True" Name="ATPP_AndroidTX4CollectiveBase">
+		<labelPlural>Android Soldiers</labelPlural>
+		<backstoryCategories>
+			<li>CollectiveSoldiers</li>
+		</backstoryCategories>
+		<baseRecruitDifficulty>0.90</baseRecruitDifficulty>
+		<combatPower>230</combatPower>
+		<maxGenerationAge>17</maxGenerationAge>
+		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
+		<aiAvoidCover>false</aiAvoidCover>
+		<gearHealthRange>
+			<min>0.5</min>
+			<max>1.4</max>
+		</gearHealthRange>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
+			<li>SpacerMilitary</li>
+			<li>Outlander</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>200</min>
+			<max>3550</max>
+		</apparelMoney>
+		<apparelAllowHeadgearChance>0.8</apparelAllowHeadgearChance>
+		<weaponMoney>
+			<min>1600</min>
+			<max>2000</max>
+		</weaponMoney>
+		<weaponTags>
+			<li>SpacerGun</li>
+		</weaponTags>
+		<techHediffsMoney>
+			<min>2000</min>
+			<max>3000</max>
+		</techHediffsMoney>
+		<combatEnhancingDrugsCount>
+			<min>0</min>
+			<max>2</max>
+		</combatEnhancingDrugsCount>
+		<techHediffsTags>
+			<li>Advanced</li>
+		</techHediffsTags>
+		<techHediffsChance>0.25</techHediffsChance>
+	</PawnKindDef>
+	
+	<PawnKindDef ParentName="ATPP_AndroidTX4CollectiveBase">
+		<defName>ATPP_AndroidTX4CollectiveSoldier</defName>
+		<label>TX4 Android Soldier</label>
+		<race>ATPP_Android4TX</race>
+	</PawnKindDef>
+	<PawnKindDef ParentName="ATPP_AndroidTX4CollectiveBase">
+		<defName>ATPP_AndroidTX4ICollectiveSoldier</defName>
+		<label>TX4I Android Soldier</label>
+		<race>ATPP_Android4ITX</race>
+	</PawnKindDef>
+  
+</Defs>

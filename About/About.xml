@@ -1,13 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-  <name>[1.0] Android tiers</name>
-  <author>Atlas</author>
-  <supportedVersions><li>1.0</li></supportedVersions>
-  <description>
-	Adds 4 tiers of android along with an android doggo
-	- a new android faction
-	- android specific diseases
-	- tons of replacecable upgrades / downgrades for androids
+  <name>Android tiers</name>
+  <author>Atlas, aRandomKiwi</author>
+  <supportedVersions>
+	<li>1.0</li>
+	<li>1.1</li>
+  </supportedVersions>
+  <packageId>Atlas.AndroidTiers</packageId>
+  <description><![CDATA[  
+	- Adds 8 tiers of android along with an android doggo
+	- 2 new android factions
+	- Allow to remotely control surrogate androids
+	- Allow to digitize and store your colonists minds in supercomputers
+	- Android specific diseases
+	- Tons of replaceable upgrades / downgrades for androids
+	- Fully customizable
 	- More, etc etc 
+	
+	Version <color=#FFD800>2.0.0</color>
+	]]>
   </description>
 </ModMetaData>
