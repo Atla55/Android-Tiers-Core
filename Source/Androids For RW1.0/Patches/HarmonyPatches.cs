@@ -17,8 +17,8 @@ namespace BlueLeakTest
     {
         static HarmonyPatches()
         {
-            Utils.harmonyInstance = HarmonyInstance.Create("rimworld.rwmods.androidtiers");
-            Utils.harmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
+            HarmonyInstance harmony = HarmonyInstance.Create("rimworld.rwmods.androidtiers");
+            harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             /*DefDatabase<ThingDef_AlienRace>.AllDefsListForReading.ForEach(delegate (ThingDef_AlienRace ar)
             {
@@ -82,7 +82,7 @@ namespace BlueLeakTest
         {
             Pawn pawn = __instance.pawn;
             bool result;
-            if (pawn.IsAndroidGen())
+            if (pawn.IsAndroid())
             {
                 JobDriver_Vomit instance = __instance;
                 __result = new List<Toil>
