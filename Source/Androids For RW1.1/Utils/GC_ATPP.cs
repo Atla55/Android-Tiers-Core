@@ -726,19 +726,19 @@ namespace MOARANDROIDS
                         List<string> pkd = new List<string> { "AndroidT1RaiderFactionSpecific", "AndroidT2RaiderFactionSpecific", "AndroidT3RaiderFactionSpecific", "AndroidT4RaiderFactionSpecific" };
                         foreach (var x in pkd)
                         {
-                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x);
+                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsPKDHostile.Add(p);
                         }
                         pkd = new List<string> { "ATPP_AndroidTX2RaiderFactionSpecific", "ATPP_AndroidTX2KRaiderFactionSpecific", "ATPP_AndroidTX3RaiderFactionSpecific", "ATPP_AndroidTX4RaiderFactionSpecific" };
                         foreach (var x in pkd)
                         {
-                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x);
+                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsXSeriePKDHostile.Add(p);
                         }
                         pkd = new List<string> { "ATPP_AndroidTX2IRaiderFactionSpecific", "ATPP_AndroidTX2KIRaiderFactionSpecific", "ATPP_AndroidTX3IRaiderFactionSpecific", "ATPP_AndroidTX4IRaiderFactionSpecific" };
                         foreach (var x in pkd)
                         {
-                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x);
+                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsXISeriePKDHostile.Add(p);
                         }
 
@@ -747,19 +747,19 @@ namespace MOARANDROIDS
                         pkd = new List<string> { "AndroidT1CollectiveSoldier", "AndroidT2CollectiveSoldier", "AndroidT3CollectiveSoldier", "AndroidT4CollectiveSoldier" };
                         foreach (var x in pkd)
                         {
-                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x);
+                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsPKDNeutral.Add(p);
                         }
                         pkd = new List<string> { "ATPP_AndroidTX2CollectiveSoldier", "ATPP_AndroidTX2KCollectiveSoldier", "ATPP_AndroidTX3CollectiveSoldier", "ATPP_AndroidTX4CollectiveSoldier" };
                         foreach (var x in pkd)
                         {
-                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x);
+                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsXSeriePKDHostile.Add(p);
                         }
                         pkd = new List<string> { "ATPP_AndroidTX2ICollectiveSoldier", "ATPP_AndroidTX2KICollectiveSoldier", "ATPP_AndroidTX3ICollectiveSoldier", "ATPP_AndroidTX4ICollectiveSoldier" };
                         foreach (var x in pkd)
                         {
-                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x);
+                            PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsXISeriePKDHostile.Add(p);
                         }
                     }

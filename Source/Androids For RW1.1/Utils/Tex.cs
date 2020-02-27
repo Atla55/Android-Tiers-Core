@@ -86,8 +86,6 @@ namespace MOARANDROIDS
 
         public static readonly Texture2D StopVirused = ContentFinder<Texture2D>.Get("Things/Misc/ATPP_StopVirused", true);
 
-        public static readonly Texture2D Header = ContentFinder<Texture2D>.Get("Things/Misc/ATPP_Header", true);
-
         public static readonly Texture2D ColorPicker = ContentFinder<Texture2D>.Get("Things/Misc/ATPP_ColorPicker", true);
         
 
