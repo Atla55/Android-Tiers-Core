@@ -13,7 +13,6 @@
 			</raceRestriction>
 
 			<generalSettings>
-				<useOnlyPawnkindBackstories>true</useOnlyPawnkindBackstories>
 				<maleGenderProbability>0.5</maleGenderProbability>
 				<allowHumanBios>false</allowHumanBios>
 				<maxDamageForSocialfight>9</maxDamageForSocialfight>

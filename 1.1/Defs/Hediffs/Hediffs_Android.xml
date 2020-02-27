@@ -5,12 +5,14 @@
   <HediffDef Name="AddedBodyPartBaseAndroid" Abstract="True">
     <hediffClass>Hediff_AddedPart</hediffClass>
     <defaultLabelColor>(0.6, 0.6, 0.7)</defaultLabelColor>
+	<description>_</description>
     <isBad>false</isBad>
   </HediffDef>
  
    <HediffDef Name="BadAddedBodyPartBaseAndroid" Abstract="True">
     <hediffClass>Hediff_AddedPart</hediffClass>
     <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+	<description>_</description>
     <isBad>false</isBad>
   </HediffDef>
  

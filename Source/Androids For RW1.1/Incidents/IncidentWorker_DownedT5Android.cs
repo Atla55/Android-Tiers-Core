@@ -11,7 +11,9 @@ namespace MOARANDROIDS
     {
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            return base.CanFireNowSub(parms) && this.TryFindTile(out int num) && SiteMakerHelper.TryFindRandomFactionFor(IEnumerable< SitePartDef > SitePartDefOf.DownedT5Android, out Faction faction, true, null);
+            List<SitePartDef> x = new List<SitePartDef>();
+            x.Add(SitePartDefOf.DownedT5Android);
+            return base.CanFireNowSub(parms) && this.TryFindTile(out int num) && SiteMakerHelper.TryFindRandomFactionFor( x, out Faction faction, true, null);
         }
 
         private bool TryFindTile(out int tile)

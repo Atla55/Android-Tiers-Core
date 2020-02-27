@@ -57,7 +57,6 @@
 	
 	</raceRestriction>
 			<generalSettings>
-			<useOnlyPawnkindBackstories>true</useOnlyPawnkindBackstories>
 			<maleGenderProbability>1</maleGenderProbability>
 				<maxDamageForSocialfight>1</maxDamageForSocialfight>
 				            <forcedRaceTraitEntries>

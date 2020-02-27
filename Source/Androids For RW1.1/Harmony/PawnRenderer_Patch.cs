@@ -25,11 +25,11 @@ namespace MOARANDROIDS
 
 
         [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal")]
-        [HarmonyPatch(new Type[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool) })]
+        [HarmonyPatch(new Type[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(bool), typeof(bool), typeof(bool) })]
         public class RenderPawnInternal_Patch
         {
             [HarmonyPostfix]
-            public static void Listener(ref PawnRenderer __instance, Vector3 rootLoc, float angle, bool renderBody, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, bool portrait, bool headStump, Pawn ___pawn)
+            public static void Listener(ref PawnRenderer __instance, Vector3 rootLoc, float angle, bool renderBody, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, bool portrait, bool headStump, bool invisible, Pawn ___pawn)
             {
                 try
                 {

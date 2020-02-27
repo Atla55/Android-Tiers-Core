@@ -12,7 +12,7 @@ namespace MOARANDROIDS
     internal class HediffUtility_Patch
 
     {
-        [HarmonyPatch(typeof(HediffUtility), "CountAddedParts")]
+        [HarmonyPatch(typeof(HediffUtility), "CountAddedAndImplantedParts")]
         public class CountAddedParts_Patch
         {
             [HarmonyPostfix]

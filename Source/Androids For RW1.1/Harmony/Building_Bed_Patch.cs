@@ -13,7 +13,7 @@ namespace MOARANDROIDS
 
     {
 
-        [HarmonyPatch(typeof(Building_Bed), "get_AssigningCandidates")]
+        [HarmonyPatch(typeof(CompAssignableToPawn), "get_AssigningCandidates")]
         public class get_AssigningCandidates
         {
             private static void addInactiveSurrogates(ref List<Pawn> lst, Map map, bool M7)
@@ -33,12 +33,14 @@ namespace MOARANDROIDS
             }
 
             [HarmonyPostfix]
-            public static void Listener(ref IEnumerable<Pawn> __result, Building_Bed __instance)
+            public static void Listener(ref IEnumerable<Pawn> __result, CompAssignableToPawn __instance)
             {
                 IEnumerable<Pawn> orig = __result;
                 try
                 {
-                    if (__instance.def.defName == "ATPP_AndroidPod")
+                    Building_Bed bed = (Building_Bed)__instance.parent;
+
+                    if (bed.def.defName == "ATPP_AndroidPod")
                     {
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
@@ -49,11 +51,11 @@ namespace MOARANDROIDS
 
                         //Si option masquant les surrogates activé alors ajout de ces derniers à la fin
                         if (Settings.hideInactiveSurrogates)
-                            addInactiveSurrogates(ref lst, __instance.Map, false);
+                            addInactiveSurrogates(ref lst, bed.Map, false);
 
                         __result = lst;
                     }
-                    else if (__instance.def.defName == "ATPP_AndroidPodMech")
+                    else if (bed.def.defName == "ATPP_AndroidPodMech")
                     {
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
@@ -63,11 +65,11 @@ namespace MOARANDROIDS
                         }
                         //Si option masquant les surrogates activé alors ajout de ces derniers à la fin
                         if (Settings.hideInactiveSurrogates)
-                            addInactiveSurrogates(ref lst, __instance.Map, false);
+                            addInactiveSurrogates(ref lst, bed.Map, false);
 
                         __result = lst;
                     }
-                    else if (__instance.def.defName != "SleepingSpot")
+                    else if (bed.def.defName != "SleepingSpot")
                     {
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)

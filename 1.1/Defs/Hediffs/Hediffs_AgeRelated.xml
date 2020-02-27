@@ -3,6 +3,7 @@
 
   <HediffDef Name="AndroidDiseaseBase" Abstract="True">
     <hediffClass>HediffWithComps</hediffClass>
+	<description>_</description>
     <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
     <initialSeverity>0.001</initialSeverity>
   </HediffDef>

@@ -18,7 +18,6 @@
             </apparelList>
         </raceRestriction>
 			<generalSettings>
-			<useOnlyPawnkindBackstories>true</useOnlyPawnkindBackstories>
 			<maleGenderProbability>1</maleGenderProbability>
 			
 				<maxDamageForSocialfight>60</maxDamageForSocialfight>

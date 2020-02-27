@@ -30,7 +30,7 @@ namespace MOARANDROIDS
                 {
                     bool flag3 = other.IsAndroid();
                     //SI androide OU un cyborg
-                    if (flag3 || other.health.hediffSet.CountAddedParts() >= 5)
+                    if (flag3 || other.health.hediffSet.CountAddedAndImplantedParts() >= 5)
                     {
                         result = false;
                     }
