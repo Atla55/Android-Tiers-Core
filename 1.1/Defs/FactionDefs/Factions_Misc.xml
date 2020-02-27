@@ -112,12 +112,6 @@
 				</options>
 			</li>
 			<li>
-				<kindDef>Settlement</kindDef>
-				<options>
-					<AndroidT1RaiderFactionSpecific>2</AndroidT1RaiderFactionSpecific>
-					<AndroidT2RaiderFactionSpecific>2</AndroidT2RaiderFactionSpecific>
-					<AndroidT3RaiderFactionSpecific>3</AndroidT3RaiderFactionSpecific>
-					<AndroidT4RaiderFactionSpecific>2</AndroidT4RaiderFactionSpecific>
 				<!-- Base defense -->
 				<kindDef>Settlement</kindDef>
 				<options>
@@ -201,10 +195,6 @@
 				<options>
 					<AndroidT1CollectiveColonist>2</AndroidT1CollectiveColonist>
 					<AndroidT1CollectiveSoldier>8</AndroidT1CollectiveSoldier>
-					<AndroidT2CollectiveSoldier>4</AndroidT2CollectiveSoldier>
-					<AndroidT3CollectiveSoldier>1</AndroidT3CollectiveSoldier>
-					<AndroidT4CollectiveSoldier>1</AndroidT4CollectiveSoldier>
-					<AndroidT4CollectiveLeader>2.5</AndroidT4CollectiveLeader>
 					<AndroidT2CollectiveSoldier>6</AndroidT2CollectiveSoldier>
 					<AndroidT3CollectiveSoldier>4</AndroidT3CollectiveSoldier>
 					<AndroidT4CollectiveSoldier>2</AndroidT4CollectiveSoldier>
@@ -215,7 +205,6 @@
 				<kindDef>Peaceful</kindDef>
 				<options>
 					<AndroidT1CollectiveColonist>20</AndroidT1CollectiveColonist>
-					<AndroidT1CollectiveSoldier>6</AndroidT1CollectiveSoldier>
 					<AndroidT1CollectiveSoldier>10</AndroidT1CollectiveSoldier>
 					<AndroidT3CollectiveColonist>10</AndroidT3CollectiveColonist>
 				</options>
@@ -235,8 +224,6 @@
 				<guards>
 					<AndroidT1CollectiveColonist>5</AndroidT1CollectiveColonist>
 					<AndroidT1CollectiveSoldier>7</AndroidT1CollectiveSoldier>
-					<AndroidT2CollectiveSoldier>3</AndroidT2CollectiveSoldier>
-					<AndroidT3CollectiveSoldier>2.5</AndroidT3CollectiveSoldier>
 					<AndroidT2CollectiveSoldier>6</AndroidT2CollectiveSoldier>
 					<AndroidT3CollectiveSoldier>4.5</AndroidT3CollectiveSoldier>
 				</guards>
@@ -246,9 +233,6 @@
 				<options>
 					<AndroidT1CollectiveColonist>1</AndroidT1CollectiveColonist>
 					<AndroidT1CollectiveSoldier>2</AndroidT1CollectiveSoldier>
-					<AndroidT4CollectiveSoldier>1</AndroidT4CollectiveSoldier>
-					<AndroidT2CollectiveSoldier>2</AndroidT2CollectiveSoldier>
-					<AndroidT3CollectiveSoldier>6</AndroidT3CollectiveSoldier>
 					<AndroidT4CollectiveSoldier>5</AndroidT4CollectiveSoldier>
 					<AndroidT2CollectiveSoldier>4</AndroidT2CollectiveSoldier>
 					<AndroidT3CollectiveSoldier>8</AndroidT3CollectiveSoldier>
