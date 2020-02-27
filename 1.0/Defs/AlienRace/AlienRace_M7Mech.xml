@@ -267,20 +267,7 @@
 				<li>AndroidStandardAtlas</li>
 			</hediffGiverSets>
 		</race>
-		<recipes>
- 		  <li>ATPP_PaintAndroidFrameworkDefault</li>
-		  <li>ATPP_PaintAndroidFrameworkRed</li>
-		  <li>ATPP_PaintAndroidFrameworkOrange</li>
-		  <li>ATPP_PaintAndroidFrameworkYellow</li>
-		  <li>ATPP_PaintAndroidFrameworkKhaki</li>
-		  <li>ATPP_PaintAndroidFrameworkGreen</li>
-		  <li>ATPP_PaintAndroidFrameworkBlue</li>
-		  <li>ATPP_PaintAndroidFrameworkCyan</li>
-		  <li>ATPP_PaintAndroidFrameworkPurple</li>
-		  <li>ATPP_PaintAndroidFrameworkPink</li>
-		  <li>ATPP_PaintAndroidFrameworkBlack</li>
-		  <li>ATPP_PaintAndroidFrameworkWhite</li>
-		</recipes>
+	
 		
 		<butcherProducts>
 			<Plasteel>160</Plasteel>

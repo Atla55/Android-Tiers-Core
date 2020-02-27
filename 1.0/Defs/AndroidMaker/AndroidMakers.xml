@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
     <ThingDef Name="BuildingCreatorBase" Abstract="True">
-        <thingClass>ThingWithComps</thingClass>
+        <category>Building</category>
+        <thingClass>Building</thingClass>
         <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
         <selectable>true</selectable>
-		<category>Filth</category>
         <drawerType>MapMeshAndRealTime</drawerType>
         <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
         <repairEffect>Repair</repairEffect>
@@ -15,7 +15,7 @@
             <texPath>Things/Alpha</texPath>
             <graphicClass>Graphic_Single</graphicClass>
         </graphicData>
-        <altitudeLayer>Filth</altitudeLayer>
+        <altitudeLayer>Building</altitudeLayer>
         <useHitPoints>True</useHitPoints>
         <statBases>
             <WorkToMake>550</WorkToMake>

@@ -6,14 +6,14 @@
 		<label>K-9 cybernetic unit</label>
 		<description>Heavily armoured cybernetic dog-like machines that are equipped with a very strong hydraulic jaw and razor sharp claws. Usually found used during war times on urbworlds as a form of "crowd control".</description>
 		<statBases>
+			<MoveSpeed>8.00</MoveSpeed>
 			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
 			<ComfyTemperatureMax>100</ComfyTemperatureMax>
 			<MarketValue>8500</MarketValue>
 			<MeatAmount>0</MeatAmount>
 			<PainShockThreshold>5</PainShockThreshold>
-			<MoveSpeed>9.0</MoveSpeed>
-			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
-			<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+			<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
 		</statBases>
 		<tools>
 			<li>
@@ -21,14 +21,14 @@
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
-				<power>20</power>
-				<cooldownTime>1.0</cooldownTime>
+				<power>18</power>
+				<cooldownTime>1.2</cooldownTime>
 				<linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>26</amount>
+							<amount>20</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
@@ -38,14 +38,14 @@
 				<capacities>
 					<li>Scratch</li>
 				</capacities>
-				<power>20</power>
-				<cooldownTime>1.0</cooldownTime>
+				<power>18</power>
+				<cooldownTime>1.2</cooldownTime>
 				<linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
 				<surpriseAttack>
 					<extraMeleeDamages>
 						<li>
 							<def>Stun</def>
-							<amount>26</amount>
+							<amount>20</amount>
 						</li>
 					</extraMeleeDamages>
 				</surpriseAttack>
@@ -71,8 +71,8 @@
 				<capacities>
 					<li>Blunt</li>
 				</capacities>
-				<power>15</power>
-				<cooldownTime>1.2</cooldownTime>
+				<power>12</power>
+				<cooldownTime>1.65</cooldownTime>
 				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
 				<chanceFactor>0.2</chanceFactor>
 			</li>

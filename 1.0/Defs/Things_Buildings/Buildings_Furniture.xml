@@ -11,7 +11,6 @@
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1.35,2.1)</drawSize>
 		</graphicData>
-		<designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
 		<comps>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
@@ -60,7 +59,7 @@
     <label>upgrade cabinet</label>
     <description>A small cabinet that can be used in conjunction with the android upgrade station or bed. It contains very accurate, small tools for the most delicate of procedures.</description>
     <surfaceType>Item</surfaceType>
-	<designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
+	<designationCategory>Furniture</designationCategory>
 	<rotatable>false</rotatable>
     <graphicData>
       <texPath>Things/Building/AndroidToolKit</texPath>
