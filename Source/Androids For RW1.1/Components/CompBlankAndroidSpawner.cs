@@ -26,7 +26,7 @@ namespace MOARANDROIDS
             {
                 Utils.forceGeneratedAndroidToBeDefaultPainted = true;
 
-                PawnGenerationRequest request = new PawnGenerationRequest(Spawnprops.Pawnkind, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, true, 1f, false, true, false, false, false, false, false, null, null, null, null, null, null, null, null);
+                PawnGenerationRequest request = new PawnGenerationRequest(Spawnprops.Pawnkind, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, false, false, false, false, true, true, 1f, false, true, false, false, false, false, false, false, 0f, null, 0f, null, null, null, null);
                 Pawn blankAndroid = PawnGenerator.GeneratePawn(request);
                 GenSpawn.Spawn(blankAndroid, this.parent.Position, this.parent.Map, WipeMode.Vanish);
 

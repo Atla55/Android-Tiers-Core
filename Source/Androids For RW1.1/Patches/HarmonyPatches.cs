@@ -8,7 +8,6 @@ using RimWorld;
 using RimWorld.Planet;
 using Verse;
 using Verse.AI;
-using AlienRace;
 
 namespace BlueLeakTest
 {

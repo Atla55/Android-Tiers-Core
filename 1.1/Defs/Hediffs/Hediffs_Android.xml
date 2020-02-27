@@ -17,6 +17,7 @@
    <HediffDef>
     <defName>ShutdownAndroid</defName>
     <label>decommissioned</label>
+	<description>AI core permanently shutdown and wiped clean.</description>
     <initialSeverity>0</initialSeverity>
 	<lethalSeverity>0</lethalSeverity>
 		  		<defaultLabelColor>(0.4, 0.4, 0.4)</defaultLabelColor>
@@ -26,6 +27,7 @@
   <HediffDef>
     <defName>RebootingSequenceAT</defName>
     <label>Rebooting</label>
+	<description>Rebooting sequence active in the ai core.</description>
 	    <hediffClass>HediffWithComps</hediffClass>
     <initialSeverity>1</initialSeverity>
 		  		<defaultLabelColor>(0.3, 0.7, 0.3)</defaultLabelColor>
@@ -88,6 +90,7 @@
     <defName>NoFreeWillAT</defName>
     <label>unfeeling</label>
     <labelNoun>unfeeling</labelNoun>
+	<description>Modifications to the morality and emotional response sectors of the AI Core, resulting in completely neutral mood and lack of higher functions.</description>
     <stages>
       <li>
         <capMods>
@@ -100,6 +103,7 @@
 			<SocialImpact>-0.90</SocialImpact>
 			<GlobalLearningFactor>-1</GlobalLearningFactor>
 			<WorkSpeedGlobal>-0.5</WorkSpeedGlobal>
+			
         </statOffsets>
       </li>
     </stages>
@@ -140,6 +144,7 @@
   <HediffDef ParentName="ImplantHediffBase">
     <defName>OverclockedAndroid</defName>
     <label>overclocked</label>
+	<description>Processing sectors of the android's AI core accelerated, resulting in quicker computing of functions but also increased load on hardware.</description>
     <labelNoun>an overclocking upgrade</labelNoun>
 				<stages>
 			<li>
@@ -161,6 +166,7 @@
   <HediffDef>
     <defName>BatteryChargeMech</defName>
     <label>Battery</label>
+	<description>Battery life remaining before shutdown</description>
 	    <hediffClass>HediffWithComps</hediffClass>
     <initialSeverity>1</initialSeverity>
 		  		<defaultLabelColor>(0.3, 0.7, 0.3)</defaultLabelColor>
@@ -232,6 +238,7 @@
 	<HediffDef>
 		<defName>AndroidCoolantLoss</defName>
 		<label>coolant loss</label>
+		<description>Loss of coolant in internal piping, resulting in reduced cooling capacity and overheating of internals.</description>
 		<maxSeverity>1.0</maxSeverity>
 	<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
       <stages>
@@ -431,6 +438,7 @@
     <defName>PlatingSteel</defName>
     <label>Steel Frame</label>
     <labelNoun>some basic steel framing</labelNoun>
+	<description>An installed steel frame.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -460,6 +468,7 @@
     <defName>PlatingPlasteel</defName>
     <label>plasteel frame covering</label>
     <labelNoun>some strong plasteel frame coverings</labelNoun>
+		<description>An nstalled plasteel frame covering.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -489,6 +498,7 @@
     <defName>PlatingComposite</defName>
     <label>composite frame plating</label>
     <labelNoun>high tensile composite plating</labelNoun>
+	<description>Installed composite frame plating.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -518,6 +528,7 @@
     <defName>MiningArm</defName>
     <label>mining arm</label>
     <labelNoun>a mining arm</labelNoun>
+	<description>An installed mining arm.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -553,6 +564,7 @@
     <defName>HydraulicFrame</defName>
     <label>hydraulic frame</label>
     <labelNoun>a hydraulic frame</labelNoun>
+	<description>An installed hydraulic frame.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -576,6 +588,7 @@
     <defName>HydraulicLeg</defName>
     <label>hydraulic leg</label>
     <labelNoun>a hydraulic leg</labelNoun>
+	<description>An installed hydraulic leg.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -594,6 +607,7 @@
     <defName>HydraulicArm</defName>
     <label>hydraulic arm</label>
     <labelNoun>a hydraulic arm</labelNoun>
+	<description>An installed hydraulic arm.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -626,6 +640,7 @@
     <defName>MakeshiftRLeg</defName>
     <label>makeshift replacement leg</label>
     <labelNoun>a makeshift replacement leg</labelNoun>
+	<description>An installed makeshift replacement leg.</description>
     <addedPartProps>
       <solid>true</solid>
       <partEfficiency>0.25</partEfficiency>
@@ -636,6 +651,7 @@
     <defName>MakeshiftRArm</defName>
     <label>makeshift replacement arm</label>
     <labelNoun>a makeshift replacement arm</labelNoun>
+	<description>An installed makeshift replacement arm.</description>
 	    <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -662,6 +678,7 @@
     <defName>BRArm</defName>
     <label>basic replacement arm</label>
     <labelNoun>a basic replacement arm</labelNoun>
+	<description>An installed basic replacemet arm.</description>
 	    <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -687,6 +704,7 @@
     <defName>BRLeg</defName>
     <label>basic replacement leg</label>
     <labelNoun>a basic replacement leg</labelNoun>
+	<description>An installed basic replacement leg.</description>
     <spawnThingOnRemoved>BasicReplacementLeg</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -698,6 +716,7 @@
     <defName>BLReceptor</defName>
     <label>crude light sensor</label>
     <labelNoun>a crude light sensor</labelNoun>
+	<description>An installed crude light sensor.</description>
     <spawnThingOnRemoved>LightReceivingDiode</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -709,6 +728,7 @@
     <defName>BHeatsink</defName>
     <label>crude heatsink</label>
     <labelNoun>a crude heatsink</labelNoun>
+	<description>An installed crude heat sink.</description>
     <spawnThingOnRemoved>CrudeHeatsink</spawnThingOnRemoved>
 		<stages>
 			<li>
@@ -728,6 +748,7 @@
     <defName>BCoolantPump</defName>
     <label>crude coolant pump</label>
     <labelNoun>a crude coolant pump</labelNoun>
+	<description>An installed crude coolant pump.</description>
     <spawnThingOnRemoved>FlimsyCoolantPump</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -740,6 +761,7 @@
     <defName>BBattery</defName>
     <label>crude battery pack</label>
     <labelNoun>a crude battery pack</labelNoun>
+	<description>An installed crude battery pack.</description>
     <spawnThingOnRemoved>SmallBatteryPack</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -751,6 +773,7 @@
     <defName>BMStorage</defName>
     <label>crude mechanite storage</label>
     <labelNoun>crude mechanite storage</labelNoun>
+	<description>An installed crude storage mechanic.</description>
     <spawnThingOnRemoved>TubeSealantTank</spawnThingOnRemoved>
 	 <comps>
 	  <li Class="MOARANDROIDS.HediffCompProperties_RegenWoundsAdv">
@@ -769,6 +792,7 @@
     <defName>BTransformer</defName>
     <label>crude bio-reactor</label>
     <labelNoun>a crude bio-reactor</labelNoun>
+	<description>An installed crude bio-reactor.</description>
     <spawnThingOnRemoved>LowPowerTransformer</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -780,6 +804,7 @@
     <defName>BVAdapter</defName>
     <label>crude power converter</label>
     <labelNoun>a crude power converter</labelNoun>
+	<description>An installed crude power converter.</description>
     <spawnThingOnRemoved>BasicDCConverter</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -791,6 +816,7 @@
     <defName>BasicRearCounterweight</defName>
     <label>basic counterweight</label>
     <labelNoun>a basic counterweight</labelNoun>
+	<description>An installed basic counterweight.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -816,6 +842,7 @@
     <defName>CrudeJawAndroid</defName>
     <label>crude jaw</label>
     <labelNoun>a crude jaw</labelNoun>
+	<description>An installed crude jaw.</description>
 		    <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -850,6 +877,7 @@
     <defName>ARArm</defName>
     <label>high power arm</label>
     <labelNoun>a high power arm</labelNoun>
+	<description>An installed high power arm.</description>
 	    <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -876,6 +904,7 @@
     <defName>ARLeg</defName>
     <label>high power leg</label>
     <labelNoun>a high power leg</labelNoun>
+	<description>An installed high power leg.</description>
     <spawnThingOnRemoved>AdvancedReplacementLeg</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -888,6 +917,7 @@
     <defName>ALReceptor</defName>
     <label>advanced light sensor</label>
     <labelNoun>an advanced light sensor</labelNoun>
+	<description>An installed advanced light sensor.</description>
     <spawnThingOnRemoved>MultiSpectrumEye</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -900,6 +930,7 @@
     <defName>AHeatsink</defName>
     <label>advanced heatsink</label>
     <labelNoun>an advanced heatsink</labelNoun>
+	<description>An installed advanced heatsink.</description>
     <spawnThingOnRemoved>MultiLayerHeatsink</spawnThingOnRemoved>
 			<stages>
 			<li>
@@ -920,6 +951,7 @@
     <defName>ACoolantPump</defName>
     <label>advanced coolant pump</label>
     <labelNoun>an advanced coolant pump</labelNoun>
+	<description>An installed advanced coolant pump.</description>
 			<stages>
 			<li>
 		  <statOffsets>
@@ -941,6 +973,7 @@
     <defName>ABattery</defName>
     <label>advanced battery pack</label>
     <labelNoun>an advanced battery pack</labelNoun>
+	<description>An installed advanced battery pack.</description>
 		<stages>
 			<li>
 				 <capMods>
@@ -967,6 +1000,7 @@
     <defName>AMStorage</defName>
     <label>advanced mechanite storage</label>
     <labelNoun>advanced mechanite storage</labelNoun>
+	<description>Installed advanced mechanite storage.</description>
 		<stages>
 			<li>
 				 <capMods>
@@ -996,6 +1030,7 @@
     <defName>ATransformer</defName>
     <label>advanced bio-reactor</label>
     <labelNoun>a advanced bio-reactor</labelNoun>
+	<description>An installed advanced bio-reactor.</description>
 		<stages>
 			<li>
 			<hungerRateFactorOffset>-0.25</hungerRateFactorOffset>
@@ -1013,6 +1048,7 @@
     <defName>AVAdapter</defName>
     <label>advanced power converter</label>
     <labelNoun>a advanced power converter</labelNoun>
+	<description>An installed advanced power converter.</description>
 		<stages>
 			<li>
 			<hungerRateFactorOffset>-0.1</hungerRateFactorOffset>
@@ -1030,6 +1066,7 @@
     <defName>AdvRearCounterweight</defName>
     <label>gyroscopic counterweight</label>
     <labelNoun>a gyroscopic counterweight</labelNoun>
+	<description>An installed gyroscopic counterweight.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1055,6 +1092,7 @@
     <defName>AdvJawAndroid</defName>
     <label>cybernetic jaw</label>
     <labelNoun>a cybernetic jaw</labelNoun>
+	<description>An installed cybernetic jaw.</description>
 		    <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -1082,6 +1120,7 @@
     <defName>PositronMind</defName>
     <label>Positronic rewiring</label>
     <labelNoun>a positronic rewiring</labelNoun>
+	<description>Installed positronic rewiring.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1102,6 +1141,7 @@
     <defName>SoldierMind</defName>
     <label>Soldier upgrade</label>
     <labelNoun>a soldier upgrade</labelNoun>
+	<description>An installed solider upgrade.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1123,6 +1163,7 @@
     <defName>BuilderMind</defName>
     <label>Blueprint banks</label>
     <labelNoun>a blueprint bank</labelNoun>
+	<description>An installed blueprint bank.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1143,6 +1184,7 @@
     <defName>SurgeonMind</defName>
     <label>Implanted tricorder</label>
     <labelNoun>an implanted tricorder</labelNoun>
+	<description>An implanted tricorder.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1164,6 +1206,7 @@
     <defName>SpeedMind</defName>
     <label>Neural highways</label>
     <labelNoun>Neural highways</labelNoun>
+	<description>Installed neural highways.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1184,6 +1227,7 @@
     <defName>GeoMind</defName>
     <label>Geological banks</label>
     <labelNoun>a geological bank</labelNoun>
+	<description>An installed geological bank.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1203,6 +1247,7 @@
     <defName>MechanicMind</defName>
     <label>Engineering implant</label>
     <labelNoun>an engineering implant</labelNoun>
+	<description>An installed engineering implant.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1223,6 +1268,7 @@
     <defName>CookingMind</defName>
     <label>Cuisine implant</label>
     <labelNoun>a cuisine implant</labelNoun>
+	<description>An installed cuisine implant.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1244,6 +1290,7 @@
     <defName>CharismaMind</defName>
     <label>Charisma implant</label>
     <labelNoun>a charisma implant</labelNoun>
+	<description>An installed charisma implant.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1263,6 +1310,7 @@
     <defName>NegotiatorMind</defName>
     <label>Negotiator implant</label>
     <labelNoun>a negotiator implant</labelNoun>
+	<description>An installed negotiator implant.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1282,6 +1330,7 @@
     <defName>ZoologyMind</defName>
     <label>Zoology implant</label>
     <labelNoun>a zoology implant</labelNoun>
+	<description>An installed zoology implant.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1304,6 +1353,7 @@
     <defName>AgriculturalMind</defName>
     <label>Agricultural implant</label>
     <labelNoun>a agricultural implant</labelNoun>
+	<description>An installed agricultural implant.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1323,6 +1373,7 @@
     <defName>UnskilledMind</defName>
     <label>Basic labor chip</label>
     <labelNoun>a basic labor chip</labelNoun>
+	<description>An installed basic labour chip.</description>
 		<stages>
 			<li>
 				<statOffsets>
@@ -1350,6 +1401,7 @@
     <defName>AR2Arm</defName>
     <label>Cybernetic arm</label>
     <labelNoun>a Cybernetic arm</labelNoun>
+	<description>An installed cybernetic arm.</description>
 	    <comps>
       <li Class="HediffCompProperties_VerbGiver">
         <tools>
@@ -1376,6 +1428,7 @@
     <defName>AR2Leg</defName>
     <label>Cybernetic leg</label>
     <labelNoun>a Cybernetic leg</labelNoun>
+	<description>An installed cybernetic leg.</description>
     <spawnThingOnRemoved>CyberReplacementLeg</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -1388,6 +1441,7 @@
     <defName>AL2Receptor</defName>
     <label>archotech light sensor</label>
     <labelNoun>an archotech light sensor</labelNoun>
+	<description>An installed archotech light sensor.</description>
     <spawnThingOnRemoved>MDEye</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -1400,6 +1454,7 @@
     <defName>A2Heatsink</defName>
     <label>archotech heatsink</label>
     <labelNoun>an archotech heatsink</labelNoun>
+	<description>An installed archotech heatsink.</description>
     <spawnThingOnRemoved>SecretHeatsink</spawnThingOnRemoved>
 			<stages>
 			<li>
@@ -1420,6 +1475,7 @@
     <defName>A2CoolantPump</defName>
     <label>archotech coolant pump</label>
     <labelNoun>an archotech coolant pump</labelNoun>
+	<description>An installed archotech coolant pump.</description>
     <spawnThingOnRemoved>SecretCoolantPump</spawnThingOnRemoved>
 			<stages>
 			<li>
@@ -1442,6 +1498,7 @@
     <defName>A2Battery</defName>
     <label>archotech battery pack</label>
     <labelNoun>an archotech battery pack</labelNoun>
+	<description>An installed archotech battery pack.</description>
 		<stages>
 			<li>
 				 <capMods>
@@ -1468,6 +1525,7 @@
     <defName>A2MStorage</defName>
     <label>archotech mechanite storage</label>
     <labelNoun>archotech mechanite storage</labelNoun>
+	<description>Installed archotech mechanite storage.</description>
 		<stages>
 			<li>
 				 <capMods>
@@ -1497,6 +1555,7 @@
     <defName>A2Transformer</defName>
     <label>archotech bio-reactor</label>
     <labelNoun>a archotech bio-reactor</labelNoun>
+	<description>An installed archotech bio-reactor.</description>
 		<stages>
 			<li>
 			<hungerRateFactorOffset>-0.5</hungerRateFactorOffset>
@@ -1514,6 +1573,7 @@
     <defName>A2VAdapter</defName>
     <label>archotech power converter</label>
     <labelNoun>a archotech power converter</labelNoun>
+	<description>An installed archotech power converter.</description>
 		<stages>
 			<li>
 			<hungerRateFactorOffset>-0.2</hungerRateFactorOffset>
@@ -1532,6 +1592,7 @@
     <defName>HearingSensorCrude</defName>
     <label>crude hearing sensor</label>
     <labelNoun>a crude hearing sensor</labelNoun>
+	<description>An installed crude hearing sensor.</description>
     <spawnThingOnRemoved>CrudeHearingS</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -1545,6 +1606,7 @@
     <defName>HearingSensorAdv</defName>
     <label>advanced hearing sensor</label>
     <labelNoun>an advanced hearing sensor</labelNoun>
+	<description>An installed advanced hearing sensor.</description>
     <spawnThingOnRemoved>AdvHearingS</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -1558,6 +1620,7 @@
     <defName>HearingSensorArch</defName>
     <label>archotech hearing sensor</label>
     <labelNoun>an archotech hearing sensor</labelNoun>
+	<description>An installed archotech hearing sensor.</description>
     <spawnThingOnRemoved>ArchHearingS</spawnThingOnRemoved>
     <addedPartProps>
       <solid>true</solid>
@@ -1570,7 +1633,8 @@
     <defName>SmellSensorAdv</defName>
     <label>advanced smelling sensor</label>
     <labelNoun>an advanced smelling sensor</labelNoun>
-    <spawnThingOnRemoved>ArchHearingS</spawnThingOnRemoved>
+	<description>An installed advanced smelling sensor.</description>
+    <spawnThingOnRemoved>SmellingAdvS</spawnThingOnRemoved>
 			<stages>
 			<li>
 				 <capMods>
@@ -1595,6 +1659,7 @@
 	<hediffClass>HediffWithComps</hediffClass>
     <label>Evolving AI</label>
     <labelNoun>an Evolving AI</labelNoun>
+	<description>An installed evolving AI.</description>
 				<maxSeverity>1</maxSeverity>
 				<initialSeverity>0.001</initialSeverity>
 				<comps>

@@ -11,7 +11,7 @@ namespace MOARANDROIDS
     {
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            return base.CanFireNowSub(parms) && this.TryFindTile(out int num) && SiteMakerHelper.TryFindRandomFactionFor(SiteCoreDefOf.DownedT5Android, null, out Faction faction, true, null);
+            return base.CanFireNowSub(parms) && this.TryFindTile(out int num) && SiteMakerHelper.TryFindRandomFactionFor(IEnumerable< SitePartDef > SitePartDefOf.DownedT5Android, out Faction faction, true, null);
         }
 
         private bool TryFindTile(out int tile)
@@ -29,7 +29,7 @@ namespace MOARANDROIDS
             {
                 return false;
             }
-            Site site = SiteMaker.MakeSite(SiteCoreDefOf.DownedT5Android, SitePartDefOf.Turrets, tile, faction2);
+            Site site = SiteMaker.MakeSite(SitePartDefOf.DownedT5Android, tile, faction2);
             site.Tile = tile;
             int randomInRange = IncidentWorker_DownedT5Android.TimeoutDaysRange.RandomInRange;
             site.GetComponent<TimeoutComp>().StartTimeout(randomInRange * 60000);

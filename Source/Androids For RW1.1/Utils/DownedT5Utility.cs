@@ -10,7 +10,7 @@ namespace MOARANDROIDS
         {
             PawnKindDef AndroidT5Colonist = PawnKindDefOf.AndroidT5Colonist;
             Faction ofplayer = Faction.OfAncients;
-            PawnGenerationRequest request = new PawnGenerationRequest(AndroidT5Colonist, ofplayer, PawnGenerationContext.NonPlayer, tile, false, false, false, false, true, false, 20f, true, true, true, false, false, false, false, null, null, new float?(0.2f), null, null, null, null, null);
+            PawnGenerationRequest request = new PawnGenerationRequest(AndroidT5Colonist, ofplayer, PawnGenerationContext.NonPlayer, tile, false, false, false, false, true, false, 20f, true, true, true, false, false, false, false, false, 0f, null, 0f, null, null, null, null);
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             HealthUtility.DamageUntilDowned(pawn);
             Hediff hediff = HediffMaker.MakeHediff(MOARANDROIDS.HediffDefOf.RebootingSequenceAT, pawn, null);

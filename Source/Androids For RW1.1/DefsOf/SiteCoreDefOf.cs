@@ -1,11 +1,12 @@
 ﻿using System;
 using RimWorld;
 
+
 namespace MOARANDROIDS
 {
     [DefOf]
-    public static class SiteCoreDefOf
+    public static class SitePartDefOf
     {
-        public static SiteCoreDef DownedT5Android;
+        public static SitePartDef DownedT5Android;
     }
 }
