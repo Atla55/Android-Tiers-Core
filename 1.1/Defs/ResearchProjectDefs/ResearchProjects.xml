@@ -3,10 +3,10 @@
 
   <ResearchProjectDef>
     <defName>ATPP_ResearchSM7</defName>
-    <label>SM7 battle surrogate serie</label>
+    <label>SM7 battle surrogate series</label>
     <tab>AtlasAndroids</tab>
-    <description>Research how to build SM7 battle surrogate serie.</description>
-    <baseCost>8500</baseCost>
+    <description>Research how to build SM7 battle surrogate series.</description>
+    <baseCost>9500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
       <li>ATPP_ResearchSurrogateHost</li>
@@ -17,9 +17,9 @@
 
   <ResearchProjectDef>
     <defName>ATPP_ResearchServerI100Serie</defName>
-    <label>I100 serie servers</label>
+    <label>I100 series servers</label>
     <tab>AtlasAndroids</tab>
-    <description>Research how to build I100 security and hacking serie servers, cheap but noisy, big and not very efficient.</description>
+    <description>Research how to build I100 security and hacking series servers, cheap but noisy, big and not very efficient.</description>
     <baseCost>1500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
@@ -32,9 +32,9 @@
   
   <ResearchProjectDef>
     <defName>ATPP_ResearchServerI300Serie</defName>
-    <label>I300 serie servers</label>
+    <label>I300 series servers</label>
     <tab>AtlasAndroids</tab>
-    <description>Research how to build I300 security and hacking serie servers, noisy but intermediate in term of efficiency.</description>
+    <description>Research how to build I300 security and hacking series servers, noisy but intermediate in term of efficiency.</description>
     <baseCost>3500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
@@ -46,9 +46,9 @@
   
   <ResearchProjectDef>
     <defName>ATPP_ResearchServerI500Serie</defName>
-    <label>I500 serie servers</label>
+    <label>I500 series servers</label>
     <tab>AtlasAndroids</tab>
-    <description>Research how to build I500 security and hacking serie servers, expensives but very efficient</description>
+    <description>Research how to build I500 security and hacking series servers, expensives but very efficient</description>
     <baseCost>6500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
@@ -159,9 +159,9 @@
   
   <ResearchProjectDef>
     <defName>ATPP_ResearchSurrogateHost</defName>
-    <label>SX androids serie</label>
+    <label>SX androids series</label>
     <tab>AtlasAndroids</tab>
-    <description>Research how to build surrogate androids series, which is similar to the TX serie but with their artificial brains replaced by an advanced remote control system.</description>
+    <description>Research how to build surrogate androids series, which is similar to the TX series but with their artificial brains replaced by an advanced remote control system.</description>
     <baseCost>4500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
@@ -187,9 +187,9 @@
   
   <ResearchProjectDef>
     <defName>ATPP_ResearchCharchingStation</defName>
-    <label>Charching station</label>
+    <label>Charging station</label>
     <tab>AtlasAndroids</tab>
-    <description>Allow you to charge until 8 androids simultaneously directly on their internal battery instead throught their biomass generator.</description>
+    <description>Allows you to charge up to 8 androids simultaneously directly into internal battery instead through their biomass generator.</description>
     <baseCost>750</baseCost>
     <techLevel>Industrial</techLevel>
     <prerequisites>
@@ -245,7 +245,7 @@
     <defName>ATPP_ResearchCraftRepairNaniteBanks</defName>
     <label>Cure old age malfunction</label>
     <tab>AtlasAndroids</tab>
-    <description>Allow you to craft nanite to cure old age android malfunctions</description>
+    <description>Allows you to craft mechanites to cure old age android malfunctions</description>
     <baseCost>2500</baseCost>
     <techLevel>Spacer</techLevel>
     <prerequisites>
