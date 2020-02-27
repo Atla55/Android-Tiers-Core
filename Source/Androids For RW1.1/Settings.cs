@@ -197,8 +197,7 @@ namespace MOARANDROIDS
 
             list.Begin(scrollRect);
 
-            list.ButtonImage(Tex.Header, 850, 128);
-            list.GapLine();
+
             list.Gap(10);
             GUI.color = Color.green;
             list.Label("ATPP_SettingsSectionGeneral".Translate());
