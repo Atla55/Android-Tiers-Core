@@ -122,8 +122,8 @@
 			<li Class="StockGenerator_Category">
 				<categoryDef>Textiles</categoryDef>
 			</li>
-			<li Class="StockGenerator_BuyArt" />
-			<li Class="StockGenerator_BuyWeirdOrganic" />
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
       <li Class="StockGenerator_MultiDef">
         <thingDefs>
           <li>Chocolate</li>
@@ -187,8 +187,8 @@
 			<max>15</max>
 		</countRange>
       </li>
-			<li Class="StockGenerator_BuyArt" />
-      <li Class="StockGenerator_BuyWeirdOrganic" />
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
     </stockGenerators>
   </TraderKindDef>
 
@@ -278,8 +278,8 @@
           <max>3</max>
         </countRange>
       </li>
-      <li Class="StockGenerator_BuyArt" />
-      <li Class="StockGenerator_BuyWeirdOrganic" />
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
       <li Class="StockGenerator_BuySingleDef">
         <thingDef>Gold</thingDef>
       </li>
@@ -409,9 +409,11 @@
 					<max>3</max>
 				</countRange>
 			</li>
-			<li Class="StockGenerator_BuyArt" />
-			<li Class="StockGenerator_BuyWeirdOrganic" />
-			<li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyExpensiveSimple" />
+      <li Class="StockGenerator_BuyTradeTag"><tag>Art</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireCommon</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>ImplantEmpireRoyal</tag></li>
+      <li Class="StockGenerator_BuyTradeTag"><tag>ExoticBuilding</tag></li>
 		</stockGenerators>
 	</TraderKindDef>
 

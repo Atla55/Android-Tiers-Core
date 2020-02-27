@@ -114,6 +114,7 @@
   <HediffDef>
     <defName>FreshReprogramming</defName>
     <label>recently reprogrammed</label>
+	<description>recently reprogrammer AI core. Compiling and auto-correcting all new software may cause reduced abilities.</description>
 	    <hediffClass>HediffWithComps</hediffClass>
     <initialSeverity>1</initialSeverity>
 		  		<defaultLabelColor>(0.5, 0.5, 0.3)</defaultLabelColor>
@@ -329,6 +330,7 @@
 		<defName>AndroidOverheating</defName>
 		<taleOnVisible>AndroidOverheating</taleOnVisible>
 		<label>overheating</label>
+		<description>_</description>
 		<lethalSeverity>1</lethalSeverity>
 	<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
 		<stages>
@@ -384,6 +386,7 @@
 		<defName>AndroidFreezing</defName>
 		<taleOnVisible>AndroidFreezing</taleOnVisible>
 		<label>Freezing</label>
+		<description>_</description>
 		<maxSeverity>1.0</maxSeverity>
 	<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
 		<stages>
@@ -1379,7 +1382,7 @@
 		<stages>
 			<li>
 				<statOffsets>
-					<UnskilledLaborSpeed>1.5</UnskilledLaborSpeed>
+					<GeneralLaborSpeed>1.5</GeneralLaborSpeed>
 					<SmoothingSpeed>0.5</SmoothingSpeed>
 				</statOffsets>
 			</li>

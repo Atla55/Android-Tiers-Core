@@ -34,7 +34,7 @@
     <projectileWhenLoaded>Nanoswarm_shell_round</projectileWhenLoaded>
 		<recipeMaker>
 			<researchPrerequisite>UltimateRoboticAnimals</researchPrerequisite>
-			<workSpeedStat>SmithingSpeed</workSpeedStat>
+			<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 			<effectWorking>Repair</effectWorking>
 			<soundWorking>Recipe_Machining</soundWorking>
 			<workAmount>800</workAmount>

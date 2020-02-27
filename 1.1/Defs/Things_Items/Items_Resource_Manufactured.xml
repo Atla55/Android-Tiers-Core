@@ -3,7 +3,7 @@
 
   <ThingDef ParentName="ResourceBase">
     <defName>RepairKitAT</defName>
-    <label>Repair Kit</label>
+    <label>Upgrade Kit</label>
     <description>This kit is specifically made to help in the repair and modification of androids.</description>
     <graphicData>
       <texPath>Things/RepairKit</texPath>
@@ -33,9 +33,9 @@
   
    <RecipeDef>
       <defName>RepairKitAT</defName>
-      <label>Make a repair kit</label>
-      <description>Create a simple set of tools and materials for an android repair kit.</description>
-      <jobString>Making repair kit</jobString>  
+      <label>Make a upgrade kit</label>
+      <description>Create a simple set of tools and materials for an android upgrade kit.</description>
+      <jobString>Making upgrade kit</jobString>  
       <allowMixingIngredients>false</allowMixingIngredients>
       <ingredients>
          <li>
@@ -51,7 +51,7 @@
          <RepairKitAT>1</RepairKitAT>
       </products>
       <workAmount>1650</workAmount>
-      <workSpeedStat>SculptingSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
@@ -107,7 +107,7 @@
       </products>
       <workAmount>8650</workAmount>
 	  <researchPrerequisite>AiPersonaFab</researchPrerequisite>
-      <workSpeedStat>SculptingSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Crafting</workSkill>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>

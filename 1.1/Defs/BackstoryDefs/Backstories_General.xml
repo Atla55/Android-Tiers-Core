@@ -1470,7 +1470,7 @@
 	</AlienRace.BackstoryDef>
 
 	<AlienRace.BackstoryDef>
-		<defName>AndroidMaintenanceWorker</defName>
+		<defName>AndroidMechanicalFarmhand</defName>
 		<title>Mechanical farmhand</title>
 		<titleShort>Farmhand</titleShort>
 		<baseDescription>{PAWN_nameDef} was one of many androids employed on a gigantic farm, working day and night to sow, harvest and maintain the fields that fed the masses in the local area.</baseDescription>

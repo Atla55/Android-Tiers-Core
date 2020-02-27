@@ -24,7 +24,7 @@
 				<compClass>CompEquippable</compClass>
 			</li>
 			<li>
-				<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+				<!-- <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass> -->
 			</li>
 		</comps>
 		<graphicData>
@@ -336,7 +336,7 @@
     <description>This huge rifle was designed with one task in mind: taking down mechanised infantry. It does this fairly well, with it's high power; it is able to deal devastating damage to even the biggest of opponents.</description>
 		<comps>
 			<li>
-				<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
+				<!-- <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass> -->
 			</li>
 		</comps>
     <graphicData>

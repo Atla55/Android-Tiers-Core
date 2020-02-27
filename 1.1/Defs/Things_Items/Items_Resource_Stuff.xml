@@ -7,7 +7,7 @@
     <description>Use heat and strong electromagnets to smelt metal from materials.</description>
     <jobString>Smelting metal.</jobString>
     <workAmount>1600</workAmount>
-    <workSpeedStat>SmeltingSpeed</workSpeedStat>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Smelt</effectWorking>
     <soundWorking>Recipe_Smelt</soundWorking>
     <ingredients>
@@ -41,7 +41,7 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>2000</workAmount>
-    <workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<ingredients>
 			<li>
 				<filter>
@@ -74,7 +74,7 @@
 		<effectWorking>Cremate</effectWorking>
 		<soundWorking>Recipe_Cremate</soundWorking>
 		<workAmount>2000</workAmount>
-    <workSpeedStat>UnskilledLaborSpeed</workSpeedStat>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<ingredients>
 			<li>
 				<filter>

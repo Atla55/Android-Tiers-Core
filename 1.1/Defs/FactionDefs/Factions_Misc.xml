@@ -14,7 +14,7 @@
 		<autoFlee>false</autoFlee>
 		<techLevel>Neolithic</techLevel>
 		<canUseAvoidGrid>false</canUseAvoidGrid>
-		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
 	</FactionDef>
 
 	<FactionDef ParentName="PlayerFactionBase">
@@ -31,7 +31,7 @@
 		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
 		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
 		<techLevel>Industrial</techLevel>
-		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
 		<startingResearchTags>
 			<li>ClassicStart</li>
 		</startingResearchTags>
@@ -60,7 +60,7 @@
 		<canStageAttacks>true</canStageAttacks>
 		<permanentEnemy>true</permanentEnemy>
 		<leaderTitle>overlord</leaderTitle>
-		<expandingIconTexture>Things/Icons/AndroidBase</expandingIconTexture>
+		<factionIconPath>Things/Icons/AndroidBase</factionIconPath>
 		<colorSpectrum>
 			<li>(0.95, 0.9, 0.92)</li>
 			<li>(0.9, 0.9, 0.9)</li>
@@ -152,7 +152,7 @@
 				</options>
 			</li>
 		</pawnGroupMakers>
-		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
 	</FactionDef>
 
 	<FactionDef ParentName="HumanFactionBase">
@@ -180,7 +180,7 @@
 		<canSiege>true</canSiege>
 		<canStageAttacks>true</canStageAttacks>
 		<leaderTitle>grand leader</leaderTitle>
-		<expandingIconTexture>World/WorldObjects/Expanding/Town</expandingIconTexture>
+		<factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
 		<factionNameMaker>NamerFactionCollectiveAndroid</factionNameMaker>
 		<settlementNameMaker>NamerSettlementCollectiveAndroid</settlementNameMaker>
 		<techLevel>Ultra</techLevel>
@@ -285,6 +285,6 @@
 				</options>
 			</li>
 		</pawnGroupMakers>
-		<homeIconPath>World/WorldObjects/DefaultSettlement</homeIconPath>
+		<settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
 	</FactionDef>
 </Defs>

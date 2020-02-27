@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-  <SiteCoreDef>
+  <SitePartDef>
     <defName>DownedT5Android</defName>
     <label>Strange Crashsite</label>
 		<description>The approximate place the humanoid projectile crashed down.</description>
     <siteTexture>Things/StrangeCrash</siteTexture>
     <expandingIconTexture>Things/StrangeCrash</expandingIconTexture>
 	<forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
-  </SiteCoreDef>
+  </SitePartDef>
 
     <GenStepDef>
     <defName>DownedT5Android</defName>

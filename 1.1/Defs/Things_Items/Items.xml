@@ -136,10 +136,10 @@
     </statBases>
 	<costList>
       <Steel>25</Steel>
-      <Silver>1.5</Silver>
+      <Silver>2</Silver>
     </costList>
     <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Intellectual</workSkill>
       <recipeUsers>
         <li>AndroidOtherStuffTable</li>
@@ -176,10 +176,10 @@
     </statBases>
     <costList>
       <Steel>45</Steel>
-      <Silver>3.5</Silver>
+      <Silver>4</Silver>
     </costList>
     <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Intellectual</workSkill>
       <recipeUsers>
         <li>AndroidOtherStuffTable</li>
@@ -214,12 +214,12 @@
     </statBases>
     <costList>
       <Steel>85</Steel>
-      <Silver>6.5</Silver>
+      <Silver>7</Silver>
 	  <Gold>1.0</Gold>
 	  <ComponentIndustrial>2</ComponentIndustrial>
     </costList>
     <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
       <workSkill>Intellectual</workSkill>
       <recipeUsers>
         <li>AndroidOtherStuffTable</li>
@@ -257,7 +257,7 @@
       <li Class="CompProperties_Forbiddable"/>
     </comps>
     <thingCategories>
-      <li>BodyPartsArtificial</li>
+      <li>BodyPartsAndroid</li>
     </thingCategories>
     <pathCost>10</pathCost>
   </ThingDef>

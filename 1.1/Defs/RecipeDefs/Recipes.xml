@@ -73,7 +73,7 @@
 		  <Mech40MMCannon>1</Mech40MMCannon>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>25500</workAmount>
@@ -130,7 +130,7 @@
 		  <MechMastiffGun>1</MechMastiffGun>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>18500</workAmount>
@@ -196,7 +196,7 @@
 		  <MechHandCannon>1</MechHandCannon>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>12500</workAmount>
@@ -254,7 +254,7 @@
 		  <ATPP_T1ArtificialBrain>1</ATPP_T1ArtificialBrain>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>8500</workAmount>
@@ -311,7 +311,7 @@
 		  <ATPP_T2ArtificialBrain>1</ATPP_T2ArtificialBrain>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>10500</workAmount>
@@ -369,7 +369,7 @@
 		  <ATPP_T3ArtificialBrain>1</ATPP_T3ArtificialBrain>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>18500</workAmount>
@@ -434,7 +434,7 @@
 		  <ATPP_T4ArtificialBrain>1</ATPP_T4ArtificialBrain>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>24500</workAmount>
@@ -499,7 +499,7 @@
 		  <ATPP_RXChip>1</ATPP_RXChip>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>8500</workAmount>
@@ -556,7 +556,7 @@
 		  <ATPP_VX0Chip>1</ATPP_VX0Chip>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>8500</workAmount>
@@ -621,7 +621,7 @@
 		  <ATPP_VX1Chip>1</ATPP_VX1Chip>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>17500</workAmount>
@@ -694,7 +694,7 @@
 		  <ATPP_VX2Chip>1</ATPP_VX2Chip>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>35000</workAmount>
@@ -767,7 +767,7 @@
 		  <ATPP_VX3Chip>1</ATPP_VX3Chip>
 		</products>
 		
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>55000</workAmount>
@@ -790,7 +790,7 @@
 	  
 	<RecipeDef Name="ATPP_MakeNanite" Abstract="True">
 		<jobString>Make android nanite serum.</jobString>
-		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
 		<effectWorking>Cook</effectWorking>
 		<soundWorking>Recipe_Machining</soundWorking>
 		<workAmount>12000</workAmount>

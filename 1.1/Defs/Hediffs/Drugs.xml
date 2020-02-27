@@ -56,7 +56,7 @@
 		<defName>SGelhuman</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Structure gel</label>
-		<description>_</description>
+		<description>Amino acid and mechanite mixture flowing through the bloodstream, highly toxic and may cause seizures.</description>
 		<makesSickThought>true</makesSickThought>
 		<defaultLabelColor>(0.6,0.6,0.6)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
@@ -163,7 +163,7 @@
 		<defName>SGelandroid</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Structure gel</label>
-		<description>_</description>
+		<description>Amino acid and mechanite mixture flowing through coolant piping, helps maintain internals for better performance.</description>
 		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -261,7 +261,6 @@
 	<ThingDef ParentName="MakeableDrugBase">
 		<defName>Antifreeze</defName>
 		<label>polymer antifreeze</label>
-		<description>_</description>
 		<description>A polymer based additive mixture that lowers freezing point and increases boiling point of most water-based liquids. Very useful for temperature regulation by androids but toxic to biological life.</description>
 		<graphicData>
 			<texPath>Things/Drugs/Antifreeze</texPath>
@@ -311,7 +310,7 @@
 		<defName>Toxicated</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Toxicated</label>
-		<description>_</description>
+		<description>Toxic compounds within the bloodstream, causes difficulty breathing and vomitting.</description>
 		<makesSickThought>true</makesSickThought>
 		<defaultLabelColor>(0.6,0.7,0.6)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
@@ -418,7 +417,7 @@
 		<defName>AFreezeandroid</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Polymer antifreeze</label>
-		<description>_</description>
+		<description>Polymer based anti-freeze within coolant tubing. Helps temperature regulation for both hot and cold environments.</description>
 		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -480,7 +479,6 @@
 	<ThingDef ParentName="MakeableDrugBase">
 		<defName>MechSwarm</defName>
 		<label>Mechanite swarm</label>
-		<description>_</description>
 		<description>This small pill contains millions upon millions of tiny nano-mechanites. Designed to swarm a mechanical host and increase kinetic ouput through controlled overloading of the mechanisms of the pawn. However; biological consumption will lead to nausea and profuse vomitting.</description>
 		<graphicData>
 			<texPath>Things/Drugs/MechSwarm</texPath>
@@ -531,7 +529,7 @@
 		<defName>MechSwarmandroid</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Mech swarm</label>
-		<description>_</description>
+		<description>Nano-mechanites flowing through coolant tubing. Helps keep internals at peak performance.</description>
 		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -672,7 +670,7 @@
 		<defName>Conversion</defName>
 		<hediffClass>MOARANDROIDS.Hediff_Fractal</hediffClass>
 		<label>???</label>
-		<description>_</description>
+		<description>Fractal compounds within the bloodstream. Causes seizures, profuse vomitting and violent rupturing of skin due to severe inflammation of tissues.</description>
 		<makesSickThought>true</makesSickThought>
 		<comps>
 			<li Class="HediffCompProperties_SeverityPerDay">
@@ -773,7 +771,7 @@
 		<defName>FractalPillAndroid</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Fractal Enhancement</label>
-		<description>_</description>
+		<description>Fractal compounds within coolant tubing. Substantially improves all actions in their effeciency and power.</description>
 		<defaultLabelColor>(0.9,0.9,1)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
@@ -1453,7 +1451,7 @@
 		<defName>RegenHumanoid</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Mono-Salve</label>
-		<description>_</description>
+		<description>Active regenerative solvents in the bloodstream. Encourages basic cell regeneration.</description>
 		<makesSickThought>true</makesSickThought>
 		<defaultLabelColor>(0.6,0.7,0.6)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
@@ -1565,7 +1563,7 @@
 		<defName>RegenAndroid</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Mono-Salve</label>
-		<description>_</description>
+		<description>Active regenerative solvents in coolant tubing. Helping the auto-repair of mechanisms.</description>
 		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
 		<scenarioCanAdd>true</scenarioCanAdd>
 		<maxSeverity>1.0</maxSeverity>
