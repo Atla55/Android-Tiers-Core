@@ -39,6 +39,8 @@ namespace MOARANDROIDS
         static public bool RIMMSQOL_LOADED = false;
 
 
+        static public bool TXSERIE_LOADED = false;
+
         private static readonly FloatRange settlementsBasesPer100KTiles = new FloatRange(75f, 85f);
 
         public static Pawn curSelPatientDrawMedOperationsTab;
@@ -239,6 +241,8 @@ namespace MOARANDROIDS
         public static List<string> ExceptionPlayerStartingAndroidPawnKindList= new List<string> { "AndroidT1ColonistGeneral", "AndroidT2ColonistGeneral", "AndroidT3ColonistGeneral", "AndroidT4ColonistGeneral", "AndroidT5ColonistGeneral", "ATPP_Android2TXKind", "ATPP_Android3TXKind", "ATPP_Android4TXKind", "ATPP_Android2KTXKind", "ATPP_Android2KITXKind", "ATPP_Android2ITXKind", "ATPP_Android3ITXKind", "ATPP_Android4ITXKind" };
 
         public static List<string> ExceptionAndroidsDontRust = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
+
+        public static List<string> ExceptionTXSerie = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
 
         public static List<string> ExceptionAndroidWithoutSkinList = new List<string> { };
         public static List<string> ExceptionAndroidWithSkinList = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX" };
@@ -762,7 +766,7 @@ namespace MOARANDROIDS
                     gender = Verse.Gender.Female;
             }
 
-            PawnGenerationRequest request = new PawnGenerationRequest(kindDef, faction, PawnGenerationContext.NonPlayer, tile, false, false, false, false, true, true, 1f, false, true, allowFood, inhabitant, false, false, fixedGender : gender);
+            PawnGenerationRequest request = new PawnGenerationRequest(kindDef, faction, PawnGenerationContext.NonPlayer, tile, false, false, false, false, true, true, 1f, false, true, allowFood, false,inhabitant, false, false, fixedGender : gender);
             Pawn surrogate = PawnGenerator.GeneratePawn(request);
             if (spawn)
                 GenSpawn.Spawn(surrogate, pos, map, WipeMode.Vanish);
@@ -1715,9 +1719,9 @@ namespace MOARANDROIDS
 
         public static void ClearCachedDisabledWorkTypes(this Pawn pawn)
         {
-            if (pawn.story != null)
+            if (pawn != null)
             {
-                typeof(Pawn_StoryTracker).GetField("cachedDisabledWorkTypes", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(pawn.story, null);
+                typeof(Pawn).GetField("cachedDisabledWorkTypes", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(pawn, null);
             }
         }
 

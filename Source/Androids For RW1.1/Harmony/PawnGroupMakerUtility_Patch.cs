@@ -99,7 +99,7 @@ namespace MOARANDROIDS
                        {
                             if (Rand.Chance(0.10f))
                             {
-                                if (Rand.Chance(0.5f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.5f))
                                     rpkd = Utils.AndroidsPKDNeutral[3];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDNeutral[3];
@@ -108,7 +108,7 @@ namespace MOARANDROIDS
                             }
                             else if (Rand.Chance(0.35f))
                             {
-                                if (Rand.Chance(0.5f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.5f))
                                     rpkd = Utils.AndroidsPKDNeutral[2];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDNeutral[2];
@@ -117,7 +117,7 @@ namespace MOARANDROIDS
                             }
                             else if (Rand.Chance(0.55f))
                             {
-                                if (Rand.Chance(0.75f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsPKDNeutral[1];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDNeutral[1];
@@ -126,7 +126,7 @@ namespace MOARANDROIDS
                             }
                             else
                             {
-                                if (Rand.Chance(0.5f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.5f))
                                     rpkd = Utils.AndroidsPKDNeutral[0];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDNeutral[0];
@@ -138,7 +138,7 @@ namespace MOARANDROIDS
                         {
                             if (Rand.Chance(0.10f))
                             {
-                                if (Rand.Chance(0.5f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.5f))
                                     rpkd = Utils.AndroidsPKDHostile[3];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDHostile[3];
@@ -147,7 +147,7 @@ namespace MOARANDROIDS
                             }
                             else if (Rand.Chance(0.35f))
                             {
-                                if (Rand.Chance(0.5f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.5f))
                                     rpkd = Utils.AndroidsPKDHostile[2];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDHostile[2];
@@ -156,7 +156,7 @@ namespace MOARANDROIDS
                             }
                             else if (Rand.Chance(0.55f))
                             {
-                                if (Rand.Chance(0.75f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsPKDHostile[1];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDHostile[1];
@@ -165,7 +165,7 @@ namespace MOARANDROIDS
                             }
                             else
                             {
-                                if (Rand.Chance(0.5f))
+                                if (!Utils.TXSERIE_LOADED || Rand.Chance(0.5f))
                                     rpkd = Utils.AndroidsPKDHostile[0];
                                 else if (Rand.Chance(0.75f))
                                     rpkd = Utils.AndroidsXISeriePKDHostile[0];

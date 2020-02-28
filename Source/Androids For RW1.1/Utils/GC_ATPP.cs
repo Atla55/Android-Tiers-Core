@@ -89,7 +89,18 @@ namespace MOARANDROIDS
                             Utils.ExceptionAndroidWithoutSkinList.Add(el);
                         }
                     }
-                    
+
+                    //Check if TX serie loaded
+                    if (DefDatabase<PawnKindDef>.GetNamed("ATPP_AndroidTX2CollectiveSoldier", false) != null)
+                    {
+                        Utils.TXSERIE_LOADED = true;
+
+                        //Add TX related corpses
+                        foreach(var el in Utils.ExceptionTXSerie)
+                        {
+                            Utils.ExceptionAndroidCorpseList.Add("Corpse_" + el);
+                        }
+                    }
 
                     try
                     {
@@ -159,22 +170,25 @@ namespace MOARANDROIDS
                     }
 
                     //Dynamicaly add "Meat_Human" to recipe TX3/TX4
-                    try
+                    if (Utils.TXSERIE_LOADED)
                     {
-                        ThingDef tx4 = DefDatabase<ThingDef>.GetNamed("ATPP_Android4TX", false);
-                        ThingDef tx3 = DefDatabase<ThingDef>.GetNamed("ATPP_Android3TX", false);
-
-                        ThingDef humanMeat = DefDatabase<ThingDef>.GetNamed("Meat_Human", false);
-                        if (tx3 != null && tx4 != null && humanMeat != null)
+                        try
                         {
-                            tx4.butcherProducts.Add(new ThingDefCountClass(humanMeat, 100));
-                            tx3.butcherProducts.Add(new ThingDefCountClass(humanMeat, 100));
-                        }
+                            ThingDef tx4 = DefDatabase<ThingDef>.GetNamed("ATPP_Android4TX", false);
+                            ThingDef tx3 = DefDatabase<ThingDef>.GetNamed("ATPP_Android3TX", false);
 
-                    }
-                    catch(Exception e)
-                    {
-                        Log.Message("[ATPP] GC_ATPP.HumanMeatInjection "+e.Message+" "+e.StackTrace);
+                            ThingDef humanMeat = DefDatabase<ThingDef>.GetNamed("Meat_Human", false);
+                            if (tx3 != null && tx4 != null && humanMeat != null)
+                            {
+                                tx4.butcherProducts.Add(new ThingDefCountClass(humanMeat, 100));
+                                tx3.butcherProducts.Add(new ThingDefCountClass(humanMeat, 100));
+                            }
+
+                        }
+                        catch (Exception e)
+                        {
+                            Log.Message("[ATPP] GC_ATPP.HumanMeatInjection " + e.Message + " " + e.StackTrace);
+                        }
                     }
 
                     Utils.ExceptionAndroidCanReloadWithPowerList = Utils.ExceptionAndroidList.Concat(Utils.ExceptionAndroidAnimalPowered).ToList();

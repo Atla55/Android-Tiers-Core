@@ -46,17 +46,39 @@ namespace MOARANDROIDS
         public class get_FreeColonists_Patch
         {
             [HarmonyPrefix]
-            public static bool Listener(ref IEnumerable<Pawn> __result, MapPawns __instance)
+            public static bool Listener(ref List<Pawn> __result, MapPawns __instance, Dictionary<Faction, List<Pawn>> ___freeHumanlikesOfFactionResult)
             {
-                if (!Settings.hideInactiveSurrogates)
+                try
+                {
+                    if (!Settings.hideInactiveSurrogates)
+                        return true;
+
+                    List<Pawn> list;
+                    if (!___freeHumanlikesOfFactionResult.TryGetValue(Faction.OfPlayer, out list))
+                    {
+                        list = new List<Pawn>();
+                        ___freeHumanlikesOfFactionResult.Add(Faction.OfPlayer, list);
+                    }
+                    list.Clear();
+                    List<Pawn> allPawns = __instance.AllPawns;
+                    for (int i = 0; i < allPawns.Count; i++)
+                    {
+                        if (allPawns[i].Faction == Faction.OfPlayer && allPawns[i].HostFaction == null && allPawns[i].RaceProps.Humanlike && !allPawns[i].IsSurrogateAndroid(false, true))
+                        {
+                            list.Add(allPawns[i]);
+                        }
+                    }
+
+                    __result = list;
+
+                    return false;
+                }
+                catch(Exception e)
+                {
+                    Log.Message("[ATPP] MapPawns.get_FreeColonists " + e.Message + " " + e.StackTrace);
+
                     return true;
-
-
-                __result = from p in __instance.PawnsInFaction(Faction.OfPlayer)
-                           where p.HostFaction == null && p.RaceProps.Humanlike && !p.IsSurrogateAndroid(false, true)
-                           select p;
-
-                return false;
+                }
             }
         }
     }

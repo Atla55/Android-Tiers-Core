@@ -27,8 +27,9 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\S
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.0\obj\Debug\Androids.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\1.0\Assemblies\AndroidTiers.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.0\obj\Debug\AndroidTiers.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\AndroidTiers.dll
 C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csprojAssemblyReference.cache
 C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\1.1\Assemblies\AndroidTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\AndroidTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csprojAssemblyReference.cache

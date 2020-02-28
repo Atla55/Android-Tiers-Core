@@ -55,7 +55,7 @@ namespace BlueLeakTest
         }
     }
 
-    [HarmonyPatch(typeof(RimWorld.HealthCardUtility))]
+    /*[HarmonyPatch(typeof(RimWorld.HealthCardUtility))]
     [HarmonyPatch("DrawOverviewTab")]
     static public class AndroidLabelOverwrite
     {
@@ -72,7 +72,7 @@ namespace BlueLeakTest
 
             return codeInstructions;
         }
-    }
+    }*/
         [HarmonyPatch(typeof(JobDriver_Vomit))]
     [HarmonyPatch("MakeNewToils")]
     internal static class DeclineVomitJob
@@ -131,7 +131,7 @@ namespace BlueLeakTest
     {
         public static bool Prefix(ref string __result, PawnCapacityDef __instance, Pawn pawn)
         {
-            if (pawn.RaceProps.FleshType == DefDatabase<FleshTypeDef>.GetNamed("Android"))
+            if (pawn != null && pawn.RaceProps != null && pawn.RaceProps.FleshType == DefDatabase<FleshTypeDef>.GetNamed("Android"))
             {
                 if (__instance.GetModExtension<AndroidCapacityLabel>() != null)
                 {
