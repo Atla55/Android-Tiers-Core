@@ -45,24 +45,25 @@ namespace MOARANDROIDS
                     //Remove illogiocal traits with androids
                     if (isAndroidTier)
                     {
+                        if (__result.gender == Gender.Male)
+                        {
+
+                            BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
+                            if (bd != null)
+                                __result.story.bodyType = bd;
+                        }
+                        else
+                        {
+                            BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
+                            if (bd != null)
+                                __result.story.bodyType = bd;
+                        }
+
+
                         bool isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(__result.def.defName);
 
                         if (isAndroidWithSkin)
                         {
-                            if (__result.gender == Gender.Male)
-                            {
-
-                                BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
-                                if (bd != null)
-                                    __result.story.bodyType = bd;
-                            }
-                            else
-                            {
-                                BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
-                                if (bd != null)
-                                    __result.story.bodyType = bd;
-                            }
-
                             //force not damaged face for skinned androids
                             Utils.changeHARCrownType(__result, "Average_Normal");
 
