@@ -197,9 +197,10 @@ namespace MOARANDROIDS
 
             list.Begin(scrollRect);
 
-
+            list.ButtonImage(Tex.SettingsHeader, 850, 128);
+            list.GapLine();
             list.Gap(10);
-            GUI.color = Color.green;
+            GUI.color = Color.cyan;
             list.Label("ATPP_SettingsSectionGeneral".Translate());
             GUI.color = Color.white;
             list.Gap(10);
@@ -509,7 +510,7 @@ namespace MOARANDROIDS
 
             list.GapLine();
             list.Gap(10);
-            GUI.color = Color.green;
+            GUI.color = Color.cyan;
             list.Label("ATPP_SettingsSectionSkills".Translate());
             GUI.color = Color.white;
             list.Gap(10);
@@ -607,7 +608,7 @@ namespace MOARANDROIDS
             list.Gap(3);
             list.GapLine();
             list.Gap(10);
-            GUI.color = Color.green;
+            GUI.color = Color.cyan;
             list.Label("ATPP_SettingsSectionSkyCloud".Translate());
             GUI.color = Color.white;
             list.Gap(10);
@@ -659,7 +660,7 @@ namespace MOARANDROIDS
             list.Gap(3);
             list.GapLine();
             list.Gap(10);
-            GUI.color = Color.green;
+            GUI.color = Color.cyan;
             list.Label("ATPP_SettingsSectionSecurity".Translate());
             GUI.color = Color.white;
             list.Gap(10);
@@ -789,7 +790,7 @@ namespace MOARANDROIDS
             list.Gap(3);
             list.GapLine();
             list.Gap(10);
-            GUI.color = Color.green;
+            GUI.color = Color.cyan;
             list.Label("ATPP_SettingsSectionVX3".Translate());
             GUI.color = Color.white;
             list.Gap(10);
@@ -801,7 +802,7 @@ namespace MOARANDROIDS
             list.Gap(3);
             list.GapLine();
             list.Gap(10);
-            GUI.color = Color.green;
+            GUI.color = Color.cyan;
             list.Label("ATPP_SettingsSectionVX2".Translate());
             GUI.color = Color.white;
             list.Gap(10);
