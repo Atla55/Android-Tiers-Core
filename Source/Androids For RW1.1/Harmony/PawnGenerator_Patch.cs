@@ -34,9 +34,9 @@ namespace MOARANDROIDS
                         {
                             PawnGenerationRequest r = new PawnGenerationRequest(PawnKindDefOf.AncientSoldier, request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn,
                                 request.AllowDead, request.AllowDowned, request.CanGeneratePawnRelations, request.MustBeCapableOfViolence, request.ColonistRelationChanceFactor,
-                                request.ForceAddFreeWarmLayerIfNeeded, request.AllowGay, request.AllowFood, request.Inhabitant, request.CertainlyBeenInCryptosleep,
-                                request.ForceRedressWorldPawnIfFormerColonist, request.WorldPawnFactionDoesntMatter, request.WorldPawnFactionDoesntMatter, request.BiocodeWeaponChance, request.ExtraPawnForExtraRelationChance,
-                                request.RelationWithExtraPawnChanceFactor, request.ValidatorPreGear, request.ValidatorPostGear, request.ForcedTraits, request.ProhibitedTraits, request.MinChanceToRedressWorldPawn, request.FixedBiologicalAge, request.FixedChronologicalAge, request.FixedGender, request.FixedMelanin, request.FixedLastName);
+                                request.ForceAddFreeWarmLayerIfNeeded, request.AllowGay, request.AllowFood, request.AllowAddictions,request.Inhabitant, request.CertainlyBeenInCryptosleep,
+                                request.ForceRedressWorldPawnIfFormerColonist, request.WorldPawnFactionDoesntMatter, request.BiocodeWeaponChance, request.ExtraPawnForExtraRelationChance,
+                                request.RelationWithExtraPawnChanceFactor, request.ValidatorPreGear, request.ValidatorPostGear, request.ForcedTraits, request.ProhibitedTraits, request.MinChanceToRedressWorldPawn, request.FixedBiologicalAge, request.FixedChronologicalAge, request.FixedGender, request.FixedMelanin, request.FixedLastName, request.FixedBirthName, request.FixedTitle);
 
                             __result = PawnGenerator.GeneratePawn(r);
                         }
@@ -106,11 +106,11 @@ namespace MOARANDROIDS
                     {
                         if(__result.def.defName == Utils.M7 || __result.def.defName == Utils.T5)
                         {
-                            PawnGenerationRequest r = new PawnGenerationRequest(Utils.AndroidsPKDNeutral.RandomElement(), request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn, 
+                            PawnGenerationRequest r = new PawnGenerationRequest(Utils.AndroidsPKDNeutral.RandomElement(), request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn,
                                 request.AllowDead, request.AllowDowned, request.CanGeneratePawnRelations, request.MustBeCapableOfViolence, request.ColonistRelationChanceFactor,
-                                request.ForceAddFreeWarmLayerIfNeeded, request.AllowGay, request.AllowFood, request.Inhabitant, request.CertainlyBeenInCryptosleep, 
-                                request.ForceRedressWorldPawnIfFormerColonist, request.WorldPawnFactionDoesntMatter, request.WorldPawnFactionDoesntMatter, request.BiocodeWeaponChance, request.ExtraPawnForExtraRelationChance,
-                                request.RelationWithExtraPawnChanceFactor,  request.ValidatorPreGear, request.ValidatorPostGear, request.ForcedTraits, request.ProhibitedTraits, request.MinChanceToRedressWorldPawn, request.FixedBiologicalAge, request.FixedChronologicalAge, request.FixedGender, request.FixedMelanin, request.FixedLastName);
+                                request.ForceAddFreeWarmLayerIfNeeded, request.AllowGay, request.AllowFood, request.AllowAddictions, request.Inhabitant, request.CertainlyBeenInCryptosleep,
+                                request.ForceRedressWorldPawnIfFormerColonist, request.WorldPawnFactionDoesntMatter, request.BiocodeWeaponChance, request.ExtraPawnForExtraRelationChance,
+                                request.RelationWithExtraPawnChanceFactor, request.ValidatorPreGear, request.ValidatorPostGear, request.ForcedTraits, request.ProhibitedTraits, request.MinChanceToRedressWorldPawn, request.FixedBiologicalAge, request.FixedChronologicalAge, request.FixedGender, request.FixedMelanin, request.FixedLastName, request.FixedBirthName, request.FixedTitle);
 
                             __result = PawnGenerator.GeneratePawn(r);
                         }
