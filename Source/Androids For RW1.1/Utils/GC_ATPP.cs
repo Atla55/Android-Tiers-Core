@@ -768,22 +768,19 @@ namespace MOARANDROIDS
                         foreach (var x in pkd)
                         {
                             PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
-                            Utils.AndroidsXSeriePKDHostile.Add(p);
+                            Utils.AndroidsXSeriePKDNeutral.Add(p);
                         }
                         pkd = new List<string> { "ATPP_AndroidTX2ICollectiveSoldier", "ATPP_AndroidTX2KICollectiveSoldier", "ATPP_AndroidTX3ICollectiveSoldier", "ATPP_AndroidTX4ICollectiveSoldier" };
                         foreach (var x in pkd)
                         {
                             PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
-                            Utils.AndroidsXISeriePKDHostile.Add(p);
+                            Utils.AndroidsXISeriePKDNeutral.Add(p);
                         }
                     }
                     catch(Exception ex)
                     {
                         Log.Message("[ATPP] PawnKindDefGathering " + ex.Message + " " + ex.StackTrace);
                     }
-
-
-                    
 
 
                     //Remplissage des mentalBreakDef des virused lite
