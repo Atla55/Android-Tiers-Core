@@ -24,7 +24,7 @@
 				<compClass>CompEquippable</compClass>
 			</li>
 			<li>
-				<!-- <compClass>CompOversizedWeapon.CompOversizedWeapon</compClass> -->
+				<compClass>MOARANDROIDS.CompOversizedWeapon</compClass>
 			</li>
 		</comps>
 		<graphicData>

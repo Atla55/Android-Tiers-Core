@@ -327,6 +327,9 @@
     <Compile Include="Components\CompSurrogateSpawner.cs" />
     <Compile Include="Components\SpawnerCompProperties_GenericSpawner.cs" />
     <Compile Include="Components\Spawner_Generic.cs" />
+    <Compile Include="CompOversizedWeapon\CompOversizedWeapon.cs" />
+    <Compile Include="CompOversizedWeapon\CompProperties_OversizedWeapon.cs" />
+    <Compile Include="CompOversizedWeapon\HarmonyCompOversizedWeapon.cs" />
     <Compile Include="DefsOf\BodyPartTagDefOf.cs" />
     <Compile Include="DefsOf\FactionDefOf.cs" />
     <Compile Include="DefsOf\MentalStateDefOf.cs" />
