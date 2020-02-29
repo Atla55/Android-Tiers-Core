@@ -9,7 +9,7 @@ namespace MOARANDROIDS
         {
             this.compClass = typeof(CompGSTXSpawner);
         }
-
+        
         public PawnKindDef Pawnkind;
         public string GSThing;
         public int surrogate = 0;
