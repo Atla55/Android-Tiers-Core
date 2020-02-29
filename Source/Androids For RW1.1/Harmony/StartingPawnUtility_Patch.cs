@@ -32,23 +32,41 @@ namespace MOARANDROIDS
                     Random rnd = new Random();
                     PawnGenerationRequest request;
                     string pkd = "";
-                    switch (rnd.Next(1, 5))
+                    if (!Utils.TXSERIE_LOADED)
                     {
-                        case 1:
-                            pkd = "AndroidT2ColonistGeneral";
-                            break;
-                        case 2:
-                            pkd = "AndroidT1ColonistGeneral";
-                            break;
-                        case 3:
-                            pkd = "ATPP_Android2ITXKind";
-                            break;
-                        case 4:
-                            pkd = "ATPP_Android2TXKind";
-                            break;
-                        default:
-                            pkd = Faction.OfPlayer.def.basicMemberKind.defName;
-                            break;
+                        switch (rnd.Next(1, 3))
+                        {
+                            case 1:
+                                pkd = "AndroidT2ColonistGeneral";
+                                break;
+                            case 2:
+                                pkd = "AndroidT1ColonistGeneral";
+                                break;
+                            default:
+                                pkd = Faction.OfPlayer.def.basicMemberKind.defName;
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        switch (rnd.Next(1, 5))
+                        {
+                            case 1:
+                                pkd = "AndroidT2ColonistGeneral";
+                                break;
+                            case 2:
+                                pkd = "AndroidT1ColonistGeneral";
+                                break;
+                            case 3:
+                                pkd = "ATPP_Android2ITXKind";
+                                break;
+                            case 4:
+                                pkd = "ATPP_Android2TXKind";
+                                break;
+                            default:
+                                pkd = Faction.OfPlayer.def.basicMemberKind.defName;
+                                break;
+                        }
                     }
                     request = new PawnGenerationRequest(DefDatabase<PawnKindDef>.GetNamed(pkd, false), Faction.OfPlayer, PawnGenerationContext.PlayerStarter, -1, true, false, false, false, true, TutorSystem.TutorialMode, 20f, false, true, true, false, false, false, false);
                     __result = null;
