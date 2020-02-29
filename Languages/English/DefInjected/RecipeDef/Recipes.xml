@@ -116,17 +116,17 @@
 
   <!-- SM7 Weapons -->
   
-  <ATPP_Make_SM7Mech40MMCannon.label>Make an 40mm Cannon (SM7 Weapon)</ATPP_Make_SM7Mech40MMCannon.label>
-  <ATPP_Make_SM7Mech40MMCannon.description>Make an 40mm Cannon (SM7 Weapon)</ATPP_Make_SM7Mech40MMCannon.description>
-  <ATPP_Make_SM7Mech40MMCannon.jobString>Make an 40mm Cannon (SM7 Weapon)</ATPP_Make_SM7Mech40MMCannon.jobString>
+  <ATPP_Make_SM7Mech40MMCannon.label>Make a 40mm Cannon (SM7 Weapon)</ATPP_Make_SM7Mech40MMCannon.label>
+  <ATPP_Make_SM7Mech40MMCannon.description>Make a 40mm Cannon (SM7 Weapon)</ATPP_Make_SM7Mech40MMCannon.description>
+  <ATPP_Make_SM7Mech40MMCannon.jobString>Make a 40mm Cannon (SM7 Weapon)</ATPP_Make_SM7Mech40MMCannon.jobString>
   
-  <ATPP_Make_SM7MechMastiffGun.label>Make an Mastiff Shotgun (SM7 Weapon)</ATPP_Make_SM7MechMastiffGun.label>
-  <ATPP_Make_SM7MechMastiffGun.description>Make an Mastiff Shotgun (SM7 Weapon)</ATPP_Make_SM7MechMastiffGun.description>
-  <ATPP_Make_SM7MechMastiffGun.jobString>Make an Mastiff Shotgun (SM7 Weapon)</ATPP_Make_SM7MechMastiffGun.jobString>
+  <ATPP_Make_SM7MechMastiffGun.label>Make a Mastiff Shotgun (SM7 Weapon)</ATPP_Make_SM7MechMastiffGun.label>
+  <ATPP_Make_SM7MechMastiffGun.description>Make a Mastiff Shotgun (SM7 Weapon)</ATPP_Make_SM7MechMastiffGun.description>
+  <ATPP_Make_SM7MechMastiffGun.jobString>Make a Mastiff Shotgun (SM7 Weapon)</ATPP_Make_SM7MechMastiffGun.jobString>
   
-  <ATPP_Make_SM7MechHandCannon.label>Make an X-5 Hand Cannon (SM7 Weapon)</ATPP_Make_SM7MechHandCannon.label>
-  <ATPP_Make_SM7MechHandCannon.description>Make an X-5 Hand Cannon (SM7 Weapon)</ATPP_Make_SM7MechHandCannon.description>
-  <ATPP_Make_SM7MechHandCannon.jobString>Make an X-5 Hand Cannon (SM7 Weapon)</ATPP_Make_SM7MechHandCannon.jobString>
+  <ATPP_Make_SM7MechHandCannon.label>Make a X-5 Hand Cannon (SM7 Weapon)</ATPP_Make_SM7MechHandCannon.label>
+  <ATPP_Make_SM7MechHandCannon.description>Make a X-5 Hand Cannon (SM7 Weapon)</ATPP_Make_SM7MechHandCannon.description>
+  <ATPP_Make_SM7MechHandCannon.jobString>Make a X-5 Hand Cannon (SM7 Weapon)</ATPP_Make_SM7MechHandCannon.jobString>
   
   <!-- Paint framework -->
   <ATPP_PaintAndroidFrameworkKhaki.label>Paint android's frame in khaki</ATPP_PaintAndroidFrameworkKhaki.label>
