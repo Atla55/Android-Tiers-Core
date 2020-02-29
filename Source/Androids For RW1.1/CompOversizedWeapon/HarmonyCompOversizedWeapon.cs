@@ -14,7 +14,7 @@ namespace MOARANDROIDS
     {
         static HarmonyCompOversizedWeapon()
         {
-            var harmony = new Harmony("rimworld.jecrell.comps.oversized");
+            var harmony = new Harmony("rimworld.androitiers-jecrell.comps.oversized");
             harmony.Patch(typeof(PawnRenderer).GetMethod("DrawEquipmentAiming"),
                 new HarmonyMethod(typeof(HarmonyCompOversizedWeapon).GetMethod("DrawEquipmentAimingPreFix")), null);
             harmony.Patch(AccessTools.Method(typeof(Thing), "get_DefaultGraphic"), null,
