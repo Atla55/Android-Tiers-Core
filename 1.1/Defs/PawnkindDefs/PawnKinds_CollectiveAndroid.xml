@@ -6,9 +6,13 @@
 		<race>Android3Tier</race>
 		<combatPower>60</combatPower>
 		<isFighter>false</isFighter>
-		<backstoryCategories>
-			<li>AndroidGeneral</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>17</maxGenerationAge>
 		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -54,7 +58,13 @@
 		<race>Android1Tier</race>
 		<combatPower>40</combatPower>
 		<isFighter>false</isFighter>
-		<backstoryCategories><li>AndroidGeneral</li></backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>17</maxGenerationAge>
 		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -101,9 +111,13 @@
 		<trader>true</trader>
 		<combatPower>40</combatPower>
 		<isFighter>false</isFighter>
-		<backstoryCategories>
-			<li>AndroidGeneral</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>17</maxGenerationAge>
 		<defaultFactionType>AndroidFriendliesAtlas</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -147,9 +161,13 @@
 		<defName>AndroidT1CollectiveSoldier</defName>
 		<label>T1 Android Soldier</label>
 		<labelPlural>Raider androids</labelPlural>
-		<backstoryCategories>
-			<li>CollectiveSoldiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>CollectiveSoldiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<race>Android1Tier</race>
 		<combatPower>90</combatPower>
 		<baseRecruitDifficulty>0.60</baseRecruitDifficulty>
@@ -195,9 +213,13 @@
 		<defName>AndroidT2CollectiveSoldier</defName>
 		<label>T2 Android Soldier</label>
 		<labelPlural>Android Soldiers</labelPlural>
-		<backstoryCategories>
-			<li>CollectiveSoldiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>CollectiveSoldiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<baseRecruitDifficulty>0.70</baseRecruitDifficulty>
 		<race>Android2Tier</race>
 		<combatPower>120</combatPower>
@@ -243,9 +265,13 @@
 		<defName>AndroidT3CollectiveSoldier</defName>
 		<label>T3 Android Soldier</label>
 		<labelPlural>Android Soldiers</labelPlural>
-		<backstoryCategories>
-			<li>CollectiveSoldiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>CollectiveSoldiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<baseRecruitDifficulty>0.80</baseRecruitDifficulty>
 		<race>Android3Tier</race>
 		<combatPower>180</combatPower>
@@ -292,9 +318,13 @@
 		<defName>AndroidT4CollectiveSoldier</defName>
 		<label>T4 Android Soldier</label>
 		<labelPlural>Android Soldiers</labelPlural>
-		<backstoryCategories>
-			<li>CollectiveSoldiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>CollectiveSoldiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<baseRecruitDifficulty>0.90</baseRecruitDifficulty>
 		<race>Android4Tier</race>
 		<combatPower>230</combatPower>
@@ -341,9 +371,13 @@
 		<defName>AndroidT4CollectiveLeader</defName>
 		<label>Android leader</label>
 		<labelPlural>Android leaders</labelPlural>
-		<backstoryCategories>
-			<li>CollectiveSoldiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>CollectiveSoldiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<baseRecruitDifficulty>0.99</baseRecruitDifficulty>
 		<race>Android4Tier</race>
 		<combatPower>250</combatPower>

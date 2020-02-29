@@ -5,10 +5,14 @@
     <defName>AndroidT1RaiderFactionSpecific</defName>
     <label>T1 Android Raider</label>
     <labelPlural>Raider androids</labelPlural>
-	    <backstoryCategories>
-      <li>Raider</li>
-	  <li>BigMeanies</li>
-    </backstoryCategories>
+	<backstoryFiltersOverride>
+	  <li>
+		<categories>
+		  <li>BigMeanies</li>
+		  <li>Raider</li>
+		</categories>
+	  </li>
+	</backstoryFiltersOverride>
 	<race>Android1Tier</race>
     <combatPower>80</combatPower>
 	    <baseRecruitDifficulty>0.80</baseRecruitDifficulty>
@@ -53,9 +57,13 @@
     <defName>AndroidT1SlaveFactionSpecific</defName>
     <label>T1 Android Slave</label>
     <labelPlural>Enslaved android</labelPlural>
-	    <backstoryCategories>
-	  <li>BigMeanies</li>
-    </backstoryCategories>
+	<backstoryFiltersOverride>
+	  <li>
+		<categories>
+		  <li>BigMeanies</li>
+		</categories>
+	  </li>
+	</backstoryFiltersOverride>
 	<race>Android1Tier</race>
     <combatPower>40</combatPower>
 	    <baseRecruitDifficulty>0.70</baseRecruitDifficulty>
@@ -99,9 +107,13 @@
     <defName>AndroidT2RaiderFactionSpecific</defName>
     <label>T2 Android Raider</label>
     <labelPlural>Raider androids</labelPlural>
-	    <backstoryCategories>
-	  <li>BigMeanies</li>
-    </backstoryCategories>
+	<backstoryFiltersOverride>
+	  <li>
+		<categories>
+		  <li>BigMeanies</li>
+		</categories>
+	  </li>
+	</backstoryFiltersOverride>
 	    <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
 	<race>Android2Tier</race>
     <combatPower>120</combatPower>
@@ -147,9 +159,13 @@
     <defName>AndroidT3RaiderFactionSpecific</defName>
     <label>T3 Android Raider</label>
     <labelPlural>Raider androids</labelPlural>
-	    <backstoryCategories>
-      <li>BigMeanies</li>
-    </backstoryCategories>
+	<backstoryFiltersOverride>
+	  <li>
+		<categories>
+		  <li>BigMeanies</li>
+		</categories>
+	  </li>
+	</backstoryFiltersOverride>
 	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
 	<race>Android3Tier</race>
     <combatPower>170</combatPower>
@@ -196,9 +212,13 @@
     <defName>AndroidT4RaiderFactionSpecific</defName>
     <label>T4 Android Raider</label>
     <labelPlural>Raider androids</labelPlural>
-	    <backstoryCategories>
-      <li>BigMeanies</li>
-    </backstoryCategories>
+	<backstoryFiltersOverride>
+	  <li>
+		<categories>
+		  <li>BigMeanies</li>
+		</categories>
+	  </li>
+	</backstoryFiltersOverride>
 	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
 	<race>Android4Tier</race>
     <combatPower>220</combatPower>

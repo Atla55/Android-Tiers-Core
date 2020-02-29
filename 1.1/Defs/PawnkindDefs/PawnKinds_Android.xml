@@ -40,9 +40,13 @@
 		<defName>AndroidT5Colonist</defName>
 		<label>T5 Android Colonist</label>
 		<race>Android5Tier</race>
-		<backstoryCategories>
-			<li>AndroidTiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
 		<techHediffsMoney>
@@ -60,9 +64,13 @@
 		<defName>AndroidT4Colonist</defName>
 		<label>T4 Android Colonist</label>
 		<race>Android4Tier</race>
-		<backstoryCategories>
-			<li>AndroidTiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>1</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -74,9 +82,13 @@
 		<defName>AndroidT3Colonist</defName>
 		<label>T3 Android Colonist</label>
 		<race>Android3Tier</race>
-		<backstoryCategories>
-			<li>AndroidTiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>1</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -88,7 +100,13 @@
 		<defName>AndroidT1Colonist</defName>
 		<label>T1 Android Colonist</label>
 		<race>Android1Tier</race>
-		<backstoryCategories><li>AndroidTiers</li></backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>1</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -99,9 +117,13 @@
 		<defName>AndroidT2Colonist</defName>
 		<label>T2 Android Colonist</label>
 		<race>Android2Tier</race>
-		<backstoryCategories>
-			<li>AndroidTiers</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>1</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -114,9 +136,13 @@
 		<defName>AndroidT4ColonistGeneral</defName>
 		<label>T4 Android Colonist</label>
 		<race>Android4Tier</race>
-		<backstoryCategories>
-			<li>AndroidGeneral</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>17</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -131,9 +157,13 @@
 		<defName>AndroidT3ColonistGeneral</defName>
 		<label>T3 Android Colonist</label>
 		<race>Android3Tier</race>
-		<backstoryCategories>
-			<li>AndroidGeneral</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>17</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -148,7 +178,13 @@
 		<defName>AndroidT1ColonistGeneral</defName>
 		<label>T1 Android Colonist</label>
 		<race>Android1Tier</race>
-		<backstoryCategories><li>AndroidGeneral</li></backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<maxGenerationAge>17</maxGenerationAge>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
@@ -162,9 +198,13 @@
 		<defName>AndroidT2ColonistGeneral</defName>
 		<label>T2 Android Colonist</label>
 		<race>Android2Tier</race>
-		<backstoryCategories>
-			<li>AndroidGeneral</li>
-		</backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
 		<maxGenerationAge>17</maxGenerationAge>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>

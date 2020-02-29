@@ -300,7 +300,13 @@
 		<combatPower>1000</combatPower>
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>9999</ecoSystemWeight>
-		<backstoryCategories><li>Mechdrop</li></backstoryCategories>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>Mechdrop</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
    <weaponMoney>
