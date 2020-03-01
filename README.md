@@ -72,28 +72,28 @@
 ![T2](https://i.imgur.com/mi8RwKk.png)
 ![T3](https://i.imgur.com/LVvTv9e.png)
 ![T4](https://i.imgur.com/QqOoB1k.png)
-![T5](https://i.imgur.com/vKCP9wl.png)
+![T5](https://i.imgur.com/vKCP9wl.png)<br/>
 (T5 Can only be obtained via the [A Strange Crash] Event)
 
-**K-9**
-![K-9](https://i.imgur.com/KTQWWFi.png)
+**K-9**<br/>
+![K-9](https://i.imgur.com/KTQWWFi.png)<br/>
 Summary: a very quick, strong cybernetic dog even without upgrades. Useful for quickly taking down attackers without sending colonists out.
 
-**M.U.F.F Unit**
-![M.U.F.F Unit](https://i.imgur.com/MgDITNZ.png)
+**M.U.F.F Unit**<br/>
+![M.U.F.F Unit](https://i.imgur.com/MgDITNZ.png)<br/>
 Summary: a very strong robotic hauler that is very useful for caravan trips but not very useful for anything else.
 
-**Phytomining Unit**
-![Phytomining Unit](https://i.imgur.com/79YK5Ji.png)
+**Phytomining Unit**<br/>
+![Phytomining Unit](https://i.imgur.com/79YK5Ji.png)<br/>
 Summary: Named after the process that this machine performs; extracting the small amounts of metal absorbed by plants, refining it and expelling it in the form of long, spindly strands on it's back and neck.
 This faux wool can then be used to make resistant clothing or be refined into steel at an electric smelter.
 
-**N.Solution Unit**
-![N.Solution Unit](https://i.imgur.com/bD4hyrK.png)
+**N.Solution Unit**<br/>
+![N.Solution Unit](https://i.imgur.com/bD4hyrK.png)<br/>
 Summary: produces nutrient solution, a form of artifical milk that holds twice as much nutrition as it's counterpart; actual milk.
 
-**Chemical processing unit**
-![N.Solution Unit](https://i.imgur.com/mugMPOk.png)
+**Chemical processing unit**<br/>
+![N.Solution Unit](https://i.imgur.com/mugMPOk.png)<br/>
 Summary: every 2 days will dispense up to 5 capsules at once, these capsules contain semi-refined resources within them that can either be further developed into chemfuel or neutroamine at a drug lab or refinery.
 
 
