@@ -11,7 +11,7 @@ namespace MOARANDROIDS
     {
         public static bool keepPuppetBackstory = false;
         public static float percentageChanceMaleAndroidModel = 0.5f;
-        public static bool allowT5ToWearClothes = true;
+        public static bool allowT5ToWearClothes = false;
         public static int maxAndroidByPortableLWPN = 5;
         public static bool allowAutoRepaint = true;
         public static bool allowAutoRepaintForPrisoners = true;
@@ -25,10 +25,10 @@ namespace MOARANDROIDS
 
 
         public static bool androidsAreRare = false;
-        public static int minDaysAndroidPaintingCanRust = 15;
-        public static int maxDaysAndroidPaintingCanRust = 60;
+        public static int minDaysAndroidPaintingCanRust = 35;
+        public static int maxDaysAndroidPaintingCanRust = 90;
 
-        public static float chanceGeneratedAndroidCanBePaintedOrRust = 0.45f;
+        public static float chanceGeneratedAndroidCanBePaintedOrRust = 0.15f;
         public static bool androidsCanRust = true;
         public static bool removeSimpleMindedTraitOnUpload = true;
         public static int skyCloudUploadModeForSourceMind = 2;
@@ -75,7 +75,7 @@ namespace MOARANDROIDS
 
         public static int VX3MaxSurrogateControllableAtOnce = 6;
         public static int secToBootSkyCloudCore = 30;
-        public static bool androidsCanConsumeLivingPlants = true;
+        public static bool androidsCanConsumeLivingPlants = false;
         public static bool hideMenuAllowingForceEatingLivingPlants = false;
 
         public static bool notRemoveAllTraitsFromT1T2 = false;
@@ -128,12 +128,12 @@ namespace MOARANDROIDS
 
         public static int defaultGeneratorMode = 1;
         public static float percentageNanitesFail = 0.08f;
-        public static int wattConsumedByT1 = 90;
-        public static int wattConsumedByT2 = 150;
-        public static int wattConsumedByT3 = 200;
-        public static int wattConsumedByT4 = 250;
-        public static int wattConsumedByT5 = 350;
-        public static int wattConsumedByM7 = 500;
+        public static int wattConsumedByT1 = 100;
+        public static int wattConsumedByT2 = 200;
+        public static int wattConsumedByT3 = 300;
+        public static int wattConsumedByT4 = 400;
+        public static int wattConsumedByT5 = 500;
+        public static int wattConsumedByM7 = 700;
         public static int wattConsumedByHellUnit = 350;
         public static int wattConsumedByK9 = 250;
         public static int wattConsumedByMUFF = 350;
