@@ -223,52 +223,6 @@ namespace MOARANDROIDS
             }
         }
 
-        //CheckForStateChange
-        [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
-        public class MakeDowned_Prefix
-        {
-            [HarmonyBefore(new string[] { "rimworld.rwmods.androidtiers" })]
-            [HarmonyPrefix]
-            public static bool ListenerPrefix(Pawn ___pawn, Pawn_HealthTracker __instance, DamageInfo? dinfo, Hediff hediff)
-            {
-                try
-                {
-                    //Si M7 surrogate
-                    if (___pawn.IsSurrogateAndroid() && ___pawn.def.defName == "M7Mech")
-                    {
-                        ___pawn.kindDef = DefDatabase<PawnKindDef>.GetNamed("AndroidT4Colonist");
-                    }
-                    return true;
-                }
-                catch (Exception e)
-                {
-                    Log.Message("[ATPP] Pawn_HealthTracker.CheckForStateChange : " + e.Message + " - " + e.StackTrace);
-                    return true;
-                }
-            }
-        }
-
-        [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
-        public class MakeDowned_PostFix
-        {
-            [HarmonyPostfix]
-            public static void ListenerPostFix(Pawn ___pawn, Pawn_HealthTracker __instance, DamageInfo? dinfo, Hediff hediff)
-            {
-                try
-                {
-                    //Si M7 surrogate
-                    if (___pawn.IsSurrogateAndroid() && ___pawn.def.defName == "M7Mech")
-                    {
-                        ___pawn.kindDef = DefDatabase<PawnKindDef>.GetNamed("M7MechPawn");
-                    }
-                }
-                catch (Exception e)
-                {
-                    Log.Message("[ATPP] Pawn_HealthTracker.CheckForStateChange : " + e.Message + " - " + e.StackTrace);
-                }
-            }
-        }
-
 
         [HarmonyPatch(typeof(Pawn_HealthTracker), "MakeDowned")]
         public class MakeDowned
