@@ -333,6 +333,7 @@ namespace MOARANDROIDS
                 Pawn cp = (Pawn)parent;
 
 
+                checkInfectionFix();
                 checkTXWithSkinFacialTextureUpdate();
 
                 /* Debugage PK opreationBed obtenu aprés androidPod
@@ -378,6 +379,24 @@ namespace MOARANDROIDS
                     }
                 }
                 
+            }
+        }
+
+        /*
+         * Essentially usefull to fix visual bugged state of lite virused androids (correct cases where the patch is not executed at the end of the mental break and the state not cleared)
+         */
+        public void checkInfectionFix()
+        {
+            Pawn cp = (Pawn)parent;
+
+            if (csm != null && csm.Infected == 4 && !cp.InMentalState)
+            {
+                csm.Infected = -1;
+                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+                if (he == null)
+                {
+                    cp.health.AddHediff(Utils.hediffNoHost);
+                }
             }
         }
 
@@ -772,6 +791,8 @@ namespace MOARANDROIDS
                 Utils.removeMindBlacklistedTrait(pawn);
 
             this.isAndroidTIer = isAndroidTier;
+
+            checkInfectionFix();
 
             if (isAndroidTier)
             {
