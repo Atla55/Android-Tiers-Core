@@ -245,27 +245,11 @@
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>T5Research</defName>
+		<defName>T5UpgradesResearch</defName>
 		<label>Archotech upgrades</label>
 		<tab>AtlasAndroids</tab>
 		<description>Research into archotech level upgrades, this level of technology is incomprehensable by most life, requiring a T5 Android to develop; as only they possess enough mental complexity to understand it.\n\n [ ONLY A T5 ANDROID CAN RESEARCH THIS TECH. ]</description>
-		<baseCost>7000</baseCost>
-		<techLevel>Ultra</techLevel>
-		<prerequisites><li>T4Androids</li></prerequisites>
-		<researchViewY>2</researchViewY>
-		<researchViewX>5</researchViewX>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<requiredResearchFacilities>
-			<li>MultiAnalyzer</li>
-		</requiredResearchFacilities>
-	</ResearchProjectDef>
-	
-	<ResearchProjectDef>
-		<defName>AiPersonaFab</defName>
-		<label>Ai Persona Fabrication</label>
-		<tab>AtlasAndroids</tab>
-		<description>Research how to create AI persona cores from scratch.</description>
-		<baseCost>2500</baseCost>
+		<baseCost>10000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites><li>T4Androids</li></prerequisites>
 		<researchViewY>3</researchViewY>
@@ -275,6 +259,7 @@
 			<li>MultiAnalyzer</li>
 		</requiredResearchFacilities>
 	</ResearchProjectDef>
+	
 
 	<!--
 	<ResearchProjectDef>

@@ -924,7 +924,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>MLiver</li>
+			<li>MStomach</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>BTransformer</addsHediff>
 	</RecipeDef>
@@ -966,7 +966,7 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>MStomach</li>
+			<li>MLiver</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>BVAdapter</addsHediff>
 	</RecipeDef>

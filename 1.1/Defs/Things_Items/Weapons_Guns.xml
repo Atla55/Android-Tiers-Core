@@ -24,7 +24,7 @@
 				<compClass>CompEquippable</compClass>
 			</li>
 			<li>
-				<compClass>MOARANDROIDS.CompOversizedWeapon</compClass>
+				<compClass>CompOversizedWeapon.CompOversizedWeapon</compClass>
 			</li>
 		</comps>
 		<graphicData>
@@ -42,6 +42,8 @@
     </thingCategories>
   </ThingDef>
   
+	
+	
 	<ThingDef ParentName="BaseBullet">
     <defName>Bullet_40MMCannon</defName>
     <label>40mm Round</label>

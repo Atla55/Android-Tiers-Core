@@ -16,7 +16,8 @@
 	<race>Android1Tier</race>
     <combatPower>80</combatPower>
 	    <baseRecruitDifficulty>0.80</baseRecruitDifficulty>
-		<maxGenerationAge>17</maxGenerationAge>
+	<minGenerationAge>20</minGenerationAge>
+	<maxGenerationAge>50</maxGenerationAge>
 			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
     <gearHealthRange>
@@ -67,7 +68,7 @@
 	<race>Android1Tier</race>
     <combatPower>40</combatPower>
 	    <baseRecruitDifficulty>0.70</baseRecruitDifficulty>
-		<maxGenerationAge>17</maxGenerationAge>
+	<minGenerationAge>20</minGenerationAge>	
 			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
     <gearHealthRange>
@@ -116,8 +117,8 @@
 	</backstoryFiltersOverride>
 	    <baseRecruitDifficulty>0.90</baseRecruitDifficulty>
 	<race>Android2Tier</race>
-    <combatPower>120</combatPower>
-	<maxGenerationAge>17</maxGenerationAge>
+    <combatPower>130</combatPower>
+	<minGenerationAge>20</minGenerationAge>
 			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
     <gearHealthRange>
@@ -168,8 +169,8 @@
 	</backstoryFiltersOverride>
 	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
 	<race>Android3Tier</race>
-    <combatPower>170</combatPower>
-	<maxGenerationAge>17</maxGenerationAge>
+    <combatPower>180</combatPower>
+	<minGenerationAge>20</minGenerationAge>
 			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
     <gearHealthRange>
@@ -222,7 +223,7 @@
 	    <baseRecruitDifficulty>0.92</baseRecruitDifficulty>
 	<race>Android4Tier</race>
     <combatPower>220</combatPower>
-	<maxGenerationAge>17</maxGenerationAge>
+	<minGenerationAge>20</minGenerationAge>
 			<defaultFactionType>AndroidRebellionAtlas</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
     <gearHealthRange>

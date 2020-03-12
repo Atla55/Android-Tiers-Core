@@ -22,12 +22,6 @@
 			
 				<maxDamageForSocialfight>60</maxDamageForSocialfight>
 				<immuneToAge>true</immuneToAge>
-				            <forcedRaceTraitEntries>
-                <li>
-                    <defName>Intolerance</defName>
-                    <chance>95</chance>
-                </li>
-							</forcedRaceTraitEntries>
 				<disallowedTraits>
 					<li>DrugDesire</li>
 					<li>AnnoyingVoice</li>
@@ -209,14 +203,14 @@
 			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
 			<intelligence>Humanlike</intelligence>
 			<makesFootprints>true</makesFootprints>
-			<lifeExpectancy>4000</lifeExpectancy>
+			<lifeExpectancy>10000</lifeExpectancy>
 			<leatherDef>Tainted_Skin</leatherDef>
-			<nameGenerator>AndroidAtlasStandard</nameGenerator>
+			<nameGenerator>AndroidAtlasArchotech</nameGenerator>
 			<body>Android4Tier</body>
 			<baseHealthScale>3</baseHealthScale>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreHuman</foodType>
-			<baseHungerRate>0.1</baseHungerRate>
+			<baseHungerRate>0.5</baseHungerRate>
 			<fleshType>Android</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<useMeatFrom>Alpaca</useMeatFrom>
@@ -246,14 +240,12 @@
 			</specialShadowData>
       <ageGenerationCurve>
         <points>
-          <li>(14,0)</li>
-          <li>(16,0)</li>
-          <li>(50,100)</li>
-          <li>(60,30)</li>
-          <li>(70,18)</li>
-          <li>(80,10)</li>
-          <li>(90,3)</li>
-          <li>(100,0)</li>
+          <li>(50,0)</li>
+          <li>(2000,10)</li>
+          <li>(4000,40)</li>
+          <li>(6000,50)</li>
+          <li>(8000,20)</li>
+          <li>(10000,0)</li>
         </points>
       </ageGenerationCurve>
 			<hediffGiverSets>

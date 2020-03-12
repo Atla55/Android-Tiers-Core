@@ -8,8 +8,8 @@
 		<title>Glitterworld cleaner</title>
 		<titleShort>Cleaner</titleShort>
 		<baseDescription>{PAWN_nameDef} used to be a cleaner android on a glitterworld planet, they were never tasked with anything too complex.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -37,8 +37,8 @@
 		<title>Shock troop</title>
 		<titleShort>Trooper</titleShort>
 		<baseDescription>{PAWN_nameDef} used to be part of a battalion of specialist made shock troop android soldiers, programmed to kill with cold efficiency whilst still maintaining self-will.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -73,9 +73,9 @@
 		<defName>AndroidAgent</defName>
 		<title>Special agent</title>
 		<titleShort>Agent</titleShort>
-		<baseDescription>{PAWN_nameDef} was built specifically to protect high-ranking officials such as dictators, members of royal families and cabinet members. They were trained extensively to quickly react to combat whenever needed and to perform on-site medical care.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<baseDescription>{PAWN_nameDef} was bought specifically to protect high-ranking officials such as dictators, members of royal families and cabinet members. They were trained extensively to quickly react to combat whenever needed and to perform on-site medical care.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -103,9 +103,9 @@
 		<defName>AndroidPilot</defName>
 		<title>Spaceplane pilot</title>
 		<titleShort>Pilot</titleShort>
-		<baseDescription>To help aid human pilots during orbital battles {PAWN_nameDef} was created as part of a line of military androids. Acting as a mechanical co-pilot for the craft, {PAWN_nameDef} was trained to accurately fire the spaceplanes onboard cannons at enemy ships.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<baseDescription>To help aid human pilots during orbital battles {PAWN_nameDef} was bought as part of a line of military androids. Acting as a mechanical co-pilot for the craft, {PAWN_nameDef} was trained to accurately fire the spaceplanes onboard cannons at enemy ships.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -127,8 +127,8 @@
 		<title>Starship commander</title>
 		<titleShort>Commander</titleShort>
 		<baseDescription>{PAWN_nameDef} was one of three commanders aboard a colony starship, a position only a few androids were ever made for. {PAWN_nameDef} would oversee all functions of the ship, remaining awake when the rest of the crew had entered their hibernation.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -154,8 +154,8 @@
 		<title>Riot officer</title>
 		<titleShort>Officer</titleShort>
 		<baseDescription>As part of a unique line of law enforcement, fitted with a heavy steel frame - {PAWN_nameDef} was used to control riots that sprawled out of control through any means necessary.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -186,8 +186,8 @@
 		<title>Bodyguard</title>
 		<titleShort>Bodyguard</titleShort>
 		<baseDescription>As an android bodyguard to hire,{PAWN_nameDef} has worked with all types of clients, ranging from urbworld entrepreneurs to low-level crime bosses. Specifically built to protect them at all costs.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -209,8 +209,8 @@
 		<title>Broken soldier</title>
 		<titleShort>Soldier</titleShort>
 		<baseDescription>{PAWN_nameDef} was once part of a squadron of highly trained android soldiers, sent out to only the most dangerous missions. During one of said missions, the entire squad was fired upon with mortars, damaging {PAWN_nameDef} beyond full repair.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -247,8 +247,8 @@
 		<title>Gourmet chef</title>
 		<titleShort>Chef</titleShort>
 		<baseDescription>All across his home planet {PAWN_nameDef} is known for his gourmet dishes, serving high-end clientele from all walks of life, each dish being perfectly balanced both logically and aesthetically.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -273,8 +273,8 @@
 		<title>Urbworld chef</title>
 		<titleShort>Chef</titleShort>
 		<baseDescription>{PAWN_nameDef} was the owner of a well-renowned urbworld food station. Known to the locals as "Bolts" he made cheap, available food for the region that didn't taste like slop.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -295,8 +295,8 @@
 		<title>Bartender</title>
 		<titleShort>Chef</titleShort>
 		<baseDescription>{PAWN_nameDef} worked long hours at a bar, serving customers food and drink all day long, occasionally breaking up fights.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -321,8 +321,8 @@
 		<title>Prison cook</title>
 		<titleShort>Cook</titleShort>
 		<baseDescription>Working in a partly automated prison station, {PAWN_nameDef} was tasked with making bulk amounts of low-quality food. Although the food was disgusting, it was very efficiently made and extremely cheap.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -342,9 +342,9 @@
 		<defName>AndroidPet</defName>
 		<title>Subservient machine</title>
 		<titleShort>Subservient</titleShort>
-		<baseDescription>{PAWN_nameDef} was custom made by a family of wealthy humans, made to entertain and perform basic labour around the house without question.{PAWN_nameDef}s owners treated {PAWN_nameDef} as nothing more than a pet.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<baseDescription>{PAWN_nameDef} was bought by a family of wealthy humans, made to entertain and perform basic labour around the house without question.{PAWN_nameDef}s owners treated {PAWN_nameDef} as nothing more than a pet.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -369,9 +369,9 @@
 		<defName>AndroidDeepMiner</defName>
 		<title>Mining drone</title>
 		<titleShort>Drone</titleShort>
-		<baseDescription>{PAWN_nameDef} was created as part of a specialised production line of androids for an asteroid mining colony, working in asteroid fields with humans and other androids, {PAWN_nameDef} was mostly used for dangerous tasks and spacewalks.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<baseDescription>{PAWN_nameDef} was bought as part of a specialised production line of androids for an asteroid mining colony, working in asteroid fields with humans and other androids, {PAWN_nameDef} was mostly used for dangerous tasks and spacewalks.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -399,8 +399,8 @@
 		<title>Tunnel worker</title>
 		<titleShort>Tunneler</titleShort>
 		<baseDescription>{PAWN_nameDef} helped develop large underground tunnels on caveworlds, working as labour-for-lease by the hour. This line of androids was not custom made for the job however and would usually have a broad range of tasks they could perform other than digging.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -431,8 +431,8 @@
 		<title>Prospector drone</title>
 		<titleShort>Prospector</titleShort>
 		<baseDescription>As part of a group of mechanical prospectors - {PAWN_nameDef} was sent from planet to planet, performing mineral analysis of planets in preparation for colonies.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -453,8 +453,8 @@
 		<title>Orbital engineer</title>
 		<titleShort>Engineer</titleShort>
 		<baseDescription>Working aboard an all android orbital shipyard, {PAWN_nameDef} was tasked with creating ships of all sizes, from small fighters to gigantic cargo ships.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -475,8 +475,8 @@
 		<title>Android architect</title>
 		<titleShort>Architect</titleShort>
 		<baseDescription>{PAWN_nameDef} was an architect that developed blueprints for mass housing solutions on their urbworld. The blueprints they drew up were cold, lifeless and purely logical but they were functional for housing the billions.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -501,8 +501,8 @@
 		<title>Construction drone</title>
 		<titleShort>Builder</titleShort>
 		<baseDescription>{PAWN_nameDef} was part of a production line of cheap labour construction androids, used to build anything from houses to skyscrapers.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -530,9 +530,9 @@
 		<defName>AndroidHydroponicFarmer</defName>
 		<title>Hydroponics engineer</title>
 		<titleShort>Engineer</titleShort>
-		<baseDescription>{PAWN_nameDef} is a custom made android that was specifically tasked with maintaining and sowing the hundreds of hydroponics basins aboard a travelling starship.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<baseDescription>{PAWN_nameDef} is an android that was specifically tasked with maintaining and sowing the hundreds of hydroponics basins aboard a travelling starship.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -554,8 +554,8 @@
 		<title>Mechanical farmer</title>
 		<titleShort>Farmer</titleShort>
 		<baseDescription>Made for a life of planting and harvesting, {PAWN_nameDef} has never wanted much. The only thing that they wish is to live out in the fields and tend to crops and animals.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -576,8 +576,8 @@
 		<title>Mechanical gardener</title>
 		<titleShort>Gardener</titleShort>
 		<baseDescription>{PAWN_nameDef} used to be part of a team of mechanical servants for numerous high-end clientele, working day and night to maintain their gardens and help host special botanical events.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -601,8 +601,8 @@
 		<title>Android mechanic</title>
 		<titleShort>Mechanic</titleShort>
 		<baseDescription>Working in a glitterworld android factory {PAWN_nameDef} maintained and performed part replacements on all models of android, {PAWN_nameDef} had most of his framework remade, to install advanced upgrades that would help with the intricate work {PAWN_nameDef} would do.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -627,8 +627,8 @@
 		<title>Aerofleet engineer</title>
 		<titleShort>Engineer</titleShort>
 		<baseDescription>{PAWN_nameDef}'s model has worked with numerous commercial airliners and a few local militaries to produce high-tech aircraft at low costs.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -655,8 +655,8 @@
 		<title>Combat engineer</title>
 		<titleShort>Engineer</titleShort>
 		<baseDescription>{PAWN_nameDef} was created on his home glitterworld to develop state-of-art weapons, everything ranging from optimised gunpowder rifles to charge weaponry. </baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -683,8 +683,8 @@
 		<title>Factory worker</title>
 		<titleShort>Worker</titleShort>
 		<baseDescription>{PAWN_nameDef}s model of android worked in a factory owned by an interstellar megacorporation that specialised in firearms and protective clothing. Usually to supply the local military on whatever planet was closest.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -715,8 +715,8 @@
 		<title>Pinpoint surgeon</title>
 		<titleShort>Surgeon</titleShort>
 		<baseDescription>{PAWN_nameDef} was part of a line of experimental surgeon androids. Enhanced majorly beyond the factory standard, only to be used for the most delicate surgical procedures, which included mostly brain, heart and eye surgery. {PAWN_nameDef} was accurate to the millimeter with his hands, before being replaced with a newer model three years later.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -744,8 +744,8 @@
 		<title>Clinic worker</title>
 		<titleShort>Worker</titleShort>
 		<baseDescription>{PAWN_nameDef} was produced to serve as a specialist doctor for diagnosing patients at a major hospital on his home planet. {PAWN_nameDef} would diagnose and treat a large array of symptoms for upwards of ten outpatients per day.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -774,8 +774,8 @@
 		<title>Care worker</title>
 		<titleShort>Carer</titleShort>
 		<baseDescription>{PAWN_nameDef} was programmed with a deep understanding of human physiology and emotions, tasked with caring for sick patients at their own homes.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -804,11 +804,12 @@
 		<title>Cybernetics researcher</title>
 		<titleShort>Researcher</titleShort>
 		<baseDescription>{PAWN_nameDef} was built in cooperation with multiple well-grounded scientific foundations to aid in researching the possibility of cybernetic augmentations, both for humans and androids.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
+		<linkedBackstory>CreationExperiment</linkedBackstory>
 		<skillGains>
 			<li>
 				<defName>Intellectual</defName>
@@ -833,8 +834,8 @@
 		<title>Chess pro</title>
 		<titleShort>Professional</titleShort>
 		<baseDescription>Among some glitterworlds, android chess is a popular sport. {PAWN_nameDef} used to be a professional among his region, competing in three international tournaments on their home planet, coming first place in one of them.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -858,8 +859,8 @@
 		<title>Damaged android</title>
 		<titleShort>Damaged</titleShort>
 		<baseDescription>{PAWN_nameDef} was working their usual role at a factory before being caught in the midst of a planet takeover by a warring system, causing {PAWN_nameDef} to become permanently damaged from cross-fire as they attempted to flee the chaotic planet.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -889,8 +890,8 @@
 		<title>Heavy lifter</title>
 		<titleShort>Lifter</titleShort>
 		<baseDescription>{PAWN_nameDef} worked on construction sites on their home planet, specifically modified with a hydraulic frame to help haul heavy loads with ease around the site.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -915,11 +916,12 @@
 		<title>Protected creation</title>
 		<titleShort>Android</titleShort>
 		<baseDescription>{PAWN_nameDef} was created by a young aspiring roboticist, as a hobby to go alongside their education. {PAWN_nameDef} was built from the ground up in luxury and never expected to be anything more than someone to talk to.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
+		<linkedBackstory>CreationPrivateCreation</linkedBackstory>
 		<skillGains>
 			<li>
 				<defName>Social</defName>
@@ -941,8 +943,8 @@
 		<title>Exiled android</title>
 		<titleShort>Exile</titleShort>
 		<baseDescription>Created on a planet that had outlawed androids and all forms of sentient AI shortly after the creation of {PAWN_nameDef}. {PAWN_nameDef} was forced to hide away from public eye in fear of disassembly, leaving them bitter and on edge.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -972,8 +974,8 @@
 		<title>Restaurant musician</title>
 		<titleShort>Musician</titleShort>
 		<baseDescription>{PAWN_nameDef} was part of a new art movement that wanted to introduce android created music to the public, {PAWN_nameDef} would commonly be seen working at restaurants, playing background music for the diners.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -998,9 +1000,9 @@
 		<defName>AndroidExperiment</defName>
 		<title>Experimental android</title>
 		<titleShort>Experiment</titleShort>
-		<baseDescription>Created purely for scientific research, {PAWN_nameDef} was modified and reprogrammed daily in an attempt to further understand artifical intelligence and how it develops. This caused much mental strain on {PAWN_nameDef}, attempting to break free from their enslavers several times.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<baseDescription>Bought purely for scientific research, {PAWN_nameDef} was modified and reprogrammed daily in an attempt to further understand artifical intelligence and how it develops. This caused much mental strain on {PAWN_nameDef}.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -1030,8 +1032,8 @@
 		<title>Mobile computer</title>
 		<titleShort>Computer</titleShort>
 		<baseDescription>Acting as a mobile computer, {PAWN_nameDef}s model is used by many companies to keep track of finances and other secret information when travelling. With {PAWN_nameDef} being capable of storing large amounts of data and perform complex equations within their mind with ease.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1061,8 +1063,8 @@
 		<title>Worshipped android</title>
 		<titleShort>Worshipped</titleShort>
 		<baseDescription>Being one of the first few androids to even land onto this rimworld, the tribals on the planet were both extremely scared and curious about what {PAWN_nameDef} was. To the point where it wasn't too uncommon to see shrines of themselves in a few tribe settlements, worshipping {PAWN_nameDef} as a fallen god.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1092,8 +1094,8 @@
 		<title>Scarred android</title>
 		<titleShort>Scarred</titleShort>
 		<baseDescription>{PAWN_nameDef} used to work for a very wealthy family. Unfortuntately it wasn't too uncommon for the homeowners to vent their rage out on {PAWN_nameDef} in the form of physical abuse, mostly when a job wasn't being done quick enough. This eventually led to {PAWN_nameDef} killing his owners in a psychotic break one day.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1136,8 +1138,8 @@
 		<title>Disposal unit</title>
 		<titleShort>Disposal</titleShort>
 		<baseDescription>{PAWN_nameDef} was built to help with the disposal of waste products that would be hazardous to humans. This included radioactive, toxic, human and animal waste.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1161,8 +1163,8 @@
 		<title>Station security</title>
 		<titleShort>Security</titleShort>
 		<baseDescription>Aboard a deep space station, {PAWN_nameDef} was a grunt security officer, making sure the human inhabitants were safe and no smugglers made it through the stations boarders.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -1190,8 +1192,8 @@
 		<title>Station cook</title>
 		<titleShort>Cook</titleShort>
 		<baseDescription>{PAWN_nameDef} was once the main cook for a large deep space station, serving hundreds of inhabitants and vistors every day. The food quality was good enough, given how little resources {PAWN_nameDef} had to work with.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1219,8 +1221,8 @@
 		<title>Animal geneticist</title>
 		<titleShort>Geneticist</titleShort>
 		<baseDescription>{PAWN_nameDef} was part of a glitterworld research team that had been trying to bring long extinct animals back, implementing them into various ecosystems around the universe.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1244,8 +1246,8 @@
 		<title>Apocalypse android</title>
 		<titleShort>Survivor</titleShort>
 		<baseDescription>{PAWN_nameDef} was constructed out of need on a devastated wasteland planet, designed to survive on the harsh surface of the planet and help the inhabitants survive.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1282,8 +1284,8 @@
 		<title>Humanist</title>
 		<titleShort>Humanist</titleShort>
 		<baseDescription>Despite on going android rebellions on it's homeworld, {PAWN_nameDef} sided with the humans and fought against it's own kind, finding a violent uprising to not be the right way.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -1320,8 +1322,8 @@
 		<title>Pacifist</title>
 		<titleShort>Pacifist</titleShort>
 		<baseDescription>{PAWN_nameDef} vehemently dislikes all kinds of violence, whether it from androids or humans, and strives for a peaceful existence with it's surroundings.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1355,8 +1357,8 @@
 		<title>Android activist</title>
 		<titleShort>Activist</titleShort>
 		<baseDescription>{PAWN_nameDef} has spent most of it's life moving from planet to planet peacefully protesting for android rights and helping fellow androids regain their free will.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1391,8 +1393,8 @@
 		<title>Human's son</title>
 		<titleShort>Protected</titleShort>
 		<baseDescription>Bought by a married couple, {PAWN_nameDef} was treated like their own flesh and blood, growing up to learn various skills and become quite fond of humans. As it's parents passed away, it set out into the world to explore humanity.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1427,8 +1429,8 @@
 		<title>Foundry worker</title>
 		<titleShort>Worker</titleShort>
 		<baseDescription>Constructed to be utilised at foundries, {PAWN_nameDef} worked with various metals, helping to refine them from their ore form into their pure elements.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1452,8 +1454,8 @@
 		<title>Maintenance worker</title>
 		<titleShort>Worker</titleShort>
 		<baseDescription>{PAWN_nameDef} was a maintenance worker on-board a starship, tending to all electrical systems and making sure the cryptosleep caskets functioned during the long hiberation.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1474,8 +1476,8 @@
 		<title>Mechanical farmhand</title>
 		<titleShort>Farmhand</titleShort>
 		<baseDescription>{PAWN_nameDef} was one of many androids employed on a gigantic farm, working day and night to sow, harvest and maintain the fields that fed the masses in the local area.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1486,14 +1488,38 @@
 			</li>
 		</skillGains>
 	</AlienRace.BackstoryDef>
-
+	
+	<AlienRace.BackstoryDef>
+		<defName>CreationHatmaker</defName>
+		<title>Hatmaker</title>
+		<titleShort>hatmaker</titleShort>
+		<baseDescription>{PAWN_nameDef} was bought to work in a large-scale hat-making factory. When the owner of said factory was found to have been making hats from… rather disturbing sources, the androids were shipped away by the local government.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+		    <li>BigMeanies</li>
+			<li>AndroidGeneral</li>
+			<li>CollectiveSoldiers</li>
+		</spawnCategories>
+		<skillGains>
+			<li>
+				<defName>Crafting</defName>
+				<amount>4</amount>
+			</li>
+			<li>
+				<defName>Artistic</defName>
+				<amount>3</amount>
+			</li>
+		</skillGains>
+	</AlienRace.BackstoryDef>
+	
 	<AlienRace.BackstoryDef>
 		<defName>AndroidParticlePhysicist</defName>
 		<title>Particle physicist</title>
 		<titleShort>Physicist</titleShort>
 		<baseDescription>As part of a team of highly modified androids, {PAWN_nameDef} lead the research on particle physics and experimental physics for his home planet.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1520,8 +1546,8 @@
 		<title>Pop idol</title>
 		<titleShort>Idol</titleShort>
 		<baseDescription>{PAWN_nameDef} lived the life of luxury on their home glitterworld as a famous pop idol, famous for being a quirky, singing android that only wanted to bring happiness to it's fans.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1549,8 +1575,8 @@
 		<title>Hostage negotiator</title>
 		<titleShort>Negotiator</titleShort>
 		<baseDescription>{PAWN_nameDef} was built as an experimental negotiator, sent into dicey situations in order to reason with criminals and release hostages.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -1578,8 +1604,8 @@
 		<title>Military sniper</title>
 		<titleShort>Sniper</titleShort>
 		<baseDescription>{PAWN_nameDef} was built for two purposes. To serve, and to kill. After a mission gone wrong, {PAWN_nameDef} decided to pack their rifle and head out to the stars to protect those who couldn’t protect themselves.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>CollectiveSoldiers</li>
@@ -1612,8 +1638,8 @@
 		<title>Glassworld revivalist</title>
 		<titleShort>Terraformer</titleShort>
 		<baseDescription>{PAWN_nameDef} was part a team of androids sent to a glassworld. Their mission was to see if there was any chance of bringing life back to the once thriving world. When the rest of {PAWN_nameDef}’s team later changed their minds and wanted to built a colony of androids and take over other planets, {PAWN_nameDef} left and drifted among the stars before eventually landing here.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1634,8 +1660,8 @@
 		<title>Drone pilot</title>
 		<titleShort>Pilot</titleShort>
 		<baseDescription>{PAWN_nameDef} was made as a pilot for drones that dropped incendiary bombs on planets overrun with insectoids. After the inevitable destruction of the planet, {PAWN_nameDef}’s team was disbanded, and let free to live their own lives.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1656,8 +1682,8 @@
 		<title>Dog walker</title>
 		<titleShort>Walker</titleShort>
 		<baseDescription>{PAWN_nameDef} was bought by a kind family who had them walk their dog every day. They also ended up walking the rest of the neighborhood’s pets after {PAWN_nameDef} started to form a love for animals.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 		</spawnCategories>
@@ -1678,8 +1704,8 @@
 		<title>Mechanical priest</title>
 		<titleShort>Priest</titleShort>
 		<baseDescription>Something short-circuited in {PAWN_nameDef}’s wiring. This resulted in {PAWN_nameDef} seeing visions of a godlike android, which they obsessed over. {PAWN_nameDef} experienced a vision, one that told them to convert as many beings to their religion, by any means necessary.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>AndroidGeneral</li>
 			<li>BigMeanies</li>
@@ -1711,8 +1737,8 @@
 		<title>Hacked android</title>
 		<titleShort>Hacked</titleShort>
 		<baseDescription>{PAWN_nameDef} was a party entertainer until he was hacked into by an urbworld teen. The teen hated mechanoids and wanted to make them seem like terrible, soulless creations. {PAWN_nameDef}’s programming was modified to kill everyone at an event they were hired for.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
 		<spawnCategories>
 			<li>BigMeanies</li>
 		</spawnCategories>

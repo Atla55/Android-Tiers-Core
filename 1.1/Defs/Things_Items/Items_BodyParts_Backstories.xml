@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="BodyPartBaseBackstory" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+			<Beauty>-4</Beauty>
+		</statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <isTechHediff>false</isTechHediff>
+	<tradeability>None</tradeability>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <pathCost>10</pathCost>
+  </ThingDef>
+
+
+  <ThingDef ParentName="BodyPartBaseBackstory" Name="BodyPartATBackstoryBase" Abstract="True">
+    <thingCategories>
+      <li>BodyPartsAndroid</li>
+    </thingCategories>
+		<statBases>
+			<DeteriorationRate>2.0</DeteriorationRate>
+		</statBases>
+  </ThingDef>
+	<!-- Pit fighter backstory-->
+	
+  <ThingDef ParentName="BodyPartATBackstoryBase">
+    <defName>Backstory_PitFighterUpgradeItem</defName>
+    <label>pit gauntlet</label>
+    <description>A small custom-made hand implant consisting of three hydraulic spikes and a heavy metal plate covering the top of the hand. Given to this android to show their popularity as a pit fighter.</description>
+    <graphicData>
+      <texPath>Things/Item/Organorange</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>8</Mass>
+    </statBases>
+  </ThingDef>
+  
+    <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBackstory_PitFighterUpgradeItem</defName>
+		<label>install pit gauntlet</label>
+		<description>Installs a pit gauntlet.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing pit gauntlet.</jobString>
+		
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Backstory_PitFighterUpgradeItem</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>Backstory_PitFighterUpgradeItem</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalHand</li>
+			<li>LeftMechanicalHand</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Backstory_PitFighterUpgrade</addsHediff>
+	</RecipeDef>
+
+  <!--Archotech high council-->
+  
+  <ThingDef ParentName="BodyPartATBackstoryBase">
+    <defName>Backstory_HighCouncilUpgradeItem</defName>
+    <label>quantum mind</label>
+    <description>An extremely foreign full artifical mind upgrade that supposedly allows the user to read the neural patterns of a speaker's mind through some kind of quantum tunnelling. Allowing the user to know what the speaker will say before they even think it.</description>
+    <graphicData>
+      <texPath>Things/Item/Organorange</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>8</Mass>
+    </statBases>
+  </ThingDef>
+  
+    <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBackstory_HighCouncilUpgradeItem</defName>
+		<label>install quantum mind</label>
+		<description>Installs a quantum mind.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing quantum mind.</jobString>
+		
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>0.5</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Backstory_HighCouncilUpgradeItem</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>Backstory_HighCouncilUpgradeItem</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Backstory_HighCouncilUpgrade</addsHediff>
+	</RecipeDef>
+	
+  <ThingDef ParentName="BodyPartATBackstoryBase">
+    <defName>Backstory_TranscendantAssimilatorUpgradeItem</defName>
+    <label>plasma gauntlet</label>
+    <description>Two constantly extended blades affixed to the forearm with the combined weight of most men, when activated - the blades run white hot, turning the surrounding air into plasma. The technology used in this device is nothing ever seen before.</description>
+    <graphicData>
+      <texPath>Things/Item/Organorange</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <Mass>50</Mass>
+    </statBases>
+  </ThingDef>
+  
+    <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBackstory_TranscendantAssimilatorUpgradeItem</defName>
+		<label>install plasma gauntlet</label>
+		<description>Installs a plasma gauntlet.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing plasma gauntlet.</jobString>
+		
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>0.5</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Backstory_TranscendantAssimilatorUpgradeItem</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>5</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>Backstory_TranscendantAssimilatorUpgradeItem</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalHand</li>
+			<li>LeftMechanicalHand</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>Backstory_TranscendantAssimilatorUpgrade</addsHediff>
+	</RecipeDef>
+</Defs>

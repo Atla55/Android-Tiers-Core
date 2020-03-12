@@ -199,14 +199,14 @@
 			<thinkTreeConstant>HumanlikeConstant</thinkTreeConstant>
 			<intelligence>Humanlike</intelligence>
 			<makesFootprints>true</makesFootprints>
-			<lifeExpectancy>100</lifeExpectancy>
+			<lifeExpectancy>500</lifeExpectancy>
 			<leatherDef>Tainted_Skin</leatherDef>
 			<nameGenerator>AndroidAtlasStandard</nameGenerator>
 			<body>Android4Tier</body>
 			<baseHealthScale>0.8</baseHealthScale>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreHuman</foodType>
-			<baseHungerRate>0.6</baseHungerRate>
+			<baseHungerRate>0.7</baseHungerRate>
 			<fleshType>Android</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<useMeatFrom>Alpaca</useMeatFrom>
@@ -236,9 +236,16 @@
 			</specialShadowData>
 			<ageGenerationCurve>
 				<points>
-					<li>(0,0)</li>
-					<li>(10,100)</li>
-					<li>(2,0)</li>
+          <li>(0,0)</li>
+		  <li>(1,100)</li>
+		  <li>(2,100)</li>
+		  <li>(20,5)</li>
+          <li>(50,15)</li>
+		  <li>(100,40)</li>
+		  <li>(200,30)</li>
+		  <li>(400,20)</li>
+		  <li>(480,15)</li>
+		  <li>(500,0)</li>
 				</points>
 			</ageGenerationCurve>
 			<hediffGiverSets>

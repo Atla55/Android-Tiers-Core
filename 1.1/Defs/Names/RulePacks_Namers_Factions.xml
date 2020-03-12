@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+  <!--Civil androids-->
+  
   <RulePackDef>
   <defName>NamerFactionCollectiveAndroid</defName>
     <rulePack>
@@ -62,5 +63,26 @@
     </rulePack>
   </RulePackDef>
 
+  <!--Raider androids-->
+  
+    <RulePackDef>
+  <defName>NamerFactionRaiderAndroid</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>r_name->The [connecting_verb] [political_raider_androids]</li>
+		
+		<li>political_raider_androids->enclave</li>
+		<li>political_raider_androids->march</li>
+		<li>political_raider_androids->uprising</li>
+		<li>political_raider_androids->militia</li>
+		
+		<li>connecting_verb->unending</li>
+		<li>connecting_verb->mechanical</li>
+		<li>connecting_verb->unrelenting</li>
+		<li>connecting_verb->land of the</li>
 
+			</rulesStrings>
+    </rulePack>
+  </RulePackDef>
+  
 </Defs>

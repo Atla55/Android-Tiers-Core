@@ -67,7 +67,8 @@
 			<li>(0.9, 0.9, 0.9)</li>
 			<li>(0.92, 0.92, 0.96)</li>
 		</colorSpectrum>
-		<factionNameMaker>NamerFactionBaseAndroid</factionNameMaker>
+		<factionNameMaker>NamerFactionRaiderAndroid</factionNameMaker>
+		<settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
 		<techLevel>Ultra</techLevel>
 		<backstoryCategories>
 			<li>BigMeanies</li>
@@ -77,15 +78,15 @@
 			<li>Punk</li>
 		</hairTags>
 		<allowedArrivalTemperatureRange>
-			<min>-60</min>
+			<min>-70</min>
 			<max>55</max>
 		</allowedArrivalTemperatureRange>
 		<maxPawnCostPerTotalPointsCurve>
 			<points>
 				<li>(0,35)</li>
-				<li>(70, 50)</li>
+				<li>(80, 50)</li>
 				<li>(700, 100)</li>
-				<li>(1300, 150)</li>
+				<li>(1200, 150)</li>
 				<li>(100000, 10000)</li>
 			</points>
 		</maxPawnCostPerTotalPointsCurve>
@@ -96,17 +97,14 @@
 				<commonality>100</commonality>
 				<options>
 					<AndroidT1RaiderFactionSpecific>8</AndroidT1RaiderFactionSpecific>
-					<AndroidT2RaiderFactionSpecific>3</AndroidT2RaiderFactionSpecific>
-					<AndroidT3RaiderFactionSpecific>1</AndroidT3RaiderFactionSpecific>
 					<AndroidT2RaiderFactionSpecific>6</AndroidT2RaiderFactionSpecific>
 					<AndroidT3RaiderFactionSpecific>4</AndroidT3RaiderFactionSpecific>
 					<AndroidT4RaiderFactionSpecific>1</AndroidT4RaiderFactionSpecific>
-					<AndroidT1SlaveFactionSpecific>8</AndroidT1SlaveFactionSpecific>
 				</options>
 			</li>
 			<li>
 				<kindDef>Combat</kindDef>
-				<commonality>40</commonality>
+				<commonality>20</commonality>
 				<options>
 					<AndroidT1SlaveFactionSpecific>4</AndroidT1SlaveFactionSpecific>
 				</options>
@@ -117,8 +115,8 @@
 				<options>
 					<AndroidT1RaiderFactionSpecific>2</AndroidT1RaiderFactionSpecific>
 					<AndroidT2RaiderFactionSpecific>4</AndroidT2RaiderFactionSpecific>
-					<AndroidT3RaiderFactionSpecific>5</AndroidT3RaiderFactionSpecific>
-					<AndroidT4RaiderFactionSpecific>7</AndroidT4RaiderFactionSpecific>
+					<AndroidT3RaiderFactionSpecific>6</AndroidT3RaiderFactionSpecific>
+					<AndroidT4RaiderFactionSpecific>6</AndroidT4RaiderFactionSpecific>
 					<AndroidT1SlaveFactionSpecific>1</AndroidT1SlaveFactionSpecific>
 				</options>
 			</li>
@@ -176,7 +174,7 @@
 			<li>Base_AndroidCollective_Standard</li>
 		</baseTraderKinds>
 		<allowedArrivalTemperatureRange>
-			<min>-50</min>
+			<min>-70</min>
 			<max>55</max>
 		</allowedArrivalTemperatureRange>
 		<maxPawnCostPerTotalPointsCurve>
