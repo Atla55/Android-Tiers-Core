@@ -15,6 +15,7 @@ namespace MOARANDROIDS
         /*
          * Allow android tiers to be affected by EMP
          */
+        [HarmonyPatch(new Type[] { typeof(DamageInfo), typeof(bool) })]
         [HarmonyPatch(typeof(StunHandler), "Notify_DamageApplied")]
         public class Notify_DamageApplied_Patch
         {

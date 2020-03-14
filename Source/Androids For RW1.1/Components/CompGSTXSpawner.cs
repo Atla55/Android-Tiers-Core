@@ -65,13 +65,13 @@ namespace MOARANDROIDS
                         gender = Gender.Female;
                         source = "TX3";
                     }
-                    else if (Spawnprops.GSThing == "ATPP_GS_TX3Male")
+                    else if (Spawnprops.GSThing == "ATPP_GS_TX4Male")
                     {
                         pawnKind = "ATPP_Android4TXKind";
                         gender = Gender.Male;
                         source = "TX4";
                     }
-                    else if (Spawnprops.GSThing == "ATPP_GS_TX3Female")
+                    else if (Spawnprops.GSThing == "ATPP_GS_TX4Female")
                     {
                         pawnKind = "ATPP_Android4TXKind";
                         gender = Gender.Female;
