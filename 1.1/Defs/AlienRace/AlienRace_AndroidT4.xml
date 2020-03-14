@@ -108,7 +108,7 @@
 			<ComfyTemperatureMax>70</ComfyTemperatureMax>
 			<PainShockThreshold>5</PainShockThreshold>
 			<ToxicSensitivity>0.05</ToxicSensitivity>
-			<MentalBreakThreshold>0.1</MentalBreakThreshold>
+			<MentalBreakThreshold>0.3</MentalBreakThreshold>
 			<GlobalLearningFactor>2</GlobalLearningFactor>
 			<WorkSpeedGlobal>1.8</WorkSpeedGlobal>
 			<ImmunityGainSpeed>10</ImmunityGainSpeed>

@@ -22,7 +22,7 @@
 						<li>Steel</li>
 					</thingDefs>
 				</filter>
-				<count>50</count>
+				<count>10</count>
 			</li>
 		</ingredients>
 		<fixedIngredientFilter>

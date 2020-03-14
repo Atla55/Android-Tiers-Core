@@ -113,7 +113,7 @@
 			<PainShockThreshold>5</PainShockThreshold>
 			<ToxicSensitivity>0.1</ToxicSensitivity>
 			<WorkSpeedGlobal>1</WorkSpeedGlobal>
-			<MentalBreakThreshold>0.07</MentalBreakThreshold>
+			<MentalBreakThreshold>0.2</MentalBreakThreshold>
 			<GlobalLearningFactor>1</GlobalLearningFactor>
 			<ImmunityGainSpeed>10</ImmunityGainSpeed>
 			<LeatherAmount>0</LeatherAmount>
