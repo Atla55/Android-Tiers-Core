@@ -63,7 +63,7 @@ namespace MOARANDROIDS
                     List<Pawn> allPawns = __instance.AllPawns;
                     for (int i = 0; i < allPawns.Count; i++)
                     {
-                        if (allPawns[i].Faction == Faction.OfPlayer && allPawns[i].HostFaction == null && allPawns[i].RaceProps.Humanlike && !allPawns[i].IsSurrogateAndroid(false, true))
+                        if (allPawns[i].HostFaction == null && allPawns[i].IsColonist && !allPawns[i].IsSurrogateAndroid(false, true))
                         {
                             list.Add(allPawns[i]);
                         }
