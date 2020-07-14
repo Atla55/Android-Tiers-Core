@@ -415,7 +415,7 @@
 	<!---->
 
   <RecipeDef ParentName="SurgeryAndroid">
-		<defName>InstallDrillArm</defName>
+		<defName>InstallMiningArm</defName>
 		<label>install mining arm</label>
 		<description>Installs a mining arm.</description>
 		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
