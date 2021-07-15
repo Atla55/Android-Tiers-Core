@@ -1,0 +1,39 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Colonist Uplink\Assemblies\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Colonist Uplink\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Colonist Uplink\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Colonist Uplink\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Colonist Uplink\Source\Androids\obj\Debug\Androids.csproj.CopyComplete
+D:\Steam Library\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+D:\Steam Library\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
+D:\Steam Library\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Assemblies\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Assemblies\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasB19Tiers\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1Tiers\Assemblies\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1Tiers\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1Tiers\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1Tiers\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1Tiers\Source\Androids\obj\Debug\Androids.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1TiersOrigin\Assemblies\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1TiersOrigin\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1TiersOrigin\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AtlasV1TiersOrigin\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Assemblies\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Source\Androids\obj\Debug\AndroidsAtlasTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\V1AndroidTiers\Source\Androids\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.0\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\1.0\Assemblies\AndroidTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.0\obj\Debug\AndroidTiers.dll
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\1.1\Assemblies\AndroidTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\Android-Tiers-Core\Source\Androids For RW1.1\obj\Debug\AndroidTiers.dll
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.2\obj\Debug\Androids.csprojAssemblyReference.cache
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.2\obj\Debug\Androids.csproj.CoreCompileInputs.cache
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.2\obj\Debug\AndroidTiers.dll
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\1.2\Assemblies\AndroidTiers.dll
+C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.2\obj\Debug\Androids.csproj.CopyComplete

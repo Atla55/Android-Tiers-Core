@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+    <!-- > <BodyPartTagDef>
+    <defName>BloodFiltrationSource</defName>
+    <vital>true</vital>
+  </BodyPartTagDef> -->
+
+    <BodyPartTagDef>
+        <defName>CPSource</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>HVSource</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>EVKidney</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>EVLiver</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>MetabolismSource</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>HVPathway</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>EatingPathway</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+
+    <BodyPartTagDef>
+        <defName>TalkingPathway</defName>
+        <vital>true</vital>
+    </BodyPartTagDef>
+</Defs>

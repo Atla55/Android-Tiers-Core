@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	 <RecipeDef>
+		<defName>ATPP_DisassembleAndroid</defName>
+		<label>Disassemble body on an android</label>
+		<description>Disassemble a dead android into its component parts.</description>
+		<jobString>Disassembling android.</jobString>
+		<workAmount>300</workAmount>
+		<workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<efficiencyStat>ButcheryMechanoidEfficiency</efficiencyStat>
+		<effectWorking>ButcherMechanoid</effectWorking>
+		<soundWorking>Recipe_ButcherCorpseMechanoid</soundWorking>
+		<ingredients>
+		  <li>
+			<filter>
+			  <categories>
+			  <li>CorpsesHumanlike</li>
+			  </categories>
+			  <disallowedThingDefs>
+				<li>Corpse_Human</li>
+			  </disallowedThingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		<fixedIngredientFilter>
+		  <categories>
+			  <li>CorpsesHumanlike</li>
+			  </categories>
+			  <disallowedThingDefs>
+				<li>Corpse_Human</li>
+			  </disallowedThingDefs>
+		</fixedIngredientFilter>
+		<specialProducts>
+		  <li>Butchery</li>
+		</specialProducts>
+	  </RecipeDef>
+	  
+	<RecipeDef>
+		<defName>ATPP_Make_SM7Mech40MMCannon</defName>
+		<label>make an 40mm Cannon</label>
+		<description>Make an 40mm Cannon weapon.</description>
+		<jobString>Make an 40mm Cannon.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>200</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>10.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>4</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <Mech40MMCannon>1</Mech40MMCannon>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>25500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSM7</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidPartsTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>ATPP_Make_SM7MechMastiffGun</defName>
+		<label>make an Mastiff Shotgun</label>
+		<description>Make an Mastiff Shotgun.</description>
+		<jobString>Make an Mastiff Shotgun.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>175</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>25.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>4</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <MechMastiffGun>1</MechMastiffGun>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>18500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSM7</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidPartsTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	  
+	  
+	<RecipeDef>
+		<defName>ATPP_Make_SM7MechHandCannon</defName>
+		<label>make an X-5 Hand Cannon</label>
+		<description>Make an X-5 Hand Cannon.</description>
+		<jobString>Make an X-5 Hand Cannon.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>80</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>5.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>12</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <MechHandCannon>1</MechHandCannon>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>12500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSM7</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidPartsTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	
+	<RecipeDef>
+		<defName>ATPP_Make_T1ArtificialBrain</defName>
+		<label>make an artificial brain T1</label>
+		<description>make an artificial T1 brain to transform a surrogate into a blank neural network android.</description>
+		<jobString>Make an artificial brain T1.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>30</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>1.5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>4</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_T1ArtificialBrain>1</ATPP_T1ArtificialBrain>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>8500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>6</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>T1Androids</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>ATPP_Make_T2ArtificialBrain</defName>
+		<label>make an artificial brain T2</label>
+		<description>make an artificial T2 brain to transform a surrogate into a blank neural network android.</description>
+		<jobString>Make an artificial brain T2.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>30</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>2.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>8</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_T2ArtificialBrain>1</ATPP_T2ArtificialBrain>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>10500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>8</Crafting>
+			<Intellectual>8</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>T2Androids</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	  
+	  
+	<RecipeDef>
+		<defName>ATPP_Make_T3ArtificialBrain</defName>
+		<label>make an artificial brain T3</label>
+		<description>make an artificial T3 brain to transform a surrogate into a blank neural network android.</description>
+		<jobString>Make an artificial brain T3.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>30</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>4.5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_T3ArtificialBrain>1</ATPP_T3ArtificialBrain>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>18500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+			<Intellectual>10</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>T3Androids</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>ATPP_Make_T4ArtificialBrain</defName>
+		<label>make an artificial brain T4</label>
+		<description>make an artificial T4 brain to transform a surrogate into a blank neural network android.</description>
+		<jobString>Make an artificial brain T4.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>30</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>8.5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>6</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>AIPersonaCore</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_T4ArtificialBrain>1</ATPP_T4ArtificialBrain>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>24500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+			<Intellectual>12</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>T4Androids</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	  
+	<RecipeDef>
+		<defName>ATPP_Make_RXChip</defName>
+		<label>make an RX neural chip</label>
+		<description>Make an RX chip, which act as a personal SkyMind relay for his host.</description>
+		<jobString>Make RX neural chip.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>80</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>2.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>1.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>3</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_RXChip>1</ATPP_RXChip>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>8500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>6</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchSkyMindLAN</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+	<defName>ATPP_Make_VX0Chip</defName>
+		<label>make an VX0 neural chip</label>
+		<description>Make an VX0 chip, which will transform the host into a biological surrogate.</description>
+		<jobString>Make VX0 neural chip.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>60</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>5.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>2</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_VX0Chip>1</ATPP_VX0Chip>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>8500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>6</Crafting>
+			<Intellectual>6</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchVX0Chip</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	  
+	<RecipeDef>
+	<defName>ATPP_Make_VX1Chip</defName>
+		<label>make an VX1 neural chip</label>
+		<description>Make an VX1 chip allowing host to remote control any surrogate androids series.</description>
+		<jobString>Make VX1 neural chip.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>65</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>2.0</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>8</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_VX1Chip>1</ATPP_VX1Chip>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>17500</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+			<Intellectual>12</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchVX1Chip</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+	<defName>ATPP_Make_VX2Chip</defName>
+		<label>make an VX2 neural chip</label>
+		<description>Make an VX2 chip allowing host to remote control any surrogate androids series, permute their consciousness and even duplicate it</description>
+		<jobString>Make VX2 neural chip.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>85</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>35</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>3.5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>24</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_VX2Chip>1</ATPP_VX2Chip>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>35000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>10</Crafting>
+			<Intellectual>12</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchVX2Chip</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef> 
+	
+	<RecipeDef>
+		<defName>ATPP_Make_VX3Chip</defName>
+		<label>make an VX3 neural chip</label>
+		<description>Make an VX3 chip allowing host to remote control multiple surrogate androids series, permute their consciousness and even duplicate it</description>
+		<jobString>Make VX3 neural chip.</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>95</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>95</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>8.5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>48</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentSpacer</li>
+			  </thingDefs>
+			</filter>
+			<count>8</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_VX3Chip>1</ATPP_VX3Chip>
+		</products>
+		
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>55000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<workSkill>Intellectual</workSkill>
+		<skillRequirements>
+			<Crafting>14</Crafting>
+			<Intellectual>14</Intellectual>
+		</skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchVX3Chip</researchPrerequisite>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	</RecipeDef> 
+	  
+	<RecipeDef Name="ATPP_MakeNanite" Abstract="True">
+		<jobString>Make android nanite serum.</jobString>
+		<workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<effectWorking>Cook</effectWorking>
+		<soundWorking>Recipe_Machining</soundWorking>
+		<workAmount>12000</workAmount>
+		<unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+		<fixedIngredientFilter>
+		  <thingDefs>
+			<li>Steel</li>
+		  </thingDefs>
+		</fixedIngredientFilter>
+		<recipeUsers>
+			<li>AndroidOtherStuffTable</li>
+		</recipeUsers>
+		<skillRequirements>
+			<Crafting>12</Crafting>
+		</skillRequirements>
+		<workSkill>Crafting</workSkill>
+		<researchPrerequisite>ATPP_ResearchCraftRepairNaniteBanks</researchPrerequisite>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_MakeNanite">
+		<defName>ATPP_Make_NanitesHydraulicSerum</defName>
+		<label>make android hydraulic nanite serum</label>
+		<description>Make android hydraulic nanite serum allowing to repair your androids.</description>
+		<jobString>Making android nanite serum</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>75</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>1.5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>3</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_NanitesHydraulicSerum>1</ATPP_NanitesHydraulicSerum>
+		</products>
+  </RecipeDef>
+  
+  <RecipeDef ParentName="ATPP_MakeNanite">
+		<defName>ATPP_Make_NanitesCPUSerum</defName>
+		<label>make android CPU nanite serum</label>
+		<description>Make CPU nanite serum.</description>
+		<jobString>Making android nanite serum</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>75</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>25</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>6</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_NanitesCPUSerum>1</ATPP_NanitesCPUSerum>
+		</products>
+  </RecipeDef>
+  
+    <RecipeDef ParentName="ATPP_MakeNanite">
+		<defName>ATPP_Make_NanitesCoolingSerum</defName>
+		<label>make android cooling nanite serum</label>
+		<description>Make cooling nanite serum.</description>
+		<jobString>Making android nanite serum</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>60</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Gold</li>
+			  </thingDefs>
+			</filter>
+			<count>5</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>20</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_NanitesCoolingSerum>1</ATPP_NanitesCoolingSerum>
+		</products>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ATPP_MakeNanite">
+		<defName>ATPP_Make_NanitesFrameSerum</defName>
+		<label>make android framework nanite serum</label>
+		<description>Make framework nanite serum.</description>
+		<jobString>Making android nanite serum</jobString>
+		<ingredients>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Steel</li>
+			  </thingDefs>
+			</filter>
+			<count>150</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Plasteel</li>
+			  </thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>Silver</li>
+			  </thingDefs>
+			</filter>
+			<count>15</count>
+		  </li>
+		  <li>
+			<filter>
+			  <thingDefs>
+				<li>ComponentIndustrial</li>
+			  </thingDefs>
+			</filter>
+			<count>1</count>
+		  </li>
+		</ingredients>
+		
+		<products>
+		  <ATPP_NanitesFrameSerum>1</ATPP_NanitesFrameSerum>
+		</products>
+  </RecipeDef>
+</Defs>

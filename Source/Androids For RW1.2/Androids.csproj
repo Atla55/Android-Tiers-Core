@@ -1,0 +1,407 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4387268-4E97-4CB5-8E19-BB7A2344454B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MOARANDROIDS</RootNamespace>
+    <AssemblyName>AndroidTiers</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\1.2\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\1.0\Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\Mods\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="AlienRace">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\Mods\AlienRace.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ISharpZipLib">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\ISharpZipLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Posix, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\Mono.Posix.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\Mono.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextCoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\RimWorld\RimWorldWin64_Data\Managed\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alerts\Alert_Hot2Devices.cs" />
+    <Compile Include="Alerts\Alert_Hot3Devices.cs" />
+    <Compile Include="Alerts\Alert_UnsecurisedClients.cs" />
+    <Compile Include="AndroidCapacityLabel.cs" />
+    <Compile Include="AndroidTiers.cs" />
+    <Compile Include="Buildings\Building_ReloadStation.cs" />
+    <Compile Include="ChoiceLetter\ChoiceLetter_RansomDemand.cs" />
+    <Compile Include="ChoiceLetter\ChoiceLetter_RansomwareDemand.cs" />
+    <Compile Include="Components\CompAndroidPod.cs" />
+    <Compile Include="Components\CompAndroidState.cs" />
+    <Compile Include="Components\CompAutoDoor.cs" />
+    <Compile Include="Components\CompBlankAndroidSpawner.cs" />
+    <Compile Include="Components\CompBuildingSkyMindLAN.cs" />
+    <Compile Include="Components\CompBuildingSkyMindRelay.cs" />
+    <Compile Include="Components\CompBuildingSkyMindWAN.cs" />
+    <Compile Include="Components\CompComputer.cs" />
+    <Compile Include="Components\CompGSTXSpawner.cs" />
+    <Compile Include="Components\CompHeatSensitive.cs" />
+    <Compile Include="Components\CompProperties_BlankAndroidSpawner.cs" />
+    <Compile Include="Components\CompProperties_Computer.cs" />
+    <Compile Include="Components\CompProperties_GSTXSpawner.cs" />
+    <Compile Include="Components\CompProperties_HeatSensitive.cs" />
+    <Compile Include="Components\CompProperties_ReloadStation.cs" />
+    <Compile Include="Components\CompProperties_SurrogateSpawner.cs" />
+    <Compile Include="Components\CompReloadStation.cs" />
+    <Compile Include="Components\CompRemotelyControlledTurret.cs" />
+    <Compile Include="Components\CompSkyCloudCore.cs" />
+    <Compile Include="Components\CompSkyMind.cs" />
+    <Compile Include="Components\CompSurrogateOwner.cs" />
+    <Compile Include="Components\CompSurrogateSpawner.cs" />
+    <Compile Include="Components\SpawnerCompProperties_GenericSpawner.cs" />
+    <Compile Include="Components\Spawner_Generic.cs" />
+    <Compile Include="CompOversizedWeapon\CompOversizedWeapon.cs" />
+    <Compile Include="CompOversizedWeapon\CompProperties_OversizedWeapon.cs" />
+    <Compile Include="CompOversizedWeapon\HarmonyCompOversizedWeapon.cs" />
+    <Compile Include="DefsOf\BodyPartTagDefOf.cs" />
+    <Compile Include="DefsOf\FactionDefOf.cs" />
+    <Compile Include="DefsOf\MentalStateDefOf.cs" />
+    <Compile Include="DefsOf\SiteCoreDefOf.cs" />
+    <Compile Include="DefsOf\StatDefOf.cs" />
+    <Compile Include="DefsOf\ThingDefOfAtlascs.cs" />
+    <Compile Include="DefsOf\TraitDefOf.cs" />
+    <Compile Include="Designators\Designator_AndroidToControl.cs" />
+    <Compile Include="Designators\Designator_SurrogateToHack.cs" />
+    <Compile Include="Dialogs\Dialog_Msg.cs" />
+    <Compile Include="Dialogs\Dialog_SkillUp.cs" />
+    <Compile Include="Enum\AndroidPaintColor.cs" />
+    <Compile Include="Harmony\Alert_ColonistNeedsRescuing_Patch.cs" />
+    <Compile Include="Harmony\Alert_NeedColonistBeds_Patch.cs" />
+    <Compile Include="Harmony\ApparelGraphicRecordGetter_Patch.cs" />
+    <Compile Include="Harmony\ApparelUtility_Patch.cs" />
+    <Compile Include="Harmony\Apparel_Patch.cs" />
+    <Compile Include="Harmony\Building_Bed_Patch.cs" />
+    <Compile Include="Harmony\Building_Patch.cs" />
+    <Compile Include="Harmony\Building_TurretGun_Patch.cs" />
+    <Compile Include="Harmony\Caravan_Patch.cs" />
+    <Compile Include="Harmony\ColonistBar_Patch.cs" />
+    <Compile Include="Harmony\CompPowerTrader_Patch.cs" />
+    <Compile Include="Harmony\Corpse_Patch.cs" />
+    <Compile Include="Harmony\FlickUtility_Patch.cs" />
+    <Compile Include="Harmony\FloatMenuMakerMap_Patch.cs" />
+    <Compile Include="Harmony\FoodUtility_Patch.cs" />
+    <Compile Include="Harmony\ForbidUtility_Patch.cs" />
+    <Compile Include="Harmony\FreeColonists_Patch.cs" />
+    <Compile Include="Harmony\HealthAIUtility_Patch.cs" />
+    <Compile Include="Harmony\HealthCardUtility_Patch.cs" />
+    <Compile Include="Harmony\HediffUtility_Patch.cs" />
+    <Compile Include="Harmony\IncidentWorker_DiseaseAnimal_Patch.cs" />
+    <Compile Include="Harmony\IncidentWorker_DiseaseHuman_Patch.cs" />
+    <Compile Include="Harmony\InspirationWorker_Patch.cs" />
+    <Compile Include="Harmony\JobGiver_GetFood_Patch.cs" />
+    <Compile Include="Harmony\JobGiver_GetJoy_Patch.cs" />
+    <Compile Include="Harmony\JobGiver_SocialFighting_Patch.cs" />
+    <Compile Include="Harmony\KidnapAIUtility_Patch.cs" />
+    <Compile Include="Harmony\ListerThings_Patch.cs" />
+    <Compile Include="Harmony\MapPawns_Patch.cs" />
+    <Compile Include="Harmony\MedicalCareUtility_Patch.cs" />
+    <Compile Include="Harmony\MemoryThoughtHandler_Patch.cs" />
+    <Compile Include="Harmony\MentalState_Patch.cs" />
+    <Compile Include="Harmony\Need_Food_Patch.cs" />
+    <Compile Include="Harmony\Need_Patch.cs" />
+    <Compile Include="Harmony\PawnBreathMoteMaker_Patch.cs" />
+    <Compile Include="Harmony\PawnDiedOrDownedThoughtsUtility_Patch.cs" />
+    <Compile Include="Harmony\PawnGenerator_Patch.cs" />
+    <Compile Include="Harmony\PawnGraphicSet_Patch.cs" />
+    <Compile Include="Harmony\PawnGroupMakerUtility_Patch.cs" />
+    <Compile Include="Harmony\PawnInventoryGenerator_Patch.cs" />
+    <Compile Include="Harmony\PawnRenderer_Patch.cs" />
+    <Compile Include="Harmony\PawnUtility_Patch.cs" />
+    <Compile Include="Harmony\PawnWoundDrawer_Patch.cs" />
+    <Compile Include="Harmony\Pawn_HealthTracker_Patch.cs" />
+    <Compile Include="Harmony\Pawn_InteractionsTracker_Patch.cs" />
+    <Compile Include="Harmony\Pawn_NeedsTracker_Patch.cs" />
+    <Compile Include="Harmony\Pawn_Patch.cs" />
+    <Compile Include="Harmony\Pawn_StoryTracker_Patch.cs" />
+    <Compile Include="Harmony\RaceProperties_Patch.cs" />
+    <Compile Include="Harmony\RecipeDef_Patch.cs" />
+    <Compile Include="Harmony\Recipe_InstallImplant_Patch.cs" />
+    <Compile Include="Harmony\RestUtility_Patch.cs" />
+    <Compile Include="Harmony\SickPawnVisitUtility_Patch.cs" />
+    <Compile Include="Harmony\StartingPawnUtility_Patch.cs" />
+    <Compile Include="Harmony\StorytellerComp_Triggered_Patch.cs" />
+    <Compile Include="Harmony\StunHandler_Patch.cs" />
+    <Compile Include="Harmony\TaleRecorder_Patch.cs" />
+    <Compile Include="Harmony\TaleUtility_Patch.cs" />
+    <Compile Include="Harmony\TendUtility_Patch.cs" />
+    <Compile Include="Harmony\ThinkNode_ConditionalNeedPercentageAbove_Patch.cs" />
+    <Compile Include="Harmony\ThoughtUtility_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_ApparelDamaged_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Cold_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_ColonistLeftUnburied_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Dark_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Expectations.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Greedy_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Hot_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_HumanLeatherApparel_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_NeedFood_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_NeedJoy_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_NeedRest_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_PsychicDrone_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_PsychicEmanatorSoothe_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_WantToSleepWithSpouseOrLover_Patch.cs" />
+    <Compile Include="Harmony\Toils_Tend_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_DoBill_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_FeedPatient_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_RescueDowned_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_TakeToBedToOperate_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_TendOtherUrgent_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_TendOther_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_TendSelf_Patch.cs" />
+    <Compile Include="Harmony\WorkGiver_VisitSickPawn_Patch.cs" />
+    <Compile Include="HealOldWoundsAdv.cs" />
+    <Compile Include="CompProperties_SpawnPawn.cs" />
+    <Compile Include="CompUseEffect_SpawnAndroid.cs" />
+    <Compile Include="DownedT5AndroidComp.cs" />
+    <Compile Include="GenStep_DownedRefugee.cs" />
+    <Compile Include="HediffCompProperties_HealOldWoundsAdv.cs" />
+    <Compile Include="HediffGiver_Android.cs" />
+    <Compile Include="DefsOf\Hediffs.cs" />
+    <Compile Include="Incidents\Incident_DeviceHacking.cs" />
+    <Compile Include="Incidents\Incident_RansomWare.cs" />
+    <Compile Include="Incidents\Incident_SurrogateHacking.cs" />
+    <Compile Include="IngestionOutcomeDoer_GiveTwoHediffs.cs" />
+    <Compile Include="JobDrivers\JobDriver_GoReloadBattery.cs" />
+    <Compile Include="JobGiver_Targetenemies.cs" />
+    <Compile Include="Nanites Effects\CompUseEffect_HealCoolingSystem.cs" />
+    <Compile Include="Nanites Effects\CompUseEffect_HealCPUSerum.cs" />
+    <Compile Include="Nanites Effects\CompUseEffect_HealFrameworkSystem.cs" />
+    <Compile Include="Nanites Effects\CompUseEffect_HealHydraulicSystem.cs" />
+    <Compile Include="Nanites Effects\Operations\Recipe_ApplyHealCoolingSystem.cs" />
+    <Compile Include="Nanites Effects\Operations\Recipe_ApplyHealCPUSerum.cs" />
+    <Compile Include="Nanites Effects\Operations\Recipe_ApplyHealFrameworkSystem.cs" />
+    <Compile Include="Nanites Effects\Operations\Recipe_ApplyHydraulicNaniteBank.cs" />
+    <Compile Include="Other\Need_DummyRest.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkBlack.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkBlue.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkCyan.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkDefault.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkGray.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkGreen.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkKhaki.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkOrange.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkPink.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkPurple.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkRed.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkWhite.cs" />
+    <Compile Include="PaintAndroidFramework\Recipe_PaintAndroidFrameworkYellow.cs" />
+    <Compile Include="Patches\AndroidLabelOverwrite.cs" />
+    <Compile Include="Patches\HarmonyPatches.cs" />
+    <Compile Include="Patches\PawnGatheringPatch.cs" />
+    <Compile Include="MechFallClass.cs" />
+    <Compile Include="MechFallMote.cs" />
+    <Compile Include="MentalState_TargetEnemies.cs" />
+    <Compile Include="ModExtensionATweaks.cs" />
+    <Compile Include="MutantSpawn.cs" />
+    <Compile Include="PawnRelationWorker_Creation.cs" />
+    <Compile Include="PostInitTweaks.cs" />
+    <Compile Include="Recipes\Recipe_InstallAndroidPart.cs" />
+    <Compile Include="Recipes\Recipe_InstallimplantAndroid.cs" />
+    <Compile Include="Recipes\Recipe_PrisonerConversionReprogram.cs" />
+    <Compile Include="Recipes\Recipe_CorruptionChance.cs" />
+    <Compile Include="Recipes\Recipe_RemoveSentience.cs" />
+    <Compile Include="Recipes\Recipe_RerollTraits.cs" />
+    <Compile Include="Recipes\Recipe_SurgeryAndroids.cs" />
+    <Compile Include="Recipes\Recipe_InstallArtificialBrain.cs" />
+    <Compile Include="RestOverride.cs" />
+    <Compile Include="DefsOf\PawnKindDef.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Spawners\DoggoSpawner.cs" />
+    <Compile Include="Spawners\Spawner_LightSwarmSpawner.cs" />
+    <Compile Include="Spawners\Spawner_MuffSpawner.cs" />
+    <Compile Include="Spawners\Spawner_PhytoSheep.cs" />
+    <Compile Include="Spawners\Spawner_T1Spawner.cs" />
+    <Compile Include="Spawners\Spawner_T2Spawner.cs" />
+    <Compile Include="Spawners\Spawner_T3Spawner.cs" />
+    <Compile Include="Spawners\Spawner_T4Spawner.cs" />
+    <Compile Include="StockGenerator_SlaveAndroids.cs" />
+    <Compile Include="Incidents\IncidentWorker_DownedT5Android.cs" />
+    <Compile Include="ThinkNodes\ThinkNode_ConditionalM7Charging.cs" />
+    <Compile Include="ThinkNodes\ThinkNode_ConditionalMustKeepLyingDownM7Surrogate.cs" />
+    <Compile Include="Thoughts\Thought_AssistedByMinds.cs" />
+    <Compile Include="ThoughtWorker\ThoughtWorker_AssistingMinds.cs" />
+    <Compile Include="ThoughtWorker\ThoughtWorker_FeelingsTowardHumanity.cs" />
+    <Compile Include="ThoughtWorker_UncomfortableClothing.cs" />
+    <Compile Include="Toils\Toils_LayDownPower.cs" />
+    <Compile Include="Utils\CPatchs.cs" />
+    <Compile Include="Utils\DownedT5Utility.cs" />
+    <Compile Include="Utils\GC_ATPP.cs" />
+    <Compile Include="Utils\ReflectionUtility.cs" />
+    <Compile Include="Utils\Tex.cs" />
+    <Compile Include="Utils\Utils.cs" />
+    <Compile Include="Verb_MechFall.cs" />
+    <Compile Include="WorldObjectDef_DownedT5Android.cs" />
+    <Compile Include="Patches\HealthCardUtility_DrawHediffRow.cs" />
+    <Compile Include="Patches\HealthCardUtility_GetTooltip.cs" />
+    <Compile Include="Extensions\PawnExt.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\About\About.xml">
+      <Link>About\About.xml</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

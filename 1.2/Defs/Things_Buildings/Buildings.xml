@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef Name="ATPP_ReloadStationBase" ParentName="BuildingBase" Abstract="True">
+	<altitudeLayer>Building</altitudeLayer>
+	<thingClass>MOARANDROIDS.Building_ReloadStation</thingClass>
+    <passability>Impassable</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+	<rotatable>false</rotatable>
+	<comps>
+		<li Class="CompProperties_Breakdownable"/>
+		<li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<basePowerConsumption>250</basePowerConsumption>
+			<shortCircuitInRain>true</shortCircuitInRain>
+		</li>
+		<li Class="MOARANDROIDS.CompProperties_ReloadStation">
+			<compClass>MOARANDROIDS.CompReloadStation</compClass>
+		</li>
+		<li Class="CompProperties_Flickable"/>
+	</comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+  </ThingDef>
+
+  <ThingDef ParentName="ATPP_ReloadStationBase">
+	<defName>ATPP_ReloadStation</defName>
+	<label>Android charging station</label>
+	<description>A charching station who can accept up to 8 androids simultaneously.</description>
+    <graphicData>
+      <texPath>Things/Building/ATPP_RechargeStation</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1, 1)</drawSize>
+      <shadowData>
+        <volume>(0.4, 0.1, 0.4)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+	<uiIconPath>Things/Building/ATPP_RechargeStation</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <blockWind>false</blockWind>
+	<fillPercent>0.5</fillPercent>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+	</thingCategories>
+	<statBases>
+	  <Mass>10</Mass>
+	  <MaxHitPoints>120</MaxHitPoints>
+	  <WorkToBuild>2200</WorkToBuild>
+	  <Flammability>0.5</Flammability>
+	  <Beauty>-1</Beauty>
+	</statBases>
+    <tickerType>Normal</tickerType>
+	<size>(1,1)</size>
+	<selectable>true</selectable>
+    <drawPlaceWorkersWhileSelected>false</drawPlaceWorkersWhileSelected>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+	<building>
+    <allowAutoroof>false</allowAutoroof>
+	</building>
+	<costList>
+	  <Steel>250</Steel>
+	  <Silver>150</Silver>
+      <ComponentIndustrial>6</ComponentIndustrial>
+	</costList>
+    <hasInteractionCell>false</hasInteractionCell>
+    <designationHotKey>Misc7</designationHotKey>
+    <researchPrerequisites>
+      <li>ATPP_ResearchCharchingStation</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="BuildingBase" Abstract="True" Name="ATPP_BasicCellTower">
+	<thingClass>Building</thingClass>
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,12)</drawSize>
+      <damageData>
+        <edgeTop>Damage/Edge</edgeTop>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(2,2)</size>
+	<canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+	</thingCategories>
+	<altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>5000</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-10</Beauty>
+    </statBases>
+	<rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <comps>
+	  <li Class="CompProperties_Breakdownable"/>
+	  <li Class="CompProperties_Flickable"/>
+	  <!--<li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(0, 184, 81)</glowColor>
+      </li>-->
+	  <li Class="CompProperties_Power">
+		<compClass>CompPowerTrader</compClass>
+		<shortCircuitInRain>false</shortCircuitInRain>
+		<basePowerConsumption>750</basePowerConsumption>
+	  </li>
+    </comps>
+    <researchPrerequisites>
+      <li>ATPP_ResearchSkyMindLAN</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="ATPP_BasicCellTower">
+    <defName>ATPP_SkyMindLAN</defName>
+    <label>SkyMind Antenna V1</label>
+	<description>The SkyMind Antenna V1 accept up to 3 simultaneous clients, it emit a wireless network which allow to upload mind from one colonist to another and remotely control SX serie androids.</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_SkyMindLAN</texPath>
+	</graphicData>
+	<costList>
+      <Steel>180</Steel>
+	  <Silver>100</Silver>
+	  <Gold>25</Gold>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li>
+		<compClass>MOARANDROIDS.CompBuildingSkyMindLAN</compClass>
+	  </li>
+	 </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_BasicCellTower">
+    <defName>ATPP_SkyMindRelayTower</defName>
+    <label>SkyMind Relay Tower</label>
+	<description>The SkyMind relay tower amplifies the signal and prevents degradation of the control of surrogates over long distances.</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_SkyMindRelay</texPath>
+	</graphicData>
+	<costList>
+      <Steel>180</Steel>
+	  <Silver>100</Silver>
+	  <Gold>25</Gold>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li>
+		<compClass>MOARANDROIDS.CompBuildingSkyMindRelay</compClass>
+	  </li>
+	</comps>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="BuildingBase">
+    <defName>ATPP_SkyMindWAN</defName>
+    <label>SkyMind Antenna V2</label>
+	<thingClass>Building</thingClass>
+    <description>The SkyMind Antenna V2 accept up to 15 simultaneous clients, it emit a wireless network which allow to upload mind from one colonist to another and remotely control SX serie androids.</description>
+    <graphicData>
+      <texPath>Things/Building/ATPP_SkyMindWAN</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,15)</drawSize>
+      <damageData>
+        <edgeTop>Damage/Edge</edgeTop>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>650</Steel>
+	  <Silver>450</Silver>
+	  <Gold>45</Gold>
+      <ComponentIndustrial>12</ComponentIndustrial>
+	  <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+	<canOverlapZones>false</canOverlapZones>
+    <minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+	</thingCategories>
+	<altitudeLayer>BuildingOnTop</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>false</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>650</MaxHitPoints>
+      <WorkToBuild>16800</WorkToBuild>
+      <Mass>120</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-10</Beauty>
+    </statBases>
+	<rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <comps>
+	  <li Class="CompProperties_Breakdownable"/>
+	  <li Class="CompProperties_Flickable"/>
+	  <li Class="CompProperties_Power">
+		<compClass>CompPowerTrader</compClass>
+		<shortCircuitInRain>false</shortCircuitInRain>
+		<basePowerConsumption>1800</basePowerConsumption>
+	  </li>
+	  <li>
+		<compClass>MOARANDROIDS.CompBuildingSkyMindWAN</compClass>
+	  </li>
+    </comps>
+    <researchPrerequisites>
+      <li>ATPP_ResearchSkyMindWAN</li>
+    </researchPrerequisites>
+  </ThingDef>
+  
+    <!-- ========================= Servers ==========================-->
+  <ThingDef Name="ServerBase" ParentName="BuildingBase" Abstract="True">
+    <thingClass>Building</thingClass>	
+    <canOverlapZones>false</canOverlapZones>
+	<altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <statBases>
+      <MaxHitPoints>180</MaxHitPoints>
+      <WorkToBuild>16800</WorkToBuild>
+      <Mass>50</Mass>
+      <Flammability>1.0</Flammability>
+      <Beauty>-15</Beauty>
+    </statBases>
+	<comps>
+      <li Class="CompProperties_Breakdownable"/>
+	  <li Class="CompProperties_Flickable"/>
+	</comps>
+	<rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+  </ThingDef>
+  
+  <ThingDef Name="ATPP_CentralCoreBase" ParentName="ServerBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<researchPrerequisites>
+      <li>ATPP_ResearchSkyCloudCore</li>
+    </researchPrerequisites>
+	<comps>
+		  <li>
+			<compClass>MOARANDROIDS.CompSkyCloudCore</compClass>
+		  </li>
+		  <li Class="MOARANDROIDS.CompProperties_HeatSensitive">
+			<hot1>-5</hot1>
+			<hot2>0</hot2>
+			<hot3>10</hot3>
+			<hotSoundDef>ATPP_Computer_Hot_Ambience</hotSoundDef>
+		  </li>
+		  <li Class="CompProperties_HeatPusher">
+			<compClass>CompHeatPusherPowered</compClass>
+			<heatPerSecond>30</heatPerSecond>
+		  </li>
+		  <li Class="MOARANDROIDS.CompProperties_Computer">
+			<ambiance>ATPP_SkyCloudCore_Ambience</ambiance>
+		  </li>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>2500</basePowerConsumption>
+		  </li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef Name="ATPP_ServerBaseAdvanced" ParentName="ServerBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Building/ATPP_Servers/Basic/ATPP_Security</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+	   <WorkToBuild>35000</WorkToBuild>
+      <Mass>40</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>-2</Beauty>
+	</statBases>
+    <size>(1,2)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<researchPrerequisites>
+      <li>ATPP_ResearchServerI500Serie</li>
+    </researchPrerequisites>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+	<comps>
+		  <li Class="MOARANDROIDS.CompProperties_HeatSensitive">
+			<hot1>10</hot1>
+			<hot2>15</hot2>
+			<hot3>25</hot3>
+			<hotSoundDef>ATPP_Computer_Hot_Ambience</hotSoundDef>
+		  </li>
+		  <li Class="CompProperties_HeatPusher">
+			<compClass>CompHeatPusherPowered</compClass>
+			<heatPerSecond>2</heatPerSecond>
+		  </li>
+		  <li Class="MOARANDROIDS.CompProperties_Computer">
+			<ambiance>ATPP_Computer_Ambience_I500Server</ambiance>
+		  </li>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>450</basePowerConsumption>
+		  </li>
+	</comps>
+  </ThingDef>
+  
+   <ThingDef Name="ATPP_ServerBaseBasic" ParentName="ServerBase" Abstract="True">
+    <graphicData>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<statBases>
+	  <WorkToBuild>22500</WorkToBuild>
+      <Mass>80</Mass>
+      <Flammability>0.4</Flammability>
+      <Beauty>-10</Beauty>
+      <MaxHitPoints>225</MaxHitPoints>
+	</statBases>
+    <size>(1,2)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites>
+      <li>ATPP_ResearchServerI300Serie</li>
+    </researchPrerequisites>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+	<comps>
+		  <li Class="MOARANDROIDS.CompProperties_HeatSensitive">
+			<hot1>5</hot1>
+			<hot2>12</hot2>
+			<hot3>20</hot3>
+			<hotSoundDef>ATPP_Computer_Hot_Ambience</hotSoundDef>
+		  </li>
+		  <li Class="CompProperties_HeatPusher">
+			<compClass>CompHeatPusherPowered</compClass>
+			<heatPerSecond>5</heatPerSecond>
+		  </li>
+		  <li Class="MOARANDROIDS.CompProperties_Computer">
+			<ambiance>ATPP_Computer_Ambience_I300Server</ambiance>
+		  </li>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>250</basePowerConsumption>
+		  </li>
+	</comps>
+  </ThingDef>
+  
+  <ThingDef Name="ATPP_ServerBaseOld" ParentName="ServerBase" Abstract="True">
+    <graphicData>
+      <texPath>Things/Building/ATPP_Servers/Old/ATPP_Security</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<statBases>
+	  <WorkToBuild>12500</WorkToBuild>
+      <Mass>140</Mass>
+      <Flammability>0.3</Flammability>
+      <Beauty>-15</Beauty>
+      <MaxHitPoints>125</MaxHitPoints>
+	</statBases>
+    <size>(2,2)</size>
+	<minifiedDef>MinifiedThing</minifiedDef>
+    <researchPrerequisites>
+      <li>ATPP_ResearchServerI100Serie</li>
+    </researchPrerequisites>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+	<comps>
+		  <li Class="MOARANDROIDS.CompProperties_HeatSensitive">
+			<hot1>-8</hot1>
+			<hot2>0</hot2>
+			<hot3>10</hot3>
+			<hotSoundDef>ATPP_Computer_Hot_Ambience</hotSoundDef>
+		  </li>
+		  <li Class="CompProperties_HeatPusher">
+			<compClass>CompHeatPusherPowered</compClass>
+			<heatPerSecond>8</heatPerSecond>
+		  </li>
+		  <li Class="MOARANDROIDS.CompProperties_Computer">
+			<ambiance>ATPP_Computer_Ambience_I100Server</ambiance>
+		  </li>
+		  <li Class="CompProperties_Power">
+			<compClass>CompPowerTrader</compClass>
+			<shortCircuitInRain>true</shortCircuitInRain>
+			<basePowerConsumption>120</basePowerConsumption>
+		  </li>
+	</comps>
+  </ThingDef>
+  
+  <!-- Old -->
+  <ThingDef ParentName="ATPP_ServerBaseOld">
+	<defName>ATPP_I100Skill</defName>
+    <label>I-100 (Skill)</label>
+	<description>Skill server allow you to increase skill points of connected androids on a SkyMind network</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Old/ATPP_Skill</texPath>
+	</graphicData>
+	<costList>
+      <Steel>180</Steel>
+	  <Gold>25</Gold>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(46,204,113,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ServerBaseOld">
+	<defName>ATPP_I100Security</defName>
+    <label>I-100 (Security)</label>
+	<description>Firewall server responsible to securise your SkyMind network against cyberattack and virus</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Old/ATPP_Security</texPath>
+	</graphicData>
+	<costList>
+      <Steel>150</Steel>
+	  <Gold>15</Gold>
+      <ComponentIndustrial>4</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(52, 152, 219)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ServerBaseOld">
+	<defName>ATPP_I100Hacking</defName>
+    <label>I-100 (Hacking)</label>
+	<description>hacking server allowing you to hack connected clients on a SkyMind network</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Old/ATPP_Hacking</texPath>
+	</graphicData>
+	<costList>
+      <Steel>180</Steel>
+	  <Gold>25</Gold>
+      <ComponentIndustrial>6</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(219, 152, 52)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  
+  <!-- Basic -->
+    <ThingDef ParentName="ATPP_ServerBaseBasic">
+	<defName>ATPP_I300Security</defName>
+    <label>I-300 (Security)</label>
+	<description>Firewall server responsible to securise your SkyMind network against cyberattack and virus</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Basic/ATPP_Security</texPath>
+	</graphicData>
+	<costList>
+      <Steel>300</Steel>
+	  <Gold>35</Gold>
+	  <Silver>50</Silver>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(52, 152, 219)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ServerBaseBasic">
+	<defName>ATPP_I300Skill</defName>
+    <label>I-300 (Skill)</label>
+	<description>Skill server allow you to increase skill points of connected androids on a SkyMind network</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Basic/ATPP_Skill</texPath>
+	</graphicData>
+	<costList>
+      <Steel>300</Steel>
+	  <Silver>150</Silver>
+	  <Gold>55</Gold>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(46,204,113,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ServerBaseBasic">
+	<defName>ATPP_I300Hacking</defName>
+    <label>I-300 (Hacking)</label>
+	<description>hacking server allowing you to hack connected clients on a SkyMind network</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Basic/ATPP_Hacking</texPath>
+	</graphicData>
+	<costList>
+      <Steel>300</Steel>
+	  <Silver>150</Silver>
+	  <Gold>55</Gold>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(219, 152, 52)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!-- Advanced -->
+  <ThingDef ParentName="ATPP_ServerBaseAdvanced">
+	<defName>ATPP_I500Security</defName>
+    <label>I-500 (Security)</label>
+	<description>Firewall server responsible to securise your SkyMind network against cyberattack and virus</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Advanced/ATPP_Security</texPath>
+	</graphicData>
+	<costList>
+      <Steel>400</Steel>
+	  <Gold>100</Gold>
+	  <Silver>200</Silver>
+      <ComponentIndustrial>12</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(52, 152, 219)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ServerBaseAdvanced">
+	<defName>ATPP_I500Skill</defName>
+    <label>I-500 (Skill)</label>
+	<description>Skill server allow you to increase skill points of connected androids on a SkyMind network</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Advanced/ATPP_Skill</texPath>
+	</graphicData>
+	<costList>
+      <Steel>450</Steel>
+	  <Gold>150</Gold>
+	  <Silver>350</Silver>
+      <ComponentIndustrial>16</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(46,204,113,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ServerBaseAdvanced">
+	<defName>ATPP_I500Hacking</defName>
+    <label>I-500 (Hacking)</label>
+	<description>hacking server allowing you to hack connected clients on a SkyMind network</description>
+	<graphicData>
+      <texPath>Things/Building/ATPP_Servers/Advanced/ATPP_Hacking</texPath>
+	</graphicData>
+	<costList>
+      <Steel>450</Steel>
+	  <Gold>150</Gold>
+	  <Silver>350</Silver>
+      <ComponentIndustrial>16</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>4</glowRadius>
+        <glowColor>(219, 152, 52)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <!-- Surrogate POD -->
+  <ThingDef ParentName="BedWithQualityBase" Abstract="True" Name="ATTP_AndroidPodBase">
+    <graphicData>
+      <texPath>Things/Building/SurrogatePod/SurrogatePod</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(1,2)</drawSize>
+    </graphicData>
+	<minifiedDef>MinifiedThing</minifiedDef>
+	<uiIconPath>Things/Building/SurrogatePod/SurrogatePod_south</uiIconPath>
+    <castEdgeShadows>True</castEdgeShadows>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>2800</WorkToBuild>
+      <Mass>45</Mass>
+      <Flammability>0.4</Flammability>
+	  <AndroidSurgerySuccessChanceFactor>1.1</AndroidSurgerySuccessChanceFactor>
+      <BedRestEffectiveness>1.0</BedRestEffectiveness>
+	  <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
+      <Comfort>0.0</Comfort>
+	  <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+	</statBases>
+	<thingCategories>
+      <li>BuildingsMisc</li>
+	</thingCategories>
+    <thingClass>Building_Bed</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <size>(1,2)</size>
+    <building>
+      <bed_showSleeperBody>True</bed_showSleeperBody>
+      <bed_healPerDay>10</bed_healPerDay>
+      <bed_defaultMedical>false</bed_defaultMedical>
+    </building>
+    <fillPercent>0.4</fillPercent>
+    <pathCost>60</pathCost>
+    <leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.17</staticSunShadowHeight>
+    <designationHotKey>Misc5</designationHotKey>
+	<designationCategory>ATPP_DesignationAndroidTiers</designationCategory>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <techLevel>Industrial</techLevel>
+    <uiIconScale>0.90</uiIconScale>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="ATTP_AndroidPodBase">
+	<defName>ATPP_AndroidPod</defName>
+    <label>Android pod</label>
+    <description>An android pod where androids can be repaired, stored in waiting of an host (case of surrogates) and charged if connected to power.</description>
+	<costList>
+      <Steel>50</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Power">
+		<compClass>CompPowerTrader</compClass>
+		<shortCircuitInRain>true</shortCircuitInRain>
+		<basePowerConsumption>80</basePowerConsumption>
+	  </li>
+	  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+				<li>AndroidOperationKit</li>
+			</linkableFacilities>
+		</li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATTP_AndroidPodBase">
+	<defName>ATPP_AndroidPodMech</defName>
+    <label>M7 pod</label>
+    <description>A giant pod where M7 can be repaired, stored in waiting of an host (case of surrogates) and charged if connected to power.</description>
+	<graphicData>
+      <drawSize>(3,6)</drawSize>
+    </graphicData>
+	<costList>
+      <Steel>250</Steel>
+	  <Silver>150</Silver>
+      <ComponentIndustrial>8</ComponentIndustrial>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Power">
+		<compClass>CompPowerTrader</compClass>
+		<shortCircuitInRain>true</shortCircuitInRain>
+		<basePowerConsumption>420</basePowerConsumption>
+	  </li>
+	  <li Class="CompProperties_AffectedByFacilities">
+			<linkableFacilities>
+				<li>AndroidOperationKit</li>
+			</linkableFacilities>
+		</li>
+    </comps>
+  </ThingDef>
+  
+    
+  <ThingDef ParentName="ATPP_CentralCoreBase">
+	<defName>ATPP_SkyCloudCore</defName>
+    <label>SkyCloud Core</label>
+	<description>A supercomputer allowing to control all devices connected to the SkyMind network as well as to upload in its memory the digitalized brain of your colonists in order to make them almost immortal and omniscient</description>
+	<statBases>
+	  <WorkToBuild>65000</WorkToBuild>
+      <Mass>500</Mass>
+      <Flammability>0.1</Flammability>
+      <Beauty>-5</Beauty>
+      <MaxHitPoints>850</MaxHitPoints>
+	</statBases>
+	<graphicData>
+      <texPath>Things/Building/ATPP_CentralCore</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(8,8)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+	<size>(8,8)</size>
+	<costList>
+      <Steel>2000</Steel>
+	  <Silver>1500</Silver>
+	  <Plasteel>400</Plasteel>
+	  <Gold>350</Gold>
+      <ComponentIndustrial>48</ComponentIndustrial>
+	  <ComponentSpacer>12</ComponentSpacer>
+    </costList>
+	<comps>
+	  <li Class="CompProperties_Glower">
+        <glowRadius>10</glowRadius>
+        <glowColor>(250, 250, 250)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
+  
+</Defs>

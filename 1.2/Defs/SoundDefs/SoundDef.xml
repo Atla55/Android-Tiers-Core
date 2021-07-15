@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?><Defs>
+
+  <SoundDef>
+    <defName>ATPP_SoundSurrogateConnection</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SX/ATPP_Connect</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>ATPP_SoundSurrogateDisconnect</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SX/ATPP_Disconnect</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  
+  <SoundDef>
+    <defName>ATPP_SoundTurretConnection</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Turret/ATPP_Connect</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>ATPP_SoundTurretDisconnect</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>Turret/ATPP_Disconnect</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+   <SoundDef>
+    <defName>ATPP_SoundSurrogateHacked</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SX/ATPP_Hacked</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>35</min>        
+          <max>35</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudPrimarySystemsOnline</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/PrimarySystemsOnline</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudMindReplicationCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/MindReplicationCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudMindMigrationCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/MindMigrationCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudMindDeletionCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/MindDeletionCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudAllMindDisconnected</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/AllMindDisconnected</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudPowerFailure</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/PowerFailure</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudSkyMindNetworkOffline</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/SkyMindNetworkOffline</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudDoorOpened</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/DoorOpened</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudDoorClosed</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/DoorClosed</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudDeviceActivated</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/DeviceActivated</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudDeviceDeactivated</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/DeviceDeactivated</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudMindDownloadCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/MindDownloadCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+    <SoundDef>
+    <defName>ATPP_SoundSkyCloudMindUploadCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/MindUploadCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudMindQuarantineMentalState</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/QuarantineMentalState</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</Defs>

@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef Name="AndroidDiseaseBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+	<description>_</description>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  
+  <HediffDef ParentName="AndroidDiseaseBase">
+
+    <defName>DecayedFrame</defName>
+    <label>decaying mainframe</label>
+    <labelNoun>a decaying mainframe</labelNoun>
+		<defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.30</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="AndroidDiseaseBase">
+
+    <defName>CorruptMemory</defName>
+    <label>corrupt memory</label>
+		<defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+    <stages>
+      <li>
+	  <partEfficiencyOffset>-0.15</partEfficiencyOffset>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.25</offset>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>5</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AndroidDiseaseBase">
+
+    <defName>WeakValves</defName>
+    <label>weak valves</label>
+	<hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>0.001</initialSeverity>
+		<defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.02</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+	  <minSeverity>0</minSeverity>
+		<label>initial</label>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+	  <minSeverity>0.5</minSeverity>
+	  <label>minor</label>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+	  <minSeverity>0.8</minSeverity>
+	  <label>severe</label>
+        <capMods>
+          <li>
+            <capacity>BloodPumping</capacity>
+            <offset>-0.25</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="AndroidDiseaseBase">
+
+    <defName>ExaggeratedHealing</defName>
+    <label>hyperactive reaction</label>
+	<hediffClass>Hediff_HeartAttack</hediffClass>
+	<defaultLabelColor>(0.9, 0.7, 0.5)</defaultLabelColor>
+    <initialSeverity>0.2</initialSeverity>
+    <lethalSeverity>1.2</lethalSeverity>
+	<comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.6</severityPerDay>
+      </li>
+    </comps>
+    <tendable>true</tendable>
+    <stages>
+      <li>
+        <label>minor</label>
+        <lifeThreatening>true</lifeThreatening>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+						<postFactor>0.85</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>severe</label>
+		<minSeverity>0.4</minSeverity>
+        <lifeThreatening>true</lifeThreatening>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+						<postFactor>0.5</postFactor>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>extreme</label>
+        <minSeverity>0.8</minSeverity>
+        <lifeThreatening>true</lifeThreatening>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <label>fatal</label>
+        <minSeverity>1</minSeverity>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="AndroidDiseaseBase">
+
+    <defName>FaultyPump</defName>
+    <label>faulty pump</label>
+    <labelNoun>a faulty pump</labelNoun>
+    <lethalSeverity>1</lethalSeverity>
+		<defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
+      <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>0.04</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <label>minor</label>
+				<partEfficiencyOffset>-0.05</partEfficiencyOffset>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>BCoolantPump</hediff>
+            <mtbDays>600</mtbDays>
+            <partsToAffect>
+              <li>MHeart</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>0.2</minSeverity>
+        <label>minor</label>
+				<partEfficiencyOffset>-0.1</partEfficiencyOffset>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>BCoolantPump</hediff>
+            <mtbDays>500</mtbDays>
+            <partsToAffect>
+              <li>Heart</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>0.4</minSeverity>
+        <label>major</label>
+				<partEfficiencyOffset>-0.15</partEfficiencyOffset>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>BCoolantPump</hediff>
+            <mtbDays>300</mtbDays>
+            <partsToAffect>
+              <li>MHeart</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>0.6</minSeverity>
+        <label>major</label>
+				<partEfficiencyOffset>-0.35</partEfficiencyOffset>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>BCoolantPump</hediff>
+            <mtbDays>200</mtbDays>
+            <partsToAffect>
+              <li>MHeart</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+      <li>
+        <minSeverity>0.9</minSeverity>
+        <label>extreme</label>
+        <lifeThreatening>true</lifeThreatening>
+				<partEfficiencyOffset>-0.6</partEfficiencyOffset>
+        <hediffGivers>
+          <li Class="HediffGiver_Random">
+            <hediff>BCoolantPump</hediff>
+            <mtbDays>120</mtbDays>
+            <partsToAffect>
+              <li>MHeart</li>
+            </partsToAffect>
+          </li>
+        </hediffGivers>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

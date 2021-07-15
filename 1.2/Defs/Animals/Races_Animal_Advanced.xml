@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!--RGrower-->
+  
+ 
+  <ThingDef ParentName="AnimalAndroidThingBase">
+    <defName>RoboticSheep</defName>
+    <label>Phytomining unit</label>
+    <description>Named after the process that this machine performs; extracting the small amounts of metal absorbed by plants, refining it and expelling it in the form of long, spindly strands on it's back and neck.</description>
+    <statBases>
+      <MoveSpeed>2.00</MoveSpeed>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>100</ComfyTemperatureMax>
+      <MarketValue>1600</MarketValue>
+	  <LeatherAmount>0</LeatherAmount>
+	  <MeatAmount>0</MeatAmount>
+	  <PainShockThreshold>5</PainShockThreshold>
+    </statBases>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Shearable">
+        <woolDef>SteelWool</woolDef>
+        <shearIntervalDays>5</shearIntervalDays>
+        <woolAmount>50</woolAmount>
+      </li>
+    </comps>
+    <race>
+	<hasGenders>false</hasGenders>
+      <body>AndroidAnimalMuff</body>
+	  <packAnimal>true</packAnimal>
+      <predator>false</predator>
+      <petness>0.5</petness>
+      <baseBodySize>1</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+	  <baseHungerRate>2</baseHungerRate>
+	  			<fleshType>Android</fleshType>
+			<bloodDef>CoolantAndroidTier</bloodDef>
+      			<needsRest>false</needsRest>
+			<foodType>OmnivoreRoughAnimal</foodType>
+      <nameOnTameChance>1</nameOnTameChance>
+	  <leatherDef>Tainted_Skin</leatherDef>
+      <trainability>Simple</trainability>
+      <wildness>0.4</wildness>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <nuzzleMtbHours>80</nuzzleMtbHours>
+      <lifeExpectancy>150</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.0</minAge>
+          <soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+          <soundDeath>Pawn_Muffalo_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<ageGenerationCurve>
+				<points>
+					<li>(0,0)</li>
+					<li>(1,100)</li>
+					<li>(2,0)</li>
+				</points>
+			</ageGenerationCurve>
+    </race>
+    <tradeTags>
+      <li>BadassAnimal</li>
+    </tradeTags>
+			<recipes>
+	  <li>RemoveBodyPartAndroid</li>
+	  <li>ShutdownAndroid</li>
+	  <li>InstallBasicPlating</li>
+	  <li>InstallAdvPlating</li>
+	  	  <li>InstallCrudeHeatsink</li>
+	  <li>InstallFlimsyCoolantPump</li>
+	  <li>InstallSmallBatteryPack</li>
+	  <li>InstallTubeSealantTank</li>
+	  <li>InstallLowPowerTransformer</li>
+	  <li>InstallBasicDCConverter</li>
+	  <li>InstallAdv2Plating</li>
+	  <li>InstallCrudeHeatsink</li>
+	  
+	  <li>InstallHydraulicFrame</li>
+	  <li>InstallHydraulicReplacementLeg</li>
+	  
+	  <li>InstallCrudeSmellingS</li>
+	<!--Plating and shield-->
+		</recipes>
+		<butcherProducts>
+			<Plasteel>20</Plasteel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</butcherProducts>
+<modExtensions>
+    <li Class="MOARANDROIDS.AndroidTweaker">
+        <tweakCorpseRot>true</tweakCorpseRot>
+    </li>
+</modExtensions>
+  </ThingDef>
+  
+  <PawnKindDef ParentName="AnimalAndroidKindBaseDog">
+    <defName>AndroidSheep</defName>
+    <label>Phytomining unit</label>
+    <race>RoboticSheep</race>
+				<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.5</ecoSystemWeight>
+	<defaultFactionType>PlayerColony</defaultFactionType>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Sheepboi/RGrower</texPath>
+          <drawSize>2</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Sheepboi/RGrower</texPath>
+          <drawSize>2</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+
+    </lifeStages>
+  </PawnKindDef>
+
+  <!--RMilker-->
+
+  <ThingDef ParentName="AnimalThingBase">
+    <defName>RoboticCow</defName>
+    <label>N.Solution Unit</label>
+    <description>A large utility based machine, used primarily for the nutrient solution this unit produces as it is extremely calorific and can be sold for a hefty price. Usually found on urbworlds to feed to the countless population for low prices and cheap storage.</description>
+    <statBases>
+      <MoveSpeed>2.00</MoveSpeed>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+	  <ComfyTemperatureMax>100</ComfyTemperatureMax>
+      <MarketValue>1600</MarketValue>
+	  <LeatherAmount>0</LeatherAmount>
+	  <MeatAmount>0</MeatAmount>
+	  <PainShockThreshold>5</PainShockThreshold>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Milkable">
+        <milkDef>NSolution</milkDef>
+        <milkIntervalDays>1</milkIntervalDays>
+        <milkAmount>25</milkAmount>
+		<milkFemaleOnly>false</milkFemaleOnly>
+      </li>
+    </comps>
+    <tools>
+      <li>
+        <label>head</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>1.65</cooldownTime>
+        <linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+      </li>
+    </tools>
+    <race>
+	<hasGenders>false</hasGenders>
+      <body>AndroidAnimalMuff</body>
+	  <packAnimal>true</packAnimal>
+      <predator>false</predator>
+      <petness>0.5</petness>
+      <baseBodySize>1.25</baseBodySize>
+      <baseHealthScale>1</baseHealthScale>
+	  <baseHungerRate>1.5</baseHungerRate>
+	  			<fleshType>Android</fleshType>
+			<bloodDef>CoolantAndroidTier</bloodDef>
+      			<needsRest>false</needsRest>
+			<foodType>OmnivoreRoughAnimal</foodType>
+      <nameOnTameChance>1</nameOnTameChance>
+	  <leatherDef>Tainted_Skin</leatherDef>
+      <trainability>Simple</trainability>
+      <wildness>0.4</wildness>
+      <manhunterOnDamageChance>1</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <nuzzleMtbHours>80</nuzzleMtbHours>
+      <lifeExpectancy>150</lifeExpectancy>
+      <lifeStageAges>
+        <li>
+          <def>AnimalAdult</def>
+          <minAge>0.0</minAge>
+          <soundWounded>Pawn_Muffalo_Wounded</soundWounded>
+          <soundDeath>Pawn_Muffalo_Death</soundDeath>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_BigBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_BigBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_BigBash_Miss</soundMeleeMiss>
+			<ageGenerationCurve>
+				<points>
+					<li>(0,0)</li>
+					<li>(1,100)</li>
+					<li>(2,0)</li>
+				</points>
+			</ageGenerationCurve>
+    </race>
+    <tradeTags>
+      <li>BadassAnimal</li>
+    </tradeTags>
+			<recipes>
+	  <li>RemoveBodyPartAndroid</li>
+	  <li>ShutdownAndroid</li>
+	  <li>InstallBasicPlating</li>
+	  <li>InstallAdvPlating</li>
+	  	  <li>InstallCrudeHeatsink</li>
+	  <li>InstallFlimsyCoolantPump</li>
+	  <li>InstallSmallBatteryPack</li>
+	  <li>InstallTubeSealantTank</li>
+	  <li>InstallLowPowerTransformer</li>
+	  <li>InstallBasicDCConverter</li>
+	  <li>InstallAdv2Plating</li>
+	  <li>InstallCrudeHeatsink</li>
+	  
+	  <li>InstallHydraulicFrame</li>
+	  <li>InstallHydraulicReplacementLeg</li>
+	  
+	  <li>InstallCrudeSmellingS</li>
+	<!--Plating and shield-->
+		</recipes>
+		<butcherProducts>
+			<Plasteel>20</Plasteel>
+			<ComponentIndustrial>2</ComponentIndustrial>
+		</butcherProducts>
+	<modExtensions>
+    <li Class="MOARANDROIDS.AndroidTweaker">
+        <tweakCorpseRot>true</tweakCorpseRot>
+    </li>
+	</modExtensions>
+  </ThingDef>
+ 
+  <PawnKindDef ParentName="AnimalAndroidKindBaseDog">
+    <defName>AndroidCow</defName>
+    <label>N.Solution Unit</label>
+    <race>RoboticCow</race>
+				<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.5</ecoSystemWeight>
+	<defaultFactionType>PlayerColony</defaultFactionType>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Cowboi/RMilker</texPath>
+          <drawSize>2.75</drawSize>
+          <shadowData>
+            <volume>(0.8, 0.6, 0.6)</volume>
+            <offset>(0,0,-0.3)</offset>
+          </shadowData>
+        </bodyGraphicData>
+        <dessicatedBodyGraphicData>
+          <texPath>Things/Pawn/Sheepboi/RGrower</texPath>
+          <drawSize>2.75</drawSize>
+        </dessicatedBodyGraphicData>
+      </li>
+
+    </lifeStages>
+  </PawnKindDef>
+</Defs>

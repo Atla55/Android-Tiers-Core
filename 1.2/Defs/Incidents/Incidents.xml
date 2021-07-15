@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<IncidentDef>
+		<defName>ATPP_DeviceHacking</defName>
+		<label>Device virus</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>MOARANDROIDS.Incident_DeviceHacking</workerClass>
+		<letterDef>NegativeEvent</letterDef>
+		<baseChance>3.25</baseChance>
+		<minRefireDays>15</minRefireDays>
+	</IncidentDef>
+	
+	<IncidentDef>
+		<defName>ATPP_SurrogateHacking</defName>
+		<label>Surrogate virus</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>MOARANDROIDS.Incident_SurrogateHacking</workerClass>
+		<letterDef>NegativeEvent</letterDef>
+		<baseChance>4.95</baseChance>
+		<minRefireDays>15</minRefireDays>
+	</IncidentDef>
+	
+	<IncidentDef>
+		<defName>ATPP_Ransomware</defName>
+		<label>Ransomware</label>
+		<category>Misc</category>
+		<targetTags>
+		  <li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>MOARANDROIDS.Incident_RansomWare</workerClass>
+		<letterDef>NegativeEvent</letterDef>
+		<baseChance>1.55</baseChance>
+		<minRefireDays>15</minRefireDays>
+	</IncidentDef>
+</Defs>

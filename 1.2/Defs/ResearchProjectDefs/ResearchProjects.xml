@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchSM7</defName>
+    <label>SM7 battle surrogate series</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build SM7 battle surrogate series.</description>
+    <baseCost>9500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchSurrogateHost</li>
+    </prerequisites>
+	<researchViewX>5</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchServerI100Serie</defName>
+    <label>I100 series servers</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build I100 security and hacking series servers, cheap but noisy, big and not very efficient.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+	<researchViewX>4</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+  
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchServerI300Serie</defName>
+    <label>I300 series servers</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build I300 security and hacking series servers, noisy but intermediate in term of efficiency.</description>
+    <baseCost>3500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchServerI100Serie</li>
+    </prerequisites>
+	<researchViewX>5</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchServerI500Serie</defName>
+    <label>I500 series servers</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build I500 security and hacking series servers, expensives but very efficient</description>
+    <baseCost>6500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchServerI300Serie</li>
+    </prerequisites>
+	<researchViewX>6</researchViewX>
+    <researchViewY>4</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchSkyCloudCore</defName>
+    <label>SkyCloud Core</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build SkyCloud Core servers, which are a powerfull supercomputer which can host several digitized consciousness and allow them to interact with the real world throught every devices connected to the SkyMind network.</description>
+    <baseCost>10500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchVX2Chip</li>
+	  <li>ATPP_ResearchServerI500Serie</li>
+    </prerequisites>
+	<researchViewX>7</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchVX3Chip</defName>
+    <label>VX3 Neural Chip</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build the VX3 chip, a Neural chip allowing his host to control remotely multiple SX androids series and permute/duplicate his consciousness throught a SkyMind network</description>
+    <baseCost>12500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchVX2Chip</li>
+    </prerequisites>
+	<researchViewX>7</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchVX2Chip</defName>
+    <label>VX2 Neural Chip</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build the VX2 chip, a Neural chip allowing his host to control remotely SX androids series and permute/duplicate his consciousness throught a SkyMind network</description>
+    <baseCost>7500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchVX1Chip</li>
+    </prerequisites>
+	<researchViewX>6</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchVX1Chip</defName>
+    <label>VX1 Neural Chip</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build the VX1 chip, a Neural chip allowing his host to control remotely SX androids series throught a SkyMind network.</description>
+    <baseCost>5500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchSurrogateHost</li>
+    </prerequisites>
+	<researchViewX>5</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchVX0Chip</defName>
+    <label>VX0 Neural Chip</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build the VX0 chip, a Neural chip  which will transform the host into a biological surrogate.</description>
+    <baseCost>2000</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>MicroelectronicsBasics</li>
+    </prerequisites>
+	<researchViewX>5</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchBatteryOverload</defName>
+    <label>Battery overload</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to transform androids into walking bombs, by making their internal battery to explode.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>T2ReplacementsOrgans</li>
+    </prerequisites>
+	<researchViewX>4</researchViewX>
+    <researchViewY>5</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchSkyMindWAN</defName>
+    <label>SkyMind Antenna V2</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build SkyMind V2 antenna, which serves as a basis for the transfer of consciousness from one colonist to another and allow to have until 15 colonists simultaneously connected by V2 antenna.</description>
+    <baseCost>4500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>T4Androids</li>
+    </prerequisites>
+	<researchViewX>5</researchViewX>
+    <researchViewY>3</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchSurrogateHost</defName>
+    <label>SX androids series</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build surrogate androids series, which is similar to the TX series but with their artificial brains replaced by an advanced remote control system.</description>
+    <baseCost>4500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>T4Androids</li>
+    </prerequisites>
+	<researchViewX>4</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchSkyMindLAN</defName>
+    <label>SkyMind Antenna V1</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build SkyMind V1 antenna, which serves as a basis for the transfer of consciousness from one colonist to another and allow to have until 3 colonists simultaneously connected by antenna.</description>
+    <baseCost>1500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>BasicRobotics</li>
+    </prerequisites>
+	<researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchCharchingStation</defName>
+    <label>Charging station</label>
+    <tab>AtlasAndroids</tab>
+    <description>Allows you to charge up to 8 androids simultaneously directly into internal battery instead through their biomass generator.</description>
+    <baseCost>750</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>BasicRobotics</li>
+    </prerequisites>
+	<researchViewX>0</researchViewX>
+    <researchViewY>1</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchCraftBasicNanoKit</defName>
+    <label>Basic NanoKit</label>
+    <tab>AtlasAndroids</tab>
+    <description>Allow you to craft basic nanokit which is required to repair your injured androids</description>
+    <baseCost>400</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>BasicRobotics</li>
+    </prerequisites>
+	<researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchCraftIntermediateNanoKit</defName>
+    <label>Intermediate NanoKit</label>
+    <tab>AtlasAndroids</tab>
+    <description>Allow you to craft intermediate nanokit which is required to repair your injured androids</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchCraftBasicNanoKit</li>
+    </prerequisites>
+	<researchViewX>2</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+  
+   <ResearchProjectDef>
+    <defName>ATPP_ResearchCraftAdvancedNanoKit</defName>
+    <label>Advanced NanoKit</label>
+    <tab>AtlasAndroids</tab>
+    <description>Allow you to craft intermediate nanokit which is required to repair your injured androids</description>
+    <baseCost>1400</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchCraftIntermediateNanoKit</li>
+    </prerequisites>
+	<researchViewX>3</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+  
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchCraftRepairNaniteBanks</defName>
+    <label>Cure old age malfunction</label>
+    <tab>AtlasAndroids</tab>
+    <description>Allows you to craft mechanites to cure old age android malfunctions</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchCraftAdvancedNanoKit</li>
+    </prerequisites>
+	<researchViewX>4</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

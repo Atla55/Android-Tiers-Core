@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="AnimalAndroidThingBase">
+		<defName>AndroidDog</defName>
+		<label>K-9 cybernetic unit</label>
+		<description>Heavily armoured cybernetic dog-like machines that are equipped with a very strong hydraulic jaw and razor sharp claws. Usually found used during war times on urbworlds as a form of "crowd control".</description>
+		<statBases>
+			<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			<ComfyTemperatureMax>100</ComfyTemperatureMax>
+			<MarketValue>8500</MarketValue>
+			<MeatAmount>0</MeatAmount>
+			<PainShockThreshold>5</PainShockThreshold>
+			<MoveSpeed>9.0</MoveSpeed>
+			<ArmorRating_Blunt>0.32</ArmorRating_Blunt>
+			<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+		</statBases>
+		<tools>
+			<li>
+				<label>left claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>1.0</cooldownTime>
+				<linkedBodyPartsGroup>FrontLeftPaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>26</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>right claw</label>
+				<capacities>
+					<li>Scratch</li>
+				</capacities>
+				<power>20</power>
+				<cooldownTime>1.0</cooldownTime>
+				<linkedBodyPartsGroup>FrontRightPaw</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>26</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<capacities>
+					<li>Bite</li>
+				</capacities>
+				<power>30</power>
+				<cooldownTime>2.0</cooldownTime>
+				<linkedBodyPartsGroup>Teeth</linkedBodyPartsGroup>
+				<surpriseAttack>
+					<extraMeleeDamages>
+						<li>
+							<def>Stun</def>
+							<amount>40</amount>
+						</li>
+					</extraMeleeDamages>
+				</surpriseAttack>
+			</li>
+			<li>
+				<label>head</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>15</power>
+				<cooldownTime>1.2</cooldownTime>
+				<linkedBodyPartsGroup>HeadAttackTool</linkedBodyPartsGroup>
+				<chanceFactor>0.2</chanceFactor>
+			</li>
+		</tools>
+		<race>
+			<hasGenders>false</hasGenders>
+			<body>AndroidAnimalDoggo</body>
+			<predator>false</predator>
+			<petness>0.4</petness>
+			<baseBodySize>1.0</baseBodySize>
+			<baseHealthScale>1.15</baseHealthScale>
+			<fleshType>Android</fleshType>
+			<bloodDef>CoolantAndroidTier</bloodDef>
+			<needsRest>false</needsRest>
+			<foodType>OmnivoreRoughAnimal </foodType>
+			<nameOnTameChance>1</nameOnTameChance>
+			<leatherDef>Tainted_Skin</leatherDef>
+			<trainability>Advanced</trainability>
+			<wildness>0.4</wildness>
+			<manhunterOnDamageChance>1</manhunterOnDamageChance>
+			<manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+			<nuzzleMtbHours>72</nuzzleMtbHours>
+			<lifeExpectancy>150</lifeExpectancy>
+			<lifeStageAges>
+				<li>
+					<def>AnimalAdult</def>
+					<minAge>0.0</minAge>
+					<soundWounded>Pawn_Warg_Wounded</soundWounded>
+					<soundDeath>Pawn_Warg_Death</soundDeath>
+				</li>
+			</lifeStageAges>
+			<soundMeleeHitPawn>Pawn_Melee_SmallScratch_HitPawn</soundMeleeHitPawn>
+			<soundMeleeHitBuilding>Pawn_Melee_SmallScratch_HitBuilding</soundMeleeHitBuilding>
+			<soundMeleeMiss>Pawn_Melee_SmallScratch_Miss</soundMeleeMiss>
+			<ageGenerationCurve>
+				<points>
+					<li>(0,0)</li>
+					<li>(1,100)</li>
+					<li>(2,0)</li>
+				</points>
+			</ageGenerationCurve>
+		</race>
+		<tradeTags>
+			<li>BadassAnimal</li>
+		</tradeTags>
+		<recipes>
+			<li>RemoveBodyPartAndroid</li>
+			<li>ShutdownAndroid</li>
+			<li>InstallBasicPlating</li>
+			<li>InstallAdvPlating</li>
+			<li>InstallAdvRearCounterweight</li>
+			<li>InstallBasicRearCounterweight</li>
+			<li>InstallCrudeJawAndroid</li>
+			<li>InstallAdvJawAndroid</li>
+			<li>InstallCrudeHeatsink</li>
+			<li>InstallFlimsyCoolantPump</li>
+			<li>InstallSmallBatteryPack</li>
+			<li>InstallTubeSealantTank</li>
+			<li>InstallLowPowerTransformer</li>
+			<li>InstallBasicDCConverter</li>
+			<li>InstallAdv2Plating</li>
+
+			<li>InstallHydraulicFrame</li>
+			<li>InstallHydraulicReplacementLeg</li>
+
+			<li>InstallCrudeHearingS</li>
+			<li>InstallCrudeSmellingS</li>
+			<li>InstallMultiSpectrumEye</li>
+			<li>InstallMultiLayerHeatsink</li>
+			<li>InstallAdvancedCoolantInjector</li>
+			<li>InstallNanowireBattery</li>
+			<li>InstallNaniteStorageDevice</li>
+			<li>InstallHighPowerTransformer</li>
+			<li>InstallHighPowerConverter</li>
+			<li>InstallAdvancedReplacementLeg</li>
+			<li>InstallAdvHearingS</li>
+			<li>InstallSmellingAdvS</li>
+			<!--ArchotechStuff-->
+			<li>InstallMDEye</li>
+			<li>InstallSecretHeatsink</li>
+			<li>InstallSecretCoolantPump</li>
+			<li>InstallSecretBatteryPack</li>
+			<li>InstallArchotechNanites</li>
+			<li>InstallCyberReplacementLeg</li>
+			<li>InstallArchHearingS</li>
+			<li>InstallArchSmellingS</li>
+			<li>InstallMakeshiftReplacementLeg</li>
+		</recipes>
+		<butcherProducts>
+			<Plasteel>30</Plasteel>
+			<ComponentIndustrial>4</ComponentIndustrial>
+		</butcherProducts>
+		<modExtensions>
+			<li Class="MOARANDROIDS.AndroidTweaker">
+				<tweakCorpseRot>true</tweakCorpseRot>
+			</li>
+		</modExtensions>
+	</ThingDef>
+
+	<PawnKindDef ParentName="AnimalAndroidKindBaseDog">
+		<defName>AndroidDog</defName>
+		<label>K-9 cybernetic unit</label>
+		<race>AndroidDog</race>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>0.7</ecoSystemWeight>
+		<defaultFactionType>PlayerColony</defaultFactionType>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/AndroidDog/AndroidDog</texPath>
+					<drawSize>2</drawSize>
+					<shadowData>
+						<volume>(0.25, 0.3, 0.25)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/AndroidDog/AndroidDog</texPath>
+					<drawSize>1.4</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+
+		</lifeStages>
+	</PawnKindDef>
+
+
+
+</Defs>

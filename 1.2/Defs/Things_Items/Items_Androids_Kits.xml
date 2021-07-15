@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <ThingDef ParentName="ResourceBase" Name="ATPP_NaniteSerumBase" Abstract="True">
+	<thingClass>ThingWithComps</thingClass>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <stackLimit>32</stackLimit>
+	<intricate>true</intricate>
+    <tradeNeverStack>true</tradeNeverStack>
+    <statBases>
+      <MarketValue>350</MarketValue>
+	  <DeteriorationRate>2.0</DeteriorationRate>
+	  <MaxHitPoints>80</MaxHitPoints>
+      <Mass>0.2</Mass>
+      <Flammability>0.2</Flammability>
+    </statBases>
+	<thingCategories>
+      <li>Items</li>
+    </thingCategories>
+    <drawGUIOverlay>true</drawGUIOverlay>
+	<soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <comps>
+      <li Class="CompProperties_Usable">
+        <compClass>CompUsable</compClass>
+        <useJob>UseItem</useJob>
+        <useLabel>Use this nanite serum to fix androids age issues</useLabel>
+      </li>
+      <li Class="CompProperties_UseEffect">
+        <compClass>CompUseEffect_DestroySelf</compClass>
+      </li>
+    </comps>
+    <thingSetMakerTags>
+      <li>Manufactured</li>
+    </thingSetMakerTags>
+	    <techLevel>Ultra</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_NaniteSerumBase">
+    <defName>ATPP_NanitesHydraulicSerum</defName>
+    <label>Hydraulic nanites bank</label>
+    <description>A one-use dose of nanites tuned to repair broken androids hydraulic systems.</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_chip4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffect">
+        <compClass>MOARANDROIDS.CompUseEffect_HealHydraulicSystem</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  
+   <ThingDef ParentName="ATPP_NaniteSerumBase">
+    <defName>ATPP_NanitesCPUSerum</defName>
+    <label>CPU nanites bank</label>
+    <description>A one-use bank of nanites tuned to repair broken androids artificial brain system.</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_chip1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffect">
+        <compClass>MOARANDROIDS.CompUseEffect_HealCPUSerum</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_NaniteSerumBase">
+    <defName>ATPP_NanitesCoolingSerum</defName>
+    <label>Cooling nanites bank</label>
+    <description>A one-use bank of nanites tuned to repair broken androids cooling system in case of overheating.</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_chip3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffect">
+        <compClass>MOARANDROIDS.CompUseEffect_HealCoolingSystem</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_NaniteSerumBase">
+    <defName>ATPP_NanitesFrameSerum</defName>
+    <label>Framework nanites bank</label>
+    <description>A one-use bank of nanites tuned to repair broken androids exoskeleton.</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_chip2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_UseEffect">
+        <compClass>MOARANDROIDS.CompUseEffect_HealFrameworkSystem</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  
+  <ThingDef Name="ATPP_NanoKitBase" Abstract="True" ParentName="ResourceBase">
+	<thingClass>Medicine</thingClass>
+    <stackLimit>25</stackLimit>
+	<drawGUIOverlay>True</drawGUIOverlay>
+    <uiIconForStackCount>1</uiIconForStackCount>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+    </statBases>
+    <thingCategories>
+      <li>Medicine</li>
+    </thingCategories>
+  </ThingDef>
+  
+   <ThingDef ParentName="ATPP_NanoKitBase">
+    <defName>ATPP_AndroidNanokitBasic</defName>
+    <label>Basic Nanokit</label>
+    <description>A kit containing nanobots to treat the wounds of androids</description>
+	<stackLimit>48</stackLimit>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_NanoKitBasic</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+		<techLevel>Neolithic</techLevel>
+		<statBases>
+      <MarketValue>10</MarketValue>
+      <Mass>0.70</Mass>
+      <Flammability>0.5</Flammability>
+      <MedicalPotency>0.60</MedicalPotency>
+      <MedicalQualityMax>0.70</MedicalQualityMax>
+      <DeteriorationRate>6</DeteriorationRate>
+	  <WorkToMake>700</WorkToMake>
+    </statBases>
+	<costList>
+      <Steel>25</Steel>
+      <Silver>2</Silver>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+		<li>TableMachining</li>
+      </recipeUsers>
+      <researchPrerequisite>ATPP_ResearchCraftBasicNanoKit</researchPrerequisite>
+      <skillRequirements>
+				<Crafting>4</Crafting>
+        <Intellectual>4</Intellectual>
+      </skillRequirements>
+	  <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    </recipeMaker>
+    <tickerType>Rare</tickerType>
+  </ThingDef>
+  
+   <ThingDef ParentName="ATPP_NanoKitBase">
+    <defName>ATPP_AndroidNanokitIntermediate</defName>
+    <label>Intermediate Nanokit</label>
+    <description>A kit containing nanobots to treat the wounds of androids</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_NanoKitIntermediate</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+		<techLevel>Industrial</techLevel>
+		<statBases>
+      <MarketValue>18</MarketValue>
+      <Mass>0.50</Mass>
+      <Flammability>0.7</Flammability>
+      <MedicalPotency>1.00</MedicalPotency>
+      <MedicalQualityMax>1.00</MedicalQualityMax>
+      <DeteriorationRate>2</DeteriorationRate>
+      <WorkToMake>3500</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>45</Steel>
+      <Silver>4</Silver>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      <researchPrerequisite>ATPP_ResearchCraftIntermediateNanoKit</researchPrerequisite>
+      <skillRequirements>
+				<Crafting>6</Crafting>
+        <Intellectual>6</Intellectual>
+      </skillRequirements>
+	  <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    </recipeMaker>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_NanoKitBase">
+    <defName>ATPP_AndroidNanokitAdvanced</defName>
+    <label>Advanced Nanokit</label>
+    <description>A kit containing nanobots to treat the wounds of androids</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_NanoKitAdvanced</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <drawSize>0.85</drawSize>
+    </graphicData>
+		<techLevel>Spacer</techLevel>
+		<statBases>
+      <MarketValue>75</MarketValue>
+      <Mass>1.5</Mass>
+      <Flammability>0.5</Flammability>
+      <MedicalPotency>1.60</MedicalPotency>
+      <MedicalQualityMax>1.30</MedicalQualityMax>
+      <DeteriorationRate>2</DeteriorationRate>
+      <WorkToMake>6500</WorkToMake>
+    </statBases>
+    <costList>
+      <Steel>85</Steel>
+      <Silver>7</Silver>
+	  <Gold>1.0</Gold>
+	  <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Intellectual</workSkill>
+      <recipeUsers>
+        <li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      <researchPrerequisite>ATPP_ResearchCraftAdvancedNanoKit</researchPrerequisite>
+      <skillRequirements>
+				<Crafting>10</Crafting>
+        <Intellectual>10</Intellectual>
+      </skillRequirements>
+	  <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    </recipeMaker>
+  </ThingDef>
+  
+ <ThingDef Name="ATPP_ImplantBase" Abstract="True">
+    <label>implant</label>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+			<DeteriorationRate>2.0</DeteriorationRate>
+			<Beauty>-4</Beauty>
+		</statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <tickerType>Never</tickerType>
+    <alwaysHaulable>true</alwaysHaulable>
+    <isTechHediff>true</isTechHediff>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>TechHediff</li>
+    </tradeTags>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <thingCategories>
+      <li>BodyPartsAndroid</li>
+    </thingCategories>
+    <pathCost>10</pathCost>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ImplantBase">
+    <defName>ATPP_VX1Chip</defName>
+    <label>VX1 Neural chip</label>
+    <description>A Neural chip allowing his host to control remotely surrogate androids series.</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_VX1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>800</MarketValue>
+      <Mass>0.2</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>ATPP_Custom</li>
+    </techHediffsTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ImplantBase">
+    <defName>ATPP_VX2Chip</defName>
+    <label>VX2 Neural chip</label>
+    <description>A Neural chip allowing his host to control remotely surrogate androids series and permute/duplicate his consciousness</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_VX2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>2000</MarketValue>
+      <Mass>0.25</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>ATPP_Custom</li>
+    </techHediffsTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ImplantBase">
+    <defName>ATPP_VX3Chip</defName>
+    <label>VX3 Neural chip</label>
+    <description>A Neural chip allowing his host to control remotely multiple surrogate androids series and permute/duplicate his consciousness</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_VX3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>4000</MarketValue>
+      <Mass>0.35</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>ATPP_Custom</li>
+    </techHediffsTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ImplantBase">
+    <defName>ATPP_VX0Chip</defName>
+    <label>VX0 Neural chip</label>
+    <description>A neural chip to transform the host into a biological surrogate</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_VX0</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <Mass>0.15</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>ATPP_Custom</li>
+    </techHediffsTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ImplantBase">
+    <defName>ATPP_RXChip</defName>
+    <label>RX Neural chip</label>
+    <description>A neural chip acting as a personal SkyMind relay.</description>
+    <graphicData>
+      <texPath>Things/Misc/ATPP_RX</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>150</MarketValue>
+      <Mass>0.15</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>ATPP_Custom</li>
+    </techHediffsTags>
+  </ThingDef>
+  
+  
+  
+  <ThingDef ParentName="ATPP_ImplantBase" Abstract="True" Name="ATPP_ArtificialBrainBase">
+    <graphicData>
+      <texPath>Things/Misc/ATPP_ArtificialBrain</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>0.80</drawSize>
+    </graphicData>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+    <statBases>
+      <MarketValue>150</MarketValue>
+      <Mass>0.85</Mass>
+    </statBases>
+    <techHediffsTags>
+      <li>ATPP_Custom</li>
+    </techHediffsTags>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ArtificialBrainBase">
+    <defName>ATPP_T1ArtificialBrain</defName>
+    <label>Artificial Brain T1</label>
+    <description>An artificial T1 brain.</description>
+    <statBases>
+      <MarketValue>150</MarketValue>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ArtificialBrainBase">
+    <defName>ATPP_T2ArtificialBrain</defName>
+    <label>Artificial Brain T2</label>
+    <description>An artificial T2 brain.</description>
+    <statBases>
+      <MarketValue>250</MarketValue>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ArtificialBrainBase">
+    <defName>ATPP_T3ArtificialBrain</defName>
+    <label>Artificial Brain T3</label>
+    <description>An artificial T3 brain.</description>
+    <statBases>
+      <MarketValue>500</MarketValue>
+    </statBases>
+  </ThingDef>
+  
+  <ThingDef ParentName="ATPP_ArtificialBrainBase">
+    <defName>ATPP_T4ArtificialBrain</defName>
+    <label>Artificial Brain T4</label>
+    <description>An artificial T4 brain.</description>
+    <statBases>
+      <MarketValue>1000</MarketValue>
+    </statBases>
+  </ThingDef>
+  
+ </Defs>

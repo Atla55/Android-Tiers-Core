@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<AlienRace.PawnBioDef>
+		<defName>AtlasTheCreator</defName>
+		<childhoodDef>CreationExperiment</childhoodDef>
+		<adulthoodDef>AndroidSoftwareCreator</adulthoodDef>
+		<gender>Male</gender>
+		<name>
+			<first>Atlas</first>
+			<last>#001</last>
+			<nick>Atlas</nick>
+		</name>
+		<factionLeader>false</factionLeader>
+		<validRaces>
+			<li>Android1Tier</li>
+		</validRaces>
+		<forcedHediffs>
+			<li>PositronMind</li>
+		</forcedHediffs>
+	</AlienRace.PawnBioDef>
+
+	<AlienRace.BackstoryDef>
+		<defName>AndroidSoftwareCreator</defName>
+		<title>Software developer</title>
+		<titleShort>Developer</titleShort>
+		<baseDescription>{PAWN_nameDef} was made to write software that would assist in brain scanning technology, working with a corporation that was investigating into the feasibility of uploading consciousnesses into mechanical bodies. {PAWN_nameDef} Was surprisingly slow and ineffecient however, never writing the adequate software to do so, eventually being replaced with a newer model.</baseDescription>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>AndroidSpecial</li>
+		</spawnCategories>
+		<skillGains>
+			<li>
+				<defName>Shooting</defName>
+				<amount>1</amount>
+			</li>
+			<li>
+				<defName>Crafting</defName>
+				<amount>3</amount>
+			</li>
+			<li>
+				<defName>Intellectual</defName>
+				<amount>3</amount>
+			</li>
+		</skillGains>
+		<forcedTraits>
+			<li>
+				<defName>Industriousness</defName>
+				<degree>-1</degree>
+				<chance>100</chance>
+			</li>
+		</forcedTraits>
+	</AlienRace.BackstoryDef>
+</Defs>

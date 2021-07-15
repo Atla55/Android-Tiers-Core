@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AbominationAtlas</defName>
+		<label>Mutant</label>
+		<race>Abomination</race>
+		<combatPower>230</combatPower>
+		<defaultFactionType>Abomination</defaultFactionType>
+		<aiAvoidCover>true</aiAvoidCover>
+		<canArriveManhunter>false</canArriveManhunter>
+		<ecoSystemWeight>9999</ecoSystemWeight>
+		<apparelTags>
+			<li>Worker</li>
+		</apparelTags>
+		<apparelMoney>
+			<min>0</min>
+			<max>80</max>
+		</apparelMoney>
+		<apparelAllowHeadgearChance>0.1</apparelAllowHeadgearChance>
+		<lifeStages>
+			<li>
+				<bodyGraphicData>
+					<texPath>Things/Pawn/Abomination/Abomination</texPath>
+					<drawSize>2.5</drawSize>
+					<shadowData>
+						<volume>(0.45, 1.3, 0.45)</volume>
+						<offset>(0,0,-0.15)</offset>
+					</shadowData>
+				</bodyGraphicData>
+				<dessicatedBodyGraphicData>
+					<texPath>Things/Pawn/Abomination/Abomination</texPath>
+					<drawSize>2.5</drawSize>
+				</dessicatedBodyGraphicData>
+			</li>
+		</lifeStages>
+
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT5Colonist</defName>
+		<label>T5 Android Colonist</label>
+		<race>Android5Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>TranscendantBackstory</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<techHediffsMoney>
+			<min>2000</min>
+			<max>10000</max>
+		</techHediffsMoney>
+		<techHediffsTags>
+			<li>secret</li>
+		</techHediffsTags>
+		<techHediffsChance>0.1</techHediffsChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT4Colonist</defName>
+		<label>T4 Android Colonist</label>
+		<race>Android4Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<maxGenerationAge>5</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT3Colonist</defName>
+		<label>T3 Android Colonist</label>
+		<race>Android3Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<maxGenerationAge>5</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT1Colonist</defName>
+		<label>T1 Android Colonist</label>
+		<race>Android1Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<maxGenerationAge>5</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT2Colonist</defName>
+		<label>T2 Android Colonist</label>
+		<race>Android2Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidTiers</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<maxGenerationAge>5</maxGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+	</PawnKindDef>
+
+	<!--Androids With Real Backstories-->
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT4ColonistGeneral</defName>
+		<label>T4 Android Colonist</label>
+		<race>Android4Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<minGenerationAge>20</minGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+	</PawnKindDef>
+
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT3ColonistGeneral</defName>
+		<label>T3 Android Colonist</label>
+		<race>Android3Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<minGenerationAge>20</minGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+	</PawnKindDef>
+
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT1ColonistGeneral</defName>
+		<label>T1 Android Colonist</label>
+		<race>Android1Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<minGenerationAge>20</minGenerationAge>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="BasePlayerPawnKind">
+		<defName>AndroidT2ColonistGeneral</defName>
+		<label>T2 Android Colonist</label>
+		<race>Android2Tier</race>
+		<backstoryFiltersOverride>
+		  <li>
+			<categories>
+			  <li>AndroidGeneral</li>
+			</categories>
+		  </li>
+		</backstoryFiltersOverride>
+		<defaultFactionType>PlayerColonyAndroid</defaultFactionType>
+		<minGenerationAge>20</minGenerationAge>
+		<chemicalAddictionChance>0.00</chemicalAddictionChance>
+		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+    <apparelTags>
+      <li>IndustrialBasic</li>
+    </apparelTags>
+	</PawnKindDef>
+
+</Defs>
