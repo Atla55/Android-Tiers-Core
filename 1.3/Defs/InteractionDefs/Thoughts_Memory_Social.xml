@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Random social interactions OK -->
+
+  <ThoughtDef>
+    <defName>RoboticsChat</defName>
+    <thoughtClass>Thought_MemorySocialCumulative</thoughtClass>
+    <stackLimit>300</stackLimit>
+    <maxCumulatedOpinionOffset>10</maxCumulatedOpinionOffset>
+    <nullifyingTraits>
+      <li>BodyPurist</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>talked about robotics</label>
+        <baseOpinionOffset>0.66</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+ 
+  <ThoughtDef>
+    <defName>AndroidsChat</defName>
+    <thoughtClass>Thought_MemorySocialCumulative</thoughtClass>
+    <stackLimit>300</stackLimit>
+    <maxCumulatedOpinionOffset>10</maxCumulatedOpinionOffset>
+    <nullifyingTraits>
+      <li>BodyPurist</li>
+    </nullifyingTraits>
+    <stages>
+      <li>
+        <label>talked about androids</label>
+        <baseOpinionOffset>0.66</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  
+</Defs>

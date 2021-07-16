@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>RepairKitAT</defName>
+    <label>Upgrade Kit</label>
+    <description>This kit is specifically made to help in the repair and modification of androids.</description>
+    <graphicData>
+      <texPath>Things/RepairKit</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+		<statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>30</MarketValue>
+      <Mass>0.45</Mass>
+      <Flammability>0</Flammability>
+    </statBases>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <tradeability>All</tradeability>
+    <techLevel>Spacer</techLevel>
+    <tradeTags>
+      <li>ExoticMisc</li>
+    </tradeTags>
+	<tickerType>Rare</tickerType>
+    <thingSetMakerTags>
+      <li>RewardSpecial</li>
+    </thingSetMakerTags>
+  </ThingDef>
+  
+   <RecipeDef>
+      <defName>RepairKitAT</defName>
+      <label>Make a upgrade kit</label>
+      <description>Create a simple set of tools and materials for an android upgrade kit.</description>
+      <jobString>Making upgrade kit</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+      </ingredients>
+      <products>
+         <RepairKitAT>1</RepairKitAT>
+      </products>
+      <workAmount>1650</workAmount>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+	 <recipeUsers>
+		<li>TableMachining</li>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>AIPersonaCore</defName>
+      <label>Make an AI persona core</label>
+      <description>Create a complexe AI core capable of sentience.</description>
+      <jobString>Making AI Core</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>120</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>10</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>10</count>
+         </li>
+      </ingredients>
+      <products>
+         <AIPersonaCore>1</AIPersonaCore>
+      </products>
+      <workAmount>8650</workAmount>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+	 <recipeUsers>
+		<li>TableMachining</li>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AndroidT1Kit</defName>
+		<label>Android Assembly Kit</label>
+		<thingClass>ThingWithComps</thingClass>
+		<description>This kit contains the disassembled parts of a T1 android, laid out neatly within so that the unit can be more efficiently transported from location to location. The kit holds a set of instructions and tools to assemble the android too, with the instructions being so clear and straight forward that even an idiot could do it.</description>
+		<graphicData>
+			<texPath>Things/AndroidKit</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>1350</MarketValue>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>15.0</Mass>
+		</statBases>
+		<thingCategories>
+			<li>Items</li>
+		</thingCategories>
+		<tradeability>All</tradeability>
+		<techLevel>Spacer</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<useJob>UseItem</useJob>
+				<useLabel>Assemble T1 Android</useLabel>
+				<useDuration>4000</useDuration>
+			</li>
+			<li Class="MOARANDROIDS.CompProperties_SpawnPawn">
+				<compClass>MOARANDROIDS.CompUseEffect_SpawnAndroid</compClass>
+				<pawnKind>AndroidT1Colonist</pawnKind>
+
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>CompUseEffect_DestroySelf</compClass>
+			</li>
+		</comps>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
+	</ThingDef>
+
+	<ThingDef ParentName="ResourceBase">
+		<defName>AndroidT2Kit</defName>
+		<label>Adv Android Assembly Kit</label>
+		<thingClass>ThingWithComps</thingClass>
+		<description>This kit contains the disassembled parts of a T2 android, laid out neatly within so that the unit can be more efficiently transported from location to location. The kit holds a set of instructions and tools to assemble the android too, with the instructions being so clear and straight forward that even an idiot could do it.</description>
+		<graphicData>
+			<texPath>Things/AndroidKitAdv</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>2200</MarketValue>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>20.0</Mass>
+		</statBases>
+		<thingCategories>
+			<li>Manufactured</li>
+		</thingCategories>
+		<tradeability>All</tradeability>
+		<techLevel>Spacer</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<useJob>UseItem</useJob>
+				<useLabel>Assemble T2 Android</useLabel>
+				<useDuration>4000</useDuration>
+			</li>
+			<li Class="MOARANDROIDS.CompProperties_SpawnPawn">
+				<compClass>MOARANDROIDS.CompUseEffect_SpawnAndroid</compClass>
+				<pawnKind>AndroidT2Colonist</pawnKind>
+
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>CompUseEffect_DestroySelf</compClass>
+			</li>
+		</comps>
+		<thingSetMakerTags>
+			<li>RewardSpecial</li>
+		</thingSetMakerTags>
+	</ThingDef>
+	
+	
+   <RecipeDef>
+      <defName>CreateT1AndroidKit</defName>
+      <label>Create T1 Android Kit</label>
+      <description>Create a T1 Android Kit from Plasteel and components.</description>
+      <jobString>Making Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>10</count>
+         </li>
+      </ingredients>
+      <products>
+         <AndroidT1Kit>1</AndroidT1Kit>
+      </products>
+	  <researchPrerequisite>T1Androids</researchPrerequisite>
+      <workAmount>12500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateT2AndroidKit</defName>
+      <label>Create T2 Android Kit</label>
+      <description>Create a T2 Android Kit from Plasteel and components.</description>
+      <jobString>Making Android</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>85</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>2.5</count>
+         </li>
+      </ingredients>
+      <products>
+         <AndroidT2Kit>1</AndroidT2Kit>
+      </products>
+	  <researchPrerequisite>T2Androids</researchPrerequisite>
+      <workAmount>18500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<!--
+	<ThingDef ParentName="ResourceBase">
+		<defName>ColonyMechKit</defName>
+		<label>Mechanised Infantry Parts</label>
+		<thingClass>ThingWithComps</thingClass>
+		<description>A Collection of every part and tool needed to assemble a unit of mechanised infantry on the spot. This process takes a long amount of time however.</description>
+		<graphicData>
+			<texPath>Things/MechBox</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<resourceReadoutPriority>Middle</resourceReadoutPriority>
+		<stackLimit>1</stackLimit>
+		<useHitPoints>true</useHitPoints>
+		<statBases>
+			<MarketValue>25000</MarketValue>
+			<MaxHitPoints>200</MaxHitPoints>
+			<Mass>120.0</Mass>
+		</statBases>
+		<thingCategories>
+			<li>Items</li>
+		</thingCategories>
+		<tradeability>Sellable</tradeability>
+		<techLevel>Ultra</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<useJob>UseItem</useJob>
+				<useLabel>Construct Mechanised Infantry</useLabel>
+				<useDuration>8000</useDuration>
+			</li>
+			<li Class="MOARANDROIDS.CompProperties_SpawnPawn">
+				<compClass>MOARANDROIDS.CompUseEffect_SpawnAndroid</compClass>
+				<pawnKind>ColonyMechPawn</pawnKind>
+
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>CompUseEffect_DestroySelf</compClass>
+			</li>
+		</comps>
+	</ThingDef>
+	
+   <RecipeDef>
+      <defName>CreateColonyMechKit</defName>
+      <label>Create Mechanised Infantry Parts</label>
+      <description>Create Mechanised Infantry Parts from raw materials.</description>
+      <jobString>Making Parts</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>18</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>245</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>185</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>42</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+      <products>
+         <ColonyMechKit>1</ColonyMechKit>
+      </products>
+	  <researchPrerequisite>MechCreationBasic</researchPrerequisite>
+      <workAmount>68500</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	-->
+</Defs>

@@ -1,0 +1,2677 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+ <RecipeDef>
+      <defName>CreateCompositePlating</defName>
+      <label>Create composite plating</label>
+      <description>Create composite plating.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Synthread</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+      </ingredients>
+      <products>
+         <CompositePlating>1</CompositePlating>
+      </products>
+	  <researchPrerequisite>AdvT2Plating</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+ <RecipeDef>
+      <defName>CreatePlasteelPlating</defName>
+      <label>Create plasteel plating</label>
+      <description>Create plasteel plating.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <PlasteelPlating>1</PlasteelPlating>
+      </products>
+	  <researchPrerequisite>T2Plating</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+ <RecipeDef>
+      <defName>CreateSteelPlating</defName>
+      <label>Create steel plating</label>
+      <description>Create Steel plating.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>5</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <products>
+         <SteelPlating>1</SteelPlating>
+      </products>
+	  <researchPrerequisite>T2Plating</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+	<!--Basic Replacements-->
+	
+   <RecipeDef>
+      <defName>CreateDrillArm</defName>
+      <label>Create mining arm</label>
+      <description>Create an android mining arm.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <MiningArm_AT>1</MiningArm_AT>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateHydraulicLeg</defName>
+      <label>Create hydraulic leg</label>
+      <description>Create a hydraulic android leg.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>3</count>
+         </li>
+      </ingredients>
+      <products>
+         <HydraulicLeg>1</HydraulicLeg>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateHydraulicArm</defName>
+      <label>Create hydraulic arm</label>
+      <description>Create a hydraulic android arm.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>3</count>
+         </li>
+      </ingredients>
+      <products>
+         <HydraulicArm>1</HydraulicArm>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateHydraulicFrame</defName>
+      <label>Create a hydraulic frame</label>
+      <description>Create a hydraulic android frame.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>5</count>
+         </li>
+      </ingredients>
+      <products>
+         <HydraulicFrame>1</HydraulicFrame>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+	
+   <RecipeDef>
+      <defName>CreateBArm</defName>
+      <label>Create basic arm replacement</label>
+      <description>Create a basic android arm replacement.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <BasicReplacementArm>1</BasicReplacementArm>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateBLeg</defName>
+      <label>Create basic leg replacement</label>
+      <description>Create a basic android leg replacement.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <BasicReplacementLeg>1</BasicReplacementLeg>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2500</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+  
+   <RecipeDef>
+      <defName>CreateLightReceivingDiode</defName>
+      <label>Create crude light sensor</label>
+      <description>Create a crude light sensor .</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <products>
+         <LightReceivingDiode>1</LightReceivingDiode>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateCrudeHeatsink</defName>
+      <label>Create crude heatsink</label>
+      <description>Create a crude heatsink.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <products>
+         <CrudeHeatsink>1</CrudeHeatsink>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateFlimsyCoolantPump</defName>
+      <label>Create crude coolant pump</label>
+      <description>Create a crude coolant pump.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>3</count>
+         </li>
+      </ingredients>
+      <products>
+         <FlimsyCoolantPump>1</FlimsyCoolantPump>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSmallBatteryPack</defName>
+      <label>Create crude battery pack</label>
+      <description>Create a crude battery pack.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <SmallBatteryPack>1</SmallBatteryPack>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateTubeSealantTank</defName>
+      <label>Create crude mechanite storage</label>
+      <description>Create a crude mechanite storage device.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <TubeSealantTank>1</TubeSealantTank>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateLowPowerTransformer</defName>
+      <label>Create crude bio-reactor</label>
+      <description>Create a low power, inefficient cellulose converter</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <LowPowerTransformer>1</LowPowerTransformer>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateBasicDCConverter</defName>
+      <label>Create crude power converter</label>
+      <description>Create a crude power converter.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <BasicDCConverter>1</BasicDCConverter>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+<!--========Advanced========-->
+
+   <RecipeDef>
+      <defName>CreateAdvancedReplacementLeg</defName>
+      <label>Create high power leg</label>
+      <description>Create a high power leg.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+      </ingredients>
+      <products>
+         <AdvancedReplacementLeg>1</AdvancedReplacementLeg>
+      </products>
+	  <researchPrerequisite>T2Replacements</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateAdvancedReplacementArm</defName>
+      <label>Create high power arm</label>
+      <description>Create a high power arm.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count> 6</count>
+         </li>
+      </ingredients>
+      <products>
+         <AdvancedReplacementArm>1</AdvancedReplacementArm>
+      </products>
+	  <researchPrerequisite>T2Replacements</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateMultiSpectrumEye</defName>
+      <label>Create advanced light sensor</label>
+      <description>Create an advanced light sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <MultiSpectrumEye>1</MultiSpectrumEye>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateMultiLayerHeatsink</defName>
+      <label>Create advanced heatsink</label>
+      <description>Create an advanced heatsink.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <MultiLayerHeatsink>1</MultiLayerHeatsink>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateAdvancedCoolantInjector</defName>
+      <label>Create advanced coolant pump</label>
+      <description>Create an advanced coolant pump.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <AdvancedCoolantInjector>1</AdvancedCoolantInjector>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateNanowireBattery</defName>
+      <label>Create advanced battery pack</label>
+      <description>Create an advanced battery pack.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <NanowireBattery>1</NanowireBattery>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+	
+   <RecipeDef>
+      <defName>CreateNaniteStorageDevice</defName>
+      <label>Create advanced mechanite storage</label>
+      <description>Create a advanced mechanite storage.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+      </ingredients>
+      <products>
+         <NaniteStorageDevice>1</NaniteStorageDevice>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateHighPowerTransformer</defName>
+      <label>Create advanced bio-reactor</label>
+      <description>Create a highly efficient, compact advanced bio-reactor that fits T3 and T4 androids.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+      </ingredients>
+      <products>
+         <HighPowerTransformer>1</HighPowerTransformer>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>3000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateHighPowerConverter</defName>
+      <label>Create advanced power converter</label>
+      <description>Create a advanced power converter.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <HighPowerConverter>1</HighPowerConverter>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>3000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+	<!--=================-->
+	
+   <RecipeDef>
+      <defName>CreateBasicRearCounterweight</defName>
+      <label>Create basic rear counterweight</label>
+      <description>Create a basic rear counterweight.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <BasicRearCounterweight>1</BasicRearCounterweight>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>1000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateAdvRearCounterweight</defName>
+      <label>Create gyroscopic counterweight</label>
+      <description>Create a gyroscopic counterweight.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>7</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <AdvRearCounterweight>1</AdvRearCounterweight>
+      </products>
+	  <researchPrerequisite>T2Replacements</researchPrerequisite>
+      <workAmount>3000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateCrudeJawAndroid</defName>
+      <label>Create crude jaw</label>
+      <description>Create a crude jaw.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <CrudeJawAndroid>1</CrudeJawAndroid>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>2000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateAdvJawAndroid</defName>
+      <label>Create cybernetic jaw</label>
+      <description>Create a cybernetic jaw.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>12</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+      <products>
+         <AdvJawAndroid>1</AdvJawAndroid>
+      </products>
+	  <researchPrerequisite>T2Replacements</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreatePositronMindImplant</defName>
+      <label>Create positronic rewiring</label>
+      <description>Create positronic rewiring.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>12</Crafting>
+		<Intellectual>6</Intellectual>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <PositronMindImplant>1</PositronMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSoldierMindImplant</defName>
+      <label>Create soldier upgrade</label>
+      <description>Create soldier upgrade.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>12</Crafting>
+		<Shooting>6</Shooting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <SoldierMindImplant>1</SoldierMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateBuilderMindImplant</defName>
+      <label>Create blueprint bank</label>
+      <description>Create blueprint bank.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+		<Construction>6</Construction>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <BuilderMindImplant>1</BuilderMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSurgeonMindImplant</defName>
+      <label>Create tricorder implant</label>
+      <description>Create tricorder implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+		<Medicine>6</Medicine>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <SurgeonMindImplant>1</SurgeonMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSpeedMindImplant</defName>
+      <label>Create neural highways</label>
+      <description>Create neural highways.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <SpeedMindImplant>1</SpeedMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateMechanicMindImplant</defName>
+      <label>Create engineering implant</label>
+      <description>Create engineering implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <MechanicMindImplant>1</MechanicMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateCookingMindImplant</defName>
+      <label>Create cuisine implant</label>
+      <description>Create cuisine implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+		<Cooking>6</Cooking>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>40</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <CookingMindImplant>1</CookingMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateCharismaMindImplant</defName>
+      <label>Create charisma implant</label>
+      <description>Create charisma implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+		<Social>3</Social>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <CharismaMindImplant>1</CharismaMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+	 
+	 </RecipeDef>
+	 
+   <RecipeDef>
+      <defName>CreateNegotiationMindImplant</defName>
+      <label>Create negotiator implant</label>
+      <description>Create negotiator implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+		<Social>5</Social>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <NegotiationMindImplant>1</NegotiationMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateAnimalMindImplant</defName>
+      <label>Create zoology implant</label>
+      <description>Create zoology implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+		<Animals>4</Animals>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <AnimalMindImplant>1</AnimalMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateFarmingMindImplant</defName>
+      <label>Create agricultural implant</label>
+      <description>Create agricultural implant.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+		<Plants>4</Plants>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <FarmingMindImplant>1</FarmingMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateUnskilledMindImplant</defName>
+      <label>Create basic labor chip</label>
+      <description>Create basic labor chip.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <BasicLaborMindImplant>1</BasicLaborMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateGeoMindImplant</defName>
+      <label>Create geological banks</label>
+      <description>Create geological banks.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>12</Crafting>
+		<Mining>10</Mining>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>20</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>70</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <products>
+         <GeoMindImplant>1</GeoMindImplant>
+      </products>
+	  <researchPrerequisite>T3Implants</researchPrerequisite>
+      <workAmount>6000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidOtherStuffTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+<!--===Archotech==-->
+
+   <RecipeDef>
+      <defName>CreateArchReplacementLeg</defName>
+      <label>Create cybernetic leg</label>
+      <description>Create a cybernetic leg.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>16</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+      <products>
+         <CyberReplacementLeg>1</CyberReplacementLeg>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>6000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateArchReplacementArm</defName>
+      <label>Create cybernetic arm</label>
+      <description>Create a cybernetic arm.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>16</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+      </ingredients>
+      <products>
+         <CyberReplacementArm>1</CyberReplacementArm>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>6000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSecretHeatsink</defName>
+      <label>Create archotech heatsink</label>
+      <description>Create an archotech heatsink.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>16</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>5</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Antifreeze</li>
+               </thingDefs>
+            </filter>
+            <count>1</count>
+         </li>
+      </ingredients>
+      <products>
+         <SecretHeatsink>1</SecretHeatsink>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>5000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateMDEye</defName>
+      <label>Create archotech light sensor</label>
+      <description>Create an archotech light sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>15</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <MDEye>1</MDEye>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>5000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSecretCoolantPump</defName>
+      <label>Create archotech coolant pump</label>
+      <description>Create archotech coolant pump.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>15</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>5</count>
+         </li>
+      </ingredients>
+      <products>
+         <SecretCoolantPump>1</SecretCoolantPump>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>5000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateSecretBatteryPack</defName>
+      <label>Create archotech battery pack</label>
+      <description>Create an archotech battery pack.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>16</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <SecretBatteryPack>1</SecretBatteryPack>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>5000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+	
+   <RecipeDef>
+      <defName>CreateArchotechNanites</defName>
+      <label>Create archotech mechanite storage</label>
+      <description>Create mechanite storage.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>18</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>8</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <ArchotechNanites>1</ArchotechNanites>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>5000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateMolecularDecomposer</defName>
+      <label>Create archotech bio-reactor</label>
+      <description>Create an archotech bio-reactor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>15</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+      </ingredients>
+      <products>
+         <MolecularDecomposer>1</MolecularDecomposer>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+
+   <RecipeDef>
+      <defName>CreateQuantumConverter</defName>
+      <label>Create archotech power converter</label>
+      <description>Create a archotech power converter.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>15</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>80</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>5</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>50</count>
+         </li>
+      </ingredients>
+      <products>
+         <QuantumConverter>1</QuantumConverter>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>4000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateHearingSensorAdv</defName>
+      <label>Create advanced hearing sensor</label>
+      <description>Create an advanced hearing sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+      </ingredients>
+      <products>
+         <AdvHearingS>1</AdvHearingS>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>1800</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+    <RecipeDef>
+      <defName>CreateHearingSensorCrude</defName>
+      <label>Create crude hearing sensor</label>
+      <description>Create a crude hearing sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>5</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>30</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>3</count>
+         </li>
+      </ingredients>
+      <products>
+         <CrudeHearingS>1</CrudeHearingS>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>1200</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateHearingSensorArch</defName>
+      <label>Create archotech hearing sensor</label>
+      <description>Create an archotech hearing sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>60</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+      </ingredients>
+      <products>
+         <ArchHearingS>1</ArchHearingS>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>2300</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+	
+   <RecipeDef>
+      <defName>CreateSmellingAdvS</defName>
+      <label>Create advanced smelling sensor</label>
+      <description>Create an advanced smelling sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>30</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>4</count>
+         </li>
+      </ingredients>
+      <products>
+         <SmellingAdvS>1</SmellingAdvS>
+      </products>
+	  <researchPrerequisite>T2ReplacementsOrgans</researchPrerequisite>
+      <workAmount>1000</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+	
+    <RecipeDef>
+      <defName>CreateSmellingSensorCrude</defName>
+      <label>Create crude smelling sensor</label>
+      <description>Create a crude smelling sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>5</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>15</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>2</count>
+         </li>
+      </ingredients>
+      <products>
+         <CrudeSmellingS>1</CrudeSmellingS>
+      </products>
+	  <researchPrerequisite>T1Replacements</researchPrerequisite>
+      <workAmount>1200</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+   <RecipeDef>
+      <defName>CreateSmellingSensorArch</defName>
+      <label>Create archotech smelling sensor</label>
+      <description>Create an archotech smelling sensor.</description>
+      <jobString>Making Part</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>30</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>3</count>
+         </li>
+      </ingredients>
+      <products>
+         <ArchSmellingS>1</ArchSmellingS>
+      </products>
+	  <researchPrerequisite>T5Research</researchPrerequisite>
+      <workAmount>2300</workAmount>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidPartsTable</li>
+      </recipeUsers>
+      
+	</RecipeDef>
+	
+</Defs>

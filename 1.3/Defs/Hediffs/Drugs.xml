@@ -1,0 +1,1619 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>StructureGel</defName>
+		<label>structure gel</label>
+		<description>A viscous black gel made from a mesh of linked mechanites and amino acids, it's used extensively in the production and temporary enhancement of androids. However: not made for biological consumption, the gel does hold Nutritional value, with expected seizures and vomitting if anything other than androids attempt to digest it.</description>
+		<graphicData>
+			<texPath>Things/Drugs/SGel</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>6</stackLimit>
+		<statBases>
+			<MarketValue>35</MarketValue>
+			<WorkToMake>1550</WorkToMake>
+			<Nutrition>0.5</Nutrition>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Consume {0}</ingestCommandString>
+			<ingestReportString>Consuming {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="MOARANDROIDS.IngestionOutcomeDoer_GiveTwoHediffs">
+					<hediffDef_Human>SGelhuman</hediffDef_Human>
+					<hediffDef_Android>SGelandroid</hediffDef_Android>
+					<severity>1</severity>
+				</li>
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>BasicEnhancement</researchPrerequisite>
+			<recipeUsers>
+				<li>AndroidOtherStuffTable</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Neutroamine>2</Neutroamine>
+			<ChemicalEgg>1</ChemicalEgg>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>801</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+	<HediffDef>
+		<defName>SGelhuman</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Structure gel</label>
+		<description>Amino acid and mechanite mixture flowing through the bloodstream, highly toxic and may cause seizures.</description>
+		<makesSickThought>true</makesSickThought>
+		<defaultLabelColor>(0.6,0.6,0.6)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.05</maxSeverity>
+		<initialSeverity>0.3</initialSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Difficulty Breathing</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Trembling</label>
+				<painOffset>0.1</painOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.02</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.02</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Shaking</label>
+				<painOffset>0.3</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Convulsing</label>
+				<painOffset>0.4</painOffset>
+				<vomitMtbDays>1.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.5</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<label>Seizing</label>
+				<painOffset>0.45</painOffset>
+				<vomitMtbDays>0.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.35</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.35</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.65</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--HediffAndroid-->
+
+	<HediffDef>
+		<defName>SGelandroid</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Structure gel</label>
+		<description>Amino acid and mechanite mixture flowing through coolant piping, helps maintain internals for better performance.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<initialSeverity>0.3</initialSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Little effect</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Losing effect</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Mild effect</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.10</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Effective</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.20</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>Peak</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>Antifreeze</defName>
+		<label>polymer antifreeze</label>
+		<description>A polymer based additive mixture that lowers freezing point and increases boiling point of most water-based liquids. Very useful for temperature regulation by androids but toxic to biological life.</description>
+		<graphicData>
+			<texPath>Things/Drugs/Antifreeze</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>10</MarketValue>
+			<WorkToMake>550</WorkToMake>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Consume {0}</ingestCommandString>
+			<ingestReportString>Consuming {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="MOARANDROIDS.IngestionOutcomeDoer_GiveTwoHediffs">
+					<hediffDef_Human>Toxicated</hediffDef_Human>
+					<hediffDef_Android>AFreezeandroid</hediffDef_Android>
+					<severity>1</severity>
+				</li>   
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>BasicEnhancement</researchPrerequisite>
+			<recipeUsers>
+				<li>AndroidOtherStuffTable</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Chemfuel>5</Chemfuel>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>802</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>Toxicated</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Toxicated</label>
+		<description>Toxic compounds within the bloodstream, causes difficulty breathing and vomitting.</description>
+		<makesSickThought>true</makesSickThought>
+		<defaultLabelColor>(0.6,0.7,0.6)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.5</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Difficulty Breathing</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Nausea</label>
+				<painOffset>0.1</painOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.02</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.02</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Sickness</label>
+				<painOffset>0.15</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.10</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Vomitting</label>
+				<painOffset>0.2</painOffset>
+				<vomitMtbDays>1.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.20</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<label>Chronic</label>
+				<painOffset>0.35</painOffset>
+				<vomitMtbDays>0.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--HediffAndroid-->
+
+	<HediffDef>
+		<defName>AFreezeandroid</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Polymer antifreeze</label>
+		<description>Polymer based anti-freeze within coolant tubing. Helps temperature regulation for both hot and cold environments.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-1</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Little effect</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Losing effect</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-4</ComfyTemperatureMin>
+					<ComfyTemperatureMax>4</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Mild effect</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-16</ComfyTemperatureMin>
+					<ComfyTemperatureMax>16</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Effective</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-22</ComfyTemperatureMin>
+					<ComfyTemperatureMax>22</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+
+
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>Peak</label>
+				<statOffsets>
+					<ComfyTemperatureMin>-40</ComfyTemperatureMin>
+					<ComfyTemperatureMax>40</ComfyTemperatureMax>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>MechSwarm</defName>
+		<label>Mechanite swarm</label>
+		<description>This small pill contains millions upon millions of tiny nano-mechanites. Designed to swarm a mechanical host and increase kinetic ouput through controlled overloading of the mechanisms of the pawn. However; biological consumption will lead to nausea and profuse vomitting.</description>
+		<graphicData>
+			<texPath>Things/Drugs/MechSwarm</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>20</MarketValue>
+			<WorkToMake>1550</WorkToMake>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Consume {0}</ingestCommandString>
+			<ingestReportString>Consuming {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="MOARANDROIDS.IngestionOutcomeDoer_GiveTwoHediffs">
+					<hediffDef_Human>Toxicated</hediffDef_Human>
+					<hediffDef_Android>MechSwarmandroid</hediffDef_Android>
+					<severity>1</severity>
+				</li>  
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>AdvEnhancement</researchPrerequisite>
+			<recipeUsers>
+				<li>AndroidOtherStuffTable</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<ComponentIndustrial>1</ComponentIndustrial>
+			<Neutroamine>1</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>803</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>MechSwarmandroid</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Mech swarm</label>
+		<description>Nano-mechanites flowing through coolant tubing. Helps keep internals at peak performance.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-0.6</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Little effect</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Losing effect</label>
+				<statOffsets>
+					<CarryingCapacity>10</CarryingCapacity>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Metabolism</capacity>
+						<offset>0.05</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Mild effect</label>
+				<statOffsets>
+					<CarryingCapacity>30</CarryingCapacity>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Metabolism</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.3</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Effective</label>
+				<statOffsets>
+					<CarryingCapacity>50</CarryingCapacity>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Metabolism</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.4</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>Peak</label>
+				<statOffsets>
+					<CarryingCapacity>70</CarryingCapacity>
+				</statOffsets>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<offset>0.6</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+
+
+	<!--======-->
+
+	<ThingDef ParentName="DrugBase">
+		<defName>FractalPill</defName>
+		<label>fractal enhancement</label>
+		<description>This pill is rarely found anywhere except only the best archotech societies. When consumed by any mechanical life, it will cause irreversible enhancement, with ever-increasing effect with every use. Due to it's rarity; it's full power has never been documented in any system. What has been documented however is the terrible effects when ingested by humans, which due to the limitations of language cannot be explained in it's full severity.</description>
+		<graphicData>
+			<texPath>Things/Drugs/FractalP</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>800</MarketValue>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Ultra</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Consume {0}</ingestCommandString>
+			<ingestReportString>Consuming {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="MOARANDROIDS.IngestionOutcomeDoer_GiveTwoHediffs">
+					<hediffDef_Human>Conversion</hediffDef_Human>
+					<hediffDef_Android>FractalPillAndroid</hediffDef_Android>
+					<severity>0.05</severity>
+				</li> 	
+			</outcomeDoers>
+		</ingestible>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>804</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+
+	<HediffDef>
+		<defName>Conversion</defName>
+		<hediffClass>MOARANDROIDS.Hediff_Fractal</hediffClass>
+		<label>???</label>
+		<description>Fractal compounds within the bloodstream. Causes seizures, profuse vomitting and violent rupturing of skin due to severe inflammation of tissues.</description>
+		<makesSickThought>true</makesSickThought>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>2</severityPerDay>
+			</li>
+		</comps>
+		<defaultLabelColor>(1,0.5,0.5)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<stages>	
+			<li>
+				<minSeverity>0.05</minSeverity>
+				<label>Spasms</label>
+				<painOffset>0.1</painOffset>
+				<capMods>
+					<li>
+						<capacity>Breathing</capacity>
+						<setMax>0.90</setMax>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<setMax>0.90</setMax>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Seizures</label>
+				<painOffset>0.35</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.8</setMax>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<setMax>0.6</setMax>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<setMax>0.6</setMax>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Collapse</label>
+				<painOffset>0.5</painOffset>
+				<vomitMtbDays>1.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.75</setMax>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<setMax>0.4</setMax>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<setMax>0.4</setMax>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>Conversion</label>
+				<painOffset>0.8</painOffset>
+				<vomitMtbDays>0.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.1</setMax>
+					</li>
+					<li>
+						<capacity>BloodPumping</capacity>
+						<setMax>0.15</setMax>
+					</li>
+					<li>
+						<capacity>Breathing</capacity>
+						<setMax>0.15</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--HediffAndroid-->
+
+	<HediffDef>
+		<defName>FractalPillAndroid</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Fractal Enhancement</label>
+		<description>Fractal compounds within coolant tubing. Substantially improves all actions in their effeciency and power.</description>
+		<defaultLabelColor>(0.9,0.9,1)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>0</severityPerDay>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Little effect</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+			<li>
+				<minSeverity>0.05</minSeverity>
+				<label>I</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.02</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.02</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>II</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.1</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.05</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.05</WorkSpeedGlobal>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<label>III</label>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.15</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.1</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.1</WorkSpeedGlobal>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.2</minSeverity>
+				<label>IV</label>
+				<hungerRateFactorOffset>0.3</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.20</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.20</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.15</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.20</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.05</MentalBreakThreshold>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>V</label>
+				<hungerRateFactorOffset>0.5</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.25</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.25</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.25</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.1</MentalBreakThreshold>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.3</minSeverity>
+				<label>VI</label>
+				<hungerRateFactorOffset>0.75</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.35</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.35</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.3</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.35</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.15</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.05</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.35</minSeverity>
+				<label>VII</label>
+				<hungerRateFactorOffset>1</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.45</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.45</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.4</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.45</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.2</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.07</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.4</minSeverity>
+				<label>VIII</label>
+				<hungerRateFactorOffset>1.25</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.55</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.55</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.1</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.55</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.25</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.45</minSeverity>
+				<label>IX</label>
+				<hungerRateFactorOffset>1.4</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.65</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.65</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.2</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>60</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>0.6</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.65</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.3</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.5</minSeverity>
+				<label>X</label>
+				<hungerRateFactorOffset>1.5</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.75</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.75</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.3</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>60</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>0.70</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.75</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.35</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.30</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.55</minSeverity>
+				<label>XI</label>
+				<hungerRateFactorOffset>1.75</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>0.85</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>0.85</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.4</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>50</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>0.8</GlobalLearningFactor>
+					<WorkSpeedGlobal>0.85</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.4</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.30</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>XII</label>
+				<hungerRateFactorOffset>2</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>1</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.5</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>50</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>1</GlobalLearningFactor>
+					<WorkSpeedGlobal>1</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.45</MentalBreakThreshold>
+					<ArmorRating_Blunt>0.40</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.65</minSeverity>
+				<label>XIII</label>
+				<hungerRateFactorOffset>2.25</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>1.2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1.2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.6</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>40</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>1.2</GlobalLearningFactor>
+					<MentalBreakThreshold>0.45</MentalBreakThreshold>
+					<WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<label>XIV</label>
+				<hungerRateFactorOffset>2.5</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>1.5</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1.5</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>0.8</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>40</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>1.4</GlobalLearningFactor>
+					<MentalBreakThreshold>0.5</MentalBreakThreshold>
+					<WorkSpeedGlobal>1.4</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.75</minSeverity>
+				<label>XV</label>
+				<hungerRateFactorOffset>2.75</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>1.7</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>1.7</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>40</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>80</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>1.6</GlobalLearningFactor>
+					<MentalBreakThreshold>0.55</MentalBreakThreshold>
+					<WorkSpeedGlobal>1.6</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.8</minSeverity>
+				<label>XVI</label>
+				<hungerRateFactorOffset>3</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1.4</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>40</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>80</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>2</GlobalLearningFactor>
+					<MentalBreakThreshold>0.65</MentalBreakThreshold>
+					<WorkSpeedGlobal>2</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+				</statOffsets>
+			</li>
+			<li>
+				<minSeverity>0.85</minSeverity>
+				<label>XVII</label>
+				<hungerRateFactorOffset>3.25</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2.4</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2.4</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1.8</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>35</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>60</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>2.2</GlobalLearningFactor>
+					<MentalBreakThreshold>0.75</MentalBreakThreshold>
+					<WorkSpeedGlobal>2.2</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.9</minSeverity>
+				<label>XVIII</label>
+				<hungerRateFactorOffset>3.5</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>2.8</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>2.8</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>2.2</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>30</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>50</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>2.5</GlobalLearningFactor>
+					<MentalBreakThreshold>0.85</MentalBreakThreshold>
+					<WorkSpeedGlobal>2.5</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>0.95</minSeverity>
+				<label>XIX</label>
+				<hungerRateFactorOffset>4</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>3.2</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>3.2</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>2.6</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>25</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>40</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>3</GlobalLearningFactor>
+					<MentalBreakThreshold>0.95</MentalBreakThreshold>
+					<WorkSpeedGlobal>2.8</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+				</statOffsets>
+			</li>		
+			<li>
+				<minSeverity>1</minSeverity>
+				<label>XX</label>
+				<hungerRateFactorOffset>5</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>3.5</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>3.5</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>3</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>20</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>30</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>4</GlobalLearningFactor>
+					<MentalBreakThreshold>1</MentalBreakThreshold>
+					<WorkSpeedGlobal>3.2</WorkSpeedGlobal>
+					<ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+			<li>
+				<minSeverity>1.05</minSeverity>
+				<label>Peak</label>
+				<hungerRateFactorOffset>6</hungerRateFactorOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>5</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>5</offset>
+					</li>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>4</offset>
+					</li>
+				</capMods>
+				<mentalStateGivers>
+					<li>
+						<mentalState>WanderConfused</mentalState>
+						<mtbDays>10</mtbDays>
+					</li>
+					<li>
+						<mentalState>Berserk</mentalState>
+						<mtbDays>20</mtbDays>
+					</li>
+				</mentalStateGivers>
+				<statOffsets>
+					<GlobalLearningFactor>4</GlobalLearningFactor>
+					<MentalBreakThreshold>2</MentalBreakThreshold>
+					<WorkSpeedGlobal>3.8</WorkSpeedGlobal>
+					<ToxicSensitivity>-1</ToxicSensitivity>
+					<ArmorRating_Blunt>0.65</ArmorRating_Blunt>
+					<ArmorRating_Sharp>0.75</ArmorRating_Sharp>
+				</statOffsets>
+			</li>	
+		</stages>
+	</HediffDef>
+
+
+	<!--Regen Pill-->
+
+	<ThingDef ParentName="MakeableDrugBase">
+		<defName>RegenPillAt</defName>
+		<label>Mono-salve pill</label>
+		<description>This pill contains a small vial of 'regenerative' fluid that vastly increases the health regeneration of both organics and androids, although originally designed just for the latter. When ingested by an android, it will circulate the system and place small amounts of a self-repairing solvent onto everything it passes, encouraging small gaps in metal to heal and repair more efficiently. \n\n Organics still have the potential to benefit from this but on a vastly reduced scale, with the pill promoting cell growth in areas of injury instead. Albeit somewhat toxic in high doses. \n\n While this pill is active on a pawn:\n +60% Healing Rate For Androids \n +15% Healing Rate For Humans / Others</description>
+		<graphicData>
+			<texPath>Things/Drugs/RegenPillAT</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<socialPropernessMatters>false</socialPropernessMatters>
+		<rotatable>false</rotatable>
+		<stackLimit>10</stackLimit>
+		<statBases>
+			<MarketValue>80</MarketValue>
+			<WorkToMake>2500</WorkToMake>
+			<Mass>0.4</Mass>
+		</statBases>
+		<techLevel>Spacer</techLevel>
+		<ingestible>
+			<foodType>Processed</foodType>
+			<drugCategory>Medical</drugCategory>
+			<ingestHoldUsesTable>false</ingestHoldUsesTable>
+			<ingestCommandString>Consume {0}</ingestCommandString>
+			<ingestReportString>Consuming {0}.</ingestReportString>
+			<useEatingSpeedStat>false</useEatingSpeedStat>
+			<outcomeDoers>
+				<li Class="MOARANDROIDS.IngestionOutcomeDoer_GiveTwoHediffs">
+					<hediffDef_Human>RegenHumanoid</hediffDef_Human>
+					<hediffDef_Android>RegenAndroid</hediffDef_Android>
+					<severity>1</severity>
+				</li>      
+			</outcomeDoers>
+		</ingestible>
+		<recipeMaker>
+			<researchPrerequisite>AdvEnhancement</researchPrerequisite>
+			<recipeUsers>
+				<li>AndroidOtherStuffTable</li>
+			</recipeUsers>
+		</recipeMaker>
+		<costList>
+			<Chemfuel>10</Chemfuel>
+			<Neutroamine>15</Neutroamine>
+		</costList>
+		<comps>
+			<li Class="CompProperties_Drug">
+				<listOrder>805</listOrder>
+			</li>
+		</comps>
+	</ThingDef>
+
+	<HediffDef>
+		<defName>RegenHumanoid</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Mono-Salve</label>
+		<description>Active regenerative solvents in the bloodstream. Encourages basic cell regeneration.</description>
+		<makesSickThought>true</makesSickThought>
+		<defaultLabelColor>(0.6,0.7,0.6)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+			</li>
+			<li Class="MOARANDROIDS.HediffCompProperties_RegenWoundsAdv">
+				<compClass>MOARANDROIDS.HediffComp_RegenWoundsAdv</compClass>
+				<Delay>4</Delay>
+				<HealingAmount>0.1</HealingAmount>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>Difficulty Breathing</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+
+
+			<li>
+				<minSeverity>0.1</minSeverity>
+				<label>Weak</label>
+				<painOffset>0.05</painOffset>
+				<capMods>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.25</minSeverity>
+				<label>Medium</label>
+				<painOffset>0.1</painOffset>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.1</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.6</minSeverity>
+				<label>Strong</label>
+				<painOffset>0.2</painOffset>
+				<vomitMtbDays>1.5</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+
+
+			<li>
+				<minSeverity>0.7</minSeverity>
+				<label>Peak</label>
+				<painOffset>0.3</painOffset>
+				<vomitMtbDays>1</vomitMtbDays>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.25</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<!--HediffAndroid-->
+
+	<HediffDef>
+		<defName>RegenAndroid</defName>
+		<hediffClass>HediffWithComps</hediffClass>
+		<label>Mono-Salve</label>
+		<description>Active regenerative solvents in coolant tubing. Helping the auto-repair of mechanisms.</description>
+		<defaultLabelColor>(0.8,0.8,0.8)</defaultLabelColor>
+		<scenarioCanAdd>true</scenarioCanAdd>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<comps>
+			<li Class="HediffCompProperties_SeverityPerDay">
+				<severityPerDay>-2</severityPerDay>
+			</li>
+			<li Class="MOARANDROIDS.HediffCompProperties_RegenWoundsAdv">
+				<compClass>MOARANDROIDS.HediffComp_RegenWoundsAdv</compClass>
+				<Delay>2</Delay>
+				<HealingAmount>0.1</HealingAmount>
+			</li>
+		</comps>
+	</HediffDef>
+
+	<ThoughtDef>
+		<defName>RegenHumanoid_Thought</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>RegenHumanoid</hediff>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>mono-salve hidden</label>
+				<description>Should not appear.</description>
+				<baseMoodEffect>0</baseMoodEffect>
+				<visible>false</visible>
+			</li>
+			<li>
+				<label>Mono-Salve (Weak)</label>
+				<description>I have pins and needles all over. It's quite overwhelming.</description>
+				<baseMoodEffect>-4</baseMoodEffect>
+			</li>
+			<li>
+				<label>Mono-Salve (Medium)</label>
+				<description>My body feels slow and there's a small pain running up my limbs.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>     
+			<li>
+				<label>Mono-Salve (Strong)</label>
+				<description>My arms feel heavy and lethargic as if something in sapping all my energy.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+			<li>
+				<label>Mono-Salve (Peak)</label>
+				<description>My veins ache and my vision is spinning. It hurts a lot.</description>
+				<baseMoodEffect>-12</baseMoodEffect>
+			</li>   
+		</stages>
+	</ThoughtDef>
+</Defs>

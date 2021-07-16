@@ -1,0 +1,858 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Abstract="True" Name="ATPP_SurgeryAndroid">
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+	<anesthetize>false</anesthetize>
+  </RecipeDef>
+  
+  <!-- Coloring Androids framework -->
+    <RecipeDef ParentName="SurgeryAndroid" Abstract="True" Name="ATPP_PaintAndroidFrameworkBase">
+		<workAmount>1200</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>10</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkDefault</defName>
+		<label>paint android's frame in default color</label>
+		<description>Paint android's frame in default color.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkDefault</workerClass>
+		<jobString>Paint android's frame in default color.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkKhaki</defName>
+		<label>paint android's frame in khaki</label>
+		<description>Paint android's frame in khaki.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkKhaki</workerClass>
+		<jobString>Paint android's frame in khaki.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkGreen</defName>
+		<label>paint android's frame in green</label>
+		<description>Paint android's frame in green.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkGreen</workerClass>
+		<jobString>Paint android's frame in green.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkBlue</defName>
+		<label>paint android's frame in blue</label>
+		<description>Paint android's frame in blue.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkBlue</workerClass>
+		<jobString>Paint android's frame in blue.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkRed</defName>
+		<label>paint android's frame in red</label>
+		<description>Paint android's frame in red.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkRed</workerClass>
+		<jobString>Paint android's frame in red.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkOrange</defName>
+		<label>paint android's frame in orange</label>
+		<description>Paint android's frame in orange.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkOrange</workerClass>
+		<jobString>Paint android's frame in orange.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkYellow</defName>
+		<label>paint android's frame in yellow</label>
+		<description>Paint android's frame in yellow.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkYellow</workerClass>
+		<jobString>Paint android's frame in yellow.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkBlack</defName>
+		<label>paint android's frame in black</label>
+		<description>Paint android's frame in black.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkBlack</workerClass>
+		<jobString>Paint android's frame in black.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkWhite</defName>
+		<label>paint android's frame in white</label>
+		<description>Paint android's frame in white.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkWhite</workerClass>
+		<jobString>Paint android's frame in white.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkGray</defName>
+		<label>paint android's frame in gray</label>
+		<description>Paint android's frame in gray.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkGray</workerClass>
+		<jobString>Paint android's frame in gray.</jobString>
+	</RecipeDef>
+  
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkPurple</defName>
+		<label>paint android's frame in purple</label>
+		<description>Paint android's frame in purple.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkPurple</workerClass>
+		<jobString>Paint android's frame in purple.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkPink</defName>
+		<label>paint android's frame in pink</label>
+		<description>Paint android's frame in pink.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkPink</workerClass>
+		<jobString>Paint android's frame in pink.</jobString>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="ATPP_PaintAndroidFrameworkBase">
+		<defName>ATPP_PaintAndroidFrameworkCyan</defName>
+		<label>paint android's frame in cyan</label>
+		<description>Paint android's frame in cyan.</description>
+		<workerClass>MOARANDROIDS.Recipe_PaintAndroidFrameworkCyan</workerClass>
+		<jobString>Paint android's frame in cyan.</jobString>
+	</RecipeDef>
+	
+	<!-- Apply nanite bank on androids thought an operation -->
+	<RecipeDef ParentName="SurgeryAndroid">
+		<defName>ATPP_ApplyHydraulicNaniteBank</defName>
+		<label>Administer an Hydraulic nanites bank</label>
+		<description>A one-use dose of nanites tuned to repair broken androids hydraulic systems.</description>
+		<workerClass>MOARANDROIDS.Recipe_ApplyHydraulicNaniteBank</workerClass>
+		<jobString>Fixing android age issues with a nanite serum</jobString>
+		<workAmount>600</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ATPP_NanitesHydraulicSerum</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ATPP_NanitesHydraulicSerum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAndroid">
+		<defName>ATPP_ApplyHealFrameworkSystem</defName>
+		<label>Administer an Framework nanites bank</label>
+		<description>A one-use bank of nanites tuned to repair broken androids exoskeleton.</description>
+		<workerClass>MOARANDROIDS.Recipe_ApplyHealFrameworkSystem</workerClass>
+		<jobString>Fixing android age issues with a nanite serum</jobString>
+		<workAmount>600</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ATPP_NanitesFrameSerum</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ATPP_NanitesFrameSerum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAndroid">
+		<defName>ATPP_ApplyHealCoolingSystem</defName>
+		<label>Administer an Cooling nanites bank</label>
+		<description>A one-use bank of nanites tuned to repair broken androids cooling system in case of overheating.</description>
+		<workerClass>MOARANDROIDS.Recipe_ApplyHealCoolingSystem</workerClass>
+		<jobString>Fixing android age issues with a nanite serum</jobString>
+		<workAmount>600</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ATPP_NanitesCoolingSerum</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ATPP_NanitesCoolingSerum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAndroid">
+		<defName>ATPP_ApplyHealCPUSerum</defName>
+		<label>Administer an CPU nanites bank</label>
+		<description>A one-use bank of nanites tuned to repair broken androids artificial brain system.</description>
+		<workerClass>MOARANDROIDS.Recipe_ApplyHealCPUSerum</workerClass>
+		<jobString>Fixing android age issues with a nanite serum</jobString>
+		<workAmount>600</workAmount>
+		<hideBodyPartNames>true</hideBodyPartNames>
+		<targetsBodyPart>false</targetsBodyPart>
+		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ATPP_NanitesCPUSerum</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ATPP_NanitesCPUSerum</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+  
+  
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+	  <defName>ATPP_InstallRXChip</defName>
+	<label>install RX neural chip</label>
+    <description>A neural chip acting as a personal SkyMind relay.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a RX neural chip.</jobString>
+    <workAmount>2000</workAmount>
+    <deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffRXChip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchSkyMindLAN</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>Brain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Medicine>8</Medicine>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_RXChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+		<li>MedicineIndustrial</li>
+		<li>ATPP_RXChip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+  <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallRXChipOnAndroid</defName>
+	      <label>install RX neural chip</label>
+    <description>A neural chip acting as a personal SkyMind relay.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a RX neural chip.</jobString>
+    <workAmount>2000</workAmount>
+    <deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffRXChip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchSkyMindLAN</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>8</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitIntermediate</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_RXChip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitAdvanced</li>
+		<li>ATPP_AndroidNanokitIntermediate</li>
+		<li>ATPP_RXChip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+  
+  <RecipeDef ParentName="SurgeryFlesh">
+	  <defName>ATPP_InstallVX0Chip</defName>
+	<label>install VX0 neural chip</label>
+    <description>Install a VX0 neural chip, which will transform the host into a biological surrogate.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX0 neural chip.</jobString>
+    <workAmount>2000</workAmount>
+    <deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX0Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX0Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>Brain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Medicine>8</Medicine>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX0Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+		<li>MedicineIndustrial</li>
+		<li>ATPP_VX0Chip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+  <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallVX0ChipOnAndroid</defName>
+	      <label>install VX0 neural chip for android</label>
+    <description>Install a VX0 neural chip for android, which will transform the host into a biological surrogate.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX0 neural chip for android.</jobString>
+    <workAmount>2000</workAmount>
+    <deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX0Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX0Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>8</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitIntermediate</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX0Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitAdvanced</li>
+		<li>ATPP_AndroidNanokitIntermediate</li>
+		<li>ATPP_VX0Chip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+   
+  <RecipeDef ParentName="SurgeryFlesh">
+	  <defName>ATPP_InstallVX1Chip</defName>
+	  <label>install VX1 neural chip</label>
+    <description>Install a VX1 neural chip, allowing the host to remotely control surrogate androids serie.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX1 neural chip.</jobString>
+    <workAmount>4000</workAmount>
+    <deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX1Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX1Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>Brain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Medicine>12</Medicine>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineIndustrial</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineUltratech</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX1Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineUltratech</li>
+		<li>MedicineIndustrial</li>
+		<li>ATPP_VX1Chip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+  <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallVX1ChipOnAndroid</defName>
+	  <label>install VX1 neural chip for android</label>
+    <description>Install a VX1 neural chip for android, allowing the host to remotely control surrogate androids serie.</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX1 neural chip for android.</jobString>
+    <workAmount>4000</workAmount>
+    <deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX1Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX1Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>12</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitIntermediate</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitAdvanced</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX1Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitAdvanced</li>
+		<li>ATPP_AndroidNanokitIntermediate</li>
+		<li>ATPP_VX1Chip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+     <RecipeDef ParentName="SurgeryFlesh">
+	  <defName>ATPP_InstallVX2Chip</defName>
+	  <label>install VX2 neural chip</label>
+    <description>Install a VX2 neural chip, allowing the host to remotely control surrogate androids serie and permute/duplicate his consciousness</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX2 neural chip.</jobString>
+    <workAmount>6200</workAmount>
+    <deathOnFailedSurgeryChance>0.30</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX2Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX2Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>Brain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Medicine>12</Medicine>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineUltratech</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX2Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineUltratech</li>
+		<li>ATPP_VX2Chip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+  <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallVX2ChipOnAndroid</defName>
+	  <label>install VX2 neural chip for android</label>
+    <description>Install a VX2 neural chip for android, allowing the host to remotely control surrogate androids serie and permute/duplicate his consciousness</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX2 neural chip for android.</jobString>
+    <workAmount>6200</workAmount>
+    <deathOnFailedSurgeryChance>0.30</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX2Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX2Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>12</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitAdvanced</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX2Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_VX2Chip</li>
+		<li>ATPP_AndroidNanokitAdvanced</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="SurgeryFlesh">
+	  <defName>ATPP_InstallVX3Chip</defName>
+	  <label>install VX3 neural chip</label>
+    <description>Install a VX3 neural chip, allowing the host to remotely control surrogate androids serie and permute/duplicate his consciousness</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX3 neural chip.</jobString>
+    <workAmount>8200</workAmount>
+    <deathOnFailedSurgeryChance>0.45</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX3Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX3Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>Brain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Medicine>14</Medicine>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>MedicineUltratech</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX3Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>MedicineUltratech</li>
+		<li>ATPP_VX3Chip</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+  <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallVX3ChipOnAndroid</defName>
+	  <label>install VX3 neural chip for android</label>
+    <description>Install a VX3 neural chip for android, allowing the host to remotely control surrogate androids serie and permute/duplicate his consciousness</description>
+    <workerClass>Recipe_InstallImplant</workerClass>
+    <jobString>Installing a VX3 neural chip for android.</jobString>
+    <workAmount>8200</workAmount>
+    <deathOnFailedSurgeryChance>0.45</deathOnFailedSurgeryChance>
+    <addsHediff>ATPP_HediffVX3Chip</addsHediff>
+	<researchPrerequisite>ATPP_ResearchVX3Chip</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>14</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+	  <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitAdvanced</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_VX3Chip</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_VX3Chip</li>
+		<li>ATPP_AndroidNanokitAdvanced</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+
+   <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallT1ArtificialBrain</defName>
+	  <label>install T1 artificial brain</label>
+    <description>Install a T1 artificial brain, allowing to transform a T1 surrogate into a blank neural network android</description>
+    <workerClass>MOARANDROIDS.Recipe_InstallArtificialBrain</workerClass>
+    <jobString>Installing a T1 artificial brain.</jobString>
+    <workAmount>4500</workAmount>
+    <deathOnFailedSurgeryChance>0.35</deathOnFailedSurgeryChance>
+	<researchPrerequisite>T1Androids</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>8</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitIntermediate</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_T1ArtificialBrain</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitIntermediate</li>
+		<li>ATPP_T1ArtificialBrain</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallT2ArtificialBrain</defName>
+	  <label>install T2 artificial brain</label>
+    <description>Install a T2 artificial brain, allowing to transform a T2 surrogate into a blank neural network android</description>
+    <workerClass>MOARANDROIDS.Recipe_InstallArtificialBrain</workerClass>
+    <jobString>Installing a T2 artificial brain.</jobString>
+    <workAmount>5000</workAmount>
+    <deathOnFailedSurgeryChance>0.35</deathOnFailedSurgeryChance>
+	<researchPrerequisite>T2Androids</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>8</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitIntermediate</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_T2ArtificialBrain</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitIntermediate</li>
+		<li>ATPP_T2ArtificialBrain</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+   <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallT3ArtificialBrain</defName>
+	  <label>install T3 artificial brain</label>
+    <description>Install a T3 artificial brain, allowing to transform a T3 surrogate into a blank neural network android</description>
+    <workerClass>MOARANDROIDS.Recipe_InstallArtificialBrain</workerClass>
+    <jobString>Installing a T3 artificial brain.</jobString>
+    <workAmount>8500</workAmount>
+    <deathOnFailedSurgeryChance>0.45</deathOnFailedSurgeryChance>
+	<researchPrerequisite>T3Androids</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>14</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitAdvanced</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_T3ArtificialBrain</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitAdvanced</li>
+		<li>ATPP_T3ArtificialBrain</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+   
+   
+   <RecipeDef ParentName="ATPP_SurgeryAndroid">
+	  <defName>ATPP_InstallT4ArtificialBrain</defName>
+	  <label>install T4 artificial brain</label>
+    <description>Install a T4 artificial brain, allowing to transform a T4 surrogate into a blank neural network android</description>
+    <workerClass>MOARANDROIDS.Recipe_InstallArtificialBrain</workerClass>
+    <jobString>Installing a T4 artificial brain.</jobString>
+    <workAmount>9500</workAmount>
+    <deathOnFailedSurgeryChance>0.45</deathOnFailedSurgeryChance>
+	<researchPrerequisite>T4Androids</researchPrerequisite>
+	  <appliedOnFixedBodyParts>
+		<li>ArtificialBrain</li>
+	  </appliedOnFixedBodyParts>
+	  <skillRequirements>
+		<Intellectual>14</Intellectual>
+      </skillRequirements>
+	  <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_AndroidNanokitAdvanced</li>
+          </thingDefs>
+        </filter>
+        <count>8</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ATPP_T4ArtificialBrain</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ATPP_AndroidNanokitAdvanced</li>
+		<li>ATPP_T4ArtificialBrain</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+   </RecipeDef>
+
+</Defs>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>ATPP_CLPayCryptoRansom</defName>
+    <letterClass>MOARANDROIDS.ChoiceLetter_RansomDemand</letterClass>
+  </LetterDef>
+  
+  <LetterDef ParentName="CustomChoiceLetterBase">
+    <defName>ATPP_CLPayRansomwareRansom</defName>
+    <letterClass>MOARANDROIDS.ChoiceLetter_RansomwareDemand</letterClass>
+  </LetterDef>
+</Defs>

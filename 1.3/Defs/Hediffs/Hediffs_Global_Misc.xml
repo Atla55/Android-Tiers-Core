@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <HediffDef Name="ATPP_DiseaseBase" Abstract="True">
+    <hediffClass>HediffWithComps</hediffClass>
+    <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+    <initialSeverity>0.001</initialSeverity>
+  </HediffDef>
+  
+  <HediffDef Name="ATPP_ImplantHediffBase" Abstract="True">
+    <hediffClass>Hediff_Implant</hediffClass>
+    <defaultLabelColor>(0.65, 0.3, 0.9)</defaultLabelColor>
+    <isBad>false</isBad>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_ConsciousnessUpload</defName>
+    <label>Mind upload</label>
+	<description>_</description>
+    <labelNoun>Mind uploading</labelNoun>
+	<defaultLabelColor>(0.8, 0.0, 0.45)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_NoHost</defName>
+    <label>No host connected</label>
+	<description>_</description>
+    <labelNoun>No host connected</labelNoun>
+	<defaultLabelColor>(0.0, 0.7, 0.15)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_InRemoteControlMode</defName>
+    <label>Remote control mode enabled</label>
+	<description>_</description>
+    <labelNoun>Remote control mode enabled</labelNoun>
+	<defaultLabelColor>(0.0, 0.7, 0.15)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_BlankAndroid</defName>
+    <label>Blank Neural Network</label>
+	<description>_</description>
+    <labelNoun>Blank Neural Network</labelNoun>
+	<defaultLabelColor>(0.2196, 1.0, 0.95)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.1</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_RemotelyControlled</defName>
+    <label>Remotely controlled</label>
+	<description>_</description>
+    <labelNoun>Remotetely controlled</labelNoun>
+	<defaultLabelColor>(0.0, 0.7, 0.15)</defaultLabelColor>
+    <comps>
+    </comps>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_Rusted</defName>
+    <label>Rusted</label>
+	<description>_</description>
+    <labelNoun>Rusted</labelNoun>
+	<defaultLabelColor>(0.8, 0.2, 0.0)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.10</offset>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.10</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_SolarFlareAndroidImpact</defName>
+    <label>Solar flare</label>
+	<description>_</description>
+    <labelNoun>Solar flare</labelNoun>
+	<defaultLabelColor>(0.8, 0.2, 0.0)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.40</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_LowNetworkSignal</defName>
+    <label>Low SkyMind network signal</label>
+	<description>_</description>
+    <labelNoun>Low SkyMind network signal</labelNoun>
+	<defaultLabelColor>(1.0, 0.6, 0.0)</defaultLabelColor>
+    <comps>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.20</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_ImplantHediffBase">
+    <defName>ATPP_HediffRXChip</defName>
+    <label>RX Neural chip</label>
+	<description>_</description>
+    <labelNoun>A neural chip acting as a personal SkyMind relay.</labelNoun>
+    <stages>
+      <li>
+            <partEfficiencyOffset>0.0</partEfficiencyOffset>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>ATPP_RXChip</spawnThingOnRemoved>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_ImplantHediffBase">
+    <defName>ATPP_HediffVX0Chip</defName>
+    <label>VX0 Neural chip</label>
+	<description>_</description>
+    <labelNoun>A neural chip to transform the host into a biological surrogate</labelNoun>
+    <stages>
+      <li>
+            <partEfficiencyOffset>0.0</partEfficiencyOffset>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>ATPP_VX0Chip</spawnThingOnRemoved>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_ImplantHediffBase">
+    <defName>ATPP_HediffVX1Chip</defName>
+    <label>VX1 Neural chip</label>
+	<description>_</description>
+    <labelNoun>A Neural chip allowing his host to control remotely surrogate androids series</labelNoun>
+    <stages>
+      <li>
+            <partEfficiencyOffset>0.15</partEfficiencyOffset>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>ATPP_VX1Chip</spawnThingOnRemoved>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_ImplantHediffBase">
+    <defName>ATPP_HediffVX2Chip</defName>
+    <label>VX2 Neural chip</label>
+	<description>_</description>
+    <labelNoun>A Neural chip allowing his host to control remotely surrogate androids series and permute/duplicate his consciousness</labelNoun>
+    <stages>
+      <li>
+            <partEfficiencyOffset>0.15</partEfficiencyOffset>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>ATPP_VX2Chip</spawnThingOnRemoved>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_ImplantHediffBase">
+    <defName>ATPP_HediffVX3Chip</defName>
+    <label>VX3 Neural chip</label>
+	<description>_</description>
+    <labelNoun>A Neural chip allowing his host to control remotely multiple surrogate androids series and permute/duplicate his consciousness</labelNoun>
+    <stages>
+      <li>
+            <partEfficiencyOffset>0.15</partEfficiencyOffset>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>ATPP_VX3Chip</spawnThingOnRemoved>
+  </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_DummyHediff</defName>
+    <label>DummyHediff</label>
+	<description>_</description>
+    <labelNoun>DummyHediff</labelNoun>
+	<defaultLabelColor>(0.0, 0.7, 0.15)</defaultLabelColor>
+	<stages>
+      <li>
+      	<label>early</label>
+        <becomeVisible>false</becomeVisible>
+      </li>
+	</stages>
+  </HediffDef>
+</Defs>

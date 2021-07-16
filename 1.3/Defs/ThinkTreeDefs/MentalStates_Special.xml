@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <MentalStateDef ParentName="BaseMentalState" Name="ManhunterAndroid">
+    <defName>ManhunterNotColony</defName>
+    <stateClass>MOARANDROIDS.MentalState_ManhunterNotColony</stateClass>
+    <label>seeking targets</label>
+    <category>Aggro</category>
+    <nameColor>(0.7,0.5,0.5)</nameColor>
+    <baseInspectLine>Seeking targets</baseInspectLine>
+    <unspawnedCanDo>true</unspawnedCanDo>
+  </MentalStateDef>
+
+</Defs>

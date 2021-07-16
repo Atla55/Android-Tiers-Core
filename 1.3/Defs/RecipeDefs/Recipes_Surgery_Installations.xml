@@ -1,0 +1,2763 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef Abstract="True" Name="SurgeryAndroid">
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+    <workSkill>Crafting</workSkill>
+    <workSkillLearnFactor>16</workSkillLearnFactor>
+	<anesthetize>false</anesthetize>
+  </RecipeDef>
+ 
+ <!--Mech Related Surgeries-->
+ 
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>ShutdownAndroid</defName>
+		<label>Shutdown by severing cortex mainline</label>
+		<description>Shutsdown an android by severing the connection between the brain and body.</description>
+		<workerClass>Recipe_ExecuteByCut</workerClass>
+		<jobString>Shutting down android.</jobString>
+		<workAmount>800</workAmount>
+		<surgerySuccessChanceFactor>5</surgerySuccessChanceFactor>
+		<hideBodyPartNames>true</hideBodyPartNames>
+    <isViolation>true</isViolation>
+		<targetsBodyPart>false</targetsBodyPart>
+	</RecipeDef>
+	<!--Reprogramming surgeries-->
+	
+		<RecipeDef ParentName="SurgeryAndroid">
+		<defName>ReprogramTraitsAndroidSimple</defName>
+		<label>convert basic android</label>
+		<description>This operation is useful for instantly and easily recruiting basic android prisoners, reprogramming their main functions so that they now work for the colony instead of against it; there is a somewhat high chance of memory corruption on failure however.</description>
+		<workerClass>MOARANDROIDS.Recipe_AndroidRewireSurgery</workerClass>
+		<jobString>Reprogramming android.</jobString>
+		<workAmount>5000</workAmount>
+		<skillRequirements>
+		<Crafting>8</Crafting>
+		<Intellectual>4</Intellectual>
+      </skillRequirements>
+		<surgerySuccessChanceFactor>0.75</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>AndroidPsychology</researchPrerequisite>
+		<targetsBodyPart>false</targetsBodyPart>		
+		<addsHediff>FreshReprogramming</addsHediff>
+	</RecipeDef>
+	
+		<RecipeDef ParentName="SurgeryAndroid">
+		<defName>ReprogramTraitsAndroidAdv</defName>
+		<label>convert advanced android</label>
+		<description>This operation is useful for instantly and easily recruiting advanced android prisoners, reprogramming their main functions so that they now work for the colony instead of against it; there is a very high chance of memory corruption on failure however.</description>
+		<workerClass>MOARANDROIDS.Recipe_AndroidRewireSurgery</workerClass>
+		<jobString>Reprogramming android.</jobString>
+		<workAmount>8500</workAmount>
+      <skillRequirements>
+		<Crafting>12</Crafting>
+		<Intellectual>6</Intellectual>
+      </skillRequirements>
+		<surgerySuccessChanceFactor>0.50</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.40</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>AndroidPsychology</researchPrerequisite>
+		<targetsBodyPart>false</targetsBodyPart>
+		<addsHediff>FreshReprogramming</addsHediff>
+	</RecipeDef>
+
+		<RecipeDef ParentName="SurgeryAndroid">
+		<defName>RemoveAndroidSentience</defName>
+		<label>remove self will</label>
+		<description>By simply adding a firewall between the logical and emotional sides of this Android's AI. It permanently blocks them from being capable of feeling emotion or empathy, removing any personality or self will they once had; instead places the android into a permanent trance-like state, obeying every instruction given to them.</description>
+		<workerClass>MOARANDROIDS.Recipe_RemoveSentience</workerClass>
+		<jobString>Reprogramming android.</jobString>
+		<workAmount>10000</workAmount>
+		<skillRequirements>
+		<Crafting>12</Crafting>
+		<Intellectual>8</Intellectual>
+      </skillRequirements>
+		<surgerySuccessChanceFactor>0.50</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.25</deathOnFailedSurgeryChance>
+		<ingredients>
+
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>AndroidPsychology</researchPrerequisite>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>NoFreeWillAT</addsHediff>
+	</RecipeDef>
+
+		<RecipeDef ParentName="SurgeryAndroid">
+		<defName>RerollAndroidTraits</defName>
+		<label>personality change</label>
+		<description>This operation will reprogram this android's personality to be changed to another set of traits. Giving them a different set of 3 traits that may or may not be suitable for an android.</description>
+		<workerClass>MOARANDROIDS.Recipe_RerollTraits</workerClass>
+		<jobString>Reprogramming android.</jobString>
+		<workAmount>8000</workAmount>
+		<skillRequirements>
+		<Crafting>12</Crafting>
+		<Intellectual>8</Intellectual>
+      </skillRequirements>
+		<surgerySuccessChanceFactor>0.50</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.1</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>AndroidPsychology</researchPrerequisite>
+		<targetsBodyPart>false</targetsBodyPart>		
+		<addsHediff>FreshReprogramming</addsHediff>
+	</RecipeDef>
+	
+
+	<RecipeDef ParentName="SurgeryAndroid">
+		<defName>OverclockAndroid</defName>
+		<label>overclock android</label>
+		<description>Bypass several safety measures within the artificial mind of the android, allowing for much more operations per second. Increasing workflow significantly but also mental break threshold and there is a high chance of causing memory corruption.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Overclocking android.</jobString>
+		<workAmount>6000</workAmount>
+	  <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+		<surgerySuccessChanceFactor>0.75</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<researchPrerequisite>AndroidPsychology</researchPrerequisite>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>OverclockedAndroid</addsHediff>
+	</RecipeDef>
+	
+	<RecipeDef ParentName="SurgeryAndroid">
+		<defName>RemoveBodyPartAndroid</defName>
+		<label>remove part</label>
+		<description>Removes body part.</description>
+		<workerClass>Recipe_RemoveBodyPart</workerClass>
+		<jobString>Removing body part.</jobString>
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>2.5</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+	</RecipeDef>
+	
+
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBasicPlating</defName>
+		<label>install steel plating</label>
+		<description>Completely replaces the frame of this android with steel plates, increasing damage resistance somewhat.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Installing armour plating.</jobString>
+      <skillRequirements>
+		<Crafting>5</Crafting>
+      </skillRequirements>
+
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SteelPlating</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>SteelPlating</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MechanicalThorax</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>PlatingSteel</addsHediff>
+	</RecipeDef>
+	
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvPlating</defName>
+		<label>install plasteel plating</label>
+		<description>Completely replaces the frame of this android with plasteel plates, increasing damage resistance majorly.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Installing armour plating.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>PlasteelPlating</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>PlasteelPlating</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MechanicalThorax</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>PlatingPlasteel</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdv2Plating</defName>
+		<label>install composite plating</label>
+		<description>Completely replaces the frame of this android with composite plates, increasing damage resistance hugely.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Installing armour plating.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>2200</workAmount>
+		<surgerySuccessChanceFactor>0.90</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CompositePlating</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>CompositePlating</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MechanicalThorax</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>PlatingComposite</addsHediff>
+	</RecipeDef>
+	
+<!--Makeshift-->
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMakeshiftReplacementLeg</defName>
+		<label>install makeshift replacement leg</label>
+		<description>Installs a makeshift replacement leg.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing makeshift replacement leg.</jobString>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalLeg</li>
+			<li>LeftMechanicalLeg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>MakeshiftRLeg</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMakeshiftReplacementArm</defName>
+		<label>install makeshift replacement arm</label>
+		<description>Installs a makeshift replacement arm.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing makeshift replacement arm.</jobString>
+		
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>30</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalShoulder</li>
+			<li>LeftMechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>MakeshiftRArm</addsHediff>
+	</RecipeDef>
+	
+	<!---->
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallDrill_ATArm</defName>
+		<label>install mining arm</label>
+		<description>Installs a mining arm.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing mining arm.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MiningArm_AT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>MiningArm_AT</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalShoulder</li>
+			<li>LeftMechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>MiningArm_AT</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallHydraulicFrame</defName>
+		<label>install hydraulic frame</label>
+		<description>Completely enhances the frame of this android with ergonomically placed hydraulic pumps.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Installing armour plating.</jobString>
+      <skillRequirements>
+		<Crafting>5</Crafting>
+      </skillRequirements>
+
+		<workAmount>2000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HydraulicFrame</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>HydraulicFrame</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Framework</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HydraulicFrame</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallHydraulicReplacementLeg</defName>
+		<label>install hydraulic leg</label>
+		<description>Installs a hydraulic leg.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing hydraulic leg.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HydraulicLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>HydraulicLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalLeg</li>
+			<li>LeftMechanicalLeg</li>
+			<li>FrontRightMechanicalLeg</li>
+			<li>RearLeftMechanicalLeg</li>
+			<li>RearRightMechanicalLeg</li>
+			<li>FrontLeftMechanicalLeg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HydraulicLeg</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallHydraulicReplacementArm</defName>
+		<label>install hydraulic arm</label>
+		<description>Installs a hydraulic arm.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing hydraulic arm.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HydraulicArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>HydraulicArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalShoulder</li>
+			<li>LeftMechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HydraulicArm</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBasicReplacementLeg</defName>
+		<label>install basic replacement leg</label>
+		<description>Installs a basic replacement leg.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing basic replacement leg.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BasicReplacementLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>BasicReplacementLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalLeg</li>
+			<li>LeftMechanicalLeg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BRLeg</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBasicReplacementArm</defName>
+		<label>install basic replacement arm</label>
+		<description>Installs a basic replacement arm.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing basic replacement arm.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BasicReplacementArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>BasicReplacementArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalShoulder</li>
+			<li>LeftMechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BRArm</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallLightReceivingDiode</defName>
+		<label>install crude light sensor</label>
+		<description>Installs a crude light sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude light sensor.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1300</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>LightReceivingDiode</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>LightReceivingDiode</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftSightSensor</li>
+			<li>RightSightSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BLReceptor</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCrudeHeatsink</defName>
+		<label>install crude heatsink</label>
+		<description>Installs a crude heatsink.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude heatsink.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CrudeHeatsink</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CrudeHeatsink</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLeftLung</li>
+			<li>MRightLung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BHeatsink</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallFlimsyCoolantPump</defName>
+		<label>install crude coolant pump</label>
+		<description>Installs a crude coolant pump.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude coolant pump.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FlimsyCoolantPump</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>FlimsyCoolantPump</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MHeart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BCoolantPump</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSmallBatteryPack</defName>
+		<label>install crude battery pack</label>
+		<description>Installs a crude battery pack.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude battery pack.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SmallBatteryPack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SmallBatteryPack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLeftKidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BBattery</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallTubeSealantTank</defName>
+		<label>install crude mechanite storage</label>
+		<description>Installs crude mechanite storage.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude mechanite storage.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>TubeSealantTank</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>TubeSealantTank</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MRightKidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BMStorage</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallLowPowerTransformer</defName>
+		<label>install crude bio-reactor</label>
+		<description>Installs a crude bio-reactor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude bio-reactor.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>LowPowerTransformer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>LowPowerTransformer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MStomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BTransformer</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBasicDCConverter</defName>
+		<label>install crude power converter</label>
+		<description>Installs a crude power converter.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude power converter.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1000</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BasicDCConverter</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>BasicDCConverter</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLiver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BVAdapter</addsHediff>
+	</RecipeDef>
+	
+<!--=====================Advanced====================-->
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvancedReplacementLeg</defName>
+		<label>install high power leg</label>
+		<description>Installs a high power leg.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing high power leg.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AdvancedReplacementLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>AdvancedReplacementLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalLeg</li>
+			<li>LeftMechanicalLeg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ARLeg</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvancedReplacementArm</defName>
+		<label>install high power arm</label>
+		<description>Installs a high power arm.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing high power arm.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AdvancedReplacementArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>AdvancedReplacementArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftMechanicalShoulder</li>
+			<li>RightMechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ARArm</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMultiSpectrumEye</defName>
+		<label>install advanced light sensor</label>
+		<description>Installs an advanced light sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced light sensor.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MultiSpectrumEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>MultiSpectrumEye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftSightSensor</li>
+			<li>RightSightSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ALReceptor</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMultiLayerHeatsink</defName>
+		<label>install advanced heatsink</label>
+		<description>Installs an advanced heatsink.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced heatsink.</jobString>
+      <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+
+		<workAmount>1500</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MultiLayerHeatsink</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>MultiLayerHeatsink</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLeftLung</li>
+			<li>MRightLung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AHeatsink</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvancedCoolantInjector</defName>
+		<label>install advanced coolant pump</label>
+		<description>Installs an advanced coolant pump.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced coolant pump.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AdvancedCoolantInjector</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>AdvancedCoolantInjector</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MHeart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ACoolantPump</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallNanowireBattery</defName>
+		<label>install advanced battery pack</label>
+		<description>Installs an advanced battery pack.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced battery pack.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>NanowireBattery</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>NanowireBattery</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLeftKidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ABattery</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallNaniteStorageDevice</defName>
+		<label>install advanced mechanite storage</label>
+		<description>Installs an advanced mechanite storage.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced mechanite storage.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>NaniteStorageDevice</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>NaniteStorageDevice</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MRightKidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AMStorage</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallHighPowerTransformer</defName>
+		<label>install advanced bio-reactor</label>
+		<description>Installs a advanced bio-reactor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced bio-reactor.</jobString>
+      <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HighPowerTransformer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>HighPowerTransformer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MStomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ATransformer</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallHighPowerConverter</defName>
+		<label>install advanced power converter</label>
+		<description>Installs a advanced power converter.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced power converter.</jobString>
+      <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>HighPowerConverter</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>HighPowerConverter</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLiver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AVAdapter</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvRearCounterweight</defName>
+		<label>install gyroscopic counterweight</label>
+		<description>Installs a gyroscopic counterweight.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing gyroscopic counterweight.</jobString>
+      <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AdvRearCounterweight</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>AdvRearCounterweight</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>CounterWeightTail</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AdvRearCounterweight</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBasicRearCounterweight</defName>
+		<label>install basic counterweight</label>
+		<description>Installs a basic counterweight.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing basic counterweight.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BasicRearCounterweight</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>BasicRearCounterweight</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>CounterWeightTail</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BasicRearCounterweight</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCrudeJawAndroid</defName>
+		<label>install crude jaw</label>
+		<description>Installs a crude jaw.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude jaw.</jobString>
+      <skillRequirements>
+		<Crafting>3</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CrudeJawAndroid</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CrudeJawAndroid</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>CyberneticAnimalJaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>CrudeJawAndroid</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvJawAndroid</defName>
+		<label>install cybernetic jaw</label>
+		<description>Installs a cybernetic jaw.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing cybernetic jaw.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AdvJawAndroid</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>AdvJawAndroid</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>CyberneticAnimalJaw</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AdvJawAndroid</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallPositronMindImplant</defName>
+		<label>perform positronic rewiring</label>
+		<description>rewires the artificial electronic mind of this android with those of positronic abilities.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Rewiring android.</jobString>
+      <skillRequirements>
+		<Crafting>12</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>PositronMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>PositronMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>PositronMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSoldierMindImplant</defName>
+		<label>Install soldier upgrade</label>
+		<description>installs a soldier upgrade.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SoldierMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SoldierMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>SoldierMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallBuilderMindImplant</defName>
+		<label>Install blueprint banks</label>
+		<description>installs a blueprint bank.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BuilderMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>BuilderMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>BuilderMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSurgeonMindImplant</defName>
+		<label>Install tricorder implant</label>
+		<description>installs a tricorder implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SurgeonMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SurgeonMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>SurgeonMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSpeedMindImplant</defName>
+		<label>Install neural highways</label>
+		<description>installs neural highways.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SpeedMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SpeedMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>SpeedMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallGeoMindImplant</defName>
+		<label>Install geological banks</label>
+		<description>installs geological banks.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>12</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>GeoMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>GeoMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>GeoMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMechanicMindImplant</defName>
+		<label>Install engineering implant</label>
+		<description>installs engineering implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MechanicMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>MechanicMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>MechanicMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCookingMindImplant</defName>
+		<label>Install cuisine implant</label>
+		<description>installs cuisine implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CookingMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CookingMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>CookingMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCharismaMindImplant</defName>
+		<label>Install charisma implant</label>
+		<description>installs charisma implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CharismaMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CharismaMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>CharismaMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallNegotiationMindImplant</defName>
+		<label>Install negotiator implant</label>
+		<description>installs negotiator implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>NegotiationMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>NegotiationMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>NegotiatorMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAnimalMindImplant</defName>
+		<label>Install zoology implant</label>
+		<description>installs zoology implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AnimalMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>AnimalMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>ZoologyMind</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallFarmingMindImplant</defName>
+		<label>Install agricultural implant</label>
+		<description>installs agricultural implant.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>FarmingMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>FarmingMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AgriculturalMind</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallUnskilledMindImplant</defName>
+		<label>Install basic labor chip</label>
+		<description>installs basic labor chip.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Implanting upgrade.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>BasicLaborMindImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>BasicLaborMindImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>UnskilledMind</addsHediff>
+	</RecipeDef>
+	
+<!--=========================Secret=========================-->
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallEvolvingMindImplant</defName>
+		<label>Initiate AI Evolution</label>
+		<description>Begins the evolution of this androids AI.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallImplantAndroid</workerClass>
+		<jobString>Rewiring android.</jobString>
+      <skillRequirements>
+		<Crafting>12</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<deathOnFailedSurgeryChance>0.10</deathOnFailedSurgeryChance>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>EvolvingImplant</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>EvolvingImplant</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>ArtificialBrain</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>EvolvingMind</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCyberReplacementLeg</defName>
+		<label>install Cybernetic leg</label>
+		<description>Installs a Cybernetic leg.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing Cybernetic leg.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CyberReplacementLeg</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>RepairKitAT</li>
+				<li>CyberReplacementLeg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>RightMechanicalLeg</li>
+			<li>LeftMechanicalLeg</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AR2Leg</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCyberReplacementArm</defName>
+		<label>install Cybernetic arm</label>
+		<description>Installs a Cybernetic arm.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing Cybernetic arm.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CyberReplacementArm</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CyberReplacementArm</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftMechanicalShoulder</li>
+			<li>RightMechanicalShoulder</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AR2Arm</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMDEye</defName>
+		<label>install archotech light sensor</label>
+		<description>Installs a archotech light sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech light sensor.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MDEye</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>MDEye</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftSightSensor</li>
+			<li>RightSightSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>AL2Receptor</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSecretHeatsink</defName>
+		<label>install archotech heatsink</label>
+		<description>Installs an archotech heatsink.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech heatsink.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1500</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SecretHeatsink</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SecretHeatsink</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLeftLung</li>
+			<li>MRightLung</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>A2Heatsink</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSecretCoolantPump</defName>
+		<label>install archotech coolant pump</label>
+		<description>Installs an archotech coolant pump.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech coolant pumpr.</jobString>
+      <skillRequirements>
+		<Crafting>8</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SecretCoolantPump</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SecretCoolantPump</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MHeart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>A2CoolantPump</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSecretBatteryPack</defName>
+		<label>install archotech battery pack</label>
+		<description>Installs an archotech battery pack.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech battery pack.</jobString>
+      <skillRequirements>
+		<Crafting>12</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SecretBatteryPack</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SecretBatteryPack</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLeftKidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>A2Battery</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallArchotechNanites</defName>
+		<label>install archotech mechanite storage</label>
+		<description>Installs archotech mechanite storage.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech mechanite storage.</jobString>
+      <skillRequirements>
+		<Crafting>12</Crafting>
+      </skillRequirements>
+
+		<workAmount>1800</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>4</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ArchotechNanites</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>ArchotechNanites</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MRightKidney</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>A2MStorage</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallMolecularDecomposer</defName>
+		<label>install archotech bio-reactor</label>
+		<description>Installs an archotech bio-reactor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech bio-reactor.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>MolecularDecomposer</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>MolecularDecomposer</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MStomach</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>A2Transformer</addsHediff>
+	</RecipeDef>
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallQuantumConverter</defName>
+		<label>install archotech power converter</label>
+		<description>Installs a archotech power converter.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech power converter.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>3</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>QuantumConverter</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>QuantumConverter</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>MLiver</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>A2VAdapter</addsHediff>
+	</RecipeDef>
+	
+
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCrudeHearingS</defName>
+		<label>install crude hearing sensor</label>
+		<description>Installs a crude hearing sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude hearing sensor.</jobString>
+      <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CrudeHearingS</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CrudeHearingS</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftHearingSensor</li>
+			<li>RightHearingSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HearingSensorCrude</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallArchHearingS</defName>
+		<label>install archotech hearing sensor</label>
+		<description>Installs a archotech hearing sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech hearing sensor.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ArchHearingS</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>ArchHearingS</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftHearingSensor</li>
+			<li>RightHearingSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HearingSensorArch</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallAdvHearingS</defName>
+		<label>install advanced hearing sensor</label>
+		<description>Installs a advanced hearing sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced hearing sensor.</jobString>
+      <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>AdvHearingS</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>AdvHearingS</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>LeftHearingSensor</li>
+			<li>RightHearingSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>HearingSensorAdv</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallSmellingAdvS</defName>
+		<label>install advanced smelling sensor</label>
+		<description>Installs an advanced smelling sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing advanced smelling sensor.</jobString>
+      <skillRequirements>
+		<Crafting>6</Crafting>
+      </skillRequirements>
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>1</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>SmellingAdvS</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>SmellingAdvS</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>SmellSensor</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>SmellSensorAdv</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallCrudeSmellingS</defName>
+		<label>install crude smelling sensor</label>
+		<description>Installs a crude smelling sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing crude smelling sensor.</jobString>
+      <skillRequirements>
+		<Crafting>4</Crafting>
+      </skillRequirements>
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>1.30</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>CrudeSmellingS</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>CrudeSmellingS</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>SmellSensor</li>
+
+		</appliedOnFixedBodyParts>
+		<addsHediff>SmellingSensorCrude</addsHediff>
+	</RecipeDef>
+	
+  <RecipeDef ParentName="SurgeryAndroid">
+		<defName>InstallArchSmellingS</defName>
+		<label>install archotech smelling sensor</label>
+		<description>Installs a archotech smelling sensor.</description>
+		<workerClass>MOARANDROIDS.Recipe_InstallArtificialBodyPartAndroid</workerClass>
+		<jobString>Installing archotech smelling sensor.</jobString>
+      <skillRequirements>
+		<Crafting>10</Crafting>
+      </skillRequirements>
+		<workAmount>1600</workAmount>
+		<surgerySuccessChanceFactor>0.8</surgerySuccessChanceFactor>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ArchSmellingS</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+					<thingDefs>
+						<li>RepairKitAT</li>
+				<li>ArchSmellingS</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>SmellSensor</li>
+		
+		</appliedOnFixedBodyParts>
+		<addsHediff>SmellingSensorArch</addsHediff>
+	</RecipeDef>
+</Defs>

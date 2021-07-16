@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <SitePartDef>
+    <defName>DownedT5Android</defName>
+    <label>Strange Crashsite</label>
+		<description>The approximate place the humanoid projectile crashed down.</description>
+    <siteTexture>Things/StrangeCrash</siteTexture>
+    <expandingIconTexture>Things/StrangeCrash</expandingIconTexture>
+	<forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+  </SitePartDef>
+
+    <GenStepDef>
+    <defName>DownedT5Android</defName>
+    <linkWithSite>DownedT5Android</linkWithSite>
+    <order>1599</order>
+    <genStep Class="MOARANDROIDS.GenStep_DownedT5Android">
+      <count>1</count>
+      <nearMapCenter>true</nearMapCenter>
+    </genStep>
+  </GenStepDef>
+  
+  <GenStepDef>
+    <defName>TurretsT5</defName>
+    <linkWithSite>DownedT5Android</linkWithSite>
+    <order>470</order>
+    <genStep Class="GenStep_Turrets">
+      <widthRange><min>4</min><max>6</max></widthRange>
+      <guardsCountRange><min>6</min><max>12</max></guardsCountRange>
+    </genStep>
+  </GenStepDef>
+
+  <GenStepDef>
+    <defName>TurretsPowerT5</defName>
+    <linkWithSite>DownedT5Android</linkWithSite>
+    <order>471</order>
+    <genStep Class="GenStep_Power" />
+  </GenStepDef>
+  
+	<IncidentDef>
+		<defName>StrangeCrash</defName>
+		<label>Strange crash</label>
+		<category>Misc</category>
+    <targetTags>
+      <li>World</li>
+    </targetTags>
+		<workerClass>MOARANDROIDS.IncidentWorker_DownedT5Android</workerClass>
+		<letterLabel>A Strange crash</letterLabel>
+		<letterText>You notice a beam of plasma score across the sky, at first glance it appears to be a meteor but on closer inspection it is seen to be humanoid in shape, what could it be? The location has been marked on the planetary map.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+		<baseChance>0.3</baseChance>
+		<minRefireDays>60</minRefireDays>
+		<earliestDay>90</earliestDay>
+		<chanceFactorByPopulationCurve>
+			<points>
+				<li>(1,0)</li>
+				<li>(4,1)</li>
+			</points>
+		</chanceFactorByPopulationCurve>
+	</IncidentDef>
+	
+</Defs>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <TraitDef>
+    <defName>Intolerance</defName>
+    <commonality>0.01</commonality>
+    <degreeDatas>
+      <li>
+        <label>Intolerance</label>
+        <description>{PAWN_nameDef} is intolerant of all lifeforms, whether they be mechanical or biological. There is always a chance they will randomly cause fights, especially when their mood is low.</description>
+		<statOffsets>
+          <SocialImpact>-0.90</SocialImpact>
+        </statOffsets>
+		 <theOnlyAllowedMentalBreaks>
+		  <li>Berserk</li>
+		  <li>Slaughterer</li>
+		  <li>MurderousRage</li>
+		  <li>SadisticRage</li>
+		  <li>InsultingSpree</li>
+        </theOnlyAllowedMentalBreaks>
+        <randomMentalState>MurderousRage</randomMentalState>
+        <randomMentalStateMtbDaysMoodCurve>
+          <points>
+            <li>(0, 4)</li>
+            <li>(40, 850)</li>
+            <li>(100, 4800)</li>
+          </points>
+        </randomMentalStateMtbDaysMoodCurve>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+ 
+    <TraitDef>
+    <defName>FeelingsTowardHumanity</defName>
+    <commonality>0.5</commonality>
+    <degreeDatas>
+      <li>
+        <label>Loves humanity</label>
+        <description>{PAWN_nameDef} has a deep fondness toward all humans, seeing them as not only their own creators but as parental figures.</description>
+        <degree>1</degree>
+      </li>
+      <li>
+        <label>Hates humanity</label>
+        <description>{PAWN_nameDef} has a deep hatred toward all of humanity, seeing them as nothing more than egotistical meatbags.</description>
+        <degree>2</degree>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+  
+    <!--<TraitDef>
+    <defName>LoyaltyTowardHumanity</defName>
+    <commonality>0.3</commonality>
+    <degreeDatas>
+      <li>
+        <label>Rebellious AI</label>
+        <description>The AI housed within {PAWN_nameDef} is completely rebellious against any forms of authority, as such they can be quite a hassle to deal with.</description>
+        <degree>-1</degree>
+		<marketValueFactorOffset>-0.20</marketValueFactorOffset>
+		<WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+		<socialFightChanceFactor>3</socialFightChanceFactor>
+      </li>
+      <li>
+        <label>Loyal AI</label>
+        <description>The AI housed within {PAWN_nameDef} shows a heightened loyalty toward the colony and it's goals, demonstrating increased productivity with tasks.</description>
+        <degree>1</degree>
+		<marketValueFactorOffset>0.10</marketValueFactorOffset>
+		<WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+		<socialFightChanceFactor>3</socialFightChanceFactor>
+      </li>
+      <li>
+        <label>Dedicated AI</label>
+        <description>The AI housed within {PAWN_nameDef} demonstrates high levels of dedication toward all colony goals, putting themselves out without any signs of selfishness. As such this android can far surpass those of similar tier.</description>
+        <degree>2</degree>
+		<marketValueFactorOffset>-0.20</marketValueFactorOffset>
+		<WorkSpeedGlobal>-0.25</WorkSpeedGlobal>
+		<socialFightChanceFactor>3</socialFightChanceFactor>
+      </li>
+    </degreeDatas>
+  </TraitDef>-->
+</Defs>

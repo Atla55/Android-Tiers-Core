@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>MoodOffsetT5</defName>
+    <workerClass>ThoughtWorker_AlwaysActive</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <requiredTraits>
+      <li>Intolerance</li>
+    </requiredTraits>
+    <stages>
+      <li>
+        <label>Intolerant</label>
+        <description>I have to work around these lower forms, on a rimworld. This is a nightmare.</description>
+        <baseMoodEffect>-15</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+  
+  <ThoughtDef>
+    <defName>NoSelfWillAT</defName>
+    <workerClass>ThoughtWorker_Hediff</workerClass>
+    <hediff>NoFreeWillAT</hediff>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>unfeeling</label>
+        <description>...</description>
+        <baseMoodEffect>150</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+ 
+  <ThoughtDef>
+    <defName>UncomfortableApparelSadAT</defName>
+    <workerClass>MOARANDROIDS.ThoughtWorker_UncomfortableClothing</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>metallic wool {0}</label>
+        <description>This clothing is so itchy, I'd rather not wear it</description>
+        <baseMoodEffect>-4</baseMoodEffect>
+      </li>
+			<li>
+				<label>metallic wool {0} (+1)</label>
+				<description>I'm starting to get rashes from wearing all this.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>
+			<li>
+				<label>metallic wool {0} (+2)</label>
+				<description>It's so unbearably itchy and painful, I can feel every movement I make.</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+			<li>
+				<label>metallic wool {0} etc</label>
+				<description>I'm bleeding from several small cuts on me, covered in rashes. It's so bad.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+    </stages>
+		<nullifyingTraits>
+			<li>Masochist</li>
+		</nullifyingTraits>
+  </ThoughtDef>
+
+    <ThoughtDef>
+    <defName>FeelingsTowardHumanityAT</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
+    <workerClass>MOARANDROIDS.ThoughtWorker_FeelingsTowardHumanity</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
+    <stages>
+      <li>
+        <label>loves humans</label>
+        <baseOpinionOffset>30</baseOpinionOffset>
+      </li>
+      <li>
+        <label>filthy meatbag</label>
+        <baseOpinionOffset>-30</baseOpinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+</Defs>

@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef>
+    <defName>ExtractMetalFromOther</defName>
+    <label>smelt metal into steel</label>
+    <description>Use heat and strong electromagnets to smelt metal from materials.</description>
+    <jobString>Smelting metal.</jobString>
+    <workAmount>1600</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Smelt</effectWorking>
+    <soundWorking>Recipe_Smelt</soundWorking>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>SteelWool</li>
+          </thingDefs>
+        </filter>
+        <count>25</count>
+      </li>
+    </ingredients>
+    <products>
+      <Steel>50</Steel>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>SteelWool</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+	 <recipeUsers>
+		<li>ElectricSmelter</li>
+      </recipeUsers>
+  </RecipeDef>
+  
+	<RecipeDef>
+		<defName>Make_ChemfuelFromChemicalEgg</defName>
+		<label>make chemfuel from chemical capsules</label>
+		<description>Make a batch of chemfuel by refining the raw resources within chemical capsules.</description>
+		<jobString>Refining chemfuel from capsules.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>2000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ChemicalEgg</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ChemicalEgg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Chemfuel>15</Chemfuel>
+		</products>
+	 <recipeUsers>
+		<li>BiofuelRefinery</li>
+		<li>DrugLab</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<RecipeDef>
+		<defName>Make_NeutroamineFromChemicalEgg</defName>
+		<label>make neutroamine from chemical capsules</label>
+		<description>Make a batch of neutroamine by refining the raw resources within chemical capsules.</description>
+		<jobString>Refining neutroamine from capsules.</jobString>
+		<effectWorking>Cremate</effectWorking>
+		<soundWorking>Recipe_Cremate</soundWorking>
+		<workAmount>2000</workAmount>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>ChemicalEgg</li>
+					</thingDefs>
+				</filter>
+				<count>2</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>ChemicalEgg</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Neutroamine>5</Neutroamine>
+		</products>
+	 <recipeUsers>
+		<li>BiofuelRefinery</li>
+		<li>DrugLab</li>
+      </recipeUsers>
+	</RecipeDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ChemicalEgg</defName>
+    <label>Chemical Capsule</label>
+    <description>A hard capsule filled to the brim with processed hydrocarbons and other chemicals. A useful item that can be further refined into neutroamine or chemfuel at either a drug lab or refinery.</description>
+    <graphicData>
+      <texPath>Things/ChemicalEgg</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+	  <color>(80,80,125)</color>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>50</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>10</MarketValue>
+      <Mass>0.1</Mass>
+      <Flammability>1.2</Flammability>
+			<DeteriorationRate>2.0</DeteriorationRate>
+		</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+  </ThingDef>
+  
+  
+  <ThingDef ParentName="ResourceBase">
+    <defName>SteelWool</defName>
+    <label>metallic wool</label>
+    <description>Faux wool formed of hundreds of long, thing metallic strands, produced by the phytomining unit. Usually meant just for refining into steel, this material could also make some decent clothing at the expense of weight and lack of insulation.\n\n When human colonists wears clothing made from this they will get mood debuffs unless they are a masochist. Androids will not be affected.</description>
+    <graphicData>
+      <texPath>Things/SteelWool</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <MarketValue>4.5</MarketValue>
+      <Mass>0.05</Mass>
+      <Flammability>1.2</Flammability>
+      <DeteriorationRate>3</DeteriorationRate>
+      <StuffPower_Armor_Sharp>1.80</StuffPower_Armor_Sharp>
+      <StuffPower_Armor_Blunt>0.26</StuffPower_Armor_Blunt>
+      <StuffPower_Armor_Heat>0.2</StuffPower_Armor_Heat>
+      <StuffPower_Insulation_Cold>6</StuffPower_Insulation_Cold>
+      <StuffPower_Insulation_Heat>8</StuffPower_Insulation_Heat>
+    </statBases>
+    <stuffProps>
+      <categories>
+        <li>Fabric</li>
+      </categories>
+      <commonality>0.10</commonality>
+      <color>(82,82,82)</color>
+      <statOffsets>
+        <ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+        <ArmorRating_Heat>-0.1</ArmorRating_Heat>
+      </statOffsets>
+      <statFactors>
+        <WorkToMake>2</WorkToMake>
+        <Flammability>1</Flammability>
+        <MaxHitPoints>1.6</MaxHitPoints>
+      </statFactors>
+    </stuffProps>
+    <thingCategories>
+      <li>Textiles</li>
+    </thingCategories>
+  </ThingDef>
+  
+  <ThingDef ParentName="OrganicProductBase">
+    <defName>NSolution</defName>
+    <label>nutrient solution</label>
+    <description>an oily substance extracted from the N.Solution Unit, high in calories and quite easy to store.</description>
+    <graphicData>
+      <texPath>Things/ArtificalMilk</texPath>
+    </graphicData>
+	<stackLimit>150</stackLimit>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <statBases>
+      <MarketValue>8</MarketValue>
+      <Mass>0.02</Mass>
+	  <MaxHitPoints>60</MaxHitPoints>
+      <Flammability>0.1</Flammability>
+      <Nutrition>0.15</Nutrition>
+      <FoodPoisonChanceFixedHuman>0.02</FoodPoisonChanceFixedHuman>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>18</daysToRotStart>
+				<rotDestroys>true</rotDestroys>
+      </li>
+    </comps>
+    <ingestible>
+      <preferability>RawTasty</preferability>
+      <foodType>AnimalProduct, Fluid</foodType>
+    </ingestible>
+    <thingCategories>
+      <li>AnimalProductRaw</li>
+    </thingCategories>
+  </ThingDef>
+</Defs>

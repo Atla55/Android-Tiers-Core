@@ -1,0 +1,1881 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- Added body parts -->
+
+  <HediffDef Name="AddedBodyPartBaseAndroid" Abstract="True">
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <defaultLabelColor>(0.6, 0.6, 0.7)</defaultLabelColor>
+	<description>_</description>
+    <isBad>false</isBad>
+  </HediffDef>
+ 
+   <HediffDef Name="BadAddedBodyPartBaseAndroid" Abstract="True">
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <defaultLabelColor>(0.5, 0.5, 0.5)</defaultLabelColor>
+	<description>_</description>
+    <isBad>false</isBad>
+  </HediffDef>
+ 
+   <HediffDef>
+    <defName>ShutdownAndroid</defName>
+    <label>decommissioned</label>
+	<description>AI core permanently shutdown and wiped clean.</description>
+    <initialSeverity>0</initialSeverity>
+	<lethalSeverity>0</lethalSeverity>
+		  		<defaultLabelColor>(0.4, 0.4, 0.4)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>RebootingSequenceAT</defName>
+    <label>Rebooting</label>
+	<description>Rebooting sequence active in the ai core.</description>
+	    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+		  		<defaultLabelColor>(0.3, 0.7, 0.3)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-2</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <minSeverity>0.02</minSeverity>
+        <label>100%</label>
+      </li>
+      <li>
+	  <minSeverity>0.25</minSeverity>
+        <label>75%</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+	  <minSeverity>0.5</minSeverity>
+        <label>50%</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+	  <minSeverity>0.75</minSeverity>
+        <label>25%</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+	  <minSeverity>0.9</minSeverity>
+        <label>0%</label>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+	
+  </HediffDef>
+  
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>NoFreeWillAT</defName>
+    <label>unfeeling</label>
+    <labelNoun>unfeeling</labelNoun>
+	<description>Modifications to the morality and emotional response sectors of the AI Core, resulting in completely neutral mood and lack of higher functions.</description>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>1</setMax>
+          </li>
+        </capMods>
+		<statOffsets>
+			<SocialImpact>-0.90</SocialImpact>
+			<GlobalLearningFactor>-1</GlobalLearningFactor>
+			<WorkSpeedGlobal>-0.5</WorkSpeedGlobal>
+			
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  
+  <HediffDef>
+    <defName>FreshReprogramming</defName>
+    <label>recently reprogrammed</label>
+	<description>recently reprogrammer AI core. Compiling and auto-correcting all new software may cause reduced abilities.</description>
+	    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+		  		<defaultLabelColor>(0.5, 0.5, 0.3)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.5</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <setMax>0.70</setMax>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <setMax>0.70</setMax>
+          </li>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.75</setMax>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
+	 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defName>OverclockedAndroid</defName>
+    <label>overclocked</label>
+	<description>Processing sectors of the android's AI core accelerated, resulting in quicker computing of functions but also increased load on hardware.</description>
+    <labelNoun>an overclocking upgrade</labelNoun>
+				<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <capacity>Consciousness</capacity>
+					  <offset>0.2</offset>
+					</li>
+				</capMods>
+				<statOffsets>
+					<WorkSpeedGlobal>0.2</WorkSpeedGlobal>
+					<MentalBreakThreshold>0.08</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+  </HediffDef>
+  
+
+  <HediffDef>
+    <defName>BatteryChargeMech</defName>
+    <label>Battery</label>
+	<description>Battery life remaining before shutdown</description>
+	    <hediffClass>HediffWithComps</hediffClass>
+    <initialSeverity>1</initialSeverity>
+		  		<defaultLabelColor>(0.3, 0.7, 0.3)</defaultLabelColor>
+    <scenarioCanAdd>false</scenarioCanAdd>
+	    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.5</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+      <li>
+	  <minSeverity>0</minSeverity>
+        <label>Empty</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.1</minSeverity>
+        <label>Critical</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.3</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.25</minSeverity>
+        <label>Low</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.45</minSeverity>
+        <label>Moderate</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.6</minSeverity>
+        <label>High</label>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+      </li>
+      <li>
+        <minSeverity>0.8</minSeverity>
+        <label>Full</label>
+      </li>
+    </stages>
+  </HediffDef>
+	
+	
+	<HediffDef>
+		<defName>AndroidCoolantLoss</defName>
+		<label>coolant loss</label>
+		<description>Loss of coolant in internal piping, resulting in reduced cooling capacity and overheating of internals.</description>
+		<maxSeverity>1.0</maxSeverity>
+	<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+      <stages>
+        <li>
+          <label>initial</label>
+          <becomeVisible>false</becomeVisible>
+        </li>
+		
+		
+        <li>
+          <minSeverity>0.1</minSeverity>
+          <label>initial</label>
+		  <statOffsets>
+           <ComfyTemperatureMax>-5</ComfyTemperatureMax>
+		  </statOffsets>
+        </li>
+		
+		
+        <li>
+          <minSeverity>0.3</minSeverity>
+          <label>minor</label>
+		  <statOffsets>
+           <ComfyTemperatureMax>-15</ComfyTemperatureMax>
+		  </statOffsets>
+            <capMods>
+              <li>
+                <capacity>Moving</capacity>
+                <offset>-0.05</offset>
+              </li>
+			   <li>
+                <capacity>Manipulation</capacity>
+                <offset>-0.05</offset>
+              </li>
+            </capMods>
+        </li>
+		
+		
+        <li>
+          <minSeverity>0.6</minSeverity>
+          <label>serious</label>
+		  <statOffsets>
+		<ComfyTemperatureMax>-30</ComfyTemperatureMax>
+		  </statOffsets>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>-0.3</offset>
+              </li>
+              <li>
+                <capacity>Moving</capacity>
+                <offset>-0.1</offset>
+              </li>
+			   <li>
+                <capacity>Manipulation</capacity>
+                <offset>-0.1</offset>
+              </li>
+            </capMods>
+        </li>
+		
+		
+        <li>
+          <minSeverity>0.9</minSeverity>
+          <label>extreme</label>
+		  <statOffsets>
+         <ComfyTemperatureMax>-60</ComfyTemperatureMax>
+		  </statOffsets>
+            <capMods>
+              <li>
+                <capacity>Consciousness</capacity>
+                <offset>-0.6</offset>
+              </li>
+              <li>
+                <capacity>Moving</capacity>
+                <offset>-0.30</offset>
+              </li>
+			   <li>
+                <capacity>Manipulation</capacity>
+                <offset>-0.30</offset>
+              </li>
+            </capMods>
+        </li>
+	</stages>
+	</HediffDef>
+
+<HediffDef>
+		<defName>AndroidOverheating</defName>
+		<taleOnVisible>AndroidOverheating</taleOnVisible>
+		<label>overheating</label>
+		<description>_</description>
+		<lethalSeverity>1</lethalSeverity>
+	<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+		<stages>
+			<li>
+				<label>initial</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<label>initial</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.30</minSeverity>
+				<label>minor</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.55</minSeverity>
+				<label>serious</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.5</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.80</minSeverity>
+				<label>extreme</label>
+				<lifeThreatening>true</lifeThreatening>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+	
+<HediffDef>
+		<defName>AndroidFreezing</defName>
+		<taleOnVisible>AndroidFreezing</taleOnVisible>
+		<label>Freezing</label>
+		<description>_</description>
+		<maxSeverity>1.0</maxSeverity>
+	<defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+		<stages>
+			<li>
+				<label>initial</label>
+				<becomeVisible>false</becomeVisible>
+			</li>
+			<li>
+				<minSeverity>0.15</minSeverity>
+				<label>initial</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.1</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.30</minSeverity>
+				<label>minor</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.2</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.55</minSeverity>
+				<label>serious</label>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>-0.4</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<minSeverity>0.80</minSeverity>
+				<label>extreme</label>
+				<lifeThreatening>true</lifeThreatening>
+				<capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<setMax>0.1</setMax>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+<!--Plating-->
+ <HediffDef ParentName="ImplantHediffBase">
+  <defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+    <defName>PlatingSteel</defName>
+    <label>Steel Frame</label>
+    <labelNoun>some basic steel framing</labelNoun>
+	<description>An installed steel frame.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>0.1</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
+				</statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.05</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.05</offset>
+          </li>
+        </capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>SteelPlating</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+  <defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+    <defName>PlatingPlasteel</defName>
+    <label>plasteel frame covering</label>
+    <labelNoun>some strong plasteel frame coverings</labelNoun>
+		<description>An nstalled plasteel frame covering.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+				</statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.1</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.1</offset>
+          </li>
+        </capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>PlasteelPlating</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+  <defaultLabelColor>(0.6, 0.6, 0.9)</defaultLabelColor>
+    <defName>PlatingComposite</defName>
+    <label>composite frame plating</label>
+    <labelNoun>high tensile composite plating</labelNoun>
+	<description>Installed composite frame plating.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>0.4</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+				</statOffsets>
+        <capMods>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+        </capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>CompositePlating</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+<!--Utility-->
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>MiningArm_AT</defName>
+    <label>mining arm</label>
+    <labelNoun>a mining arm</labelNoun>
+	<description>An installed mining arm.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MiningSpeed>0.45</MiningSpeed>
+					<MiningYield>0.3</MiningYield>
+				</statOffsets>
+			</li>
+		</stages>
+	 <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>drill</label>
+            <capacities>
+              <li>Scratch</li>
+            </capacities>
+            <power>15</power>
+            <cooldownTime>3.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>MiningArm_AT</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.7</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+<!--Others-->
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>HydraulicFrame</defName>
+    <label>hydraulic frame</label>
+    <labelNoun>a hydraulic frame</labelNoun>
+	<description>An installed hydraulic frame.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<CarryingCapacity>50</CarryingCapacity>
+				</statOffsets>
+				 <capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>-0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>HydraulicFrame</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>HydraulicLeg</defName>
+    <label>hydraulic leg</label>
+    <labelNoun>a hydraulic leg</labelNoun>
+	<description>An installed hydraulic leg.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<CarryingCapacity>25</CarryingCapacity>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>HydraulicLeg</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.70</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>HydraulicArm</defName>
+    <label>hydraulic arm</label>
+    <labelNoun>a hydraulic arm</labelNoun>
+	<description>An installed hydraulic arm.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<CarryingCapacity>25</CarryingCapacity>
+				</statOffsets>
+			</li>
+		</stages>
+	 <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>15</power>
+            <cooldownTime>3</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>HydraulicArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.85</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="BadAddedBodyPartBaseAndroid">
+    <defName>MakeshiftRLeg</defName>
+    <label>makeshift replacement leg</label>
+    <labelNoun>a makeshift replacement leg</labelNoun>
+	<description>An installed makeshift replacement leg.</description>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="BadAddedBodyPartBaseAndroid">
+    <defName>MakeshiftRArm</defName>
+    <label>makeshift replacement arm</label>
+    <labelNoun>a makeshift replacement arm</labelNoun>
+	<description>An installed makeshift replacement arm.</description>
+	    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>2</power>
+            <cooldownTime>2.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BRArm</defName>
+    <label>basic replacement arm</label>
+    <labelNoun>a basic replacement arm</labelNoun>
+	<description>An installed basic replacemet arm.</description>
+	    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>4</power>
+            <cooldownTime>1.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>BasicReplacementArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.95</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BRLeg</defName>
+    <label>basic replacement leg</label>
+    <labelNoun>a basic replacement leg</labelNoun>
+	<description>An installed basic replacement leg.</description>
+    <spawnThingOnRemoved>BasicReplacementLeg</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.95</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BLReceptor</defName>
+    <label>crude light sensor</label>
+    <labelNoun>a crude light sensor</labelNoun>
+	<description>An installed crude light sensor.</description>
+    <spawnThingOnRemoved>LightReceivingDiode</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.8</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+   <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BHeatsink</defName>
+    <label>crude heatsink</label>
+    <labelNoun>a crude heatsink</labelNoun>
+	<description>An installed crude heat sink.</description>
+    <spawnThingOnRemoved>CrudeHeatsink</spawnThingOnRemoved>
+		<stages>
+			<li>
+		  <statOffsets>
+           <ComfyTemperatureMax>-4</ComfyTemperatureMax>
+		   <ComfyTemperatureMin>4</ComfyTemperatureMin>
+		  </statOffsets>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.8</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BCoolantPump</defName>
+    <label>crude coolant pump</label>
+    <labelNoun>a crude coolant pump</labelNoun>
+	<description>An installed crude coolant pump.</description>
+    <spawnThingOnRemoved>FlimsyCoolantPump</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.85</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BBattery</defName>
+    <label>crude battery pack</label>
+    <labelNoun>a crude battery pack</labelNoun>
+	<description>An installed crude battery pack.</description>
+    <spawnThingOnRemoved>SmallBatteryPack</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.75</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BMStorage</defName>
+    <label>crude mechanite storage</label>
+    <labelNoun>crude mechanite storage</labelNoun>
+	<description>An installed crude storage mechanic.</description>
+    <spawnThingOnRemoved>TubeSealantTank</spawnThingOnRemoved>
+	 <comps>
+	  <li Class="MOARANDROIDS.HediffCompProperties_RegenWoundsAdv">
+	  <compClass>MOARANDROIDS.HediffComp_RegenWoundsAdv</compClass>
+	  <Delay>5</Delay>
+	  <HealingAmount>-0.05</HealingAmount>
+	  </li>
+     </comps>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.8</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BTransformer</defName>
+    <label>crude bio-reactor</label>
+    <labelNoun>a crude bio-reactor</labelNoun>
+	<description>An installed crude bio-reactor.</description>
+    <spawnThingOnRemoved>LowPowerTransformer</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.75</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BVAdapter</defName>
+    <label>crude power converter</label>
+    <labelNoun>a crude power converter</labelNoun>
+	<description>An installed crude power converter.</description>
+    <spawnThingOnRemoved>BasicDCConverter</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.75</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>BasicRearCounterweight</defName>
+    <label>basic counterweight</label>
+    <labelNoun>a basic counterweight</labelNoun>
+	<description>An installed basic counterweight.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+				</statOffsets>
+				 <capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>+0.1</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>BasicRearCounterweight</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>CrudeJawAndroid</defName>
+    <label>crude jaw</label>
+    <labelNoun>a crude jaw</labelNoun>
+	<description>An installed crude jaw.</description>
+		    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>jaw</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>8</power>
+            <cooldownTime>3.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>CrudeJawAndroid</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>0.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <!--==========================Advanced============================-->
+  
+    <HediffDef Name="AddedBodyPartBaseAndroid2" Abstract="True">
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <defaultLabelColor>(1,1,1)</defaultLabelColor>
+    <isBad>false</isBad>
+  </HediffDef>
+  
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>ARArm</defName>
+    <label>high power arm</label>
+    <labelNoun>a high power arm</labelNoun>
+	<description>An installed high power arm.</description>
+	    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>20</power>
+            <cooldownTime>1.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>AdvancedReplacementArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.4</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>ARLeg</defName>
+    <label>high power leg</label>
+    <labelNoun>a high power leg</labelNoun>
+	<description>An installed high power leg.</description>
+    <spawnThingOnRemoved>AdvancedReplacementLeg</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.4</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>ALReceptor</defName>
+    <label>advanced light sensor</label>
+    <labelNoun>an advanced light sensor</labelNoun>
+	<description>An installed advanced light sensor.</description>
+    <spawnThingOnRemoved>MultiSpectrumEye</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.4</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+   <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>AHeatsink</defName>
+    <label>advanced heatsink</label>
+    <labelNoun>an advanced heatsink</labelNoun>
+	<description>An installed advanced heatsink.</description>
+    <spawnThingOnRemoved>MultiLayerHeatsink</spawnThingOnRemoved>
+			<stages>
+			<li>
+		  <statOffsets>
+           <ComfyTemperatureMax>6</ComfyTemperatureMax>
+		   <ComfyTemperatureMin>-6</ComfyTemperatureMin>
+		  </statOffsets>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>ACoolantPump</defName>
+    <label>advanced coolant pump</label>
+    <labelNoun>an advanced coolant pump</labelNoun>
+	<description>An installed advanced coolant pump.</description>
+			<stages>
+			<li>
+		  <statOffsets>
+           <ComfyTemperatureMax>+4</ComfyTemperatureMax>
+		   <ComfyTemperatureMin>-4</ComfyTemperatureMin>
+		  </statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>AdvancedCoolantInjector</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.75</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>ABattery</defName>
+    <label>advanced battery pack</label>
+    <labelNoun>an advanced battery pack</labelNoun>
+	<description>An installed advanced battery pack.</description>
+		<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.15</offset>
+					  <capacity>Moving</capacity>
+					</li>
+					<li>
+					  <offset>+0.15</offset>
+					  <capacity>Manipulation</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>NanowireBattery</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>AMStorage</defName>
+    <label>advanced mechanite storage</label>
+    <labelNoun>advanced mechanite storage</labelNoun>
+	<description>Installed advanced mechanite storage.</description>
+		<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.10</offset>
+					  <capacity>Consciousness</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>NaniteStorageDevice</spawnThingOnRemoved>
+	 <comps>
+	  <li Class="MOARANDROIDS.HediffCompProperties_RegenWoundsAdv">
+	  <compClass>MOARANDROIDS.HediffComp_RegenWoundsAdv</compClass>
+	  <Delay>2</Delay>
+	  <HealingAmount>0.1</HealingAmount>
+	  </li>
+     </comps>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>ATransformer</defName>
+    <label>advanced bio-reactor</label>
+    <labelNoun>a advanced bio-reactor</labelNoun>
+	<description>An installed advanced bio-reactor.</description>
+		<stages>
+			<li>
+			<hungerRateFactorOffset>-0.25</hungerRateFactorOffset>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>HighPowerTransformer</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>AVAdapter</defName>
+    <label>advanced power converter</label>
+    <labelNoun>a advanced power converter</labelNoun>
+	<description>An installed advanced power converter.</description>
+		<stages>
+			<li>
+			<hungerRateFactorOffset>-0.1</hungerRateFactorOffset>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>HighPowerConverter</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+    <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>AdvRearCounterweight</defName>
+    <label>gyroscopic counterweight</label>
+    <labelNoun>a gyroscopic counterweight</labelNoun>
+	<description>An installed gyroscopic counterweight.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+					<ArmorRating_Blunt>0.2</ArmorRating_Blunt>
+				</statOffsets>
+				 <capMods>
+					<li>
+					  <capacity>Moving</capacity>
+					  <offset>+0.25</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>AdvRearCounterweight</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>AdvJawAndroid</defName>
+    <label>cybernetic jaw</label>
+    <labelNoun>a cybernetic jaw</labelNoun>
+	<description>An installed cybernetic jaw.</description>
+		    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>jaw</label>
+            <capacities>
+              <li>Bite</li>
+            </capacities>
+            <power>50</power>
+            <cooldownTime>5</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>AdvJawAndroid</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.4</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+ <!--Implants-->
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>PositronMind</defName>
+    <label>Positronic rewiring</label>
+    <labelNoun>a positronic rewiring</labelNoun>
+	<description>Installed positronic rewiring.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ResearchSpeed>0.35</ResearchSpeed>
+					<GlobalLearningFactor>0.5</GlobalLearningFactor>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>PositronMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>SoldierMind</defName>
+    <label>Soldier upgrade</label>
+    <labelNoun>a soldier upgrade</labelNoun>
+	<description>An installed solider upgrade.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<RangedWeapon_Cooldown>-0.35</RangedWeapon_Cooldown>
+					<MeleeWeapon_CooldownMultiplier>-0.3</MeleeWeapon_CooldownMultiplier>
+					<ShootingAccuracyPawn>0.25</ShootingAccuracyPawn>
+					<HuntingStealth>0.25</HuntingStealth>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>SoldierMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>BuilderMind</defName>
+    <label>Blueprint banks</label>
+    <labelNoun>a blueprint bank</labelNoun>
+	<description>An installed blueprint bank.</description>
+		<stages>
+			<li>
+				<statOffsets>
+				<SmoothingSpeed>0.4</SmoothingSpeed>
+				<ConstructionSpeed>0.4</ConstructionSpeed>
+				<ConstructSuccessChance>0.2</ConstructSuccessChance>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>BuilderMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>SurgeonMind</defName>
+    <label>Implanted tricorder</label>
+    <labelNoun>an implanted tricorder</labelNoun>
+	<description>An implanted tricorder.</description>
+		<stages>
+			<li>
+				<statOffsets>
+				<MedicalSurgerySuccessChance>0.1</MedicalSurgerySuccessChance>
+				<MedicalOperationSpeed>0.2</MedicalOperationSpeed>
+				<MedicalTendQuality>0.1</MedicalTendQuality>
+				<MedicalTendSpeed>0.25</MedicalTendSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>SurgeonMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>SpeedMind</defName>
+    <label>Neural highways</label>
+    <labelNoun>Neural highways</labelNoun>
+	<description>Installed neural highways.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<WorkSpeedGlobal>0.4</WorkSpeedGlobal>
+					<MeleeDodgeChance>0.3</MeleeDodgeChance>
+					<MoveSpeed>1</MoveSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>SpeedMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>GeoMind</defName>
+    <label>Geological banks</label>
+    <labelNoun>a geological bank</labelNoun>
+	<description>An installed geological bank.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<MiningSpeed>0.65</MiningSpeed>
+					<MiningYield>0.5</MiningYield>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>GeoMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>MechanicMind</defName>
+    <label>Engineering implant</label>
+    <labelNoun>an engineering implant</labelNoun>
+	<description>An installed engineering implant.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ButcheryMechanoidSpeed>0.5</ButcheryMechanoidSpeed>
+					<ButcheryMechanoidEfficiency>0.5</ButcheryMechanoidEfficiency>
+					<AndroidSurgerySuccessChance>0.1</AndroidSurgerySuccessChance>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>MechanicMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>CookingMind</defName>
+    <label>Cuisine implant</label>
+    <labelNoun>a cuisine implant</labelNoun>
+	<description>An installed cuisine implant.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<ButcheryFleshEfficiency>0.4</ButcheryFleshEfficiency>
+					<ButcheryFleshSpeed>0.5</ButcheryFleshSpeed>
+					<FoodPoisonChance>-0.05</FoodPoisonChance>
+					<CookSpeed>0.5</CookSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>CookingMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>CharismaMind</defName>
+    <label>Charisma implant</label>
+    <labelNoun>a charisma implant</labelNoun>
+	<description>An installed charisma implant.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<SocialImpact>0.5</SocialImpact>
+					<TradePriceImprovement>0.1</TradePriceImprovement>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>CharismaMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>NegotiatorMind</defName>
+    <label>Negotiator implant</label>
+    <labelNoun>a negotiator implant</labelNoun>
+	<description>An installed negotiator implant.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<TradePriceImprovement>0.25</TradePriceImprovement>
+					<NegotiationAbility>0.5</NegotiationAbility>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>NegotiationMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>ZoologyMind</defName>
+    <label>Zoology implant</label>
+    <labelNoun>a zoology implant</labelNoun>
+	<description>An installed zoology implant.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<TameAnimalChance>0.3</TameAnimalChance>
+					<TrainAnimalChance>0.5</TrainAnimalChance>
+					<AnimalGatherSpeed>0.5</AnimalGatherSpeed>
+					<AnimalGatherYield>0.25</AnimalGatherYield>
+					<HuntingStealth>0.25</HuntingStealth>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>AnimalMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>AgriculturalMind</defName>
+    <label>Agricultural implant</label>
+    <labelNoun>a agricultural implant</labelNoun>
+	<description>An installed agricultural implant.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<PlantWorkSpeed>1</PlantWorkSpeed>
+					<PlantHarvestYield>0.4</PlantHarvestYield>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>FarmingMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>UnskilledMind</defName>
+    <label>Basic labor chip</label>
+    <labelNoun>a basic labor chip</labelNoun>
+	<description>An installed basic labour chip.</description>
+		<stages>
+			<li>
+				<statOffsets>
+					<GeneralLaborSpeed>1.5</GeneralLaborSpeed>
+					<SmoothingSpeed>0.5</SmoothingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>BasicLaborMindImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+    </addedPartProps>
+  </HediffDef>
+ 
+<!--==============secret==============-->
+
+    <HediffDef Name="AddedBodyPartBaseAndroid3" Abstract="True">
+    <hediffClass>Hediff_AddedPart</hediffClass>
+    <defaultLabelColor>(0.8,0.8,1)</defaultLabelColor>
+    <isBad>false</isBad>
+  </HediffDef>
+  
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>AR2Arm</defName>
+    <label>Cybernetic arm</label>
+    <labelNoun>a Cybernetic arm</labelNoun>
+	<description>An installed cybernetic arm.</description>
+	    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <tools>
+          <li>
+            <label>fist</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>35</power>
+            <cooldownTime>1.65</cooldownTime>
+          </li>
+        </tools>
+      </li>
+    </comps>
+    <spawnThingOnRemoved>CyberReplacementArm</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>AR2Leg</defName>
+    <label>Cybernetic leg</label>
+    <labelNoun>a Cybernetic leg</labelNoun>
+	<description>An installed cybernetic leg.</description>
+    <spawnThingOnRemoved>CyberReplacementLeg</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>AL2Receptor</defName>
+    <label>archotech light sensor</label>
+    <labelNoun>an archotech light sensor</labelNoun>
+	<description>An installed archotech light sensor.</description>
+    <spawnThingOnRemoved>MDEye</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+   <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>A2Heatsink</defName>
+    <label>archotech heatsink</label>
+    <labelNoun>an archotech heatsink</labelNoun>
+	<description>An installed archotech heatsink.</description>
+    <spawnThingOnRemoved>SecretHeatsink</spawnThingOnRemoved>
+			<stages>
+			<li>
+		  <statOffsets>
+           <ComfyTemperatureMax>20</ComfyTemperatureMax>
+		   <ComfyTemperatureMin>-20</ComfyTemperatureMin>
+		  </statOffsets>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>A2CoolantPump</defName>
+    <label>archotech coolant pump</label>
+    <labelNoun>an archotech coolant pump</labelNoun>
+	<description>An installed archotech coolant pump.</description>
+    <spawnThingOnRemoved>SecretCoolantPump</spawnThingOnRemoved>
+			<stages>
+			<li>
+		  <statOffsets>
+           <ComfyTemperatureMax>12</ComfyTemperatureMax>
+		   <ComfyTemperatureMin>-10</ComfyTemperatureMin>
+		  </statOffsets>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2.5</partEfficiency>
+    </addedPartProps>
+
+  </HediffDef>
+  
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>A2Battery</defName>
+    <label>archotech battery pack</label>
+    <labelNoun>an archotech battery pack</labelNoun>
+	<description>An installed archotech battery pack.</description>
+		<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.35</offset>
+					  <capacity>Moving</capacity>
+					</li>
+					<li>
+					  <offset>+0.35</offset>
+					  <capacity>Manipulation</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>SecretBatteryPack</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>A2MStorage</defName>
+    <label>archotech mechanite storage</label>
+    <labelNoun>archotech mechanite storage</labelNoun>
+	<description>Installed archotech mechanite storage.</description>
+		<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.25</offset>
+					  <capacity>Consciousness</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>ArchotechNanites</spawnThingOnRemoved>
+	 <comps>
+	  <li Class="MOARANDROIDS.HediffCompProperties_RegenWoundsAdv">
+	  <compClass>MOARANDROIDS.HediffComp_RegenWoundsAdv</compClass>
+	  <Delay>1</Delay>
+	  <HealingAmount>0.1</HealingAmount>
+	  </li>
+     </comps>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+ 
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>A2Transformer</defName>
+    <label>archotech bio-reactor</label>
+    <labelNoun>a archotech bio-reactor</labelNoun>
+	<description>An installed archotech bio-reactor.</description>
+		<stages>
+			<li>
+			<hungerRateFactorOffset>-0.5</hungerRateFactorOffset>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>MolecularDecomposer</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>A2VAdapter</defName>
+    <label>archotech power converter</label>
+    <labelNoun>a archotech power converter</labelNoun>
+	<description>An installed archotech power converter.</description>
+		<stages>
+			<li>
+			<hungerRateFactorOffset>-0.2</hungerRateFactorOffset>
+			</li>
+		</stages>
+    <spawnThingOnRemoved>QuantumConverter</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  
+    <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>HearingSensorCrude</defName>
+    <label>crude hearing sensor</label>
+    <labelNoun>a crude hearing sensor</labelNoun>
+	<description>An installed crude hearing sensor.</description>
+    <spawnThingOnRemoved>CrudeHearingS</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>0.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  
+    <HediffDef ParentName="AddedBodyPartBaseAndroid2">
+    <defName>HearingSensorAdv</defName>
+    <label>advanced hearing sensor</label>
+    <labelNoun>an advanced hearing sensor</labelNoun>
+	<description>An installed advanced hearing sensor.</description>
+    <spawnThingOnRemoved>AdvHearingS</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  
+    <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>HearingSensorArch</defName>
+    <label>archotech hearing sensor</label>
+    <labelNoun>an archotech hearing sensor</labelNoun>
+	<description>An installed archotech hearing sensor.</description>
+    <spawnThingOnRemoved>ArchHearingS</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+     <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>SmellSensorAdv</defName>
+    <label>advanced smelling sensor</label>
+    <labelNoun>an advanced smelling sensor</labelNoun>
+	<description>An installed advanced smelling sensor.</description>
+    <spawnThingOnRemoved>SmellingAdvS</spawnThingOnRemoved>
+			<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.10</offset>
+					  <capacity>Breathing</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>1.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+      <HediffDef ParentName="AddedBodyPartBaseAndroid">
+    <defName>SmellingSensorCrude</defName>
+    <label>crude smelling sensor</label>
+    <labelNoun>a crude smelling sensor</labelNoun>
+	<description>An installed crude smelling sensor.</description>
+    <spawnThingOnRemoved>CrudeSmellingS</spawnThingOnRemoved>
+	<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.05</offset>
+					  <capacity>Breathing</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>0.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  
+    <HediffDef ParentName="AddedBodyPartBaseAndroid3">
+    <defName>SmellingSensorArch</defName>
+    <label>archotech smelling sensor</label>
+    <labelNoun>an archotech smelling sensor</labelNoun>
+	<description>An installed archotech smelling sensor.</description>
+    <spawnThingOnRemoved>ArchSmellingS</spawnThingOnRemoved>
+				<stages>
+			<li>
+				 <capMods>
+					<li>
+					  <offset>+0.25</offset>
+					  <capacity>Breathing</capacity>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+    <addedPartProps>
+      <solid>true</solid>
+	  <betterThanNatural>true</betterThanNatural>
+      <partEfficiency>2.5</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+  <HediffDef ParentName="ImplantHediffBase">
+    <defaultLabelColor>(0.7, 0.6, 0.7)</defaultLabelColor>
+    <defName>EvolvingMind</defName>
+	<hediffClass>HediffWithComps</hediffClass>
+    <label>Evolving AI</label>
+    <labelNoun>an Evolving AI</labelNoun>
+	<description>An installed evolving AI.</description>
+				<maxSeverity>1</maxSeverity>
+				<initialSeverity>0.001</initialSeverity>
+				<comps>
+				  <li Class="HediffCompProperties_SeverityPerDay">
+					<severityPerDay>0.033</severityPerDay>
+				  </li>
+				</comps>
+				<stages>
+				  <li>
+					<label>5%</label>
+					<minSeverity>0</minSeverity>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>0.1</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>10%</label>
+					<minSeverity>0.1</minSeverity>
+				<statOffsets>
+					<ResearchSpeed>0.15</ResearchSpeed>
+					<GlobalLearningFactor>0.2</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>0.15</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>20%</label>
+					<minSeverity>0.2</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>0.25</ResearchSpeed>
+					<GlobalLearningFactor>0.4</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>0.3</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>30%</label>
+					<minSeverity>0.3</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>0.45</ResearchSpeed>
+					<GlobalLearningFactor>0.6</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>0.6</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>40%</label>
+					<minSeverity>0.4</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>0.85</ResearchSpeed>
+					<GlobalLearningFactor>0.8</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>1</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>50%</label>
+					<minSeverity>0.5</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>1</ResearchSpeed>
+					<GlobalLearningFactor>1</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>1.4</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>60%</label>
+					<minSeverity>0.6</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>1.4</ResearchSpeed>
+					<GlobalLearningFactor>1.5</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>1.4</offset>
+					  </li>
+					  <li>
+						<capacity>Talking</capacity>
+						<offset>0.1</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>70%</label>
+					<minSeverity>0.7</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>1.6</ResearchSpeed>
+					<GlobalLearningFactor>1.8</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>1.6</offset>
+					  </li>
+					  <li>
+						<capacity>Talking</capacity>
+						<offset>0.2</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>80%</label>
+					<minSeverity>0.8</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>1.9</ResearchSpeed>
+					<GlobalLearningFactor>2.5</GlobalLearningFactor>
+				</statOffsets>
+					<capMods>
+					  <li>
+						<capacity>Consciousness</capacity>
+						<offset>1.8</offset>
+					  </li>
+					  <li>
+						<capacity>Talking</capacity>
+						<offset>0.3</offset>
+					  </li>
+					</capMods>
+				  </li>
+				  <li>
+					<label>Max</label>
+					<minSeverity>0.95</minSeverity>
+									<statOffsets>
+					<ResearchSpeed>2</ResearchSpeed>
+					<GlobalLearningFactor>3</GlobalLearningFactor>
+				</statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>2</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>0.5</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>EvolvingImplant</spawnThingOnRemoved>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.25</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+</Defs>
