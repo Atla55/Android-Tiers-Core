@@ -2180,11 +2180,11 @@ namespace MOARANDROIDS
                 return Settings.nbSkillPointsPerSkillT3;
             else if (pawn.def.defName == Utils.T1)
                 return Settings.nbSkillPointsPerSkillT1;
-            else if (pawn.def.defName == Utils.T2 || pawn.def.defName == Utils.TX2 || pawn.def.defName == Utils.TX2I || pawn.def.defName == Utils.TX2K)
+            else if (pawn.def.defName == Utils.T2 || pawn.def.defName == Utils.TX2 || pawn.def.defName == Utils.TX2I || pawn.def.defName == Utils.TX2K || pawn.def.defName == Utils.TX2KI)
                 return Settings.nbSkillPointsPerSkillT2;
             else if (pawn.def.defName == Utils.T3 || pawn.def.defName == Utils.TX3 || pawn.def.defName == Utils.TX3I)
                 return Settings.nbSkillPointsPerSkillT3;
-            else if (pawn.def.defName == Utils.T4 || pawn.def.defName == Utils.TX4 || pawn.def.defName == Utils.TX3I)
+            else if (pawn.def.defName == Utils.T4 || pawn.def.defName == Utils.TX4 || pawn.def.defName == Utils.TX4I)
                 return Settings.nbSkillPointsPerSkillT4;
             else if (pawn.def.defName == Utils.T5)
                 return Settings.nbSkillPointsPerSkillT5;
@@ -2198,7 +2198,7 @@ namespace MOARANDROIDS
                 return Settings.nbSkillPointsPassionT3;
             else if (pawn.def.defName == Utils.T1)
                 return Settings.nbSkillPointsPassionT1;
-            else if (pawn.def.defName == Utils.T2 || pawn.def.defName == Utils.TX2 || pawn.def.defName == Utils.TX2I || pawn.def.defName == Utils.TX2K)
+            else if (pawn.def.defName == Utils.T2 || pawn.def.defName == Utils.TX2 || pawn.def.defName == Utils.TX2I || pawn.def.defName == Utils.TX2K || pawn.def.defName == Utils.TX2KI)
                 return Settings.nbSkillPointsPassionT2;
             else if (pawn.def.defName == Utils.T3 || pawn.def.defName == Utils.TX3 || pawn.def.defName == Utils.TX3I)
                 return Settings.nbSkillPointsPassionT3;
