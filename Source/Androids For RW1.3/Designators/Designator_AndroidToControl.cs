@@ -138,9 +138,13 @@ namespace MOARANDROIDS
         protected override void FinalizeDesignationSucceeded()
         {
             base.FinalizeDesignationSucceeded();
-            
 
             CompSurrogateOwner cso = controller.TryGetComp<CompSurrogateOwner>();
+
+            //Prevent some situations where the control mode is disabled and the pawn conscious but the designator is always selected (not concern minds, as there is no controlMode processus)
+            if (!cso.controlMode && controller.Spawned)
+                return;
+
             if (cso != null) {
                 if (kindOfTarget == 1)
                 {
