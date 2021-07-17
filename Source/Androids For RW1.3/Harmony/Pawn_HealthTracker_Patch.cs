@@ -18,7 +18,9 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ref Pawn ___pawn, ref Hediff hediff, BodyPartRecord part)
             {
-                try { 
+                try {
+                    if (hediff == null)
+                        return;
 
                     //Si il sagit d'une VX0 alors passation du pawn en mode surrogate
                     if (hediff.def.defName == "ATPP_HediffVX0Chip" && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner))
@@ -131,6 +133,17 @@ namespace MOARANDROIDS
             {
                 try
                 {
+                    //No hediff created for some reason, we stop the execution to prevent throwing error and blocking pawn creation
+                    if (hediff == null)
+                    {
+                        return false;
+                    }
+                    //if(___pawn != null && hediff != null && hediff.def != null)
+                        //Log.Message("HEDIFFF "+___pawn.LabelCap+" ===> " + hediff.def.defName);
+                    //if (hediff == null)
+                        //Log.Message("WEIRD NULL Hediff !!");
+
+
                     if (___pawn.IsAndroidTier())
                     {
                         //S'il sagit d'Hediff blacklistés 
