@@ -147,8 +147,13 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Map map, bool respawningAfterLoad, Pawn __instance)
             {
-                if(Settings.hideInactiveSurrogates && __instance.IsSurrogateAndroid())
-                    map.mapPawns.DeRegisterPawn(__instance);
+                if (Settings.hideInactiveSurrogates && __instance.IsSurrogateAndroid())
+                {
+                    //Remove surrogate from main lists only if inactive surrogate
+                    CompAndroidState cas = __instance.TryGetComp<CompAndroidState>();
+                    if(cas != null && cas.surrogateController == null)
+                        map.mapPawns.DeRegisterPawn(__instance);
+                }
             }
         }
 
