@@ -435,6 +435,11 @@ namespace MOARANDROIDS
                 }
             }
 
+            //Disconnect from the player's skymind network 
+            Utils.GCATPP.disconnectUser(cp);
+            autoconn = false;
+            connected = false;
+
             Find.ColonistBar.MarkColonistsDirty();
         }
 
