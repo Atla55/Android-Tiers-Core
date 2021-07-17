@@ -334,17 +334,6 @@
 		<weaponTags>
 			<li>MechM7Gun</li>
 		</weaponTags>
-		<lifeStages>
-			<li>
-				<bodyGraphicData>
-					<drawSize>4, 4.5</drawSize>
-					<shadowData>
-						<volume>(0.85, 2.3, 0.85)</volume>
-						<offset>(0,0,-0.15)</offset>
-					</shadowData>
-				</bodyGraphicData>
-			</li>
-		</lifeStages>
 		<initialResistanceRange>13~21</initialResistanceRange>
 	</PawnKindDef>
 	<AlienRace.BackstoryDef>
