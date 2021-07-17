@@ -159,6 +159,9 @@
 				<relationChanceModifierSibling>0</relationChanceModifierSibling>
 				<relationChanceModifierSpouse>0</relationChanceModifierSpouse>
 			</relationSettings>
+			<compatibility>
+				<isFlesh>false</isFlesh>
+			</compatibility>
 		</alienRace>
 		<statBases>
 			<MarketValue>8000</MarketValue>
