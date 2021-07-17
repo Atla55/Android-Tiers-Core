@@ -39,10 +39,8 @@ namespace MOARANDROIDS
             }
         }
 
-        /*
-         * Prefix permetant de jerter en fonction de la config les surrogates des listings
-         */
-        [HarmonyPatch(typeof(MapPawns), "get_FreeColonists")]
+         // Prefix permetant de jerter en fonction de la config les surrogates des listings
+        /*[HarmonyPatch(typeof(MapPawns), "get_FreeColonists")]
         public class get_FreeColonists_Patch
         {
             [HarmonyPrefix]
@@ -80,6 +78,6 @@ namespace MOARANDROIDS
                     return true;
                 }
             }
-        }
+        }*/
     }
 }

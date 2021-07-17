@@ -140,6 +140,20 @@ namespace MOARANDROIDS
             }
         }
 
+        // Patch used to deregister from the mapPawns surrogates (only if the related setting is enabled)
+        [HarmonyPatch(typeof(Pawn), "SpawnSetup")]
+        public class SpawnSetup_Patch
+        {
+            [HarmonyPostfix]
+            public static void Listener(Map map, bool respawningAfterLoad, Pawn __instance)
+            {
+                if(Settings.hideInactiveSurrogates && __instance.IsSurrogateAndroid())
+                    map.mapPawns.DeRegisterPawn(__instance);
+            }
+        }
+
+        
+
         [HarmonyPatch(typeof(Pawn), "GetGizmos")]
         public class GetGizmos_Patch
         {

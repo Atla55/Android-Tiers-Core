@@ -1179,6 +1179,12 @@ namespace MOARANDROIDS
                     controlled.timetable.SetAssignment(i, cp.timetable.GetAssignment(i));
                 }
             }
+
+            //Add surrogate in mapPawns
+            if (Settings.hideInactiveSurrogates)
+            {
+                controlled.Map.mapPawns.RegisterPawn(controlled);
+            }
         }
 
         /*
@@ -1444,6 +1450,12 @@ namespace MOARANDROIDS
                 }
             }
             //Log.Message("SetControlledSurrogate FIN");
+
+            //remove surrogate from mapPawns
+            if (Settings.hideInactiveSurrogates)
+            {
+                surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
+            }
 
 
             //Retrait du referencement du surrogate mentionné
