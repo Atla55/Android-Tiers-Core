@@ -1237,7 +1237,7 @@ namespace MOARANDROIDS
                     Utils.restoreSavedSurrogateName(surrogate);
 
                     if (!externalController && Settings.hideInactiveSurrogates && surrogate != null && surrogate.Map != null)
-                        SX.Map.mapPawns.DeRegisterPawn(surrogate);
+                        surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
                 }
                 else
                 {
@@ -1245,8 +1245,8 @@ namespace MOARANDROIDS
                     Utils.restoreSavedSurrogateName(cp);
                     Utils.PermutePawn(surrogate, cp);
 
-                    if (!externalController && Settings.hideInactiveSurrogates && cp != null && cp.Map != null)
-                        cp.Map.mapPawns.DeRegisterPawn(cp);
+                    if (!externalController && Settings.hideInactiveSurrogates && surrogate != null && surrogate.Map != null)
+                        surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
                 }
             }
 
