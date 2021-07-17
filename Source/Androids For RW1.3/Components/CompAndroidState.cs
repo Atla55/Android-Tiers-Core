@@ -977,7 +977,8 @@ namespace MOARANDROIDS
                 yield break;
             }
 
-            if (!isOrganic && pawn.Faction == Faction.OfPlayer)
+            //Prevent battery overload on organic, only player's pawn allowed but disabled for temp hacked androids
+            if (!isOrganic && pawn.Faction == Faction.OfPlayer && (csm == null || csm.hacked != 3))
             {
                 //Ajout possibilité de lancer l'explosion d'un androide a distance
 
