@@ -2059,12 +2059,13 @@ namespace MOARANDROIDS
             p.health.hediffSet.Clear();
 
             //Ajout des hediffs
-            foreach (var h in pawn.health.hediffSet.hediffs)
+            foreach (var h in pawn.health.hediffSet.hediffs.ToList())
             {
                 try
                 {
                     h.pawn = p;
                     p.health.AddHediff(h, h.Part);
+                    pawn.health.RemoveHediff(h);
                 }
                 catch(Exception)
                 {
