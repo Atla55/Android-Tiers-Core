@@ -6,6 +6,7 @@
 *.testlog
 *.user
 *.ide
+*.ide-wal
 
 **/.vs/Release
 **/.vs
