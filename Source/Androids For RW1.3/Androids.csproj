@@ -270,6 +270,7 @@
     <Compile Include="Harmony\PawnUtility_Patch.cs" />
     <Compile Include="Harmony\PawnWoundDrawer_Patch.cs" />
     <Compile Include="Harmony\Pawn_HealthTracker_Patch.cs" />
+    <Compile Include="Harmony\Pawn_DraftController_Patch.cs" />
     <Compile Include="Harmony\Pawn_InteractionsTracker_Patch.cs" />
     <Compile Include="Harmony\Pawn_NeedsTracker_Patch.cs" />
     <Compile Include="Harmony\Pawn_Patch.cs" />

@@ -24,15 +24,16 @@ namespace MOARANDROIDS
         }
 
 
-        [HarmonyPatch(typeof(PawnRenderer), "RenderPawnInternal")]
-        [HarmonyPatch(new Type[] { typeof(Vector3), typeof(float), typeof(bool), typeof(Rot4), typeof(RotDrawMode), typeof(PawnRenderFlags) })]
+        [HarmonyPatch(typeof(PawnRenderer), "DrawHeadHair")]
+        [HarmonyPatch(new Type[] { typeof(Vector3), typeof(Vector3), typeof(float), typeof(Rot4), typeof(Rot4), typeof(RotDrawMode), typeof(PawnRenderFlags) })]
         public class ATPP_RenderPawnInternal_Patch
         {
             [HarmonyPostfix]
-            public static void Listener(ref PawnRenderer __instance, Vector3 rootLoc, float angle, bool renderBody, Rot4 bodyFacing, RotDrawMode bodyDrawType, PawnRenderFlags flags, Pawn ___pawn)
+            public static void Listener(ref PawnRenderer __instance, Vector3 rootLoc, Vector3 headOffset, float angle, Rot4 bodyFacing, Rot4 headFacing, RotDrawMode bodyDrawType, PawnRenderFlags flags, Pawn ___pawn)
             {
                 try
                 {
+                    bool flagPortrait = flags.FlagSet(PawnRenderFlags.Portrait);
                     bool state = false;
                     CompAndroidState cas = null;
                     if (___pawn != null)
@@ -49,7 +50,7 @@ namespace MOARANDROIDS
                         || (___pawn.def.defName == Utils.TX4 && (cas.TXHurtedHeadSet || cas.TXHurtedHeadSet2)))
                         && !___pawn.Dead && !flags.FlagSet(PawnRenderFlags.HeadStump))
                     {
-                        if (!flags.FlagSet(PawnRenderFlags.Portrait))
+                        if (!flagPortrait)
                         {
                             if (___pawn != null)
                             {
@@ -61,11 +62,18 @@ namespace MOARANDROIDS
                             }
                         }
                         else
-                            state = flags.FlagSet(PawnRenderFlags.Portrait);
+                            state = flagPortrait;
+
+                        state = true;
                     }
 
                     if (state)
                     {
+                        /*if (flagPortrait)
+                            Log.Message("Refresh hair for " + ___pawn.LabelCap + " (PORTRAIT)");
+                        else
+                            Log.Message("Refresh hair for " + ___pawn.LabelCap + " (NO_PORTRAIT)");*/
+
                         Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.up);
                         Vector3 a = rootLoc;
                         if (bodyFacing != Rot4.North)
@@ -78,12 +86,12 @@ namespace MOARANDROIDS
                             a.y += 0.0234375f;
                             rootLoc.y += 0.0281250011f;
                         }
-                        Vector3 b = quaternion * __instance.BaseHeadOffsetAt(bodyFacing);
+                        Vector3 b = quaternion * __instance.BaseHeadOffsetAt(headFacing);
                         Vector3 loc = a + b + new Vector3(0f, 0.01f, 0f);
-                        if (bodyFacing != Rot4.North)
+                        if (headFacing != Rot4.North)
                         {
-                            Mesh mesh = MeshPool.humanlikeHeadSet.MeshAt(bodyFacing);
-                            bool isHorizontal = bodyFacing.IsHorizontal;
+                            Mesh mesh = MeshPool.humanlikeHeadSet.MeshAt(headFacing);
+                            bool isHorizontal = headFacing.IsHorizontal;
                             int type = 1;
                             if (cas.TXHurtedHeadSet)
                                 type = 2;
@@ -110,11 +118,11 @@ namespace MOARANDROIDS
 
                             if (isHorizontal)
                             {
-                                GenDraw.DrawMeshNowOrLater(mesh, loc, quaternion, Tex.getEyeGlowEffect(color, gender, type, 0).MatSingle, flags.FlagSet(PawnRenderFlags.Portrait));
+                                GenDraw.DrawMeshNowOrLater(mesh, loc, quaternion, Tex.getEyeGlowEffect(color, gender, type, 0).MatSingle, true);
                             }
                             else
                             {
-                                GenDraw.DrawMeshNowOrLater(mesh, loc, quaternion, Tex.getEyeGlowEffect(color, gender, type, 1).MatSingle, flags.FlagSet(PawnRenderFlags.Portrait));
+                                GenDraw.DrawMeshNowOrLater(mesh, loc, quaternion, Tex.getEyeGlowEffect(color, gender, type, 1).MatSingle, true);
                             }
                         }
                     }

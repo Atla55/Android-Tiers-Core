@@ -247,6 +247,8 @@ namespace MOARANDROIDS
         public static List<string> ExceptionAndroidWithoutSkinList = new List<string> { };
         public static List<string> ExceptionAndroidWithSkinList = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX" };
 
+        public static List<string> ExceptionAndroidWithGlowingEyes = new List<string> { "ATPP_Android2TX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
+
         public static List<string> ExceptionNanoKits = new List<string> { "ATPP_AndroidNanokitBasic", "ATPP_AndroidNanokitIntermediate", "ATPP_AndroidNanokitAdvanced" };
         public static List<string> ExceptionRegularAndroidList = new List<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
         public static List<string> ExceptionAndroidList = new List<string> { "Android1Tier", "Android2Tier","Android3Tier","Android4Tier","Android5Tier", "M7Mech", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
