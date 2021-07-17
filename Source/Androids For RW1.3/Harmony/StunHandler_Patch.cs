@@ -12,22 +12,19 @@ namespace MOARANDROIDS
     internal class StunHandler_Patch
 
     {
-        /*
-         * Allow android tiers to be affected by EMP
-         */
-        [HarmonyPatch(new Type[] { typeof(DamageInfo) })]
-        [HarmonyPatch(typeof(StunHandler), "Notify_DamageApplied")]
-        public class Notify_DamageApplied_Patch
+
+        [HarmonyPatch(typeof(StunHandler), "get_AffectedByEMP")]
+        public class get_AffectedByEMP_Patch
         {
-            [HarmonyPrefix]
-            public static void Listener(DamageInfo dinfo, ref bool ___stunFromEMP, Thing ___parent )
+            [HarmonyPostfix]
+            public static void Listener(ref bool __result, Thing ___parent)
             {
-                if(___parent is Pawn)
+                if (___parent is Pawn)
                 {
                     Pawn pawn = (Pawn)___parent;
-                    if ((Utils.ExceptionAndroidWithoutSkinList.Contains(pawn.def.defName) ) || Utils.ExceptionAndroidAnimals.Contains(pawn.def.defName))
+                    if ( Utils.ExceptionAndroidWithoutSkinList.Contains(pawn.def.defName) || Utils.ExceptionAndroidAnimals.Contains(pawn.def.defName))
                     {
-                        ___stunFromEMP = true;
+                        __result = true;
                     }
                 }
             }
