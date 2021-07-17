@@ -231,7 +231,6 @@ namespace MOARANDROIDS
 
                     Utils.playVocal("soundDefSkyCloudMindDownloadCompleted");
 
-
                     resetUploadStuff();
                 }
 
@@ -327,7 +326,7 @@ namespace MOARANDROIDS
                 }
             }
 
-            //SI destinataire de la duplication colon regular et emetteur prisonnier 
+            //SI destinataire de la duplication colon regular et  prisonnier 
             if (cpawn.IsPrisoner && !recipient.IsPrisoner)
             {
                 if (recipient.Faction != cpawn.Faction)
@@ -1083,7 +1082,7 @@ namespace MOARANDROIDS
                 Utils.soundDefSurrogateConnection.PlayOneShot(null);
                 FleckMaker.ThrowDustPuffThick(controlled.Position.ToVector3Shifted(), controlled.Map, 4.0f, Color.blue);
             }
-
+            //Log.Message("i1");
             //Définition du controlleur
             cas.surrogateController = cp;
             cas.lastController = cp;
@@ -1101,7 +1100,7 @@ namespace MOARANDROIDS
             }
 
             availableSX.Add(controlled);
-
+            //Log.Message("i2");
             if (!external)
                 Messages.Message("ATPP_SurrogateConnectionOK".Translate(cp.LabelShortCap, controlled.LabelShortCap), cp, MessageTypeDefOf.PositiveEvent);
 
@@ -1130,7 +1129,7 @@ namespace MOARANDROIDS
                     }
                 }
             }
-
+            //Log.Message("i3");
             //Si pas la premiere connecction alors duplication 
             if (!inMainSX)
             {
@@ -1149,7 +1148,7 @@ namespace MOARANDROIDS
                 NameTriple nam = (NameTriple)controlled.Name;
                 cp.Name = new NameTriple(nam.First, nam.Nick, nam.Last);
             }
-
+            //Log.Message("i5");
             //On enleve le hediff de no host
             Hediff he = controlled.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
             if (he != null)
@@ -1159,7 +1158,7 @@ namespace MOARANDROIDS
 
             //On raffraichis la barre pour que le surrogate controlé y soit listé
             Find.ColonistBar.MarkColonistsDirty();
-
+            //Log.Message("i6");
             //On duplique les prioritées du controleur sur le SX
             if (!externalController)
             {
@@ -1179,12 +1178,13 @@ namespace MOARANDROIDS
                     controlled.timetable.SetAssignment(i, cp.timetable.GetAssignment(i));
                 }
             }
-
+            //Log.Message("i7");
             //Add surrogate in mapPawns
-            if (Settings.hideInactiveSurrogates)
+            if (!externalController && Settings.hideInactiveSurrogates)
             {
                 controlled.Map.mapPawns.RegisterPawn(controlled);
             }
+            //Log.Message("i8");
         }
 
         /*
@@ -1203,7 +1203,6 @@ namespace MOARANDROIDS
             //Pas de surrogate controllé
             if (!isThereSX() || (surrogate != null && !availableSX.Contains(surrogate)))
                 return;
-
             //Demande d'arret de toutes les connexions
             if (surrogate == null)
             {
@@ -1214,12 +1213,17 @@ namespace MOARANDROIDS
                     Utils.initBodyAsSurrogate(s);
                     //Restauration nom
                     Utils.restoreSavedSurrogateName(s);
+                    if (!externalController && Settings.hideInactiveSurrogates && s != null && s.Map != null)
+                        s.Map.mapPawns.DeRegisterPawn(s);
                 }
                 if (SX != null)
                 {
                     //Restauration nom SX
                     Utils.restoreSavedSurrogateName(cp);
                     Utils.PermutePawn(SX, cp);
+
+                    if (!externalController && Settings.hideInactiveSurrogates && SX != null && SX.Map != null)
+                        SX.Map.mapPawns.DeRegisterPawn(SX);
                 }
             }
             else
@@ -1231,12 +1235,18 @@ namespace MOARANDROIDS
                     Utils.initBodyAsSurrogate(surrogate);
                     //Restauration nom
                     Utils.restoreSavedSurrogateName(surrogate);
+
+                    if (!externalController && Settings.hideInactiveSurrogates && surrogate != null && surrogate.Map != null)
+                        SX.Map.mapPawns.DeRegisterPawn(surrogate);
                 }
                 else
                 {
                     //Restauration nom SX
                     Utils.restoreSavedSurrogateName(cp);
                     Utils.PermutePawn(surrogate, cp);
+
+                    if (!externalController && Settings.hideInactiveSurrogates && cp != null && cp.Map != null)
+                        cp.Map.mapPawns.DeRegisterPawn(cp);
                 }
             }
 
@@ -1344,7 +1354,6 @@ namespace MOARANDROIDS
                     cas.surrogateController = null;
 
                 //Utils.disableGlobalKill = true;
-
                 //On effectue des operations directes sur les heddifs sans passer par AddHediff et RemoveHediff car cest surfonction peuvent checquer la mort du pawn et appelez Kill
                 // (sachant que cette routine est elle meme appelée lors d'un Kill via notre patch cela duplique la mort de la creature courante) 
                 //On enleve le hediff de remotely controled
@@ -1361,7 +1370,6 @@ namespace MOARANDROIDS
                         csurrogate.health.RemoveHediff(he);
                     }
                 }
-
 
                 //On remet le hediff de no host au clone
                 if (!externalController && !preventNoHost)
@@ -1389,7 +1397,6 @@ namespace MOARANDROIDS
                         csurrogate.health.RemoveHediff(he);
                     }
                 }
-
 
 
                 //Utils.disableGlobalKill = false;
@@ -1423,7 +1430,7 @@ namespace MOARANDROIDS
                     controlMode = false;
                     Utils.GCATPP.disconnectUser(cp);
                 }
-
+                //Log.Message("S1");
                 //On restaure a zero les worksettings du SX
 
                 if (csurrogate.def.defName != "M7Mech" && csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
@@ -1440,7 +1447,7 @@ namespace MOARANDROIDS
                     csurrogate.playerSettings.AreaRestriction = null;
                     csurrogate.playerSettings.hostilityResponse = HostilityResponseMode.Flee;
                 }
-
+                //Log.Message("S2");
                 if (csurrogate.timetable != null)
                 {
                     for (int i = 0; i != 24; i++)
@@ -1449,15 +1456,10 @@ namespace MOARANDROIDS
                     }
                 }
             }
+            //Log.Message("S3");
             //Log.Message("SetControlledSurrogate FIN");
 
-            //remove surrogate from mapPawns
-            if (Settings.hideInactiveSurrogates)
-            {
-                surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
-            }
-
-
+            //Log.Message("S4");
             //Retrait du referencement du surrogate mentionné
             if (surrogate == null)
             {
