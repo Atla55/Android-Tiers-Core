@@ -55,7 +55,7 @@ namespace BlueLeakTest
         }
     }
 
-    /*[HarmonyPatch(typeof(RimWorld.HealthCardUtility))]
+    [HarmonyPatch(typeof(RimWorld.HealthCardUtility))]
     [HarmonyPatch("DrawOverviewTab")]
     static public class AndroidLabelOverwrite
     {
@@ -72,7 +72,7 @@ namespace BlueLeakTest
 
             return codeInstructions;
         }
-    }*/
+    }
         [HarmonyPatch(typeof(JobDriver_Vomit))]
     [HarmonyPatch("MakeNewToils")]
     internal static class DeclineVomitJob

@@ -104,7 +104,7 @@ namespace MOARANDROIDS
 
                     try
                     {
-                        Utils.ExceptionRepairableFrameworkHediff = new List<HediffDef> { HediffDefOf.Scratch, HediffDefOf.Bite, HediffDefOf.Burn, HediffDefOf.Cut, HediffDefOf.Gunshot, HediffDefOf.Stab, HediffDefOf.SurgicalCut };
+                        Utils.ExceptionRepairableFrameworkHediff = new HashSet<HediffDef> { HediffDefOf.Scratch, HediffDefOf.Bite, HediffDefOf.Burn, HediffDefOf.Cut, HediffDefOf.Gunshot, HediffDefOf.Stab, HediffDefOf.SurgicalCut };
 
                         HediffDef hd = DefDatabase<HediffDef>.GetNamed("Shredded", false);
                         if (hd != null)

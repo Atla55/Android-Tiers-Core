@@ -226,6 +226,7 @@
     <Compile Include="Dialogs\Dialog_Msg.cs" />
     <Compile Include="Dialogs\Dialog_SkillUp.cs" />
     <Compile Include="Enum\AndroidPaintColor.cs" />
+    <Compile Include="Extensions\ArrayExtensions.cs" />
     <Compile Include="Harmony\Alert_ColonistNeedsRescuing_Patch.cs" />
     <Compile Include="Harmony\Alert_NeedColonistBeds_Patch.cs" />
     <Compile Include="Harmony\ApparelGraphicRecordGetter_Patch.cs" />

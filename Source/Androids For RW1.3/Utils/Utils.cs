@@ -195,34 +195,35 @@ namespace MOARANDROIDS
         public static List<PawnKindDef> AndroidsXSeriePKDHostile = new List<PawnKindDef>();
         public static List<PawnKindDef> AndroidsXISeriePKDHostile = new List<PawnKindDef>();
 
-        public static List<string> ExceptionCooler = new List<string> { "Cooler" };
-        public static List<string> ExceptionHeater = new List<string> { "Heater" };
+        public static string[] ExceptionCooler = new string[] { "Cooler" };
+        public static string[] ExceptionHeater = new string[] { "Heater" };
         //public static List<string> ExceptionTurrets = new List<string> { "Turret_MiniTurret", "Turret_Autocannon", "StandardTurretGun", "SniperTurretGun", "LazerTurretGun", "EnergyTurretGun" };
 
-        public static List<string> ExceptionBlacklistedFactionNoSurrogate = new List<string> { "RRY_Yautja_JungleClan", "RRY_Yautja_BadBloodFaction", "RRY_Xenomorph", //AVP
+        public static string[] ExceptionBlacklistedFactionNoSurrogate = new string[] { "RRY_Yautja_JungleClan", "RRY_Yautja_BadBloodFaction", "RRY_Xenomorph", //AVP
         "ElderThing_Faction",  //ElderThings
         "Harrowed", //Harrowed
         "FriendlyConstruct","Crystal", //Crystalloid 
         "Imouto_Civil","ImoutoTribe"  //ImoutoTribe
-        };
+        }.GetSortedArray();
 
+        public static List<string> ExceptionAndroidWithGlowingEyes = new List<string> { "ATPP_Android2TX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
 
-        public static List<string> ExceptionSkinColors = new List<string> { "Verylight", "Light", "Fair", "Midbrown", "Darkbrown","Verydark" };
-        public static List<string> ExceptionHairColors = new List<string> { "Blond", "Black", "Auburn", "Grey", "Ginger", "White" };
+        public static string[] ExceptionSkinColors = new string[] { "Verylight", "Light", "Fair", "Midbrown", "Darkbrown", "Verydark" }.GetSortedArray();
+        public static string[] ExceptionHairColors = new string[] { "Blond", "Black", "Auburn", "Grey", "Ginger", "White" }.GetSortedArray();
 
-        public static List<string> ExceptionBodyTypeDefnameAndroidWithSkinMale = new List<string> { "ATPP_BodyTypeMaleHurted22TX", "ATPP_BodyTypeMaleHurted12TX", "ATPP_BodyTypeMaleHurted12KTX", "ATPP_BodyTypeMaleHurted22KTX", "ATPP_BodyTypeMaleHurted13TX", "ATPP_BodyTypeMaleHurted23TX", "ATPP_BodyTypeMaleHurted14TX", "ATPP_BodyTypeMaleHurted24TX" };
-        public static List<string> ExceptionBodyTypeDefnameAndroidWithSkinFemale = new List<string> { "ATPP_BodyTypeFemaleHurted12TX", "ATPP_BodyTypeFemaleHurted22TX", "ATPP_BodyTypeFemaleHurted22KTX", "ATPP_BodyTypeFemaleHurted12KTX", "ATPP_BodyTypeFemaleHurted13TX", "ATPP_BodyTypeFemaleHurted23TX", "ATPP_BodyTypeFemaleHurted14TX", "ATPP_BodyTypeFemaleHurted24TX" };
-        public static List<string> ExceptionAutodoors = new List<string> { "Autodoor" };
+        public static HashSet<string> ExceptionBodyTypeDefnameAndroidWithSkinMale = new HashSet<string> { "ATPP_BodyTypeMaleHurted22TX", "ATPP_BodyTypeMaleHurted12TX", "ATPP_BodyTypeMaleHurted12KTX", "ATPP_BodyTypeMaleHurted22KTX", "ATPP_BodyTypeMaleHurted13TX", "ATPP_BodyTypeMaleHurted23TX", "ATPP_BodyTypeMaleHurted14TX", "ATPP_BodyTypeMaleHurted24TX" };
+        public static HashSet<string> ExceptionBodyTypeDefnameAndroidWithSkinFemale = new HashSet<string> { "ATPP_BodyTypeFemaleHurted12TX", "ATPP_BodyTypeFemaleHurted22TX", "ATPP_BodyTypeFemaleHurted22KTX", "ATPP_BodyTypeFemaleHurted12KTX", "ATPP_BodyTypeFemaleHurted13TX", "ATPP_BodyTypeFemaleHurted23TX", "ATPP_BodyTypeFemaleHurted14TX", "ATPP_BodyTypeFemaleHurted24TX" };
+        public static string[] ExceptionAutodoors = new string[] { "Autodoor" };
 
-        public static List<string> ExceptionSkyCloudCores = new List<string> { "ATPP_SkyCloudCore" };
-        public static List<string> ExceptionQEEGS = new List<string> { "ATPP_GS_TX2KMale", "ATPP_GS_TX2KFemale", "ATPP_GS_TX3Male", "ATPP_GS_TX3Female", "ATPP_GS_TX4Male", "ATPP_GS_TX4Female"};
+        public static string[] ExceptionSkyCloudCores = new string[] { "ATPP_SkyCloudCore" };
+        public static string[] ExceptionQEEGS = new string[] { "ATPP_GS_TX2KMale", "ATPP_GS_TX2KFemale", "ATPP_GS_TX3Male", "ATPP_GS_TX3Female", "ATPP_GS_TX4Male", "ATPP_GS_TX4Female" }.GetSortedArray();
 
-        public static List<string> ExceptionSkillServers = new List<string> { "ATPP_I500Skill", "ATPP_I300Skill", "ATPP_I100Skill" };
-        public static List<string> ExceptionSecurityServers = new List<string> { "ATPP_I500Security", "ATPP_I300Security", "ATPP_I100Security" };
-        public static List<string> ExceptionHackingServers = new List<string> { "ATPP_I500Hacking", "ATPP_I300Hacking", "ATPP_I100Hacking" };
-        public static List<string> ExceptionSurrogatePodGuest = new List<string> { "ATPP_AndroidPodGuest", "AndroidOperationBedGuest" };
-        public static List<string> ExceptionSurrogatePod = new List<string> { "ATPP_AndroidPod", "AndroidOperationBed" };
-        public static List<string> ExceptionSurrogateM7Pod = new List<string> { "ATPP_AndroidPodMech" };
+        public static string[] ExceptionSkillServers = new string[] { "ATPP_I500Skill", "ATPP_I300Skill", "ATPP_I100Skill" }.GetSortedArray();
+        public static string[] ExceptionSecurityServers = new string[] { "ATPP_I500Security", "ATPP_I300Security", "ATPP_I100Security" }.GetSortedArray();
+        public static string[] ExceptionHackingServers = new string[] { "ATPP_I500Hacking", "ATPP_I300Hacking", "ATPP_I100Hacking" }.GetSortedArray();
+        public static string[] ExceptionSurrogatePodGuest = new string[] { "ATPP_AndroidPodGuest", "AndroidOperationBedGuest" }.GetSortedArray();
+        public static string[] ExceptionSurrogatePod = new string[] { "ATPP_AndroidPod", "AndroidOperationBed" }.GetSortedArray();
+        public static string[] ExceptionSurrogateM7Pod = new string[] { "ATPP_AndroidPodMech" };
         public static string defNameOldSecurityServer = "ATPP_I100Security";
         public static string defNameBasicSecurityServer = "ATPP_I300Security";
         public static string defNameAdvancedSecurityServer = "ATPP_I500Security";
@@ -235,63 +236,61 @@ namespace MOARANDROIDS
         public static string defNameBasicSkillServer = "ATPP_I300Skill";
         public static string defNameAdvancedSkillServer = "ATPP_I500Skill";
 
-        public static List<string> ExceptionBionicHaveFeet = new List<string> { "ARLeg", "HydraulicLeg", "MakeshiftRLeg", "BRLeg", "AR2Leg"};
-        public static List<string> ExceptionBionicHaveHand = new List<string> { "MiningArm", "HydraulicArm", "MakeshiftRArm", "BRArm", "ARArm", "AR2Arm" };
+        public static string[] ExceptionBionicHaveFeet = new string[] { "ARLeg", "HydraulicLeg", "MakeshiftRLeg", "BRLeg", "AR2Leg" }.GetSortedArray();
+        public static string[] ExceptionBionicHaveHand = new string[] { "MiningArm", "HydraulicArm", "MakeshiftRArm", "BRArm", "ARArm", "AR2Arm" }.GetSortedArray();
 
-        public static List<string> ExceptionPlayerStartingAndroidPawnKindList= new List<string> { "AndroidT1ColonistGeneral", "AndroidT2ColonistGeneral", "AndroidT3ColonistGeneral", "AndroidT4ColonistGeneral", "AndroidT5ColonistGeneral", "ATPP_Android2TXKind", "ATPP_Android3TXKind", "ATPP_Android4TXKind", "ATPP_Android2KTXKind", "ATPP_Android2KITXKind", "ATPP_Android2ITXKind", "ATPP_Android3ITXKind", "ATPP_Android4ITXKind" };
+        public static HashSet<string> ExceptionPlayerStartingAndroidPawnKindList = new HashSet<string> { "AndroidT1ColonistGeneral", "AndroidT2ColonistGeneral", "AndroidT3ColonistGeneral", "AndroidT4ColonistGeneral", "AndroidT5ColonistGeneral", "ATPP_Android2TXKind", "ATPP_Android3TXKind", "ATPP_Android4TXKind", "ATPP_Android2KTXKind", "ATPP_Android2KITXKind", "ATPP_Android2ITXKind", "ATPP_Android3ITXKind", "ATPP_Android4ITXKind" };
 
-        public static List<string> ExceptionAndroidsDontRust = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
+        public static HashSet<string> ExceptionAndroidsDontRust = new HashSet<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
 
-        public static List<string> ExceptionTXSerie = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
+        public static HashSet<string> ExceptionTXSerie = new HashSet<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
 
-        public static List<string> ExceptionAndroidWithoutSkinList = new List<string> { };
-        public static List<string> ExceptionAndroidWithSkinList = new List<string> { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX" };
+        public static HashSet<string> ExceptionAndroidWithoutSkinList = new HashSet<string>();
+        public static string[] ExceptionAndroidWithSkinList = new string[] { "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX" }.GetSortedArray();
 
-        public static List<string> ExceptionAndroidWithGlowingEyes = new List<string> { "ATPP_Android2TX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
+        public static string[] ExceptionNanoKits = new string[] { "ATPP_AndroidNanokitBasic", "ATPP_AndroidNanokitIntermediate", "ATPP_AndroidNanokitAdvanced" }.GetSortedArray();
+        public static HashSet<string> ExceptionRegularAndroidList = new HashSet<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
+        public static HashSet<string> ExceptionAndroidList = new HashSet<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "M7Mech", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
+        public static HashSet<string> ExceptionAndroidCorpseList = new HashSet<string> { "Corpse_Android1Tier", "Corpse_Android2Tier", "Corpse_Android3Tier", "Corpse_Android4Tier", "Corpse_Android5Tier", "Corpse_AT_HellUnit", "Corpse_M7Mech" };
+        public static string[] ExceptionAndroidListBasic = new string[] { "Android1Tier", "Android2Tier", "M7Mech", "ATPP_Android2TX", "ATPP_Android2KTX", "ATPP_Android2ITX" }.GetSortedArray();
+        public static HashSet<string> ExceptionAndroidListAdvanced = new HashSet<string> { "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
+        public static string[] ExceptionAndroidAnimalPowered = new string[] { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidFox" }.GetSortedArray();
+        public static string[] ExceptionAndroidAnimals = new string[] { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidChicken", "AndroidFox" }.GetSortedArray();
 
-        public static List<string> ExceptionNanoKits = new List<string> { "ATPP_AndroidNanokitBasic", "ATPP_AndroidNanokitIntermediate", "ATPP_AndroidNanokitAdvanced" };
-        public static List<string> ExceptionRegularAndroidList = new List<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
-        public static List<string> ExceptionAndroidList = new List<string> { "Android1Tier", "Android2Tier","Android3Tier","Android4Tier","Android5Tier", "M7Mech", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
-        public static List<string> ExceptionAndroidCorpseList = new List<string> { "Corpse_Android1Tier", "Corpse_Android2Tier", "Corpse_Android3Tier", "Corpse_Android4Tier", "Corpse_Android5Tier", "Corpse_AT_HellUnit","Corpse_M7Mech"};
-        public static List<string> ExceptionAndroidListBasic = new List<string> { "Android1Tier", "Android2Tier", "M7Mech", "ATPP_Android2TX", "ATPP_Android2KTX", "ATPP_Android2ITX" };
-        public static List<string> ExceptionAndroidListAdvanced = new List<string> { "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
-        public static List<string> ExceptionAndroidAnimalPowered = new List<string> { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidFox" };
-        public static List<string> ExceptionAndroidAnimals = new List<string> { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidChicken", "AndroidFox" };
+        public static HashSet<string> BlacklistAndroidHediff = new HashSet<string> { "VacuumDamageHediff", "ZeroGSickness", "SpaceHypoxia", "ClinicalDeathAsphyxiation", "ClinicalDeathNoHeartbeat", "FatalRad", "RimatomicsRadiation", "RadiationIncurable" };
+        public static string[] BlacklistMindTraits = new string[] { "NightOwl", "Insomniac", "Codependent", "HeavySleeper", "Polygamous", "Beauty", "Immunity" }.GetSortedArray();
+        public static HashSet<string> BlacklistAndroidFood = new HashSet<string> { "SmokeleafJoint", "Yayo", "PsychiteTea", "Flake", "Penoxycyline", "Luciferium", "GoJuice", "Ambrosia", "Beer", "RC2_Coffee", "" };
 
-        public static List<string> BlacklistAndroidHediff = new List<string> { "VacuumDamageHediff", "ZeroGSickness", "SpaceHypoxia", "ClinicalDeathAsphyxiation", "ClinicalDeathNoHeartbeat", "FatalRad", "RimatomicsRadiation", "RadiationIncurable" };
-        public static List<string> BlacklistMindTraits = new List<string> { "NightOwl", "Insomniac", "Codependent", "HeavySleeper", "Polygamous", "Beauty", "Immunity" };
-        public static List<string> BlacklistAndroidFood = new List<string> { "SmokeleafJoint", "Yayo", "PsychiteTea", "Flake", "Penoxycyline", "Luciferium", "GoJuice", "Ambrosia", "Beer", "RC2_Coffee", "" };
+        public static string[] ExceptionNeuralChip = new string[] { "ATPP_HediffVX3Chip", "ATPP_HediffVX2Chip", "ATPP_HediffVX1Chip", "ATPP_HediffVX0Chip" }.GetSortedArray();
 
-        public static List<string> ExceptionNeuralChip = new List<string> { "ATPP_HediffVX3Chip", "ATPP_HediffVX2Chip", "ATPP_HediffVX1Chip", "ATPP_HediffVX0Chip" };
+        public static HashSet<string> ExceptionVXNeuralChipSurgery = new HashSet<string> { "ATPP_InstallVX0ChipOnAndroid", "ATPP_InstallVX0Chip", "ATPP_InstallVX1ChipOnAndroid", "ATPP_InstallVX1Chip", "ATPP_InstallVX2ChipOnAndroid", "ATPP_InstallVX2Chip", "ATPP_InstallVX3ChipOnAndroid", "ATPP_InstallVX3Chip" };
+        public static string[] ExceptionArtificialBrainsSurgery = new string[] { "ATPP_InstallT1ArtificialBrain", "ATPP_InstallT2ArtificialBrain", "ATPP_InstallT3ArtificialBrain", "ATPP_InstallT4ArtificialBrain" }.GetSortedArray();
 
-        public static List<string> ExceptionVXNeuralChipSurgery = new List<string> { "ATPP_InstallVX0ChipOnAndroid", "ATPP_InstallVX0Chip", "ATPP_InstallVX1ChipOnAndroid", "ATPP_InstallVX1Chip", "ATPP_InstallVX2ChipOnAndroid", "ATPP_InstallVX2Chip", "ATPP_InstallVX3ChipOnAndroid", "ATPP_InstallVX3Chip" };
-        public static List<string> ExceptionArtificialBrainsSurgery = new List<string> { "ATPP_InstallT1ArtificialBrain", "ATPP_InstallT2ArtificialBrain", "ATPP_InstallT3ArtificialBrain", "ATPP_InstallT4ArtificialBrain" };
-
-        public static List<string> ExceptionAndroidOnlyHediffs = new List<string> { "PlatingSteel", "PlatingPlasteel", "PlatingComposite", "MiningArm", "HydraulicFrame", "HydraulicLeg",
+        public static HashSet<string> ExceptionAndroidOnlyHediffs = new HashSet<string> { "PlatingSteel", "PlatingPlasteel", "PlatingComposite", "MiningArm", "HydraulicFrame", "HydraulicLeg",
             "HydraulicArm", "MakeshiftRLeg", "MakeshiftRArm","ALReceptor","ARLeg","AHeatsink","ACoolantPump","ABattery","AMStorage","ATransformer","AVAdapter","AdvRearCounterweight","AdvJawAndroid",
             "BRArm","BRLeg","BLReceptor","BHeatsink","BBattery","BMStorage","BasicRearCounterweight","CrudeJawAndroid","BCoolantPump","BTransformer","BVAdapter","ARArm","PositronMind",
         "SoldierMind","BuilderMind","SurgeonMind","SpeedMind","GeoMind","MechanicMind","CookingMind","CharismaMind","NegotiatorMind","ZoologyMind","AgriculturalMind","UnskilledMind","AR2Arm","AR2Leg","AL2Receptor","A2Heatsink",
         "A2CoolantPump","A2Battery","A2MStorage","A2Transformer","A2VAdapter","HearingSensorCrude","HearingSensorAdv","HearingSensorArch","SmellSensorAdv","EvolvingMind"};
 
-        public static List<string> ExceptionAndroidCanReloadWithPowerList;
+        public static List<string> ExceptionAndroidCanReloadWithPowerList = new List<string>();
 
 
-        public static List<string> AndroidOldAgeHediffCPU = new List<string> { "CorruptMemory"};
-        public static List<string> AndroidOldAgeHediffCooling = new List<string> { "ExaggeratedHealing" };
-        public static List<string> AndroidOldAgeHediffFramework = new List<string> { "DecayedFrame" };
-        public static List<string> AndroidOldAgeHediffHydraulic = new List<string> { "FaultyPump", "WeakValves" };
+        public static string[] AndroidOldAgeHediffCPU = new string[] { "CorruptMemory" };
+        public static string[] AndroidOldAgeHediffCooling = new string[] { "ExaggeratedHealing" };
+        public static string[] AndroidOldAgeHediffFramework = new string[] { "DecayedFrame" };
+        public static string[] AndroidOldAgeHediffHydraulic = new string[] { "FaultyPump", "WeakValves" };
 
-        public static List<string> IgnoredThoughtsByAllAndroids = new List<string> { "SoakingWet", "EnvironmentCold", "AteWithoutTable", "EnvironmentHot", "SleptInCold", "SleptInHeat", "AteRawFood", "AteAwfulMeal", "AteKibble", "AteInsectMeatDirect", "AteInsectMeatAsIngredient" };
-        public static List<string> IgnoredThoughtsByBasicAndroids = new List<string> { "KnowColonistOrganHarvested", "ColonistBanished", "WasImprisoned", "KnowGuestOrganHarvested","KnowPrisonerSold","AteRottenFood","BondedAnimalBanished", "ColonistBanishedToDie", "ButcheredHumanlikeCorpse", "PrisonerBanishedToDie","KnowButcheredHumanlikeCorpse","EnvironmentDark", "ApparelDamaged", "DeadMansApparel",
+        public static HashSet<string> IgnoredThoughtsByAllAndroids = new HashSet<string> { "SoakingWet", "EnvironmentCold", "AteWithoutTable", "EnvironmentHot", "SleptInCold", "SleptInHeat", "AteRawFood", "AteAwfulMeal", "AteKibble", "AteInsectMeatDirect", "AteInsectMeatAsIngredient" };
+        public static HashSet<string> IgnoredThoughtsByBasicAndroids = new HashSet<string> { "KnowColonistOrganHarvested", "ColonistBanished", "WasImprisoned", "KnowGuestOrganHarvested","KnowPrisonerSold","AteRottenFood","BondedAnimalBanished", "ColonistBanishedToDie", "ButcheredHumanlikeCorpse", "PrisonerBanishedToDie","KnowButcheredHumanlikeCorpse","EnvironmentDark", "ApparelDamaged", "DeadMansApparel",
             "HumanLeatherApparelSad", "HumanLeatherApparelHappy","SoldPrisoner", "ExecutedPrisoner", "KilledColonyAnimal","SleptOutside",
             "SleptOnGround","KnowGuestExecuted","KnowColonistExecuted","KnowColonistDied","WitnessedDeathAlly","WitnessedDeathNonAlly",
             "WitnessedDeathFamily","WitnessedDeathBloodlust","KilledHumanlikeBloodlust","PawnWithGoodOpinionDied","PawnWithBadOpinionDied",
             "AteCorpse","ObservedLayingCorpse", "ObservedLayingRottingCorpse", "AteHumanlikeMeatDirect","AteHumanlikeMeatDirectCannibal","AteHumanlikeMeatAsIngredient","AteHumanlikeMeatAsIngredientCannibal","ATPP_VX0PuppetThought" };
 
-        public static List<string> IgnoredInteractionsByBasicAndroids = new List<string> { "RomanceAttempt", "MarriageProposal", "Breakup"};
+        public static string[] IgnoredInteractionsByBasicAndroids = new string[] { "RomanceAttempt", "MarriageProposal", "Breakup" }.GetSortedArray();
 
 
-        public static List<HediffDef> ExceptionRepairableFrameworkHediff;
+        public static HashSet<HediffDef> ExceptionRepairableFrameworkHediff;
 
         public static ResearchProjectDef ResearchProjectSkyMindLAN;
         public static ResearchProjectDef ResearchProjectSkyMindWAN;
@@ -930,7 +929,7 @@ namespace MOARANDROIDS
             return result == Widgets.DraggableResult.Pressed || result == Widgets.DraggableResult.DraggedThenPressed;
         }
 
-        public static bool ContainsAny(this string haystack, List<string> needles)
+        public static bool ContainsAny(this string haystack, IEnumerable<string> needles)
         {
             foreach (string needle in needles)
             {
@@ -1011,7 +1010,7 @@ namespace MOARANDROIDS
             return cas.isBlankAndroid;
         }
 
-        public static bool haveAndroidOldAgeHediff(this Pawn pawn, List<string> issues)
+        public static bool haveAndroidOldAgeHediff(this Pawn pawn, string[] issues)
         {
             foreach(var h in pawn.health.hediffSet.hediffs)
             {
