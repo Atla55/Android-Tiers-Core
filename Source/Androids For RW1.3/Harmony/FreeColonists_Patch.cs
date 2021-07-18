@@ -40,7 +40,7 @@ namespace MOARANDROIDS
         /*
          * Pawn inside SkyCloud are not interpreted and suspended 
          */
-        [HarmonyPatch(typeof(Thing), "get_Suspended")]
+        /*[HarmonyPatch(typeof(Thing), "get_Suspended")]
         public class Suspended_Patch
         {
             [HarmonyPostfix]
@@ -52,6 +52,6 @@ namespace MOARANDROIDS
                         __result = true;
                 }
             }
-        }
+        }*/
     }
 }

@@ -47,18 +47,18 @@ namespace MOARANDROIDS
         }
 
 
-        [HarmonyPatch(typeof(Pawn_NeedsTracker), "NeedsTrackerTick")]
+        /*[HarmonyPatch(typeof(Pawn_NeedsTracker), "NeedsTrackerTick")]
         public class NeedsTrackerTick_Patch
         {
-            [HarmonyPrefix]
-            public static bool Listener(Pawn ___pawn)
+            [HarmonyPostfix]
+            public static void Listener(Pawn ___pawn)
             {
                 CompSurrogateOwner cso = ___pawn.TryGetComp<CompSurrogateOwner>();
                 if (cso != null && cso.skyCloudHost != null)
-                    return false;
-
-                return true;
+                {
+                    Log.Message("Pawn_NeedsTracker " + ___pawn.LabelCap);
+                }
             }
-        }
+        }*/
     }
 }

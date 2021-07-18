@@ -94,6 +94,7 @@ namespace MOARANDROIDS
             foreach(var m in storedMinds)
             {
                 Utils.removeMindBlacklistedTrait(m);
+                Current.Game.tickManager.DeRegisterAllTickabilityFor(m);
             }
         }
 

@@ -185,6 +185,7 @@ namespace MOARANDROIDS
 
                     //Stockage pawn actuel
                     csc.storedMinds.Add(cpawn);
+                    Current.Game.tickManager.DeRegisterAllTickabilityFor(cpawn);
 
                     //Suppression traits blacklistés pour les esprits
                     Utils.removeMindBlacklistedTrait(cpawn);
