@@ -11,6 +11,8 @@ namespace MOARANDROIDS
 {
     public class Building_ReloadStation : Building
     {
+        private List<Pawn> tmpPawnsCanReach = new List<Pawn>();
+
         public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
             base.SpawnSetup(map, respawningAfterLoad);
@@ -52,21 +54,37 @@ namespace MOARANDROIDS
             return null;
         }
 
-        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
+        public override IEnumerable<FloatMenuOption> GetMultiSelectFloatMenuOptions(List<Pawn> selPawns)
         {
-            FloatMenuOption failureReason = this.GetFailureReason(myPawn);
-            if (failureReason != null)
+            FloatMenuOption failureReason = null;
+            this.tmpPawnsCanReach.Clear();
+            foreach(var cp in selPawns)
             {
-                yield return failureReason;
+                failureReason = this.GetFailureReason(cp);
+                if (failureReason == null)
+                {
+                    this.tmpPawnsCanReach.Add(cp);
+                }
+            }
+            
+            if (this.tmpPawnsCanReach.NullOrEmpty<Pawn>())
+            {
+                if (failureReason != null)
+                    yield return failureReason;
+                else
+                    yield break;
             }
             else
             {
                
                  yield return new FloatMenuOption("ATPP_ForceReload".Translate(), delegate(){
                      CompReloadStation rs = this.TryGetComp<CompReloadStation>();
-
-                     Job job = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(rs.getFreeReloadPlacePos(myPawn)), new LocalTargetInfo(this));
-                     myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                     foreach(var cp in this.tmpPawnsCanReach) {
+                         IntVec3 reloadPlacePos = rs.getFreeReloadPlacePos(cp);
+                         Log.Message("Here for " + cp.LabelCap);
+                         Job job = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(reloadPlacePos), new LocalTargetInfo(this));
+                         cp.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                     }
 
                  }, MenuOptionPriority.Default, null, null, 0f, null, null);
             }
