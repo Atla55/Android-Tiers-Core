@@ -48,6 +48,9 @@ namespace MOARANDROIDS
                     Utils.hediffRusted = DefDatabase<HediffDef>.GetNamed("ATPP_Rusted");
                     Utils.hediffNoHost = DefDatabase<HediffDef>.GetNamed("ATPP_NoHost");
                     Utils.hediffBlankAndroid = DefDatabase<HediffDef>.GetNamed("ATPP_BlankAndroid");
+                    Utils.hediffMindUpload = DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload");
+                    Utils.hediffInRemoteControl = DefDatabase<HediffDef>.GetNamed("ATPP_InRemoteControlMode");
+
 
                     Utils.soundDefSurrogateConnection = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateConnection");
                     Utils.soundDefSurrogateConnectionStopped = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateDisconnect");

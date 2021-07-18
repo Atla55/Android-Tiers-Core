@@ -103,6 +103,8 @@ namespace MOARANDROIDS
         public static HediffDef hediffLowNetworkSignal;
         public static HediffDef hediffRusted;
         public static HediffDef hediffBlankAndroid;
+        public static HediffDef hediffMindUpload;
+        public static HediffDef hediffInRemoteControl;
 
         public static SoundDef soundDefSkyCloudMindQuarantineMentalState;
         public static SoundDef soundDefSkyCloudMindUploadCompleted;
