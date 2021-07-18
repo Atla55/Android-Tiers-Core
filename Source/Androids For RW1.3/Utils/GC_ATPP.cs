@@ -851,7 +851,6 @@ namespace MOARANDROIDS
             checkRemoveAndroidFactions();
         }
 
-
         private void removeBlacklistedAndroidsHediffs()
         {
             List<Hediff> toDel = new List<Hediff>();
@@ -1888,7 +1887,7 @@ namespace MOARANDROIDS
             return ret;
         }
 
-        void checkRemoveAndroidFactions()
+        public void checkRemoveAndroidFactions()
         {
             androidFactionCoalition = Find.FactionManager.FirstFactionOfDef(DefDatabase<FactionDef>.GetNamed("AndroidFriendliesAtlas"));
             if (androidFactionCoalition != null)
@@ -1904,7 +1903,6 @@ namespace MOARANDROIDS
                                 savedIASCoalition.Add(el);
                             }
                         }
-
                         if (savedIASCoalition.Count != 0)
                         {
                             foreach (var el in savedIASCoalition)

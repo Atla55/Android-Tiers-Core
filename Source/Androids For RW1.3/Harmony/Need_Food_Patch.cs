@@ -36,7 +36,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn ___pawn, ref float __result)
             {
-                Log.Message("=>> "+___pawn.LabelCap);
+                //Log.Message("=>> "+___pawn.LabelCap);
                 if (!___pawn.IsAndroidTier())
                     return;
 

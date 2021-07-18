@@ -243,6 +243,7 @@
     <Compile Include="Harmony\FloatMenuMakerMap_Patch.cs" />
     <Compile Include="Harmony\FoodUtility_Patch.cs" />
     <Compile Include="Harmony\ForbidUtility_Patch.cs" />
+    <Compile Include="Harmony\FactionGenerator_Patch.cs" />
     <Compile Include="Harmony\FreeColonists_Patch.cs" />
     <Compile Include="Harmony\HealthAIUtility_Patch.cs" />
     <Compile Include="Harmony\HealthCardUtility_Patch.cs" />
