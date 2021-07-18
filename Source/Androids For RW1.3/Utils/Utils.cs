@@ -195,6 +195,9 @@ namespace MOARANDROIDS
         public static List<PawnKindDef> AndroidsXSeriePKDHostile = new List<PawnKindDef>();
         public static List<PawnKindDef> AndroidsXISeriePKDHostile = new List<PawnKindDef>();
 
+        public static List<PawnKindDef> AndroidsAllPKD = new List<PawnKindDef>();
+
+        public static string[] ExceptionATFactions = new string[] { "AndroidRebellionAtlas", "AndroidFriendliesAtlas", "Base_AndroidCollective_Standard", "Caravan_AndroidCollective_BulkGoods", "Visitor_AndroidCollective_Standard"}.GetSortedArray();
         public static string[] ExceptionCooler = new string[] { "Cooler" };
         public static string[] ExceptionHeater = new string[] { "Heater" };
         //public static List<string> ExceptionTurrets = new List<string> { "Turret_MiniTurret", "Turret_Autocannon", "StandardTurretGun", "SniperTurretGun", "LazerTurretGun", "EnergyTurretGun" };

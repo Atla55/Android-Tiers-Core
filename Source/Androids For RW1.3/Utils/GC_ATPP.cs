@@ -776,6 +776,12 @@ namespace MOARANDROIDS
                             PawnKindDef p = DefDatabase<PawnKindDef>.GetNamed(x,false);
                             Utils.AndroidsXISeriePKDNeutral.Add(p);
                         }
+
+                        //Generating listing of all Androids PKD
+                        Utils.AndroidsAllPKD = Utils.AndroidsAllPKD.Concat(Utils.AndroidsPKDHostile)
+                            .Concat(Utils.AndroidsPKDNeutral).Concat(Utils.AndroidsXISeriePKDHostile)
+                            .Concat(Utils.AndroidsXISeriePKDNeutral).Concat(Utils.AndroidsXSeriePKDHostile).Concat(Utils.AndroidsXSeriePKDNeutral).ToList();
+
                     }
                     catch(Exception ex)
                     {

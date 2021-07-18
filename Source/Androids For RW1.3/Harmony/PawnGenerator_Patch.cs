@@ -32,7 +32,19 @@ namespace MOARANDROIDS
                             && ((Current.ProgramState == ProgramState.Entry) || (Current.ProgramState == ProgramState.Playing && request.Faction != Faction.OfPlayer))
                             && Rand.Chance(0.95f))
                         {
-                            PawnGenerationRequest r = new PawnGenerationRequest(PawnKindDefOf.AncientSoldier, request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn,
+                            PawnKindDef cpkd = null;
+                            if (Utils.ExceptionATFactions.Contains(request.Faction.def.defName))
+                                cpkd = PawnKindDefOf.AncientSoldier;
+                            else
+                            {
+                                cpkd = request.Faction.RandomPawnKind();
+                                if( Utils.AndroidsAllPKD.Contains(cpkd))
+                                {
+                                    cpkd = PawnKindDefOf.AncientSoldier;
+                                }
+                            }
+
+                            PawnGenerationRequest r = new PawnGenerationRequest(cpkd, request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn,
                                 request.AllowDead, request.AllowDowned, request.CanGeneratePawnRelations, request.MustBeCapableOfViolence, request.ColonistRelationChanceFactor,
                                 request.ForceAddFreeWarmLayerIfNeeded, request.AllowGay, request.AllowFood, request.AllowAddictions,request.Inhabitant, request.CertainlyBeenInCryptosleep,
                                 request.ForceRedressWorldPawnIfFormerColonist, request.WorldPawnFactionDoesntMatter, request.BiocodeWeaponChance, request.BiocodeApparelChance, request.ExtraPawnForExtraRelationChance,
