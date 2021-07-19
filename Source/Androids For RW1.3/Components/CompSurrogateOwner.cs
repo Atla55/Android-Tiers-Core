@@ -407,7 +407,7 @@ namespace MOARANDROIDS
             replicationEndingGT = -1;
             CompSkyCloudCore csc = skyCloudHost.TryGetComp<CompSkyCloudCore>();
 
-            PawnGenerationRequest request = new PawnGenerationRequest(cpawn.kindDef, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, false, true, true, false, true, false, false, fixedBiologicalAge: cpawn.ageTracker.AgeBiologicalYearsFloat, fixedChronologicalAge: cpawn.ageTracker.AgeChronologicalYearsFloat, fixedGender: cpawn.gender, fixedMelanin: cpawn.story.melanin);
+            PawnGenerationRequest request = new PawnGenerationRequest(cpawn.kindDef, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, false, true, true, false, false, false, false, fixedBiologicalAge: cpawn.ageTracker.AgeBiologicalYearsFloat, fixedChronologicalAge: cpawn.ageTracker.AgeChronologicalYearsFloat, fixedGender: cpawn.gender, fixedMelanin: cpawn.story.melanin);
             Pawn clone = PawnGenerator.GeneratePawn(request);
 
             //surrogate.Name = new NameTriple("", "S" + prefix + SXVer + "-" + Utils.GCATPP.getNextSXID(SXVer), "");
