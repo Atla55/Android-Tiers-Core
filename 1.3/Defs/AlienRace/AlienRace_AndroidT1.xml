@@ -142,6 +142,8 @@
 					<li>KnowButcheredHumanlikeCorpse</li>
 					<li>ObservedLayingCorpse</li>
 					<li>ObservedLayingRottingCorpse</li>
+					<li>DeadMansApparel</li>
+					<li>HumanLeatherApparelSad</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

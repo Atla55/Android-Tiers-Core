@@ -139,6 +139,8 @@
 					<li>ArtifactMoodBoost</li>
 					<li>EnvironmentCold</li>
 					<li>EnvironmentHot</li>
+					<li>DeadMansApparel</li>
+					<li>HumanLeatherApparelSad</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

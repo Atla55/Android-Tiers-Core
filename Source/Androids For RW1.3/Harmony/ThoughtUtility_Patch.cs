@@ -39,7 +39,7 @@ namespace MOARANDROIDS
         }
 
 
-        [HarmonyPatch(typeof(ThoughtUtility), "CanGetThought")]
+        /*[HarmonyPatch(typeof(ThoughtUtility), "CanGetThought")]
         public class CanGetThought_Patch
         {
             [HarmonyPostfix]
@@ -53,7 +53,7 @@ namespace MOARANDROIDS
                         __result = true;
                 }
             }
-        }
+        }*/
 
     }
 }

@@ -184,7 +184,7 @@ namespace MOARANDROIDS
                         Pawn cp = thingList[i] as Pawn;
 
                         //Il sagit d'un android 
-                        if (cp != null && cp.IsColonist && Utils.ExceptionAndroidList.Contains(cp.def.defName) && cp.CurJobDef.defName == "ATPP_GoReloadBattery")
+                        if (cp != null && cp.IsColonist && Utils.ExceptionAndroidList.Contains(cp.def.defName) && cp.CurJobDef != null && cp.CurJobDef.defName == "ATPP_GoReloadBattery")
                         {
                             if (countOnly)
                             {
