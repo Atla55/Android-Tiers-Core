@@ -81,7 +81,6 @@ namespace MOARANDROIDS
                      CompReloadStation rs = this.TryGetComp<CompReloadStation>();
                      foreach(var cp in this.tmpPawnsCanReach) {
                          IntVec3 reloadPlacePos = rs.getFreeReloadPlacePos(cp);
-                         Log.Message("Here for " + cp.LabelCap);
                          Job job = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(reloadPlacePos), new LocalTargetInfo(this));
                          cp.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                      }
