@@ -18,6 +18,7 @@ namespace MOARANDROIDS
             if (assemblyPsychology != null)
             {
                 Utils.PSYCHOLOGY_LOADED = true;
+                Utils.psychologyAssembly = assemblyPsychology;
                 Log.Message("[ATPP] Psychology found");
             }
 

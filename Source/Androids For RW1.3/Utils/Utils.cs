@@ -37,12 +37,13 @@ namespace MOARANDROIDS
         static public bool ANDROIDTIERSGYNOID_LOADED = false;
         static public bool QEE_LOADED = false;
         static public bool RIMMSQOL_LOADED = false;
-
-
         static public bool TXSERIE_LOADED = false;
+
+
 
         private static readonly FloatRange settlementsBasesPer100KTiles = new FloatRange(75f, 85f);
 
+        public static bool MentalBreakerTryDoRandomMoodCausedMentalBreak_lastPawnIsAndroid = false;
         public static Pawn curSelPatientDrawMedOperationsTab;
 
         public static int lastDoorOpenedVocalGT = 0;
@@ -55,6 +56,7 @@ namespace MOARANDROIDS
 
         public static bool forceGeneratedAndroidToBeDefaultPainted = false;
 
+        public static Assembly psychologyAssembly;
         public static Assembly smartMedicineAssembly;
         public static Assembly medicinePatchAssembly;
         public static Assembly androidTiersAssembly;

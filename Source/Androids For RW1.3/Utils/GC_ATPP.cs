@@ -497,6 +497,20 @@ namespace MOARANDROIDS
                         }
                     }
 
+                    //Dynamic Psychology patching
+                    if(Utils.PSYCHOLOGY_LOADED && Utils.psychologyAssembly != null)
+                    {
+                        try
+                        {
+                            var original = Utils.psychologyAssembly.GetType("Psychology.PsychologyBase").GetMethod("AnxietyEnabled", BindingFlags.Static | BindingFlags.Public);
+                            var prefix = typeof(CPaths).GetMethod("Psychology_AnxietyEnabledPrefix", BindingFlags.Static | BindingFlags.Public);
+                        }
+                        catch(Exception e)
+                        {
+                            Log.Message("[ATPP] Psychology " + e.Message + " " + e.StackTrace);
+                        }
+                    }
+
                     //Dynamic MedicinePatch patching
                     if(Utils.MEDICINEPATCH_LOADED && Utils.medicinePatchAssembly != null) {
                         try

@@ -297,8 +297,8 @@ namespace MOARANDROIDS
 
 
         /*
+         * >>>>> SHOULD BE REMOVED LATER IF THE Psychology prefix works without issue (not already tested as psychology not already available for rw 1.3)
          * On va faker pour PSYCHOLOGY le fait que les andorids possédes déjà un hediff anxiety fake
-         */
         [HarmonyPatch(typeof(HediffSet), "GetFirstHediffOfDef")]
         public class GetFirstHediffOfDef
         {
@@ -338,6 +338,6 @@ namespace MOARANDROIDS
                     Log.Message("[ATPP] HediffSet.GetFirstHediffOfDef" + e.Message + " - " + e.StackTrace);
                 }
             }
-        }
+        }*/
     }
 }

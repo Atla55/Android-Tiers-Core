@@ -16,6 +16,24 @@ namespace MOARANDROIDS
 {
     public static class CPaths
     {
+        
+
+        /*
+         * Prevent Psychology to add Anxiety to Androids 
+         */
+        public static bool Psychology_AnxietyEnabledPrefix(ref bool __result)
+        {
+            if (Utils.MentalBreakerTryDoRandomMoodCausedMentalBreak_lastPawnIsAndroid)
+            {
+                __result = false;
+                //We reset it's value to prevent issues if AnxietyEnabled is called in way than via the TryDoRandomMoodCausedMentalBreak prefix
+                Utils.MentalBreakerTryDoRandomMoodCausedMentalBreak_lastPawnIsAndroid = false;
+                return false;
+            }
+            return true;
+        }
+
+
         public static Need_DummyRest dummyRest;
 
         public static bool PrisonLabor_WorkTimePrefix(Pawn pawn, ref bool __result)

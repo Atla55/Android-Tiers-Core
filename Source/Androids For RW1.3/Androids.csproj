@@ -261,6 +261,7 @@
     <Compile Include="Harmony\MapPawns_Patch.cs" />
     <Compile Include="Harmony\MedicalCareUtility_Patch.cs" />
     <Compile Include="Harmony\MemoryThoughtHandler_Patch.cs" />
+    <Compile Include="Harmony\MentalBreaker_Patch.cs" />
     <Compile Include="Harmony\MentalState_Patch.cs" />
     <Compile Include="Harmony\Need_Food_Patch.cs" />
     <Compile Include="Harmony\Need_Patch.cs" />
