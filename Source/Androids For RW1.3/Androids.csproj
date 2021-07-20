@@ -248,6 +248,7 @@
     <Compile Include="Harmony\HealthAIUtility_Patch.cs" />
     <Compile Include="Harmony\HealthCardUtility_Patch.cs" />
     <Compile Include="Harmony\HediffMaker_Patch.cs" />
+    <Compile Include="Harmony\PawnBioAndNameGenerator_Patch.cs" />
     <Compile Include="Harmony\HediffUtility_Patch.cs" />
     <Compile Include="Harmony\IncidentWorker_WandererJoin_Patch.cs" />
     <Compile Include="Harmony\IncidentWorker_DiseaseAnimal_Patch.cs" />

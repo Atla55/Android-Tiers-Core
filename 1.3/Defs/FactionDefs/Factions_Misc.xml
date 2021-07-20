@@ -32,9 +32,13 @@
 		<description>Your Android colony.</description>
 		
 		<isPlayer>true</isPlayer>
-		<backstoryCategories>
-			<li>Civil</li>
-		</backstoryCategories>
+		<backstoryFilters>
+		  <li>
+			<categories>
+			  <li>Offworld</li>
+			</categories>
+		  </li>
+		</backstoryFilters>
 		<basicMemberKind>AndroidT2ColonistGeneral</basicMemberKind>
 		<pawnsPlural>colonists</pawnsPlural>
 		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
@@ -79,9 +83,13 @@
 		<factionNameMaker>NamerFactionRaiderAndroid</factionNameMaker>
 		<settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
 		<techLevel>Ultra</techLevel>
-		<backstoryCategories>
-			<li>BigMeanies</li>
-		</backstoryCategories>
+		<backstoryFilters>
+		  <li>
+			<categories>
+			  <li>Offworld</li>
+			</categories>
+		  </li>
+		</backstoryFilters>
 		<geneticVariance>1</geneticVariance>
 		<allowedArrivalTemperatureRange>
 			<min>-70</min>
@@ -160,10 +168,13 @@
 		<factionNameMaker>NamerFactionCollectiveAndroid</factionNameMaker>
 		<settlementNameMaker>NamerSettlementCollectiveAndroid</settlementNameMaker>
 		<techLevel>Ultra</techLevel>
-		<backstoryCategories>
-			<li>AndroidGeneral</li>
-			<li>CollectiveSoldiers</li>
-		</backstoryCategories>
+		<backstoryFilters>
+		  <li>
+			<categories>
+			  <li>Offworld</li>
+			</categories>
+		  </li>
+		</backstoryFilters>
 		<geneticVariance>0.8</geneticVariance>
 		<caravanTraderKinds>
 			<li>Caravan_AndroidCollective_BulkGoods</li>

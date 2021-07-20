@@ -55,60 +55,60 @@ namespace MOARANDROIDS
                     }
 
                     //Remove illogiocal traits with androids
-                    if (isAndroidTier)
+                    if (!isAndroidTier)
+                        return;
+                    
+                    if (__result.gender == Gender.Male)
                     {
-                        if (__result.gender == Gender.Male)
-                        {
 
-                            BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
-                            if (bd != null)
-                                __result.story.bodyType = bd;
+                        BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
+                        if (bd != null)
+                            __result.story.bodyType = bd;
+                    }
+                    else
+                    {
+                        BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
+                        if (bd != null)
+                            __result.story.bodyType = bd;
+                    }
+
+
+                    bool isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(__result.def.defName);
+
+                    if (isAndroidWithSkin)
+                    {
+                        //force not damaged face for skinned androids
+                        Utils.changeHARCrownType(__result, "Average_Normal");
+
+                        if (Utils.RIMMSQOL_LOADED && Utils.lastResolveAllGraphicsHeadGraphicPath != null)
+                        {
+                            __result.story.GetType().GetField("headGraphicPath", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(__result.story, Utils.lastResolveAllGraphicsHeadGraphicPath);
+                            Utils.lastResolveAllGraphicsHeadGraphicPath = null;
                         }
-                        else
+                    }
+
+                    Utils.removeMindBlacklistedTrait(__result);
+                    //Chance that android can be painted (skinned androids excluded)
+                    if (!isAndroidWithSkin && Rand.Chance(Settings.chanceGeneratedAndroidCanBePaintedOrRust))
+                    {
+                        CompAndroidState cas = __result.TryGetComp<CompAndroidState>();
+                        if (cas != null)
                         {
-                            BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
-                            if (bd != null)
-                                __result.story.bodyType = bd;
-                        }
-
-
-                        bool isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(__result.def.defName);
-
-                        if (isAndroidWithSkin)
-                        {
-                            //force not damaged face for skinned androids
-                            Utils.changeHARCrownType(__result, "Average_Normal");
-
-                            if (Utils.RIMMSQOL_LOADED && Utils.lastResolveAllGraphicsHeadGraphicPath != null)
+                            if (Utils.forceGeneratedAndroidToBeDefaultPainted)
                             {
-                                __result.story.GetType().GetField("headGraphicPath", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(__result.story, Utils.lastResolveAllGraphicsHeadGraphicPath);
-                                Utils.lastResolveAllGraphicsHeadGraphicPath = null;
+                                cas.paintingIsRusted = false;
+                                cas.paintingRustGT = (Rand.Range(Settings.minDaysAndroidPaintingCanRust, Settings.maxDaysAndroidPaintingCanRust) * 60000);
+                                cas.customColor = (int)AndroidPaintColor.Default;
                             }
-                        }
-
-                        Utils.removeMindBlacklistedTrait(__result);
-                        //Chance that android can be painted (skinned androids excluded)
-                        if (!isAndroidWithSkin && Rand.Chance(Settings.chanceGeneratedAndroidCanBePaintedOrRust))
-                        {
-                            CompAndroidState cas = __result.TryGetComp<CompAndroidState>();
-                            if (cas != null)
+                            else
                             {
-                                if (Utils.forceGeneratedAndroidToBeDefaultPainted)
+                                if (Settings.androidsCanRust && Rand.Chance(0.35f))
                                 {
-                                    cas.paintingIsRusted = false;
-                                    cas.paintingRustGT = (Rand.Range(Settings.minDaysAndroidPaintingCanRust, Settings.maxDaysAndroidPaintingCanRust) * 60000);
-                                    cas.customColor = (int)AndroidPaintColor.Default;
+                                    cas.setRusted();
                                 }
                                 else
                                 {
-                                    if (Settings.androidsCanRust && Rand.Chance(0.35f))
-                                    {
-                                        cas.setRusted();
-                                    }
-                                    else
-                                    {
-                                        cas.customColor = Rand.Range((int)AndroidPaintColor.Black, ((int)AndroidPaintColor.Khaki) + 1);
-                                    }
+                                    cas.customColor = Rand.Range((int)AndroidPaintColor.Black, ((int)AndroidPaintColor.Khaki) + 1);
                                 }
                             }
                         }
