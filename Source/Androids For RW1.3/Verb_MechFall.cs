@@ -14,7 +14,7 @@ namespace MOARANDROIDS
             {
                 return false;
             }
-            MechFall mechfall = (MechFall)GenSpawn.Spawn(ThingDefOf.MechFallBeam, this.currentTarget.Cell, this.caster.Map);
+            MechFall mechfall = (MechFall)GenSpawn.Spawn(ThingDefOfAT.MechFallBeam, this.currentTarget.Cell, this.caster.Map);
             mechfall.duration = 450;
             mechfall.instigator = this.caster;
             mechfall.weaponDef = ((base.EquipmentSource == null) ? null : base.EquipmentSource.def);

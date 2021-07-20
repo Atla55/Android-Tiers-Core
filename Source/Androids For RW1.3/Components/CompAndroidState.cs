@@ -395,10 +395,10 @@ namespace MOARANDROIDS
             if (csm != null && csm.Infected == 4 && !cp.InMentalState)
             {
                 csm.Infected = -1;
-                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
                 if (he == null)
                 {
-                    cp.health.AddHediff(Utils.hediffNoHost);
+                    cp.health.AddHediff(HediffDefOf.ATPP_NoHost);
                 }
             }
         }
@@ -507,7 +507,7 @@ namespace MOARANDROIDS
 
             if (!cp.Dead && isBlankAndroid)
             {
-                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffBlankAndroid);
+                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_BlankAndroid);
                 if (he == null && cp.health != null)
                     cp.health.AddHediff(he);
             }
@@ -522,7 +522,7 @@ namespace MOARANDROIDS
                 //Entitées qui ne rust pas on degage et check avant de faire le menage des rust malplacés
                 if (!isAndroidTIer || isAndroidWithSkin || dontRust)
                 {
-                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted);
+                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                     if (he != null)
                         cp.health.RemoveHediff(he);
 
@@ -538,7 +538,7 @@ namespace MOARANDROIDS
                         paintingRustGT = -3;    
                     }
 
-                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted);
+                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                     if (he != null)
                         cp.health.RemoveHediff(he);
 
@@ -619,12 +619,12 @@ namespace MOARANDROIDS
                     }
 
                     //Rouille de la peinture ?
-                    if (paintingRustGT == 0 || (paintingRustGT == -1 && cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted) == null))
+                    if (paintingRustGT == 0 || (paintingRustGT == -1 && cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted) == null))
                     {
                         paintingIsRusted = true;
                         cp.Drawer.renderer.graphics.ResolveAllGraphics();
                         PortraitsCache.SetDirty(cp);
-                        cp.health.AddHediff(Utils.hediffRusted);
+                        cp.health.AddHediff(HediffDefOf.ATPP_Rusted);
 
                         paintingRustGT = -1;
                     }
@@ -633,7 +633,7 @@ namespace MOARANDROIDS
                         if (!paintingIsRusted)
                         {
                             //Cas aberrant (possede hediff de rusted alors que pas rusted)
-                            Hediff cRusted = cp.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted);
+                            Hediff cRusted = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                             if (cRusted != null)
                             {
                                 cp.health.RemoveHediff(cRusted);
@@ -654,7 +654,7 @@ namespace MOARANDROIDS
 
             paintingIsRusted = true;
             paintingRustGT = -1;
-            cp.health.AddHediff(Utils.hediffRusted);
+            cp.health.AddHediff(HediffDefOf.ATPP_Rusted);
         }
 
         public void clearRusted()
@@ -673,7 +673,7 @@ namespace MOARANDROIDS
 
 
             //Retire du hediff de rouille
-            Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted);
+            Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
             if (he != null)
                 pawn.health.RemoveHediff(he);
         }
@@ -756,10 +756,10 @@ namespace MOARANDROIDS
         {
             Pawn cpawn = (Pawn)parent;
             //Check si surrogate et pas de controlleur ET possede pas de noHost alors on l'ajoute (===> effet d'un item externe cleanant les heddifs)
-            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
             if (he == null)
             {
-                cpawn.health.AddHediff(Utils.hediffNoHost);
+                cpawn.health.AddHediff(HediffDefOf.ATPP_NoHost);
             }
         }
 
@@ -832,10 +832,10 @@ namespace MOARANDROIDS
 
                     if (paintingRustGT == -1 && paintingIsRusted && pawn.health != null)
                     {
-                        Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted);
+                        Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                         if (he == null)
                         {
-                            pawn.health.AddHediff(Utils.hediffRusted);
+                            pawn.health.AddHediff(HediffDefOf.ATPP_Rusted);
                         }
                     }
                 }
@@ -845,7 +845,7 @@ namespace MOARANDROIDS
                 if (pawn.health != null)
                 {
                     paintingIsRusted = false;
-                    Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffRusted);
+                    Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                     if (he != null)
                         pawn.health.RemoveHediff(he);
                 }
@@ -1516,8 +1516,8 @@ namespace MOARANDROIDS
         private void OnPermuteConfirmed(Pawn source, Pawn dest)
         {
             //Ajout hediff de transfert aux deux androids
-            source.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
-            dest.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+            source.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
+            dest.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
 
             int CGT = Find.TickManager.TicksGame;
             uploadRecipient = dest;

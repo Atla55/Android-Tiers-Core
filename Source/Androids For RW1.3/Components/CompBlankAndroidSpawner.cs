@@ -30,7 +30,7 @@ namespace MOARANDROIDS
                 Pawn blankAndroid = PawnGenerator.GeneratePawn(request);
                 GenSpawn.Spawn(blankAndroid, this.parent.Position, this.parent.Map, WipeMode.Vanish);
 
-                blankAndroid.health.AddHediff(Utils.hediffBlankAndroid);
+                blankAndroid.health.AddHediff(HediffDefOf.ATPP_BlankAndroid);
 
                 CompAndroidState cas = blankAndroid.TryGetComp<CompAndroidState>();
                 cas.isBlankAndroid = true;

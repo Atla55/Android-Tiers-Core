@@ -83,7 +83,7 @@ namespace MOARANDROIDS
                             cso.disconnectControlledSurrogate(null);
                     }
 
-                    Hediff he = v.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+                    Hediff he = v.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
                     if (he != null)
                         v.health.RemoveHediff(he);
 

@@ -14,5 +14,7 @@ namespace MOARANDROIDS
             public static TraitDef FeelingsTowardHumanity;
 
             public static TraitDef Transhumanist;
-    }
+
+            public static TraitDef SimpleMindedAndroid;
+        }
 }

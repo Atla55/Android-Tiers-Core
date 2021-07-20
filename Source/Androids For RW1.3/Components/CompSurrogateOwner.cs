@@ -206,7 +206,7 @@ namespace MOARANDROIDS
                         //On retire la VX2/VX3
                         foreach(var he in corpse.health.hediffSet.hediffs.ToList())
                         {
-                            if (he.def == Utils.hediffHaveVX2Chip || he.def == Utils.hediffHaveVX3Chip)
+                            if (he.def == HediffDefOf.ATPP_HediffVX2Chip || he.def == HediffDefOf.ATPP_HediffVX3Chip)
                                 corpse.health.RemoveHediff(he);
                         }
 
@@ -215,7 +215,7 @@ namespace MOARANDROIDS
 
                         //On ajoute une VX0 en prevenant l'apparition de mauvaises pensées
                         Utils.preventVX0Thought = true;
-                        corpse.health.AddHediff(Utils.hediffHaveVX0Chip, bpr);
+                        corpse.health.AddHediff(HediffDefOf.ATPP_HediffVX0Chip, bpr);
                         Utils.preventVX0Thought = false;
                     }
 
@@ -546,14 +546,14 @@ namespace MOARANDROIDS
 
             Pawn cpawn = (Pawn)parent;
 
-            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_ConsciousnessUpload);
             if (he != null)
             {
                 cpawn.health.hediffSet.hediffs.Remove(he);
                 he.PostRemoved();
             }
             
-            he = cpawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_InRemoteControlMode"));
+            he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_InRemoteControlMode);
             if (he != null)
             {
                 cpawn.health.hediffSet.hediffs.Remove(he);
@@ -626,13 +626,13 @@ namespace MOARANDROIDS
         private void addRemoteControlHediff()
         {
             Pawn cpawn = (Pawn)parent;
-            cpawn.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_InRemoteControlMode"));
+            cpawn.health.AddHediff(HediffDefOf.ATPP_InRemoteControlMode);
         }
 
         private void removeRemoteControlHediff()
         {
             Pawn cpawn = (Pawn)parent;
-            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_InRemoteControlMode"));
+            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_InRemoteControlMode);
             if (he != null)
                 cpawn.health.RemoveHediff(he);
         }
@@ -1151,7 +1151,7 @@ namespace MOARANDROIDS
             }
             //Log.Message("i5");
             //On enleve le hediff de no host
-            Hediff he = controlled.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+            Hediff he = controlled.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
             if (he != null)
                 controlled.health.RemoveHediff(he);
             //On Ajout le hediff de remotely controlled
@@ -1376,16 +1376,16 @@ namespace MOARANDROIDS
                 if (!externalController && !preventNoHost)
                 {
                     if (Utils.insideKillFuncSurrogate)
-                        csurrogate.health.hediffSet.AddDirect(HediffMaker.MakeHediff(Utils.hediffNoHost, csurrogate, null));
+                        csurrogate.health.hediffSet.AddDirect(HediffMaker.MakeHediff(HediffDefOf.ATPP_NoHost, csurrogate, null));
                     else
                     {
-                        csurrogate.health.AddHediff(Utils.hediffNoHost);
+                        csurrogate.health.AddHediff(HediffDefOf.ATPP_NoHost);
                     }
                 }
 
 
                 //On vire le potentiel Hediff de LowSignalSkyMind
-                he = csurrogate.health.hediffSet.GetFirstHediffOfDef(Utils.hediffLowNetworkSignal);
+                he = csurrogate.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
                 if (he != null)
                 {
                     if (Utils.insideKillFuncSurrogate)
@@ -1493,8 +1493,8 @@ namespace MOARANDROIDS
         private void OnPermuteConfirmed(Pawn source, Pawn dest)
         {
             //Ajout hediff de transfert aux deux androids
-            source.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
-            dest.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+            source.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
+            dest.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
 
             int CGT = Find.TickManager.TicksGame;
             permuteRecipient = dest;
@@ -1511,8 +1511,8 @@ namespace MOARANDROIDS
         private void OnDuplicateConfirmed(Pawn source, Pawn dest)
         {
             //Ajout hediff de transfert aux deux androids
-            source.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
-            dest.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+            source.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
+            dest.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
 
             int CGT = Find.TickManager.TicksGame;
             duplicateRecipient = dest;
@@ -1529,7 +1529,7 @@ namespace MOARANDROIDS
 
         private void OnMoveConsciousnessToSkyCloudCore(Pawn source, Building dest)
         {
-            source.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+            source.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
 
             int CGT = Find.TickManager.TicksGame;
             skyCloudRecipient = dest;
@@ -1544,7 +1544,7 @@ namespace MOARANDROIDS
         private void OnMoveConsciousnessFromSkyCloudCore(Pawn source)
         {
             Pawn dest = (Pawn)parent;
-            dest.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+            dest.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
 
             int CGT = Find.TickManager.TicksGame;
             skyCloudDownloadRecipient = source;

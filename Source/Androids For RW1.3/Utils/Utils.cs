@@ -90,25 +90,21 @@ namespace MOARANDROIDS
 
         public static bool preventVX0Thought = false;
 
+
+
+
+        
+        public static ThingDef ATPP_MoteBIII;
+        public static ThingDef ATPP_MoteBII;
+        public static ThingDef ATPP_MoteBI;
+
+
+
         public static HediffDef ATPP_SolarFlareAndroidImpact;
 
         public static WorkTypeDef WorkTypeDefSmithing;
 
         public static ThoughtDef thoughtDefVX0Puppet;
-
-        public static TraitDef traitSimpleMinded;
-
-        public static HediffDef hediffHaveRXChip;
-        public static HediffDef hediffHaveVX0Chip;
-        public static HediffDef hediffHaveVX1Chip;
-        public static HediffDef hediffHaveVX2Chip;
-        public static HediffDef hediffHaveVX3Chip;
-        public static HediffDef hediffNoHost;
-        public static HediffDef hediffLowNetworkSignal;
-        public static HediffDef hediffRusted;
-        public static HediffDef hediffBlankAndroid;
-        public static HediffDef hediffMindUpload;
-        public static HediffDef hediffInRemoteControl;
 
         public static SoundDef soundDefSkyCloudMindQuarantineMentalState;
         public static SoundDef soundDefSkyCloudMindUploadCompleted;
@@ -617,7 +613,7 @@ namespace MOARANDROIDS
                     {
                         if (p.IsSurrogateAndroid())
                         {
-                            Hediff he = p.health.hediffSet.GetFirstHediffOfDef(Utils.hediffLowNetworkSignal);
+                            Hediff he = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
                             if (he != null)
                             {
                                 p.health.RemoveHediff(he);
@@ -636,7 +632,7 @@ namespace MOARANDROIDS
                 {
                     if (p.IsSurrogateAndroid())
                     {
-                        Hediff he = p.health.hediffSet.GetFirstHediffOfDef(Utils.hediffLowNetworkSignal);
+                        Hediff he = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
                         if (he != null)
                             p.health.RemoveHediff(he);
                     }
@@ -652,11 +648,11 @@ namespace MOARANDROIDS
                 if (!cp.Map.moteCounter.Saturated)
                 {
                     if (cp.needs.food.CurLevelPercentage >= 0.80f)
-                        Utils.throwMote(DefDatabase<ThingDef>.GetNamed("ATPP_MoteBIII", true), cp);
+                        Utils.throwMote(Utils.ATPP_MoteBIII, cp);
                     else if (cp.needs.food.CurLevelPercentage >= 0.40f)
-                        Utils.throwMote(DefDatabase<ThingDef>.GetNamed("ATPP_MoteBII", true), cp);
+                        Utils.throwMote(Utils.ATPP_MoteBII, cp);
                     else
-                        Utils.throwMote(DefDatabase<ThingDef>.GetNamed("ATPP_MoteBI", true), cp);
+                        Utils.throwMote(Utils.ATPP_MoteBI, cp);
                 }
             }
         }
@@ -743,7 +739,7 @@ namespace MOARANDROIDS
             //TOuts les SX sont simple minded et ont aucuns autres traits
             if (addSimpleMinded)
             {
-                TraitDef td = DefDatabase<TraitDef>.GetNamed("SimpleMindedAndroid", false);
+                TraitDef td = TraitDefOf.SimpleMindedAndroid;
                 Trait t = null;
                 if (td != null)
                     t = new Trait(td);
@@ -757,7 +753,7 @@ namespace MOARANDROIDS
             //S'il sagit d'un M7 on vire sa batterie à la con
             if (surrogate.kindDef.defName == "M7MechPawn")
             {
-                Hediff he = surrogate.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("BatteryChargeMech", false));
+                Hediff he = surrogate.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.BatteryChargeMech);
                 if (he != null)
                 {
                     surrogate.health.RemoveHediff(he);
@@ -1042,22 +1038,22 @@ namespace MOARANDROIDS
 
         public static bool VX0ChipPresent(this Pawn pawn)
         {
-            return pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffHaveVX0Chip) != null;
+            return pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffVX0Chip) != null;
         }
 
         public static bool VX1ChipPresent(this Pawn pawn)
         {
-            return pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffHaveVX1Chip) != null;
+            return pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffVX1Chip) != null;
         }
 
         public static bool VX2ChipPresent(this Pawn pawn)
         {
-            return pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffHaveVX2Chip) != null;
+            return pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffVX2Chip) != null;
         }
 
         public static bool VX3ChipPresent(this Pawn pawn)
         {
-            return pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffHaveVX3Chip) != null;
+            return pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffVX0Chip) != null;
         }
 
         public static void showFailedLetterMindUpload(string reason)
@@ -1903,14 +1899,14 @@ namespace MOARANDROIDS
             //On eleve le hediff
             if (cpawn != null)
             {
-                he = cpawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+                he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_ConsciousnessUpload);
                 if (he != null)
                     cpawn.health.RemoveHediff(he);
             }
 
             if (uploadRecipient != null)
             {
-                he = uploadRecipient.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload"));
+                he = uploadRecipient.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_ConsciousnessUpload);
                 if (he != null)
                     uploadRecipient.health.RemoveHediff(he);
             }
@@ -2238,7 +2234,7 @@ namespace MOARANDROIDS
             //Si T1 rajout du trait simpleMinded
             if (target.def.defName == Utils.T1)
             {
-                TraitDef td = DefDatabase<TraitDef>.GetNamed("SimpleMindedAndroid", false);
+                TraitDef td = TraitDefOf.SimpleMindedAndroid;
                 Trait t = null;
                 if (td != null)
                     t = new Trait(td);
@@ -2340,12 +2336,12 @@ namespace MOARANDROIDS
 
         public static void removeSimpleMindedTrait(Pawn cpawn)
         {
-            if (Settings.removeSimpleMindedTraitOnUpload && cpawn.story.traits.HasTrait(Utils.traitSimpleMinded))
+            if (Settings.removeSimpleMindedTraitOnUpload && cpawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid))
             {
                 Trait toDel = null;
                 foreach (var t in cpawn.story.traits.allTraits)
                 {
-                    if (t.def == Utils.traitSimpleMinded)
+                    if (t.def == TraitDefOf.SimpleMindedAndroid)
                     {
                         toDel = t;
                         break;
@@ -2362,9 +2358,9 @@ namespace MOARANDROIDS
 
         public static void addSimpleMindedTraitForT1(Pawn cpawn)
         {
-            if (cpawn.def.defName == Utils.T1 && !cpawn.story.traits.HasTrait(Utils.traitSimpleMinded))
+            if (cpawn.def.defName == Utils.T1 && !cpawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid))
             {
-                cpawn.story.traits.GainTrait(new Trait(Utils.traitSimpleMinded, 0, true));
+                cpawn.story.traits.GainTrait(new Trait(TraitDefOf.SimpleMindedAndroid, 0, true));
             }
         }
 
@@ -2403,7 +2399,7 @@ namespace MOARANDROIDS
                 if (cas != null)
                 {
                     cas.isBlankAndroid = false;
-                    Hediff he = android.health.hediffSet.GetFirstHediffOfDef(Utils.hediffBlankAndroid);
+                    Hediff he = android.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_BlankAndroid);
                     if (he != null)
                         android.health.RemoveHediff(he);
                 }

@@ -17,7 +17,7 @@ namespace MOARANDROIDS
             List<Apparel> wornApparel = p.apparel.WornApparel;
             for (int i = 0; i < wornApparel.Count; i++)
             {
-                if (wornApparel[i].Stuff == ThingDefOf.SteelWool)
+                if (wornApparel[i].Stuff == ThingDefOfAT.SteelWool)
                 {
                     if (text == null)
                     {

@@ -70,7 +70,7 @@ namespace MOARANDROIDS
                         || Utils.lastButcheredPawnIsAndroid
                         || (cas != null && cas.isSurrogate && cas.surrogateController == null)
                         || Utils.pawnCurrentlyControlRemoteSurrogate(__instance.pawn)
-                        || (Utils.IgnoredThoughtsByBasicAndroids.Contains(memDef.defName) && (Utils.ExceptionAndroidListBasic.Contains(__instance.pawn.def.defName) || __instance.pawn.story.traits.HasTrait(Utils.traitSimpleMinded)));
+                        || (Utils.IgnoredThoughtsByBasicAndroids.Contains(memDef.defName) && (Utils.ExceptionAndroidListBasic.Contains(__instance.pawn.def.defName) || __instance.pawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)));
         }
     }
 }

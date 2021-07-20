@@ -324,7 +324,7 @@
     <Compile Include="GenStep_DownedRefugee.cs" />
     <Compile Include="HediffCompProperties_HealOldWoundsAdv.cs" />
     <Compile Include="HediffGiver_Android.cs" />
-    <Compile Include="DefsOf\Hediffs.cs" />
+    <Compile Include="DefsOf\HediffDefOf.cs" />
     <Compile Include="Incidents\Incident_DeviceHacking.cs" />
     <Compile Include="Incidents\Incident_RansomWare.cs" />
     <Compile Include="Incidents\Incident_SurrogateHacking.cs" />

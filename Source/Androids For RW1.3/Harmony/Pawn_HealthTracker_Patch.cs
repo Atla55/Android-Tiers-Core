@@ -23,7 +23,7 @@ namespace MOARANDROIDS
                         return;
 
                     //Si il sagit d'une VX0 alors passation du pawn en mode surrogate
-                    if (hediff.def.defName == "ATPP_HediffVX0Chip" && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner))
+                    if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner))
                     {
                         CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
                         if (cas == null || cas.isSurrogate)
@@ -63,7 +63,7 @@ namespace MOARANDROIDS
                         ___pawn.relations = new Pawn_RelationsTracker(___pawn);
 
                         //TOuts les SX sont simple minded et ont aucuns autres traits
-                        TraitDef td = DefDatabase<TraitDef>.GetNamed("SimpleMindedAndroid", false);
+                        TraitDef td = TraitDefOf.SimpleMindedAndroid;
                         Trait t = null;
                         if (td != null)
                             t = new Trait(td);
@@ -224,7 +224,7 @@ namespace MOARANDROIDS
             public static void Listener(Hediff hediff, Pawn ___pawn)
             {
                 //Si il sagit d'une VX0 
-                if (hediff.def.defName == "ATPP_HediffVX0Chip")
+                if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip)
                 {
                     CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
                     if (cas == null)

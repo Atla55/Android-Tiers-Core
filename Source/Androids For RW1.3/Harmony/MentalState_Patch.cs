@@ -30,10 +30,10 @@ namespace MOARANDROIDS
                     if (csm.Infected == 4)
                     {
                         csm.Infected = -1;
-                        Hediff he = __instance.pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+                        Hediff he = __instance.pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
                         if (he == null)
                         {
-                            __instance.pawn.health.AddHediff(Utils.hediffNoHost);
+                            __instance.pawn.health.AddHediff(HediffDefOf.ATPP_NoHost);
                         }
                     }
                 }

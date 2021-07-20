@@ -28,12 +28,12 @@ namespace MOARANDROIDS
 
             //On définis le fait qu'il ne sagit plus d'un surrogate mais d'un blank neural net andorid
             cas.isSurrogate = false;
-            Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+            Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
             if (he != null)
                 pawn.health.RemoveHediff(he);
 
             cas.isBlankAndroid = true;
-            pawn.health.AddHediff(Utils.hediffBlankAndroid);
+            pawn.health.AddHediff(HediffDefOf.ATPP_BlankAndroid);
         }
 
     }

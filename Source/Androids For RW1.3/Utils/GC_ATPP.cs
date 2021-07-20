@@ -39,18 +39,6 @@ namespace MOARANDROIDS
                     }
                     Utils.CrafterDoctorJob = new List<WorkGiverDef>();
 
-                    Utils.hediffHaveRXChip = DefDatabase<HediffDef>.GetNamed("ATPP_HediffRXChip");
-                    Utils.hediffLowNetworkSignal = DefDatabase<HediffDef>.GetNamed("ATPP_LowNetworkSignal");
-                    Utils.hediffHaveVX0Chip = DefDatabase<HediffDef>.GetNamed("ATPP_HediffVX0Chip");
-                    Utils.hediffHaveVX1Chip = DefDatabase<HediffDef>.GetNamed("ATPP_HediffVX1Chip");
-                    Utils.hediffHaveVX2Chip = DefDatabase<HediffDef>.GetNamed("ATPP_HediffVX2Chip");
-                    Utils.hediffHaveVX3Chip = DefDatabase<HediffDef>.GetNamed("ATPP_HediffVX3Chip");
-                    Utils.hediffRusted = DefDatabase<HediffDef>.GetNamed("ATPP_Rusted");
-                    Utils.hediffNoHost = DefDatabase<HediffDef>.GetNamed("ATPP_NoHost");
-                    Utils.hediffBlankAndroid = DefDatabase<HediffDef>.GetNamed("ATPP_BlankAndroid");
-                    Utils.hediffMindUpload = DefDatabase<HediffDef>.GetNamed("ATPP_ConsciousnessUpload");
-                    Utils.hediffInRemoteControl = DefDatabase<HediffDef>.GetNamed("ATPP_InRemoteControlMode");
-
 
                     Utils.soundDefSurrogateConnection = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateConnection");
                     Utils.soundDefSurrogateConnectionStopped = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateDisconnect");
@@ -82,10 +70,14 @@ namespace MOARANDROIDS
 
                     Utils.statDefAndroidSurgerySuccessChance = DefDatabase<StatDef>.GetNamed("AndroidSurgerySuccessChance");
 
-                    Utils.traitSimpleMinded = DefDatabase<TraitDef>.GetNamed("SimpleMindedAndroid",false);
+
+                    Utils.ATPP_MoteBIII = DefDatabase<ThingDef>.GetNamed("ATPP_MoteBIII", true);
+                    Utils.ATPP_MoteBII = DefDatabase<ThingDef>.GetNamed("ATPP_MoteBII", true);
+                    Utils.ATPP_MoteBI = DefDatabase<ThingDef>.GetNamed("ATPP_MoteBI", true);
+
 
                     //generating list of androids without skin
-                    foreach(var el in Utils.ExceptionAndroidList)
+                    foreach (var el in Utils.ExceptionAndroidList)
                     {
                         if (!Utils.ExceptionAndroidWithSkinList.Contains(el))
                         {
@@ -1171,7 +1163,7 @@ namespace MOARANDROIDS
                     if (s.Dead)
                         continue;
 
-                    Hediff he = s.health.hediffSet.GetFirstHediffOfDef(Utils.hediffLowNetworkSignal);
+                    Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
                     if (he != null)
                         s.health.RemoveHediff(he);
                 }
@@ -1182,14 +1174,14 @@ namespace MOARANDROIDS
                 foreach (var s in listerSurrogateAndroids[MUID])
                 {
                     //Les porteur de RX en sont exempté
-                    if (s.Dead || s.health.hediffSet.GetFirstHediffOfDef(Utils.hediffHaveRXChip) != null)
+                    if (s.Dead || s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffRXChip) != null)
                         continue;
 
-                    Hediff he = s.health.hediffSet.GetFirstHediffOfDef(Utils.hediffLowNetworkSignal);
+                    Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
                     if (he == null)
                     {
                         //Log.Message("HEREEEEE");
-                        s.health.AddHediff(Utils.hediffLowNetworkSignal);
+                        s.health.AddHediff(HediffDefOf.ATPP_LowNetworkSignal);
                     }
                 }
             }
@@ -1586,15 +1578,6 @@ namespace MOARANDROIDS
 
             if (!listerSurrogateAndroids[MUID].Contains(sx))
                 listerSurrogateAndroids[MUID].Add(sx);
-
-            //Check rapide si hediff LowSignalSkyMin dpresent et doit etre enlevé pour eviter d'attendre la mise a jour prochaine toutes les X secs
-            /*if (!isThereSkyMindAntennaOrRelayInMap(sx.Map))
-            {
-                //Pas de Connection ajout hediff lowSignalSkyMind
-                Hediff he = sx.health.hediffSet.GetFirstHediffOfDef(Utils.hediffLowNetworkSignal);
-                if (he == null)
-                    sx.health.AddHediff(Utils.hediffLowNetworkSignal);
-            }*/
         }
 
         public void pushSurrogateAndroidNotifyMapChanged(Pawn sx, string prevMUID)

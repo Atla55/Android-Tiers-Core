@@ -44,7 +44,7 @@ namespace MOARANDROIDS
                                                 Pawn p = (Pawn)t;
                                                 if (p.IsSurrogateAndroid())
                                                 {
-                                                    p.health.AddHediff(Utils.hediffNoHost);
+                                                    p.health.AddHediff(HediffDefOf.ATPP_NoHost);
                                                 }
                                             }
                                             else

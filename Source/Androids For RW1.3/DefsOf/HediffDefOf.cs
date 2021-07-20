@@ -38,5 +38,29 @@ namespace MOARANDROIDS
         public static HediffDef Stab;
 
         public static HediffDef SurgicalCut;
+
+        public static HediffDef ATPP_ConsciousnessUpload;
+
+        public static HediffDef ATPP_Rusted;
+
+        public static HediffDef ATPP_NoHost;
+
+        public static HediffDef ATPP_BlankAndroid;
+
+        public static HediffDef ATPP_HediffVX0Chip;
+
+        public static HediffDef ATPP_HediffVX1Chip;
+
+        public static HediffDef ATPP_HediffVX2Chip;
+
+        public static HediffDef ATPP_HediffVX3Chip;
+
+        public static HediffDef ATPP_LowNetworkSignal;
+
+        public static HediffDef ATPP_HediffRXChip;
+
+        public static HediffDef ATPP_InRemoteControlMode;
+
+
     }
 }

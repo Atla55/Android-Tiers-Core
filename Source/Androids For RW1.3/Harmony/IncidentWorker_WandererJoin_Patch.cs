@@ -31,7 +31,7 @@ namespace MOARANDROIDS
                     {
                         Pawn cp = e.pawn;
                         //pawn downed but this is not permanent => no ManInBlack
-                        if (cp != null && !cp.Dead && (cp.health.hediffSet.HasHediff(Utils.hediffMindUpload) || cp.health.hediffSet.HasHediff(Utils.hediffInRemoteControl)))
+                        if (cp != null && !cp.Dead && (cp.health.hediffSet.HasHediff(HediffDefOf.ATPP_ConsciousnessUpload) || cp.health.hediffSet.HasHediff(HediffDefOf.ATPP_InRemoteControlMode)))
                         {
                             __result = false;
                             return false;

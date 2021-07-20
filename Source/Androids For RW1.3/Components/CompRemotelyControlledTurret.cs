@@ -121,7 +121,6 @@ namespace MOARANDROIDS
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             Building build = (Building)parent;
-            Texture2D tex;
 
             if (controller != null)
             {

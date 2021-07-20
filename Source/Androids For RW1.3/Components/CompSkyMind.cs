@@ -289,7 +289,7 @@ namespace MOARANDROIDS
                         if (value != 3)
                         {
                             //On eneleve le hediff NoHostConnected
-                            Hediff he = p.health.hediffSet.GetFirstHediffOfDef(Utils.hediffNoHost);
+                            Hediff he = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
                             if (he != null)
                                 p.health.RemoveHediff(he);
                         }
