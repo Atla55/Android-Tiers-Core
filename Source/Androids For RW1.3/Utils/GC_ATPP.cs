@@ -806,6 +806,9 @@ namespace MOARANDROIDS
                     }
 
 
+                    Utils.ATPP_SolarFlareAndroidImpact = DefDatabase<HediffDef>.GetNamedSilentFail("ATPP_SolarFlareAndroidImpact");
+
+
                     //Remplissage des mentalBreakDef des virused lite
                     List<string> selMentalBreaks = new List<string> { "Wander_Sad", "InsultingSpree", "TargetedInsultingSpree", "MurderousRage" };
                     MentalBreakDef mb;

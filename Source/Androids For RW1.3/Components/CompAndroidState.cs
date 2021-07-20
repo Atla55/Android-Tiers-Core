@@ -685,7 +685,7 @@ namespace MOARANDROIDS
                 Pawn cp = (Pawn)parent;
 
                 //Androids avec une peau pas affectés par le solarflare
-                if (cp.def.defName == Utils.TX2 || cp.def.defName == Utils.TX3)
+                if (cp.def.defName == Utils.TX2 || cp.def.defName == Utils.TX3 || cp.def.defName == Utils.TX4)
                     return;
 
                 if (!isOrganic || cp.VXAndVX0ChipPresent())
@@ -708,7 +708,7 @@ namespace MOARANDROIDS
                         if (solarFlareEffectApplied)
                         {
                             Pawn cpawn = (Pawn)parent;
-                            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_SolarFlareAndroidImpact"));
+                            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(Utils.ATPP_SolarFlareAndroidImpact);
                             if (he != null)
                                 cpawn.health.RemoveHediff(he);
                         }
@@ -721,7 +721,7 @@ namespace MOARANDROIDS
                     {
                         Pawn cpawn = (Pawn)parent;
                         //Ajout heddif
-                        cpawn.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_SolarFlareAndroidImpact"));
+                        cpawn.health.AddHediff(Utils.ATPP_SolarFlareAndroidImpact);
 
                         solarFlareEffectApplied = true;
                     }
@@ -731,7 +731,7 @@ namespace MOARANDROIDS
                     {
                         Pawn cpawn = (Pawn)parent;
                         //Ajout heddif
-                        Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_SolarFlareAndroidImpact"));
+                        Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(Utils.ATPP_SolarFlareAndroidImpact);
                         if (he != null)
                             cpawn.health.RemoveHediff(he);
 
@@ -741,7 +741,7 @@ namespace MOARANDROIDS
                 }
                 else
                 {
-                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(DefDatabase<HediffDef>.GetNamed("ATPP_SolarFlareAndroidImpact"));
+                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(Utils.ATPP_SolarFlareAndroidImpact);
                     if (he != null)
                         cp.health.RemoveHediff(he);
                 }

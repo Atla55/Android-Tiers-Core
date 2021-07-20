@@ -90,6 +90,8 @@ namespace MOARANDROIDS
 
         public static bool preventVX0Thought = false;
 
+        public static HediffDef ATPP_SolarFlareAndroidImpact;
+
         public static WorkTypeDef WorkTypeDefSmithing;
 
         public static ThoughtDef thoughtDefVX0Puppet;
