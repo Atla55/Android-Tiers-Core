@@ -291,6 +291,7 @@ namespace MOARANDROIDS
 
         public static string[] IgnoredInteractionsByBasicAndroids = new string[] { "RomanceAttempt", "MarriageProposal", "Breakup" }.GetSortedArray();
 
+        public static List<CompAndroidState> listerSurrogates = new List<CompAndroidState>();
 
         public static HashSet<HediffDef> ExceptionRepairableFrameworkHediff;
 

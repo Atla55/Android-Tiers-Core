@@ -19,10 +19,12 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(PawnGroupMakerParms parms, bool warnOnZeroResults, ref IEnumerable<Pawn> __result)
             {
-                try { 
-
+                try {
+                    Map playerMap = Utils.getRandomMapOfPlayer();
                     //If active solar flare then no surrogates are generated to prevent ridiculous spawn of dawned surrogates
-                    if (!Settings.otherFactionsCanUseSurrogate || Utils.ExceptionBlacklistedFactionNoSurrogate.Contains(parms.faction.def.defName) || Utils.getRandomMapOfPlayer().gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare) || (Settings.androidsAreRare && Rand.Chance(0.95f)))
+                    if (!Settings.otherFactionsCanUseSurrogate 
+                        || (parms.faction != null && Utils.ExceptionBlacklistedFactionNoSurrogate.Contains(parms.faction.def.defName)) 
+                        || (playerMap!=null && playerMap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)) || (Settings.androidsAreRare && Rand.Chance(0.95f)))
                         return;
 
                     int nbHumanoids = 0;
@@ -35,17 +37,11 @@ namespace MOARANDROIDS
                             //Si pas commercant
                             if(e.trader == null && e.TraderKind == null)
                                 nbHumanoids++;
-
-                            //Si android T1/T2 suppression traits ==> Je suis bete cest a cause des surrogates que j'ai crus qu'il avais des traits
-                            /*if(e.def.defName == Utils.T1 || e.def.defName == Utils.T2)
-                            {
-                                Utils.removeAllTraits(e);
-                            }*/
                         }
                     }
 
                     //Faction de niveau industriel et plus ET nb pawn généré supérieur ou égal à 5
-                    if (parms.faction.def.techLevel >= TechLevel.Industrial && nbHumanoids >= 5)
+                    if (parms.faction != null && parms.faction.def.techLevel >= TechLevel.Industrial && nbHumanoids >= 5)
                     {
                         List<Pawn> other = new List<Pawn>();
                         List<Pawn> ret = new List<Pawn>();

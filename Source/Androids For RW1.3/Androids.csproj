@@ -403,6 +403,7 @@
     <Compile Include="Utils\Tex.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="MechFallStuff\Verb_MechFall.cs" />
+    <Compile Include="WorkGivers\WorkGiver_RescueSurrogates.cs" />
     <Compile Include="WorldObjectDef_DownedT5Android.cs" />
     <Compile Include="Patches\HealthCardUtility_DrawHediffRow.cs" />
     <Compile Include="Patches\HealthCardUtility_GetTooltip.cs" />

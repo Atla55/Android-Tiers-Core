@@ -14,20 +14,26 @@ namespace MOARANDROIDS
         /*
          * Permet de forcer les surrogates downed d'etres entreposés dans leurs pods dédiés
          */
-        [HarmonyPatch(typeof(HealthAIUtility), "ShouldSeekMedicalRest")]
+        /*[HarmonyPatch(typeof(HealthAIUtility), "ShouldSeekMedicalRest")]
         public class ShouldSeekMedicalRest_Patch
         {
+            static private Dictionary<int, CompAndroidState> cachedRes = new Dictionary<int, CompAndroidState>();
             [HarmonyPostfix]
             public static void Listener(Pawn pawn, ref bool __result)
             {
                 try
                 {
-                    if (pawn.Faction == Faction.OfPlayer && pawn.ownership != null && pawn.ownership.OwnedBed != null && pawn.health != null && pawn.health.summaryHealth.SummaryHealthPercent >= 0.80f)
+                    if (pawn.Faction == Faction.OfPlayer)// && pawn.ownership != null && pawn.ownership.OwnedBed != null && pawn.health != null && pawn.health.summaryHealth.SummaryHealthPercent >= 0.80f)
                     {
-                        CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = ShouldSeekMedicalRest_Patch.cachedRes.TryGetValue(pawn.thingIDNumber);
+                        if (cas == null) {
+                             cas = pawn.TryGetComp<CompAndroidState>();
+                            ShouldSeekMedicalRest_Patch.cachedRes[pawn.thingIDNumber] = cas;
+                        }
+
                         if (cas != null  && cas.isSurrogate && cas.surrogateController == null )//&& ReachabilityUtility.CanReach(pawn, pawn.ownership.OwnedBed, PathEndMode.OnCell, Danger.Deadly))
                         {
-                            __result = false;
+                            __result = true;
                         }
                     }
                 }
@@ -36,7 +42,7 @@ namespace MOARANDROIDS
                     Log.Message("[ATPP] HealthAIUtility.ShouldSeekMedicalRest " + e.Message + " " + e.StackTrace);
                 }
             }
-        }
+        }*/
 
 
         [HarmonyPatch(typeof(HealthAIUtility), "FindBestMedicine")]
