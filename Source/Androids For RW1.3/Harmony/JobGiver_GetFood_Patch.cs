@@ -128,7 +128,7 @@ namespace MOARANDROIDS
                         
                         if(pod != null)
                         {
-                            __result = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(pod));
+                            __result = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(pod));
                             return;
                         }
 
@@ -151,7 +151,7 @@ namespace MOARANDROIDS
                             return;
                         }
 
-                        __result = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(rs.getFreeReloadPlacePos(pawn)), new LocalTargetInfo(rsb));
+                        __result = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(rs.getFreeReloadPlacePos(pawn)), new LocalTargetInfo(rsb));
                     }
                 }
                 catch(Exception e)

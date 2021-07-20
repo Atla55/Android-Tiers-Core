@@ -2428,7 +2428,7 @@ namespace MOARANDROIDS
 
         public static bool androidReloadingAtChargingStation(Pawn android)
         {
-            if(android.CurJobDef != null && android.CurJobDef.defName == "ATPP_GoReloadBattery")
+            if(android.CurJobDef != null && android.CurJobDef == JobDefOfAT.ATPP_GoReloadBattery)
             {
                 foreach (IntVec3 adjPos in android.CellsAdjacent8WayAndInside())
                 {

@@ -117,7 +117,7 @@ namespace MOARANDROIDS
                             Log.Message("=>" + cp.LabelShortCap + " "+ cp.CurJobDef.defName);*/
 
                         //Il sagit d'un android  et il execute le jobDriver "ATPP_GoReloadBattery"
-                        if (cp != null && Utils.ExceptionAndroidCanReloadWithPowerList.Contains(cp.def.defName) && cp.CurJobDef.defName == "ATPP_GoReloadBattery")
+                        if (cp != null && Utils.ExceptionAndroidCanReloadWithPowerList.Contains(cp.def.defName) && cp.CurJobDef == JobDefOfAT.ATPP_GoReloadBattery)
                         {
                             if (cp.needs.food.CurLevelPercentage < 1.0)
                             {
@@ -184,7 +184,7 @@ namespace MOARANDROIDS
                         Pawn cp = thingList[i] as Pawn;
 
                         //Il sagit d'un android 
-                        if (cp != null && cp.IsColonist && Utils.ExceptionAndroidList.Contains(cp.def.defName) && cp.CurJobDef != null && cp.CurJobDef.defName == "ATPP_GoReloadBattery")
+                        if (cp != null && cp.IsColonist && Utils.ExceptionAndroidList.Contains(cp.def.defName) && cp.CurJobDef != null && cp.CurJobDef == JobDefOfAT.ATPP_GoReloadBattery)
                         {
                             if (countOnly)
                             {

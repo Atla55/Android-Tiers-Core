@@ -54,6 +54,26 @@ namespace MOARANDROIDS
             return null;
         }
 
+        public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)
+        {
+            FloatMenuOption failureReason = this.GetFailureReason(myPawn);
+            if (failureReason != null)
+            {
+                yield return failureReason;
+            }
+            else
+            {
+
+                yield return new FloatMenuOption("ATPP_ForceReload".Translate(), delegate () {
+                    CompReloadStation rs = this.TryGetComp<CompReloadStation>();
+
+                    Job job = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(rs.getFreeReloadPlacePos(myPawn)), new LocalTargetInfo(this));
+                    myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+
+                }, MenuOptionPriority.Default, null, null, 0f, null, null);
+            }
+        }
+
         public override IEnumerable<FloatMenuOption> GetMultiSelectFloatMenuOptions(List<Pawn> selPawns)
         {
             FloatMenuOption failureReason = null;
@@ -81,7 +101,7 @@ namespace MOARANDROIDS
                      CompReloadStation rs = this.TryGetComp<CompReloadStation>();
                      foreach(var cp in this.tmpPawnsCanReach) {
                          IntVec3 reloadPlacePos = rs.getFreeReloadPlacePos(cp);
-                         Job job = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(reloadPlacePos), new LocalTargetInfo(this));
+                         Job job = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(reloadPlacePos), new LocalTargetInfo(this));
                          cp.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                      }
 

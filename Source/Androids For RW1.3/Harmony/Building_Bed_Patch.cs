@@ -114,7 +114,7 @@ namespace MOARANDROIDS
                         //Affectation du pod a myPawn pour eviter le rehet du job
                         myPawn.ownership.ClaimBedIfNonMedical(__instance);
 
-                        Job job = new Job(DefDatabase<JobDef>.GetNamed("ATPP_GoReloadBattery"), new LocalTargetInfo(__instance));
+                        Job job = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(__instance));
                         myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
 
                     }, MenuOptionPriority.Default, null, null, 0f, null, null));

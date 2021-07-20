@@ -218,6 +218,7 @@
     <Compile Include="DefsOf\FactionDefOf.cs" />
     <Compile Include="DefsOf\MentalStateDefOf.cs" />
     <Compile Include="DefsOf\SiteCoreDefOf.cs" />
+    <Compile Include="DefsOf\JobDefOfAT.cs" />
     <Compile Include="DefsOf\StatDefOf.cs" />
     <Compile Include="DefsOf\ThingDefOfAtlascs.cs" />
     <Compile Include="DefsOf\TraitDefOf.cs" />
