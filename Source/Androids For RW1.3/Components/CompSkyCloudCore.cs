@@ -462,22 +462,22 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            StringBuilder ret = new StringBuilder();
             Building build = (Building)parent;
 
             if (parent.Map == null)
                 return base.CompInspectStringExtra();
 
-            ret += getName()+"\n";
-            ret += "ATPP_CentralCoreNbStoredMind".Translate(storedMinds.Count)+"\n";
-            ret += "ATPP_CentralCoreNbAssistingMinds".Translate(assistingMinds.Count) + "\n";
+            ret.AppendLine(getName())
+               .AppendLine("ATPP_CentralCoreNbStoredMind".Translate(storedMinds.Count))
+               .AppendLine("ATPP_CentralCoreNbAssistingMinds".Translate(assistingMinds.Count));
 
             if (build.TryGetComp<CompPowerTrader>().PowerOn)
             {
 
                 if (!Booted())
                 {
-                    ret += "ATPP_SkyCloudCoreBooting".Translate((int)(Math.Max(0, bootGT - Find.TickManager.TicksGame)).TicksToSeconds());
+                    ret.Append("ATPP_SkyCloudCoreBooting".Translate((int)Math.Max(0, bootGT - Find.TickManager.TicksGame).TicksToSeconds()));
                 }
                 else
                 {
@@ -494,7 +494,7 @@ namespace MOARANDROIDS
                         {
                             float p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - cso.replicationStartGT) / (float)(cso.replicationEndingGT - cso.replicationStartGT));
 
-                            ret += "=>" + ("ATPP_CentralCoreReplicationInProgress".Translate(m.LabelShortCap, ((int)(p * (float)100)).ToString())) + "\n";
+                            ret.Append("=>").AppendLine("ATPP_CentralCoreReplicationInProgress".Translate(m.LabelShortCap, ((int)(p * (float)100)).ToString()));
                         }
                         //ATPP_CentralCoreReplicationInProgress
 
@@ -503,18 +503,18 @@ namespace MOARANDROIDS
                             CompSkyCloudCore csc2 = cso.migrationSkyCloudHostDest.TryGetComp<CompSkyCloudCore>();
                             float p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - cso.migrationStartGT) / (float)(cso.migrationEndingGT - cso.migrationStartGT));
 
-                            ret += "=>" + ("ATPP_CentralCoreMigrationInProgress".Translate(m.LabelShortCap, csc2.getName(), ((int)(p * (float)100)).ToString())) + "\n";
+                            ret.Append("=>").AppendLine("ATPP_CentralCoreMigrationInProgress".Translate(m.LabelShortCap, csc2.getName(), ((int)(p * (float)100)).ToString()));
                         }
 
                         else if (inMentalBreak.ContainsKey(m))
                         {
-                            ret += "=>" + "ATPP_CentralCoreProcessInMentalBreak".Translate(m.LabelShortCap) + "\n";
+                            ret.Append("=>").AppendLine("ATPP_CentralCoreProcessInMentalBreak".Translate(m.LabelShortCap));
                         }
                     }
                 }
             }
 
-            return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+            return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
         }
 
         public bool Booted()

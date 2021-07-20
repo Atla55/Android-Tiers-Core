@@ -255,32 +255,32 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            StringBuilder ret = new StringBuilder();
 
             if (parent.Map == null)
                 return base.CompInspectStringExtra();
 
             if (isSecurityServer)
             {
-                ret += "ATPP_SecurityServersSynthesis".Translate(Utils.GCATPP.getNbSlotSecurisedAvailable(), Utils.GCATPP.getNbThingsConnected()) + "\n";
-                ret += "ATTP_SecuritySlotsAdded".Translate(Utils.nbSecuritySlotsGeneratedBy((Building)parent)) + "\n";
+                ret.AppendLine("ATPP_SecurityServersSynthesis".Translate(Utils.GCATPP.getNbSlotSecurisedAvailable(), Utils.GCATPP.getNbThingsConnected()))
+                   .AppendLine("ATTP_SecuritySlotsAdded".Translate(Utils.nbSecuritySlotsGeneratedBy((Building)parent)));
             }
 
             if (isHackingServer)
             {
-                ret += "ATPP_HackingServersSynthesis".Translate(Utils.GCATPP.getNbHackingPoints(), Utils.GCATPP.getNbHackingSlotAvailable()) + "\n";
-                ret += "ATTP_HackingProducedPoints".Translate(Utils.nbHackingPointsGeneratedBy((Building)parent)) + "\n";
-                ret += "ATTP_HackingSlotsAdded".Translate(Utils.nbHackingSlotsGeneratedBy((Building)parent)) + "\n";
+                ret.AppendLine("ATPP_HackingServersSynthesis".Translate(Utils.GCATPP.getNbHackingPoints(), Utils.GCATPP.getNbHackingSlotAvailable()))
+                   .AppendLine("ATTP_HackingProducedPoints".Translate(Utils.nbHackingPointsGeneratedBy((Building)parent)))
+                   .AppendLine("ATTP_HackingSlotsAdded".Translate(Utils.nbHackingSlotsGeneratedBy((Building)parent)));
             }
 
             if (isSkillServer)
             {
-                ret += "ATPP_SkillServersSynthesis".Translate(Utils.GCATPP.getNbSkillPoints(), Utils.GCATPP.getNbSkillSlotAvailable()) + "\n";
-                ret += "ATTP_SkillProducedPoints".Translate(Utils.nbSkillPointsGeneratedBy((Building)parent)) + "\n";
-                ret += "ATTP_SkillSlotsAdded".Translate(Utils.nbSkillSlotsGeneratedBy((Building)parent)) + "\n";
+                ret.AppendLine("ATPP_SkillServersSynthesis".Translate(Utils.GCATPP.getNbSkillPoints(), Utils.GCATPP.getNbSkillSlotAvailable()))
+                   .AppendLine("ATTP_SkillProducedPoints".Translate(Utils.nbSkillPointsGeneratedBy((Building)parent)))
+                   .AppendLine("ATTP_SkillSlotsAdded".Translate(Utils.nbSkillSlotsGeneratedBy((Building)parent)));
             }
 
-            return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+            return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
         }
 
         public override void PostDeSpawn(Map map)

@@ -37,6 +37,7 @@ C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core
 C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.2\obj\Debug\AndroidTiers.dll
 C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\1.2\Assemblies\AndroidTiers.dll
 C:\Users\AaronDB\Desktop\Mods Folder for Mod Folders\Rimworld\Android-Tiers-Core\Android-Tiers-Core\Source\Androids For RW1.2\obj\Debug\Androids.csproj.CopyComplete
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\mods\Android-Tiers-Core\1.3\Assemblies\AndroidTiers.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\mods\Android-Tiers-Core\Source\Androids For RW1.3\obj\Debug\Androids.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\mods\Android-Tiers-Core\Source\Androids For RW1.3\obj\Debug\AndroidTiers.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\mods\Android-Tiers-Core\1.3\Assemblies\AndroidTiers.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\mods\Android-Tiers-Core\Source\Androids For RW1.3\obj\Debug\Androids.csprojAssemblyReference.cache

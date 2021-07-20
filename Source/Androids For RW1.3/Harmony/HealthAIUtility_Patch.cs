@@ -22,10 +22,10 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    if (pawn.Faction == Faction.OfPlayer)
+                    if (pawn.Faction == Faction.OfPlayer && pawn.ownership != null && pawn.ownership.OwnedBed != null && pawn.health != null && pawn.health.summaryHealth.SummaryHealthPercent >= 0.80f)
                     {
                         CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
-                        if (cas != null && pawn.health != null && pawn.health.summaryHealth.SummaryHealthPercent >= 0.80f && cas.isSurrogate && cas.surrogateController == null && pawn.ownership != null && pawn.ownership.OwnedBed != null )//&& ReachabilityUtility.CanReach(pawn, pawn.ownership.OwnedBed, PathEndMode.OnCell, Danger.Deadly))
+                        if (cas != null  && cas.isSurrogate && cas.surrogateController == null )//&& ReachabilityUtility.CanReach(pawn, pawn.ownership.OwnedBed, PathEndMode.OnCell, Danger.Deadly))
                         {
                             __result = false;
                         }

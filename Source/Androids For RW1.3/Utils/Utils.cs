@@ -1050,7 +1050,7 @@ namespace MOARANDROIDS
 
         public static bool VX3ChipPresent(this Pawn pawn)
         {
-            return pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffVX0Chip) != null;
+            return pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffVX3Chip) != null;
         }
 
         public static void showFailedLetterMindUpload(string reason)

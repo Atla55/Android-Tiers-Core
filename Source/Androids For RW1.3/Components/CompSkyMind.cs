@@ -445,38 +445,38 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            StringBuilder ret = new StringBuilder();
 
             if (parent.Map == null)
                 return base.CompInspectStringExtra();
 
             if (infected == 1 && infectedEndGT != -1)
             {
-                ret += "ATPP_TempInfection".Translate((infectedEndGT- Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()) + "\n";
+                ret.AppendLine("ATPP_TempInfection".Translate((infectedEndGT - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()));
             }
 
             if (infected == 3)
             {
-                ret += "ATPP_CryptoLockedSurrogate".Translate() + "\n";
+                ret.AppendLine("ATPP_CryptoLockedSurrogate".Translate());
             }
 
             if (infected == 2)
             {
 
-                ret += "ATPP_ExplosiveVirus".Translate((int)(Math.Max(0, (infectedExplodeGT - Find.TickManager.TicksGame)).TicksToSeconds())) + "\n";
+                ret.AppendLine("ATPP_ExplosiveVirus".Translate((int)Math.Max(0, infectedExplodeGT - Find.TickManager.TicksGame).TicksToSeconds()));
             }
 
             if (hacked == 3)
             {
-                ret += "ATPP_TempHackingLosingControlIn".Translate((int)(Math.Max(0, (hackEndGT - Find.TickManager.TicksGame)).TicksToSeconds()))+"\n";
+                ret.AppendLine("ATPP_TempHackingLosingControlIn".Translate((int)Math.Max(0, hackEndGT - Find.TickManager.TicksGame).TicksToSeconds()));
             }
 
             if (Utils.GCATPP.isConnectedToSkyMind(parent))
             {
-                ret += "ATPP_SkyMindDetected".Translate() + "\n";
+                ret.AppendLine("ATPP_SkyMindDetected".Translate());
             }
 
-            return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+            return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
         }
 
         public void resetInternalState()

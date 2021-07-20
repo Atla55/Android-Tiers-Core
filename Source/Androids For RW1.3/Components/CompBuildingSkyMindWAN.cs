@@ -50,14 +50,14 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            StringBuilder ret = new StringBuilder();
 
             if (parent.Map == null)
                 return base.CompInspectStringExtra();
 
-            ret += "ATPP_SkyMindAntennaSynthesis".Translate(Utils.GCATPP.getNbThingsConnected(), Utils.GCATPP.getNbSlotAvailable()) + "\n";
+            ret.AppendLine("ATPP_SkyMindAntennaSynthesis".Translate(Utils.GCATPP.getNbThingsConnected(), Utils.GCATPP.getNbSlotAvailable()));
 
-            return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+            return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
         }
 
 

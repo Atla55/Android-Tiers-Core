@@ -1247,24 +1247,12 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            StringBuilder ret = new StringBuilder();
             try
             {
 
                 if (parent.Map == null || isRegularM7())
                     return base.CompInspectStringExtra();
-
-                /*foreach (var cbp in parent.def.race.body.corePart.parts.ToList())
-                {
-
-                        Log.Message("1=>"+cbp.def.defName);
-                }
-
-                foreach (var cbp in ((Pawn)parent).RaceProps.body.AllParts)
-                {
-                     Log.Message("2=>" + cbp.def.defName);
-                }*/
-
 
                 int lvl = 0;
                 Pawn cp = (Pawn)parent;
@@ -1274,21 +1262,21 @@ namespace MOARANDROIDS
 
                 if (!isOrganic)
                 {
-                    ret += "ATPP_BatteryLevel".Translate(lvl) + "\n";
+                    ret.AppendLine("ATPP_BatteryLevel".Translate(lvl));
 
                     if (Utils.POWERPP_LOADED && connectedLWPN != null)
                     {
                         if (connectedLWPNActive)
-                            ret += "ATPP_LWPNConnected".Translate(getConnectedLWPNLabel(connectedLWPN))+"\n";
+                            ret.AppendLine("ATPP_LWPNConnected".Translate(getConnectedLWPNLabel(connectedLWPN)));
                         else
-                            ret += "ATPP_LWPNDisconnected".Translate(getConnectedLWPNLabel(connectedLWPN))+"\n";
+                            ret.AppendLine("ATPP_LWPNDisconnected".Translate(getConnectedLWPNLabel(connectedLWPN)));
                     }
 
                     if (batteryExplosionEndingGT != -1)
                     {
                         float p;
                         p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - batteryExplosionStartingGT) / (float)(batteryExplosionEndingGT - batteryExplosionStartingGT));
-                        ret += "ATPP_BatteryExplodeInProgress".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                        ret.AppendLine("ATPP_BatteryExplodeInProgress".Translate(((int)(p * (float)100)).ToString()));
                     }
 
                     if (uploadEndingGT != -1 || showUploadProgress)
@@ -1310,29 +1298,29 @@ namespace MOARANDROIDS
                         }
 
 
-                        ret += action.Translate(((int)(p * (float)100)).ToString()) + "\n";
+                        ret.AppendLine(action.Translate(((int)(p * (float)100)).ToString()));
                     }
 
                     if (frameworkNaniteEffectGTEnd != -1)
                     {
                         float p;
                         p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - frameworkNaniteEffectGTStart) / (float)(frameworkNaniteEffectGTEnd - frameworkNaniteEffectGTStart));
-                        ret += "ATPP_NaniteFrameworkRepairingInProgress".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                        ret.AppendLine("ATPP_NaniteFrameworkRepairingInProgress".Translate(((int)(p * (float)100)).ToString()));
                     }
 
                     if (paintingIsRusted)
                     {
-                        ret += "ATPP_Rusted".Translate() + "\n";
+                        ret.AppendLine("ATPP_Rusted".Translate());
                     }
                 }
 
                 if (isSurrogate)
                 {
                     if (surrogateController != null)
-                        ret += "ATPP_RemotelyControlledBy".Translate(((Pawn)parent).LabelShortCap) + "\n";
+                        ret.AppendLine("ATPP_RemotelyControlledBy".Translate(((Pawn)parent).LabelShortCap));
 
                     if (lastController != null && externalController == null)
-                        ret += "ATPP_PreviousSurrogateControllerIs".Translate(lastController.LabelShortCap) + "\n";
+                        ret.AppendLine("ATPP_PreviousSurrogateControllerIs".Translate(lastController.LabelShortCap));
 
 
                     if (surrogateController != null)
@@ -1342,22 +1330,22 @@ namespace MOARANDROIDS
                         {
                             if (cso.SX == parent)
                             {
-                                ret += "ATPP_VX3SurrogateTypePrimary".Translate() + "\n";
+                                ret.AppendLine("ATPP_VX3SurrogateTypePrimary".Translate());
                             }
                             else
                             {
-                                ret += "ATPP_VX3SurrogateTypeSecondary".Translate() + "\n";
+                                ret.AppendLine("ATPP_VX3SurrogateTypeSecondary".Translate());
                             }
                         }
                     }
                 }
 
-                return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+                return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Log.Message("[ATPP] CompAndroidState.CompInspectStringExtra " + e.Message + " " + e.StackTrace);
-                return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+                return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
             }
         }
 
