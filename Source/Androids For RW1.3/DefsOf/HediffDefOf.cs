@@ -61,6 +61,6 @@ namespace MOARANDROIDS
 
         public static HediffDef ATPP_InRemoteControlMode;
 
-
+        public static HediffDef ATPP_SolarFlareAndroidImpact;
     }
 }

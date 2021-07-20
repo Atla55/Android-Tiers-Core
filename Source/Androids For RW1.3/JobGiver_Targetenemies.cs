@@ -5,10 +5,8 @@ using Verse.AI;
 
 namespace MOARANDROIDS
 {
-    // Token: 0x0200002A RID: 42
     public class JobGiver_TargetEnemiesSwarm : ThinkNode_JobGiver
     {
-        // Token: 0x06000082 RID: 130 RVA: 0x00004484 File Offset: 0x00002684
         protected override Job TryGiveJob(Pawn pawn)
         {
             bool flag = pawn.TryGetAttackVerb(null, false) == null;

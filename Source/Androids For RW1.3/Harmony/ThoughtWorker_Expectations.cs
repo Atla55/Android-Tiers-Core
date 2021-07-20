@@ -21,7 +21,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn p, ref ThoughtState __result)
             {
-                if (p.def == ThingDefOfAT.Android1Tier || p.def.defName == "M7Mech"  || p.def.defName == Utils.TX2K)
+                if (p.def == ThingDefOfAT.Android1Tier || p.def == ThingDefOfAT.M7Mech  || p.def.defName == Utils.TX2K)
                 {
                     __result = ThoughtState.ActiveAtStage(5);
                 }

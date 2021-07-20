@@ -99,9 +99,6 @@ namespace MOARANDROIDS
         public static ThingDef ATPP_MoteBI;
 
 
-
-        public static HediffDef ATPP_SolarFlareAndroidImpact;
-
         public static WorkTypeDef WorkTypeDefSmithing;
 
         public static ThoughtDef thoughtDefVX0Puppet;
@@ -2248,7 +2245,7 @@ namespace MOARANDROIDS
 
         public static void applySolarFlarePolicy()
         {
-            HediffDef he = DefDatabase<HediffDef>.GetNamed("ATPP_SolarFlareAndroidImpact", false);
+            HediffDef he = HediffDefOf.ATPP_SolarFlareAndroidImpact;
             if (he != null)
             {
                 if (Settings.duringSolarFlaresAndroidsShouldBeDowned)
@@ -2289,7 +2286,7 @@ namespace MOARANDROIDS
         {
             try
             {
-                ThingDef td = DefDatabase<ThingDef>.GetNamed("Android5Tier", false);
+                ThingDef td = ThingDefOfAT.Android5Tier;
 
                 if (td == null)
                     return;

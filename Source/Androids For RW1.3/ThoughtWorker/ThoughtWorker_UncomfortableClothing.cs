@@ -5,11 +5,8 @@ using RimWorld;
 
 namespace MOARANDROIDS
 {
-
-    // Token: 0x02000200 RID: 512
     public class ThoughtWorker_UncomfortableClothing : ThoughtWorker
     {
-        // Token: 0x06000975 RID: 2421 RVA: 0x00048EA0 File Offset: 0x000472A0
         protected override ThoughtState CurrentStateInternal(Pawn p)
         {
             string text = null;

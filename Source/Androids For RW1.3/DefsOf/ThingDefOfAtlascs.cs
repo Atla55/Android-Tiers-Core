@@ -18,6 +18,10 @@ namespace MOARANDROIDS
         public static ThingDef Android3Tier;
 
         public static ThingDef Android4Tier;
+
+        public static ThingDef Android5Tier;
+
+        public static ThingDef M7Mech;
     }
 
 }
