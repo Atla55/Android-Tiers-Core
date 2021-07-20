@@ -182,7 +182,9 @@
     <Compile Include="Alerts\Alert_Hot2Devices.cs" />
     <Compile Include="Alerts\Alert_Hot3Devices.cs" />
     <Compile Include="Alerts\Alert_UnsecurisedClients.cs" />
+    <Compile Include="DefsOf\SoundDefOfAT.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Harmony\ToilEffects_Patch.cs" />
     <Compile Include="Other\AndroidCapacityLabel.cs" />
     <Compile Include="AndroidTiers.cs" />
     <Compile Include="Buildings\Building_ReloadStation.cs" />
