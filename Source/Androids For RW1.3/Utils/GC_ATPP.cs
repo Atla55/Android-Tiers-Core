@@ -986,22 +986,6 @@ namespace MOARANDROIDS
                 if (Utils.POWERPP_LOADED)
                     checkDisconnectedFromLWPNAndroid();
             }
-
-            //Each 15 sec check surogate to rescue if surrogate not showed in colonist bar
-            if(CGT % 900 == 0)
-            {
-                if (Settings.hideInactiveSurrogates)
-                {
-                    foreach(var cas in Utils.listerSurrogates)
-                    {
-                        //surrogate spawned and not controlled
-                        if(cas != null && cas.surrogateController == null && ((Pawn)cas.parent).Spawned)
-                        {
-
-                        }
-                    }
-                }
-            }
         }
 
         /*

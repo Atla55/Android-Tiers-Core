@@ -152,7 +152,9 @@ namespace MOARANDROIDS
                     CompAndroidState cas = __instance.TryGetComp<CompAndroidState>();
                     if (cas != null)
                     {
-                        Utils.listerSurrogates.Add(cas);
+                        if(__instance.Downed)
+                            Utils.addDownedSurrogateToLister(__instance);
+
                         if (Settings.hideInactiveSurrogates)
                         {
                             //Remove surrogate from main lists only if inactive surrogate

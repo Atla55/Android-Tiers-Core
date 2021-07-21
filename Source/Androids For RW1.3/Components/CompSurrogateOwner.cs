@@ -1179,13 +1179,20 @@ namespace MOARANDROIDS
                     controlled.timetable.SetAssignment(i, cp.timetable.GetAssignment(i));
                 }
             }
+            
             //Log.Message("i7");
             //Add surrogate in mapPawns
-            if (!externalController && Settings.hideInactiveSurrogates && controlled.Map != null)
+            if(!externalController)
             {
-                controlled.Map.mapPawns.RegisterPawn(controlled);
+                //Remove from listing of surrogate downed to reduce overhead of processing the list
+                Utils.removeDownedSurrogateToLister(controlled);
+
+                if (Settings.hideInactiveSurrogates && controlled.Map != null)
+                {
+                    controlled.Map.mapPawns.RegisterPawn(controlled);
+                }
             }
-            //Log.Message("i8");
+            //Log.Message("i8");)
         }
 
         /*

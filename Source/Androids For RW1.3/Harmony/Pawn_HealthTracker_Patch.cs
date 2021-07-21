@@ -245,17 +245,23 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    // Deconnexion of Is surrogate android used et que appartenant au joueur ====>>>> POUR eviter les problemes de reminescence fantome de surrogates d'autres factions dans des Lord qui reste a cause du fait que le MakeDown les enleves de la liste mais le disconnect va essayer de relancer un CONNECT (dans le cadre des surrogates externes)
-                    if (___pawn.IsSurrogateAndroid(true) && ___pawn.Faction.IsPlayer)
+                    if (___pawn.IsSurrogateAndroid() && ___pawn.Faction.IsPlayer)
                     {
-                        //Obtention controlleur
-                        CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
-                        if (cas == null)
-                            return;
+                        //Add surrogate to the list of downed surrogates
+                        Utils.addDownedSurrogateToLister(___pawn);
 
-                        //Arret du mode de control chez le controller
-                        CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
-                        cso.stopControlledSurrogate(null);
+                        // Deconnexion of Is surrogate android used et que appartenant au joueur ====>>>> POUR eviter les problemes de reminescence fantome de surrogates d'autres factions dans des Lord qui reste a cause du fait que le MakeDown les enleves de la liste mais le disconnect va essayer de relancer un CONNECT (dans le cadre des surrogates externes)
+                        if (___pawn.IsSurrogateAndroid(true))
+                        {
+                            //Obtention controlleur
+                            CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                            if (cas == null)
+                                return;
+
+                            //Arret du mode de control chez le controller
+                            CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                            cso.stopControlledSurrogate(null);
+                        }
                     }
                 }
                 catch(Exception e)

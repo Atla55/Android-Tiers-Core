@@ -291,7 +291,8 @@ namespace MOARANDROIDS
 
         public static string[] IgnoredInteractionsByBasicAndroids = new string[] { "RomanceAttempt", "MarriageProposal", "Breakup" }.GetSortedArray();
 
-        public static List<CompAndroidState> listerSurrogates = new List<CompAndroidState>();
+        public static List<CompAndroidState> listerDownedSurrogatesCAS = new List<CompAndroidState>();
+        public static List<Thing> listerDownedSurrogatesThing = new List<Thing>();
 
         public static HashSet<HediffDef> ExceptionRepairableFrameworkHediff;
 
@@ -299,6 +300,32 @@ namespace MOARANDROIDS
         public static ResearchProjectDef ResearchProjectSkyMindWAN;
 
         public static ResearchProjectDef ResearchAndroidBatteryOverload;
+
+        public static void addDownedSurrogateToLister(Pawn surrogate)
+        {
+            if (!listerDownedSurrogatesThing.Contains(surrogate))
+            {
+                CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+                if (cas != null)
+                {
+                    listerDownedSurrogatesThing.Add(surrogate);
+                    listerDownedSurrogatesCAS.Add(cas);
+                }
+            }
+        }
+
+        public static void removeDownedSurrogateToLister(Pawn surrogate)
+        {
+            if (listerDownedSurrogatesThing.Contains(surrogate))
+            {
+                listerDownedSurrogatesThing.Remove(surrogate);
+                CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+                if (cas != null)
+                {
+                    listerDownedSurrogatesCAS.Remove(cas);
+                }
+            }
+        }
 
 
         public static int getConsumedPowerByAndroid(string defName)

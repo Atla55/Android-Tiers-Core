@@ -441,6 +441,17 @@ namespace MOARANDROIDS
             connected = false;
 
             Find.ColonistBar.MarkColonistsDirty();
+
+            //If surrogate is also Infected badly then we restore the lord attack
+            if (infected == 1 || infected == 2)
+            {
+                LordJob_AssaultColony lordJob;
+                Lord lord = null;
+                lordJob = new LordJob_AssaultColony(Faction.OfAncientsHostile, false, false, false, false, false);
+                lord = LordMaker.MakeNewLord(Faction.OfAncientsHostile, lordJob, Current.Game.CurrentMap, null);
+                if (lord != null)
+                    lord.AddPawn(cp);
+            }
         }
 
         public override string CompInspectStringExtra()
