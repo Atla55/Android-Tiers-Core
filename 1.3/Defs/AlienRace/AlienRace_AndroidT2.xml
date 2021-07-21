@@ -125,9 +125,14 @@
 					<head>Things/Droids/tier2/head/</head>
 				</li>
 			</graphicPaths>
-			<hairSettings>
-				<hasHair>false</hasHair>
-			</hairSettings>
+			<styleSettings>
+                <li>
+                    <key>HairDef</key>
+                    <value>
+                        <hasStyle>false</hasStyle>
+                    </value>
+                </li>
+            </styleSettings>
 			<thoughtSettings>
 				<cannotReceiveThoughtsAtAll>false</cannotReceiveThoughtsAtAll>
 				<cannotReceiveThoughts>
