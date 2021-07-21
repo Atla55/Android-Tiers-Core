@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+  <NeedMechanic>Precisa de mecânico</NeedMechanic>
+  <NeedMechanicDesc>Estes androides precisam de reparos, mas você não tem colonos saudáveis designados como mecânicos.\n\n{0}\nDesignar um colono saudável para o trabalho de mecânico. Se não for reparado rapidamente e corretamente, os danos podem se tornar permanentes.</NeedMechanicDesc>
+  
+</LanguageData>

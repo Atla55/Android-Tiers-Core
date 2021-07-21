@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<ATPP_ResearchSM7.label>SM7 Mechanoids De Batalha</ATPP_ResearchSM7.label>
+	<ATPP_ResearchSM7.description>Pesquise como construir mechanoids de batalha SM7.</ATPP_ResearchSM7.description>
+	
+	<ATPP_ResearchServerI100Serie.label>I100 Servidores de série</ATPP_ResearchServerI100Serie.label>
+	<ATPP_ResearchServerI100Serie.description>Pesquise como construir servidores de segurança, hacking e habilidades da série I100, baratos, mas barulhentos, grandes e não muito eficientes.</ATPP_ResearchServerI100Serie.description>
+	
+	<ATPP_ResearchServerI300Serie.label>I300 Servidores de série</ATPP_ResearchServerI300Serie.label>
+	<ATPP_ResearchServerI300Serie.description>Pesquise como construir segurança da série i300, hackers e servidores de habilidade, barulhento, mas intermediário em termos de eficiência.</ATPP_ResearchServerI300Serie.description>
+	
+	<ATPP_ResearchServerI500Serie.label>I500 Servidores de série</ATPP_ResearchServerI500Serie.label>
+	<ATPP_ResearchServerI500Serie.description>Pesquisa como construir segurança da série i500, hacking e servidores de habilidade, caro, mas muito eficiente.</ATPP_ResearchServerI500Serie.description>
+	
+	<ATPP_ResearchSkyCloudCore.label>Núcleo de SkyCloud.</ATPP_ResearchSkyCloudCore.label>
+	<ATPP_ResearchSkyCloudCore.description>Pesquise como construir servidores Core SkyCloud, que são supercomputadores poderosos que podem hospedar várias consciências digitalizadas 'e permitir que eles interajam com o mundo real através de todos os dispositivos conectados à rede de Skymind.</ATPP_ResearchSkyCloudCore.description>
+	
+	<ATPP_ResearchBatteryOverload.label>Sobrecarga da bateria</ATPP_ResearchBatteryOverload.label>
+	<ATPP_ResearchBatteryOverload.description>Pesquisa como transformar Androids em bombas à pé, fazendo com que sua bateria interna explodir.</ATPP_ResearchBatteryOverload.description>
+	
+	<ATPP_ResearchVX0Chip.label>VX0 Neural Chip</ATPP_ResearchVX0Chip.label>
+	<ATPP_ResearchVX0Chip.description>Pesquise como criar chips VX0, um chip neural que transforma seu hospedeiro em um substituto biológico.</ATPP_ResearchVX0Chip.description>
+
+	<ATPP_ResearchCharchingStation.label>Estação de Carregamento</ATPP_ResearchCharchingStation.label>
+	<ATPP_ResearchCharchingStation.description>Permita que você carregue até 8 androides simultaneamente diretamente à sua bateria interna em vez de através de seu gerador de biomassa.</ATPP_ResearchCharchingStation.description>
+	
+	<ATPP_ResearchCraftBasicNanoKit.label>NanoKit básico</ATPP_ResearchCraftBasicNanoKit.label>
+	<ATPP_ResearchCraftBasicNanoKit.description>Permita-lhe criar nanokits básicos que são necessários para reparar androides feridos</ATPP_ResearchCraftBasicNanoKit.description>
+	
+	<ATPP_ResearchCraftIntermediateNanoKit.label>NanoKit intermediário</ATPP_ResearchCraftIntermediateNanoKit.label>
+	<ATPP_ResearchCraftIntermediateNanoKit.description>Permita-lhe criar nanokits intermediários que são necessários para reparar androides feridos</ATPP_ResearchCraftIntermediateNanoKit.description>
+	
+	<ATPP_ResearchCraftAdvancedNanoKit.label>NanoKit avançado</ATPP_ResearchCraftAdvancedNanoKit.label>
+	<ATPP_ResearchCraftAdvancedNanoKit.description>Permita-lhe criar nanokits avançados que são necessários para reparar androides feridos</ATPP_ResearchCraftAdvancedNanoKit.description>
+	
+	<ATPP_ResearchVX1Chip.label>VX1 Neural Chip</ATPP_ResearchVX1Chip.label>
+	<ATPP_ResearchVX1Chip.description>Pesquise como criar o chip VX1, um chip neural que permite que ele seja hospedeiro para controlar remotamente qualquer série SX android ou substituto biológico.</ATPP_ResearchVX1Chip.description>
+	
+	<ATPP_ResearchVX2Chip.label>VX2 Neural Chip</ATPP_ResearchVX2Chip.label>
+	<ATPP_ResearchVX2Chip.description>Pesquise como criar o chip VX2, um chip neural que permite que ele seja hospedeiro para controlar remotamente qualquer série SX android ou substituto biológico e duplicar/permute sua mente.</ATPP_ResearchVX2Chip.description>
+	
+	<ATPP_ResearchVX3Chip.label>VX3 Neural Chip</ATPP_ResearchVX3Chip.label>
+	<ATPP_ResearchVX3Chip.description>Pesquise como criar o chip VX3, um chip neural que permite que ele seja hospedeiro para controlar remotamente vários androides da série SX ou substitutos biológicos ao mesmo tempo e duplicar/permutar sua mente.</ATPP_ResearchVX3Chip.description>
+	
+	<ATPP_ResearchSkyMindWAN.label>SkyMind V2 Antenna</ATPP_ResearchSkyMindWAN.label>
+	<ATPP_ResearchSkyMindWAN.description>Pesquise como construir a Antena SkyMind V2, que serve de base para transferir a consciência de um colono para outro e permitir que até 15 colonos sejam conectados simultaneamente por Antena V2.</ATPP_ResearchSkyMindWAN.description>
+
+	<ATPP_ResearchSkyMindLAN.label>SkyMind V1 Antenna</ATPP_ResearchSkyMindLAN.label>
+	<ATPP_ResearchSkyMindLAN.description>Pesquise como construir a Antena SkyMind V1, que serve de base para transferir a consciência de um colono para outro e permitir que até 3 colonos sejam conectados simultaneamente por Antena V1.</ATPP_ResearchSkyMindLAN.description>
+	
+	<ATPP_ResearchSurrogateHost.label>SX Androids</ATPP_ResearchSurrogateHost.label>
+	<ATPP_ResearchSurrogateHost.description>Pesquise como construir androides da série SX, que são semelhantes à série TX, mas com seus cérebros artificiais substituídos por um sistema avançado de controle remoto.</ATPP_ResearchSurrogateHost.description>
+	
+	<ATPP_ResearchCraftRepairNaniteBanks.label>Curar defeitos da velhice</ATPP_ResearchCraftRepairNaniteBanks.label>
+	<ATPP_ResearchCraftRepairNaniteBanks.description>Permita-lhe criar nanites que curam defeitos de androides da velhice.</ATPP_ResearchCraftRepairNaniteBanks.description>
+	
+</LanguageData>

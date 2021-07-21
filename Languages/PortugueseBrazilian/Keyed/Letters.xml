@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<Atlas_FactionChange>{0} foi reprogramado com sucesso. Eles agora fazem parte da colônia..</Atlas_FactionChange>
+	<LetterLabelAtlas_FactionChange>Novo Colono</LetterLabelAtlas_FactionChange>
+	
+	<Atlas_LossOfSelfWill>{0} teve o seu livre arbítrio atenuado. Como tal, eles agora são incapazes de pensar livremente ou sentir emoções e não irão interagir com outros colonos tão comumente. A acrescentar a isto: perderam todos os seus traços durante o processo. Tornando-os nada mais do que uma máquina obediente</Atlas_LossOfSelfWill>
+	<LetterLabelAtlas_LossOfSelfWill>Android Livre Arbítrio</LetterLabelAtlas_LossOfSelfWill>
+	
+	<Atlas_Mutation>{0} sofreu uma mutação em um fractal. Uma besta de carne contorcida, causada pela pílula fractal!.</Atlas_Mutation>
+	<LetterLabelAtlas_Mutation>Mutação colonista</LetterLabelAtlas_Mutation>
+
+	<Atlas_TraitReroll>{0} teve sua personalidade alterada e suas características foram remanificadas.</Atlas_TraitReroll>
+	<LetterLabelAtlas_TraitReroll>Mudança de personalidade Android.</LetterLabelAtlas_TraitReroll>
+	
+</LanguageData>

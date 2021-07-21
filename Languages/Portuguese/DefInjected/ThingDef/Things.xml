@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+  <!-- AI Generator description -->
+  
+  <ATPP_T4BlankGeneratorAI.label>T4 Android em branco</ATPP_T4BlankGeneratorAI.label>
+  <ATPP_T4BlankGeneratorAI.description>Crie uma rede neural em branco para o Android</ATPP_T4BlankGeneratorAI.description>
+  
+  <ATPP_T3BlankGeneratorAI.label>T3 Android em branco</ATPP_T3BlankGeneratorAI.label>
+  <ATPP_T3BlankGeneratorAI.description>Crie uma rede neural em branco para o Android</ATPP_T3BlankGeneratorAI.description>
+  
+</LanguageData>

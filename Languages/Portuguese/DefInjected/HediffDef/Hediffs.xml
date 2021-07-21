@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  
+  <ATPP_ConsciousnessUpload.label>Upload da mente</ATPP_ConsciousnessUpload.label>
+  <ATPP_ConsciousnessUpload.labelNoun>Upload da mente</ATPP_ConsciousnessUpload.labelNoun>
+  
+  <ATPP_NoHost.label>Nenhum host conectado</ATPP_NoHost.label>
+  <ATPP_NoHost.labelNoun>Nenhum host conectado</ATPP_NoHost.labelNoun>
+  
+  <ATPP_HediffRXChip.label>RX Neural chip</ATPP_HediffRXChip.label>
+  <ATPP_HediffRXChip.labelNoun>Um chip neural que atua como um SkyMind pessoal.</ATPP_HediffRXChip.labelNoun>
+  
+  <ATPP_HediffVX0Chip.label>VX0 Neural chip</ATPP_HediffVX0Chip.label>
+  <ATPP_HediffVX0Chip.labelNoun>Um chip neural para transformar o hospedeiro em um substituto biológico</ATPP_HediffVX0Chip.labelNoun>
+  
+  <ATPP_HediffVX1Chip.label>VX1 Neural Chip</ATPP_HediffVX1Chip.label>
+  <ATPP_HediffVX1Chip.labelNoun>VX1 Neural Chip</ATPP_HediffVX1Chip.labelNoun>
+  
+  <ATPP_HediffVX2Chip.label>VX2 Neural Chip</ATPP_HediffVX2Chip.label>
+  <ATPP_HediffVX2Chip.labelNoun>VX2 Neural Chip</ATPP_HediffVX2Chip.labelNoun>
+  
+  <ATPP_HediffVX3Chip.label>VX3 Neural Chip</ATPP_HediffVX3Chip.label>
+  <ATPP_HediffVX3Chip.labelNoun>VX3 Neural Chip</ATPP_HediffVX3Chip.labelNoun>
+  
+  <ATPP_InRemoteControlMode.label>Modo de controle remoto ativado</ATPP_InRemoteControlMode.label>
+  <ATPP_InRemoteControlMode.labelNoun>Modo de controle remoto ativado</ATPP_InRemoteControlMode.labelNoun>
+  
+  <ATPP_RemotelyControlled.label>Controlado remotamente</ATPP_RemotelyControlled.label>
+  <ATPP_RemotelyControlled.labelNoun>Controlado remotamente</ATPP_RemotelyControlled.labelNoun>
+  
+  <ATPP_SolarFlareAndroidImpact.label>Erupção solar</ATPP_SolarFlareAndroidImpact.label>
+  <ATPP_SolarFlareAndroidImpact.LabelNoun>Erupção solar</ATPP_SolarFlareAndroidImpact.LabelNoun>
+  
+  <ATPP_LowNetworkSignal.label>Sinal de rede SkyMind baixo</ATPP_LowNetworkSignal.label>
+  <ATPP_LowNetworkSignal.labelNoun>Sinal de rede SkyMind baixo</ATPP_LowNetworkSignal.labelNoun>
+  
+  <ATPP_Rusted.label>Enferrujado</ATPP_Rusted.label>
+  <ATPP_Rusted.labelNoun>Enferrujado</ATPP_Rusted.labelNoun>
+  
+  <ATPP_BlankAndroid.label>Rede Neural Em Branco</ATPP_BlankAndroid.label>
+  <ATPP_BlankAndroid.labelNoun>Rede Neural Em Branco</ATPP_BlankAndroid.labelNoun>
+  
+</LanguageData>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+	
+	<AndroidFactionGreetingHostileI>Uma mensagem automatizada toca, exigindo que você faça um gesto de boa vontade, dando exemplos como; trazendo presentes para um dos {0_possessive} assentamentos ou nomades {0_possessive} prisioneiros da facção ilesos. Até então, {0} não está disposto a falar.</AndroidFactionGreetingHostileI>
+	<AndroidFactionGreetingHostileII>{0} compara sua colônia com as tribos selvagens, afirmando que se você quiser melhorar a si mesmo você pode trazer presentes para um dos {0_possessive} assentamentos ou nomades {0_possessive} prisioneiros da facção ilesos.</AndroidFactionGreetingHostileII>
+	<AndroidFactionGreetingHostileIII>{0} chama você de seres frios e monstruosos antes de cortar rapidamente todas as comunicações.</AndroidFactionGreetingHostileIII>
+	
+	<AndroidFactionGreetingWaryI>A profunda voz mecânica de {0} Cumprimenta {NEGOTIATOR_labelShort}, perguntando que negócio você quer lidar.</AndroidFactionGreetingWaryI>
+	<AndroidFactionGreetingWaryII>Uma mensagem automática começa, perguntando {NEGOTIATOR_labelShort} que negócio eles têm.</AndroidFactionGreetingWaryII>
+	<AndroidFactionGreetingWaryIII>{0} abre as comunicações para {NEGOTIATOR_labelShort} cautelosamente, perguntando que negócio você deseja falar sobre.</AndroidFactionGreetingWaryIII>
+	
+	<AndroidFactionGreetingWarmI>{0} saudações calorosas {NEGOTIATOR_labelShort}, a perguntar o que podem fazer para te ajudar..</AndroidFactionGreetingWarmI>
+	<AndroidFactionGreetingWarmII>{NEGOTIATOR_labelShort} é recebido com palavras amáveis à medida que as comunicações são abertas, {0} perguntando o que podem fazer por um aliado.</AndroidFactionGreetingWarmII>
+	<AndroidFactionGreetingWarmIII>{0} Cumprimenta {NEGOTIATOR_labelShort} de braços abertos, perguntando o que eles podem fazer por você.</AndroidFactionGreetingWarmIII>
+	
+</LanguageData>
