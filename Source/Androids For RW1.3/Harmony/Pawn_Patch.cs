@@ -160,7 +160,9 @@ namespace MOARANDROIDS
                             //Remove surrogate from main lists only if inactive surrogate
                             if (cas.surrogateController == null)
                             {
-                                map.mapPawns.DeRegisterPawn(__instance);
+                                //hide only surrogate on player's map
+                                if (map != null && map.IsPlayerHome)
+                                    map.mapPawns.DeRegisterPawn(__instance);
                             }
                         }
                     }

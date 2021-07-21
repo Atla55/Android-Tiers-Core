@@ -1187,7 +1187,7 @@ namespace MOARANDROIDS
                 //Remove from listing of surrogate downed to reduce overhead of processing the list
                 Utils.removeDownedSurrogateToLister(controlled);
 
-                if (Settings.hideInactiveSurrogates && controlled.Map != null)
+                if (Settings.hideInactiveSurrogates && controlled.Map != null && controlled.Map.IsPlayerHome)
                 {
                     controlled.Map.mapPawns.RegisterPawn(controlled);
                 }
@@ -1203,7 +1203,7 @@ namespace MOARANDROIDS
             return SX != null || extraSX.Count > 0;
         }
 
-        public void stopControlledSurrogate(Pawn surrogate, bool externalController=false, bool preventNoHost=false,bool noPrisonedSurrogateConversion=false)
+        public void stopControlledSurrogate(Pawn surrogate, bool externalController=false, bool preventNoHost=false,bool noPrisonedSurrogateConversion=false, bool _downedViaDisconnect = true)
         {
             //Log.Message("SetControlledSurrogate DEB");
             Pawn cp = (Pawn)parent;
@@ -1222,7 +1222,11 @@ namespace MOARANDROIDS
                     //Restauration nom
                     Utils.restoreSavedSurrogateName(s);
                     if (!externalController && Settings.hideInactiveSurrogates && s != null && s.Map != null)
-                        s.Map.mapPawns.DeRegisterPawn(s);
+                    {
+                        //hide only surrogate on player's map
+                        if(s.Map.IsPlayerHome)
+                            s.Map.mapPawns.DeRegisterPawn(s);
+                    }
                 }
                 if (SX != null)
                 {
@@ -1231,7 +1235,11 @@ namespace MOARANDROIDS
                     Utils.PermutePawn(SX, cp);
 
                     if (!externalController && Settings.hideInactiveSurrogates && SX != null && SX.Map != null)
-                        SX.Map.mapPawns.DeRegisterPawn(SX);
+                    {
+                        //hide only surrogate on player's map
+                        if (SX.Map.IsPlayerHome)
+                            SX.Map.mapPawns.DeRegisterPawn(SX);
+                    }
                 }
             }
             else
@@ -1245,7 +1253,11 @@ namespace MOARANDROIDS
                     Utils.restoreSavedSurrogateName(surrogate);
 
                     if (!externalController && Settings.hideInactiveSurrogates && surrogate != null && surrogate.Map != null)
-                        surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
+                    {
+                        //hide only surrogate on player's map
+                        if (surrogate.Map.IsPlayerHome)
+                            surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
+                    }
                 }
                 else
                 {
@@ -1254,7 +1266,11 @@ namespace MOARANDROIDS
                     Utils.PermutePawn(surrogate, cp);
 
                     if (!externalController && Settings.hideInactiveSurrogates && surrogate != null && surrogate.Map != null)
-                        surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
+                    {
+                        //hide only surrogate on player's map
+                        if (surrogate.Map.IsPlayerHome)
+                            surrogate.Map.mapPawns.DeRegisterPawn(surrogate);
+                    }
                 }
             }
 
@@ -1359,7 +1375,11 @@ namespace MOARANDROIDS
                 //On enleve le controller
                 CompAndroidState cas = csurrogate.TryGetComp<CompAndroidState>();
                 if (cas != null)
+                {
                     cas.surrogateController = null;
+                    //Store the last way the surrogate was disconnected
+                    cas.downedViaDisconnect = _downedViaDisconnect;
+                }
 
                 //Utils.disableGlobalKill = true;
                 //On effectue des operations directes sur les heddifs sans passer par AddHediff et RemoveHediff car cest surfonction peuvent checquer la mort du pawn et appelez Kill
@@ -1788,7 +1808,6 @@ namespace MOARANDROIDS
         public int replicationEndingGT = -1;
 
         public bool repairAndroids = false;
-
 
         //Permet de stocker une copies des levels de skills quand permutation avec un M7
         public List<string> savedSkillsBecauseM7Control;

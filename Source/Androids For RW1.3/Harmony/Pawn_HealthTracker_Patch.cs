@@ -260,7 +260,13 @@ namespace MOARANDROIDS
 
                             //Arret du mode de control chez le controller
                             CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
-                            cso.stopControlledSurrogate(null);
+                            //If surrogate downed due to another reason that skymind disconnection then we notice it to force map despawn on downed surrogate in hostile map 
+                            bool downedViaDisconnect = true;
+                            if (hediff != null && hediff.def != HediffDefOf.ATPP_NoHost)
+                                downedViaDisconnect = false;
+
+                            //Log.Message("=> Hediff => " + hediff.def.defName);
+                            cso.stopControlledSurrogate(null, false, false, false, downedViaDisconnect);
                         }
                     }
                 }

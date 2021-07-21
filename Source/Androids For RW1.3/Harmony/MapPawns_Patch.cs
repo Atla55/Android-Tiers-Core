@@ -15,21 +15,24 @@ namespace MOARANDROIDS
         public class MapPawns_get_AnyPawnBlockingMapRemoval
         {
             [HarmonyPostfix]
-            public static void Listener(MapPawns __instance, ref bool __result, List<Pawn> ___pawnsSpawned)
+            public static void Listener(Map ___map, MapPawns __instance, ref bool __result, List<Pawn> ___pawnsSpawned)
             {
                 //Si retour pas true alors check s'il y a de la correction a faire
                 if (!__result)
                 {
-                    Faction ofPlayer = Faction.OfPlayer;
-                    for (int i = 0; i < ___pawnsSpawned.Count; i++)
+                    for (int i = 0; i < Utils.listerDownedSurrogatesThing.Count; i++)
                     {
-                        if (___pawnsSpawned[i] == null)
+                        if (Utils.listerDownedSurrogatesThing[i] == null || !(Utils.listerDownedSurrogatesThing[i] is Pawn) || Utils.listerDownedSurrogatesThing[i].Map != ___map)
                             continue;
 
-                        CompAndroidState cas = ___pawnsSpawned[i].TryGetComp<CompAndroidState>();
+                        Pawn cp = (Pawn) Utils.listerDownedSurrogatesThing[i];
+                        if (cp.Faction == null ||!cp.Faction.IsPlayer)
+                            continue;
 
-                        //Si pawn non décédé mais est un surrogate inactif
-                        if (!___pawnsSpawned[i].Dead && ___pawnsSpawned[i].Faction != null && ___pawnsSpawned[i].Faction.IsPlayer && cas != null && cas.isSurrogate && cas.externalController == null)
+                        CompAndroidState cas = Utils.listerDownedSurrogatesThing[i].TryGetComp<CompAndroidState>();
+
+                        //If pawn not dead but an inactive surrogate AND previously downed by SkyMind disconnect or manual disconnect
+                        if (!cp.Dead && cas != null && cas.isSurrogate && cas.externalController == null && cas.downedViaDisconnect)
                         {
                             __result = true;
                             return;

@@ -35,7 +35,10 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref this.frameworkNaniteEffectGTStart, "ATPP_frameworkNaniteEffectGTStart", -1);
             Scribe_Values.Look<int>(ref paintingRustGT, "ATPP_paintingRustGT", -2);
             Scribe_Values.Look<bool>(ref this.paintingIsRusted, "ATPP_paintingIsRusted", false);
+            Scribe_Values.Look<bool>(ref this.downedViaDisconnect, "ATPP_downedViaDisconnect", true);
             
+
+
             Scribe_Values.Look<int>(ref batteryExplosionEndingGT, "ATPP_batteryExplosionEndingGT", -1);
 
 
@@ -1584,5 +1587,8 @@ namespace MOARANDROIDS
 
         public bool dontRust = false;
         public int forcedDamageLevel = -1;
+
+        //Store if for the last downing of the surrogate, if it was downed via disconnect or other way
+        public bool downedViaDisconnect = true;
     }
 }
