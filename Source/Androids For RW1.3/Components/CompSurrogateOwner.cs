@@ -1066,7 +1066,7 @@ namespace MOARANDROIDS
             if (cp == null)
                 return;
             bool VX3Host = cp.VX3ChipPresent();
-
+            //Log.Message("i0");
             if (controlled == null)
                 return;
             CompAndroidState cas = controlled.TryGetComp<CompAndroidState>();
@@ -1181,7 +1181,7 @@ namespace MOARANDROIDS
             }
             //Log.Message("i7");
             //Add surrogate in mapPawns
-            if (!externalController && Settings.hideInactiveSurrogates)
+            if (!externalController && Settings.hideInactiveSurrogates && controlled.Map != null)
             {
                 controlled.Map.mapPawns.RegisterPawn(controlled);
             }
