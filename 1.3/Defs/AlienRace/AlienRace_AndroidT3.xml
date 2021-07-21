@@ -116,6 +116,12 @@
                         <hasStyle>false</hasStyle>
                     </value>
                 </li>
+				<li>
+                    <key>BeardDef</key>
+                    <value>
+                        <hasStyle>false</hasStyle>
+                    </value>
+                </li>
             </styleSettings>
 			<thoughtSettings>
 				<cannotReceiveThoughtsAtAll>false</cannotReceiveThoughtsAtAll>

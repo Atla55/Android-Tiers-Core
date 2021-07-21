@@ -115,6 +115,8 @@
 					<alienbodytypes>
 						<li>Male</li>
 					</alienbodytypes>
+					<borderScale>2</borderScale>
+					<atlasScale>2</atlasScale>
 					<colorChannels>
 						<li>
 							<name>skin</name>
@@ -152,7 +154,7 @@
 							</second>
 						</li>
 					</colorChannels>
-					<customDrawSize>(2.8, 2.9)</customDrawSize>
+					<customDrawSize>(2.7)</customDrawSize>
 				</alienPartGenerator>
 			</generalSettings>
 			<graphicPaths>
@@ -164,6 +166,12 @@
 			<styleSettings>
                 <li>
                     <key>HairDef</key>
+                    <value>
+                        <hasStyle>false</hasStyle>
+                    </value>
+                </li>
+				<li>
+                    <key>BeardDef</key>
                     <value>
                         <hasStyle>false</hasStyle>
                     </value>
