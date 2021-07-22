@@ -23,9 +23,6 @@
 			<li>
 				<compClass>CompEquippable</compClass>
 			</li>
-			<li>
-				<compClass>MOARANDROIDS.CompOversizedWeapon</compClass>
-			</li>
 		</comps>
 		<graphicData>
 			<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
@@ -326,18 +323,10 @@
     </tools>
   </ThingDef>
   
-  
-  <!--Makeable-->
-  
   <ThingDef ParentName="BaseHumanMakeableGun">
     <defName>AntiMechRifle</defName>
     <label>anti-mech rifle</label>
     <description>This huge rifle was designed with one task in mind: taking down mechanised infantry. It does this fairly well, with it's high power; it is able to deal devastating damage to even the biggest of opponents.</description>
-		<comps>
-			<li>
-				<compClass>MOARANDROIDS.CompOversizedWeapon</compClass>
-			</li>
-		</comps>
     <graphicData>
       <texPath>Things/Item/AntiMechRifle</texPath>
       <graphicClass>Graphic_Single</graphicClass>

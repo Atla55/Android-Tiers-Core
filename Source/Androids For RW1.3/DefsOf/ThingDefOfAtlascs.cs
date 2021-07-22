@@ -22,6 +22,14 @@ namespace MOARANDROIDS
         public static ThingDef Android5Tier;
 
         public static ThingDef M7Mech;
+
+        public static ThingDef Mech40MMCannon;
+
+        public static ThingDef MechMastiffGun;
+
+        public static ThingDef MechHandCannon;
+
+        public static ThingDef MeleeWeapon_MechKnife;
     }
 
 }

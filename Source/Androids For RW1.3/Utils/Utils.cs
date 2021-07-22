@@ -274,6 +274,8 @@ namespace MOARANDROIDS
         "SoldierMind","BuilderMind","SurgeonMind","SpeedMind","GeoMind","MechanicMind","CookingMind","CharismaMind","NegotiatorMind","ZoologyMind","AgriculturalMind","UnskilledMind","AR2Arm","AR2Leg","AL2Receptor","A2Heatsink",
         "A2CoolantPump","A2Battery","A2MStorage","A2Transformer","A2VAdapter","HearingSensorCrude","HearingSensorAdv","HearingSensorArch","SmellSensorAdv","EvolvingMind"};
 
+        public static HashSet<string> ExceptionM7OversizedWeapons = new HashSet<string> { "Mech40MMCannon", "MechMastiffGun", "MechHandCannon", "MeleeWeapon_MechKnife" };
+
         public static List<string> ExceptionAndroidCanReloadWithPowerList = new List<string>();
 
 
