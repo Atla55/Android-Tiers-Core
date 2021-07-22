@@ -40,7 +40,7 @@
   <ATPP_BlankAndroid.label>Blank Neural Network</ATPP_BlankAndroid.label>
   <ATPP_BlankAndroid.labelNoun>Blank Neural Network</ATPP_BlankAndroid.labelNoun>
   
-  <ATPP_SurrogateInit.label>Device initialization</ATPP_SurrogateInit.label>
-  <ATPP_SurrogateInit.labelNoun>Device initialization</ATPP_SurrogateInit.labelNoun>
+  <ATPP_SurrogateInit.label>Connection initialization</ATPP_SurrogateInit.label>
+  <ATPP_SurrogateInit.labelNoun>Connection initialization</ATPP_SurrogateInit.labelNoun>
   
 </LanguageData>

@@ -39,4 +39,7 @@
   
   <ATPP_BlankAndroid.label>Réseau de neurone vide</ATPP_BlankAndroid.label>
   <ATPP_BlankAndroid.labelNoun>Réseau de neurone vide</ATPP_BlankAndroid.labelNoun>
+  
+    <ATPP_SurrogateInit.label>Initialisation de la connexion</ATPP_SurrogateInit.label>
+  <ATPP_SurrogateInit.labelNoun>Initialisation de la connexion</ATPP_SurrogateInit.labelNoun>
 </LanguageData>
