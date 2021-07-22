@@ -366,7 +366,8 @@ namespace MOARANDROIDS
         "SoldSlave_Know_Disapproved_Mood", "EnslavedPrisoner_Know_Disapproved", "EnslavedPrisoner_Know_Disapproved_Mood", "SoldSlave_Honorable", "EnslavedPrisoner_Honorable",
         "SoldSlave_Know_Honorable", "SoldSlave_Know_Honorable_Mood", "EnslavedPrisoner_Know_Honorable", "EnslavedPrisoner_Know_Honorable_Mood", "SleptUsingSleepAccelerator",
         "AgeReversalReceived", "BioSculpterDespised", "CutTree_Know_Prohibited", "CutTree_Horrible", "CutTree_Know_Prohibited_Mood", "CutTree_Know_Horrible",
-        "CutTree_Know_Horrible_Mood", "CutTree_Disapproved", "CutTree_Know_Disapproved", "CutTree_Know_Disapproved_Mood", "KillWithNobleWeapon", "UsedDespisedWeapon"};
+        "CutTree_Know_Horrible_Mood", "CutTree_Disapproved", "CutTree_Know_Disapproved", "CutTree_Know_Disapproved_Mood", "KillWithNobleWeapon", "UsedDespisedWeapon",
+        "ParticipatedInRaid_Respected", "ParticipatedInRaid_Required", ""};
 
         public static string[] IgnoredInteractionsByBasicAndroids = new string[] { "RomanceAttempt", "MarriageProposal", "Breakup" }.GetSortedArray();
 

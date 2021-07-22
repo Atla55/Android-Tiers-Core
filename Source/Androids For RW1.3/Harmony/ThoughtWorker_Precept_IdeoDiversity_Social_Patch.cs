@@ -12,9 +12,6 @@ namespace MOARANDROIDS
     internal class ThoughtWorker_Precept_IdeoDiversity_Social_Patch
 
     {
-        /*
-         * Basic androids dont care about nudity stuff
-         */
         [HarmonyPatch(typeof(ThoughtWorker_Precept_IdeoDiversity_Social), "ShouldHaveThought")]
         public class CurrentStateInternal_Patch
         {

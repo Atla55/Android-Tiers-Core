@@ -11,9 +11,6 @@ namespace MOARANDROIDS
 {
     internal class ThoughtWorker_Precept_Slavery_NoSlavesInColony_Patch
     {
-        /*
-         * Basic androids dont care about nudity stuff
-         */
         [HarmonyPatch(typeof(ThoughtWorker_Precept_Slavery_NoSlavesInColony), "ShouldHaveThought")]
         public class CurrentStateInternal_Patch
         {
