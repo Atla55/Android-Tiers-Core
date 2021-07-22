@@ -472,5 +472,6 @@
 	<ATPP_SettingsChanceCreatedAndroidsAreMale>Chance que les androides crées soit des modéles masculins ({0}%)</ATPP_SettingsChanceCreatedAndroidsAreMale>
 	<ATPP_SettingsHideAbilityToForceEatingLivingPlants>Masquer le menu volant permettant de forcer à manger des plantes vivantes</ATPP_SettingsHideAbilityToForceEatingLivingPlants>
 	<ATPP_SettingsPassionCost>Points de compétences requis pour augmenter la passion ({0})</ATPP_SettingsPassionCost>
-	<ATPP_SettingsVX0KeepBodyBackstory>Garder la backstory des pantins (VX0)</ATPP_SettingsVX0KeepBodyBackstory>
+	<ATPP_SettingsVX0KeepBodyBackstory>Garder la backstory des substituts (VX0)</ATPP_SettingsVX0KeepBodyBackstory>
+	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Autoriser le malus d'initialisation de la connexion aux substituts</ATPP_SettingsAllowSurrogateConnectionInitMalus>
 </LanguageData>

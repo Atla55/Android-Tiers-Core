@@ -23,7 +23,7 @@ namespace MOARANDROIDS
                         return;
 
                     //Si il sagit d'une VX0 alors passation du pawn en mode surrogate
-                    if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner))
+                    if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner || ___pawn.IsSlave))
                     {
                         CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
                         if (cas == null || cas.isSurrogate)

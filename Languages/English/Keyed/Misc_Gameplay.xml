@@ -476,5 +476,5 @@
 	<ATPP_SettingsHideAbilityToForceEatingLivingPlants>Hide the floating menu allowing to force eating living plants</ATPP_SettingsHideAbilityToForceEatingLivingPlants>
 	<ATPP_SettingsPassionCost>Skills points required to increase passion ({0})</ATPP_SettingsPassionCost>
 	<ATPP_SettingsVX0KeepBodyBackstory>Keep puppet's backstory (VX0)</ATPP_SettingsVX0KeepBodyBackstory>
-	
+	<ATPP_SettingsAllowSurrogateDeviceInitMalus>Allow surrogate connection init penalty</ATPP_SettingsAllowSurrogateDeviceInitMalus>
 </LanguageData>

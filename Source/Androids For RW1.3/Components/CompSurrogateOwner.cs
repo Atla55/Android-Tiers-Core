@@ -1162,7 +1162,7 @@ namespace MOARANDROIDS
             if (he != null)
                 controlled.health.RemoveHediff(he);
             //On Ajout le hediff de remotely controlled
-            controlled.health.AddHediff(DefDatabase<HediffDef>.GetNamed("ATPP_RemotelyControlled"));
+            controlled.health.AddHediff(HediffDefOf.ATPP_RemotelyControlled);
 
             //On raffraichis la barre pour que le surrogate controlé y soit listé
             Find.ColonistBar.MarkColonistsDirty();
@@ -1199,6 +1199,13 @@ namespace MOARANDROIDS
                     controlled.Map.mapPawns.RegisterPawn(controlled);
                 }
             }
+
+            //Connection init malus
+            if(Settings.allowSurrogateConnectionInitMalus)
+            {
+                controlled.health.AddHediff(HediffDefOf.ATPP_SurrogateInit);
+            }
+
             //Log.Message("i8");)
         }
 

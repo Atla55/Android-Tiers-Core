@@ -244,4 +244,27 @@
       </li>
 	</stages>
   </HediffDef>
+  
+  <HediffDef ParentName="ATPP_DiseaseBase">
+    <defName>ATPP_SurrogateInit</defName>
+    <label>Device initialization</label>
+	<description>_</description>
+    <labelNoun>Device initialization</labelNoun>
+	<defaultLabelColor>(0.0, 0.7, 0.15)</defaultLabelColor>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <disappearsAfterTicks>1200</disappearsAfterTicks>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>-0.30</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+  </HediffDef>
 </Defs>
