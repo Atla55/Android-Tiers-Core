@@ -112,7 +112,7 @@ namespace MOARANDROIDS
             }
         }
 
-        [HarmonyPatch(typeof(MedicalCareUtility), "MedicalCareSetter")]
+        /*[HarmonyPatch(typeof(MedicalCareUtility), "MedicalCareSetter")]
         public class MedicalCareSetter_Patch
         {
 
@@ -205,7 +205,7 @@ namespace MOARANDROIDS
                         return true;
                     }
                 }
-            }
+            }*/
 
             private static MedicalCareCategory MedicalCareSelectButton_GetMedicalCare(Pawn pawn)
             {

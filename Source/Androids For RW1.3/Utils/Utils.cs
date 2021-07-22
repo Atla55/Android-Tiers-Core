@@ -599,7 +599,7 @@ namespace MOARANDROIDS
         }
 
 
-        public static bool DynamicMedicalCareSetterPrefixPostfix(Rect rect, ref MedicalCareCategory medCare)
+        /*public static bool DynamicMedicalCareSetterPrefixPostfix(Rect rect, ref MedicalCareCategory medCare)
         {
             if (_DynamicMedicalCareSetter_NoAndroidSelected())
             {
@@ -611,10 +611,10 @@ namespace MOARANDROIDS
                 MedicalCareUtility_Patch.MedicalCareSetter_Patch.Listener(rect, ref medCare);
                 return false;
             }
-        }
+        }*/
 
 
-        public static bool DynamicMedicalCareSetterPrefix(Rect rect, ref MedicalCareCategory medCare)
+        /*public static bool DynamicMedicalCareSetterPrefix(Rect rect, ref MedicalCareCategory medCare)
         {
             return _DynamicMedicalCareSetter_NoAndroidSelected();
         }
@@ -640,7 +640,7 @@ namespace MOARANDROIDS
             {
                 return true;
             }
-        }
+        }*/
 
 
         public static bool FindBestMedicinePrefix(Pawn healer, Pawn patient, out int totalCount)

@@ -504,7 +504,7 @@ namespace MOARANDROIDS
                     }
 
                     //Dynamic MedicinePatch patching
-                    if(Utils.MEDICINEPATCH_LOADED && Utils.medicinePatchAssembly != null) {
+                    /*if(Utils.MEDICINEPATCH_LOADED && Utils.medicinePatchAssembly != null) {
                         try
                         {
                             //Utils.harmonyInstance;
@@ -520,7 +520,7 @@ namespace MOARANDROIDS
                         {
                             Log.Message("[ATPP] MedicinePatchPatching " + e.Message + " " + e.StackTrace);
                         }
-                    }
+                    }*/
 
                     //PRISON LABOR Patching
                     if (Utils.PRISONLABOR_LOADED)
