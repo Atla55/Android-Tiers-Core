@@ -36,7 +36,10 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref paintingRustGT, "ATPP_paintingRustGT", -2);
             Scribe_Values.Look<bool>(ref this.paintingIsRusted, "ATPP_paintingIsRusted", false);
             Scribe_Values.Look<bool>(ref this.downedViaDisconnect, "ATPP_downedViaDisconnect", true);
+            Scribe_Values.Look<bool>(ref this.lastSkymindDisconnectIsManual, "ATPP_lastSkymindDisconnectIsManualCAS", false);
             
+
+
 
 
             Scribe_Values.Look<int>(ref batteryExplosionEndingGT, "ATPP_batteryExplosionEndingGT", -1);
@@ -937,7 +940,12 @@ namespace MOARANDROIDS
             {
                 case "SkyMindNetworkUserConnected":
                     break;
+                case "SkyMindNetworkUserDisconnectedManually":
                 case "SkyMindNetworkUserDisconnected":
+                    if (signal == "SkyMindNetworkUserDisconnectedManually")
+                        lastSkymindDisconnectIsManual = true;
+                    else
+                        lastSkymindDisconnectIsManual = false;
                     //On va  invoquer le checkInterruption pour les duplicate et permutation 
                     checkInterruptedUpload();
                     break;
@@ -1382,7 +1390,7 @@ namespace MOARANDROIDS
             bool recipientDeadOrNull = uploadRecipient == null || uploadRecipient.Dead;
             bool recipientConnected = false;
             bool emitterConnected = false;
-            if (uploadRecipient != null && Utils.GCATPP.isConnectedToSkyMind(uploadRecipient,true))
+            if (uploadRecipient != null && Utils.GCATPP.isConnectedToSkyMind(uploadRecipient, !lastSkymindDisconnectIsManual))
                 recipientConnected = true;
 
             if (Utils.GCATPP.isConnectedToSkyMind(cpawn))
@@ -1403,9 +1411,9 @@ namespace MOARANDROIDS
                     if (cso.skyCloudHost != null)
                         hostBadConn = !cso.skyCloudHost.TryGetComp<CompSkyCloudCore>().isRunning();
                     else
-                        hostBadConn = !Utils.GCATPP.isConnectedToSkyMind(surrogateController, true);
+                        hostBadConn = !Utils.GCATPP.isConnectedToSkyMind(surrogateController, !lastSkymindDisconnectIsManual);
 
-                    bool surrogateBadConn = !Utils.GCATPP.isConnectedToSkyMind(cpawn, true);
+                    bool surrogateBadConn = !Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual);
 
                     if (hostBadConn || surrogateBadConn)
                     {
@@ -1590,5 +1598,6 @@ namespace MOARANDROIDS
 
         //Store if for the last downing of the surrogate, if it was downed via disconnect or other way
         public bool downedViaDisconnect = true;
+        public bool lastSkymindDisconnectIsManual = false;
     }
 }

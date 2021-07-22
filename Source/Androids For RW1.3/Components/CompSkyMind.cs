@@ -131,7 +131,7 @@ namespace MOARANDROIDS
                 Pawn pawn = (Pawn)parent;
 
                 //Si ni un humain ou robot pucé ET pas un android Tier alors pas de possibilité de connection au SkyMind
-                if (!pawn.VXChipPresent() && !pawn.IsAndroidTier())
+                if (!pawn.VXChipPresent() && !pawn.VX0ChipPresent() && !pawn.IsAndroidTier())
                 {
                     yield break;
                 }
@@ -183,7 +183,7 @@ namespace MOARANDROIDS
                     }
                     else
                     {
-                        Utils.GCATPP.disconnectUser(parent);
+                        Utils.GCATPP.disconnectUser(parent, true);
                     }
                 }
             };
@@ -202,6 +202,7 @@ namespace MOARANDROIDS
                     //Log.Message(parent.LabelCap + " => SkyMindConnectedUser");
                     connected = true;
                     break;
+                case "SkyMindNetworkUserDisconnectedManually":
                 case "SkyMindNetworkUserDisconnected":
                     //Log.Message(parent.LabelCap + " => SkyMindDisconnectedUser");
                     connected = false;

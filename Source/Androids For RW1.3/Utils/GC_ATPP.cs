@@ -1529,10 +1529,14 @@ namespace MOARANDROIDS
             return true;
         }
 
-        public void disconnectUser(Thing thing)
+        public void disconnectUser(Thing thing, bool manual=false)
         {
             if (connectedThing.Contains(thing))
             {
+                string signal = "SkyMindNetworkUserDisconnected";
+                if (manual)
+                    signal = "SkyMindNetworkUserDisconnectedManually";
+
                 connectedThing.Remove(thing);
 
                 if (thing is Pawn)
@@ -1551,14 +1555,14 @@ namespace MOARANDROIDS
                     {
                         popSkyMindUser(pawn);
                     }
-                    pawn.BroadcastCompSignal("SkyMindNetworkUserDisconnected");
+                    pawn.BroadcastCompSignal(signal);
                 }
                 else if (thing is Building)
                 {
                     Building build = (Building)thing;
                     if(listerConnectedDevices.Contains(build))
                         listerConnectedDevices.Remove(thing);
-                    build.BroadcastCompSignal("SkyMindNetworkUserDisconnected");
+                    build.BroadcastCompSignal(signal);
                 }
             }
         }

@@ -61,6 +61,7 @@ namespace MOARANDROIDS
             Scribe_Collections.Look(ref savedSkillsBecauseM7Control, "ATPP_savedSkillsBecauseM7Control", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref savedWorkAffectationBecauseM7Control, "ATPP_savedWorkAffectationBecauseM7Control", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref this.extraSX, false, "ATPP_extraSX", LookMode.Reference);
+            Scribe_Values.Look<bool>(ref this.lastSkymindDisconnectIsManual, "ATPP_lastSkymindDisconnectIsManualCSO", false);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
@@ -1049,7 +1050,13 @@ namespace MOARANDROIDS
             {
                 case "SkyMindNetworkUserConnected":
                     break;
+                case "SkyMindNetworkUserDisconnectedManually":
                 case "SkyMindNetworkUserDisconnected":
+                    if (signal == "SkyMindNetworkUserDisconnectedManually")
+                        lastSkymindDisconnectIsManual = true;
+                    else
+                        lastSkymindDisconnectIsManual = false;
+
                     //Si deconnection du reseau skyMind alors que controlMode en cours alors on arrete les choses en regle
                     if (controlMode)
                         disconnectControlledSurrogate(null);
@@ -1627,10 +1634,10 @@ namespace MOARANDROIDS
 
                 bool emitterConnected = false;
 
-                if (permuteRecipient != null && Utils.GCATPP.isConnectedToSkyMind(permuteRecipient, true))
+                if (permuteRecipient != null && Utils.GCATPP.isConnectedToSkyMind(permuteRecipient, !lastSkymindDisconnectIsManual))
                     recipientConnected = true;
 
-                if (duplicateRecipient != null && Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient,true))
+                if (duplicateRecipient != null && Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient, !lastSkymindDisconnectIsManual))
                     recipientConnected = true;
 
                 if (Utils.GCATPP.isThereSkillServers())
@@ -1646,7 +1653,7 @@ namespace MOARANDROIDS
                 }
 
                 //L'équivalence en mode migration est le check de si le host du mind est branché
-                if (Utils.GCATPP.isConnectedToSkyMind(cpawn,true)
+                if (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual)
                     || (replicationEndingGT != -1 && skyCloudHost.TryGetComp<CompPowerTrader>().PowerOn)
                     || (skyCloudHost != null && skyCloudHost.TryGetComp<CompPowerTrader>().PowerOn) )
                     emitterConnected = true;
@@ -1814,5 +1821,6 @@ namespace MOARANDROIDS
         public List<string> savedWorkAffectationBecauseM7Control;
 
         public List<Pawn> availableSX = new List<Pawn>();
+        public bool lastSkymindDisconnectIsManual = false;
     }
 }
