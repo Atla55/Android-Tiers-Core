@@ -24,17 +24,17 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    bool bedIsSurrogateM7Pod = Utils.ExceptionSurrogateM7Pod.Contains(bedThing.def.defName);
-                    bool bedIsSurrogatePod = Utils.ExceptionSurrogatePod.Contains(bedThing.def.defName);
+                    bool bedIsAndroidM7Pod = Utils.ExceptionSurrogateM7Pod.Contains(bedThing.def.defName);
+                    bool bedIsAndroidPod = Utils.ExceptionSurrogatePod.Contains(bedThing.def.defName);
                     //bool sleeperIsNotControlledSurrogate = sleeper.IsSurrogateAndroid(false, true);
                     bool sleeperIsSurrogate = sleeper.IsSurrogateAndroid();
                     bool sleeperIsRegularAndroid = Utils.ExceptionRegularAndroidList.Contains(sleeper.def.defName);
-                    bool isSurrogateM7 = (sleeper.def.defName == Utils.M7 && sleeperIsSurrogate);
-                    bool isSleepingSpot = bedThing.def.defName == "SleepingSpot" || bedThing.def.defName == "DoubleSleepingSpot";
+                    bool isSurrogateM7 = (sleeper.def == ThingDefOfAT.M7Mech && sleeperIsSurrogate);
+                    //bool isSleepingSpot = bedThing.def.defName == "SleepingSpot" || bedThing.def.defName == "DoubleSleepingSpot";
 
-                    //Intediction aux non surrogates l'usage des PODS
+                    //Intediction aux non android l'usage des PODS
                     //PodM7
-                    if (bedIsSurrogateM7Pod)
+                    if (bedIsAndroidM7Pod)
                     {
                         //SI pas un surrogate M7 alors pas d'utilisation possible
                         if (! isSurrogateM7)
@@ -42,7 +42,7 @@ namespace MOARANDROIDS
                             __result = false;
                         }
                     }
-                    else if (bedIsSurrogatePod)
+                    else if (bedIsAndroidPod)
                     {
                         //Si pas un surrogate standard alors utilisation pas possible
                         if (!(sleeperIsRegularAndroid && sleeper.def.defName != Utils.M7))
@@ -50,12 +50,12 @@ namespace MOARANDROIDS
                     }
 
                     //Interdiction aux szurrogates de se servir des autres lits
-                    if(!bedIsSurrogatePod && !bedIsSurrogateM7Pod && !isSleepingSpot)
+                    /*if(!bedIsAndroidPod && !bedIsAndroidM7Pod && !isSleepingSpot)
                     {
                         //Si M7 et surrogate controlé ou non ==>interdiction OU si surrogate android non controllé ==>Interdiction
                         if (isSurrogateM7 || sleeperIsRegularAndroid )
                             __result = false;
-                    }
+                    }*/
 
                 }
                 catch(Exception e)

@@ -208,7 +208,7 @@ namespace MOARANDROIDS
         "Imouto_Civil","ImoutoTribe"  //ImoutoTribe
         }.GetSortedArray();
 
-        public static List<string> ExceptionAndroidWithGlowingEyes = new List<string> { "ATPP_Android2TX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
+        public static HashSet<string> ExceptionAndroidWithGlowingEyes = new HashSet<string> { "ATPP_Android2TX", "ATPP_Android3ITX", "ATPP_Android4ITX", "ATPP_Android2KITX" };
 
         public static string[] ExceptionSkinColors = new string[] { "Verylight", "Light", "Fair", "Midbrown", "Darkbrown", "Verydark" }.GetSortedArray();
         public static string[] ExceptionHairColors = new string[] { "Blond", "Black", "Auburn", "Grey", "Ginger", "White" }.GetSortedArray();

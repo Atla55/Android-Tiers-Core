@@ -660,7 +660,7 @@
       <Mass>45</Mass>
       <Flammability>0.4</Flammability>
 	  <AndroidSurgerySuccessChanceFactor>1.1</AndroidSurgerySuccessChanceFactor>
-      <BedRestEffectiveness>1.0</BedRestEffectiveness>
+      <BedRestEffectiveness>1.1</BedRestEffectiveness>
 	  <ImmunityGainSpeedFactor>1.07</ImmunityGainSpeedFactor>
       <Comfort>0.0</Comfort>
 	  <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
