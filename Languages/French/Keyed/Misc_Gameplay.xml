@@ -474,4 +474,5 @@
 	<ATPP_SettingsPassionCost>Points de compétences requis pour augmenter la passion ({0})</ATPP_SettingsPassionCost>
 	<ATPP_SettingsVX0KeepBodyBackstory>Garder la backstory des substituts (VX0)</ATPP_SettingsVX0KeepBodyBackstory>
 	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Autoriser le malus d'initialisation de la connexion aux substituts</ATPP_SettingsAllowSurrogateConnectionInitMalus>
+	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Autoriser les androides à utiliser des lits d'hôpitaux</ATPP_SettingsAllowSurrogateConnectionInitMalus>
 </LanguageData>

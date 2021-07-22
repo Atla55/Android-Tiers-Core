@@ -25,7 +25,7 @@
 			<WorkToBuild>3200</WorkToBuild>
 			<Mass>50</Mass>
 			<Flammability>0.4</Flammability>
-			<BedRestEffectiveness>0.75</BedRestEffectiveness>
+			<BedRestEffectiveness>1.06</BedRestEffectiveness>
 			<Comfort>0.70</Comfort>
 			<ImmunityGainSpeedFactor>0.95</ImmunityGainSpeedFactor>
 			<MedicalTendQualityOffset>0.10</MedicalTendQualityOffset>

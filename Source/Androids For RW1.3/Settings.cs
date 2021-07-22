@@ -9,6 +9,7 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static bool allowAndroidToUseHospitalBed = true;
         public static bool allowSurrogateConnectionInitMalus = true;
         public static bool keepPuppetBackstory = false;
         public static float percentageChanceMaleAndroidModel = 0.5f;
@@ -208,6 +209,7 @@ namespace MOARANDROIDS
             list.GapLine();
 
 
+            list.CheckboxLabeled("ATPP_SettingsAllowAndroidsToUseHospitalBeds".Translate(), ref allowAndroidToUseHospitalBed);
             list.CheckboxLabeled("ATPP_SettingsAllowSurrogateConnectionInitMalus".Translate(), ref allowSurrogateConnectionInitMalus);
             list.CheckboxLabeled("ATPP_SettingsVX0KeepBodyBackstory".Translate(), ref keepPuppetBackstory);
 
@@ -1011,6 +1013,7 @@ namespace MOARANDROIDS
 
             Scribe_Values.Look<bool>(ref keepPuppetBackstory, "keepPuppetBackstory", false);
             Scribe_Values.Look<bool>(ref allowSurrogateConnectionInitMalus, "allowSurrogateConnectionInitMalus", true);
+            Scribe_Values.Look<bool>(ref allowAndroidToUseHospitalBed, "allowAndroidToUseHospitalBed", true);
             
 
         }
