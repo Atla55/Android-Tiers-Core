@@ -1,4 +1,4 @@
-﻿using Verse;
+﻿/*using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using HarmonyLib;
@@ -13,9 +13,7 @@ namespace MOARANDROIDS
     internal class PawnWoundDrawer_Patch
 
     {
-        /*
-         * Les androide avec degration visuel de la peau n'ont pas de particules wounds mappées
-         */
+        //Les androide avec degration visuel de la peau n'ont pas de particules wounds mappées
         [HarmonyPatch(typeof(PawnWoundDrawer), "RenderOverBody")]
         public class RenderOverBody_Patch
         {
@@ -29,4 +27,4 @@ namespace MOARANDROIDS
             }
         }
     }
-}
+}*/
