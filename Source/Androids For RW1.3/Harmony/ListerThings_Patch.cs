@@ -1,4 +1,4 @@
-﻿using Verse;
+﻿/*using Verse;
 using Verse.AI;
 using Verse.AI.Group;
 using HarmonyLib;
@@ -12,9 +12,9 @@ namespace MOARANDROIDS
     internal class ListerThings_Patch
 
     {
-        /*
-         * QEE patch permettant d'obtenir les GeneticsSequencers custom de AT++ pour une recherche de GeneticSequencer de base
-         */
+        //
+        // QEE patch permettant d'obtenir les GeneticsSequencers custom de AT++ pour une recherche de GeneticSequencer de base
+        //
         [HarmonyPatch(typeof(ListerThings), "ThingsMatching")]
         public class ThingsMatching_Patch
         {
@@ -40,4 +40,4 @@ namespace MOARANDROIDS
             }
         }
     }
-}
+}*/
