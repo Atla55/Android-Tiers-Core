@@ -143,18 +143,41 @@
 				<cannotReceiveThoughts>
 					<li>NeedFood</li>
 					<li>Naked</li>
-					<li>Pain</li>
-					<li>SleepDisturbed</li>
-					<li>SleptOnGround</li>
-					<li>ArtifactMoodBoost</li>
-					<li>EnvironmentCold</li>
-					<li>EnvironmentHot</li>
+					<li>SharedBed</li>
+					<li>AttendedWedding</li>
+					<li>AttendedParty</li>
+					<li>KnowGuestOrganHarvested</li>
+					<li>KnowColonistOrganHarvested</li>
+					<li>WasImprisoned</li>
+					<li>KnowBuriedInSarcophagus</li>
 					<li>ButcheredHumanlikeCorpse</li>
 					<li>KnowButcheredHumanlikeCorpse</li>
 					<li>ObservedLayingCorpse</li>
 					<li>ObservedLayingRottingCorpse</li>
+					<li>WitnessedDeathAlly</li>
+					<li>WitnessedDeathNonAlly</li>
+					<li>BondedAnimalBanished</li>
+					<li>SleepDisturbed</li>
+					<li>SleptOnGround</li>
+					<li>SleptInBedroom</li>
+					<li>SleptInBarracks</li>
+					<li>KnowPrisonerSold</li>
+					<li>InsultedMood</li>
+					<li>KindWordsMood</li>
+					<li>ArtifactMoodBoost</li>
+					<li>EnvironmentDark</li>
+					<li>NeedOutdoors</li>
+					<li>ApparelDamaged</li>
 					<li>DeadMansApparel</li>
 					<li>HumanLeatherApparelSad</li>
+					<li>KnowGuestExecuted</li>
+					<li>KnowColonistExecuted</li>
+					<li>ColonistBanished</li>
+					<li>ColonistBanishedToDie</li>
+					<li>PrisonerBanishedToDie</li>
+					<li>KnowPrisonerDiedInnocent</li>
+					<li>KnowColonistDied</li>
+					<li>PawnWithGoodOpinionDied</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

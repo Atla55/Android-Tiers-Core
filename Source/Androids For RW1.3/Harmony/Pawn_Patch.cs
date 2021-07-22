@@ -175,15 +175,28 @@ namespace MOARANDROIDS
         [HarmonyPatch(typeof(Pawn), "GetGizmos")]
         public class GetGizmos_Patch
         {
+            static private Pawn prevPawn = null;
+            static private CompSkyMind prevCSM = null;
+
             [HarmonyPostfix]
             public static void Listener(Pawn __instance, ref IEnumerable<Gizmo> __result)
             {
                 try
                 {
-                    CompSkyMind csm = __instance.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm;
+                    if (prevPawn != __instance)
+                    {
+                        prevPawn = __instance;
+                        prevCSM = __instance.TryGetComp<CompSkyMind>();
+                        csm = prevCSM;
+                    }
+                    else
+                    {
+                        csm = prevCSM;
+                    }
 
                     //Si prisonnier et possede une VX2 on va obtenir les GIZMOS associés OU virusé
-                    if (__instance.IsPrisoner || (csm != null && csm.Hacked == 1))
+                    if ((__instance.IsPrisoner || __instance.IsSlave) || (csm != null && csm.Hacked == 1))
                     {
                         IEnumerable<Gizmo> tmp;
                         //Si posseseur d'une VX2
