@@ -10,16 +10,17 @@ namespace MOARANDROIDS
         /*
          * Prevent androids && VX0 surrogates from wanting to change their look
          */
-        [HarmonyPatch(typeof(Pawn_StyleTracker), "get_CanDesireLookChange")]
-        public class CanDesireLookChange_Patch
+        [HarmonyPatch(typeof(Pawn_StyleTracker), "RequestLookChange")]
+        public class RequestLookChange_Patch
         {
-            [HarmonyPostfix]
-            public static void Listener(ref bool __result, Pawn ___pawn)
+            [HarmonyPrefix]
+            public static bool Listener(Pawn ___pawn)
             {
                 if (___pawn.IsAndroidTier() || Utils.VX0ChipPresent(___pawn))
                 {
-                    __result = false;
+                    return false;
                 }
+                return true;
             }
         }
     }
