@@ -184,6 +184,8 @@
     <Compile Include="Alerts\Alert_UnsecurisedClients.cs" />
     <Compile Include="DefsOf\SoundDefOfAT.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Harmony\PawnObserver_Patch.cs" />
+    <Compile Include="Harmony\Precept_Ritual_Patch.cs" />
     <Compile Include="Harmony\SkillRecord_Patch.cs" />
     <Compile Include="Harmony\Pawn_StyleTracker_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_BondedAnimalMaster_Patch.cs" />

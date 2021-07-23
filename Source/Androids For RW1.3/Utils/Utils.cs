@@ -274,7 +274,7 @@ namespace MOARANDROIDS
         "SoldierMind","BuilderMind","SurgeonMind","SpeedMind","GeoMind","MechanicMind","CookingMind","CharismaMind","NegotiatorMind","ZoologyMind","AgriculturalMind","UnskilledMind","AR2Arm","AR2Leg","AL2Receptor","A2Heatsink",
         "A2CoolantPump","A2Battery","A2MStorage","A2Transformer","A2VAdapter","HearingSensorCrude","HearingSensorAdv","HearingSensorArch","SmellSensorAdv","EvolvingMind"};
 
-        public static HashSet<string> ExceptionM7OversizedWeapons = new HashSet<string> { "Mech40MMCannon", "MechMastiffGun", "MechHandCannon", "MeleeWeapon_MechKnife" };
+        //public static HashSet<string> ExceptionM7OversizedWeapons = new HashSet<string> { "Mech40MMCannon", "MechMastiffGun", "MechHandCannon", "MeleeWeapon_MechKnife" };
 
         public static List<string> ExceptionAndroidCanReloadWithPowerList = new List<string>();
 
@@ -293,6 +293,11 @@ namespace MOARANDROIDS
         "Lovin_Know_Horrible", "GotLovin_Disapproved", "Lovin_Know_Disapproved", "Lovin_Know_Approved", "AteMeat_Abhorrent", "AteMeat_Know_Abhorrent", "AteMeat_Horrible",
         "AteMeat_Know_Horrible","AteMeat_Disapproved", "AteMeat_Know_Disapproved", "AteNonMeat_Abhorrent", "AteNonMeat_Know_Abhorrent", "AteNonMeat_Horrible",
         "AteNonMeat_Know_Horrible", "AteNonMeat_Disapproved", "AteNonMeat_Know_Disapproved"};
+
+        //ObservedLayingCorpse
+        public static HashSet<string> IgnoredThoughtsWhenSubjectIsBasicAndroids = new HashSet<string> { "ObservedLayingCorpse", "ObservedLayingRottingCorpse", "KnowPrisonerSold",
+        "KnowGuestOrganHarvested", "ColonistBanishedToDie", "ExecutedPrisoner", "SoldPrisoner","KnowGuestExecuted","KnowColonistExecuted","KnowColonistDied",
+        "WitnessedDeathAlly"};
 
 
         public static HashSet<string> IgnoredThoughtsByBasicAndroids = new HashSet<string> { "KnowColonistOrganHarvested", "ColonistBanished", "WasImprisoned",
