@@ -32,16 +32,11 @@ namespace MOARANDROIDS
         static public bool WORKTAB_LOADED = false;
         static public bool HOSPITALITY_LOADED = false;
         static public bool SEARCHANDDESTROY_LOADED = false;
-        static public bool FACTIONDISCOVERY_LOADED = false;
         static public bool POWERPP_LOADED = false;
         static public bool ANDROIDTIERSGYNOID_LOADED = false;
         static public bool QEE_LOADED = false;
         static public bool RIMMSQOL_LOADED = false;
         static public bool TXSERIE_LOADED = false;
-
-
-
-        private static readonly FloatRange settlementsBasesPer100KTiles = new FloatRange(75f, 85f);
 
         public static bool MentalBreakerTryDoRandomMoodCausedMentalBreak_lastPawnIsAndroid = false;
         public static Pawn curSelPatientDrawMedOperationsTab;
@@ -567,7 +562,7 @@ namespace MOARANDROIDS
                     && el.Position.InAllowedArea(android)
                     && android.CanReserveAndReach(el, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, false))
                     {
-                        float cdist = android.Position.DistanceToSquared(el.Position);
+                        float cdist = android.Position.DistanceTo(el.Position);
 
                         if (dist == -1 || cdist < dist)
                         {

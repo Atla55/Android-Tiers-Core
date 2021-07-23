@@ -1898,151 +1898,89 @@ namespace MOARANDROIDS
 
         public void checkRemoveAndroidFactions()
         {
-            androidFactionCoalition = Find.FactionManager.FirstFactionOfDef(DefDatabase<FactionDef>.GetNamed("AndroidFriendliesAtlas"));
+            if (!Settings.androidsAreRare)
+                return;
+
+            androidFactionCoalition = Find.FactionManager.FirstFactionOfDef(FactionDefOf.AndroidFriendliesAtlas);
             if (androidFactionCoalition != null)
             {
-                if (Settings.androidsAreRare)
+                if (!androidFactionCoalition.defeated)
                 {
-                    if (!androidFactionCoalition.defeated)
+                    foreach (var el in Find.WorldObjects.SettlementBases.ToList())
                     {
-                        foreach (var el in Find.WorldObjects.SettlementBases.ToList())
+                        if (el.Faction == androidFactionCoalition)
                         {
-                            if (el.Faction == androidFactionCoalition)
-                            {
-                                savedIASCoalition.Add(el);
-                            }
-                        }
-                        if (savedIASCoalition.Count != 0)
-                        {
-                            foreach (var el in savedIASCoalition)
-                            {
-                                try
-                                {
-                                    Find.WorldObjects.SettlementBases.Remove(el);
-                                }
-                                catch (Exception)
-                                {
-
-                                }
-                                try
-                                {
-                                    Find.WorldObjects.Remove(el);
-                                }
-                                catch(Exception)
-                                {
-
-                                }
-                            }
-                        }
-                        androidFactionCoalition.defeated = true;
-                    }
-                    androidFactionCoalition.def.hidden = true;
-                    androidFactionCoalition = null;
-                }
-                else
-                {
-                    androidFactionCoalition.def.hidden = false;
-                    if (Utils.FACTIONDISCOVERY_LOADED)
-                    {
-                        try
-                        {
-                            MethodInfo method = Utils.factionDiscoveryAssembly.GetType("FactionDiscovery.MainUtilities").GetMethod("CreateBases", BindingFlags.Static | BindingFlags.NonPublic);
-
-                            if (method != null)
-                            {
-                                androidFactionCoalition.def.hidden = false;
-                                //Force faction discovery a recreer faction le cas echeant (faction detruite)
-                                if (androidFactionCoalition.defeated)
-                                {
-                                    androidFactionCoalition.defeated = false;
-
-                                    //Creation des bases par faction discovery
-                                    method.Invoke(null, new object[] { androidFactionCoalition });
-                                }
-                            }
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Message("[ATPP] checkRemoveAndroidFactions.androidFactionCoalition " + e.Message + " " + e.StackTrace);
+                            savedIASCoalition.Add(el);
                         }
                     }
-                    savedIASCoalition.Clear();
+                    if (savedIASCoalition.Count != 0)
+                    {
+                        foreach (var el in savedIASCoalition)
+                        {
+                            try
+                            {
+                                Find.WorldObjects.SettlementBases.Remove(el);
+                            }
+                            catch (Exception)
+                            {
+
+                            }
+                            try
+                            {
+                                Find.WorldObjects.Remove(el);
+                            }
+                            catch(Exception)
+                            {
+
+                            }
+                        }
+                    }
+                    androidFactionCoalition.defeated = true;
                 }
+                androidFactionCoalition.def.hidden = true;
+                androidFactionCoalition = null;
             }
 
-            androidFactionInsurrection = Find.FactionManager.FirstFactionOfDef(DefDatabase<FactionDef>.GetNamed("AndroidRebellionAtlas"));
+            androidFactionInsurrection = Find.FactionManager.FirstFactionOfDef(FactionDefOf.AndroidRebellionAtlas);
             if (androidFactionInsurrection != null)
             {
-                if (Settings.androidsAreRare)
+                if (!androidFactionInsurrection.defeated)
                 {
-                    if (!androidFactionInsurrection.defeated)
+                    foreach (var el in Find.WorldObjects.SettlementBases.ToList())
                     {
-                        foreach (var el in Find.WorldObjects.SettlementBases.ToList())
+                        if (el.Faction == androidFactionInsurrection)
                         {
-                            if (el.Faction == androidFactionInsurrection)
-                            {
-                                savedIASInsurrection.Add(el);
-                            }
+                            savedIASInsurrection.Add(el);
                         }
+                    }
 
-                        if (savedIASInsurrection.Count != 0)
+                    if (savedIASInsurrection.Count != 0)
+                    {
+                        foreach (var el in savedIASInsurrection)
                         {
-                            foreach (var el in savedIASInsurrection)
+                            try { 
+                                Find.WorldObjects.SettlementBases.Remove(el);
+                            }
+                            catch (Exception)
                             {
-                                try { 
-                                    Find.WorldObjects.SettlementBases.Remove(el);
-                                }
+
+                            }
+
+                            try { 
+                                Find.WorldObjects.Remove(el);
+                            }
                                 catch (Exception)
-                                {
-
-                                }
-
-                                try { 
-                                    Find.WorldObjects.Remove(el);
-                                }
-                                    catch (Exception)
-                                {
-
-                                }
-                        }
-                        }
-                        androidFactionInsurrection.defeated = true;
-                    }
-                    androidFactionInsurrection.def.hidden = true;
-                    androidFactionInsurrection = null;
-                }
-                else
-                {
-                    androidFactionInsurrection.def.hidden = false;
-                    if (Utils.FACTIONDISCOVERY_LOADED) {
-                        try
-                        {
-                            MethodInfo method = Utils.factionDiscoveryAssembly.GetType("FactionDiscovery.MainUtilities").GetMethod("CreateBases", BindingFlags.Static | BindingFlags.NonPublic);
-
-                            if (method != null)
                             {
-                                androidFactionInsurrection.def.hidden = false;
-                                //Force faction discovery a recreer faction le cas echeant (faction detruite)
-                                if (androidFactionInsurrection.defeated)
-                                {
-                                    androidFactionInsurrection.defeated = false;
 
-                                    //Creation des bases par faction discovery
-                                    method.Invoke(null, new object[] { androidFactionInsurrection });
-                                }
                             }
-                        }
-                        catch(Exception e)
-                        {
-                            Log.Message("[ATPP] checkRemoveAndroidFactions. androidFactionInsurrection "+e.Message+" "+e.StackTrace);
-                        }
                     }
-                    savedIASInsurrection.Clear();
+                    }
+                    androidFactionInsurrection.defeated = true;
                 }
+                androidFactionInsurrection.def.hidden = true;
+                androidFactionInsurrection = null;
             }
-
         }
-
 
         public int getNbDevices()
         {

@@ -14,6 +14,8 @@ namespace MOARANDROIDS
         public static FactionDef AndroidFriendliesAtlas;
 
         public static FactionDef PlayerColonyAndroid;
+
+        public static FactionDef AndroidRebellionAtlas;
     }
 
 }

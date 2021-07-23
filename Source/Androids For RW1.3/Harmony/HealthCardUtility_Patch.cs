@@ -22,7 +22,7 @@ namespace MOARANDROIDS
             public static bool Prefix(Rect outRect, Pawn pawn, bool allowOperations, bool showBloodLoss, Thing thingForMedBills)
             {
                 Utils.curSelPatientDrawMedOperationsTab = pawn;
-                CompSurrogateOwner cso = pawn.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
                 if(cso != null && cso.skyCloudHost != null)
                 {
                     return false;

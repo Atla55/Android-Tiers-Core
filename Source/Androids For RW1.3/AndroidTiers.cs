@@ -99,14 +99,6 @@ namespace MOARANDROIDS
                 Log.Message("[ATPP] Search and Destroy found");
             }
 
-            Assembly factionDiscoveryAssembly = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault((Assembly assembly) => assembly.FullName.ToLower().StartsWith("faction discovery"));
-            if (factionDiscoveryAssembly != null)
-            {
-                Utils.FACTIONDISCOVERY_LOADED = true;
-                Utils.factionDiscoveryAssembly = factionDiscoveryAssembly;
-                Log.Message("[ATPP] Faction Discovery found");
-            }
-
             Assembly powerPP = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault((Assembly assembly) => assembly.FullName.ToLower().StartsWith("power++"));
             if (powerPP != null)
             {
