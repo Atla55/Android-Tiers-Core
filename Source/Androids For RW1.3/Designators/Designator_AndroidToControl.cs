@@ -67,7 +67,7 @@ namespace MOARANDROIDS
             if (t is Pawn)
             {
                 Pawn cp = (Pawn)t;
-                CompSkyMind csm = cp.TryGetComp<CompSkyMind>();
+                CompSkyMind csm = Utils.getCachedCSM(cp);
                 CompAndroidState cas = Utils.getCachedCAS(cp);
 
                 //Si pas clone ou clone deja utilisé on degage
@@ -155,7 +155,7 @@ namespace MOARANDROIDS
                 {
                     if(cso.skyCloudHost != null)
                     {
-                        CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                        CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
                         if(csc != null)
                         {
                             csc.setRemotelyControlledTurret(controller, (Building)target);

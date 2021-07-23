@@ -1073,7 +1073,7 @@ namespace MOARANDROIDS
         
             foreach (var t in listerVirusedThings.ToList())
             {
-                CompSkyMind csm = t.TryGetComp<CompSkyMind>();
+                CompSkyMind csm = Utils.getCachedCSM(t);
 
                 if (csm == null)
                     continue;
@@ -1461,7 +1461,7 @@ namespace MOARANDROIDS
                     CompSurrogateOwner cso = Utils.getCachedCSO((Pawn)colonist);
                     if(cso != null && cso.skyCloudHost != null)
                     {
-                        CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                        CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
                         if (csc != null && csc.Booted())
                             return true;
                     }
@@ -1644,7 +1644,7 @@ namespace MOARANDROIDS
             {
                 foreach (var e in tmp)
                 {
-                    CompSkyMind csm = e.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(e);
                     if (csm != null)
                     {
                         if (csm.Infected != -1)
@@ -1670,7 +1670,7 @@ namespace MOARANDROIDS
             {
                 foreach (var e in tmp)
                 {
-                    CompSkyMind csm = e.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(e);
                     if (csm != null)
                     {
                         if (csm.Infected != -1)
@@ -1815,7 +1815,7 @@ namespace MOARANDROIDS
                     if (el == null || el.Destroyed || el.IsBrokenDown() || !cpt.PowerOn || !el.Position.InAllowedArea(android))
                         continue;
 
-                    CompReloadStation rs = el.TryGetComp<CompReloadStation>();
+                    CompReloadStation rs = Utils.getCachedReloadStation(el);
                     if (rs == null)
                         continue;
                     if (rs.getNbAndroidReloading(true) < 8)
@@ -2278,7 +2278,7 @@ namespace MOARANDROIDS
             int nb = 0;
             foreach(var c in listerSkyCloudCores)
             {
-                CompSkyCloudCore csc = c.TryGetComp<CompSkyCloudCore>();
+                CompSkyCloudCore csc = Utils.getCachedCSC(c);
                 //Comptabilisation que si le systeme à bouté
                 if(csc != null && csc.Booted())
                     nb +=csc.assistingMinds.Count();

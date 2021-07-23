@@ -68,7 +68,7 @@ namespace MOARANDROIDS
 
                 foreach (var v in victims)
                 {
-                    CompSkyMind csm = v.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(v);
                     if (v is Pawn)
                     {
                         CompAndroidState cas = Utils.getCachedCAS((Pawn)v);
@@ -92,7 +92,7 @@ namespace MOARANDROIDS
 
                 foreach (var v in victims)
                 {
-                    CompSkyMind csm = v.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(v);
                     if (csm == null)
                         continue;
 
@@ -144,7 +144,7 @@ namespace MOARANDROIDS
 
                 foreach (var v in victims)
                 {
-                    CompSkyMind csm = v.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(v);
                     if (csm == null)
                         continue;
 

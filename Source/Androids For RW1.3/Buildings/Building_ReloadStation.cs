@@ -44,7 +44,7 @@ namespace MOARANDROIDS
                 return new FloatMenuOption("ATPP_CannotUseBecauseNotInBatteryMode".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
 
 
-            CompReloadStation rs = this.TryGetComp<CompReloadStation>();
+            CompReloadStation rs = Utils.getCachedReloadStation(this);
             int nb = rs.getNbAndroidReloading(true);
 
             if(nb >= 8)
@@ -66,7 +66,7 @@ namespace MOARANDROIDS
             {
 
                 yield return new FloatMenuOption("ATPP_ForceReload".Translate(), delegate () {
-                    CompReloadStation rs = this.TryGetComp<CompReloadStation>();
+                    CompReloadStation rs = Utils.getCachedReloadStation(this);
 
                     Job job = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(rs.getFreeReloadPlacePos(myPawn)), new LocalTargetInfo(this));
                     myPawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
@@ -99,7 +99,7 @@ namespace MOARANDROIDS
             {
                
                  yield return new FloatMenuOption("ATPP_ForceReload".Translate(), delegate(){
-                     CompReloadStation rs = this.TryGetComp<CompReloadStation>();
+                     CompReloadStation rs = Utils.getCachedReloadStation(this);
                      foreach(var cp in this.tmpPawnsCanReach) {
                          IntVec3 reloadPlacePos = rs.getFreeReloadPlacePos(cp);
                          Job job = new Job(JobDefOfAT.ATPP_GoReloadBattery, new LocalTargetInfo(reloadPlacePos), new LocalTargetInfo(this));

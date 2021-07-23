@@ -64,7 +64,7 @@ namespace MOARANDROIDS
                         Utils.insideKillFuncSurrogate = true;
 
                         //Si c'est un surrogate controllé temporaire alors on le restitue a sa faction
-                        CompSkyMind csm = __instance.TryGetComp<CompSkyMind>();
+                        CompSkyMind csm = Utils.getCachedCSM(__instance);
                         if(csm != null)
                         {
                             //Log.Message("Restitution surrogate a sa faction");

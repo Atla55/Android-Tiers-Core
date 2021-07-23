@@ -142,7 +142,7 @@ namespace MOARANDROIDS
                             return;
                         }
                         //Obtention place disponible sur la RS
-                        CompReloadStation rs = rsb.TryGetComp<CompReloadStation>();
+                        CompReloadStation rs = Utils.getCachedReloadStation(rsb);
 
                         if (rs == null)
                         {

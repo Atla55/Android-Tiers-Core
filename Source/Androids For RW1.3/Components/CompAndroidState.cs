@@ -140,8 +140,6 @@ namespace MOARANDROIDS
                 && !parent.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)))
             {
                 Pawn cp = (Pawn)parent;
-                //Log.Message("RepriseController "+(externalController != null)+" "+(surrogateController == null)+" "+(hacked != 3));
-                //Lord lordInvolved = Utils.LordOnMapWhereFactionIsInvolved(parent.Map, hackOrigFaction);
                 Lord lordInvolved = null;
                 if (cp.Map.mapPawns.SpawnedPawnsInFaction(cp.Faction).Any((Pawn p) => p != cp))
                 {
@@ -775,9 +773,8 @@ namespace MOARANDROIDS
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-
-            csm = parent.TryGetComp<CompSkyMind>();
             Pawn pawn = (Pawn)parent;
+            csm = Utils.getCachedCSM(pawn);
             isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(pawn.def.defName);
             dontRust = Utils.ExceptionAndroidsDontRust.Contains(pawn.def.defName);
 
@@ -1204,7 +1201,7 @@ namespace MOARANDROIDS
                                     //Check so lastController est un mind dans ce cas check qu'il ne fait pas deja autre chose
                                     if (cso.skyCloudHost != null)
                                     {
-                                        CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                                        CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
                                         if (csc == null || csc.mindIsBusy(lastController))
                                         {
                                             Messages.Message("ATPP_CannotReconnectToLastSurrogateController".Translate(), MessageTypeDefOf.NegativeEvent);
@@ -1417,7 +1414,7 @@ namespace MOARANDROIDS
 
                     //Si surrogateController stoclé dans le skyCloud
                     if (cso.skyCloudHost != null)
-                        hostBadConn = !cso.skyCloudHost.TryGetComp<CompSkyCloudCore>().isRunning();
+                        hostBadConn = !Utils.getCachedCSC(cso.skyCloudHost).isRunning();
                     else
                         hostBadConn = !Utils.GCATPP.isConnectedToSkyMind(surrogateController, !lastSkymindDisconnectIsManual);
 

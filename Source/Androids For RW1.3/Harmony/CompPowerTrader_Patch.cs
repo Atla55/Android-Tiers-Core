@@ -17,7 +17,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(CompPowerTrader __instance, ref float ___powerOutputInt)
             {
-                CompReloadStation rs = __instance.parent.TryGetComp<CompReloadStation>();
+                CompReloadStation rs = Utils.getCachedReloadStation(__instance.parent);
                 if (rs != null)
                 {
                     rs.refreshPowerConsumed();

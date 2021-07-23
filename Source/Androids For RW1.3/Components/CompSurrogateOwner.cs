@@ -180,7 +180,7 @@ namespace MOARANDROIDS
                     uploadToSkyCloudEndingGT = -1;
                     Utils.removeUploadHediff(cpawn, null);
 
-                    CompSkyCloudCore csc = skyCloudRecipient.TryGetComp<CompSkyCloudCore>();
+                    CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudRecipient);
 
                     Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudUploadOK".Translate(), "ATPP_LetterSkyCloudUploadOKDesc".Translate(cpawn.LabelShortCap, csc.getName()), LetterDefOf.PositiveEvent, parent);
                     //On realise effectivement l'upload vers le Core
@@ -251,7 +251,7 @@ namespace MOARANDROIDS
                     if (cso.skyCloudHost == null)
                         return;
 
-                    CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                    CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
 
                     //Arret des jobs d'un esprit
                     csc.stopMindActivities(skyCloudDownloadRecipient);
@@ -407,7 +407,7 @@ namespace MOARANDROIDS
             if (replicationEndingGT == -1)
                 return;
             replicationEndingGT = -1;
-            CompSkyCloudCore csc = skyCloudHost.TryGetComp<CompSkyCloudCore>();
+            CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudHost);
 
             PawnGenerationRequest request = new PawnGenerationRequest(cpawn.kindDef, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, true, false, false, false, true, false, 1f, false, true, true, false, false, false, false, fixedBiologicalAge: cpawn.ageTracker.AgeBiologicalYearsFloat, fixedChronologicalAge: cpawn.ageTracker.AgeChronologicalYearsFloat, fixedGender: cpawn.gender, fixedMelanin: cpawn.story.melanin);
             Pawn clone = PawnGenerator.GeneratePawn(request);
@@ -491,7 +491,7 @@ namespace MOARANDROIDS
             //On enleve le mind de la liste des minds en cours de replication
             csc.replicatingMinds.Remove(cpawn);
 
-            Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudReplicateOK".Translate(), "ATPP_LetterSkyCloudReplicateOKDesc".Translate(cpawn.LabelShortCap, skyCloudHost.TryGetComp<CompSkyCloudCore>().getName()), LetterDefOf.PositiveEvent, parent);
+            Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudReplicateOK".Translate(), "ATPP_LetterSkyCloudReplicateOKDesc".Translate(cpawn.LabelShortCap, Utils.getCachedCSC(skyCloudHost).getName()), LetterDefOf.PositiveEvent, parent);
 
             resetUploadStuff();
         }
@@ -504,8 +504,8 @@ namespace MOARANDROIDS
                 return;
             migrationEndingGT = -1;
 
-            CompSkyCloudCore csc = skyCloudHost.TryGetComp<CompSkyCloudCore>();
-            CompSkyCloudCore csc2 = migrationSkyCloudHostDest.TryGetComp<CompSkyCloudCore>();
+            CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudHost);
+            CompSkyCloudCore csc2 = Utils.getCachedCSC(migrationSkyCloudHostDest);
 
 
             csc.RemoveMind(cpawn);
@@ -923,7 +923,7 @@ namespace MOARANDROIDS
 
                         Utils.ShowFloatMenuSkyCloudCores(delegate (Building target)
                         {
-                            CompSkyCloudCore csc = target.TryGetComp<CompSkyCloudCore>();
+                            CompSkyCloudCore csc = Utils.getCachedCSC(target);
 
                             csc.showFloatMenuMindsStored(delegate (Pawn mind)
                             {
@@ -1578,7 +1578,7 @@ namespace MOARANDROIDS
             uploadToSkyCloudStartGT = CGT;
             uploadToSkyCloudEndingGT = CGT + 60 - (CGT % 60) + Settings.mindUploadToSkyCloudHours * 2500;
 
-            CompSkyCloudCore csc = dest.TryGetComp<CompSkyCloudCore>();
+            CompSkyCloudCore csc = Utils.getCachedCSC(dest);
 
             Messages.Message("ATPP_StartSkyCloudUpload".Translate(source.LabelShortCap, csc.getName()), parent, MessageTypeDefOf.PositiveEvent);
         }
@@ -1593,7 +1593,7 @@ namespace MOARANDROIDS
             downloadFromSkyCloudStartGT = CGT;
             downloadFromSkyCloudEndingGT = CGT + 60 - (CGT % 60) + Settings.mindUploadToSkyCloudHours * 2500;
 
-            CompSkyCloudCore csc = source.TryGetComp<CompSkyCloudCore>();
+            CompSkyCloudCore csc = Utils.getCachedCSC(source);
 
             string name = source.LabelShortCap;
             CompSurrogateOwner cso = Utils.getCachedCSO(source);
@@ -1609,14 +1609,14 @@ namespace MOARANDROIDS
 
         public void startMigration(Building dest)
         {
-            CompSkyCloudCore csc2 = dest.TryGetComp<CompSkyCloudCore>();
+            CompSkyCloudCore csc2 = Utils.getCachedCSC(dest);
 
             int CGT = Find.TickManager.TicksGame;
             migrationSkyCloudHostDest = dest;
             migrationStartGT = CGT;
             migrationEndingGT = CGT + 60 - (CGT % 60) + Settings.mindSkyCloudMigrationHours * 2500;
 
-            Messages.Message("ATPP_StartSkyCloudMigration".Translate(((Pawn)parent).LabelShortCap, skyCloudHost.TryGetComp<CompSkyCloudCore>().getName(), csc2.getName()), parent, MessageTypeDefOf.PositiveEvent);
+            Messages.Message("ATPP_StartSkyCloudMigration".Translate(((Pawn)parent).LabelShortCap, Utils.getCachedCSC(skyCloudHost).getName(), csc2.getName()), parent, MessageTypeDefOf.PositiveEvent);
         }
 
         /*
@@ -1708,7 +1708,7 @@ namespace MOARANDROIDS
                         }
                         else if (replicationEndingGT != -1)
                         {
-                            CompSkyCloudCore csc = skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                            CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudHost);
                             csc.replicatingMinds.Remove((Pawn)parent);
                             showMindUploadNotif = false;
 

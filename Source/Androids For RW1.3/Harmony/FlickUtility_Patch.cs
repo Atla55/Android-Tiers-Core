@@ -26,7 +26,7 @@ namespace MOARANDROIDS
                 try
                 {
                     int CGT = Find.TickManager.TicksGame;
-                    CompSkyMind csm = t.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(t);
                     if(csm == null)
                         return true;
 

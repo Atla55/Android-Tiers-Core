@@ -56,7 +56,7 @@ namespace MOARANDROIDS
                                                     cf.SwitchIsOn = true;
                                                 }
                                             }
-                                            CompSkyMind csm = t.TryGetComp<CompSkyMind>();
+                                            CompSkyMind csm = Utils.getCachedCSM(t);
                                             if (csm != null)
                                                 csm.Infected = -1;
                                         }

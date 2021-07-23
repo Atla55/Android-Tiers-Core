@@ -23,7 +23,7 @@ namespace MOARANDROIDS
             {
                 if (__instance.pawn.IsSurrogateAndroid())
                 {
-                    CompSkyMind csm = __instance.pawn.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(__instance.pawn);
                     if (csm == null)
                         return;
 
@@ -59,7 +59,7 @@ namespace MOARANDROIDS
                     CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                     if(cso.skyCloudHost != null)
                     {
-                        CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                        CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
                         if (csc == null)
                             return;
 

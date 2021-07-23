@@ -41,7 +41,7 @@ namespace MOARANDROIDS
                 return;
 
             CompSurrogateOwner csc = null;
-            CompSkyMind csm = __instance.TryGetComp<CompSkyMind>();
+            CompSkyMind csm = Utils.getCachedCSM(__instance);
 
             csc = Utils.getCachedCSO(crt.controller);
 

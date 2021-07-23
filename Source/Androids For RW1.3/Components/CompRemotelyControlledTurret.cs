@@ -76,7 +76,7 @@ namespace MOARANDROIDS
         {
             base.PostSpawnSetup(respawningAfterLoad);
 
-            csm = parent.TryGetComp<CompSkyMind>();
+            csm = Utils.getCachedCSM(parent);
         }
 
         public override void CompTick()
@@ -108,7 +108,7 @@ namespace MOARANDROIDS
                 {
                     if (cso.skyCloudHost != null)
                     {
-                        CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
+                        CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
                         if (csc != null)
                         {
                             csc.stopRemotelyControlledTurret(controller);

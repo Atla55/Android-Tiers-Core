@@ -20,8 +20,9 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Replacement(Building __instance, ref bool __result, Faction by)
             {
+                CompSkyMind csm = Utils.getCachedCSM(__instance);
                 //Added check if building is virused or hacked => no claim possible
-                if ( (__instance.TryGetComp<CompSkyMind>() != null && __instance.TryGetComp<CompSkyMind>().Infected != -1))
+                if ( (csm != null && csm.Infected != -1))
                 {
                     __result = false;
                     return;
@@ -29,7 +30,7 @@ namespace MOARANDROIDS
             }
         }
 
-        [HarmonyPatch(typeof(Building), "GetGizmos")]
+        /*[HarmonyPatch(typeof(Building), "GetGizmos")]
         public class GetGizmos_Patch
         {
             [HarmonyPostfix]
@@ -41,7 +42,7 @@ namespace MOARANDROIDS
 
                 }
             }
-        }
+        }*/
 
     }
 }

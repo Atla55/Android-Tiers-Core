@@ -387,8 +387,10 @@ namespace MOARANDROIDS
 
         private static Dictionary<Pawn, CompSurrogateOwner> cachedCSO = new Dictionary<Pawn, CompSurrogateOwner>();
         private static Dictionary<Pawn, CompAndroidState> cachedCAS = new Dictionary<Pawn, CompAndroidState>();
-        private static Dictionary<Pawn, CompSkyMind> cachedCSM = new Dictionary<Pawn, CompSkyMind>();
+        private static Dictionary<Thing, CompSkyMind> cachedCSM = new Dictionary<Thing, CompSkyMind>();
         private static Dictionary<Thing, CompPowerTrader> cachedCPT = new Dictionary<Thing, CompPowerTrader>();
+        private static Dictionary<Thing, CompReloadStation> cachedReloadStations = new Dictionary<Thing, CompReloadStation>();
+        private static Dictionary<Thing, CompSkyCloudCore> cachedCSC = new Dictionary<Thing, CompSkyCloudCore>();
 
 
         public static CompPowerTrader getCachedCPT(Thing build)
@@ -436,19 +438,49 @@ namespace MOARANDROIDS
             return cas;
         }
 
-        public static CompSkyMind getCachedCSM(Pawn pawn)
+        public static CompReloadStation getCachedReloadStation(Thing t)
         {
-            if (pawn == null)
+            if (t == null)
+                return null;
+
+            CompReloadStation crs;
+            cachedReloadStations.TryGetValue(t, out crs);
+            if (crs == null)
+            {
+                crs = t.TryGetComp<CompReloadStation>();
+                cachedReloadStations[t] = crs;
+            }
+            return crs;
+        }
+
+        public static CompSkyMind getCachedCSM(Thing t)
+        {
+            if (t == null)
                 return null;
 
             CompSkyMind csm;
-            cachedCSM.TryGetValue(pawn, out csm);
+            cachedCSM.TryGetValue(t, out csm);
             if (csm == null)
             {
-                csm = pawn.TryGetComp<CompSkyMind>();
-                cachedCSM[pawn] = csm;
+                csm = t.TryGetComp<CompSkyMind>();
+                cachedCSM[t] = csm;
             }
             return csm;
+        }
+
+        public static CompSkyCloudCore getCachedCSC(Thing t)
+        {
+            if (t == null)
+                return null;
+
+            CompSkyCloudCore csc;
+            cachedCSC.TryGetValue(t, out csc);
+            if (csc == null)
+            {
+                csc = t.TryGetComp<CompSkyCloudCore>();
+                cachedCSC[t] = csc;
+            }
+            return csc;
         }
 
         public static void resetCachedComps()
@@ -457,6 +489,7 @@ namespace MOARANDROIDS
             cachedCSO.Clear();
             cachedCSM.Clear();
             cachedCPT.Clear();
+            cachedReloadStations.Clear();
         }
 
         public static void addDownedSurrogateToLister(Pawn surrogate)
@@ -1343,7 +1376,7 @@ namespace MOARANDROIDS
                 //SI colon vivant et relié au RimNet et pas dans la liste d'exception et possede une PUCE RIMNET
                 if (!core.Destroyed && cpt.PowerOn)
                 {
-                    CompSkyCloudCore ccore = core.TryGetComp<CompSkyCloudCore>();
+                    CompSkyCloudCore ccore = Utils.getCachedCSC(core);
                     if (ccore == null)
                         continue;
 

@@ -503,7 +503,7 @@ namespace MOARANDROIDS
 
                         else if (cso.migrationEndingGT != -1 && cso.migrationSkyCloudHostDest != null)
                         {
-                            CompSkyCloudCore csc2 = cso.migrationSkyCloudHostDest.TryGetComp<CompSkyCloudCore>();
+                            CompSkyCloudCore csc2 = Utils.getCachedCSC(cso.migrationSkyCloudHostDest);
                             float p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - cso.migrationStartGT) / (float)(cso.migrationEndingGT - cso.migrationStartGT));
 
                             ret.Append("=>").AppendLine("ATPP_CentralCoreMigrationInProgress".Translate(m.LabelShortCap, csc2.getName(), ((int)(p * (float)100)).ToString()));

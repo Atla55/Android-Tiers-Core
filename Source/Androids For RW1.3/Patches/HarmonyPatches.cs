@@ -9,7 +9,7 @@ using RimWorld.Planet;
 using Verse;
 using Verse.AI;
 
-namespace BlueLeakTest
+namespace MOARANDROIDS
 {
     [StaticConstructorOnStartup]
     static public class HarmonyPatches
@@ -18,21 +18,6 @@ namespace BlueLeakTest
         {
             Utils.harmonyInstance = new Harmony("rimworld.rwmods.androidtiers");
             Utils.harmonyInstance.PatchAll(Assembly.GetExecutingAssembly());
-
-            /*DefDatabase<ThingDef_AlienRace>.AllDefsListForReading.ForEach(delegate (ThingDef_AlienRace ar)
-            {
-                if (ar.race.FleshType == DefDatabase<FleshTypeDef>.GetNamed("Android") || ar.race.FleshType == DefDatabase<FleshTypeDef>.GetNamed("MechanisedInfantry"))
-                {
-                    AlienDefOf.alienCorpseCategory.childThingDefs.Remove(item: ar.race.corpseDef);
-                    ar.race.corpseDef.thingCategories = new List<ThingCategoryDef> { MOARANDROIDS.ThingCategoryDefOf.androidCorpseCategory };
-                    MOARANDROIDS.ThingCategoryDefOf.androidCorpseCategory.childThingDefs.Add(item: ar.race.corpseDef);
-                    DefDatabase<RecipeDef>.GetNamed("ButcherCorpseAndroidAT").fixedIngredientFilter.SetAllow(ar.race.corpseDef, true);
-                }
-            });
-
-            DefDatabase<RecipeDef>.GetNamed("ButcherCorpseAndroidAT").fixedIngredientFilter.SetAllow(MOARANDROIDS.ThingCategoryDefOf.androidCorpseCategory, true, null, null);
-            DefDatabase<RecipeDef>.GetNamed("ButcherCorpseFlesh").fixedIngredientFilter.SetAllow(MOARANDROIDS.ThingCategoryDefOf.androidCorpseCategory, false);*/
-
         }
 
     }

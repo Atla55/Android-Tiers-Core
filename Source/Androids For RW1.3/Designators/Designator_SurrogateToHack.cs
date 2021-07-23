@@ -124,7 +124,7 @@ namespace MOARANDROIDS
         {
             base.FinalizeDesignationSucceeded();
 
-            CompSkyMind csm = target.TryGetComp<CompSkyMind>();
+            CompSkyMind csm = Utils.getCachedCSM(target);
             CompAndroidState cas = Utils.getCachedCAS(target);
             string surrogateName = target.LabelShortCap;
             CompSurrogateOwner cso = null;

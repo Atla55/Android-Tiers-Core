@@ -68,7 +68,7 @@ namespace MOARANDROIDS
 
                 foreach (var v in victims)
                 {
-                    CompSkyMind csm = v.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(v);
                     CompAndroidState cas = Utils.getCachedCAS(v);
                     if (csm == null || cas == null)
                         continue;
@@ -151,7 +151,7 @@ namespace MOARANDROIDS
 
                 foreach (var v in victims)
                 {
-                    CompSkyMind csm = v.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(v);
 
                     v.mindState.canFleeIndividual = false;
                     csm.Infected = attackType;
