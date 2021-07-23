@@ -37,7 +37,7 @@ namespace MOARANDROIDS
                     {
 
                     }
-                    Utils.CrafterDoctorJob = new List<WorkGiverDef>();
+                    Utils.CrafterDoctorJob = new HashSet<WorkGiverDef>();
 
 
                     Utils.soundDefSurrogateConnection = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateConnection");
@@ -186,7 +186,7 @@ namespace MOARANDROIDS
                         }
                     }
 
-                    Utils.ExceptionAndroidCanReloadWithPowerList = Utils.ExceptionAndroidList.Concat(Utils.ExceptionAndroidAnimalPowered).ToList();
+                    Utils.ExceptionAndroidCanReloadWithPowerList.AddRange(Utils.ExceptionAndroidAnimalPowered);
 
                     //RunTime patching
                     foreach (var td in DefDatabase<ThingDef>.AllDefsListForReading)
@@ -858,6 +858,7 @@ namespace MOARANDROIDS
             reconnectSurrogatesInCaravans();
             removeBlacklistedAndroidsHediffs();
             checkRemoveAndroidFactions();
+            Utils.resetCachedComps();
         }
 
         private void removeBlacklistedAndroidsHediffs()
@@ -898,7 +899,7 @@ namespace MOARANDROIDS
                 {
                     if (p.IsSurrogateAndroid())
                     {
-                        CompAndroidState cas = p.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(p);
                         if(cas != null && cas.surrogateController != null)
                         {
                             connectUser(p);
@@ -1002,7 +1003,7 @@ namespace MOARANDROIDS
                 int nbConn = 0;
                 foreach (var android in el.Value.ToList())
                 {
-                    CompAndroidState cas = android.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(android);
                     if (cas != null && !cas.useBattery)
                     {
                         el.Value.Remove(android);
@@ -1043,7 +1044,7 @@ namespace MOARANDROIDS
             {
                 foreach(var p in c.pawns)
                 {
-                    CompAndroidState cas = p.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(p);
                     if(cas != null)
                     {
                         cas.checkSolarFlareStuff();
@@ -1120,11 +1121,11 @@ namespace MOARANDROIDS
                 return false;
 
             //Si ni relay no antennes sur la map alors androids sur cette derniere sont impactés
-            if (listerSkyMindServers.ContainsKey(map) && listerSkyMindServers[map].Count > 0)
+            if (listerSkyMindServers.TryGetValue(map, out var value) && value.Count > 0)
                 ok = true;
-            else if (listerSkyMindWANServers.ContainsKey(map) && listerSkyMindWANServers[map].Count > 0)
+            else if (listerSkyMindWANServers.TryGetValue(map, out value) && value.Count > 0)
                 ok = true;
-            else if (listerSkyMindRelays.ContainsKey(map) && listerSkyMindRelays[map].Count > 0)
+            else if (listerSkyMindRelays.TryGetValue(map, out value) && value.Count > 0)
                 ok = true;
 
             return ok;
@@ -1134,13 +1135,13 @@ namespace MOARANDROIDS
         public void checkSkyMindSignalPerformance()
         {
             //Maps
-            foreach(var entry in listerSurrogateAndroids)
+            foreach (var entry in listerSurrogateAndroids)
             {
                 checkSkyMindSignalPerformanceEntry(entry);
             }
         }
 
-        private void checkSkyMindSignalPerformanceEntry(KeyValuePair<string, List<Pawn>> entry)
+        private void checkSkyMindSignalPerformanceEntry(KeyValuePair<string, HashSet<Pawn>> entry)
         {
             bool forceRemoveHediff = false;
             string MUID = entry.Key;
@@ -1153,9 +1154,10 @@ namespace MOARANDROIDS
             bool ok = isThereSkyMindAntennaOrRelayInMap(map);
 
             //Il y a une antenne permettant de relayer le skinMind sur la map en cours
-            if (forceRemoveHediff || (ok && listerSurrogateAndroids.ContainsKey(MUID) && listerSurrogateAndroids[MUID].Count > 0))
+            HashSet<Pawn> value = null;
+            if (forceRemoveHediff || (ok && listerSurrogateAndroids.TryGetValue(MUID, out value) && value.Count > 0))
             {
-                foreach (var s in listerSurrogateAndroids[MUID])
+                foreach (var s in value ?? listerSurrogateAndroids[MUID])
                 {
                     if (s.Dead)
                         continue;
@@ -1188,7 +1190,10 @@ namespace MOARANDROIDS
         {
             foreach(var el in listerSkyMindable)
             {
-                CompSkyMind csm = el.TryGetComp<CompSkyMind>();
+                Pawn cp=null;
+                if (el is Pawn)
+                    cp = (Pawn)el;
+                CompSkyMind csm = Utils.getCachedCSM(cp);
 
                 if (csm == null)
                     continue;
@@ -1447,7 +1452,7 @@ namespace MOARANDROIDS
                 //Si un mind EST le skyCLoud hote est allumé ET booté alors oui considéré comme connected
                 if(colonist is Pawn)
                 {
-                    CompSurrogateOwner cso = colonist.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO((Pawn)colonist);
                     if(cso != null && cso.skyCloudHost != null)
                     {
                         CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();
@@ -1502,7 +1507,7 @@ namespace MOARANDROIDS
                 if (thing is Pawn)
                 {
                     Pawn pawn = (Pawn)thing;
-                    CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(pawn);
                     //Si surrogate ajout a la liste des surrogates (ET connecté au skyMind)
                     if (cas != null && cas.isSurrogate)
                     {
@@ -1542,7 +1547,7 @@ namespace MOARANDROIDS
                 if (thing is Pawn)
                 {
                     Pawn pawn = (Pawn)thing;
-                    CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(pawn);
                     //Si surrogate retrait de la liste des surrogates (ET connecté au skyMind)
                     if (cas != null && cas.isSurrogate)
                     {
@@ -1575,7 +1580,7 @@ namespace MOARANDROIDS
                 MUID = sx.Map.GetUniqueLoadID();
 
             if (!listerSurrogateAndroids.ContainsKey(MUID))
-                listerSurrogateAndroids[MUID] = new List<Pawn>();
+                listerSurrogateAndroids[MUID] = new HashSet<Pawn>();
 
             if (!listerSurrogateAndroids[MUID].Contains(sx))
                 listerSurrogateAndroids[MUID].Add(sx);
@@ -1587,22 +1592,25 @@ namespace MOARANDROIDS
             if (sx.Map != null)
                 currMUID = sx.Map.GetUniqueLoadID();
 
-            if(listerSurrogateAndroids.ContainsKey(prevMUID) && prevMUID != currMUID)
+            if (listerSurrogateAndroids.TryGetValue(prevMUID, out var value) && prevMUID != currMUID)
             {
-                listerSurrogateAndroids[prevMUID].Remove(sx);
-                if (!listerSurrogateAndroids.ContainsKey(currMUID))
-                    listerSurrogateAndroids[currMUID] = new List<Pawn>();
-
-                listerSurrogateAndroids[currMUID].Add( sx);
+                value.Remove(sx);
+                if (!listerSurrogateAndroids.TryGetValue(currMUID, out value))
+                {
+                    value = new HashSet<Pawn>();
+                    listerSurrogateAndroids[currMUID] = value;
+                }
+                value.Add(sx);
             }
-
             checkSkyMindSignalPerformance();
         }
 
         public void popSurrogateAndroid(Pawn sx, string MUID)
         {
-            if (listerSurrogateAndroids.ContainsKey(MUID) && listerSurrogateAndroids[MUID].Contains(sx))
-                listerSurrogateAndroids[MUID].Remove(sx);
+            if (listerSurrogateAndroids.TryGetValue(MUID, out var value))
+            {
+                value.Remove(sx);
+            }
         }
 
         public void pushSkyMindUser(Pawn sx)
@@ -1618,23 +1626,20 @@ namespace MOARANDROIDS
         }
 
 
-        public List<Pawn> getRandomSurrogateAndroids(int nb, bool withoutVirus=true)
+        public HashSet<Pawn> getRandomSurrogateAndroids(int nb, bool withoutVirus = true)
         {
-            List<Pawn> ret = new List<Pawn>();
+            HashSet<Pawn> ret = new HashSet<Pawn>();
             List<Pawn> tmp = ret.ToList();
 
             //Linearisation des surrogates a travers les maps
-            foreach(var e in listerSurrogateAndroids)
-            {
-                ret = ret.Concat(e.Value).ToList();
-            }
+            ret = listerSurrogateAndroids.Values.SelectMany(x => x).ToHashSet();
 
             if (withoutVirus)
             {
-                foreach(var e in tmp)
+                foreach (var e in tmp)
                 {
                     CompSkyMind csm = e.TryGetComp<CompSkyMind>();
-                    if(csm != null)
+                    if (csm != null)
                     {
                         if (csm.Infected != -1)
                             ret.Remove(e);
@@ -1642,7 +1647,7 @@ namespace MOARANDROIDS
                 }
             }
 
-            while(ret.Count > nb)
+            while (ret.Count > nb)
             {
                 ret.Remove(ret.RandomElement());
             }
@@ -1700,7 +1705,7 @@ namespace MOARANDROIDS
         public void pushSkyMindServer(Building build)
         {
             if (!listerSkyMindServers.ContainsKey(build.Map))
-                listerSkyMindServers[build.Map] = new List<Building>();
+                listerSkyMindServers[build.Map] = new HashSet<Building>();
 
             if (build.TryGetComp<CompPowerTrader>().PowerOn)
             {
@@ -1722,7 +1727,7 @@ namespace MOARANDROIDS
         public void pushSkyMindWANServer(Building build)
         {
             if (!listerSkyMindWANServers.ContainsKey(build.Map))
-                listerSkyMindWANServers[build.Map] = new List<Building>();
+                listerSkyMindWANServers[build.Map] = new HashSet<Building>();
 
             if (!listerSkyMindWANServers[build.Map].Contains(build) && build.TryGetComp<CompPowerTrader>().PowerOn)
             {
@@ -1745,7 +1750,7 @@ namespace MOARANDROIDS
         {
             if (!listerReloadStation.ContainsKey(build.Map))
             {
-                listerReloadStation[build.Map] = new List<Building>();
+                listerReloadStation[build.Map] = new HashSet<Building>();
             }
 
             listerReloadStation[build.Map].Add( build);
@@ -1768,7 +1773,7 @@ namespace MOARANDROIDS
             Building ret = null;
             foreach(var el in listerReloadStation[map])
             {
-                float curDist = android.Position.DistanceTo(el.Position);
+                float curDist = android.Position.DistanceToSquared(el.Position);
                 if (dist > curDist)
                 {
                     dist = curDist;
@@ -1779,10 +1784,10 @@ namespace MOARANDROIDS
             return ret;
         }
 
-        public List<Building> getReloadStations(Map map)
+        public HashSet<Building> getReloadStations(Map map)
         {
-            if (listerReloadStation.ContainsKey(map))
-                return listerReloadStation[map];
+            if (listerReloadStation.TryGetValue(map, out var value))
+                return value;
             else
                 return null;
         }
@@ -1796,7 +1801,7 @@ namespace MOARANDROIDS
             if (listerReloadStation.ContainsKey(map))
             {
                 //Log.Message("ICI DISPONIBLE !!!!!");
-                foreach(var el in listerReloadStation[map].OrderBy((Building b) => b.Position.DistanceTo(android.Position)))
+                foreach(var el in listerReloadStation[map].OrderBy((Building b) => b.Position.DistanceToSquared(android.Position)))
                 {
                     if (el == null || el.Destroyed || el.IsBrokenDown() || !el.TryGetComp<CompPowerTrader>().PowerOn || !el.Position.InAllowedArea(android))
                         continue;
@@ -2175,7 +2180,7 @@ namespace MOARANDROIDS
             listerSkyCloudCores.Remove(build);
         }
 
-        public List<Building> getAvailableSkyCloudCores()
+        public HashSet<Building> getAvailableSkyCloudCores()
         {
             return listerSkyCloudCores;
         }
@@ -2193,7 +2198,7 @@ namespace MOARANDROIDS
         public void pushRelayTower(Building build)
         {
             if (!listerSkyMindRelays.ContainsKey(build.Map))
-                listerSkyMindRelays[build.Map] = new List<Building>();
+                listerSkyMindRelays[build.Map] = new HashSet<Building>();
 
             if (listerSkyMindRelays[build.Map].Contains(build))
                 return;
@@ -2367,39 +2372,39 @@ namespace MOARANDROIDS
             appliedSettingsOnReload = false;
 
             if (listerReloadStation == null)
-                listerReloadStation = new Dictionary<Map, List<Building>>();
+                listerReloadStation = new Dictionary<Map, HashSet<Building>>();
             if (listerSkyMindServers == null)
-                listerSkyMindServers =new Dictionary<Map, List<Building>>();
+                listerSkyMindServers =new Dictionary<Map, HashSet<Building>>();
             if (listerSkyMindWANServers == null)
-                listerSkyMindWANServers = new Dictionary<Map, List<Building>>();
+                listerSkyMindWANServers = new Dictionary<Map, HashSet<Building>>();
             if (cacheATN == null)
                 cacheATN = new Dictionary<Building, IEnumerable<IntVec3>>();
             if (connectedThing == null)
-                connectedThing = new List<Thing>();
+                connectedThing = new HashSet<Thing>();
             if (listerHeatSensitiveDevices == null)
                 listerHeatSensitiveDevices = new Dictionary<Map, List<Building>>();
             if (listerSecurityServers == null)
-                listerSecurityServers = new List<Building>();
+                listerSecurityServers = new HashSet<Building>();
             if (listerHackingServers == null)
-                listerHackingServers = new List<Building>();
+                listerHackingServers = new HashSet<Building>();
             if (listerSurrogateAndroids == null)
-                listerSurrogateAndroids = new Dictionary<string, List<Pawn>>();
+                listerSurrogateAndroids = new Dictionary<string, HashSet<Pawn>>();
             if (listerSkyMindUsers == null)
-                listerSkyMindUsers = new List<Pawn>();
+                listerSkyMindUsers = new HashSet<Pawn>();
             if (listerSkyMindRelays == null)
-                listerSkyMindRelays = new Dictionary<Map, List<Building>>();
+                listerSkyMindRelays = new Dictionary<Map, HashSet<Building>>();
             if (listerSkyCloudCores == null)
-                listerSkyCloudCores = new List<Building>();
+                listerSkyCloudCores = new HashSet<Building>();
             if (listerSkyMindable == null)
-                listerSkyMindable = new List<Thing>();
+                listerSkyMindable = new HashSet<Thing>();
             if (listerConnectedDevices == null)
-                listerConnectedDevices = new List<Thing>();
+                listerConnectedDevices = new HashSet<Thing>();
             if (listerVirusedThings == null)
-                listerVirusedThings = new List<Thing>();
+                listerVirusedThings = new HashSet<Thing>();
             if (listerSkyCloudCoresAbs == null)
-                listerSkyCloudCoresAbs = new List<Building>();
+                listerSkyCloudCoresAbs = new HashSet<Building>();
             if (listerSkillServers == null)
-                listerSkillServers = new List<Building>();
+                listerSkillServers = new HashSet<Building>();
             if (savedIASCoalition == null)
                 savedIASCoalition = new List<Settlement>();
             if (savedIASInsurrection == null)
@@ -2448,16 +2453,16 @@ namespace MOARANDROIDS
         private int nbHackingPoints = 0;
         private int nbSkillPoints = 0;
 
-        private List<Thing> connectedThing = new List<Thing>();
+        private HashSet<Thing> connectedThing = new HashSet<Thing>();
         private Dictionary<Building, IEnumerable<IntVec3>> cacheATN;
-        private List<Building> listerSkillServers = new List<Building>();
-        private List<Building> listerSecurityServers = new List<Building>();
-        private List<Building> listerHackingServers = new List<Building>();
-        private List<Building> listerSkyCloudCores = new List<Building>();
-        private List<Building> listerSkyCloudCoresAbs = new List<Building>();
-        private List<Thing> listerSkyMindable = new List<Thing>();
-        private List<Thing> listerConnectedDevices = new List<Thing>();
-        private List<Thing> listerVirusedThings = new List<Thing>();
+        private HashSet<Building> listerSkillServers = new HashSet<Building>();
+        private HashSet<Building> listerSecurityServers = new HashSet<Building>();
+        private HashSet<Building> listerHackingServers = new HashSet<Building>();
+        private HashSet<Building> listerSkyCloudCores = new HashSet<Building>();
+        private HashSet<Building> listerSkyCloudCoresAbs = new HashSet<Building>();
+        private HashSet<Thing> listerSkyMindable = new HashSet<Thing>();
+        private HashSet<Thing> listerConnectedDevices = new HashSet<Thing>();
+        private HashSet<Thing> listerVirusedThings = new HashSet<Thing>();
 
 
         public Dictionary<string, string> QEEAndroidHair = new Dictionary<string, string>();
@@ -2468,12 +2473,12 @@ namespace MOARANDROIDS
 
         public Dictionary<Building, List<Pawn>> listerLWPNAndroid = new Dictionary<Building, List<Pawn>>();
 
-        private Dictionary<Map,List<Building>> listerReloadStation = new Dictionary<Map,List<Building>>();
-        private Dictionary<Map, List<Building>> listerSkyMindRelays = new Dictionary<Map, List<Building>>();
-        private Dictionary<Map, List<Building>> listerSkyMindServers = new Dictionary<Map, List<Building>>();
-        private Dictionary<Map, List<Building>> listerSkyMindWANServers = new Dictionary<Map, List<Building>>();
-        private Dictionary<string, List<Pawn>> listerSurrogateAndroids = new Dictionary<string, List<Pawn>>();
-        private List<Pawn> listerSkyMindUsers = new List<Pawn>();
+        private Dictionary<Map, HashSet<Building>> listerReloadStation = new Dictionary<Map, HashSet<Building>>();
+        private Dictionary<Map, HashSet<Building>> listerSkyMindRelays = new Dictionary<Map, HashSet<Building>>();
+        private Dictionary<Map, HashSet<Building>> listerSkyMindServers = new Dictionary<Map, HashSet<Building>>();
+        private Dictionary<Map, HashSet<Building>> listerSkyMindWANServers = new Dictionary<Map, HashSet<Building>>();
+        private Dictionary<string, HashSet<Pawn>> listerSurrogateAndroids = new Dictionary<string, HashSet<Pawn>>();
+        private HashSet<Pawn> listerSkyMindUsers = new HashSet<Pawn>();
         private Game game;
 
     }

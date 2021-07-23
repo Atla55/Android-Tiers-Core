@@ -72,7 +72,7 @@ namespace MOARANDROIDS
                 if (SX != null)
                     availableSX.Add(SX);
                 if(extraSX.Count >0)
-                    availableSX = (List<Pawn>)availableSX.Concat(extraSX).ToList();
+                    availableSX.AddRange(extraSX);
 
                 availableSX.RemoveAll(item => item == null);
             }

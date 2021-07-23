@@ -805,6 +805,10 @@ namespace MOARANDROIDS
 
             if (isAndroidTier)
             {
+                //Remove ideo if basic android
+                if (pawn.IsBasicAndroidTier())
+                    pawn.ideo = null;
+
                 if (isAndroidWithSkin)
                 {
                     if (pawn.gender == Gender.Male)

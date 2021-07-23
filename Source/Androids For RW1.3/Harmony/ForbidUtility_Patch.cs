@@ -23,7 +23,7 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    if (Current.ProgramState != ProgramState.Playing)
+                    /*if (Current.ProgramState != ProgramState.Playing)
                         return true;
 
                     List<object> obj = Find.Selector.SelectedObjects;
@@ -36,7 +36,8 @@ namespace MOARANDROIDS
                         {
                             warnOnFail = false;
                         }
-                    }
+                    }*/
+                    warnOnFail = false;
 
                     return true;
                 }

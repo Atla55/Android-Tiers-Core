@@ -28,7 +28,7 @@ namespace MOARANDROIDS
             string title = "";
             string msg = "";
             int nbConnectedClients = Utils.GCATPP.getNbThingsConnected();
-            List<string> cryptolockedThings = new List<string>();
+            HashSet<string> cryptolockedThings = new HashSet<string>();
             int nbDevices = Utils.GCATPP.getNbDevices();
             int nbUnsecurisedClients = nbConnectedClients - Utils.GCATPP.getNbSlotSecurisedAvailable();
 

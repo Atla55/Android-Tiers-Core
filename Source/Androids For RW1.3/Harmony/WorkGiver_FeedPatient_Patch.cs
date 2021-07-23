@@ -31,7 +31,7 @@ namespace MOARANDROIDS
                 Pawn pawn2 = t as Pawn;
                 if (pawn2 != null && pawn2.IsAndroidTier())
                 {
-                    CompAndroidState cas = pawn2.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(pawn2);
                     if (cas != null)
                     {
                         if (cas.connectedLWPNActive && cas.connectedLWPN != null)

@@ -51,13 +51,16 @@ namespace MOARANDROIDS
         [HarmonyPatch(typeof(PawnGraphicSet), "ResolveAllGraphics")]
         public class PawnGraphicSetPostfix_Patch
         {
+            private static Traverse Pawn_StoryTracker_Traverse = Traverse.Create<Pawn_StoryTracker>();
+
             [HarmonyPostfix]
             public static void Postfix(PawnGraphicSet __instance)
             {
                 if (Utils.RIMMSQOL_LOADED && Utils.ExceptionAndroidWithSkinList.Contains(__instance.pawn.def.defName))
                 {
                     Utils.lastResolveAllGraphicsHeadGraphicPath = __instance.pawn.story.HeadGraphicPath;
-                    __instance.pawn.story.GetType().GetField("headGraphicPath", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(__instance.pawn.story,null);
+                    Traverse.Create(__instance.pawn.story).Field("headGraphicPath").SetValue(null);
+                    //__instance.pawn.story.GetType().GetField("headGraphicPath", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(__instance.pawn.story,null);
                 }
             }
         }

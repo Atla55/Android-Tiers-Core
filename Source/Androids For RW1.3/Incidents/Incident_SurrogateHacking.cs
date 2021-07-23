@@ -24,8 +24,8 @@ namespace MOARANDROIDS
             if (Settings.disableSkyMindSecurityStuff)
                 return false;
 
-            List<Pawn> victims;
-            List<string> cryptolockedThings = new List<string>();
+            HashSet<Pawn> victims;
+            HashSet<string> cryptolockedThings = new HashSet<string>();
             string title = "";
             string msg = "";
             int nbConnectedClients = Utils.GCATPP.getNbThingsConnected();
@@ -227,7 +227,7 @@ namespace MOARANDROIDS
                 }
             }
 
-            Find.LetterStack.ReceiveLetter(title, msg, letter, (LookTargets) victims, null, null);
+            Find.LetterStack.ReceiveLetter(title, msg, letter, new LookTargets(victims), null, null);
 
             
             if (attackType == 3)

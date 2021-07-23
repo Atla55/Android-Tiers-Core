@@ -85,7 +85,8 @@ namespace MOARANDROIDS
                             //Crafteur on jerte si patient pas un android
                             if (thing is Pawn && ((Pawn)thing).IsAndroidTier())
                             {
-                                CompSurrogateOwner cso = pawn.TryGetComp<CompSurrogateOwner>();
+                                CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
+                                
 
                                 if (cso == null || !cso.repairAndroids)
                                     __result = null;

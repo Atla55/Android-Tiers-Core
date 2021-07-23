@@ -788,7 +788,7 @@ namespace MOARANDROIDS
 
             if(supOpts != null)
             {
-                opts = opts.Concat(supOpts).ToList();
+                opts.AddRange(supOpts);
             }
 
             //Listing des SkyCloud Cores

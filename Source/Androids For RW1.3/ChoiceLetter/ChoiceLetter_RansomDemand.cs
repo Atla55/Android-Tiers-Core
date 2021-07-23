@@ -9,7 +9,7 @@ namespace MOARANDROIDS
     {
         public Faction faction;
         public int fee;
-        public List<string> cryptolockedThings;
+        public HashSet<string> cryptolockedThings;
         public bool deviceType = false;
 
         public override IEnumerable<DiaOption> Choices

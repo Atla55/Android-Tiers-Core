@@ -19,7 +19,7 @@ namespace MOARANDROIDS
         public static bool init = false;
         public static Harmony harmonyInstance;
 
-        public static List<WorkGiverDef> CrafterDoctorJob;
+        public static HashSet<WorkGiverDef> CrafterDoctorJob;
 
         public static bool PSYCHOLOGY_LOADED = false;
         public static bool HELLUNIT_LOADED = false;
@@ -388,11 +388,70 @@ namespace MOARANDROIDS
 
         public static ResearchProjectDef ResearchAndroidBatteryOverload;
 
+
+
+        public static Dictionary<Pawn, CompSurrogateOwner> cachedCSO = new Dictionary<Pawn, CompSurrogateOwner>();
+        public static Dictionary<Pawn, CompAndroidState> cachedCAS = new Dictionary<Pawn, CompAndroidState>();
+        public static Dictionary<Pawn, CompSkyMind> cachedCSM = new Dictionary<Pawn, CompSkyMind>();
+
+
+        public static CompSurrogateOwner getCachedCSO(Pawn pawn)
+        {
+            if (pawn == null)
+                return null;
+
+            CompSurrogateOwner cso;
+            cachedCSO.TryGetValue(pawn, out cso);
+            if (cso == null)
+            {
+                cso = pawn.TryGetComp<CompSurrogateOwner>();
+                cachedCSO[pawn] = cso;
+            }
+            return cso;
+        }
+
+        public static CompAndroidState getCachedCAS(Pawn pawn)
+        {
+            if (pawn == null)
+                return null;
+
+            CompAndroidState cas;
+            cachedCAS.TryGetValue(pawn, out cas);
+            if (cas == null)
+            {
+                cas = pawn.TryGetComp<CompAndroidState>();
+                cachedCAS[pawn] = cas;
+            }
+            return cas;
+        }
+
+        public static CompSkyMind getCachedCSM(Pawn pawn)
+        {
+            if (pawn == null)
+                return null;
+
+            CompSkyMind csm;
+            cachedCSM.TryGetValue(pawn, out csm);
+            if (csm == null)
+            {
+                csm = pawn.TryGetComp<CompSkyMind>();
+                cachedCSM[pawn] = csm;
+            }
+            return csm;
+        }
+
+        public static void resetCachedComps()
+        {
+            cachedCAS.Clear();
+            cachedCSO.Clear();
+            cachedCSM.Clear();
+        }
+
         public static void addDownedSurrogateToLister(Pawn surrogate)
         {
             if (!listerDownedSurrogatesThing.Contains(surrogate))
             {
-                CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(surrogate);
                 if (cas != null)
                 {
                     listerDownedSurrogatesThing.Add(surrogate);
@@ -406,7 +465,7 @@ namespace MOARANDROIDS
             if (listerDownedSurrogatesThing.Contains(surrogate))
             {
                 listerDownedSurrogatesThing.Remove(surrogate);
-                CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(surrogate);
                 if (cas != null)
                 {
                     listerDownedSurrogatesCAS.Remove(cas);
@@ -508,7 +567,7 @@ namespace MOARANDROIDS
                     && el.Position.InAllowedArea(android)
                     && android.CanReserveAndReach(el, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, false))
                     {
-                        float cdist = android.Position.DistanceTo(el.Position);
+                        float cdist = android.Position.DistanceToSquared(el.Position);
 
                         if (dist == -1 || cdist < dist)
                         {
@@ -690,7 +749,7 @@ namespace MOARANDROIDS
                     //Crafteur on jerte si patient pas un android
                     if (t is Pawn && ((Pawn)t).IsAndroidTier())
                     {
-                        CompSurrogateOwner cso = pawn.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
 
                         if (cso == null || !cso.repairAndroids)
                             __result = false;
@@ -895,7 +954,7 @@ namespace MOARANDROIDS
 
 
             //On va le définir comme étant un surrogate 
-            CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(surrogate);
             if (cas != null)
             {
                 cas.initAsSurrogate();
@@ -1111,7 +1170,7 @@ namespace MOARANDROIDS
             /*if(!pawn.IsAndroidTier())
                 return false;*/
 
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
             if (cas == null)
                 return false;
 
@@ -1120,7 +1179,7 @@ namespace MOARANDROIDS
 
         public static bool IsBlankAndroid(this Pawn pawn)
         {
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
             if (cas == null)
                 return false;
 
@@ -1218,7 +1277,7 @@ namespace MOARANDROIDS
             //Listing des colons sauf ceux présents dans la liste d'exception (exp)
             foreach (var colon in emitter.Map.mapPawns.FreeColonistsAndPrisoners)
             {
-                CompAndroidState cas = colon.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(colon);
 
                 //SI colon vivant et relié au RimNet et pas dans la liste d'exception et possede une PUCE RIMNET
                 if (colon != emitter && !colon.Dead
@@ -1226,13 +1285,13 @@ namespace MOARANDROIDS
                     && (!excludeBlankAndroid || (cas != null && !cas.isBlankAndroid))
                     && !colon.Destroyed && Utils.GCATPP.isConnectedToSkyMind(colon) && !colon.IsSurrogateAndroid())
                 {
-                    CompSkyMind csm = colon.TryGetComp<CompSkyMind>();
+                    CompSkyMind csm = Utils.getCachedCSM(colon);
 
                     //Les androides infectés sont squeezés
                     if (csm != null && csm.Infected != -1)
                         continue;
 
-                    CompSurrogateOwner cso = colon.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO(colon);
 
                     //Les colons déjà en cours de transfert sont ignorés
                     if (cso.duplicateEndingGT != -1 || cso.permuteEndingGT != -1 || cso.showPermuteProgress || cso.showDuplicateProgress || (cso.controlMode && cso.isThereSX()))
@@ -1999,7 +2058,7 @@ namespace MOARANDROIDS
 
         public static bool pawnCurrentlyControlRemoteSurrogate(Pawn pawn)
         {
-            CompSurrogateOwner cso = pawn.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
             return (cso != null && cso.isThereSX());
         }
 
@@ -2027,11 +2086,11 @@ namespace MOARANDROIDS
 
         public static bool mindTransfertsAllowed(Pawn pawn, bool checkIsBlankAndroid=true)
         {
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
             if (cas != null && (cas.uploadEndingGT != -1 || cas.showUploadProgress || (checkIsBlankAndroid && cas.isBlankAndroid)))
                 return false;
 
-            CompSurrogateOwner cso = pawn.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
             if (cso != null)
             {
                 if (cso.duplicateEndingGT != -1 || cso.showDuplicateProgress)
@@ -2059,7 +2118,7 @@ namespace MOARANDROIDS
                     if (!p.Dead
                         && !p.Destroyed && p.IsSurrogateAndroid())
                     {
-                        CompAndroidState cas = p.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(p);
                         if (cas.surrogateController == null)
                             return true;
                     }
