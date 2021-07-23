@@ -19,7 +19,7 @@
 	<ATPP_ResearchBatteryOverload.description>Research how to transform androids into walking bombs, by making their internal battery to explode.</ATPP_ResearchBatteryOverload.description>
 	
 	<ATPP_ResearchVX0Chip.label>VX0 Neural Chip</ATPP_ResearchVX0Chip.label>
-	<ATPP_ResearchVX0Chip.description>Research how to craft VX0 chips, a neural chip which transforms it's host into a biological surrogate.</ATPP_ResearchVX0Chip.description>
+	<ATPP_ResearchVX0Chip.description>Research how to craft VX0 chips, a neural chip which transforms its host into a biological surrogate.</ATPP_ResearchVX0Chip.description>
 
 	<ATPP_ResearchCharchingStation.label>Charging Station</ATPP_ResearchCharchingStation.label>
 	<ATPP_ResearchCharchingStation.description>Allow you to charge up to 8 androids simultaneously directly to their internal battery instead of through their biomass generator.</ATPP_ResearchCharchingStation.description>
@@ -34,13 +34,13 @@
 	<ATPP_ResearchCraftAdvancedNanoKit.description>Allow you to craft advanced nanokits which are required to repair injured androids</ATPP_ResearchCraftAdvancedNanoKit.description>
 	
 	<ATPP_ResearchVX1Chip.label>VX1 Neural Chip</ATPP_ResearchVX1Chip.label>
-	<ATPP_ResearchVX1Chip.description>Research how to craft the VX1 chip, a neural chip allowing it's host to remotely control any SX  series android or biological surrogate.</ATPP_ResearchVX1Chip.description>
+	<ATPP_ResearchVX1Chip.description>Research how to craft the VX1 chip, a neural chip allowing its host to remotely control any SX  series android or biological surrogate.</ATPP_ResearchVX1Chip.description>
 	
 	<ATPP_ResearchVX2Chip.label>VX2 Neural Chip</ATPP_ResearchVX2Chip.label>
-	<ATPP_ResearchVX2Chip.description>Research how to craft the VX2 chip, a neural chip allowing it's host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_ResearchVX2Chip.description>
+	<ATPP_ResearchVX2Chip.description>Research how to craft the VX2 chip, a neural chip allowing its host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_ResearchVX2Chip.description>
 	
 	<ATPP_ResearchVX3Chip.label>VX3 Neural Chip</ATPP_ResearchVX3Chip.label>
-	<ATPP_ResearchVX3Chip.description>Research how to craft the VX3 chip, a neural chip allowing it's host to remotely control multiple SX series androids or biological surrogates at the same time and duplicate/permute their mind.</ATPP_ResearchVX3Chip.description>
+	<ATPP_ResearchVX3Chip.description>Research how to craft the VX3 chip, a neural chip allowing its host to remotely control multiple SX series androids or biological surrogates at the same time and duplicate/permute their mind.</ATPP_ResearchVX3Chip.description>
 	
 	<ATPP_ResearchSkyMindWAN.label>SkyMind V2 Antenna</ATPP_ResearchSkyMindWAN.label>
 	<ATPP_ResearchSkyMindWAN.description>Research how to build SkyMind V2 Antenna, which serves as a basis to transfer the consciousness of one colonist to another and allow up to 15 colonists to be simultaneously connected per V2 Antenna.</ATPP_ResearchSkyMindWAN.description>

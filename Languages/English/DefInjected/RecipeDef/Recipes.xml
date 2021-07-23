@@ -2,7 +2,7 @@
 <LanguageData>
   
   <ATPP_DisassembleAndroid.label>Disassemble dead android</ATPP_DisassembleAndroid.label>
-  <ATPP_DisassembleAndroid.description>Disassemble a dead android into it's component parts.</ATPP_DisassembleAndroid.description>
+  <ATPP_DisassembleAndroid.description>Disassemble a dead android into its component parts.</ATPP_DisassembleAndroid.description>
   <ATPP_DisassembleAndroid.jobString>Disassembling android.</ATPP_DisassembleAndroid.jobString>
   
   <ATPP_Make_NanitesHydraulicSerum.label>Make a nanite slot (hydraulic)</ATPP_Make_NanitesHydraulicSerum.label>
@@ -26,35 +26,35 @@
   <ATPP_Make_RXChip.jobString>Making RX neural chip.</ATPP_Make_RXChip.jobString>
   
   <ATPP_Make_VX0Chip.label>Make a VX0 neural chip</ATPP_Make_VX0Chip.label>
-  <ATPP_Make_VX0Chip.description>Make a VX0 chip, a neural chip which transforms it's host into a biological surrogate.</ATPP_Make_VX0Chip.description>
+  <ATPP_Make_VX0Chip.description>Make a VX0 chip, a neural chip which transforms its host into a biological surrogate.</ATPP_Make_VX0Chip.description>
   <ATPP_Make_VX0Chip.jobString>Making VX0 neural chip.</ATPP_Make_VX0Chip.jobString>
   
   <ATPP_Make_VX1Chip.label>Make a VX1 neural chip</ATPP_Make_VX1Chip.label>
-  <ATPP_Make_VX1Chip.description>Make a VX1 chip, allowing it's host to remotely control any SX series android or biological surrogate.</ATPP_Make_VX1Chip.description>
+  <ATPP_Make_VX1Chip.description>Make a VX1 chip, allowing its host to remotely control any SX series android or biological surrogate.</ATPP_Make_VX1Chip.description>
   <ATPP_Make_VX1Chip.jobString>Making VX1 neural chip.</ATPP_Make_VX1Chip.jobString>
   
   <ATPP_Make_VX2Chip.label>Make a VX2 neural chip</ATPP_Make_VX2Chip.label>
-  <ATPP_Make_VX2Chip.description>Make a VX2 chip, allowing it's host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_Make_VX2Chip.description>
+  <ATPP_Make_VX2Chip.description>Make a VX2 chip, allowing its host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_Make_VX2Chip.description>
   <ATPP_Make_VX2Chip.jobString>Making VX2 neural chip.</ATPP_Make_VX2Chip.jobString>
   
   <ATPP_Make_VX3Chip.label>Make a VX3 neural chip</ATPP_Make_VX3Chip.label>
-  <ATPP_Make_VX3Chip.description>Make a VX3 chip, allowing it's host to remotely control multiple SX series android or biological surrogate at the same time and duplicate/permute their mind.</ATPP_Make_VX3Chip.description>
+  <ATPP_Make_VX3Chip.description>Make a VX3 chip, allowing its host to remotely control multiple SX series android or biological surrogate at the same time and duplicate/permute their mind.</ATPP_Make_VX3Chip.description>
   <ATPP_Make_VX3Chip.jobString>Making VX3 neural chip.</ATPP_Make_VX3Chip.jobString>
   
   <ATPP_InstallVX2Chip.label>Install a VX2 neural chip</ATPP_InstallVX2Chip.label>
-  <ATPP_InstallVX2Chip.description>Install a VX2 neural chip, allowing it's host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_InstallVX2Chip.description>
+  <ATPP_InstallVX2Chip.description>Install a VX2 neural chip, allowing its host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_InstallVX2Chip.description>
   <ATPP_InstallVX2Chip.jobString>Installing a VX2 neural chip.</ATPP_InstallVX2Chip.jobString>
   
   <ATPP_InstallVX2ChipOnAndroid.label>Install a VX2 neural chip for android</ATPP_InstallVX2ChipOnAndroid.label>
-  <ATPP_InstallVX2ChipOnAndroid.description>Install a VX2 neural chip for android, allowing it's host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_InstallVX2ChipOnAndroid.description>
+  <ATPP_InstallVX2ChipOnAndroid.description>Install a VX2 neural chip for android, allowing its host to remotely control any SX series android or biological surrogate and duplicate/permute their mind.</ATPP_InstallVX2ChipOnAndroid.description>
   <ATPP_InstallVX2ChipOnAndroid.jobString>Installing a VX2 neural chip for android.</ATPP_InstallVX2ChipOnAndroid.jobString>
   
   <ATPP_InstallVX3Chip.label>Install a VX3 neural chip</ATPP_InstallVX3Chip.label>
-  <ATPP_InstallVX3Chip.description>Install a VX3 neural chip, allowing it's host to remotely control multiple SX series android or biological surrogate at the same time and duplicate/permute their mind.</ATPP_InstallVX3Chip.description>
+  <ATPP_InstallVX3Chip.description>Install a VX3 neural chip, allowing its host to remotely control multiple SX series android or biological surrogate at the same time and duplicate/permute their mind.</ATPP_InstallVX3Chip.description>
   <ATPP_InstallVX3Chip.jobString>Installing a VX3 neural chip.</ATPP_InstallVX3Chip.jobString>
   
   <ATPP_InstallVX3ChipOnAndroid.label>Install a VX3 neural chip for android</ATPP_InstallVX3ChipOnAndroid.label>
-  <ATPP_InstallVX3ChipOnAndroid.description>Install a VX3 neural chip for android, allowing it's host to remotely control multiple SX series android or biological surrogate at the same time and duplicate/permute their mind.</ATPP_InstallVX3ChipOnAndroid.description>
+  <ATPP_InstallVX3ChipOnAndroid.description>Install a VX3 neural chip for android, allowing its host to remotely control multiple SX series android or biological surrogate at the same time and duplicate/permute their mind.</ATPP_InstallVX3ChipOnAndroid.description>
   <ATPP_InstallVX3ChipOnAndroid.jobString>Installing a VX3 neural chip for android.</ATPP_InstallVX3ChipOnAndroid.jobString>
   
   <ATPP_InstallRXChip.label>Install a RX neural chip</ATPP_InstallRXChip.label>
@@ -66,19 +66,19 @@
   <ATPP_InstallRXChipOnAndroid.jobString>Installing a RX neural chip.</ATPP_InstallRXChipOnAndroid.jobString>
   
   <ATPP_InstallVX0ChipOnAndroid.label>Install a VX0 neural chip for android</ATPP_InstallVX0ChipOnAndroid.label>
-  <ATPP_InstallVX0ChipOnAndroid.description>Install a VX0 neural chip for android, a neural chip which transforms it's host into a biological surrogate.</ATPP_InstallVX0ChipOnAndroid.description>
+  <ATPP_InstallVX0ChipOnAndroid.description>Install a VX0 neural chip for android, a neural chip which transforms its host into a biological surrogate.</ATPP_InstallVX0ChipOnAndroid.description>
   <ATPP_InstallVX0ChipOnAndroid.jobString>Installing a VX0 neural chip for android.</ATPP_InstallVX0ChipOnAndroid.jobString>
   
   <ATPP_InstallVX0Chip.label>Install a VX0 neural chip</ATPP_InstallVX0Chip.label>
-  <ATPP_InstallVX0Chip.description>Install a VX0 neural chip, a neural chip which transforms it's host into a biological surrogate.</ATPP_InstallVX0Chip.description>
+  <ATPP_InstallVX0Chip.description>Install a VX0 neural chip, a neural chip which transforms its host into a biological surrogate.</ATPP_InstallVX0Chip.description>
   <ATPP_InstallVX0Chip.jobString>Installing a VX0 neural chip.</ATPP_InstallVX0Chip.jobString>
   
   <ATPP_InstallVX1Chip.label>Install a VX1 neural chip</ATPP_InstallVX1Chip.label>
-  <ATPP_InstallVX1Chip.description>Install a VX1 neural chip, allowing it's host to remotely control any SX series android or biological surrogate.</ATPP_InstallVX1Chip.description>
+  <ATPP_InstallVX1Chip.description>Install a VX1 neural chip, allowing its host to remotely control any SX series android or biological surrogate.</ATPP_InstallVX1Chip.description>
   <ATPP_InstallVX1Chip.jobString>Installing a VX1 neural chip.</ATPP_InstallVX1Chip.jobString>
   
   <ATPP_InstallVX1ChipOnAndroid.label>Install a VX1 neural chip for android</ATPP_InstallVX1ChipOnAndroid.label>
-  <ATPP_InstallVX1ChipOnAndroid.description>Install a VX1 neural chip for android, allowing it's host to remotely control any SX series android or biological surrogate.</ATPP_InstallVX1ChipOnAndroid.description>
+  <ATPP_InstallVX1ChipOnAndroid.description>Install a VX1 neural chip for android, allowing its host to remotely control any SX series android or biological surrogate.</ATPP_InstallVX1ChipOnAndroid.description>
   <ATPP_InstallVX1ChipOnAndroid.jobString>Installing a VX1 neural chip for android.</ATPP_InstallVX1ChipOnAndroid.jobString>
   
   <ATPP_CreateS1.label>Create T1 Surrogate Android (S1)</ATPP_CreateS1.label>

@@ -30,16 +30,16 @@
 	<ATPP_RXChip.description>A neural chip acting as a personal SkyMind relay.</ATPP_RXChip.description>
 	
 	<ATPP_VX0Chip.label>VX0 Neural Chip</ATPP_VX0Chip.label>
-	<ATPP_VX0Chip.description>A neural chip which transforms it's host into a biological surrogate.</ATPP_VX0Chip.description>
+	<ATPP_VX0Chip.description>A neural chip which transforms its host into a biological surrogate.</ATPP_VX0Chip.description>
 	
 	<ATPP_VX1Chip.label>VX1 Neural Chip</ATPP_VX1Chip.label>
-	<ATPP_VX1Chip.description>A neural chip allowing it's host to remotely control any SX series android or biological surrogate.</ATPP_VX1Chip.description>
+	<ATPP_VX1Chip.description>A neural chip allowing its host to remotely control any SX series android or biological surrogate.</ATPP_VX1Chip.description>
 	
 	<ATPP_VX2Chip.label>VX2 Neural Chip</ATPP_VX2Chip.label>
-	<ATPP_VX2Chip.description>A neural chip allowing it's host to remotely control any SX series android or biological surrogate and permute/duplicate their mind.</ATPP_VX2Chip.description>
+	<ATPP_VX2Chip.description>A neural chip allowing its host to remotely control any SX series android or biological surrogate and permute/duplicate their mind.</ATPP_VX2Chip.description>
 	
 	<ATPP_VX3Chip.label>VX3 Neural Chip</ATPP_VX3Chip.label>
-	<ATPP_VX3Chip.description>A neural chip allowing it's host to remotely control mulitple SX series androids or biological surrogates at the same time and permute/duplicate their mind.</ATPP_VX3Chip.description>
+	<ATPP_VX3Chip.description>A neural chip allowing its host to remotely control mulitple SX series androids or biological surrogates at the same time and permute/duplicate their mind.</ATPP_VX3Chip.description>
 	
 	<ATPP_T1ArtificialBrain.label>Artificial Brain T1</ATPP_T1ArtificialBrain.label>
 	<ATPP_T1ArtificialBrain.description>An artificial T1 brain, allowing to transform a T1 surrogate into a blank neural network android</ATPP_T1ArtificialBrain.description>

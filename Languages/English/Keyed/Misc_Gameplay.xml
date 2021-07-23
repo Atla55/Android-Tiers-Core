@@ -36,7 +36,7 @@
 	
 	<!-- Needs -->
 	<ATPP_EnergyNeed>Energy</ATPP_EnergyNeed>
-	<ATPP_EnergyNeedDesc>Energy is the amount of power an android has in it's internal battery. If it is at zero, an android will increasingly malfunction and eventually be deactivated (die).</ATPP_EnergyNeedDesc>
+	<ATPP_EnergyNeedDesc>Energy is the amount of power an android has in its internal battery. If it is at zero, an android will increasingly malfunction and eventually be deactivated (die).</ATPP_EnergyNeedDesc>
 	
 	
 	<!-- NanoKits -->
@@ -98,7 +98,7 @@
 	
 	<!-- Letters -->
 	<ATPP_LetterSurrogateDisabled>Surrogate {0} Disabled</ATPP_LetterSurrogateDisabled>
-	<ATPP_LetterSurrogateDisabledDesc>Surrogate {0} is no longer operational following a violent attack on it's physical integrity.</ATPP_LetterSurrogateDisabledDesc>
+	<ATPP_LetterSurrogateDisabledDesc>Surrogate {0} is no longer operational following a violent attack on its physical integrity.</ATPP_LetterSurrogateDisabledDesc>
 	
 	<ATPP_LetterUploadOK>Upload Complete</ATPP_LetterUploadOK>
 	<ATPP_LetterUploadOKDesc>The upload of {0}'s mind is complete and has now been transferred into {1}'s artificial brain, {1} is now dead (mind crushed).</ATPP_LetterUploadOKDesc>
@@ -141,10 +141,10 @@
 	<ATPP_RansomNeedPayRansomDownloadedTrait>{0} contacts you via radio. They are behind the ransomware attack, they will remove the installed bad trait '{1}' of {2} in exchange of {3} silver.</ATPP_RansomNeedPayRansomDownloadedTrait>
 	
 	<ATPP_ComptHeatSensitiveComputerMeltTitle>Server Overheating</ATPP_ComptHeatSensitiveComputerMeltTitle>
-    <ATPP_ComptHeatSensitiveComputerMeltDesc>A server exploded due to it's high operating temperature!</ATPP_ComptHeatSensitiveComputerMeltDesc>
+    <ATPP_ComptHeatSensitiveComputerMeltDesc>A server exploded due to its high operating temperature!</ATPP_ComptHeatSensitiveComputerMeltDesc>
 	
 	<ATPP_destroyedMindsDueToDestroyedSkyCloudCore>Lost {0} Consciousnesses</ATPP_destroyedMindsDueToDestroyedSkyCloudCore>
-	<ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>Following the destruction of SkyCloud Core {0}, all {1} consciousnesses stored in it's central memory were lost.</ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>
+	<ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>Following the destruction of SkyCloud Core {0}, all {1} consciousnesses stored in its central memory were lost.</ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc>
 	
 	<ATPP_LetterHackingPointsRemoved>Hacking Points Losts</ATPP_LetterHackingPointsRemoved>
 	<ATPP_LetterHackingPointsRemovedDesc>All hacking servers in your settlement(s) are offline which implies that {0} points have been lost since they can no longer be stored on any media!</ATPP_LetterHackingPointsRemovedDesc>
