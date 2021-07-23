@@ -25,7 +25,7 @@ namespace MOARANDROIDS
                     //Si il sagit d'une VX0 alors passation du pawn en mode surrogate
                     if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner || ___pawn.IsSlave))
                     {
-                        CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(___pawn);
                         if (cas == null || cas.isSurrogate)
                             return;
 
@@ -162,7 +162,7 @@ namespace MOARANDROIDS
                     //gére le cas des empilements de chips afin de restituer celles déjà présentes
                     if (Utils.ExceptionNeuralChip.Contains(hediff.def.defName))
                     {
-                        CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(___pawn);
 
                         //Interdiction ajouté VX puces dans un surrogate, on restitue la puce et on se barre
                         if (cas != null && cas.isSurrogate)
@@ -226,7 +226,7 @@ namespace MOARANDROIDS
                 //Si il sagit d'une VX0 
                 if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip)
                 {
-                    CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(___pawn);
                     if (cas == null)
                         return;
 
@@ -254,12 +254,12 @@ namespace MOARANDROIDS
                         if (___pawn.IsSurrogateAndroid(true))
                         {
                             //Obtention controlleur
-                            CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                            CompAndroidState cas = Utils.getCachedCAS(___pawn);
                             if (cas == null)
                                 return;
 
                             //Arret du mode de control chez le controller
-                            CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                             //If surrogate downed due to another reason that skymind disconnection then we notice it to force map despawn on downed surrogate in hostile map 
                             bool downedViaDisconnect = true;
                             if (hediff != null && hediff.def != HediffDefOf.ATPP_NoHost)

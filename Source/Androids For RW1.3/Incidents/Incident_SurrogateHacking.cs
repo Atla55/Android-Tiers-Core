@@ -69,7 +69,7 @@ namespace MOARANDROIDS
                 foreach (var v in victims)
                 {
                     CompSkyMind csm = v.TryGetComp<CompSkyMind>();
-                    CompAndroidState cas = v.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(v);
                     if (csm == null || cas == null)
                         continue;
 
@@ -78,7 +78,7 @@ namespace MOARANDROIDS
                     //Deconnection du contorlleur le cas echeant
                     if (cas.surrogateController != null)
                     {
-                        CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                         if (cso != null)
                             cso.disconnectControlledSurrogate(null);
                     }

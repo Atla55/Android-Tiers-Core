@@ -68,7 +68,7 @@ namespace MOARANDROIDS
             {
                 Pawn cp = (Pawn)t;
                 CompSkyMind csm = cp.TryGetComp<CompSkyMind>();
-                CompAndroidState cas = cp.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(cp);
 
                 //Si pas clone ou clone deja utilisé on degage
                 if (cas == null || !cas.isSurrogate || cas.surrogateController != null || csm.Infected != -1)
@@ -89,8 +89,8 @@ namespace MOARANDROIDS
             {
                 Building build = (Building)t;
                 CompRemotelyControlledTurret crt = t.TryGetComp<CompRemotelyControlledTurret>();
-
-                if (crt != null && crt.controller == null && !t.IsBrokenDown() && t.TryGetComp<CompPowerTrader>().PowerOn)
+                CompPowerTrader cpt = Utils.getCachedCPT(t);
+                if (crt != null && crt.controller == null && !t.IsBrokenDown() && cpt.PowerOn)
                 {
                     if (!Utils.GCATPP.isConnectedToSkyMind(t))
                     {
@@ -139,7 +139,7 @@ namespace MOARANDROIDS
         {
             base.FinalizeDesignationSucceeded();
 
-            CompSurrogateOwner cso = controller.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(controller);
 
             //Prevent some situations where the control mode is disabled and the pawn conscious but the designator is always selected (not concern minds, as there is no controlMode processus)
             if (!cso.controlMode && controller.Spawned)

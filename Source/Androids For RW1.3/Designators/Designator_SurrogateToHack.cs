@@ -82,7 +82,7 @@ namespace MOARANDROIDS
                 return false;
 
             Pawn cp = (Pawn)t;
-            CompAndroidState cas = cp.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(cp);
 
             //Si pas clone ou clone deja utilisé on degage
             if (cas == null || !cas.isSurrogate || cp.Faction == Faction.OfPlayer)
@@ -125,14 +125,14 @@ namespace MOARANDROIDS
             base.FinalizeDesignationSucceeded();
 
             CompSkyMind csm = target.TryGetComp<CompSkyMind>();
-            CompAndroidState cas = target.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(target);
             string surrogateName = target.LabelShortCap;
             CompSurrogateOwner cso = null;
 
             if (cas.externalController != null)
             {
                 surrogateName = cas.externalController.LabelShortCap;
-                cso = cas.externalController.TryGetComp<CompSurrogateOwner>();
+                cso = Utils.getCachedCSO(cas.externalController);
             }
 
             Lord clord = target.GetLord();

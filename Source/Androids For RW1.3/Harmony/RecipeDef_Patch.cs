@@ -25,7 +25,7 @@ namespace MOARANDROIDS
                 {
                     if((Utils.curSelPatientDrawMedOperationsTab is Pawn))
                     {
-                        CompAndroidState cas = Utils.curSelPatientDrawMedOperationsTab.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(Utils.curSelPatientDrawMedOperationsTab);
                         
                         if(cas != null)
                         {

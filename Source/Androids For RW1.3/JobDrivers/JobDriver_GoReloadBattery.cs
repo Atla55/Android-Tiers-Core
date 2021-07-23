@@ -44,7 +44,7 @@ namespace MOARANDROIDS
                 yield return Toils_General.Wait(50);
                 yield return Toils_Jump.JumpIf(nothing, () => this.pawn.needs.food.CurLevelPercentage < 1.0f
                     && !this.job.targetB.ThingDestroyed && !((Building)this.job.targetB).IsBrokenDown()
-                    && ((Building)this.job.targetB).TryGetComp<CompPowerTrader>().PowerOn);
+                    && Utils.getCachedCPT((Building)this.job.targetB).PowerOn);
             }
         }
     }

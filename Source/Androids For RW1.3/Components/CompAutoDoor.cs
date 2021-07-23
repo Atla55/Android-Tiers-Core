@@ -24,7 +24,8 @@ namespace MOARANDROIDS
             }
 
             //Si hors-ligne on retourne rien
-            if ( parent.TryGetComp<CompPowerTrader>() == null || !parent.TryGetComp<CompPowerTrader>().PowerOn
+            CompPowerTrader cpt = Utils.getCachedCPT(parent);
+            if ( cpt == null || !cpt.PowerOn
                 || parent.IsBrokenDown())
             {
                 yield break;

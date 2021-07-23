@@ -313,8 +313,9 @@ namespace BlueLeakTest
     {
         private static bool Prefix(Pawn_HealthTracker __instance, DamageInfo? dinfo, Hediff hediff, Pawn ___pawn)
         {
+            CompAndroidState cas = Utils.getCachedCAS(___pawn);
             Pawn value = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            if(value.kindDef == MOARANDROIDS.PawnKindDefOf.MicroScyther || value.kindDef == MOARANDROIDS.PawnKindDefOf.AbominationAtlas || (value.kindDef == MOARANDROIDS.PawnKindDefOf.M7MechPawn && ___pawn.TryGetComp<CompAndroidState>() != null && !___pawn.TryGetComp<CompAndroidState>().isSurrogate))
+            if(value.kindDef == MOARANDROIDS.PawnKindDefOf.MicroScyther || value.kindDef == MOARANDROIDS.PawnKindDefOf.AbominationAtlas || (value.kindDef == MOARANDROIDS.PawnKindDefOf.M7MechPawn && !cas.isSurrogate))
             {
                 value.Kill(null);
                 return false;

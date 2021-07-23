@@ -43,7 +43,7 @@ namespace MOARANDROIDS
             if (victim == null)
                 return false;
 
-            CompSurrogateOwner cso = victim.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(victim);
             if (cso == null)
                 return false;
 

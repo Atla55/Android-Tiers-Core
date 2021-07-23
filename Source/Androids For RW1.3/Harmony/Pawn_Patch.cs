@@ -25,7 +25,7 @@ namespace MOARANDROIDS
                         return;
 
                     //Si surrogate on le deconnecte et on clear le controlleur (SI pas faisant suite à un piratage)
-                    CompAndroidState cas = __instance.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(__instance);
                     if (cas != null && cas.isSurrogate && cas.externalController != null && newFaction != null && newFaction.IsPlayer && !(Find.DesignatorManager.SelectedDesignator != null && Find.DesignatorManager.SelectedDesignator is Designator_SurrogateToHack))
                     {
                         if (cas.surrogateController != null)
@@ -33,9 +33,10 @@ namespace MOARANDROIDS
                             //On affiche une notif
                             Find.LetterStack.ReceiveLetter("ATPP_LetterTraitorOffline".Translate(), "ATPP_LetterTraitorOfflineDesc".Translate(__instance.LabelShortCap), LetterDefOf.NegativeEvent);
 
+                            CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                             //Le cas echeant on le deconnecte
-                            if (cas.surrogateController.TryGetComp<CompSurrogateOwner>() != null)
-                                cas.surrogateController.TryGetComp<CompSurrogateOwner>().disconnectControlledSurrogate(null);
+                            if (cso != null)
+                                cso.disconnectControlledSurrogate(null);
                         }
 
                         //On vire l'external controller
@@ -77,12 +78,12 @@ namespace MOARANDROIDS
                     if (__instance.IsSurrogateAndroid(true))
                     {
                         //Obtention controlleur
-                        CompAndroidState cas = __instance.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(__instance);
                         if (cas == null)
                             return true;
 
                         //Arret du mode de control chez le controller
-                        CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                         cso.stopControlledSurrogate(__instance,false, false, true);
 
                         //On reset les données pour une potentiel futur resurection
@@ -149,7 +150,7 @@ namespace MOARANDROIDS
             {
                 if (__instance.IsSurrogateAndroid())
                 {
-                    CompAndroidState cas = __instance.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(__instance);
                     if (cas != null)
                     {
                         if(__instance.Downed)
@@ -190,7 +191,7 @@ namespace MOARANDROIDS
 
                         if (__instance.VXChipPresent())
                         {
-                            CompSurrogateOwner cso = __instance.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(__instance);
                             if (cso != null)
                             {
                                 tmp = cso.CompGetGizmosExtra();
@@ -202,7 +203,7 @@ namespace MOARANDROIDS
                         //Si android prisonier ou virusé
                         if (__instance.IsAndroidTier())
                         {
-                            CompAndroidState cas = __instance.TryGetComp<CompAndroidState>();
+                            CompAndroidState cas = Utils.getCachedCAS(__instance);
 
                             if (cas != null)
                             {
@@ -224,7 +225,7 @@ namespace MOARANDROIDS
                     if (__instance.IsPoweredAnimalAndroids())
                     {
                         CompAndroidState cas = null;
-                        cas = __instance.TryGetComp<CompAndroidState>();
+                        cas = Utils.getCachedCAS(__instance);
                         if (cas != null)
                         {
                             IEnumerable<Gizmo> tmp = cas.CompGetGizmosExtra();

@@ -43,7 +43,7 @@ namespace MOARANDROIDS
             CompSurrogateOwner csc = null;
             CompSkyMind csm = __instance.TryGetComp<CompSkyMind>();
 
-            csc = crt.controller.TryGetComp<CompSurrogateOwner>();
+            csc = Utils.getCachedCSO(crt.controller);
 
             if (csm != null && csm.connected && crt.controller != null && csc != null && csc.skyCloudHost != null && csc.skyCloudHost.Map == __instance.Map)
             {

@@ -92,13 +92,15 @@ namespace MOARANDROIDS
 
         public float getPowerConsumed()
         {
-            return getNbAndroidReloading() + this.parent.TryGetComp<CompPowerTrader>().Props.basePowerConsumption;
+            CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
+            return getNbAndroidReloading() + cpt.Props.basePowerConsumption;
         }
 
 
         public void refreshPowerConsumed()
         {
-            this.parent.TryGetComp<CompPowerTrader>().powerOutputInt = -(getPowerConsumed());
+            CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
+            cpt.powerOutputInt = -(getPowerConsumed());
         }
 
         public void incAndroidPower()

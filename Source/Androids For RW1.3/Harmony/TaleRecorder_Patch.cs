@@ -35,7 +35,8 @@ namespace MOARANDROIDS
                 //Si colon tué est un T1/T2 OU un surrogate on s'en fou
                 if (def == TaleDefOf.KilledColonist)
                 {
-                    if ((p2 != null && (Utils.ExceptionAndroidListBasic.Contains(p2.def.defName) || (p2.TryGetComp<CompAndroidState>() != null && p2.TryGetComp<CompAndroidState>().isSurrogate))))
+                    CompAndroidState cas = Utils.getCachedCAS(p2);
+                    if ((p2 != null && (Utils.ExceptionAndroidListBasic.Contains(p2.def.defName) || (cas != null && cas.isSurrogate))))
                         return false;
                 }
                 //Si androide butcherisé

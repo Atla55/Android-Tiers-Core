@@ -64,8 +64,8 @@ namespace MOARANDROIDS
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-
-            if (this.parent.TryGetComp<CompPowerTrader>().PowerOn)
+            CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
+            if (cpt.PowerOn)
                 Utils.GCATPP.pushSkyMindWANServer((Building)this.parent);
         }
     }

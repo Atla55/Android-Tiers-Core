@@ -29,7 +29,8 @@ namespace MOARANDROIDS
             {
                 return new FloatMenuOption("CannotUseSolarFlare".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
             }
-            if (!this.TryGetComp<CompPowerTrader>().PowerOn)
+            CompPowerTrader cpt = Utils.getCachedCPT(this);
+            if (!cpt.PowerOn)
             {
                 return new FloatMenuOption("CannotUseNoPower".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
             }
@@ -38,7 +39,7 @@ namespace MOARANDROIDS
                 return new FloatMenuOption("ATPP_CanOnlyBeUsedByAndroid".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
             }
 
-            CompAndroidState ca = myPawn.TryGetComp<CompAndroidState>();
+            CompAndroidState ca = Utils.getCachedCAS(myPawn);
             if (ca == null || !ca.UseBattery)
                 return new FloatMenuOption("ATPP_CannotUseBecauseNotInBatteryMode".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
 

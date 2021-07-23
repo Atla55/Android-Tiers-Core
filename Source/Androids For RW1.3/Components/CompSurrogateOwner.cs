@@ -108,7 +108,8 @@ namespace MOARANDROIDS
                     if (permuteEndingGT == -1)
                         return;
                     permuteEndingGT = -1;
-                    permuteRecipient.TryGetComp<CompSurrogateOwner>().permuteEndingGT = -1;
+                    CompSurrogateOwner cso = Utils.getCachedCSO(permuteRecipient);
+                    cso.permuteEndingGT = -1;
 
                     Utils.removeUploadHediff(cpawn, permuteRecipient);
 
@@ -145,7 +146,7 @@ namespace MOARANDROIDS
                     if (duplicateEndingGT == -1)
                         return;
                     duplicateEndingGT = -1;
-                    duplicateRecipient.TryGetComp<CompSurrogateOwner>().duplicateEndingGT = -1;
+                    Utils.getCachedCSO(duplicateRecipient).duplicateEndingGT = -1;
 
                     Utils.removeUploadHediff(cpawn, duplicateRecipient);
 
@@ -246,7 +247,7 @@ namespace MOARANDROIDS
                     downloadFromSkyCloudEndingGT = -1;
                     Utils.removeUploadHediff(cpawn, null);
 
-                    CompSurrogateOwner cso = skyCloudDownloadRecipient.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO(skyCloudDownloadRecipient);
                     if (cso.skyCloudHost == null)
                         return;
 
@@ -262,7 +263,7 @@ namespace MOARANDROIDS
                     Utils.PermutePawn(skyCloudDownloadRecipient, cpawn);
 
                     //Report du blankAndroid pour le flagger dans la routine de kill
-                    CompAndroidState cas = skyCloudDownloadRecipient.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(skyCloudDownloadRecipient);
                     if(cas != null)
                         cas.isBlankAndroid = true;
 
@@ -418,7 +419,7 @@ namespace MOARANDROIDS
                 clone.health.RemoveHediff(h);
             }
 
-            CompSurrogateOwner cso = clone.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(clone);
             cso.skyCloudHost = skyCloudHost;
 
             Utils.Duplicate(cpawn, clone, false);
@@ -642,7 +643,7 @@ namespace MOARANDROIDS
         {
             Pawn pawn = (Pawn)parent;
             bool isPrisonner = pawn.IsPrisoner;
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
             bool isBlankAndroid = (cas != null && cas.isBlankAndroid);
 
             //Si pas prisonier ET pas un surrogate non controlé && affecté au crafting
@@ -961,7 +962,7 @@ namespace MOARANDROIDS
                     float p;
                     if (permuteEndingGT == -1)
                     {
-                        CompSurrogateOwner cso = permuteRecipient.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(permuteRecipient);
                         p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - cso.permuteStartGT) / (float)(cso.permuteEndingGT - cso.permuteStartGT));
                     }
                     else
@@ -978,7 +979,7 @@ namespace MOARANDROIDS
                     float p;
                     if (duplicateEndingGT == -1)
                     {
-                        CompSurrogateOwner cso = duplicateRecipient.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(duplicateRecipient);
                         p = p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - cso.duplicateStartGT) / (float)(cso.duplicateEndingGT - cso.duplicateStartGT));
                     }
                     else
@@ -1076,7 +1077,7 @@ namespace MOARANDROIDS
             //Log.Message("i0");
             if (controlled == null)
                 return;
-            CompAndroidState cas = controlled.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(controlled);
 
             if (cas == null 
                 || ((SX != null && !VX3Host) || (VX3Host && availableSX.Count+1 > Settings.VX3MaxSurrogateControllableAtOnce)) 
@@ -1387,7 +1388,7 @@ namespace MOARANDROIDS
                 }
 
                 //On enleve le controller
-                CompAndroidState cas = csurrogate.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(csurrogate);
                 if (cas != null)
                 {
                     cas.surrogateController = null;
@@ -1542,7 +1543,7 @@ namespace MOARANDROIDS
             permuteStartGT = CGT;
             permuteEndingGT = CGT + 60-(CGT%60) + Settings.mindPermutationHours * 2500;
 
-            CompSurrogateOwner cso = dest.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(dest);
             cso.showPermuteProgress = true;
             cso.permuteRecipient = (Pawn)parent;
 
@@ -1560,7 +1561,7 @@ namespace MOARANDROIDS
             duplicateStartGT = CGT;
             duplicateEndingGT = CGT + 60-(CGT%60) + Settings.mindDuplicationHours * 2500;
 
-            CompSurrogateOwner cso = dest.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(dest);
             cso.showDuplicateProgress = true;
             cso.duplicateRecipient = (Pawn)parent;
 
@@ -1595,7 +1596,7 @@ namespace MOARANDROIDS
             CompSkyCloudCore csc = source.TryGetComp<CompSkyCloudCore>();
 
             string name = source.LabelShortCap;
-            CompSurrogateOwner cso = source.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(source);
 
             if (cso != null && cso.isThereSX())
             {
@@ -1650,19 +1651,28 @@ namespace MOARANDROIDS
                 if (Utils.GCATPP.isThereSkillServers())
                     recipientConnected = true;
 
+                CompSurrogateOwner csoSkyCloudRecipient = Utils.getCachedCSO(skyCloudDownloadRecipient);
+                CompPowerTrader cptSkyCloudRecipient = Utils.getCachedCPT(skyCloudRecipient);
+                CompPowerTrader cptSkyCloudHost = Utils.getCachedCPT(skyCloudHost);
+                CompPowerTrader cptMigrationSkyCloudHostDest = Utils.getCachedCPT(migrationSkyCloudHostDest);
+                CompPowerTrader cptCsoSkyCloudRecipientSkyCloudHost = null;
+
+                if(csoSkyCloudRecipient != null)
+                    Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);
+
                 //L'équivalence du EST connecté sur le COre s'est si il est bien alimenté en elec
-                if ( (skyCloudRecipient != null && skyCloudRecipient.TryGetComp<CompPowerTrader>().PowerOn)
-                    || (replicationEndingGT != -1 && skyCloudHost.TryGetComp<CompPowerTrader>().PowerOn)
-                    || (migrationSkyCloudHostDest != null && migrationSkyCloudHostDest.TryGetComp<CompPowerTrader>().PowerOn)
-                    || (skyCloudDownloadRecipient != null && skyCloudDownloadRecipient.TryGetComp<CompSurrogateOwner>() != null && skyCloudDownloadRecipient.TryGetComp<CompSurrogateOwner>().skyCloudHost.TryGetComp<CompPowerTrader>().PowerOn))
+                if ( (skyCloudRecipient != null && cptSkyCloudRecipient.PowerOn)
+                    || (replicationEndingGT != -1 && cptSkyCloudHost.PowerOn)
+                    || (migrationSkyCloudHostDest != null && cptMigrationSkyCloudHostDest.PowerOn)
+                    || (skyCloudDownloadRecipient != null && csoSkyCloudRecipient != null && cptCsoSkyCloudRecipientSkyCloudHost.PowerOn))
                 {
                     recipientConnected = true;
                 }
 
                 //L'équivalence en mode migration est le check de si le host du mind est branché
                 if (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual)
-                    || (replicationEndingGT != -1 && skyCloudHost.TryGetComp<CompPowerTrader>().PowerOn)
-                    || (skyCloudHost != null && skyCloudHost.TryGetComp<CompPowerTrader>().PowerOn) )
+                    || (replicationEndingGT != -1 && cptSkyCloudHost.PowerOn)
+                    || (skyCloudHost != null && cptSkyCloudHost.PowerOn) )
                     emitterConnected = true;
 
                 //Si hote plus valide alors on arrete le processus et on kill les deux androids
@@ -1743,14 +1753,14 @@ namespace MOARANDROIDS
         {
             if (duplicateRecipient != null)
             {
-                CompSurrogateOwner cso = duplicateRecipient.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(duplicateRecipient);
                 cso.showDuplicateProgress = false;
                 cso.duplicateRecipient = null;
             }
 
             if (permuteRecipient != null)
             {
-                CompSurrogateOwner cso = permuteRecipient.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(permuteRecipient);
                 cso.showPermuteProgress = false;
                 cso.permuteRecipient = null;
             }

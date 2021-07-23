@@ -193,11 +193,11 @@ namespace MOARANDROIDS
                             surrogate.equipment.DestroyAllEquipment();
 
 
-                            CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+                            CompAndroidState cas = Utils.getCachedCAS(surrogate);
                             if (cas != null)
                             {
                                 cas.externalController = tmp[i];
-                                CompSurrogateOwner cso = tmp[i].TryGetComp<CompSurrogateOwner>();
+                                CompSurrogateOwner cso = Utils.getCachedCSO(tmp[i]);
                                 if (cso != null)
                                 {
                                     cso.setControlledSurrogate(surrogate, true);

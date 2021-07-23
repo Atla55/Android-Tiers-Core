@@ -25,7 +25,7 @@ namespace MOARANDROIDS
                         __result = Utils.SXColor;
                     }
 
-                    CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(___pawn);
 
                     if(cas != null )
                     {

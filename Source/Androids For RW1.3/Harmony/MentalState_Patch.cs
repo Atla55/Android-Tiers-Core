@@ -51,12 +51,12 @@ namespace MOARANDROIDS
             {
                 if (__result && ___pawn.IsSurrogateAndroid())
                 {
-                    CompAndroidState cas = ___pawn.TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(___pawn);
 
                     if (cas == null || cas.surrogateController == null)
                         return;
 
-                    CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                     if(cso.skyCloudHost != null)
                     {
                         CompSkyCloudCore csc = cso.skyCloudHost.TryGetComp<CompSkyCloudCore>();

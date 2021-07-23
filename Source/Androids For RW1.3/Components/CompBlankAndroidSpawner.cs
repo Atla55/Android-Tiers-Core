@@ -32,7 +32,7 @@ namespace MOARANDROIDS
 
                 blankAndroid.health.AddHediff(HediffDefOf.ATPP_BlankAndroid);
 
-                CompAndroidState cas = blankAndroid.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(blankAndroid);
                 cas.isBlankAndroid = true;
                 
 

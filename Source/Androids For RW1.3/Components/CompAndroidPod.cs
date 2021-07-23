@@ -28,7 +28,7 @@ namespace MOARANDROIDS
 
         public float getPowerConsumed()
         {
-            CompPowerTrader cpt = this.parent.TryGetComp<CompPowerTrader>();
+            CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
 
             if (cpt == null)
                 return 0;
@@ -39,7 +39,8 @@ namespace MOARANDROIDS
 
         public void refreshPowerConsumed()
         {
-            this.parent.TryGetComp<CompPowerTrader>().powerOutputInt = -(getPowerConsumed());
+            CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
+            cpt.powerOutputInt = -(getPowerConsumed());
         }
 
         public int getCurrentAndroidPowerConsumed()

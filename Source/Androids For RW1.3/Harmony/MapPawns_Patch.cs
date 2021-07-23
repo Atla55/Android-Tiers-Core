@@ -29,7 +29,7 @@ namespace MOARANDROIDS
                         if (cp.Faction == null ||!cp.Faction.IsPlayer)
                             continue;
 
-                        CompAndroidState cas = Utils.listerDownedSurrogatesThing[i].TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(cp);
 
                         //If pawn not dead but an inactive surrogate AND previously downed by SkyMind disconnect or manual disconnect
                         if (!cp.Dead && cas != null && cas.isSurrogate && cas.externalController == null && cas.downedViaDisconnect)

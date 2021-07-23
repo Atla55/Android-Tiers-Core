@@ -77,7 +77,7 @@ namespace MOARANDROIDS
 
         protected void applyFrameworkColor(Pawn pawn)
         {
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
             if (cas == null)
                 return;
 

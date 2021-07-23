@@ -389,7 +389,7 @@ namespace MOARANDROIDS
 
                     if (source.ToLower().Contains("(surrogate)"))
                     {
-                        CompAndroidState cas = Utils.GCATPP.VatGrowerLastPawnInProgress[BUID].TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(Utils.GCATPP.VatGrowerLastPawnInProgress[BUID]);
                         if (cas != null)
                         {
                             Utils.initBodyAsSurrogate(Utils.GCATPP.VatGrowerLastPawnInProgress[BUID]);
@@ -419,7 +419,7 @@ namespace MOARANDROIDS
                 //Si le GS chargé dans le VAT est un exosquelette d'androide TX alors pas de reduction
                 if (Utils.GCATPP.VatGrowerLastPawnInProgress.ContainsKey(BUID) && Utils.GCATPP.VatGrowerLastPawnInProgress[BUID] != null)
                 {
-                    CompAndroidState cas = Utils.GCATPP.VatGrowerLastPawnInProgress[BUID].TryGetComp<CompAndroidState>();
+                    CompAndroidState cas = Utils.getCachedCAS(Utils.GCATPP.VatGrowerLastPawnInProgress[BUID]);
                     if (cas != null)
                     {
                         if (cas.forcedDamageLevel != 2 && __result <= 0.45f)

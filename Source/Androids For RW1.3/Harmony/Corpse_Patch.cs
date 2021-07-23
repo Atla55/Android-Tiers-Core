@@ -22,10 +22,10 @@ namespace MOARANDROIDS
             {
                 Utils.lastButcheredPawnIsAndroid = false;
 
+                CompAndroidState cas = Utils.getCachedCAS(__instance.InnerPawn);
                 //Si Surrogate T4 butcherisé alors on supprime le IA-Core des produits 
-                if(__instance.InnerPawn != null && __instance.InnerPawn.def.defName == Utils.T4 && __instance.InnerPawn.TryGetComp<CompAndroidState>() != null && __result != null)
+                if (__instance.InnerPawn != null && __instance.InnerPawn.def.defName == Utils.T4 && cas != null && __result != null)
                 {
-                    CompAndroidState cas = __instance.InnerPawn.TryGetComp<CompAndroidState>();
                     if (cas.isSurrogate)
                     {
                         List<Thing> res = new List<Thing>();

@@ -65,6 +65,12 @@ namespace MOARANDROIDS
                 Utils.GCATPP.pushVirusedThing(parent);
             }
 
+            if (parent is Pawn)
+            {
+                parentPawn = (Pawn)parent;
+                isSurrogate = parentPawn.IsSurrogateAndroid();
+            }
+
             Utils.GCATPP.pushSkyMindable(parent);
         }
 
@@ -75,7 +81,10 @@ namespace MOARANDROIDS
             Vector3 vector;
 
             if (Utils.antennaSelected() && connected)
-                avatar = Tex.ConnectedUser;
+            {
+                if(!isSurrogate)
+                    avatar = Tex.ConnectedUser;
+            }
 
             if (infected == 1)
                 avatar = Tex.virus;
@@ -113,14 +122,17 @@ namespace MOARANDROIDS
             }
             else
             {
-                CompPowerTrader c = parent.TryGetComp<CompPowerTrader>();
+                CompPowerTrader c = Utils.getCachedCPT((Building)parent);
                 return c != null && c.PowerOn;
             }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            CompAndroidState casx = parent.TryGetComp<CompAndroidState>();
+            CompAndroidState casx=null;
+
+            if(parent is Pawn)
+                casx = Utils.getCachedCAS((Pawn)parent);
 
             //Si infecté ou un surrogate ennemis alors pas de possibilité de le connecté/déconnecté du réseau du joueur
             if (infected != -1 || (parent.Faction != Faction.OfPlayer && casx != null && casx.isSurrogate))
@@ -137,8 +149,7 @@ namespace MOARANDROIDS
                 }
 
                 //Les M7Mech standard ne sont pas controlables
-                CompAndroidState cas = parent.TryGetComp<CompAndroidState>();
-                if (cas != null && !cas.isSurrogate && parent.def.defName == "M7Mech")
+                if (casx != null && !casx.isSurrogate && parent.def.defName == "M7Mech")
                     yield break;
 
             }
@@ -207,6 +218,10 @@ namespace MOARANDROIDS
                     //Log.Message(parent.LabelCap + " => SkyMindDisconnectedUser");
                     connected = false;
                     break;
+                    //Android converted from surrogate to blank android
+                case "ATPP_SurrogateConvertedToBlankNNAndroid":
+                    isSurrogate = false;
+                    break;
             }
         }
 
@@ -266,14 +281,14 @@ namespace MOARANDROIDS
                     {
                         Pawn p = (Pawn)parent;
 
-                        CompAndroidState cas = parent.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(p);
                         if (cas == null)
                             return;
 
                         //Deconnection du contorlleur le cas echeant
                         if (cas.surrogateController != null)
                         {
-                            CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                             if (cso != null)
                             {
                                 //Cryptolocker on force la remise du NoHost de down du surrogate
@@ -373,10 +388,10 @@ namespace MOARANDROIDS
             //Fin du hack temporaire du surrogate on deconnecte le joueur
             Pawn cp = (Pawn)parent;
 
-            CompAndroidState cas = cp.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(cp);
             if (cas.surrogateController != null)
             {
-                CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                 cso.stopControlledSurrogate(cp, true);
             }
 
@@ -510,5 +525,7 @@ namespace MOARANDROIDS
 
         public bool autoconn;
         public bool connected;
+        private Pawn parentPawn = null;
+        private bool isSurrogate = false;
     }
 }

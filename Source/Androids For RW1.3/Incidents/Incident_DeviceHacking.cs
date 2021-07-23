@@ -69,9 +69,12 @@ namespace MOARANDROIDS
                 foreach (var v in victims)
                 {
                     CompSkyMind csm = v.TryGetComp<CompSkyMind>();
-                    CompAndroidState cas = v.TryGetComp<CompAndroidState>();
-                    if (cas == null)
-                        continue;
+                    if (v is Pawn)
+                    {
+                        CompAndroidState cas = Utils.getCachedCAS((Pawn)v);
+                        if (cas == null)
+                            continue;
+                    }
 
                     csm.Infected = 4;
 

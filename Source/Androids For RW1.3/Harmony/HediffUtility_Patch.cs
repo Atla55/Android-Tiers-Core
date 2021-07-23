@@ -18,9 +18,10 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(HediffSet hs, ref int __result)
             {
+                CompSurrogateOwner cso = Utils.getCachedCSO(hs.pawn);
                 //Si transhumaniste et a un corp d'androide on simule +10 addedParts
                 if (hs.pawn.story != null && hs.pawn.story.traits.HasTrait(TraitDefOf.Transhumanist)
-                    && ((Utils.ExceptionAndroidList.Contains(hs.pawn.def.defName)) || (hs.pawn.TryGetComp<CompSurrogateOwner>() != null && hs.pawn.TryGetComp<CompSurrogateOwner>().skyCloudHost != null)))
+                    && ((Utils.ExceptionAndroidList.Contains(hs.pawn.def.defName)) || (cso != null && cso.skyCloudHost != null)))
                 {
                     __result += 20;
                 }

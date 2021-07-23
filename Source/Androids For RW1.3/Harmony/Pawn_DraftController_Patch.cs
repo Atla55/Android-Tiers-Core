@@ -20,7 +20,7 @@ namespace MOARANDROIDS
             {
                 CompAndroidState cas = null;
                 if (___pawn != null)
-                    cas = ___pawn.TryGetComp<CompAndroidState>();
+                    cas = Utils.getCachedCAS(___pawn);
 
                 //If android with glowing eyes we refresh the graphics cache, because glowing eyes with different colors are stored in cache (drafted => red, not-drafted => normal color depending of the android serie)
                 if (Utils.ExceptionAndroidWithGlowingEyes.Contains(___pawn.def.defName) 

@@ -22,7 +22,7 @@ namespace MOARANDROIDS
                 {
                     if (p.Faction == Faction.OfPlayer)
                     {
-                        CompAndroidState cas = p.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(p);
 
                         if (cas != null && cas.isSurrogate && cas.surrogateController == null && !cas.isOrganic && (!M7 || (p.def.defName == Utils.M7)))
                         {
@@ -131,7 +131,8 @@ namespace MOARANDROIDS
                 {
                     return new FloatMenuOption("CannotUseSolarFlare".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }
-                if (!bed.TryGetComp<CompPowerTrader>().PowerOn)
+                CompPowerTrader cpt = Utils.getCachedCPT(bed);
+                if (!cpt.PowerOn)
                 {
                     return new FloatMenuOption("CannotUseNoPower".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }
@@ -140,7 +141,7 @@ namespace MOARANDROIDS
                     return new FloatMenuOption("ATPP_CanOnlyBeUsedByAndroid".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }
 
-                CompAndroidState ca = myPawn.TryGetComp<CompAndroidState>();
+                CompAndroidState ca = Utils.getCachedCAS(myPawn);
                 if (ca == null || !ca.UseBattery)
                     return new FloatMenuOption("ATPP_CannotUseBecauseNotInBatteryMode".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
 

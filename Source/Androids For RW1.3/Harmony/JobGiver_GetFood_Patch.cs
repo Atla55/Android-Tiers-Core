@@ -104,7 +104,7 @@ namespace MOARANDROIDS
                     if (Utils.ExceptionAndroidCanReloadWithPowerList.Contains(pawn.def.defName))
                     {
                         //Check si l'android utilise sa batterie le cas non echeant on arrete l'override ET on l'arret aussi si l'android dans une caravane !!
-                        CompAndroidState ca = pawn.TryGetComp<CompAndroidState>();
+                        CompAndroidState ca = Utils.getCachedCAS(pawn);
                         if (ca == null || !pawn.Spawned || !ca.UseBattery || pawn.Drafted)
                             return;
 

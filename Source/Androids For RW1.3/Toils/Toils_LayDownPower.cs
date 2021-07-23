@@ -83,10 +83,11 @@ namespace MOARANDROIDS
                     return;
                 }
 
+                CompPowerTrader cpt = Utils.getCachedCPT(building_Bed);
                 //Fin recharche ou pod non alimenté ou non operationel
                 if ( actor.needs.food.CurLevelPercentage >= 1.0f
                     || building_Bed.Destroyed || building_Bed.IsBrokenDown()
-                     || !building_Bed.TryGetComp<CompPowerTrader>().PowerOn)
+                     || !cpt.PowerOn)
                 {
                     actor.jobs.EndCurrentJob(JobCondition.Succeeded, true);
                 }

@@ -91,7 +91,7 @@ namespace MOARANDROIDS
                     //Chance that android can be painted (skinned androids excluded)
                     if (!isAndroidWithSkin && Rand.Chance(Settings.chanceGeneratedAndroidCanBePaintedOrRust))
                     {
-                        CompAndroidState cas = __result.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(__result);
                         if (cas != null)
                         {
                             if (Utils.forceGeneratedAndroidToBeDefaultPainted)

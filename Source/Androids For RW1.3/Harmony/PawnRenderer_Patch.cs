@@ -37,7 +37,7 @@ namespace MOARANDROIDS
                     bool state = false;
                     CompAndroidState cas = null;
                     if (___pawn != null)
-                        cas = ___pawn.TryGetComp<CompAndroidState>();
+                        cas = Utils.getCachedCAS(___pawn);
 
                     if (___pawn != null
                         && (___pawn.def.defName == Utils.TX2

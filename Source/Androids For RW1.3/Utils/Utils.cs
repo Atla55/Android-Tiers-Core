@@ -385,10 +385,26 @@ namespace MOARANDROIDS
 
 
 
-        public static Dictionary<Pawn, CompSurrogateOwner> cachedCSO = new Dictionary<Pawn, CompSurrogateOwner>();
-        public static Dictionary<Pawn, CompAndroidState> cachedCAS = new Dictionary<Pawn, CompAndroidState>();
-        public static Dictionary<Pawn, CompSkyMind> cachedCSM = new Dictionary<Pawn, CompSkyMind>();
+        private static Dictionary<Pawn, CompSurrogateOwner> cachedCSO = new Dictionary<Pawn, CompSurrogateOwner>();
+        private static Dictionary<Pawn, CompAndroidState> cachedCAS = new Dictionary<Pawn, CompAndroidState>();
+        private static Dictionary<Pawn, CompSkyMind> cachedCSM = new Dictionary<Pawn, CompSkyMind>();
+        private static Dictionary<Thing, CompPowerTrader> cachedCPT = new Dictionary<Thing, CompPowerTrader>();
 
+
+        public static CompPowerTrader getCachedCPT(Thing build)
+        {
+            if (build == null)
+                return null;
+
+            CompPowerTrader cpt;
+            cachedCPT.TryGetValue(build, out cpt);
+            if (cpt == null)
+            {
+                cpt = build.TryGetComp<CompPowerTrader>();
+                cachedCPT[build] = cpt;
+            }
+            return cpt;
+        }
 
         public static CompSurrogateOwner getCachedCSO(Pawn pawn)
         {
@@ -440,6 +456,7 @@ namespace MOARANDROIDS
             cachedCAS.Clear();
             cachedCSO.Clear();
             cachedCSM.Clear();
+            cachedCPT.Clear();
         }
 
         public static void addDownedSurrogateToLister(Pawn surrogate)
@@ -534,12 +551,16 @@ namespace MOARANDROIDS
 
             if(android.ownership != null && android.ownership.OwnedBed != null)
             {
+                CompPowerTrader cpt = null;
+                if(!android.ownership.OwnedBed.Destroyed)
+                    cpt = Utils.getCachedCPT(android.ownership.OwnedBed);
+
                 //alreadyOwnBed = true;
                 if (((!M7 && android.ownership.OwnedBed.def.defName == "ATPP_AndroidPod")
                     || (M7 && android.ownership.OwnedBed.def.defName == "ATPP_AndroidPodMech"))
                     && android.CanReserveAndReach(android.ownership.OwnedBed, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, false)
                     && android.ownership.OwnedBed.Position.InAllowedArea(android)
-                    && !android.ownership.OwnedBed.Destroyed && android.ownership.OwnedBed.TryGetComp<CompPowerTrader>() != null && android.ownership.OwnedBed.TryGetComp<CompPowerTrader>().PowerOn)
+                    && !android.ownership.OwnedBed.Destroyed && cpt != null && cpt.PowerOn)
                 {
                     return android.ownership.OwnedBed;
                 }
@@ -549,16 +570,17 @@ namespace MOARANDROIDS
 
             foreach(var el in map.listerBuildings.allBuildingsColonistElecFire)
             {
+                CompPowerTrader cpt = Utils.getCachedCPT(el);
                 //Selection android pod valide et alimenté
-                if(((!M7 && el.def.defName == "ATPP_AndroidPod") || (M7 && el.def.defName == "ATPP_AndroidPodMech"))
-                && !el.Destroyed && el.TryGetComp<CompPowerTrader>() != null)
+                if (((!M7 && el.def.defName == "ATPP_AndroidPod") || (M7 && el.def.defName == "ATPP_AndroidPodMech"))
+                && !el.Destroyed && cpt != null)
                 {
                     Building_Bed bed = (Building_Bed)el;
 
                     if (!bed.Medical
                     && (android.IsPrisoner == bed.ForPrisoners)
                     && !(bed.GetCurOccupant(0) != null || (bed.OwnersForReading.Count() != 0 && !bed.OwnersForReading.Contains(android)))
-                    && el.TryGetComp<CompPowerTrader>().PowerOn
+                    && cpt.PowerOn
                     && el.Position.InAllowedArea(android)
                     && android.CanReserveAndReach(el, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, false))
                     {
@@ -854,7 +876,7 @@ namespace MOARANDROIDS
         //Restauration d'un nom sauvegarder
         public static void restoreSavedSurrogateName(Pawn surrogate)
         {
-            CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(surrogate);
 
             if (cas == null)
                 return;
@@ -869,7 +891,7 @@ namespace MOARANDROIDS
 
         public static string getSavedSurrogateNameNick(Pawn surrogate)
         {
-            CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(surrogate);
 
             if (cas == null)
                 return "";
@@ -884,7 +906,7 @@ namespace MOARANDROIDS
 
         public static void saveSurrogateName(Pawn surrogate)
         {
-            CompAndroidState cas = surrogate.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(surrogate);
 
             if (cas == null)
                 return;
@@ -1162,9 +1184,6 @@ namespace MOARANDROIDS
 
         public static bool IsSurrogateAndroid(this Pawn pawn, bool usedSurrogate=false, bool notUsedSurrogate = false)
         {
-            /*if(!pawn.IsAndroidTier())
-                return false;*/
-
             CompAndroidState cas = Utils.getCachedCAS(pawn);
             if (cas == null)
                 return false;
@@ -1241,7 +1260,7 @@ namespace MOARANDROIDS
                     && GCATPP.isConnectedToSkyMind(colon)
                     && !colon.Destroyed && colon.IsAndroid() && !colon.IsSurrogateAndroid())
                 {
-                    CompAndroidState cab = colon.TryGetComp<CompAndroidState>();
+                    CompAndroidState cab = Utils.getCachedCAS(colon);
 
                     //Les androids déjà en cours de transfert sont ignorés
                     if (cab.showUploadProgress || cab.uploadEndingGT != -1)
@@ -1319,8 +1338,10 @@ namespace MOARANDROIDS
             {
                 if (core == self)
                     continue;
+
+                CompPowerTrader cpt = Utils.getCachedCPT(core);
                 //SI colon vivant et relié au RimNet et pas dans la liste d'exception et possede une PUCE RIMNET
-                if (!core.Destroyed && core.TryGetComp<CompPowerTrader>().PowerOn)
+                if (!core.Destroyed && cpt.PowerOn)
                 {
                     CompSkyCloudCore ccore = core.TryGetComp<CompSkyCloudCore>();
                     if (ccore == null)
@@ -2561,7 +2582,7 @@ namespace MOARANDROIDS
         {
             if (android.IsBlankAndroid())
             {
-                CompAndroidState cas = android.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(android);
                 if (cas != null)
                 {
                     cas.isBlankAndroid = false;
@@ -2580,7 +2601,7 @@ namespace MOARANDROIDS
                 Building_Bed bed = android.CurrentBed();
                 if (bed != null && (Utils.ExceptionSurrogatePod.Contains(bed.def.defName) || Utils.ExceptionSurrogateM7Pod.Contains(bed.def.defName)))
                 {
-                    CompPowerTrader cpt = bed.TryGetComp<CompPowerTrader>();
+                    CompPowerTrader cpt = Utils.getCachedCPT(bed);
                     //Recharge que si alimenté
                     if (!bed.IsBrokenDown() && cpt != null && cpt.PowerOn)
                     {

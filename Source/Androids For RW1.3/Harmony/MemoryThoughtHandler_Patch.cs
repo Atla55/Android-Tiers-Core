@@ -65,7 +65,7 @@ namespace MOARANDROIDS
 
         private static bool shouldSkipCurrentMemory(ThoughtDef memDef, MemoryThoughtHandler __instance)
         {
-            CompAndroidState cas = __instance.pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(__instance.pawn);
                 return  ( Utils.ExceptionAndroidList.Contains(__instance.pawn.def.defName) && Utils.IgnoredThoughtsByAllAndroids.Contains(memDef.defName))
                         || Utils.lastButcheredPawnIsAndroid
                         || (cas != null && cas.isSurrogate && cas.surrogateController == null)

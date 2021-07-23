@@ -32,12 +32,12 @@ namespace MOARANDROIDS
                     if (victim.IsSurrogateAndroid(true))
                     {
                         //Obtention controlleur
-                        CompAndroidState cas = victim.TryGetComp<CompAndroidState>();
+                        CompAndroidState cas = Utils.getCachedCAS(victim);
                         if (cas == null)
                             return;
 
                         //Arret du mode de control chez le controller
-                        CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                         cso.stopControlledSurrogate(victim);
                     }
                     //Log.Message("YOU KILLED END");

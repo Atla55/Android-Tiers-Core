@@ -90,11 +90,12 @@ namespace MOARANDROIDS
                 GenDraw.DrawLineBetween(parent.TrueCenter(), surrogateController.TrueCenter(), SimpleColor.Blue);
             }
 
-            if(surrogateController.TryGetComp<CompSurrogateOwner>() != null 
-                && surrogateController.TryGetComp<CompSurrogateOwner>().skyCloudHost != null 
-                && surrogateController.TryGetComp<CompSurrogateOwner>().skyCloudHost.Map == parent.Map)
+            CompSurrogateOwner cso = Utils.getCachedCSO(surrogateController);
+            if (cso != null 
+                && cso.skyCloudHost != null 
+                && cso.skyCloudHost.Map == parent.Map)
             {
-                GenDraw.DrawLineBetween(parent.TrueCenter(), surrogateController.TryGetComp<CompSurrogateOwner>().skyCloudHost.TrueCenter(), SimpleColor.Red);
+                GenDraw.DrawLineBetween(parent.TrueCenter(), cso.skyCloudHost.TrueCenter(), SimpleColor.Red);
             }
 
             if((uploadEndingGT != -1 && uploadRecipient != null) || showUploadProgress)
@@ -168,7 +169,7 @@ namespace MOARANDROIDS
                     try
                     {
                         //Tentative de reconnection automatique du surrogate a son controlleur externe
-                        CompSurrogateOwner cso = externalController.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
                         cso.setControlledSurrogate((Pawn)parent, true);
                         cp.mindState.Reset();
                         cp.mindState.duty = null;
@@ -234,7 +235,8 @@ namespace MOARANDROIDS
                     if (uploadRecipient != null && uploadEndingGT != -1 && uploadEndingGT < GT)
                     {
                         uploadEndingGT = -1;
-                        uploadRecipient.TryGetComp<CompAndroidState>().uploadEndingGT = -1;
+                        CompAndroidState cas = Utils.getCachedCAS(uploadRecipient);
+                        cas.uploadEndingGT = -1;
 
                         Utils.removeUploadHediff(cpawn, uploadRecipient);
 
@@ -1026,8 +1028,9 @@ namespace MOARANDROIDS
                 if (Utils.POWERPP_LOADED && useBattery)
                 {
                     Texture2D tex = Tex.LWPNConnected;
+                    CompPowerTrader cpt = Utils.getCachedCPT(connectedLWPN);
 
-                    if (connectedLWPN == null || !connectedLWPNActive || connectedLWPN.Destroyed || !connectedLWPN.TryGetComp<CompPowerTrader>().PowerOn)
+                    if (connectedLWPN == null || !connectedLWPNActive || connectedLWPN.Destroyed || !cpt.PowerOn)
                         tex = Tex.LWPNNotConnected;
 
                     yield return new Command_Action
@@ -1042,9 +1045,10 @@ namespace MOARANDROIDS
 
                             foreach (var build in parent.Map.listerBuildings.allBuildingsColonist)
                             {
+                                CompPowerTrader cpt2 = Utils.getCachedCPT(build);
                                 if ( (build.def.defName == "ARKPPP_LocalWirelessPowerEmitter" || build.def.defName == "ARKPPP_LocalWirelessPortablePowerEmitter") 
                                     && !build.IsBrokenDown()
-                                    && build.TryGetComp<CompPowerTrader>().PowerOn)
+                                    && cpt2.PowerOn)
                                 {
                                     ThingComp compLWPNEmitter = Utils.TryGetCompByTypeName(build, "CompLocalWirelessPowerEmitter", "Power++");
                                     if (compLWPNEmitter != null)
@@ -1169,7 +1173,7 @@ namespace MOARANDROIDS
                         defaultDesc = "ATPP_AndroidToControlTargetDisconnectDesc".Translate(),
                         action = delegate ()
                         {
-                            CompSurrogateOwner cso = surrogateController.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(surrogateController);
                             if (cso != null)
                                 cso.disconnectControlledSurrogate((Pawn)parent);
                         }
@@ -1194,7 +1198,7 @@ namespace MOARANDROIDS
                                 }
 
                                 bool VX3Owner = lastController.VX3ChipPresent();
-                                CompSurrogateOwner cso = lastController.TryGetComp<CompSurrogateOwner>();
+                                CompSurrogateOwner cso = Utils.getCachedCSO(lastController);
                                 if (cso != null)
                                 {
                                     //Check so lastController est un mind dans ce cas check qu'il ne fait pas deja autre chose
@@ -1236,7 +1240,7 @@ namespace MOARANDROIDS
 
                 if (Utils.GCATPP.isConnectedToSkyMind(parent) && !isBlankAndroid)
                 {
-                    CompSurrogateOwner cso = parent.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO((Pawn)parent);
 
                     //Pas d'organique ou de controlleur de surrogate en corus de session peuvent faire l'operation d'augmentation de points
                     if ( !isOrganic && (cso == null ||  !cso.isThereSX()) )
@@ -1302,7 +1306,7 @@ namespace MOARANDROIDS
 
                         if (uploadEndingGT == -1)
                         {
-                            CompAndroidState cab = uploadRecipient.TryGetComp<CompAndroidState>();
+                            CompAndroidState cab = Utils.getCachedCAS(uploadRecipient);
                             p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - cab.uploadStartGT) / (float)(cab.uploadEndingGT - cab.uploadStartGT));
                             action = "ATPP_DownloadPercentage";
                         }
@@ -1340,7 +1344,7 @@ namespace MOARANDROIDS
 
                     if (surrogateController != null)
                     {
-                        CompSurrogateOwner cso = surrogateController.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(surrogateController);
                         if (cso != null && surrogateController.VX3ChipPresent())
                         {
                             if (cso.SX == parent)
@@ -1402,7 +1406,7 @@ namespace MOARANDROIDS
 
             if (isSurrogate && surrogateController != null)
             {
-                CompSurrogateOwner cso = surrogateController.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(surrogateController);
                 if (cso == null)
                     return;
 
@@ -1506,7 +1510,7 @@ namespace MOARANDROIDS
         {
             if (uploadRecipient != null)
             {
-                CompAndroidState cab = uploadRecipient.TryGetComp<CompAndroidState>();
+                CompAndroidState cab = Utils.getCachedCAS(uploadRecipient);
                 cab.showUploadProgress = false;
                 cab.uploadRecipient = null;
             }
@@ -1527,7 +1531,7 @@ namespace MOARANDROIDS
             uploadStartGT = CGT;
             uploadEndingGT = CGT + Settings.mindUploadHour*2500;
 
-            CompAndroidState cab = dest.TryGetComp<CompAndroidState>();
+            CompAndroidState cab = Utils.getCachedCAS(dest);
             cab.showUploadProgress = true;
             cab.uploadRecipient = (Pawn)parent;
 

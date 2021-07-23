@@ -11,7 +11,7 @@ namespace MOARANDROIDS
 
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
 
             if (cas == null)
                 return;

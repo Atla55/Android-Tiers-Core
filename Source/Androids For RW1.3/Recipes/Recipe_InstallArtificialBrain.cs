@@ -11,7 +11,7 @@ namespace MOARANDROIDS
 
         public override void ApplyOnPawn(Pawn pawn, BodyPartRecord part, Pawn billDoer, List<Thing> ingredients, Bill bill)
         {
-            CompAndroidState cas = pawn.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(pawn);
 
             if (cas == null)
                 return;
@@ -19,7 +19,7 @@ namespace MOARANDROIDS
             //Le cas echeant on deconnecte le controlleur s'il y en a un 
             if(cas.surrogateController != null)
             {
-                CompSurrogateOwner cso = cas.surrogateController.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                 if(cso != null)
                 {
                     cso.disconnectControlledSurrogate(pawn);
@@ -34,6 +34,7 @@ namespace MOARANDROIDS
 
             cas.isBlankAndroid = true;
             pawn.health.AddHediff(HediffDefOf.ATPP_BlankAndroid);
+            pawn.BroadcastCompSignal("ATPP_SurrogateConvertedToBlankNNAndroid");
         }
 
     }

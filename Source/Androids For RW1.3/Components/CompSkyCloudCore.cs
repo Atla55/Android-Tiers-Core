@@ -51,7 +51,7 @@ namespace MOARANDROIDS
             foreach (var p in storedMinds)
             {
                 //Colon digitalisé connecté à un surrogate on trace le lien
-                CompSurrogateOwner cso = p.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(p);
 
                 foreach(var csx in cso.availableSX)
                 {
@@ -154,8 +154,9 @@ namespace MOARANDROIDS
         {
             Building build = (Building)parent;
 
+            CompPowerTrader cpt = Utils.getCachedCPT(build);
             //Si aucun mind stocké
-            if (storedMinds.Count() == 0 || !build.TryGetComp<CompPowerTrader>().PowerOn || !Booted())
+            if (storedMinds.Count() == 0 || !cpt.PowerOn || !Booted())
             {
                 yield break;
             }
@@ -208,7 +209,7 @@ namespace MOARANDROIDS
                 {
                     showFloatMenuMindsStored(delegate (Pawn p)
                     {
-                        CompSurrogateOwner cso = p.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(p);
                         if (cso == null)
                             return;
 
@@ -326,7 +327,7 @@ namespace MOARANDROIDS
                     {
                         Utils.ShowFloatMenuSkyCloudCores(delegate (Building core)
                         {
-                            CompSurrogateOwner cso = p.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(p);
                             stopMindActivities(p);
                             cso.startMigration( core);
                         }, (Building)parent);
@@ -408,7 +409,7 @@ namespace MOARANDROIDS
                         {
                             Utils.ShowFloatMenuNotCOntrolledSurrogateInCaravan(p, delegate (Pawn sSX)
                             {
-                                CompSurrogateOwner cso = p.TryGetComp<CompSurrogateOwner>();
+                                CompSurrogateOwner cso = Utils.getCachedCSO(p);
                                 if (cso == null)
                                     return;
 
@@ -444,7 +445,7 @@ namespace MOARANDROIDS
 
                         showFloatMenuMindsStored(delegate (Pawn p)
                         {
-                            CompSurrogateOwner cso = p.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(p);
                             if (cso != null && cso.isThereSX())
                             {
                                  cso.disconnectControlledSurrogate(null);
@@ -472,7 +473,9 @@ namespace MOARANDROIDS
                .AppendLine("ATPP_CentralCoreNbStoredMind".Translate(storedMinds.Count))
                .AppendLine("ATPP_CentralCoreNbAssistingMinds".Translate(assistingMinds.Count));
 
-            if (build.TryGetComp<CompPowerTrader>().PowerOn)
+            CompPowerTrader cpt = Utils.getCachedCPT(build);
+
+            if (cpt.PowerOn)
             {
 
                 if (!Booted())
@@ -485,7 +488,7 @@ namespace MOARANDROIDS
                     //Check migration en cours de mind
                     foreach (var m in storedMinds)
                     {
-                        CompSurrogateOwner cso = m.TryGetComp<CompSurrogateOwner>();
+                        CompSurrogateOwner cso = Utils.getCachedCSO(m);
 
                         if (cso == null)
                             continue;
@@ -541,7 +544,8 @@ namespace MOARANDROIDS
                     //On rend accessible les controles
                     bootGT = -1;
 
-                    if (((Building)parent).TryGetComp<CompPowerTrader>().PowerOn)
+                    CompPowerTrader cpt = Utils.getCachedCPT((Building)parent);
+                    if (cpt.PowerOn)
                         Utils.GCATPP.pushSkyCloudCore((Building)parent);
 
                     //ATPP_SkyCloudCoreBooted
@@ -559,7 +563,7 @@ namespace MOARANDROIDS
 
                 foreach (var m in storedMinds)
                 {
-                    CompSurrogateOwner cso = m.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO(m);
                     if (cso == null)
                         continue;
 
@@ -603,8 +607,9 @@ namespace MOARANDROIDS
 
             if(CGT % 600 == 0)
             {
+                CompPowerTrader cpt = Utils.getCachedCPT((Building)parent);
                 //CHECK de la fin des mental breaks des minds stockés --  decrementation temps 
-                if (((Building)parent).TryGetComp<CompPowerTrader>().PowerOn && inMentalBreak.Count > 0)
+                if (cpt.PowerOn && inMentalBreak.Count > 0)
                 {
                     var keys = new List<Pawn>(inMentalBreak.Keys);
                     foreach (var ck in keys)
@@ -632,7 +637,7 @@ namespace MOARANDROIDS
             //Si surrogate founris resolution du controleur
             if (mind.IsSurrogateAndroid())
             {
-                CompAndroidState cas = mind.TryGetComp<CompAndroidState>();
+                CompAndroidState cas = Utils.getCachedCAS(mind);
                 if (cas == null || cas.surrogateController == null)
                     return;
 
@@ -651,7 +656,7 @@ namespace MOARANDROIDS
             int ret = 0;
             foreach (var m in storedMinds)
             {
-                CompSurrogateOwner cso = m.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(m);
                 if (cso != null && cso.isThereSX())
                     ret++;
 
@@ -671,7 +676,7 @@ namespace MOARANDROIDS
         public void stopMindActivities(Pawn mind, bool serverShutdown=false)
         {
             stopRemotelyControlledTurret(mind);
-            CompSurrogateOwner cso = mind.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(mind);
             if (cso != null && cso.isThereSX())
             {
                 cso.disconnectControlledSurrogate(null);
@@ -683,15 +688,16 @@ namespace MOARANDROIDS
 
         public bool mindIsBusy(Pawn mind)
         {
-            CompSurrogateOwner cso = mind.TryGetComp<CompSurrogateOwner>();
+            CompSurrogateOwner cso = Utils.getCachedCSO(mind);
             return controlledTurrets.ContainsKey(mind) || replicatingMinds.Contains(mind) || inMentalBreak.ContainsKey(mind) || assistingMinds.Contains(mind) || (cso != null && cso.migrationEndingGT != -1);
         }
 
         public bool isRunning()
         {
             Building build = (Building)parent;
+            CompPowerTrader cpt = Utils.getCachedCPT(build);
 
-            return !build.Destroyed && !build.IsBrokenDown() && build.TryGetComp<CompPowerTrader>().PowerOn;
+            return !build.Destroyed && !build.IsBrokenDown() && cpt.PowerOn;
         }
 
         public string getName()
@@ -701,7 +707,8 @@ namespace MOARANDROIDS
 
         public float getPowerConsumed()
         {
-            return (storedMinds.Count()*Settings.powerConsumedByStoredMind) + this.parent.TryGetComp<CompPowerTrader>().Props.basePowerConsumption;
+            CompPowerTrader cpt = Utils.getCachedCPT((Building)this.parent);
+            return (storedMinds.Count()*Settings.powerConsumedByStoredMind) + cpt.Props.basePowerConsumption;
         }
 
 
@@ -720,7 +727,8 @@ namespace MOARANDROIDS
 
         public void refreshPowerConsumed()
         {
-            this.parent.TryGetComp<CompPowerTrader>().powerOutputInt = -(getPowerConsumed());
+            CompPowerTrader cpt = Utils.getCachedCPT((Building)this.parent);
+            cpt.powerOutputInt = -(getPowerConsumed());
         }
 
 
@@ -763,7 +771,7 @@ namespace MOARANDROIDS
         {
             foreach (var m in storedMinds)
             {
-                CompSurrogateOwner cso = m.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(m);
                 if (cso != null)
                     cso.stopControlledSurrogate(null);
             }
@@ -795,7 +803,7 @@ namespace MOARANDROIDS
             foreach (var m in storedMinds)
             {
                 //Log.Message("Suspended => " +m.LabelCap+" "+ m.Suspended);
-                CompSurrogateOwner cso = m.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(m);
                 bool isSurrogateController = cso != null && cso.isThereSX();
                 bool turretController = controlledTurrets.ContainsKey(m);
                 bool isAssistingMind = assistingMinds.Contains(m);

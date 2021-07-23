@@ -63,14 +63,18 @@ namespace MOARANDROIDS
             int GT = Find.TickManager.TicksGame;
 
             //TOutes les 30sec incrémentation points de sécurité
-            if(isHackingServer && GT % 1800 == 0 && !(((Building)parent).IsBrokenDown() || !((Building)parent).TryGetComp<CompPowerTrader>().PowerOn))
+            if(isHackingServer && GT % 1800 == 0)
             {
-                 Utils.GCATPP.incHackingPoints(Utils.nbHackingPointsGeneratedBy((Building)parent));
+                CompPowerTrader cpt = Utils.getCachedCPT(parent);
+                if(!(((Building)parent).IsBrokenDown() || !cpt.PowerOn))
+                    Utils.GCATPP.incHackingPoints(Utils.nbHackingPointsGeneratedBy((Building)parent));
             }
 
-            if (isSkillServer && GT % 1800 == 0 && !(((Building)parent).IsBrokenDown() || !((Building)parent).TryGetComp<CompPowerTrader>().PowerOn))
+            if (isSkillServer && GT % 1800 == 0)
             {
-                Utils.GCATPP.incSkillPoints(Utils.nbSkillPointsGeneratedBy((Building)parent));
+                CompPowerTrader cpt = Utils.getCachedCPT(parent);
+                if(!(((Building)parent).IsBrokenDown() || !cpt.PowerOn))
+                    Utils.GCATPP.incSkillPoints(Utils.nbSkillPointsGeneratedBy((Building)parent));
             }
         }
 
@@ -106,9 +110,10 @@ namespace MOARANDROIDS
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             Building build = (Building)parent;
+            CompPowerTrader cpt = Utils.getCachedCPT(build);
 
             //Si brokendown ou pas alimenté on degage ou partie sécurité désactivée
-            if (Settings.disableSkyMindSecurityStuff || build.IsBrokenDown() || !build.TryGetComp<CompPowerTrader>().PowerOn)
+            if (Settings.disableSkyMindSecurityStuff || build.IsBrokenDown() || !cpt.PowerOn)
                 yield break;
 
             int nbp = Utils.GCATPP.getNbHackingPoints();
@@ -116,7 +121,7 @@ namespace MOARANDROIDS
             bool canVirus, canVirusExplosive, canHack, canTempHack;
             canVirus = canVirusExplosive = canHack = canTempHack = false;
 
-            bool powered = !parent.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare) && !build.IsBrokenDown() && build.TryGetComp<CompPowerTrader>().PowerOn;
+            bool powered = !parent.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare) && !build.IsBrokenDown() && cpt.PowerOn;
             
             Texture2D tex;
 

@@ -8,7 +8,7 @@ namespace MOARANDROIDS
     {
         public static void Apply(Pawn user)
         {
-            CompAndroidState cas = user.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(user);
             if (cas != null)
             {
                 int CGT = Find.TickManager.TicksGame;
@@ -32,7 +32,7 @@ namespace MOARANDROIDS
                 failReason = "ATPP_CanOnlyBeUsedByAndroid".Translate();
                 return false;
             }
-            CompAndroidState cas = p.TryGetComp<CompAndroidState>();
+            CompAndroidState cas = Utils.getCachedCAS(p);
             if (cas != null && cas.frameworkNaniteEffectGTEnd != -1)
             {
                 failReason = "";

@@ -23,12 +23,12 @@ namespace MOARANDROIDS
                     if (!__result.Active)
                         return;
 
-                    CompSurrogateOwner cso = p.TryGetComp<CompSurrogateOwner>();
+                    CompSurrogateOwner cso = Utils.getCachedCSO(p);
 
                     Pawn otherPawn = LovePartnerRelationUtility.ExistingMostLikedLovePartnerRel(p, false).otherPawn;
                     CompSurrogateOwner cso2 = null;
                     if (otherPawn != null)
-                        cso2 = otherPawn.TryGetComp<CompSurrogateOwner>();
+                        cso2 = Utils.getCachedCSO(otherPawn);
 
                     if ((p.IsAndroidTier() || p.IsSurrogateAndroid() || (cso != null && cso.skyCloudHost != null)) || (otherPawn != null && (otherPawn.IsAndroidTier() || otherPawn.IsSurrogateAndroid() || (cso2 != null && cso2.skyCloudHost != null))))
                         __result = false;

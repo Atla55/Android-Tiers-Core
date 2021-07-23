@@ -1010,14 +1010,15 @@ namespace MOARANDROIDS
                         continue;
                     }
 
-                    bool nonFunctionalLWPN = el.Key.Destroyed || el.Key.IsBrokenDown() || !el.Key.TryGetComp<CompPowerTrader>().PowerOn;
+                    CompPowerTrader cpt = Utils.getCachedCPT(el.Key);
+                    bool nonFunctionalLWPN = el.Key.Destroyed || el.Key.IsBrokenDown() || !cpt.PowerOn;
 
                     //Déduction qt consommé par android
                     int qtConsummed = Utils.getConsumedPowerByAndroid(android.def.defName);
                     if (nonFunctionalLWPN || (availablePower - qtConsummed < 0) || (el.Key.def.defName != "ARKPPP_LocalWirelessPowerEmitter" && nbConn >= Settings.maxAndroidByPortableLWPN))
                     {
                         el.Value.Remove(android);
-                        el.Key.TryGetComp<CompPowerTrader>().PowerOutput += qtConsummed;
+                        cpt.PowerOutput += qtConsummed;
                         if (cas != null)
                             cas.connectedLWPNActive = false;
                     }
@@ -1231,7 +1232,8 @@ namespace MOARANDROIDS
             {
                 foreach (var el2 in el.Value)
                 {
-                    if (el2 != null && el2.TryGetComp<CompPowerTrader>().PowerOn && !el2.IsBrokenDown())
+                    CompPowerTrader cpt = Utils.getCachedCPT(el2);
+                    if (el2 != null && cpt.PowerOn && !el2.IsBrokenDown())
                         nbSlot += 3;
                     else
                     {
@@ -1257,7 +1259,8 @@ namespace MOARANDROIDS
             {
                 foreach (var el2 in el.Value)
                 {
-                    if (el2 != null && el2.TryGetComp<CompPowerTrader>().PowerOn && !el2.IsBrokenDown())
+                    CompPowerTrader cpt = Utils.getCachedCPT(el2);
+                    if (el2 != null && cpt.PowerOn && !el2.IsBrokenDown())
                         nbSlot += 15;
                     else
                     {
@@ -1290,7 +1293,8 @@ namespace MOARANDROIDS
             nbSecuritySlot = 0;
             foreach (var el in listerSecurityServers)
             {
-                if (el != null && el.TryGetComp<CompPowerTrader>().PowerOn && !el.IsBrokenDown())
+                CompPowerTrader cpt = Utils.getCachedCPT(el);
+                if (el != null && cpt.PowerOn && !el.IsBrokenDown())
                 {
                     nbSecuritySlot += Utils.nbSecuritySlotsGeneratedBy(el);
                 }
@@ -1320,7 +1324,8 @@ namespace MOARANDROIDS
             nbHackingSlot = 0;
             foreach (var el in listerHackingServers)
             {
-                if (el != null && el.TryGetComp<CompPowerTrader>().PowerOn && !el.IsBrokenDown())
+                CompPowerTrader cpt = Utils.getCachedCPT(el);
+                if (el != null && cpt.PowerOn && !el.IsBrokenDown())
                 {
                     nbHackingSlot += Utils.nbHackingSlotsGeneratedBy(el);
                 }
@@ -1350,7 +1355,8 @@ namespace MOARANDROIDS
             nbSkillSlot = 0;
             foreach (var el in listerSkillServers)
             {
-                if (el != null && el.TryGetComp<CompPowerTrader>().PowerOn && !el.IsBrokenDown())
+                CompPowerTrader cpt = Utils.getCachedCPT(el);
+                if (el != null && cpt.PowerOn && !el.IsBrokenDown())
                 {
                     nbSkillSlot += Utils.nbSkillSlotsGeneratedBy(el);
                 }
@@ -1707,7 +1713,8 @@ namespace MOARANDROIDS
             if (!listerSkyMindServers.ContainsKey(build.Map))
                 listerSkyMindServers[build.Map] = new HashSet<Building>();
 
-            if (build.TryGetComp<CompPowerTrader>().PowerOn)
+            CompPowerTrader cpt = Utils.getCachedCPT(build);
+            if (cpt.PowerOn)
             {
                 listerSkyMindServers[build.Map].Add(build);
                 reProcessNbSlot();
@@ -1729,7 +1736,8 @@ namespace MOARANDROIDS
             if (!listerSkyMindWANServers.ContainsKey(build.Map))
                 listerSkyMindWANServers[build.Map] = new HashSet<Building>();
 
-            if (!listerSkyMindWANServers[build.Map].Contains(build) && build.TryGetComp<CompPowerTrader>().PowerOn)
+            CompPowerTrader cpt = Utils.getCachedCPT(build);
+            if (!listerSkyMindWANServers[build.Map].Contains(build) && cpt.PowerOn)
             {
                 listerSkyMindWANServers[build.Map].Add(build);
                 reProcessNbSlot();
@@ -1803,7 +1811,8 @@ namespace MOARANDROIDS
                 //Log.Message("ICI DISPONIBLE !!!!!");
                 foreach(var el in listerReloadStation[map].OrderBy((Building b) => b.Position.DistanceToSquared(android.Position)))
                 {
-                    if (el == null || el.Destroyed || el.IsBrokenDown() || !el.TryGetComp<CompPowerTrader>().PowerOn || !el.Position.InAllowedArea(android))
+                    CompPowerTrader cpt = Utils.getCachedCPT(el);
+                    if (el == null || el.Destroyed || el.IsBrokenDown() || !cpt.PowerOn || !el.Position.InAllowedArea(android))
                         continue;
 
                     CompReloadStation rs = el.TryGetComp<CompReloadStation>();
@@ -2231,17 +2240,19 @@ namespace MOARANDROIDS
             if (!listerLWPNAndroid.ContainsKey(LWPN))
                 listerLWPNAndroid[LWPN] = new List<Pawn>();
 
+            CompPowerTrader cpt = Utils.getCachedCPT(LWPN);
+
             //Check si suffisament d'energie pour accueillir l'android
             int qtConsumed = Utils.getConsumedPowerByAndroid(android.def.defName);
             if (LWPN != null 
                 && !LWPN.Destroyed 
                 && ( LWPN.def.defName == "ARKPPP_LocalWirelessPowerEmitter" || ( LWPN.def.defName == "ARKPPP_LocalWirelessPortablePowerEmitter" && listerLWPNAndroid[LWPN].Count() < Settings.maxAndroidByPortableLWPN ))
-                && LWPN.TryGetComp<CompPowerTrader>().PowerOn 
+                && cpt.PowerOn 
                 && Utils.getCurrentAvailableEnergy(LWPN.PowerComp.PowerNet) - qtConsumed > 0)
             {
                 listerLWPNAndroid[LWPN].Add(android);
                 //incrémentation qt de courant consommé pat LWPN
-                LWPN.TryGetComp<CompPowerTrader>().PowerOutput -= qtConsumed;
+                cpt.PowerOutput -= qtConsumed;
                 return true;
             }
             else
@@ -2254,9 +2265,10 @@ namespace MOARANDROIDS
             if (!listerLWPNAndroid.ContainsKey(LWPN))
                 return;
 
+            CompPowerTrader cpt = Utils.getCachedCPT(LWPN);
             //incrémentation qt de courant consommé pat LWPN
             int qtConsumed = Utils.getConsumedPowerByAndroid(android.def.defName);
-            LWPN.TryGetComp<CompPowerTrader>().PowerOutput += qtConsumed;
+            cpt.PowerOutput += qtConsumed;
 
             listerLWPNAndroid[LWPN].Remove(android);
         }

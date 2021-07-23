@@ -30,7 +30,7 @@ namespace MOARANDROIDS
                         if (Rand.Chance(1.0f - Settings.riskCryptolockerScam))
                         {
 
-                            CompSurrogateOwner cso = victim.TryGetComp<CompSurrogateOwner>();
+                            CompSurrogateOwner cso = Utils.getCachedCSO(victim);
                             
                             if(cso.ransomwareTraitAdded != null)
                             {

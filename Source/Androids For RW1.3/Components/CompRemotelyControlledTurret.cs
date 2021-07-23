@@ -63,7 +63,7 @@ namespace MOARANDROIDS
 
             if(controller != null)
             {
-                csc = controller.TryGetComp<CompSurrogateOwner>();
+                csc = Utils.getCachedCSO(controller);
             }
 
             if (csm != null && csm.connected && controller != null && csc != null && csc.skyCloudHost != null && csc.skyCloudHost.Map == parent.Map)
@@ -103,7 +103,7 @@ namespace MOARANDROIDS
         {
             if(controller != null)
             {
-                CompSurrogateOwner cso = controller.TryGetComp<CompSurrogateOwner>();
+                CompSurrogateOwner cso = Utils.getCachedCSO(controller);
                 if (cso != null)
                 {
                     if (cso.skyCloudHost != null)
