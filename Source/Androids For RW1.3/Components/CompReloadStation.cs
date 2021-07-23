@@ -175,8 +175,11 @@ namespace MOARANDROIDS
         public int getNbAndroidReloading(bool countOnly = false)
         {
             int ret = 0;
+            if (parent == null || parent.Map == null)
+                return 0;
+
             IntVec3 parentPos = parent.Position;
-            foreach(IntVec3 adjPos in ((Building)parent).CellsAdjacent8WayAndInside())
+            foreach (IntVec3 adjPos in parent.CellsAdjacent8WayAndInside())
             {
                 List<Thing> thingList = adjPos.GetThingList(parent.Map);
                 if (thingList != null)
