@@ -24,6 +24,7 @@ namespace MOARANDROIDS
     [HarmonyPatch(typeof(SickPawnVisitUtility), "CanVisit")]
     static class Harmony_FindRandomSickPawn
     {
+        [HarmonyPrefix]
         static bool Prefix(Pawn pawn, Pawn sick, JoyCategory maxPatientJoy, ref bool __result)
         {
             if (sick.needs.rest != null)

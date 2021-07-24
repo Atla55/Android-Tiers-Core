@@ -135,11 +135,6 @@
 					<li>NeedFood</li>
 					<li>Naked</li>
 					<li>Pain</li>
-					<li>SleepDisturbed</li>
-					<li>SleptOnGround</li>
-					<li>ArtifactMoodBoost</li>
-					<li>EnvironmentCold</li>
-					<li>EnvironmentHot</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

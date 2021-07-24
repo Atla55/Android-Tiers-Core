@@ -142,8 +142,6 @@
 					<li>SleptOnGround</li>
 					<li>SleptInBarracks</li>
 					<li>ArtifactMoodBoost</li>
-					<li>EnvironmentCold</li>
-					<li>EnvironmentHot</li>
 					<li>KnowPrisonerSold</li>
 					<li>KnowGuestOrganHarvested</li>
 					<li>KnowColonistOrganHarvested</li>

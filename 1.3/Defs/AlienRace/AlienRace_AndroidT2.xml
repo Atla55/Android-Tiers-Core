@@ -151,13 +151,8 @@
 					<li>NeedFood</li>
 					<li>Naked</li>
 					<li>Pain</li>
-					<li>SleepDisturbed</li>
-					<li>SleptOnGround</li>
 					<li>ArtifactMoodBoost</li>
-					<li>EnvironmentCold</li>
-					<li>EnvironmentHot</li>
 					<li>DeadMansApparel</li>
-					<li>HumanLeatherApparelSad</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

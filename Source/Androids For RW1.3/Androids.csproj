@@ -192,6 +192,7 @@
     <Compile Include="Harmony\SkillRecord_Patch.cs" />
     <Compile Include="Harmony\Pawn_StyleTracker_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_BondedAnimalMaster_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_SharedBed_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_PsychicArchotechEmanator_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_WearingColor_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_MasochistWearingBodyStrap_Patch.cs" />

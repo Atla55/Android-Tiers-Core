@@ -271,7 +271,7 @@ namespace MOARANDROIDS
 
         //public static HashSet<string> ExceptionM7OversizedWeapons = new HashSet<string> { "Mech40MMCannon", "MechMastiffGun", "MechHandCannon", "MeleeWeapon_MechKnife" };
 
-        public static List<string> ExceptionAndroidCanReloadWithPowerList = new List<string>();
+        public static HashSet<string> ExceptionAndroidCanReloadWithPowerList = new HashSet<string> ();
 
 
         public static string[] AndroidOldAgeHediffCPU = new string[] { "CorruptMemory" };
@@ -279,7 +279,7 @@ namespace MOARANDROIDS
         public static string[] AndroidOldAgeHediffFramework = new string[] { "DecayedFrame" };
         public static string[] AndroidOldAgeHediffHydraulic = new string[] { "FaultyPump", "WeakValves" };
 
-        public static HashSet<string> IgnoredThoughtsByAllAndroids = new HashSet<string> { "SoakingWet", "EnvironmentCold", "AteWithoutTable", "EnvironmentHot", "SleptInCold", "SleptInHeat",
+        public static HashSet<string> IgnoredThoughtsByAllAndroids = new HashSet<string> { "SleepDisturbed","SleptOnGround","ArtifactMoodBoost","SoakingWet", "EnvironmentCold", "AteWithoutTable", "EnvironmentHot", "SleptInCold", "SleptInHeat",
             "AteRawFood", "AteAwfulMeal", "AteKibble", "AteInsectMeatDirect", "AteInsectMeatAsIngredient","AteHumanMeat_Know_Abhorrent", "AteHumanMeat_Horrible",
             "AteHumanMeat_Disapproved", "AteHumanMeat_Know_Disapproved", "AteHumanMeat_Preferred", "NoRecentHumanMeat_Preferred", "AteNonCannibalFood_Horrible",
         "AteNonCannibalFood_Know_Horrible", "AteHumanMeat_RequiredStrong", "AteNonCannibalFood_Abhorrent", "AteNonCannibalFood_Know_Abhorrent", "AteHumanMeat_RequiredRavenous",
@@ -299,7 +299,7 @@ namespace MOARANDROIDS
             "KnowGuestOrganHarvested","KnowPrisonerSold","AteRottenFood","BondedAnimalBanished", "ColonistBanishedToDie", "ButcheredHumanlikeCorpse", "PrisonerBanishedToDie",
             "KnowButcheredHumanlikeCorpse","EnvironmentDark", "ApparelDamaged", "DeadMansApparel",
             "HumanLeatherApparelSad", "HumanLeatherApparelHappy","SoldPrisoner", "ExecutedPrisoner", "KilledColonyAnimal","SleptOutside",
-            "SleptOnGround","KnowGuestExecuted","KnowColonistExecuted","KnowColonistDied","WitnessedDeathAlly","WitnessedDeathNonAlly",
+            "KnowGuestExecuted","KnowColonistExecuted","KnowColonistDied","WitnessedDeathAlly","WitnessedDeathNonAlly",
             "WitnessedDeathFamily","WitnessedDeathBloodlust","KilledHumanlikeBloodlust","PawnWithGoodOpinionDied","PawnWithBadOpinionDied",
             "AteCorpse","ObservedLayingCorpse", "ObservedLayingRottingCorpse", "AteHumanlikeMeatDirect","AteHumanlikeMeatDirectCannibal",
             "AteHumanlikeMeatAsIngredient","AteHumanlikeMeatAsIngredientCannibal","ATPP_VX0PuppetThought",
