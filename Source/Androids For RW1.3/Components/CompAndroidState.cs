@@ -691,12 +691,17 @@ namespace MOARANDROIDS
                 Pawn cp = (Pawn)parent;
 
                 //Androids avec une peau pas affectés par le solarflare
-                if (cp.def.defName == Utils.TX2 || cp.def.defName == Utils.TX3 || cp.def.defName == Utils.TX4)
+                if (cp.health == null || cp.def.defName == Utils.TX2 || cp.def.defName == Utils.TX3 || cp.def.defName == Utils.TX4)
                     return;
 
                 if (!isOrganic || cp.VXAndVX0ChipPresent())
                 {
-                    bool solarFlareRunning = Utils.getRandomMapOfPlayer().gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
+                    Map pmap = null;
+                    pmap = Utils.getRandomMapOfPlayer();
+                    if (pmap == null)
+                        return;
+
+                    bool solarFlareRunning = pmap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
 
                     //Si android surrogate actuellement controllé par un étranger externe on le deconnecte
                     /*if (externalController != null && surrogateController != null && solarFlareRunning)
@@ -713,10 +718,9 @@ namespace MOARANDROIDS
                         //Retrait heddif si il avait été ajouté
                         if (solarFlareEffectApplied)
                         {
-                            Pawn cpawn = (Pawn)parent;
-                            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
-                            if (he != null)
-                                cpawn.health.RemoveHediff(he);
+                                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
+                                if (he != null)
+                                    cp.health.RemoveHediff(he);
                         }
                         solarFlareEffectApplied = false;
                         return;
@@ -725,9 +729,8 @@ namespace MOARANDROIDS
                     //Application de l'effet
                     if (solarFlareRunning && !solarFlareEffectApplied)
                     {
-                        Pawn cpawn = (Pawn)parent;
                         //Ajout heddif
-                        cpawn.health.AddHediff(HediffDefOf.ATPP_SolarFlareAndroidImpact);
+                        cp.health.AddHediff(HediffDefOf.ATPP_SolarFlareAndroidImpact);
 
                         solarFlareEffectApplied = true;
                     }
@@ -735,11 +738,10 @@ namespace MOARANDROIDS
                     //Suppression de l'effet
                     if (!solarFlareRunning && solarFlareEffectApplied)
                     {
-                        Pawn cpawn = (Pawn)parent;
                         //Ajout heddif
-                        Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
+                        Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
                         if (he != null)
-                            cpawn.health.RemoveHediff(he);
+                            cp.health.RemoveHediff(he);
 
                         //Suppression de l'heddif
                         solarFlareEffectApplied = false;
