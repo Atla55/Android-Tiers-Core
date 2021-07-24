@@ -956,12 +956,12 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref defaultSkillT2Social, "defaultSkillT2Social", 0);
 
             Scribe_Values.Look<int>(ref skillNbpGeneratedOld, "skillNbpGeneratedOld", 5);
-            Scribe_Values.Look<int>(ref skillNbpGeneratedBasic, "skillNbpGeneratedOld", 10);
-            Scribe_Values.Look<int>(ref skillNbpGeneratedAdvanced, "skillNbpGeneratedOld", 20);
+            Scribe_Values.Look<int>(ref skillNbpGeneratedBasic, "skillNbpGeneratedBasic", 10);
+            Scribe_Values.Look<int>(ref skillNbpGeneratedAdvanced, "skillNbpGeneratedAdvanced", 20);
 
             Scribe_Values.Look<int>(ref hackingNbpGeneratedOld, "hackingNbpGeneratedOld", 5);
-            Scribe_Values.Look<int>(ref hackingNbpGeneratedBasic, "hackingNbpGeneratedOld", 10);
-            Scribe_Values.Look<int>(ref hackingNbpGeneratedAdvanced, "hackingNbpGeneratedOld", 20);
+            Scribe_Values.Look<int>(ref hackingNbpGeneratedBasic, "hackingNbpGeneratedBasic", 10);
+            Scribe_Values.Look<int>(ref hackingNbpGeneratedAdvanced, "hackingNbpGeneratedAdvanced", 20);
 
             Scribe_Values.Look<bool>(ref preventM7T5AppearingInCharacterScreen, "preventM7T5AppearingInCharacterScreen", true);
 
