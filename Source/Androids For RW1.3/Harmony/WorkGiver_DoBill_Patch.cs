@@ -25,7 +25,7 @@ namespace MOARANDROIDS
                     {
                         Pawn patient = (Pawn)billGiver;
 
-                        //On retire les medecine autre que nanokits
+                        //We withdraw medicine other than nanokits
                         if (patient.IsAndroidTier() || patient.IsCyberAnimal())
                         {
                             foreach (var el in relevantThings.ToList())
@@ -34,7 +34,7 @@ namespace MOARANDROIDS
                                     relevantThings.Remove(el);
                             }
                         }
-                        //On retire les nanokits
+                        //We remove the nanokits
                         else
                         {
                             foreach (var el in relevantThings.ToList())
@@ -72,18 +72,22 @@ namespace MOARANDROIDS
                         return;
                     }
 
-                    //Medecin normal on jerte si t est un android
+                    Pawn cp = null;
+                    if(thing is Pawn)
+                        cp = (Pawn)thing;
+
+                    //Normal doctor we go out if t is an android
                     if (__instance.def.workType == WorkTypeDefOf.Doctor)
                     {
-                        if (thing is Pawn && ((Pawn)thing).IsAndroidTier())
+                        if (cp != null && cp.IsAndroidTier())
                             __result = null;
                     }
                     else
                     {
                         if (Utils.CrafterDoctorJob.Contains(__instance.def))
                         {
-                            //Crafteur on jerte si patient pas un android
-                            if (thing is Pawn && ((Pawn)thing).IsAndroidTier())
+                            //Crafter we go out if patient not an android or a cyber animal
+                            if (cp != null && (cp.IsAndroidTier() || cp.IsCyberAnimal()))
                             {
                                 CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
                                 

@@ -158,7 +158,7 @@ namespace MOARANDROIDS
 
                             if (!Utils.ExceptionAndroidCorpseList.Contains(el.defName))
                             {
-                                Log.Message("[ATPP] BlacklistigOtherAR  : " + el.defName);
+                                Log.Message("[ATPP] BlacklistingOtherAR  : " + el.defName);
                                 r.fixedIngredientFilter.SetAllow(el, false);
                             }
                         }
@@ -186,6 +186,7 @@ namespace MOARANDROIDS
                         }
                     }
 
+                    Utils.ExceptionAndroidCanReloadWithPowerList.AddRange(Utils.ExceptionAndroidList);
                     Utils.ExceptionAndroidCanReloadWithPowerList.AddRange(Utils.ExceptionAndroidAnimalPowered);
 
                     //RunTime patching
