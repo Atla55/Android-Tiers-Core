@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-  <ThingDef Name="BodyPartBase" Abstract="True">
+  <ThingDef Name="ATBodyPartBase" Abstract="True">
     <thingClass>ThingWithComps</thingClass>
     <category>Item</category>
     <useHitPoints>true</useHitPoints>
@@ -25,7 +25,7 @@
   </ThingDef>
 
 
-  <ThingDef ParentName="BodyPartBase" Name="BodyPartAndroidBase" Abstract="True">
+  <ThingDef ParentName="ATBodyPartBase" Name="BodyPartAndroidBase" Abstract="True">
     <thingCategories>
       <li>BodyPartsAndroid</li>
     </thingCategories>

@@ -86,7 +86,6 @@ namespace MOARANDROIDS
 
                         List<Pawn> tmpList = tmp.FastToList();
 
-                        //Log.Message("HERE");
                         //On va se servir des nb pawn pregénéré par la fonction patché comme controller
                         for (int i = 0; i != nb; i++)
                         {
