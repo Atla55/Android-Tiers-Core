@@ -1188,6 +1188,10 @@ namespace MOARANDROIDS
                 {
                     controlled.timetable.SetAssignment(i, cp.timetable.GetAssignment(i));
                 }
+
+                controlled.foodRestriction.CurrentFoodRestriction = cp.foodRestriction.CurrentFoodRestriction;
+                controlled.drugs.CurrentPolicy = cp.drugs.CurrentPolicy;
+                controlled.outfits.CurrentOutfit = cp.outfits.CurrentOutfit;
             }
             
             //Log.Message("i7");
@@ -1476,8 +1480,32 @@ namespace MOARANDROIDS
                     Utils.GCATPP.disconnectUser(cp);
                 }
                 //Log.Message("S1");
-                //On restaure a zero les worksettings du SX
 
+                //We report worksettings to the controller
+                if (!externalController && cp.Faction == Faction.OfPlayer)
+                {
+                    if (csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
+                    {
+                        foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
+                        {
+                            cp.workSettings.SetPriority(el, csurrogate.workSettings.GetPriority(el));
+                        }
+                    }
+                    cp.playerSettings.AreaRestriction = csurrogate.playerSettings.AreaRestriction;
+                    cp.playerSettings.hostilityResponse = csurrogate.playerSettings.hostilityResponse;
+
+                    //We report agenda from the SX on the controller
+                    for (int i = 0; i != 24; i++)
+                    {
+                        cp.timetable.SetAssignment(i, csurrogate.timetable.GetAssignment(i));
+                    }
+
+                    cp.foodRestriction.CurrentFoodRestriction = csurrogate.foodRestriction.CurrentFoodRestriction;
+                    cp.drugs.CurrentPolicy = csurrogate.drugs.CurrentPolicy;
+                    cp.outfits.CurrentOutfit = csurrogate.outfits.CurrentOutfit;
+                }
+
+                //On restaure a zero les worksettings du SX
                 if (csurrogate.def.defName != "M7Mech" && csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
                 {
                     foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
