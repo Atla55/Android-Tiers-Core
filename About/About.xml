@@ -34,19 +34,19 @@
    </loadAfter>
    
   <description><![CDATA[  
-	- Adds 4 tiers of android along with an android doggo
-	- 2 new android factions
-	- Allow to remotely control surrogate androids
-	- Allow to digitize and store your colonists minds in supercomputers
-	- Android specific diseases
-	- Tons of replaceable upgrades / downgrades for androids
-	- Fully customizable
-	- More, etc etc 
-	
-	Contributors:
-	- Sylvanor : Android Tiers++ art
-	
-	Version <color=#FFD800>2.5.0</color>
+- Adds 4 tiers of android along with an android doggo
+- 2 new android factions
+- Allow to remotely control surrogate androids
+- Allow to digitize and store your colonists minds in supercomputers
+- Android specific diseases
+- Tons of replaceable upgrades / downgrades for androids
+- Fully customizable
+- More, etc etc 
+
+Contributors:
+- Sylvanor : Android Tiers++ art
+
+Version <color=#FFD800>3.0.0</color>
 	]]>
   </description>
 </ModMetaData>
