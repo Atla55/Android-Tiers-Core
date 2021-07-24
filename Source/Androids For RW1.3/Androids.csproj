@@ -185,6 +185,7 @@
     <Compile Include="DefsOf\SoundDefOfAT.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />
+    <Compile Include="Harmony\Alert_ColonistNeedsRescuing_Patch.cs" />
     <Compile Include="Harmony\InteractionWorker_ConvertIdeoAttempt_Patch.cs" />
     <Compile Include="Harmony\PawnObserver_Patch.cs" />
     <Compile Include="Harmony\Precept_Ritual_Patch.cs" />
@@ -292,7 +293,7 @@
     <Compile Include="Dialogs\Dialog_SkillUp.cs" />
     <Compile Include="Enum\AndroidPaintColor.cs" />
     <Compile Include="Extensions\ArrayExtensions.cs" />
-    <Compile Include="Harmony\Alert_ColonistNeedsRescuing_Patch.cs" />
+    <Compile Include="Harmony\Alert_ColonistLeftUnburied_Patch.cs" />
     <Compile Include="Harmony\Alert_NeedColonistBeds_Patch.cs" />
     <Compile Include="Harmony\ApparelGraphicRecordGetter_Patch.cs" />
     <Compile Include="Harmony\ApparelUtility_Patch.cs" />
