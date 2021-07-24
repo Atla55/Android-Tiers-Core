@@ -374,7 +374,17 @@
 				<description>Due to the limitations of this androids mind: they are only barely able to understand and feel emotion. This makes them less than desired in social situations.</description>
 				<statOffsets>
 					<SocialImpact>-0.90</SocialImpact>
-				</statOffsets>
+				</statOffsets>				
+				<disallowedInspirations>
+				  <li>Frenzy_Shoot</li>
+				  <li>Frenzy_Work</li>
+				  <li>Frenzy_Go</li>
+				  <li>Inspired_Trade</li>
+				  <li>Inspired_Recruitment</li>
+				  <li>Inspired_Taming</li>
+				  <li>Inspired_Surgery</li>
+				  <li>Inspired_Creativity</li>
+				</disallowedInspirations>
 			</li>
 		</degreeDatas>
 	</TraitDef>
