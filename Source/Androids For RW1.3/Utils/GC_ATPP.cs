@@ -1187,14 +1187,23 @@ namespace MOARANDROIDS
                 //Pas d'antenne permetant de relayer le signal on va impacter els surrogates
                 foreach (var s in listerSurrogateAndroids[MUID])
                 {
-                    //Les porteur de RX en sont exempté
-                    if (s.Dead || s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffRXChip) != null)
+                    //RX owners or deads exempted
+                    if (s.Dead)
                         continue;
 
                     Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
+
+                    if (s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffRXChip) != null)
+                    {
+                        if (he != null)
+                            s.health.RemoveHediff(he);
+
+                        continue;
+                    }
+
+                    
                     if (he == null)
                     {
-                        //Log.Message("HEREEEEE");
                         s.health.AddHediff(HediffDefOf.ATPP_LowNetworkSignal);
                     }
                 }
