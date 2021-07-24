@@ -1,6 +1,4 @@
 ﻿using Verse;
-using Verse.AI;
-using Verse.AI.Group;
 using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
@@ -19,33 +17,35 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(PawnGroupMakerParms parms, bool warnOnZeroResults, ref IEnumerable<Pawn> __result)
             {
-                try {
+                try
+                {
+
                     Map playerMap = Utils.getRandomMapOfPlayer();
                     //If active solar flare then no surrogates are generated to prevent ridiculous spawn of dawned surrogates
-                    if (!Settings.otherFactionsCanUseSurrogate 
-                        || (parms.faction != null && Utils.ExceptionBlacklistedFactionNoSurrogate.Contains(parms.faction.def.defName)) 
-                        || (playerMap!=null && playerMap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)) || (Settings.androidsAreRare && Rand.Chance(0.95f)))
+                    if (!Settings.otherFactionsCanUseSurrogate
+                        || (parms.faction != null && Utils.ExceptionBlacklistedFactionNoSurrogate.Contains(parms.faction.def.defName))
+                        || (playerMap != null && playerMap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)) || (Settings.androidsAreRare && Rand.Chance(0.95f)))
                         return;
 
                     int nbHumanoids = 0;
 
-                    foreach(var e in __result)
+                    foreach (var e in __result)
                     {
                         //Si humanoide
                         if (e.def.race != null && e.def.race.Humanlike)
                         {
                             //Si pas commercant
-                            if(e.trader == null && e.TraderKind == null)
+                            if (e.trader == null && e.TraderKind == null)
                                 nbHumanoids++;
                         }
                     }
 
                     //Faction de niveau industriel et plus ET nb pawn généré supérieur ou égal à 5
-                    if (parms.faction != null && parms.faction.def.techLevel >= TechLevel.Industrial && nbHumanoids >= 5)
+                    if (parms.faction.def.techLevel >= TechLevel.Industrial && nbHumanoids >= 5)
                     {
                         List<Pawn> other = new List<Pawn>();
                         List<Pawn> ret = new List<Pawn>();
-                        List<Pawn> tmp = __result.ToList();
+                        ISet<Pawn> tmp = __result.ToHashSet();
 
                         //On supprime les non humains ET trader
                         //int nba = tmp.RemoveAll((Pawn x) => (x.def.race == null || !x.def.race.Humanlike || x.trader != null || x.TraderKind != null));
@@ -58,15 +58,16 @@ namespace MOARANDROIDS
                         }
 
                         //Purge dans list de travail
-                        foreach (var e in other)
+                        for (int i = 0; i < other.Count; i++)
                         {
+                            Pawn e = other[i];
                             tmp.Remove(e);
                         }
 
                         //Log.Message(other.Count + " animaux et traders virés");
 
                         //Calcul nb pawn a recreer en mode surrogate
-                        int nb = (int)(tmp.Count() * Rand.Range(Settings.percentageOfSurrogateInAnotherFactionGroupMin, Settings.percentageOfSurrogateInAnotherFactionGroup));
+                        int nb = (int)(tmp.Count * Rand.Range(Settings.percentageOfSurrogateInAnotherFactionGroupMin, Settings.percentageOfSurrogateInAnotherFactionGroup));
                         if (nb <= 0)
                         {
                             if (Settings.percentageOfSurrogateInAnotherFactionGroupMin == 0.0f)
@@ -83,6 +84,8 @@ namespace MOARANDROIDS
                             tmp.Remove(p);
                         }
 
+                        List<Pawn> tmpList = tmp.FastToList();
+
                         //Log.Message("HERE");
                         //On va se servir des nb pawn pregénéré par la fonction patché comme controller
                         for (int i = 0; i != nb; i++)
@@ -91,6 +94,7 @@ namespace MOARANDROIDS
                             //Pawn surrogate = PawnGenerator.GeneratePawn(request);
 
                             PawnKindDef rpkd = null;
+                            var tmpListElem = tmpList[i];
 
                             if (parms.groupKind == PawnGroupKindDefOf.Peaceful || parms.groupKind == PawnGroupKindDefOf.Trader)
                             {
@@ -178,7 +182,7 @@ namespace MOARANDROIDS
                             if (!surrogate.IsAndroidTier())
                             {
                                 surrogate.Destroy();
-                                ret.Add(tmp[i]);
+                                ret.Add(tmpListElem);
                                 continue;
                             }
 
@@ -196,8 +200,8 @@ namespace MOARANDROIDS
                             CompAndroidState cas = Utils.getCachedCAS(surrogate);
                             if (cas != null)
                             {
-                                cas.externalController = tmp[i];
-                                CompSurrogateOwner cso = Utils.getCachedCSO(tmp[i]);
+                                cas.externalController = tmpListElem;
+                                CompSurrogateOwner cso = Utils.getCachedCSO(tmpListElem);
                                 if (cso != null)
                                 {
                                     cso.setControlledSurrogate(surrogate, true);
@@ -206,7 +210,7 @@ namespace MOARANDROIDS
 
                             //Transfere equipement
                             //Log.Message("--Traitement des equipements");
-                            if (tmp[i].equipment != null && surrogate.equipment != null)
+                            if (tmpListElem.equipment != null && surrogate.equipment != null)
                             {
                                 /*Pawn_EquipmentTracker pet = tmp[i].equipment;
                                 pet.pawn = surrogate;
@@ -215,11 +219,13 @@ namespace MOARANDROIDS
                                 surrogate.equipment = pet;*/
                                 surrogate.equipment.DestroyAllEquipment();
 
-                                foreach (var e in tmp[i].equipment.AllEquipmentListForReading.ToList())
+                                List<ThingWithComps> list = tmpListElem.equipment.AllEquipmentListForReading.FastToList();
+                                for (int i1 = 0; i1 < list.Count; i1++)
                                 {
+                                    ThingWithComps e = list[i1];
                                     try
                                     {
-                                        tmp[i].equipment.Remove(e);
+                                        tmpListElem.equipment.Remove(e);
                                         if (!(e.def.equipmentType == EquipmentType.Primary && surrogate.equipment.Primary != null))
                                             surrogate.equipment.AddEquipment(e);
                                     }
@@ -230,8 +236,9 @@ namespace MOARANDROIDS
                                 }
 
 
-                                foreach (var e in surrogate.equipment.AllEquipmentListForReading)
+                                for (int i1 = 0; i1 < surrogate.equipment.AllEquipmentListForReading.Count; i1++)
                                 {
+                                    ThingWithComps e = surrogate.equipment.AllEquipmentListForReading[i1];
                                     try
                                     {
                                         if (Utils.CELOADED && e != null && e.def.IsRangedWeapon)
@@ -256,21 +263,16 @@ namespace MOARANDROIDS
                                 }
                             }
 
-                            /*foreach(var e in tmp[i].equipment.AllEquipmentListForReading.ToList())
-                            {
-                                e.
-                                surrogate.equipment.AddEquipment(e);
-                            }*/
-
-
                             //Transfert vetements
-                            if (tmp[i].apparel != null)
+                            if (tmpListElem.apparel != null)
                             {
                                 try
                                 {
                                     //Log.Message("--Traitement des vetements");
-                                    foreach (var e in tmp[i].apparel.WornApparel.ToList())
+                                    List<Apparel> list = tmpListElem.apparel.WornApparel.FastToList();
+                                    for (int i1 = 0; i1 < list.Count; i1++)
                                     {
+                                        Apparel e = list[i1];
                                         //Check si vetement peut etre porté par le surrogate
                                         string path = "";
                                         if (e.def.apparel.LastLayer == ApparelLayerDefOf.Overhead)
@@ -279,7 +281,7 @@ namespace MOARANDROIDS
                                         }
                                         else
                                         {
-                                            path = e.def.apparel.wornGraphicPath + "_" + surrogate.story.bodyType.defName + "_south";
+                                            path = $"{e.def.apparel.wornGraphicPath}_{surrogate.story.bodyType.defName}_south";
                                         }
 
                                         Texture2D appFoundTex = null;
@@ -298,13 +300,13 @@ namespace MOARANDROIDS
                                         if (appFoundTex == null)
                                         {
                                             path = GenFilePaths.ContentPath<Texture2D>() + path;
-                                            appFoundTex = (Texture2D)((object)Resources.Load<Texture2D>(path));
+                                            appFoundTex = (Texture2D)(object)Resources.Load<Texture2D>(path);
                                         }
 
                                         //SI pb avec texture on ne l'ajoute pas
                                         if (appFoundTex != null)
                                         {
-                                            tmp[i].apparel.Remove(e);
+                                            tmpListElem.apparel.Remove(e);
                                             surrogate.apparel.Wear(e);
                                         }
                                     }
@@ -318,27 +320,29 @@ namespace MOARANDROIDS
 
                             //Log.Message((tmp[i].inventory == null)+" "+(tmp[i].inventory.innerContainer == null)+" "+(surrogate.inventory == null)+" "+(surrogate.inventory.innerContainer== null));
                             //Inventaire
-                            if (tmp[i].inventory != null && tmp[i].inventory.innerContainer != null && surrogate.inventory != null && surrogate.inventory.innerContainer != null)
+                            if (tmpListElem.inventory != null && tmpListElem.inventory.innerContainer != null && surrogate.inventory != null && surrogate.inventory.innerContainer != null)
                             {
-                                //foreach (var e in tmp[i].inventory.innerContainer.ToList())
-                                //{
-                                //Log.Message("Items transfered " + tmp[i].inventory.innerContainer.Count);
                                 try
                                 {
-                                    tmp[i].inventory.innerContainer.TryTransferAllToContainer(surrogate.inventory.innerContainer);
+                                    tmpListElem.inventory.innerContainer.TryTransferAllToContainer(surrogate.inventory.innerContainer);
 
+                                    var elementsToRemove = new List<Thing>();
                                     //Suppression des drogues 
-                                    foreach (var el in surrogate.inventory.innerContainer.ToList()) {
+                                    IList<Thing> list = surrogate.inventory.innerContainer;
+                                    for (int i1 = 0; i1 < list.Count; i1++)
+                                    {
+                                        Thing el = list[i1];
                                         if (el.def.IsDrug)
-                                            surrogate.inventory.innerContainer.Remove(el);
+                                            elementsToRemove.Add(el);
                                     }
 
+                                    foreach (var elementToRemove in elementsToRemove)
+                                        surrogate.inventory.innerContainer.Remove(elementToRemove);
                                 }
                                 catch (Exception ex)
                                 {
                                     Log.Message("[ATPP] PawnGroupMakerUtility.GeneratePawns.transfertInventory " + ex.Message + " " + ex.StackTrace);
                                 }
-                                //}
                             }
 
                             ret.Add(surrogate);
@@ -348,7 +352,7 @@ namespace MOARANDROIDS
                         __result = other.Concat(ret);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Log.Message("[ATPP] PawnGroupMakerUtility.GeneratePawns " + ex.Message + " " + ex.StackTrace);
                 }

@@ -414,8 +414,10 @@ namespace MOARANDROIDS
 
             //surrogate.Name = new NameTriple("", "S" + prefix + SXVer + "-" + Utils.GCATPP.getNextSXID(SXVer), "");
 
-            foreach (var h in clone.health.hediffSet.hediffs.ToList())
+            List<Hediff> list = clone.health.hediffSet.hediffs.FastToList();
+            for (int i = 0; i < list.Count; i++)
             {
+                Hediff h = list[i];
                 clone.health.RemoveHediff(h);
             }
 
@@ -1713,6 +1715,16 @@ namespace MOARANDROIDS
                             showMindUploadNotif = false;
 
                             Find.LetterStack.ReceiveLetter("ATPP_LetterInterruptedSkyCloudReplication".Translate(), "ATPP_LetterInterruptedSkyCloudReplicationDesc".Translate(cpawn.LabelShortCap), LetterDefOf.ThreatSmall);
+                        }
+                        else if (migrationEndingGT != -1)
+                        {
+                            CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudHost);
+                            //Remove mind from the source SkyCore
+                            csc.RemoveMind(cpawn);
+                            //mind failing the migration are killed (corrupted)
+                            cpawn.Kill(null,null);
+                            showMindUploadNotif = false;
+                            Find.LetterStack.ReceiveLetter("ATPP_LetterInterruptedSkyCloudMigration".Translate(), "ATPP_LetterInterruptedSkyCloudMigrationDesc".Translate(cpawn.LabelShortCap), LetterDefOf.ThreatSmall);
                         }
                         else if (!recipientConnected || !emitterConnected)
                         {

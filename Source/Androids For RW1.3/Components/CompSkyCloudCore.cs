@@ -561,8 +561,9 @@ namespace MOARANDROIDS
                 List<CompSurrogateOwner> migrationsDone = null;
                 List<CompSurrogateOwner> replicationDone = null;
 
-                foreach (var m in storedMinds)
+                for (int i = storedMinds.Count - 1; i >= 0; i--)
                 {
+                    Pawn m = storedMinds[i];
                     CompSurrogateOwner cso = Utils.getCachedCSO(m);
                     if (cso == null)
                         continue;
@@ -761,8 +762,10 @@ namespace MOARANDROIDS
 
         private void disconnectAllRemotelyControlledTurrets()
         {
-            foreach (var e in controlledTurrets.ToList())
+            List<KeyValuePair<Pawn, Building>> list = controlledTurrets.FastToList();
+            for (int i = 0; i < list.Count; i++)
             {
+                KeyValuePair<Pawn, Building> e = list[i];
                 stopRemotelyControlledTurret(e.Key);
             }
         }
@@ -800,8 +803,9 @@ namespace MOARANDROIDS
             }
 
             //Listing des SkyCloud Cores
-            foreach (var m in storedMinds)
+            for (int i = storedMinds.Count-1; i >= 0; i--)
             {
+                Pawn m = storedMinds[i];
                 //Log.Message("Suspended => " +m.LabelCap+" "+ m.Suspended);
                 CompSurrogateOwner cso = Utils.getCachedCSO(m);
                 bool isSurrogateController = cso != null && cso.isThereSX();

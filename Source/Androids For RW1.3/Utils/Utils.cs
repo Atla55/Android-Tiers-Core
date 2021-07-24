@@ -1982,8 +1982,10 @@ namespace MOARANDROIDS
                     if (wp == null || wp.relations == null || wp.relations.DirectRelations == null)
                         continue;
 
-                    foreach (var rel in wp.relations.DirectRelations.ToList())
+                     List<DirectPawnRelation> list = wp.relations.DirectRelations.FastToList();
+                    for (int i1 = 0; i1 < list.Count; i1++)
                     {
+                        DirectPawnRelation rel = list[i1];
                         if (rel.otherPawn != null)
                         {
                             if (rel.otherPawn == p1)
@@ -2003,8 +2005,10 @@ namespace MOARANDROIDS
                 }
                 //Log.Message("L8");
                 //Constitution nouvelle liste des relations de P1
-                foreach (var rel in pro2.DirectRelations.ToList())
+                List<DirectPawnRelation> list1 = pro2.DirectRelations.FastToList();
+                for (int i = 0; i < list1.Count; i++)
                 {
+                    DirectPawnRelation rel = list1[i];
                     if (rel.otherPawn != null && rel.otherPawn.relations != null && rel.otherPawn != p1 && rel.otherPawn != p2)
                     {
                         rel.otherPawn.relations.TryRemoveDirectRelation(rel.def, p2);
@@ -2020,9 +2024,11 @@ namespace MOARANDROIDS
                 }
                 //Log.Message("L9");
                 //Consitution nouvelle liste des relations de P2
-                foreach (var rel in pro1.DirectRelations.ToList())
+                List<DirectPawnRelation> list2 = pro1.DirectRelations.FastToList();
+                for (int i = 0; i < list2.Count; i++)
                 {
-                    if (rel.otherPawn != null && rel.otherPawn.relations != null  && rel.otherPawn != p1 && rel.otherPawn != p2)
+                    DirectPawnRelation rel = list2[i];
+                    if (rel.otherPawn != null && rel.otherPawn.relations != null && rel.otherPawn != p1 && rel.otherPawn != p2)
                     {
                         rel.otherPawn.relations.TryRemoveDirectRelation(rel.def, p1);
                     }

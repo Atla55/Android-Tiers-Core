@@ -155,6 +155,9 @@
 	<ATPP_LetterInterruptedSkyCloudReplication>Duplication échouée</ATPP_LetterInterruptedSkyCloudReplication>
 	<ATPP_LetterInterruptedSkyCloudReplicationDesc>La duplication de la conscience {0} à échoué, car le serveur SkyCloud hôte est hors-ligne.</ATPP_LetterInterruptedSkyCloudReplicationDesc>
 	
+	<ATPP_LetterInterruptedSkyCloudMigration>Echec migration</ATPP_LetterInterruptedSkyCloudMigration>
+	<ATPP_LetterInterruptedSkyCloudMigrationDesc>La migration de la conscience de {0} à échoué, à cause du fait que le serveur SkyCloud de destination n'est pas en ligne.</ATPP_LetterInterruptedSkyCloudMigrationDesc>
+	
 	<ATPP_LetterTraitorOffline>Traitre déconnecté</ATPP_LetterTraitorOffline>
 	<ATPP_LetterTraitorOfflineDesc>{0} à trahit sa faction en se laissant recruter par vous, la faction s'en est aperçu et il à était arrêté ( il est donc déconnecté du surrogate qu'il controlait).</ATPP_LetterTraitorOfflineDesc>
 	

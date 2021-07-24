@@ -21,31 +21,22 @@ namespace MOARANDROIDS
             [HarmonyPrefix]
             public static bool Listener(Thing t, bool value, ref bool warnOnFail)
             {
-                try
+                /*if (Current.ProgramState != ProgramState.Playing)
+                    return true;
+
+                List<object> obj = Find.Selector.SelectedObjects;
+
+                if (obj != null && obj.Count == 1 && (obj[0] is Pawn))
                 {
-                    /*if (Current.ProgramState != ProgramState.Playing)
-                        return true;
+                    Pawn pawn = (Pawn)obj[0];
 
-                    List<object> obj = Find.Selector.SelectedObjects;
-
-                    if (obj != null && obj.Count == 1 && (obj[0] is Pawn))
+                    if (pawn.IsAndroidTier())
                     {
-                        Pawn pawn = (Pawn)obj[0];
-
-                        if (pawn.IsAndroidTier())
-                        {
-                            warnOnFail = false;
-                        }
-                    }*/
-                    warnOnFail = false;
-
-                    return true;
-                }
-                catch(Exception e)
-                {
-                    Log.Message("[ATPP] ForbidUtility.SetForbidden " + e.Message + " " + e.StackTrace);
-                    return true;
-                }
+                        warnOnFail = false;
+                    }
+                }*/
+                warnOnFail = false;
+                return true;
             }
         }
 

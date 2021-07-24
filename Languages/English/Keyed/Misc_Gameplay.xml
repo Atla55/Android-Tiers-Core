@@ -158,6 +158,9 @@
 	<ATPP_LetterInterruptedSkyCloudReplication>Replication Failed</ATPP_LetterInterruptedSkyCloudReplication>
 	<ATPP_LetterInterruptedSkyCloudReplicationDesc>Replication of {0}'s consciousness failed, because the host SkyCloud core is offline.</ATPP_LetterInterruptedSkyCloudReplicationDesc>
 	
+	<ATPP_LetterInterruptedSkyCloudMigration>Migration Failed</ATPP_LetterInterruptedSkyCloudMigration>
+	<ATPP_LetterInterruptedSkyCloudMigrationDesc>Migration of {0}'s consciousness failed, because the destination SkyCloud core is offline.</ATPP_LetterInterruptedSkyCloudMigrationDesc>
+	
 	<ATPP_LetterTraitorOffline>Traitor offline</ATPP_LetterTraitorOffline>
 	<ATPP_LetterTraitorOfflineDesc>{0} betrayed his faction by letting himself be recruited by you, the faction noticed it and he was arrested (he is therefore disconnected from the surrogate he controlled).</ATPP_LetterTraitorOfflineDesc>
 	

@@ -992,21 +992,24 @@ namespace MOARANDROIDS
         /*
          * Vire les androids ne pouvant plus être alimentés
          */
+        private List<Pawn> checkDisconnectedFromLWPNAndroidToDel = new List<Pawn>();
         public void checkDisconnectedFromLWPNAndroid()
         {
-            foreach(var el in listerLWPNAndroid)
+            foreach (var el in listerLWPNAndroid)
             {
                 float availablePower = Utils.getCurrentAvailableEnergy(el.Key.PowerComp.PowerNet);
                 if (el.Value.Count == 0)
                     continue;
 
                 int nbConn = 0;
+                checkDisconnectedFromLWPNAndroidToDel.Clear();
                 foreach (var android in el.Value.ToList())
                 {
                     CompAndroidState cas = Utils.getCachedCAS(android);
                     if (cas != null && !cas.useBattery)
                     {
-                        el.Value.Remove(android);
+                        //el.Value.Remove(android);
+                        checkDisconnectedFromLWPNAndroidToDel.Add(android);
                         continue;
                     }
 
@@ -1017,7 +1020,8 @@ namespace MOARANDROIDS
                     int qtConsummed = Utils.getConsumedPowerByAndroid(android.def.defName);
                     if (nonFunctionalLWPN || (availablePower - qtConsummed < 0) || (el.Key.def.defName != "ARKPPP_LocalWirelessPowerEmitter" && nbConn >= Settings.maxAndroidByPortableLWPN))
                     {
-                        el.Value.Remove(android);
+                        //el.Value.Remove(android);
+                        checkDisconnectedFromLWPNAndroidToDel.Add(android);
                         cpt.PowerOutput += qtConsummed;
                         if (cas != null)
                             cas.connectedLWPNActive = false;
@@ -1032,6 +1036,11 @@ namespace MOARANDROIDS
 
                         nbConn++;
                     }
+                }
+                //Effective removal
+                foreach (var key in checkDisconnectedFromLWPNAndroidToDel)
+                {
+                    el.Value.Remove(key);
                 }
             }
         }
@@ -1070,6 +1079,10 @@ namespace MOARANDROIDS
         public void checkVirusedThings()
         {
             int GT = Find.TickManager.TicksGame;
+            if(listerVirusedThings.Count == 0)
+            {
+                return;
+            }
         
             foreach (var t in listerVirusedThings.ToList())
             {
