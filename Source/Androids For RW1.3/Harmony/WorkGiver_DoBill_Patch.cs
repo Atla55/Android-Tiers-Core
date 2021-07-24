@@ -79,7 +79,7 @@ namespace MOARANDROIDS
                     //Normal doctor we go out if t is an android
                     if (__instance.def.workType == WorkTypeDefOf.Doctor)
                     {
-                        if (cp != null && cp.IsAndroidTier())
+                        if (cp != null && (cp.IsAndroidTier() || cp.IsCyberAnimal()))
                             __result = null;
                     }
                     else
