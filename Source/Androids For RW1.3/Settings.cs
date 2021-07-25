@@ -165,7 +165,7 @@ namespace MOARANDROIDS
         public static int nbHoursMaxSkyCloudServerRunningHotBeforeExplode = 24;
 
         public static bool androidNeedToEatMore = true;
-        public static float percentageOfBatteryChargedEach6Sec = 0.05f;
+        public static float percentageOfBatteryChargedEach6Sec = 0.07f;
 
         public static int ransomwareMinSilverToPayForBasTrait = 500;
         public static int ransomwareMaxSilverToPayForBasTrait = 2500;
@@ -841,7 +841,7 @@ namespace MOARANDROIDS
 
             Scribe_Values.Look<int>(ref defaultGeneratorMode, "defaultGeneratorMode", 1);
             Scribe_Values.Look<float>(ref percentageNanitesFail, "percentageNanitesFail", 0.08f);
-            Scribe_Values.Look<float>(ref percentageOfBatteryChargedEach6Sec, "percentageOfBatteryChargedEach6Sec", 0.05f);
+            Scribe_Values.Look<float>(ref percentageOfBatteryChargedEach6Sec, "percentageOfBatteryChargedEach6Sec", 0.07f);
 
             Scribe_Values.Look<int>(ref wattConsumedByT1, "wattConsumedByT1", 90);
             Scribe_Values.Look<int>(ref wattConsumedByT2, "wattConsumedByT2", 150);

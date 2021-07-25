@@ -1076,7 +1076,6 @@ namespace MOARANDROIDS
             if (cp == null)
                 return;
             bool VX3Host = cp.VX3ChipPresent();
-            //Log.Message("i0");
             if (controlled == null)
                 return;
             CompAndroidState cas = Utils.getCachedCAS(controlled);
@@ -1093,7 +1092,6 @@ namespace MOARANDROIDS
                 Utils.soundDefSurrogateConnection.PlayOneShot(null);
                 FleckMaker.ThrowDustPuffThick(controlled.Position.ToVector3Shifted(), controlled.Map, 4.0f, Color.blue);
             }
-            //Log.Message("i1");
             //Définition du controlleur
             cas.surrogateController = cp;
             cas.lastController = cp;
@@ -1111,7 +1109,6 @@ namespace MOARANDROIDS
             }
 
             availableSX.Add(controlled);
-            //Log.Message("i2");
             if (!external)
                 Messages.Message("ATPP_SurrogateConnectionOK".Translate(cp.LabelShortCap, controlled.LabelShortCap), cp, MessageTypeDefOf.PositiveEvent);
 
@@ -1140,7 +1137,6 @@ namespace MOARANDROIDS
                     }
                 }
             }
-            //Log.Message("i3");
             //Si pas la premiere connecction alors duplication 
             if (!inMainSX)
             {
@@ -1159,7 +1155,6 @@ namespace MOARANDROIDS
                 NameTriple nam = (NameTriple)controlled.Name;
                 cp.Name = new NameTriple(nam.First, nam.Nick, nam.Last);
             }
-            //Log.Message("i5");
             //On enleve le hediff de no host
             Hediff he = controlled.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
             if (he != null)
@@ -1194,7 +1189,6 @@ namespace MOARANDROIDS
                 controlled.outfits.CurrentOutfit = cp.outfits.CurrentOutfit;
             }*/
             
-            //Log.Message("i7");
             //Add surrogate in mapPawns
             if(!externalController)
             {
@@ -1212,8 +1206,6 @@ namespace MOARANDROIDS
             {
                 controlled.health.AddHediff(HediffDefOf.ATPP_SurrogateInit);
             }
-
-            //Log.Message("i8");)
         }
 
         /*

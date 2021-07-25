@@ -972,6 +972,11 @@ namespace MOARANDROIDS
             //Toutes les 10 sec check etat réseau
             if(CGT % 600 == 0)
             {
+                foreach(var x in connectedThing)
+                {
+                    Log.Message("=>" + x.LabelCap);
+                }
+
                 if (!appliedSettingsOnReload)
                 {
                     applyLowSkyMindNetworkSettings();
@@ -1562,8 +1567,6 @@ namespace MOARANDROIDS
                     build.BroadcastCompSignal("SkyMindNetworkUserConnected");
                 }
             }
-
-            //Log.Message("ICI BROADCAST => "+pawn.def.defName);
 
             return true;
         }
