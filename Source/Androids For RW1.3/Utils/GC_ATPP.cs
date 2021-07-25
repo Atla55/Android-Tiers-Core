@@ -1000,13 +1000,21 @@ namespace MOARANDROIDS
         }
 
         /*
-         * Vire les androids ne pouvant plus être alimentés
+         * Remove androids which cannot be powered and clean destroyed LWPN buildings
          */
+        private List<Building> checkDisconnectedFromLWPNAndroidBuildingToDel = new List<Building>();
         private List<Pawn> checkDisconnectedFromLWPNAndroidToDel = new List<Pawn>();
         public void checkDisconnectedFromLWPNAndroid()
         {
+            checkDisconnectedFromLWPNAndroidBuildingToDel.Clear();
             foreach (var el in listerLWPNAndroid)
             {
+                if (el.Key.Destroyed)
+                {
+                    checkDisconnectedFromLWPNAndroidBuildingToDel.Add(el.Key);
+                    continue;
+                }
+
                 float availablePower = Utils.getCurrentAvailableEnergy(el.Key.PowerComp.PowerNet);
                 if (el.Value.Count == 0)
                     continue;
@@ -1052,6 +1060,19 @@ namespace MOARANDROIDS
                 {
                     el.Value.Remove(key);
                 }
+            }
+            //Effective removal of destroyed LWPN
+            foreach (var key in checkDisconnectedFromLWPNAndroidBuildingToDel)
+            {
+                foreach(var el in listerLWPNAndroid[key])
+                {
+                    CompAndroidState cas = Utils.getCachedCAS(el);
+                    if(cas != null)
+                    {
+                        cas.clearPPPState();
+                    }
+                }
+                listerLWPNAndroid.Remove(key);
             }
         }
 

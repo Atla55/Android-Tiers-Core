@@ -653,6 +653,12 @@ namespace MOARANDROIDS
                 Log.Message("[ATPP] CompAndroidState.CheckRusted "+e.Message+" "+e.StackTrace);
             }
         }
+        
+        public void clearPPPState()
+        {
+            connectedLWPN = null;
+            connectedLWPNActive = false;
+        }
 
         public void setRusted()
         {
@@ -899,6 +905,16 @@ namespace MOARANDROIDS
                 }
 
             }
+
+            if (Utils.POWERPP_LOADED)
+            {
+                if (connectedLWPN == null)
+                    connectedLWPNActive = false;
+                else
+                {
+                    connectedLWPNCPT = Utils.getCachedCPT(connectedLWPN);
+                }
+            }
         }
 
 
@@ -1036,7 +1052,7 @@ namespace MOARANDROIDS
                 {
                     Texture2D tex = Tex.LWPNConnected;
                     
-                    if (connectedLWPN == null || !connectedLWPNActive || connectedLWPN.Destroyed || !connectedLWPNCPT.PowerOn)
+                    if (connectedLWPN == null || !connectedLWPNActive || connectedLWPN.Destroyed || connectedLWPNCPT == null || !connectedLWPNCPT.PowerOn)
                         tex = Tex.LWPNNotConnected;
 
                     yield return new Command_Action
@@ -1130,6 +1146,8 @@ namespace MOARANDROIDS
                             if(!useBattery && connectedLWPNActive)
                             {
                                 Utils.GCATPP.popLWPNAndroid(connectedLWPN, (Pawn)parent);
+                                connectedLWPN = null;
+                                connectedLWPNActive = false;
                             }
                         }
                     };
