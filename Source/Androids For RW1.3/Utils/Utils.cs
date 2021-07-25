@@ -1829,32 +1829,6 @@ namespace MOARANDROIDS
                 p1.Drawer.renderer.graphics.ResolveAllGraphics();
                 p2.Drawer.renderer.graphics.ResolveAllGraphics();
 
-                
-                /*************************************** PERMUTATION des LITS ********************************/
-                Building_Bed bedP1 = p1.ownership.OwnedBed;
-                Building_Bed bedP2 = p2.ownership.OwnedBed;
-
-                /*if (bedP1 != null && bedP2 != null)
-                {
-                    p1.ownership.UnclaimBed();
-                    p2.ownership.UnclaimBed();
-
-                    p1.ownership.ClaimBedIfNonMedical(bedP2);
-                    p2.ownership.ClaimBedIfNonMedical(bedP1);
-                }*/
-                if(bedP1 != null)
-                    p1.ownership.UnclaimBed();
-                if(bedP2 != null)
-                    p2.ownership.UnclaimBed();
-
-                if (bedP1 != null)
-                {
-                    p2.ownership.ClaimBedIfNonMedical(bedP1);
-                }
-                if(bedP2 != null)
-                {
-                    p1.ownership.ClaimBedIfNonMedical(bedP2);
-                }
                 if (p1.workSettings == null)
                 {
                     p1.workSettings = new Pawn_WorkSettings(p1);
@@ -1926,17 +1900,29 @@ namespace MOARANDROIDS
                         p2.foodRestriction.CurrentFoodRestriction = p1FR;
                         p2.drugs.CurrentPolicy = p1DR;
                         p2.outfits.CurrentOutfit = p1O;
-
-                        /*Log.Message("P2 => " + p2.Label);
-                        foreach (Pawn current in p2.relations.pawnsWithDirectRelationsWithMe)
-                        {
-                            Log.Message("=>" + current.Label);
-                        }*/
                     }
                     catch(Exception)
                     {
 
                     }
+
+                    /*************************************** PERMUTATION des LITS ********************************/
+                    /*Building_Bed bedP1 = p1.ownership.OwnedBed;
+                    Building_Bed bedP2 = p2.ownership.OwnedBed;
+
+                    if (bedP1 != null)
+                        p1.ownership.UnclaimBed();
+                    if (bedP2 != null)
+                        p2.ownership.UnclaimBed();
+
+                    if (bedP1 != null)
+                    {
+                        p2.ownership.ClaimBedIfNonMedical(bedP1);
+                    }
+                    if (bedP2 != null)
+                    {
+                        p1.ownership.ClaimBedIfNonMedical(bedP2);
+                    }*/
                 }
             }
             catch(Exception e)

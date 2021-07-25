@@ -7,6 +7,6 @@ namespace MOARANDROIDS
     [DefOf]
     public static class SoundDefOfAT
     {
-        public static SoundDef Recipe_Smith;
+        public static SoundDef Recipe_ButcherCorpseMechanoid;
     }
 }

@@ -35,7 +35,7 @@ namespace MOARANDROIDS
                                 {
                                     Pawn deliveree = (Pawn)actor.CurJob.targetA.Thing;
                                     if (deliveree.IsAndroidTier())
-                                        return SoundDefOfAT.Recipe_Smith;
+                                        return SoundDefOfAT.Recipe_ButcherCorpseMechanoid;
                                 }
                                 return soundDef;
                             }
