@@ -417,11 +417,10 @@ namespace MOARANDROIDS
                                 if (cso == null)
                                     return;
 
-                                if (!Utils.GCATPP.isConnectedToSkyMind(sSX))
+                                if (!Utils.GCATPP.isConnectedToSkyMind(sSX, true))
                                 {
-                                    //Tentative connection au skymind 
-                                    if (!Utils.GCATPP.connectUser(sSX))
-                                        return;
+                                    Messages.Message("ATPP_CannotConnectToSkyMind".Translate(), parent, MessageTypeDefOf.NegativeEvent);
+                                    return;
                                 }
                                 cso.setControlledSurrogate(sSX);
                             });

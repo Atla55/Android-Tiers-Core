@@ -1200,6 +1200,7 @@ namespace MOARANDROIDS
                             defaultDesc = "ATPP_AndroidSurrogateReconnectToLastControllerDesc".Translate(),
                             action = delegate ()
                             {
+                                Pawn cSurrogate = (Pawn)parent;
                                 if (lastController == null || lastController.Dead)
                                 {
                                     Messages.Message("ATPP_CannotReconnectToLastSurrogateController".Translate(), MessageTypeDefOf.NegativeEvent);
@@ -1210,9 +1211,11 @@ namespace MOARANDROIDS
                                 CompSurrogateOwner cso = Utils.getCachedCSO(lastController);
                                 if (cso != null)
                                 {
+                                    bool isMind = false;
                                     //Check so lastController est un mind dans ce cas check qu'il ne fait pas deja autre chose
                                     if (cso.skyCloudHost != null)
                                     {
+                                        isMind = true;
                                         CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
                                         if (csc == null || csc.mindIsBusy(lastController))
                                         {
@@ -1223,20 +1226,31 @@ namespace MOARANDROIDS
 
                                     //Si controller deconnecté tenttive reconnection au SkyMind
                                     bool isConnected = true;
-                                    if (!Utils.GCATPP.isConnectedToSkyMind(lastController))
-                                    {
-                                        if (!Utils.GCATPP.connectUser(lastController))
-                                            isConnected = false;
-                                    }
+                                    if (!Utils.GCATPP.isConnectedToSkyMind(lastController, true))
+                                        isConnected = false;
+
+                                    //If surrogate disconnected try to reconnect
+                                    if (!Utils.GCATPP.isConnectedToSkyMind(cSurrogate, true))
+                                        isConnected = false;
+
+                                    //If regular pawn check the controlMode BUT if stored mind no check (senseless) just set as if the controlmode is enabled
+                                    bool genControlMode = cso.controlMode;
+                                    if (isMind)
+                                        genControlMode = true;
 
                                     //Deja en session le lastUser on jerte
-                                    if ( !isConnected || ((!VX3Owner && cso.isThereSX()) || (VX3Owner && cso.availableSX.Count+1 > Settings.VX3MaxSurrogateControllableAtOnce) ) || !cso.controlMode)
+                                    if ( !isConnected || ((!VX3Owner && cso.isThereSX()) || (VX3Owner && cso.availableSX.Count+1 > Settings.VX3MaxSurrogateControllableAtOnce) ) || !genControlMode)
                                     {
                                         Messages.Message("ATPP_CannotReconnectToLastSurrogateController".Translate(), MessageTypeDefOf.NegativeEvent);
                                         return;
                                     }
 
-                                    cso.setControlledSurrogate((Pawn)parent);
+                                    cso.setControlledSurrogate(cSurrogate);
+                                }
+                                else
+                                {
+                                    Messages.Message("ATPP_CannotReconnectToLastSurrogateController".Translate(), MessageTypeDefOf.NegativeEvent);
+                                    return;
                                 }
                             }
                         };

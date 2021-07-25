@@ -1475,7 +1475,7 @@ namespace MOARANDROIDS
                 return true;
             else
             {
-                //Si un mind EST le skyCLoud hote est allumé ET booté alors oui considéré comme connected
+                //Si un mind ET le skyCLoud hote est allumé ET booté alors oui considéré comme connected
                 if(colonist is Pawn)
                 {
                     CompSurrogateOwner cso = Utils.getCachedCSO((Pawn)colonist);
@@ -1498,28 +1498,10 @@ namespace MOARANDROIDS
 
         public bool connectUser(Thing thing)
         {
+            bool containsThing = connectedThing.Contains(thing);
             //Si déjà connecté return TRUE
-            if (connectedThing.Contains(thing))
+            if (containsThing)
             {
-                //Si surrogate on va en plus declencher un changement de Map
-                /*if (thing is Pawn)
-                {
-                    Pawn pawn = (Pawn)thing;
-                    if (pawn.IsSurrogateAndroid())
-                    {
-                        bool pushSurrogate = false;
-                        foreach (var entry in listerSurrogateAndroids)
-                        {
-                            if (entry.Value.Contains(pawn))
-                            {
-                                pushSurrogate = true;
-                                break;
-                            }
-                        }
-                        if (pushSurrogate)
-                            pushSurrogateAndroid(pawn);
-                    }
-                }*/
                 return true;
             }
 
@@ -1528,8 +1510,8 @@ namespace MOARANDROIDS
             {
                 return false;
             }
-
-            if (!connectedThing.Contains(thing))
+            
+            if (!containsThing)
             {
                 connectedThing.Add(thing);
                 if (thing is Pawn)
@@ -2411,7 +2393,7 @@ namespace MOARANDROIDS
         private int nbHackingPoints = 0;
         private int nbSkillPoints = 0;
 
-        private HashSet<Thing> connectedThing = new HashSet<Thing>();
+        public HashSet<Thing> connectedThing = new HashSet<Thing>();
         private Dictionary<Building, IEnumerable<IntVec3>> cacheATN;
         private HashSet<Building> listerSkillServers = new HashSet<Building>();
         private HashSet<Building> listerSecurityServers = new HashSet<Building>();

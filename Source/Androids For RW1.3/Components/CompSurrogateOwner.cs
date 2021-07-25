@@ -1079,10 +1079,14 @@ namespace MOARANDROIDS
             if (controlled == null)
                 return;
             CompAndroidState cas = Utils.getCachedCAS(controlled);
+            //If regular pawn check the controlMode BUT if stored mind no check (senseless) just set as if the controlmode is enabled
+            bool genControlMode = controlMode;
+            if (skyCloudHost != null)
+                genControlMode = true;
 
             if (cas == null 
                 || ((SX != null && !VX3Host) || (VX3Host && availableSX.Count+1 > Settings.VX3MaxSurrogateControllableAtOnce)) 
-                || (!external && (!controlMode || !Utils.GCATPP.isConnectedToSkyMind(cp) || !Utils.GCATPP.isConnectedToSkyMind(controlled))))
+                || (!external && (!genControlMode || !Utils.GCATPP.isConnectedToSkyMind(cp) || !Utils.GCATPP.isConnectedToSkyMind(controlled))))
                 return;
 
                 externalController = external;

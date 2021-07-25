@@ -19,7 +19,11 @@ namespace MOARANDROIDS
         {
             get
             {
-                return Utils.GCATPP.getNbAssistingMinds()*Settings.nbMoodPerAssistingMinds;
+                int points = Utils.GCATPP.getNbAssistingMinds() * Settings.nbMoodPerAssistingMinds;
+                //Capping mood bonus at 10 (from where start extra-consciousness bonus)
+                if (points > 10)
+                    points = 10;
+                return points;
             }
         }
     }
