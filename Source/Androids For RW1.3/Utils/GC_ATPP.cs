@@ -962,21 +962,9 @@ namespace MOARANDROIDS
 
             int CGT = Find.TickManager.TicksGame;
 
-            //TOutes les 1 sec
-            /*if(CGT % 60 == 0)
-            {
-                
-
-            }*/
-
             //Toutes les 10 sec check etat réseau
             if(CGT % 600 == 0)
             {
-                foreach(var x in connectedThing)
-                {
-                    Log.Message("=>" + x.LabelCap);
-                }
-
                 if (!appliedSettingsOnReload)
                 {
                     applyLowSkyMindNetworkSettings();
@@ -994,6 +982,35 @@ namespace MOARANDROIDS
 
                 if (Utils.POWERPP_LOADED)
                     checkDisconnectedFromLWPNAndroid();
+            }
+
+            /*if(CGT % 1800 == 0)
+            {
+                //Check assisting minds bonus 
+                checkAssistingMindsBonus();
+            }*/
+        }
+
+        public void checkAssistingMindsBonus()
+        {
+            if(getNbAssistingMinds() >= 10)
+            {
+                foreach(var el in connectedThing)
+                {
+                    if(el is Pawn)
+                    {
+                        Pawn cp = (Pawn)el;
+                        checkAssistingMindsBonusUnit(cp);
+                    }
+                }
+            }
+        }
+
+        public void checkAssistingMindsBonusUnit(Pawn cp)
+        {
+            if (cp.health != null && cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_AssistingMinds) == null)
+            {
+                cp.health.AddHediff(HediffDefOf.ATPP_AssistingMinds);
             }
         }
 
@@ -1495,7 +1512,6 @@ namespace MOARANDROIDS
                         if (csc != null && csc.Booted())
                             return true;
                     }
-                    
                 }
                 if (tryAutoConnect)
                 {
@@ -1556,7 +1572,8 @@ namespace MOARANDROIDS
                     {
                         pushSkyMindUser(pawn);
                     }
-
+                    //Check if assisting minds bonus available
+                    checkAssistingMindsBonusUnit(pawn);
                     pawn.BroadcastCompSignal("SkyMindNetworkUserConnected");
                 }
                 else if(thing is Building)

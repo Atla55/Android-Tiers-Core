@@ -895,6 +895,7 @@ namespace MOARANDROIDS
                     Utils.GCATPP.popLWPNAndroid(connectedLWPN,(Pawn)parent);
 
                 connectedLWPN = null;
+                connectedLWPNCPT = null;
                 connectedLWPNActive = false;
             }
 
@@ -1028,9 +1029,8 @@ namespace MOARANDROIDS
                 if (Utils.POWERPP_LOADED && useBattery)
                 {
                     Texture2D tex = Tex.LWPNConnected;
-                    CompPowerTrader cpt = Utils.getCachedCPT(connectedLWPN);
-
-                    if (connectedLWPN == null || !connectedLWPNActive || connectedLWPN.Destroyed || !cpt.PowerOn)
+                    
+                    if (connectedLWPN == null || !connectedLWPNActive || connectedLWPN.Destroyed || !connectedLWPNCPT.PowerOn)
                         tex = Tex.LWPNNotConnected;
 
                     yield return new Command_Action
@@ -1061,12 +1061,14 @@ namespace MOARANDROIDS
                                             {
                                                 Utils.GCATPP.popLWPNAndroid(connectedLWPN, pawn);
                                                 connectedLWPNActive = false;
+                                                connectedLWPNCPT = null;
                                                 connectedLWPN = null;
                                             }
 
                                             if (Utils.GCATPP.pushLWPNAndroid(build, pawn))
                                             {
                                                 connectedLWPN = build;
+                                                connectedLWPNCPT = Utils.getCachedCPT(connectedLWPN);
                                                 connectedLWPNActive = true;
                                             }
                                             else
@@ -1092,6 +1094,7 @@ namespace MOARANDROIDS
                                         Utils.GCATPP.popLWPNAndroid(connectedLWPN, (Pawn)parent);
 
                                     connectedLWPN = null;
+                                    connectedLWPNCPT = null;
                                     connectedLWPNActive = false;
 
                                 }, MenuOptionPriority.Default, null, null, 0f, null, null));
@@ -1592,6 +1595,7 @@ namespace MOARANDROIDS
         public bool isBlankAndroid = false;
 
         public Building connectedLWPN;
+        public CompPowerTrader connectedLWPNCPT;
         public bool connectedLWPNActive = false;
         public bool autoPaintStarted = false;
 

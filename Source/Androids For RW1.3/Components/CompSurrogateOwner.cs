@@ -1164,30 +1164,6 @@ namespace MOARANDROIDS
 
             //On raffraichis la barre pour que le surrogate controlé y soit listé
             Find.ColonistBar.MarkColonistsDirty();
-            //Log.Message("i6");
-            //On duplique les prioritées du controleur sur le SX
-            /*if (!externalController)
-            {
-                if (cp.workSettings != null && cp.workSettings.EverWork)
-                {
-                    foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
-                    {
-                        controlled.workSettings.SetPriority(el, cp.workSettings.GetPriority(el));
-                    }
-                }
-                controlled.playerSettings.AreaRestriction = cp.playerSettings.AreaRestriction;
-                controlled.playerSettings.hostilityResponse = cp.playerSettings.hostilityResponse;
-
-                //ON duplique l'agenda du controleur sur le SX
-                for (int i = 0; i != 24; i++)
-                {
-                    controlled.timetable.SetAssignment(i, cp.timetable.GetAssignment(i));
-                }
-
-                controlled.foodRestriction.CurrentFoodRestriction = cp.foodRestriction.CurrentFoodRestriction;
-                controlled.drugs.CurrentPolicy = cp.drugs.CurrentPolicy;
-                controlled.outfits.CurrentOutfit = cp.outfits.CurrentOutfit;
-            }*/
             
             //Add surrogate in mapPawns
             if(!externalController)
@@ -1471,31 +1447,6 @@ namespace MOARANDROIDS
                     controlMode = false;
                     Utils.GCATPP.disconnectUser(cp);
                 }
-                //Log.Message("S1");
-
-                //We report worksettings to the controller
-                /*if (!externalController && cp.Faction == Faction.OfPlayer)
-                {
-                    if (csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
-                    {
-                        foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
-                        {
-                            cp.workSettings.SetPriority(el, csurrogate.workSettings.GetPriority(el));
-                        }
-                    }
-                    cp.playerSettings.AreaRestriction = csurrogate.playerSettings.AreaRestriction;
-                    cp.playerSettings.hostilityResponse = csurrogate.playerSettings.hostilityResponse;
-
-                    //We report agenda from the SX on the controller
-                    for (int i = 0; i != 24; i++)
-                    {
-                        cp.timetable.SetAssignment(i, csurrogate.timetable.GetAssignment(i));
-                    }
-
-                    cp.foodRestriction.CurrentFoodRestriction = csurrogate.foodRestriction.CurrentFoodRestriction;
-                    cp.drugs.CurrentPolicy = csurrogate.drugs.CurrentPolicy;
-                    cp.outfits.CurrentOutfit = csurrogate.outfits.CurrentOutfit;
-                }*/
 
                 //On restaure a zero les worksettings du SX
                 if (csurrogate.def.defName != "M7Mech" && csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
@@ -1521,10 +1472,6 @@ namespace MOARANDROIDS
                     }
                 }
             }
-            //Log.Message("S3");
-            //Log.Message("SetControlledSurrogate FIN");
-
-            //Log.Message("S4");
             //Retrait du referencement du surrogate mentionné
             if (surrogate == null)
             {
@@ -1674,21 +1621,21 @@ namespace MOARANDROIDS
                 if (duplicateRecipient != null && Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient, !lastSkymindDisconnectIsManual))
                     recipientConnected = true;
 
-                if (Utils.GCATPP.isThereSkillServers())
-                    recipientConnected = true;
+                /*if (Utils.GCATPP.isThereSkillServers())
+                    recipientConnected = true;*/
 
                 CompSurrogateOwner csoSkyCloudRecipient = Utils.getCachedCSO(skyCloudDownloadRecipient);
                 CompPowerTrader cptSkyCloudRecipient = Utils.getCachedCPT(skyCloudRecipient);
                 CompPowerTrader cptSkyCloudHost = Utils.getCachedCPT(skyCloudHost);
                 CompPowerTrader cptMigrationSkyCloudHostDest = Utils.getCachedCPT(migrationSkyCloudHostDest);
-                CompPowerTrader cptCsoSkyCloudRecipientSkyCloudHost = Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);
+                CompPowerTrader cptCsoSkyCloudRecipientSkyCloudHost = null;
 
                 if(csoSkyCloudRecipient != null)
-                    Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);
+                    cptCsoSkyCloudRecipientSkyCloudHost = Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);
 
                 //L'équivalence du EST connecté sur le COre s'est si il est bien alimenté en elec
-                if ( (skyCloudRecipient != null && cptSkyCloudRecipient.PowerOn)
-                    || (replicationEndingGT != -1 && cptSkyCloudHost.PowerOn)
+                if ( (skyCloudRecipient != null && cptSkyCloudRecipient != null && cptSkyCloudRecipient.PowerOn)
+                    || (replicationEndingGT != -1 && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
                     || (migrationSkyCloudHostDest != null && cptMigrationSkyCloudHostDest.PowerOn)
                     || (skyCloudDownloadRecipient != null && csoSkyCloudRecipient != null && cptCsoSkyCloudRecipientSkyCloudHost.PowerOn))
                 {
@@ -1696,9 +1643,9 @@ namespace MOARANDROIDS
                 }
 
                 //L'équivalence en mode migration est le check de si le host du mind est branché
-                if (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual)
-                    || (replicationEndingGT != -1 && cptSkyCloudHost.PowerOn)
-                    || (skyCloudHost != null && cptSkyCloudHost.PowerOn) )
+                if ( (replicationEndingGT != -1 && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
+                    || (skyCloudHost != null && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
+                    || (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual)) )
                     emitterConnected = true;
 
                 //Si hote plus valide alors on arrete le processus et on kill les deux androids

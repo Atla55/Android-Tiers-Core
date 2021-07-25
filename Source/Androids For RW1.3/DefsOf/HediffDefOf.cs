@@ -67,5 +67,7 @@ namespace MOARANDROIDS
 
         public static HediffDef ATPP_RemotelyControlled;
 
+        public static HediffDef ATPP_AssistingMinds;
+
     }
 }

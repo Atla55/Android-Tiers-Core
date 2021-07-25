@@ -69,6 +69,11 @@ namespace MOARANDROIDS
             {
                 parentPawn = (Pawn)parent;
                 isSurrogate = parentPawn.IsSurrogateAndroid();
+                parentCAS = Utils.getCachedCAS((Pawn)parent);
+            }
+            else
+            {
+                parentCPT = Utils.getCachedCPT((Building)parent);
             }
 
             Utils.GCATPP.pushSkyMindable(parent);
@@ -122,20 +127,14 @@ namespace MOARANDROIDS
             }
             else
             {
-                CompPowerTrader c = Utils.getCachedCPT((Building)parent);
-                return c != null && c.PowerOn;
+                return parentCPT != null && parentCPT.PowerOn;
             }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            CompAndroidState casx=null;
-
-            if(parent is Pawn)
-                casx = Utils.getCachedCAS((Pawn)parent);
-
             //Si infecté ou un surrogate ennemis alors pas de possibilité de le connecté/déconnecté du réseau du joueur
-            if (infected != -1 || (parent.Faction != Faction.OfPlayer && casx != null && casx.isSurrogate))
+            if (infected != -1 || (parent.Faction != Faction.OfPlayer && parentCAS != null && parentCAS.isSurrogate))
                 yield break;
 
             if (parent is Pawn)
@@ -149,7 +148,7 @@ namespace MOARANDROIDS
                 }
 
                 //Les M7Mech standard ne sont pas controlables
-                if (casx != null && !casx.isSurrogate && parent.def.defName == "M7Mech")
+                if (parentCAS != null && !parentCAS.isSurrogate && parent.def.defName == "M7Mech")
                     yield break;
 
             }
@@ -281,14 +280,13 @@ namespace MOARANDROIDS
                     {
                         Pawn p = (Pawn)parent;
 
-                        CompAndroidState cas = Utils.getCachedCAS(p);
-                        if (cas == null)
+                        if (parentCAS == null)
                             return;
 
                         //Deconnection du contorlleur le cas echeant
-                        if (cas.surrogateController != null)
+                        if (parentCAS.surrogateController != null)
                         {
-                            CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
+                            CompSurrogateOwner cso = Utils.getCachedCSO(parentCAS.surrogateController);
                             if (cso != null)
                             {
                                 //Cryptolocker on force la remise du NoHost de down du surrogate
@@ -388,10 +386,9 @@ namespace MOARANDROIDS
             //Fin du hack temporaire du surrogate on deconnecte le joueur
             Pawn cp = (Pawn)parent;
 
-            CompAndroidState cas = Utils.getCachedCAS(cp);
-            if (cas.surrogateController != null)
+            if (parentCAS.surrogateController != null)
             {
-                CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
+                CompSurrogateOwner cso = Utils.getCachedCSO(parentCAS.surrogateController);
                 cso.stopControlledSurrogate(cp, true);
             }
 
@@ -511,6 +508,10 @@ namespace MOARANDROIDS
             infected = -1;
             infectedExplodeGT = -1;
         }
+
+
+        CompAndroidState parentCAS;
+        CompPowerTrader parentCPT;
 
         public int infectedEndGT = -1;
         public int hacked = -1;

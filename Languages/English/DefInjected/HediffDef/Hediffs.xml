@@ -43,4 +43,7 @@
   <ATPP_SurrogateInit.label>Connection initialization</ATPP_SurrogateInit.label>
   <ATPP_SurrogateInit.labelNoun>Connection initialization</ATPP_SurrogateInit.labelNoun>
   
+  <ATPP_AssistingMinds.label>Assisting minds from SkyCloud cores</ATPP_AssistingMinds.label>
+  <ATPP_AssistingMinds.labelNoun>Assisting minds from SkyCloud cores</ATPP_AssistingMinds.labelNoun>
+  
 </LanguageData>
