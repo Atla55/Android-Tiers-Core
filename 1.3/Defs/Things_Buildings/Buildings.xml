@@ -161,10 +161,10 @@
       <texPath>Things/Building/ATPP_SkyMindRelay</texPath>
 	</graphicData>
 	<costList>
-      <Steel>180</Steel>
-	  <Silver>100</Silver>
-	  <Gold>25</Gold>
-      <ComponentIndustrial>2</ComponentIndustrial>
+      <Steel>125</Steel>
+	  <Silver>25</Silver>
+	  <Gold>15</Gold>
+      <ComponentIndustrial>1</ComponentIndustrial>
     </costList>
 	<comps>
 	  <li>
