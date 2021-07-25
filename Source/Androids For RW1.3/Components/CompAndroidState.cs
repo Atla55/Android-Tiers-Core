@@ -764,7 +764,7 @@ namespace MOARANDROIDS
         {
             Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
             //Remove previous AT2.x LowNetworkSignal hediff
-            if (!(he is Hediff_LowNetworkSignal))
+            if (he != null && !(he is Hediff_LowNetworkSignal))
             {
                 currentPawn.health.RemoveHediff(he);
                 he = null;

@@ -224,7 +224,7 @@ namespace MOARANDROIDS
             public static void Listener(Hediff hediff, Pawn ___pawn)
             {
                 //Si il sagit d'une VX0 
-                if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip)
+                if (hediff != null && hediff.def == HediffDefOf.ATPP_HediffVX0Chip)
                 {
                     CompAndroidState cas = Utils.getCachedCAS(___pawn);
                     if (cas == null)

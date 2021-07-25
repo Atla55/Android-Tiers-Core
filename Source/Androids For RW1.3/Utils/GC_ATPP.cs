@@ -962,14 +962,10 @@ namespace MOARANDROIDS
 
             int CGT = Find.TickManager.TicksGame;
 
-            //Toutes les 10 sec check etat réseau
+            //Each 10 seconds check network status
             if(CGT % 600 == 0)
             {
                 checkVirusedThings();
-
-                /*if (!Settings.disableLowNetworkMalus)
-                    checkSkyMindSignalPerformance();*/
-
                 checkSkyMindAutoReconnect();
 
                 //Check solarFlare dans les caravans
@@ -978,12 +974,6 @@ namespace MOARANDROIDS
                 if (Utils.POWERPP_LOADED)
                     checkDisconnectedFromLWPNAndroid();
             }
-
-            /*if(CGT % 1800 == 0)
-            {
-                //Check assisting minds bonus 
-                checkAssistingMindsBonus();
-            }*/
         }
 
         public void checkAssistingMindsBonus()
