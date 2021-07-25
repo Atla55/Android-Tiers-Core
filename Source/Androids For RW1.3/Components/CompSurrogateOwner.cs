@@ -1401,7 +1401,7 @@ namespace MOARANDROIDS
 
 
                 //On vire le potentiel Hediff de LowSignalSkyMind
-                he = csurrogate.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
+                /*he = csurrogate.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
                 if (he != null)
                 {
                     if (Utils.insideKillFuncSurrogate)
@@ -1413,7 +1413,7 @@ namespace MOARANDROIDS
                     {
                         csurrogate.health.RemoveHediff(he);
                     }
-                }
+                }*/
 
 
                 //Utils.disableGlobalKill = false;

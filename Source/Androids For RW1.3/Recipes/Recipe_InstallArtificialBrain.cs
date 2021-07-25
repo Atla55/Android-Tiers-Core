@@ -31,6 +31,9 @@ namespace MOARANDROIDS
             Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
             if (he != null)
                 pawn.health.RemoveHediff(he);
+            he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
+            if (he != null)
+                pawn.health.RemoveHediff(he);
 
             cas.isBlankAndroid = true;
             pawn.health.AddHediff(HediffDefOf.ATPP_BlankAndroid);

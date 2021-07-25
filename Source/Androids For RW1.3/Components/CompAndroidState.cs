@@ -760,15 +760,25 @@ namespace MOARANDROIDS
             }
         }
 
+        public void addLowSignalHediff()
+        {
+            Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
+            //Remove previous AT2.x LowNetworkSignal hediff
+            if (!(he is Hediff_LowNetworkSignal))
+            {
+                currentPawn.health.RemoveHediff(he);
+                he = null;
+            }
+
+            if (he == null)
+                currentPawn.health.AddHediff(HediffDefOf.ATPP_LowNetworkSignal);
+        }
+
         public void addNoRemoteHostHediff()
         {
-            Pawn cpawn = (Pawn)parent;
             //Check si surrogate et pas de controlleur ET possede pas de noHost alors on l'ajoute (===> effet d'un item externe cleanant les heddifs)
-            Hediff he = cpawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
-            if (he == null)
-            {
-                cpawn.health.AddHediff(HediffDefOf.ATPP_NoHost);
-            }
+            if (currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost) == null)
+                currentPawn.health.AddHediff(HediffDefOf.ATPP_NoHost);
         }
 
 
@@ -785,6 +795,13 @@ namespace MOARANDROIDS
             if (!isAndroidTier && !Utils.ExceptionAndroidAnimalPowered.Contains(currentPawn.def.defName))
             {
                 isOrganic = true;
+            }
+
+
+            if (isSurrogate)
+            {
+                //Each surrogates need to have a low network signal hediff
+                addLowSignalHediff();
             }
 
             if (isOrganic)
@@ -945,9 +962,6 @@ namespace MOARANDROIDS
                         lastSkymindDisconnectIsManual = false;
                     //On va  invoquer le checkInterruption pour les duplicate et permutation 
                     checkInterruptedUpload();
-
-                    //If Surrogate we remove some hediff with senseless on disconnected Skymind net
-                    removeHediffOnDisconnectedSurrogate();
                     break;
             }
         }
@@ -963,14 +977,6 @@ namespace MOARANDROIDS
             //Les M7Mech standard ne sont pas controlables
             return parent.def.defName == "M7Mech";
         }
-
-        public void removeHediffOnDisconnectedSurrogate()
-        {
-            Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
-            if (he != null)
-                currentPawn.health.RemoveHediff(he);
-        }
-
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
@@ -1496,12 +1502,11 @@ namespace MOARANDROIDS
 
         public void initAsSurrogate()
         {
-            // on va lui ajouter un hediff afin de le downer en permanence(pas d'hote)
             Pawn cpawn = (Pawn)parent;
 
             isSurrogate = true;
             addNoRemoteHostHediff();
-
+            addLowSignalHediff();
         }
 
         public void resetInternalState()

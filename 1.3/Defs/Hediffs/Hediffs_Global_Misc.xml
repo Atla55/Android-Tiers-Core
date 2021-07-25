@@ -146,16 +146,30 @@
     </stages>
   </HediffDef>
   
-  <HediffDef ParentName="ATPP_DiseaseBase">
+  <HediffDef>
     <defName>ATPP_LowNetworkSignal</defName>
     <label>Low SkyMind network signal</label>
 	<description>_</description>
+	<hediffClass>MOARANDROIDS.Hediff_LowNetworkSignal</hediffClass>
     <labelNoun>Low SkyMind network signal</labelNoun>
 	<defaultLabelColor>(1.0, 0.6, 0.0)</defaultLabelColor>
+	<isBad>false</isBad>
     <comps>
     </comps>
     <stages>
       <li>
+		<minSeverity>0.0</minSeverity>	  
+		<becomeVisible>false</becomeVisible>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.0</offset>
+          </li>
+        </capMods>
+      </li>
+	  <li>
+		<minSeverity>0.1</minSeverity>
+		<becomeVisible>true</becomeVisible>
         <capMods>
           <li>
             <capacity>Consciousness</capacity>

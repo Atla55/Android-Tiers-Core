@@ -965,15 +965,10 @@ namespace MOARANDROIDS
             //Toutes les 10 sec check etat réseau
             if(CGT % 600 == 0)
             {
-                if (!appliedSettingsOnReload)
-                {
-                    applyLowSkyMindNetworkSettings();
-                    appliedSettingsOnReload = true;
-                }
                 checkVirusedThings();
 
-                if (!Settings.disableLowNetworkMalus)
-                    checkSkyMindSignalPerformance();
+                /*if (!Settings.disableLowNetworkMalus)
+                    checkSkyMindSignalPerformance();*/
 
                 checkSkyMindAutoReconnect();
 
@@ -1088,18 +1083,6 @@ namespace MOARANDROIDS
             }
         }
 
-
-        public void applyLowSkyMindNetworkSettings()
-        {
-            if (Settings.disableLowNetworkMalus)
-                Utils.removeAllSlowNetworkHediff();
-            else
-            {
-                if (Settings.disableLowNetworkMalusInCaravans)
-                    Utils.removeAllSlowNetworkHediff(true);
-            }
-        }
-
         //Check relatifs aux things virusés
         public void checkVirusedThings()
         {
@@ -1153,7 +1136,7 @@ namespace MOARANDROIDS
             }
         }
 
-        private bool isThereSkyMindAntennaOrRelayInMap(Map map)
+        public bool isThereSkyMindAntennaOrRelayInMap(Map map)
         {
             bool ok = false;
             if (map == null)
@@ -1171,7 +1154,7 @@ namespace MOARANDROIDS
         }
 
 
-        public void checkSkyMindSignalPerformance()
+        /*public void checkSkyMindSignalPerformance()
         {
             //Maps
             foreach (var entry in listerSurrogateAndroids)
@@ -1232,7 +1215,7 @@ namespace MOARANDROIDS
                     }
                 }
             }
-        }
+        }*/
 
         public void checkSkyMindAutoReconnect()
         {
@@ -2328,7 +2311,6 @@ namespace MOARANDROIDS
 
         private void reset()
         {
-            appliedSettingsOnReload = false;
             listerReloadStation.Clear();
             listerSkyMindServers.Clear();
             cacheATN.Clear();
@@ -2357,9 +2339,7 @@ namespace MOARANDROIDS
         }
 
         private void initNull()
-        {
-            appliedSettingsOnReload = false;
-
+        { 
             if (listerReloadStation == null)
                 listerReloadStation = new Dictionary<Map, HashSet<Building>>();
             if (listerSkyMindServers == null)
@@ -2431,7 +2411,6 @@ namespace MOARANDROIDS
 
 
         private int SkyCloureCoreID = 1;
-        private bool appliedSettingsOnReload = false;
 
         public Dictionary<Map, List<Building>> listerHeatSensitiveDevices;
 

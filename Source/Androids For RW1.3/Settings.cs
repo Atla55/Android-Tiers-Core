@@ -308,28 +308,9 @@ namespace MOARANDROIDS
                        Find.ColonistBar.MarkColonistsDirty();
             }
 
-            bool prevDisableLowNetworkMalusInCaravan = disableLowNetworkMalusInCaravans;
             list.CheckboxLabeled("ATPP_SettingsDisableLowNetworkMalusInCaravans".Translate(), ref disableLowNetworkMalusInCaravans);
-
-            if(prevDisableLowNetworkMalusInCaravan != disableLowNetworkMalusInCaravans)
-            {
-                if (disableLowNetworkMalusInCaravans)
-                {
-                    Utils.removeAllSlowNetworkHediff(true);
-                }
-            }
-
-
-            bool prevDisableLowNetworkMalus = disableLowNetworkMalus;
             list.CheckboxLabeled("ATPP_SettingsDisableLowNetworkMalus".Translate(), ref disableLowNetworkMalus);
 
-            if(prevDisableLowNetworkMalus != disableLowNetworkMalus)
-            {
-                if (disableLowNetworkMalus)
-                {
-                    Utils.removeAllSlowNetworkHediff();
-                }
-            }
 
             list.CheckboxLabeled(("ATPP_SettingsDisableServersAmbianceNoises".Translate())+("ATPP_SettingsAppliedToNextSaveLoading".Translate()), ref disableServersAmbiance);
             list.CheckboxLabeled(("ATPP_SettingsDisableServersAlarm".Translate()) + ("ATPP_SettingsAppliedToNextSaveLoading".Translate()), ref disableServersAlarm);

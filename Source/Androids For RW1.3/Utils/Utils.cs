@@ -821,46 +821,6 @@ namespace MOARANDROIDS
             return null;
         }
 
-        public static void removeAllSlowNetworkHediff(bool onlyInCaravan=false)
-        {
-            if (Current.ProgramState != ProgramState.Playing)
-                return;
-
-            if (!onlyInCaravan)
-            {
-                foreach (var m in Find.Maps)
-                {
-                    foreach (var p in m.mapPawns.FreeColonistsAndPrisoners)
-                    {
-                        if (p.IsSurrogateAndroid())
-                        {
-                            Hediff he = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
-                            if (he != null)
-                            {
-                                p.health.RemoveHediff(he);
-                                //p.health.hediffSet.hediffs.Remove(he);
-                                //he.PostRemoved();
-                            }
-                        }
-                    }
-                }
-            }
-
-            //Traitement des caravanes
-            foreach(var e in Find.WorldObjects.Caravans)
-            {
-                foreach(var p in e.pawns)
-                {
-                    if (p.IsSurrogateAndroid())
-                    {
-                        Hediff he = p.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
-                        if (he != null)
-                            p.health.RemoveHediff(he);
-                    }
-                }
-            }
-        }
-
         public static void throwChargingMote(Pawn cp)
         {
             if (cp.needs.food.CurLevelPercentage < 1.0)
