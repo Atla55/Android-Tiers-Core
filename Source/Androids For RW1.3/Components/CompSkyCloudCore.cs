@@ -606,7 +606,7 @@ namespace MOARANDROIDS
                 }
             }
 
-            if(CGT % 600 == 0)
+            if(CGT % 3600 == 0)
             {
                 CompPowerTrader cpt = Utils.getCachedCPT((Building)parent);
                 //CHECK de la fin des mental breaks des minds stockés --  decrementation temps 
@@ -615,7 +615,7 @@ namespace MOARANDROIDS
                     var keys = new List<Pawn>(inMentalBreak.Keys);
                     foreach (var ck in keys)
                     {
-                        inMentalBreak[ck] -= 600;
+                        inMentalBreak[ck] -= 3600;
                         if (inMentalBreak[ck] <= 0)
                         {
                             inMentalBreak.Remove(ck);
@@ -746,6 +746,23 @@ namespace MOARANDROIDS
             FleckMaker.ThrowDustPuffThick(turret.Position.ToVector3Shifted(), turret.Map, 4.0f, Color.blue);
 
             Messages.Message("ATPP_SurrogateConnectionOK".Translate(mind.LabelShortCap, turret.LabelShortCap), turret, MessageTypeDefOf.PositiveEvent);
+        }
+
+        public void setMindInReplicationModeOn(Pawn m)
+        {
+            if (storedMinds.Contains(m) && !replicatingMinds.Contains(m))
+            {
+                stopMindActivities(m);
+                replicatingMinds.Add(m);
+            }
+        }
+
+        public void setMindInReplicationModeOff(Pawn m)
+        {
+            if (storedMinds.Contains(m) && replicatingMinds.Contains(m))
+            {
+                replicatingMinds.Remove(m);
+            }
         }
 
         public void stopRemotelyControlledTurret(Pawn mind)

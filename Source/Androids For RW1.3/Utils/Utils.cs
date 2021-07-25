@@ -1505,6 +1505,44 @@ namespace MOARANDROIDS
 
                 dest.Drawer.renderer.graphics.ResolveAllGraphics();
 
+                //-----------Report agenda worksettings and policies
+                try
+                {
+                    if (source.workSettings == null)
+                    {
+                        source.workSettings = new Pawn_WorkSettings(source);
+                        source.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                    }
+                    if (dest.workSettings == null)
+                    {
+                        dest.workSettings = new Pawn_WorkSettings(dest);
+                        dest.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                    }
+
+                    if (source.workSettings != null && source.workSettings.EverWork)
+                    {
+                        foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
+                        {
+                            dest.workSettings.SetPriority(el, source.workSettings.GetPriority(el));
+                        }
+                    }
+                    dest.playerSettings.AreaRestriction = source.playerSettings.AreaRestriction;
+                    dest.playerSettings.hostilityResponse = source.playerSettings.hostilityResponse;
+
+                    for (int i = 0; i != 24; i++)
+                    {
+                        dest.timetable.SetAssignment(i, source.timetable.GetAssignment(i));
+                    }
+
+                    dest.foodRestriction.CurrentFoodRestriction = source.foodRestriction.CurrentFoodRestriction;
+                    dest.drugs.CurrentPolicy = source.drugs.CurrentPolicy;
+                    dest.outfits.CurrentOutfit = source.outfits.CurrentOutfit;
+                }
+                catch (Exception)
+                {
+
+                }
+
                 //Ajout malus de la mort du destinataire
             }
             catch(Exception e)
@@ -1513,7 +1551,7 @@ namespace MOARANDROIDS
             }
         }
 
-        public static void PermutePawn(Pawn p1, Pawn p2)
+        public static void PermutePawn(Pawn p1, Pawn p2, bool allowSettingsPermutation=true)
         {
             try
             {
@@ -1707,8 +1745,6 @@ namespace MOARANDROIDS
 
                         tlog.Field("initiator").SetValue(initiator);
                         tlog.Field("recipient").SetValue(recipient);
-
-                        //Log.Message("IIC");
                     }
                 }
 
@@ -1783,40 +1819,29 @@ namespace MOARANDROIDS
                     }
                 }
 
-
-
                 /******************* NEEDS *******************************/
-
-
-
-
-                //Log.Message("KJJJ");
                 //Report des indicateurs des corps
                 if (p1.needs.food != null && p2.needs.food != null)
                 {
                     pn1.food.CurLevel = p1.needs.food.CurLevel;
                     pn2.food.CurLevel = p2.needs.food.CurLevel;
                 }
-                //Log.Message("KJJJ2");
                 if (p1.needs.joy != null && p2.needs.joy != null)
                 {
                     pn1.joy.CurLevel = p1.needs.joy.CurLevel;
                     pn2.joy.CurLevel = p2.needs.joy.CurLevel;
                 }
-                //Log.Message("KJJJ3");
                 if (p1.needs.comfort != null && p2.needs.comfort != null)
                 {
                     pn1.comfort.CurLevel = p1.needs.comfort.CurLevel;
                     pn2.comfort.CurLevel = p2.needs.comfort.CurLevel;
                 }
-                //Log.Message("KJJJ4");
 
                 if (p1.needs.roomsize != null && p2.needs.roomsize != null)
                 {
                     pn1.roomsize.CurLevel = p1.needs.roomsize.CurLevel;
                     pn2.roomsize.CurLevel = p2.needs.roomsize.CurLevel;
                 }
-                //Log.Message("KJJJ5");
 
                 if (p1.needs.rest != null && p2.needs.rest != null)
                 {
@@ -1832,32 +1857,11 @@ namespace MOARANDROIDS
 
                 p1.needs = pn1;
                 p2.needs = pn2;
-                //Log.Message("KJJJ6");
+
                 //Ajout des needs de base relatifs au corp et a la personnalité
                 pn1.AddOrRemoveNeedsAsAppropriate();
                 pn2.AddOrRemoveNeedsAsAppropriate();
 
-                //Log.Message("KJJJ7");
-                /*foreach(var mem in p1.needs.mood.thoughts.memories.Memories)
-                {
-                    if (mem.otherPawn != null && mem.otherPawn == p1)
-                    {
-                        mem.otherPawn = p2;
-                    }
-                }
-
-                foreach (var mem in p2.needs.mood.thoughts.memories.Memories)
-                {
-                    if (mem.otherPawn != null && mem.otherPawn == p2)
-                    {
-                        mem.otherPawn = p1;
-                    }
-                }*/
-
-                /*ThingDef p1TD = p1.def;
-                p1.def = p2.def;
-                p2.def = p1TD;*/
-                //Log.Message("KJJJ8");
                 Name nam = p1.Name;
                 p1.Name = p2.Name;
                 p2.Name = nam;
@@ -1891,13 +1895,89 @@ namespace MOARANDROIDS
                 {
                     p1.ownership.ClaimBedIfNonMedical(bedP2);
                 }
-                
-                //Log.Message("KJJJ9");
-                /*Log.Message("P2 => " + p2.Label);
-                foreach (Pawn current in p2.relations.pawnsWithDirectRelationsWithMe)
+                if (p1.workSettings == null)
                 {
-                    Log.Message("=>" + current.Label);
-                }*/
+                    p1.workSettings = new Pawn_WorkSettings(p1);
+                    p1.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                }
+
+                if (p2.workSettings == null) {
+                    p2.workSettings = new Pawn_WorkSettings(p2);
+                    p2.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+                }
+
+                /*************************************** PERMUTATION of Settings,restrictions********************************/
+                if (allowSettingsPermutation && p1.Faction == Faction.OfPlayer && p2.Faction == Faction.OfPlayer)
+                {
+                    try
+                    {
+                        //Copy agenda worksettings and policies from p1
+                        Pawn_WorkSettings p1WS = new Pawn_WorkSettings(p1);
+                        p1WS.EnableAndInitializeIfNotAlreadyInitialized();
+                        foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
+                        {
+                            p1WS.SetPriority(el, p1.workSettings.GetPriority(el));
+                        }
+                        Pawn_PlayerSettings p1PS = new Pawn_PlayerSettings(p1);
+                        p1PS.AreaRestriction = p1.playerSettings.AreaRestriction;
+                        p1PS.hostilityResponse = p1.playerSettings.hostilityResponse;
+                        Pawn_TimetableTracker p1TT = new Pawn_TimetableTracker(p1);
+                        for (int i = 0; i != 24; i++)
+                        {
+                            p1TT.SetAssignment(i, p1.timetable.GetAssignment(i));
+                        }
+                        FoodRestriction p1FR;
+                        p1FR = p1.foodRestriction.CurrentFoodRestriction;
+                        DrugPolicy p1DR;
+                        p1DR = p1.drugs.CurrentPolicy;
+                        Outfit p1O;
+                        p1O = p1.outfits.CurrentOutfit;
+
+                        //-----------Report agenda worksettings and policies from P2 to P1
+                        foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
+                        {
+                            p1.workSettings.SetPriority(el, p2.workSettings.GetPriority(el));
+                        }
+                        p1.playerSettings.AreaRestriction = p2.playerSettings.AreaRestriction;
+                        p1.playerSettings.hostilityResponse = p2.playerSettings.hostilityResponse;
+
+                        for (int i = 0; i != 24; i++)
+                        {
+                            p1.timetable.SetAssignment(i, p2.timetable.GetAssignment(i));
+                        }
+
+                        p1.foodRestriction.CurrentFoodRestriction = p2.foodRestriction.CurrentFoodRestriction;
+                        p1.drugs.CurrentPolicy = p2.drugs.CurrentPolicy;
+                        p1.outfits.CurrentOutfit = p2.outfits.CurrentOutfit;
+
+                        //-----------Report agenda worksettings and policies from P1 to P2
+                        foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
+                        {
+                            p2.workSettings.SetPriority(el, p1WS.GetPriority(el));
+                        }
+                        p2.playerSettings.AreaRestriction = p1PS.AreaRestriction;
+                        p2.playerSettings.hostilityResponse = p1PS.hostilityResponse;
+
+                        for (int i = 0; i != 24; i++)
+                        {
+                            p2.timetable.SetAssignment(i, p1TT.GetAssignment(i));
+                        }
+
+                        p2.foodRestriction.CurrentFoodRestriction = p1FR;
+                        p2.drugs.CurrentPolicy = p1DR;
+                        p2.outfits.CurrentOutfit = p1O;
+
+                        /*Log.Message("P2 => " + p2.Label);
+                        foreach (Pawn current in p2.relations.pawnsWithDirectRelationsWithMe)
+                        {
+                            Log.Message("=>" + current.Label);
+                        }*/
+                    }
+                    catch(Exception)
+                    {
+
+                    }
+                }
             }
             catch(Exception e)
             {

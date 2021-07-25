@@ -775,14 +775,14 @@ namespace MOARANDROIDS
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            Pawn pawn = (Pawn)parent;
-            csm = Utils.getCachedCSM(pawn);
-            isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(pawn.def.defName);
-            dontRust = Utils.ExceptionAndroidsDontRust.Contains(pawn.def.defName);
+            currentPawn = (Pawn)parent;
+            csm = Utils.getCachedCSM(currentPawn);
+            isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(currentPawn.def.defName);
+            dontRust = Utils.ExceptionAndroidsDontRust.Contains(currentPawn.def.defName);
 
-            bool isAndroidTier = pawn.IsAndroidTier();
+            bool isAndroidTier = currentPawn.IsAndroidTier();
 
-            if (!isAndroidTier && !Utils.ExceptionAndroidAnimalPowered.Contains(pawn.def.defName))
+            if (!isAndroidTier && !Utils.ExceptionAndroidAnimalPowered.Contains(currentPawn.def.defName))
             {
                 isOrganic = true;
             }
@@ -790,15 +790,12 @@ namespace MOARANDROIDS
             if (isOrganic)
                 useBattery = false;
 
-           
-            string MUID = parent.Map.GetUniqueLoadID();
-
             if(!respawningAfterLoad)
-                Utils.GCATPP.pushSurrogateAndroidNotifyMapChanged((Pawn)this.parent, MUID);
+                Utils.GCATPP.pushSurrogateAndroid(currentPawn);
 
             //Suppression traits blacklistés le cas echeant
             if (isAndroidTier && (!isSurrogate || (isSurrogate && surrogateController != null && surrogateController.IsAndroidTier())))
-                Utils.removeMindBlacklistedTrait(pawn);
+                Utils.removeMindBlacklistedTrait(currentPawn);
 
             this.isAndroidTIer = isAndroidTier;
 
@@ -807,30 +804,30 @@ namespace MOARANDROIDS
             if (isAndroidTier)
             {
                 //Remove ideo if basic android
-                if (pawn.IsBasicAndroidTier())
-                    pawn.ideo = null;
+                if (currentPawn.IsBasicAndroidTier())
+                    currentPawn.ideo = null;
 
                 if (isAndroidWithSkin)
                 {
-                    if (pawn.gender == Gender.Male)
+                    if (currentPawn.gender == Gender.Male)
                     {
                         BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
                         if (bd != null)
-                            pawn.story.bodyType = bd;
+                            currentPawn.story.bodyType = bd;
                     }
                     else
                     {
                         BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
                         if (bd != null)
-                            pawn.story.bodyType = bd;
+                            currentPawn.story.bodyType = bd;
                     }
                 }
 
-                if (pawn.ownership != null && pawn.ownership.OwnedBed != null)
+                if (currentPawn.ownership != null && currentPawn.ownership.OwnedBed != null)
                 {
-                    if(pawn.ownership.OwnedBed.ForPrisoners != pawn.IsPrisoner)
+                    if(currentPawn.ownership.OwnedBed.ForPrisoners != currentPawn.IsPrisoner)
                     {
-                        pawn.ownership.UnclaimBed();
+                        currentPawn.ownership.UnclaimBed();
                     }
                 }
                 //Starting du délais de rusting
@@ -841,27 +838,27 @@ namespace MOARANDROIDS
                         paintingRustGT = (Rand.Range(Settings.minDaysAndroidPaintingCanRust, Settings.maxDaysAndroidPaintingCanRust) * 60000);
                     }
 
-                    if (paintingRustGT == -1 && paintingIsRusted && pawn.health != null)
+                    if (paintingRustGT == -1 && paintingIsRusted && currentPawn.health != null)
                     {
-                        Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
+                        Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                         if (he == null)
                         {
-                            pawn.health.AddHediff(HediffDefOf.ATPP_Rusted);
+                            currentPawn.health.AddHediff(HediffDefOf.ATPP_Rusted);
                         }
                     }
                 }
             }
             else
             {
-                if (pawn.health != null)
+                if (currentPawn.health != null)
                 {
                     paintingIsRusted = false;
-                    Hediff he = pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
+                    Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
                     if (he != null)
-                        pawn.health.RemoveHediff(he);
+                        currentPawn.health.RemoveHediff(he);
                 }
 
-                Pawn cpawn = pawn;
+                Pawn cpawn = currentPawn;
 
                 //Si VX0 dans une session en cours alors on chope le pawn permuté controleur
                 if (surrogateController != null)
@@ -905,12 +902,7 @@ namespace MOARANDROIDS
             if (isSurrogate)
             {
                 Pawn pawn = (Pawn)parent;
-
-                string MUID = "caravan";
-                if (map != null)
-                    MUID = map.GetUniqueLoadID();
-
-                Utils.GCATPP.pushSurrogateAndroidNotifyMapChanged((Pawn)this.parent, MUID);
+                Utils.GCATPP.pushSurrogateAndroid((Pawn)this.parent);
             }
         }
 
@@ -932,8 +924,7 @@ namespace MOARANDROIDS
 
             if (isSurrogate && previousMap == null)
             {
-                string MUID = "caravan";
-                Utils.GCATPP.pushSurrogateAndroidNotifyMapChanged((Pawn)this.parent, MUID);
+                Utils.GCATPP.pushSurrogateAndroid((Pawn)this.parent);
             }
         }
 
@@ -953,6 +944,9 @@ namespace MOARANDROIDS
                         lastSkymindDisconnectIsManual = false;
                     //On va  invoquer le checkInterruption pour les duplicate et permutation 
                     checkInterruptedUpload();
+
+                    //If Surrogate we remove some hediff with senseless on disconnected Skymind net
+                    removeHediffOnDisconnectedSurrogate();
                     break;
             }
         }
@@ -967,6 +961,13 @@ namespace MOARANDROIDS
         {
             //Les M7Mech standard ne sont pas controlables
             return parent.def.defName == "M7Mech";
+        }
+
+        public void removeHediffOnDisconnectedSurrogate()
+        {
+            Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
+            if (he != null)
+                currentPawn.health.RemoveHediff(he);
         }
 
 
@@ -1549,6 +1550,7 @@ namespace MOARANDROIDS
             }
         }
 
+        Pawn currentPawn = null;
         //Stock le signal indiquant si le pawn à été attribué par le systeme de job pour faire du guarding ou non
         public bool useBattery = false;
         public int uploadEndingGT = -1;

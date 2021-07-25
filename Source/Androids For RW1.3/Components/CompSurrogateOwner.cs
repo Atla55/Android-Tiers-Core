@@ -96,7 +96,7 @@ namespace MOARANDROIDS
                 }
             }
 
-            if (GT % 120 == 0 && ( permuteEndingGT != -1 || duplicateEndingGT != -1 || uploadToSkyCloudEndingGT != -1 || migrationEndingGT != -1 || mindAbsorptionEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || (controlMode && SX != null)))
+            if (GT % 180 == 0 && ( permuteEndingGT != -1 || duplicateEndingGT != -1 || uploadToSkyCloudEndingGT != -1 || migrationEndingGT != -1 || mindAbsorptionEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || (controlMode && SX != null)))
             {
                 Pawn cpawn = (Pawn)parent;
                 checkInterruptedUpload();
@@ -254,7 +254,7 @@ namespace MOARANDROIDS
                     CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
 
                     //Arret des jobs d'un esprit
-                    csc.stopMindActivities(skyCloudDownloadRecipient);
+                    csc.setMindInReplicationModeOff(skyCloudDownloadRecipient);
 
 
                     Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudDownloadOK".Translate(), "ATPP_LetterSkyCloudDownloadOKDesc".Translate(skyCloudDownloadRecipient.LabelShortCap, cpawn.LabelShortCap), LetterDefOf.PositiveEvent, parent);
@@ -275,7 +275,7 @@ namespace MOARANDROIDS
 
                     
 
-                    //Suppression de la memoire du core
+                    //Suppression de la memoire du core de l'esprit téléchargé
                     csc.RemoveMind(skyCloudDownloadRecipient);
 
                     //Annulation status de prisonnier de l'esprit downloader
@@ -1171,7 +1171,7 @@ namespace MOARANDROIDS
             Find.ColonistBar.MarkColonistsDirty();
             //Log.Message("i6");
             //On duplique les prioritées du controleur sur le SX
-            if (!externalController)
+            /*if (!externalController)
             {
                 if (cp.workSettings != null && cp.workSettings.EverWork)
                 {
@@ -1192,7 +1192,7 @@ namespace MOARANDROIDS
                 controlled.foodRestriction.CurrentFoodRestriction = cp.foodRestriction.CurrentFoodRestriction;
                 controlled.drugs.CurrentPolicy = cp.drugs.CurrentPolicy;
                 controlled.outfits.CurrentOutfit = cp.outfits.CurrentOutfit;
-            }
+            }*/
             
             //Log.Message("i7");
             //Add surrogate in mapPawns
@@ -1482,7 +1482,7 @@ namespace MOARANDROIDS
                 //Log.Message("S1");
 
                 //We report worksettings to the controller
-                if (!externalController && cp.Faction == Faction.OfPlayer)
+                /*if (!externalController && cp.Faction == Faction.OfPlayer)
                 {
                     if (csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
                     {
@@ -1503,7 +1503,7 @@ namespace MOARANDROIDS
                     cp.foodRestriction.CurrentFoodRestriction = csurrogate.foodRestriction.CurrentFoodRestriction;
                     cp.drugs.CurrentPolicy = csurrogate.drugs.CurrentPolicy;
                     cp.outfits.CurrentOutfit = csurrogate.outfits.CurrentOutfit;
-                }
+                }*/
 
                 //On restaure a zero les worksettings du SX
                 if (csurrogate.def.defName != "M7Mech" && csurrogate.workSettings != null && csurrogate.workSettings.EverWork)
@@ -1623,18 +1623,22 @@ namespace MOARANDROIDS
             downloadFromSkyCloudStartGT = CGT;
             downloadFromSkyCloudEndingGT = CGT + 60 - (CGT % 60) + Settings.mindUploadToSkyCloudHours * 2500;
 
-            CompSkyCloudCore csc = Utils.getCachedCSC(source);
-
             string name = source.LabelShortCap;
             CompSurrogateOwner cso = Utils.getCachedCSO(source);
 
-            if (cso != null && cso.isThereSX())
+            CompSkyCloudCore csc = Utils.getCachedCSC(cso.skyCloudHost);
+            if (csc != null)
             {
-                if(cso.SX != null)
-                    name = cso.SX.LabelShortCap;
-            }
 
-            Messages.Message("ATPP_StartSkyCloudDownload".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
+                if (cso != null && cso.isThereSX())
+                {
+                    if (cso.SX != null)
+                        name = cso.SX.LabelShortCap;
+                }
+                csc.setMindInReplicationModeOn(source);
+
+                Messages.Message("ATPP_StartSkyCloudDownload".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
+            }
         }
 
         public void startMigration(Building dest)
@@ -1685,7 +1689,7 @@ namespace MOARANDROIDS
                 CompPowerTrader cptSkyCloudRecipient = Utils.getCachedCPT(skyCloudRecipient);
                 CompPowerTrader cptSkyCloudHost = Utils.getCachedCPT(skyCloudHost);
                 CompPowerTrader cptMigrationSkyCloudHostDest = Utils.getCachedCPT(migrationSkyCloudHostDest);
-                CompPowerTrader cptCsoSkyCloudRecipientSkyCloudHost = null;
+                CompPowerTrader cptCsoSkyCloudRecipientSkyCloudHost = Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);
 
                 if(csoSkyCloudRecipient != null)
                     Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);

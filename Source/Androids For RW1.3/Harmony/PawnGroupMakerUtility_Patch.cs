@@ -41,7 +41,7 @@ namespace MOARANDROIDS
                     }
 
                     //Faction de niveau industriel et plus ET nb pawn généré supérieur ou égal à 5
-                    if (parms.faction.def.techLevel >= TechLevel.Industrial && nbHumanoids >= 5)
+                    if (parms.faction != null && parms.faction.def.techLevel >= TechLevel.Industrial && nbHumanoids >= 5)
                     {
                         List<Pawn> other = new List<Pawn>();
                         List<Pawn> ret = new List<Pawn>();

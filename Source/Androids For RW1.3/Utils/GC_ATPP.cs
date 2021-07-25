@@ -963,7 +963,14 @@ namespace MOARANDROIDS
             int CGT = Find.TickManager.TicksGame;
 
             //TOutes les 1 sec
-            if(CGT % 60 == 0)
+            /*if(CGT % 60 == 0)
+            {
+                
+
+            }*/
+
+            //Toutes les 10 sec check etat réseau
+            if(CGT % 600 == 0)
             {
                 if (!appliedSettingsOnReload)
                 {
@@ -972,12 +979,7 @@ namespace MOARANDROIDS
                 }
                 checkVirusedThings();
 
-            }
-
-            //Toutes les 6 sec check etat réseau
-            if(CGT % 360 == 0)
-            {
-                if(!Settings.disableLowNetworkMalus)
+                if (!Settings.disableLowNetworkMalus)
                     checkSkyMindSignalPerformance();
 
                 checkSkyMindAutoReconnect();
@@ -1174,7 +1176,7 @@ namespace MOARANDROIDS
             {
                 foreach (var s in value ?? listerSurrogateAndroids[MUID])
                 {
-                    if (s.Dead)
+                    if (s.Dead || !isConnectedToSkyMind(s))
                         continue;
 
                     Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
@@ -1184,11 +1186,11 @@ namespace MOARANDROIDS
             }
             else
             {
-                //Pas d'antenne permetant de relayer le signal on va impacter els surrogates
+                //No antenna to relay the signal we will impact the connected surrogates
                 foreach (var s in listerSurrogateAndroids[MUID])
                 {
-                    //RX owners or deads exempted
-                    if (s.Dead)
+                    //RX owners or deads exempted or not connected not SkyMind
+                    if (s.Dead || !isConnectedToSkyMind(s))
                         continue;
 
                     Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
@@ -1506,25 +1508,28 @@ namespace MOARANDROIDS
             if (connectedThing.Contains(thing))
             {
                 //Si surrogate on va en plus declencher un changement de Map
-                if (thing is Pawn)
+                /*if (thing is Pawn)
                 {
                     Pawn pawn = (Pawn)thing;
                     if (pawn.IsSurrogateAndroid())
                     {
-                        foreach (var entry in listerSurrogateAndroids.ToList())
+                        bool pushSurrogate = false;
+                        foreach (var entry in listerSurrogateAndroids)
                         {
-                            string MUID = entry.Key;
-
                             if (entry.Value.Contains(pawn))
                             {
-                                pushSurrogateAndroidNotifyMapChanged(pawn, MUID);
+                                pushSurrogate = true;
+                                break;
                             }
                         }
+                        if (pushSurrogate)
+                            pushSurrogateAndroid(pawn);
                     }
-                }
+                }*/
                 return true;
             }
 
+            //Nbslot available exceeded ? ==> no Skymind connection
             if(connectedThing.Count() >= nbSlot)
             {
                 return false;
@@ -1608,6 +1613,15 @@ namespace MOARANDROIDS
             if (sx.Map != null)
                 MUID = sx.Map.GetUniqueLoadID();
 
+            //Check presence of the surrogate in another map 
+            foreach(var cmap in listerSurrogateAndroids)
+            {
+                Pawn s = null;
+                cmap.Value.TryGetValue(sx, out s);
+                if (sx != null)
+                    cmap.Value.Remove(sx);
+            }
+
             if (!listerSurrogateAndroids.ContainsKey(MUID))
                 listerSurrogateAndroids[MUID] = new HashSet<Pawn>();
 
@@ -1615,24 +1629,6 @@ namespace MOARANDROIDS
                 listerSurrogateAndroids[MUID].Add(sx);
         }
 
-        public void pushSurrogateAndroidNotifyMapChanged(Pawn sx, string prevMUID)
-        {
-            string currMUID = "caravan";
-            if (sx.Map != null)
-                currMUID = sx.Map.GetUniqueLoadID();
-
-            if (listerSurrogateAndroids.TryGetValue(prevMUID, out var value) && prevMUID != currMUID)
-            {
-                value.Remove(sx);
-                if (!listerSurrogateAndroids.TryGetValue(currMUID, out value))
-                {
-                    value = new HashSet<Pawn>();
-                    listerSurrogateAndroids[currMUID] = value;
-                }
-                value.Add(sx);
-            }
-            checkSkyMindSignalPerformance();
-        }
 
         public void popSurrogateAndroid(Pawn sx, string MUID)
         {
