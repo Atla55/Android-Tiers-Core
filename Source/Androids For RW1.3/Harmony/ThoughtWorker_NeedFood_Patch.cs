@@ -21,7 +21,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn p, ref ThoughtState __result)
             {
-                if (Utils.pawnCurrentlyControlRemoteSurrogate(p))
+                if (Utils.pawnCurrentlyControlRemoteSurrogate(p) || p.IsSurrogateAndroid(false, true))
                 {
                     __result = ThoughtState.Inactive;
                 }

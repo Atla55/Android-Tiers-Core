@@ -18,7 +18,7 @@ namespace MOARANDROIDS
             [HarmonyPrefix]
             public static bool Listener(Pawn victim, PawnExecutionKind kind)
             {
-                if (victim.IsBasicAndroidTier())
+                if (victim.IsBasicAndroidTier() || victim.IsSurrogateAndroid())
                     return false;
                 else
                     return true;
@@ -31,7 +31,7 @@ namespace MOARANDROIDS
             [HarmonyPrefix]
             public static bool Listener(Pawn victim)
             {
-                if (victim.IsBasicAndroidTier())
+                if (victim.IsBasicAndroidTier() || victim.IsSurrogateAndroid())
                     return false;
                 else
                     return true;
