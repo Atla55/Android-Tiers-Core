@@ -1063,13 +1063,7 @@ namespace MOARANDROIDS
 
         public static bool isThereSolarFlare()
         {
-            foreach(var map in Find.Maps)
-            {
-                if (map.IsPlayerHome && map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
-                    return true;
-            }
-
-            return false;
+            return Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
         }
 
         public static bool anyPlayerColonnyHasEnoughtSilver(int price)
@@ -2231,7 +2225,7 @@ namespace MOARANDROIDS
                     return false;
             }
 
-            return true && !pawn.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare); ;
+            return true && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
         }
 
 
@@ -2550,11 +2544,11 @@ namespace MOARANDROIDS
             {
                 if (Settings.duringSolarFlaresAndroidsShouldBeDowned)
                 {
-                    he.stages[0].capMods[0].setMax = 0.1f;
+                    he.stages[1].capMods[0].setMax = 0.1f;
                 }
                 else
                 {
-                    he.stages[0].capMods[0].setMax = 0.6f;
+                    he.stages[1].capMods[0].setMax = 0.6f;
                 }
             }
         }

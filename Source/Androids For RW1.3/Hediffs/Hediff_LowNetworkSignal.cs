@@ -8,12 +8,31 @@ namespace MOARANDROIDS
 {
     public class Hediff_LowNetworkSignal : HediffWithComps
     {
+        public override bool ShouldRemove
+        {
+            get
+            {
+                return false;
+            }
+        }
+
         public override bool Visible
         {
             get
             {
                 return CurrentlyLowNetworkSignal() == 1;
             }
+        }
+
+        public override float Severity {
+            get
+            {
+                if (CurrentlyLowNetworkSignal() == 1)
+                    return 0.1f;
+                else
+                    return 0.0f;
+            }
+
         }
 
         public override HediffStage CurStage
@@ -70,7 +89,7 @@ namespace MOARANDROIDS
 
                     //Log.Message("H=> " + pawn.LabelCap + " controlled = " +(cas.surrogateController != null)+" ANtenna = "+ Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map)+" res = "+ lastCurrentlyLowNetworkSignal);
                 }
-                executorGT = curGT + Rand.Range(120, 360);
+                executorGT = curGT + Rand.Range(160, 420);
             }
             return lastCurrentlyLowNetworkSignal;
         }

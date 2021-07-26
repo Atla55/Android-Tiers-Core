@@ -127,7 +127,7 @@ namespace MOARANDROIDS
                 {
                     return new FloatMenuOption("CannotUseNoPath".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }
-                if (bed.Spawned && bed.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
+                if (bed.Spawned && Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
                 {
                     return new FloatMenuOption("CannotUseSolarFlare".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }

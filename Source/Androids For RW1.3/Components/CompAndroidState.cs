@@ -104,6 +104,158 @@ namespace MOARANDROIDS
             }
         }
 
+        private void initComp()
+        {
+            if (init)
+                return;
+
+            currentPawn = (Pawn)parent;
+            csm = Utils.getCachedCSM(currentPawn);
+            isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(currentPawn.def.defName);
+            dontRust = Utils.ExceptionAndroidsDontRust.Contains(currentPawn.def.defName);
+
+            bool isAndroidTier = currentPawn.IsAndroidTier();
+            isAndroidOrAnimalTier = currentPawn.IsAndroidOrAnimalTier();
+
+            if (!isAndroidTier && !Utils.ExceptionAndroidAnimalPowered.Contains(currentPawn.def.defName))
+            {
+                isOrganic = true;
+            }
+
+            if (isOrganic)
+                useBattery = false;
+
+            Utils.GCATPP.pushSurrogateAndroid(currentPawn);
+
+            //Suppression traits blacklistés le cas echeant
+            if (isAndroidTier && (!isSurrogate || (isSurrogate && surrogateController != null && surrogateController.IsAndroidTier())))
+                Utils.removeMindBlacklistedTrait(currentPawn);
+
+            this.isAndroidTIer = isAndroidTier;
+
+            checkInfectionFix();
+
+            if (isAndroidTier)
+            {
+                //Remove ideo if basic android
+                if (currentPawn.IsBasicAndroidTier())
+                    currentPawn.ideo = null;
+
+                if (isAndroidWithSkin)
+                {
+                    if (currentPawn.gender == Gender.Male)
+                    {
+                        BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
+                        if (bd != null)
+                            currentPawn.story.bodyType = bd;
+                    }
+                    else
+                    {
+                        BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
+                        if (bd != null)
+                            currentPawn.story.bodyType = bd;
+                    }
+                }
+
+                if (currentPawn.ownership != null && currentPawn.ownership.OwnedBed != null)
+                {
+                    if (currentPawn.ownership.OwnedBed.ForPrisoners != currentPawn.IsPrisoner)
+                    {
+                        currentPawn.ownership.UnclaimBed();
+                    }
+                }
+                //Starting du délais de rusting
+                if (!dontRust)
+                {
+                    if (paintingRustGT == -2)
+                    {
+                        paintingRustGT = (Rand.Range(Settings.minDaysAndroidPaintingCanRust, Settings.maxDaysAndroidPaintingCanRust) * 60000);
+                    }
+
+                    if (paintingRustGT == -1 && paintingIsRusted && currentPawn.health != null)
+                    {
+                        Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
+                        if (he == null)
+                        {
+                            currentPawn.health.AddHediff(HediffDefOf.ATPP_Rusted);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (currentPawn.health != null)
+                {
+                    paintingIsRusted = false;
+                    Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
+                    if (he != null)
+                        currentPawn.health.RemoveHediff(he);
+                }
+
+                Pawn cpawn = currentPawn;
+
+                //Si VX0 dans une session en cours alors on chope le pawn permuté controleur
+                if (surrogateController != null)
+                    cpawn = surrogateController;
+
+                //Reset du child et adulthood si VX0 organic
+                if (isSurrogate && isOrganic && cpawn.story != null && cpawn.story.adulthood != null)
+                {
+                    if (cpawn.story.childhood != null)
+                    {
+                        Backstory bs = null;
+
+                        BackstoryDatabase.TryGetWithIdentifier("MercenaryRecruit", out bs);
+                        if (bs != null)
+                            cpawn.story.childhood = bs;
+                    }
+
+                    cpawn.story.adulthood = null;
+                    //Reset incapable of
+                    Utils.ResetCachedIncapableOf(cpawn);
+                }
+
+            }
+
+            if (Utils.POWERPP_LOADED)
+            {
+                if (connectedLWPN == null)
+                    connectedLWPNActive = false;
+                else
+                {
+                    connectedLWPNCPT = Utils.getCachedCPT(connectedLWPN);
+                }
+            }
+
+            addLowSignalHediff();
+            addSolarFlareImpactHediff();
+            checkTXWithSkinFacialTextureUpdate();
+            init = true;
+            //Reconexion auto au LWPN le cas echeant
+            if (Utils.POWERPP_LOADED)
+            {
+                if (connectedLWPN != null && connectedLWPNActive)
+                {
+                    if (!Utils.GCATPP.pushLWPNAndroid(connectedLWPN, (Pawn)parent))
+                    {
+                        connectedLWPNActive = false;
+                    }
+                }
+            }
+        }
+
+        public override void CompTickRare()
+        {
+            base.CompTickRare();
+
+            //Init for pawns in caravans
+            if (!init)
+            {
+                initComp();
+            }
+
+        }
+
         public override void CompTick()
         {
             base.CompTick();
@@ -117,27 +269,16 @@ namespace MOARANDROIDS
 
             if (!init)
             {
-                checkTXWithSkinFacialTextureUpdate();
-                init = true;
-                //Reconexion auto au LWPN le cas echeant
-                if (Utils.POWERPP_LOADED)
-                {
-                    if (connectedLWPN != null && connectedLWPNActive)
-                    {
-                        if(!Utils.GCATPP.pushLWPNAndroid(connectedLWPN, (Pawn)parent))
-                        {
-                            connectedLWPNActive = false;
-                        }
-                    }
-                }
+                initComp();
             }
+
 
             //Reconnection auto de l'etranger à son surrogate que si pas de solar flare en cours et toujours dans un Lord (Si le cas d'un ennemis check de l'etat de son Lord)
             if ( (GT % 120 == 0 && externalController != null 
                 && surrogateController == null
                 && csm != null && csm.hacked != 3
                 //&& !externalController.Faction.HostileTo(Faction.OfPlayer)
-                && !parent.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)))
+                && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)))
             {
                 Lord lordInvolved = null;
                 if (currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction).Any((Pawn p) => p != currentPawn))
@@ -342,19 +483,11 @@ namespace MOARANDROIDS
                 checkInfectionFix();
                 checkTXWithSkinFacialTextureUpdate();
 
-                /* Debugage PK opreationBed obtenu aprés androidPod
-                List<ThingDef> beds = (List <ThingDef>) Traverse.CreateWithType("RimWorld.RestUtility").Field("bedDefsBestToWorst_Medical").GetValue();
-                foreach (var e in RestUtility.AllBedDefBestToWorst)
-                {
-                    Log.Message(e.defName+" "+e.building.bed_maxBodySize+" "+e.GetStatValueAbstract(StatDefOf.MedicalTendQualityOffset, null));
-                }*/
-
                 //SI surrogate d'une conscience numérisée ET à un mentalbreak => déconnection et mise en place d'un timeout de fin de mentalbreak
 
                 //Recharge auto de la barre de need food
                 if (csm != null && csm.Infected == -1)
                 {
-
                     //Recharge surrogate
                     if (Utils.androidIsValidPodForCharging(cp) && !isOrganic)
                     {
@@ -362,16 +495,11 @@ namespace MOARANDROIDS
                         cp.needs.food.CurLevelPercentage += Settings.percentageOfBatteryChargedEach6Sec;
                         Utils.throwChargingMote(cp);
                     }
-
                     if(isSurrogate && surrogateController == null)
                         addNoRemoteHostHediff();
                 }
 
-                //Atteinte du solarFlare que si android OU pucé (VXX)
-                checkSolarFlareStuff();
-
                 checkRusted();
-
                 checkBlankAndroid();
 
 
@@ -687,84 +815,42 @@ namespace MOARANDROIDS
                 pawn.health.RemoveHediff(he);
         }
 
-        public void checkSolarFlareStuff()
+        /*public void checkSolarFlareStuff()
         {
-            try
+            //Androids avec une peau pas affectés par le solarflare
+            if (Settings.disableSolarFlareEffect || currentPawn.health == null || currentPawn.def.defName == Utils.TX2 || currentPawn.def.defName == Utils.TX3 || currentPawn.def.defName == Utils.TX4)
+                return;
+
+            if (!isOrganic || currentPawn.VXAndVX0ChipPresent())
             {
-                Pawn cp = (Pawn)parent;
+                bool solarFlareRunning = Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
 
-                //Androids avec une peau pas affectés par le solarflare
-                if (cp.health == null || cp.def.defName == Utils.TX2 || cp.def.defName == Utils.TX3 || cp.def.defName == Utils.TX4)
-                    return;
-
-                if (!isOrganic || cp.VXAndVX0ChipPresent())
-                {
-                    Map pmap = null;
-                    pmap = Utils.getRandomMapOfPlayer();
-                    if (pmap == null)
-                        return;
-
-                    bool solarFlareRunning = pmap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
-
-                    //Si android surrogate actuellement controllé par un étranger externe on le deconnecte
-                    /*if (externalController != null && surrogateController != null && solarFlareRunning)
-                    {
-                        CompSurrogateOwner cso = surrogateController.TryGetComp<CompSurrogateOwner>();
-                        if (cso != null)
-                        {
-                            cso.disconnectControlledSurrogate();
-                        }
-                    }*/
-
-                    if (Settings.disableSolarFlareEffect)
-                    {
-                        //Retrait heddif si il avait été ajouté
-                        if (solarFlareEffectApplied)
-                        {
-                                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
-                                if (he != null)
-                                    cp.health.RemoveHediff(he);
-                        }
-                        solarFlareEffectApplied = false;
-                        return;
-                    }
-
-                    //Application de l'effet
-                    if (solarFlareRunning && !solarFlareEffectApplied)
-                    {
-                        //Ajout heddif
-                        cp.health.AddHediff(HediffDefOf.ATPP_SolarFlareAndroidImpact);
-
-                        solarFlareEffectApplied = true;
-                    }
-
-                    //Suppression de l'effet
-                    if (!solarFlareRunning && solarFlareEffectApplied)
-                    {
-                        //Ajout heddif
-                        Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
-                        if (he != null)
-                            cp.health.RemoveHediff(he);
-
-                        //Suppression de l'heddif
-                        solarFlareEffectApplied = false;
-                    }
-                }
-                else
-                {
-                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
-                    if (he != null)
-                        cp.health.RemoveHediff(he);
-                }
+                if (currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact) == null)
+                    currentPawn.health.AddHediff(HediffDefOf.ATPP_SolarFlareAndroidImpact);
             }
-            catch(Exception e)
+        }*/
+
+        public void addSolarFlareImpactHediff()
+        {
+            if (!(isAndroidOrAnimalTier ||  currentPawn.VXAndVX0ChipPresent()))
+                return;
+            Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
+            //Remove previous AT2.x SolarFlare hediff
+            if (he != null && !(he is Hediff_SolarFlare))
             {
-                Log.Message("[ATPP] CompAndroidState.checkSolarFlareStuff " + e.Message + " " + e.StackTrace);
+                currentPawn.health.RemoveHediff(he);
+                he = null;
             }
+
+            if (he == null)
+                currentPawn.health.AddHediff(HediffDefOf.ATPP_SolarFlareAndroidImpact);
         }
 
         public void addLowSignalHediff()
         {
+            if (!isSurrogate || currentPawn.NonHumanlikeOrWildMan())
+                return;
+
             Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
             //Remove previous AT2.x LowNetworkSignal hediff
             if (he != null && !(he is Hediff_LowNetworkSignal))
@@ -788,130 +874,7 @@ namespace MOARANDROIDS
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            currentPawn = (Pawn)parent;
-            csm = Utils.getCachedCSM(currentPawn);
-            isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(currentPawn.def.defName);
-            dontRust = Utils.ExceptionAndroidsDontRust.Contains(currentPawn.def.defName);
-
-            bool isAndroidTier = currentPawn.IsAndroidTier();
-
-            if (!isAndroidTier && !Utils.ExceptionAndroidAnimalPowered.Contains(currentPawn.def.defName))
-            {
-                isOrganic = true;
-            }
-
-
-            if (isSurrogate)
-            {
-                //Each surrogates need to have a low network signal hediff
-                addLowSignalHediff();
-            }
-
-            if (isOrganic)
-                useBattery = false;
-
-            if(!respawningAfterLoad)
-                Utils.GCATPP.pushSurrogateAndroid(currentPawn);
-
-            //Suppression traits blacklistés le cas echeant
-            if (isAndroidTier && (!isSurrogate || (isSurrogate && surrogateController != null && surrogateController.IsAndroidTier())))
-                Utils.removeMindBlacklistedTrait(currentPawn);
-
-            this.isAndroidTIer = isAndroidTier;
-
-            checkInfectionFix();
-
-            if (isAndroidTier)
-            {
-                //Remove ideo if basic android
-                if (currentPawn.IsBasicAndroidTier())
-                    currentPawn.ideo = null;
-
-                if (isAndroidWithSkin)
-                {
-                    if (currentPawn.gender == Gender.Male)
-                    {
-                        BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Male", false);
-                        if (bd != null)
-                            currentPawn.story.bodyType = bd;
-                    }
-                    else
-                    {
-                        BodyTypeDef bd = DefDatabase<BodyTypeDef>.GetNamed("Female", false);
-                        if (bd != null)
-                            currentPawn.story.bodyType = bd;
-                    }
-                }
-
-                if (currentPawn.ownership != null && currentPawn.ownership.OwnedBed != null)
-                {
-                    if(currentPawn.ownership.OwnedBed.ForPrisoners != currentPawn.IsPrisoner)
-                    {
-                        currentPawn.ownership.UnclaimBed();
-                    }
-                }
-                //Starting du délais de rusting
-                if (!dontRust)
-                {
-                    if (paintingRustGT == -2)
-                    {
-                        paintingRustGT = (Rand.Range(Settings.minDaysAndroidPaintingCanRust, Settings.maxDaysAndroidPaintingCanRust) * 60000);
-                    }
-
-                    if (paintingRustGT == -1 && paintingIsRusted && currentPawn.health != null)
-                    {
-                        Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
-                        if (he == null)
-                        {
-                            currentPawn.health.AddHediff(HediffDefOf.ATPP_Rusted);
-                        }
-                    }
-                }
-            }
-            else
-            {
-                if (currentPawn.health != null)
-                {
-                    paintingIsRusted = false;
-                    Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_Rusted);
-                    if (he != null)
-                        currentPawn.health.RemoveHediff(he);
-                }
-
-                Pawn cpawn = currentPawn;
-
-                //Si VX0 dans une session en cours alors on chope le pawn permuté controleur
-                if (surrogateController != null)
-                    cpawn = surrogateController;
-
-                //Reset du child et adulthood si VX0 organic
-                if (isSurrogate && isOrganic && cpawn.story != null && cpawn.story.adulthood != null)
-                {
-                    if (cpawn.story.childhood != null)
-                    {
-                        Backstory bs = null;
-
-                        BackstoryDatabase.TryGetWithIdentifier("MercenaryRecruit", out bs);
-                        if (bs != null)
-                            cpawn.story.childhood = bs;
-                    }
-
-                    cpawn.story.adulthood = null;
-                    //Reset incapable of
-                    Utils.ResetCachedIncapableOf(cpawn);
-                }
-
-            }
-
-            if (Utils.POWERPP_LOADED)
-            {
-                if (connectedLWPN == null)
-                    connectedLWPNActive = false;
-                else
-                {
-                    connectedLWPNCPT = Utils.getCachedCPT(connectedLWPN);
-                }
-            }
+            
         }
 
 
@@ -1531,8 +1494,8 @@ namespace MOARANDROIDS
 
         public void initAsSurrogate()
         {
-            if(currentPawn == null)
-                currentPawn = (Pawn)parent;
+            if (!init)
+                initComp();
 
             isSurrogate = true;
             addNoRemoteHostHediff();
@@ -1597,12 +1560,11 @@ namespace MOARANDROIDS
         public bool isSurrogate = false;
         public Pawn surrogateController;
 
+        public bool isAndroidOrAnimalTier = false;
         //Sert a identifier les surrogates biologiques
         public bool isOrganic = false;
         public bool isAndroidTIer = false;
         public bool isAndroidWithSkin = false;
-
-        public bool solarFlareEffectApplied = false;
 
         public bool showUploadProgress = false;
 

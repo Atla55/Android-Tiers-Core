@@ -138,11 +138,6 @@ namespace MOARANDROIDS
                     {
                         return false;
                     }
-                    //if(___pawn != null && hediff != null && hediff.def != null)
-                        //Log.Message("HEDIFFF "+___pawn.LabelCap+" ===> " + hediff.def.defName);
-                    //if (hediff == null)
-                        //Log.Message("WEIRD NULL Hediff !!");
-
 
                     if (___pawn.IsAndroidTier())
                     {
@@ -182,6 +177,13 @@ namespace MOARANDROIDS
 
                             GenSpawn.Spawn(hediff.def.spawnThingOnRemoved, pos1, map1, WipeMode.Vanish);
                             return false;
+                        }
+
+                        //We notify the hediff solarFlare that the host have a VXChip
+                        Hediff heSF = ___pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_SolarFlareAndroidImpact);
+                        if(heSF != null)
+                        {
+                            ((Hediff_SolarFlare)heSF).withVXChip = true;
                         }
 
                         Hediff he = ___pawn.HaveNotStackableVXChip();

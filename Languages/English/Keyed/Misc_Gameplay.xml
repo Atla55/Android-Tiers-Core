@@ -481,5 +481,5 @@
 	<ATPP_SettingsVX0KeepBodyBackstory>Keep puppet's backstory (VX0)</ATPP_SettingsVX0KeepBodyBackstory>
 	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Allow surrogate connection initialization penalty</ATPP_SettingsAllowSurrogateConnectionInitMalus>
 	<ATPP_SettingsAllowAndroidsToUseHospitalBeds>Allow androids to use hospital beds</ATPP_SettingsAllowAndroidsToUseHospitalBeds>
-	<ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>Chance percentage of other faction surrogate to have an RX chip ({0}%)</ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>
+	<ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>Percentage of chance of other factions surrogates to have an RX chip ({0}%)</ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>
 </LanguageData>

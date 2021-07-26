@@ -971,9 +971,6 @@ namespace MOARANDROIDS
                 checkVirusedThings();
                 checkSkyMindAutoReconnect();
 
-                //Check solarFlare dans les caravans
-                checkSolarFlarStuffInCaravans();
-
                 if (Utils.POWERPP_LOADED)
                     checkDisconnectedFromLWPNAndroid();
             }
@@ -1076,24 +1073,6 @@ namespace MOARANDROIDS
                     }
                 }
                 listerLWPNAndroid.Remove(key);
-            }
-        }
-
-        public void checkSolarFlarStuffInCaravans()
-        {
-            if (Find.WorldObjects == null)
-                return; 
-
-            foreach(var c in Find.WorldObjects.Caravans)
-            {
-                foreach(var p in c.pawns)
-                {
-                    CompAndroidState cas = Utils.getCachedCAS(p);
-                    if(cas != null)
-                    {
-                        cas.checkSolarFlareStuff();
-                    }
-                }
             }
         }
 

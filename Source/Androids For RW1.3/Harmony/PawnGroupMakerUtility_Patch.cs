@@ -20,11 +20,11 @@ namespace MOARANDROIDS
                 try
                 {
 
-                    Map playerMap = Utils.getRandomMapOfPlayer();
+                    bool solarFlare = Utils.isThereSolarFlare();
                     //If active solar flare then no surrogates are generated to prevent ridiculous spawn of dawned surrogates
                     if (!Settings.otherFactionsCanUseSurrogate
                         || (parms.faction != null && Utils.ExceptionBlacklistedFactionNoSurrogate.Contains(parms.faction.def.defName))
-                        || (playerMap != null && playerMap.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)) || (Settings.androidsAreRare && Rand.Chance(0.95f)))
+                        || solarFlare || (Settings.androidsAreRare && Rand.Chance(0.95f)))
                         return;
 
                     int nbHumanoids = 0;

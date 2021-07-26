@@ -121,7 +121,7 @@ namespace MOARANDROIDS
             bool canVirus, canVirusExplosive, canHack, canTempHack;
             canVirus = canVirusExplosive = canHack = canTempHack = false;
 
-            bool powered = !parent.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare) && !build.IsBrokenDown() && cpt.PowerOn;
+            bool powered = !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare) && !build.IsBrokenDown() && cpt.PowerOn;
             
             Texture2D tex;
 

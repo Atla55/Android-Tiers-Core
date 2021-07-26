@@ -207,6 +207,7 @@
     <Compile Include="Harmony\ThoughtWorker_AgeReversalDemanded_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_Precept_Patch.cs" />
     <Compile Include="Harmony\ToilEffects_Patch.cs" />
+    <Compile Include="Hediffs\Hediff_SolarFlare.cs" />
     <Compile Include="Hediffs\Hediff_LowNetworkSignal.cs" />
     <Compile Include="Hediffs\Hediff_AssistingMinds.cs" />
     <Compile Include="Need_Rest_Fake.cs" />
