@@ -52,7 +52,7 @@ namespace MOARANDROIDS
             foreach (var cp in bed.CurOccupants)
             {
                 //Il sagit d'un android 
-                if (cp != null && Utils.ExceptionAndroidList.Contains(cp.def.defName))
+                if (cp != null && cp.IsAndroidTier())
                 {
                     ret += Utils.getConsumedPowerByAndroid(cp.def.defName);
                 }

@@ -11,6 +11,8 @@ namespace MOARANDROIDS
 {
     internal class Need_Patch
     {
+        private static string energyTranslated;
+
         [HarmonyPatch(typeof(Need), "get_LabelCap")]
         public class get_LabelCap
         {
@@ -19,7 +21,10 @@ namespace MOARANDROIDS
             {
                 if (__instance.def.defName == "Food" && ___pawn.IsAndroidTier())
                 {
-                    __result = "ATPP_EnergyNeed".Translate();
+                    if(energyTranslated == null)
+                        energyTranslated = "ATPP_EnergyNeed".Translate();
+
+                    __result = energyTranslated;
                 }
             }
         }
@@ -30,27 +35,20 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ref string __result, Pawn ___pawn, Need __instance)
             {
-                try
+                if (__instance.def.defName == "Food" && ___pawn.IsAndroidTier())
                 {
-                    if (__instance.def.defName == "Food" && ___pawn.IsAndroidTier())
-                    {
-                        __result = string.Concat(new string[]
-                            {
-                                __instance.LabelCap,
-                                ": ",
-                                __instance.CurLevelPercentage.ToStringPercent(),
-                                " (",
-                                __instance.CurLevel.ToString("0.##"),
-                                " / ",
-                                __instance.MaxLevel.ToString("0.##"),
-                                ")\n",
-                                "ATPP_EnergyNeedDesc".Translate()
-                            });
-                    }
-                }
-                catch (Exception e)
-                {
-                    Log.Message("[ATPP] Need_Food.GetTipString(Error) : " + e.Message + " - " + e.StackTrace);
+                    __result = string.Concat(new string[]
+                        {
+                            __instance.LabelCap,
+                            ": ",
+                            __instance.CurLevelPercentage.ToStringPercent(),
+                            " (",
+                            __instance.CurLevel.ToString("0.##"),
+                            " / ",
+                            __instance.MaxLevel.ToString("0.##"),
+                            ")\n",
+                            "ATPP_EnergyNeedDesc".Translate()
+                        });
                 }
             }
         }

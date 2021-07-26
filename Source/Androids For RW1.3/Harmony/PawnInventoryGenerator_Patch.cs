@@ -21,7 +21,7 @@ namespace MOARANDROIDS
                 if (Utils.PawnInventoryGeneratorCanHackInvNutritionValue)
                 {
                     //restauration du coef de nutrition
-                    if (Utils.ExceptionAndroidList.Contains(p.def.defName) && p.def.defName != Utils.M7)
+                    if (p.IsAndroidTier() && p.def.defName != Utils.M7)
                     {
                         p.kindDef.invNutrition = Utils.PawnInventoryGeneratorLastInvNutritionValue;
                     }
@@ -38,7 +38,7 @@ namespace MOARANDROIDS
                 if (Utils.PawnInventoryGeneratorCanHackInvNutritionValue)
                 { 
                     //mise en place coef de nutrition fake
-                    if (Utils.ExceptionAndroidList.Contains(p.def.defName) && p.def.defName != Utils.M7)
+                    if (p.IsAndroidTier() && p.def.defName != Utils.M7)
                     {
                         Utils.PawnInventoryGeneratorLastInvNutritionValue = p.kindDef.invNutrition;
                         p.kindDef.invNutrition = 1.0f;

@@ -1789,7 +1789,7 @@ namespace MOARANDROIDS
 
         public Building getNearestReloadStation(Map map, Pawn android)
         {
-            if (listerReloadStation.ContainsKey(map) || listerReloadStation[map].Count() == 0)
+            if (listerReloadStation.TryGetValue(map, out var value) || value.Count == 0)
                 return null;
 
             float dist = 0;

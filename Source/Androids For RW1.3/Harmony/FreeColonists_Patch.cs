@@ -24,7 +24,7 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    if ((Utils.ExceptionAndroidList.Contains(ingester.def.defName)))
+                    if ((ingester.IsAndroidTier()))
                     {
                             if (Settings.androidNeedToEatMore)
                             __result *= 0.5f;

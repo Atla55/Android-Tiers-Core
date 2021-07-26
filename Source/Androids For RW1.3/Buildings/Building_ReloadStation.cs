@@ -34,7 +34,7 @@ namespace MOARANDROIDS
             {
                 return new FloatMenuOption("CannotUseNoPower".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
             }
-            if ( !Utils.ExceptionAndroidList.Contains(myPawn.def.defName))
+            if ( !myPawn.IsAndroidTier())
             {
                 return new FloatMenuOption("ATPP_CanOnlyBeUsedByAndroid".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
             }

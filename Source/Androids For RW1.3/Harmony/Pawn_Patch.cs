@@ -172,6 +172,9 @@ namespace MOARANDROIDS
         }
 
         
+        static private Pawn Pawn_GetGizmosPrevPawn;
+        static private CompSkyMind Pawn_GetGizmosPrevCSM;
+        static private bool Pawn_GetGizmosPrevIsPoweredAnimalAndroids;
 
         [HarmonyPatch(typeof(Pawn), "GetGizmos")]
         public class GetGizmos_Patch
@@ -179,64 +182,63 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn __instance, ref IEnumerable<Gizmo> __result)
             {
-                try
+                //Caching to increase performance on selected pawns
+                if(__instance != Pawn_GetGizmosPrevPawn)
                 {
-                    CompSkyMind csm = Utils.getCachedCSM(__instance);
+                    Pawn_GetGizmosPrevPawn = __instance;
+                    Pawn_GetGizmosPrevCSM = Utils.getCachedCSM(__instance);
+                    Pawn_GetGizmosPrevIsPoweredAnimalAndroids = __instance.IsPoweredAnimalAndroids();
+                }
 
-                    //Si prisonnier et possede une VX2 on va obtenir les GIZMOS associés OU virusé
-                    if ((__instance.IsPrisoner || __instance.IsSlave) || (csm != null && csm.Hacked == 1))
+                //Si prisonnier et possede une VX2 on va obtenir les GIZMOS associés OU virusé
+                if ((__instance.IsPrisoner || __instance.IsSlave) || (Pawn_GetGizmosPrevCSM != null && Pawn_GetGizmosPrevCSM.Hacked == 1))
+                {
+                    IEnumerable<Gizmo> tmp;
+                    //Si posseseur d'une VX2
+
+                    if (__instance.VXChipPresent())
                     {
-                        IEnumerable<Gizmo> tmp;
-                        //Si posseseur d'une VX2
-
-                        if (__instance.VXChipPresent())
+                        CompSurrogateOwner cso = Utils.getCachedCSO(__instance);
+                        if (cso != null)
                         {
-                            CompSurrogateOwner cso = Utils.getCachedCSO(__instance);
-                            if (cso != null)
-                            {
-                                tmp = cso.CompGetGizmosExtra();
-                                if (tmp != null)
-                                    __result = __result.Concat(tmp);
-                            }
-                        }
-
-                        //Si android prisonier ou virusé
-                        if (__instance.IsAndroidTier())
-                        {
-                            CompAndroidState cas = Utils.getCachedCAS(__instance);
-
-                            if (cas != null)
-                            {
-                                tmp = cas.CompGetGizmosExtra();
-                                if (tmp != null)
-                                    __result = __result.Concat(tmp);
-                            }
-                        }
-
-                        if (csm != null && csm.Hacked == -1)
-                        {
-                            tmp = csm.CompGetGizmosExtra();
+                            tmp = cso.CompGetGizmosExtra();
                             if (tmp != null)
                                 __result = __result.Concat(tmp);
                         }
                     }
 
-                    //Si animal posséder par player
-                    if (__instance.IsPoweredAnimalAndroids())
+                    //Si android prisonier ou virusé
+                    if (__instance.IsAndroidTier())
                     {
-                        CompAndroidState cas = null;
-                        cas = Utils.getCachedCAS(__instance);
+                        CompAndroidState cas = Utils.getCachedCAS(__instance);
+
                         if (cas != null)
                         {
-                            IEnumerable<Gizmo> tmp = cas.CompGetGizmosExtra();
+                            tmp = cas.CompGetGizmosExtra();
                             if (tmp != null)
                                 __result = __result.Concat(tmp);
                         }
                     }
+
+                    if (Pawn_GetGizmosPrevCSM != null && Pawn_GetGizmosPrevCSM.Hacked == -1)
+                    {
+                        tmp = Pawn_GetGizmosPrevCSM.CompGetGizmosExtra();
+                        if (tmp != null)
+                            __result = __result.Concat(tmp);
+                    }
                 }
-                catch(Exception e)
+
+                //Si animal posséder par player
+                if (Pawn_GetGizmosPrevIsPoweredAnimalAndroids)
                 {
-                    Log.Message("[ATPP] Pawn.GetGizmos " + e.Message + " " + e.StackTrace);
+                    CompAndroidState cas = null;
+                    cas = Utils.getCachedCAS(__instance);
+                    if (cas != null)
+                    {
+                        IEnumerable<Gizmo> tmp = cas.CompGetGizmosExtra();
+                        if (tmp != null)
+                            __result = __result.Concat(tmp);
+                    }
                 }
             }
         }

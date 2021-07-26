@@ -22,7 +22,7 @@ namespace MOARANDROIDS
                 if (___parent is Pawn)
                 {
                     Pawn pawn = (Pawn)___parent;
-                    if ( Utils.ExceptionAndroidWithoutSkinList.Contains(pawn.def.defName) || Utils.ExceptionAndroidAnimals.Contains(pawn.def.defName))
+                    if ( Utils.ExceptionAndroidWithoutSkinList.Contains(pawn.def.defName) || pawn.IsCyberAnimal())
                     {
                         __result = true;
                     }

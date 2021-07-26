@@ -18,7 +18,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn p, Pawn otherPawn, ref ThoughtState __result)
             {
-                if (Utils.ExceptionAndroidListBasic.Contains(p.def.defName) || p.IsSurrogateAndroid(false, true))
+                if (p.IsBasicAndroidTier() || p.IsSurrogateAndroid(false, true))
                 {
                     __result = ThoughtState.Inactive;
                 }

@@ -61,7 +61,7 @@ namespace MOARANDROIDS
                     if (Settings.androidsCanUseOrganicMedicine)
                         return;
 
-                    bool patientIsAndroid = Utils.ExceptionAndroidList.Contains(patient.def.defName) || patient.IsCyberAnimal();
+                    bool patientIsAndroid = patient.IsAndroidTier() || patient.IsCyberAnimal();
 
                     if (patient.playerSettings == null || patient.playerSettings.medCare <= MedicalCareCategory.NoMeds)
                     {

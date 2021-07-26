@@ -78,6 +78,14 @@ namespace MOARANDROIDS
             }
         }
 
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+
+            currentPawn = (Pawn)parent;
+            currentCAS = Utils.getCachedCAS(currentPawn);
+        }
+
         public override void CompTick()
         {
             base.CompTick();
@@ -89,16 +97,14 @@ namespace MOARANDROIDS
 
             if(GT % 600 == 0)
             {
-                Pawn cpawn = (Pawn)parent;
-                if (cpawn.IsKidnapped())
+                if (currentPawn.IsKidnapped())
                 {
-                    Utils.GCATPP.disconnectUser(cpawn);
+                    Utils.GCATPP.disconnectUser(currentPawn);
                 }
             }
 
             if (GT % 180 == 0 && ( permuteEndingGT != -1 || duplicateEndingGT != -1 || uploadToSkyCloudEndingGT != -1 || migrationEndingGT != -1 || mindAbsorptionEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || (controlMode && SX != null)))
             {
-                Pawn cpawn = (Pawn)parent;
                 checkInterruptedUpload();
 
                 //Atteinte d'un chargement de permutation de conscience
@@ -111,11 +117,11 @@ namespace MOARANDROIDS
                     CompSurrogateOwner cso = Utils.getCachedCSO(permuteRecipient);
                     cso.permuteEndingGT = -1;
 
-                    Utils.removeUploadHediff(cpawn, permuteRecipient);
+                    Utils.removeUploadHediff(currentPawn, permuteRecipient);
 
-                    Find.LetterStack.ReceiveLetter("ATPP_LetterPermuteOK".Translate(), "ATPP_LetterPermuteOKDesc".Translate(cpawn.LabelShortCap, permuteRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
+                    Find.LetterStack.ReceiveLetter("ATPP_LetterPermuteOK".Translate(), "ATPP_LetterPermuteOKDesc".Translate(currentPawn.LabelShortCap, permuteRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
                     //On realise effectivement la permutation
-                    Utils.PermutePawn(cpawn, permuteRecipient);
+                    Utils.PermutePawn(currentPawn, permuteRecipient);
 
                     //Clear du status de blank andorid si destinataire blank android
                     Utils.clearBlankAndroid(permuteRecipient);
@@ -127,13 +133,13 @@ namespace MOARANDROIDS
                         Utils.removeSimpleMindedTrait(permuteRecipient);
 
                     //Si source T1 rajout simpleMinded
-                    if (cpawn.def.defName == Utils.T1)
-                        Utils.addSimpleMindedTraitForT1(cpawn);
+                    if (currentPawn.def.defName == Utils.T1)
+                        Utils.addSimpleMindedTraitForT1(currentPawn);
                     else
-                        Utils.removeSimpleMindedTrait(cpawn);
+                        Utils.removeSimpleMindedTrait(currentPawn);
 
-                    if(cpawn.IsPrisoner || permuteRecipient.IsPrisoner)
-                        dealWithPrisonerRecipientPermute(cpawn, permuteRecipient);
+                    if(currentPawn.IsPrisoner || permuteRecipient.IsPrisoner)
+                        dealWithPrisonerRecipientPermute(currentPawn, permuteRecipient);
 
                     resetUploadStuff();
                 }
@@ -148,11 +154,11 @@ namespace MOARANDROIDS
                     duplicateEndingGT = -1;
                     Utils.getCachedCSO(duplicateRecipient).duplicateEndingGT = -1;
 
-                    Utils.removeUploadHediff(cpawn, duplicateRecipient);
+                    Utils.removeUploadHediff(currentPawn, duplicateRecipient);
 
-                    Find.LetterStack.ReceiveLetter("ATPP_LetterDuplicateOK".Translate(), "ATPP_LetterDuplicateOKDesc".Translate(cpawn.LabelShortCap, duplicateRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
+                    Find.LetterStack.ReceiveLetter("ATPP_LetterDuplicateOK".Translate(), "ATPP_LetterDuplicateOKDesc".Translate(currentPawn.LabelShortCap, duplicateRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
                     //On realise effectivement la permutation
-                    Utils.Duplicate(cpawn, duplicateRecipient);
+                    Utils.Duplicate(currentPawn, duplicateRecipient);
 
                     //Clear du status de blank andorid si destinataire blank android
                     Utils.clearBlankAndroid(duplicateRecipient);
@@ -164,7 +170,7 @@ namespace MOARANDROIDS
                         Utils.removeSimpleMindedTrait(duplicateRecipient);
 
                     
-                    dealWithPrisonerRecipient(cpawn, duplicateRecipient);
+                    dealWithPrisonerRecipient(currentPawn, duplicateRecipient);
                     
 
                     resetUploadStuff();
@@ -178,29 +184,29 @@ namespace MOARANDROIDS
                     if (uploadToSkyCloudEndingGT == -1)
                         return;
                     uploadToSkyCloudEndingGT = -1;
-                    Utils.removeUploadHediff(cpawn, null);
+                    Utils.removeUploadHediff(currentPawn, null);
 
                     CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudRecipient);
 
-                    Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudUploadOK".Translate(), "ATPP_LetterSkyCloudUploadOKDesc".Translate(cpawn.LabelShortCap, csc.getName()), LetterDefOf.PositiveEvent, parent);
+                    Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudUploadOK".Translate(), "ATPP_LetterSkyCloudUploadOKDesc".Translate(currentPawn.LabelShortCap, csc.getName()), LetterDefOf.PositiveEvent, parent);
                     //On realise effectivement l'upload vers le Core
 
                     //Stockage pawn actuel
-                    csc.storedMinds.Add(cpawn);
-                    Current.Game.tickManager.DeRegisterAllTickabilityFor(cpawn);
+                    csc.storedMinds.Add(currentPawn);
+                    Current.Game.tickManager.DeRegisterAllTickabilityFor(currentPawn);
 
                     //Suppression traits blacklistés pour les esprits
-                    Utils.removeMindBlacklistedTrait(cpawn);
+                    Utils.removeMindBlacklistedTrait(currentPawn);
 
                     //Si corp d'origine été un T1 alors on supprime le simpleminded le cas echeant
-                    Utils.removeSimpleMindedTrait(cpawn);
+                    Utils.removeSimpleMindedTrait(currentPawn);
 
                     //Copie du corps du pawn et placement sur la carte
                     bool killMode = false;
                     if (Settings.skyCloudUploadModeForSourceMind == 2)
                         killMode = true;
 
-                    Pawn corpse = Utils.spawnCorpseCopy(cpawn,killMode);
+                    Pawn corpse = Utils.spawnCorpseCopy(currentPawn, killMode);
 
                     //Reconfiguration en mode VX0 auto
                     if(Settings.skyCloudUploadModeForSourceMind == 1)
@@ -223,10 +229,10 @@ namespace MOARANDROIDS
 
 
                     //Deconnection de skymind le cas echeant
-                    Utils.GCATPP.disconnectUser(cpawn);
+                    Utils.GCATPP.disconnectUser(currentPawn);
 
                     //Despawn du pawn numérisé
-                    cpawn.DeSpawn();
+                    currentPawn.DeSpawn();
 
                     skyCloudHost = skyCloudRecipient;
 
@@ -245,7 +251,7 @@ namespace MOARANDROIDS
                     if (downloadFromSkyCloudEndingGT == -1)
                         return;
                     downloadFromSkyCloudEndingGT = -1;
-                    Utils.removeUploadHediff(cpawn, null);
+                    Utils.removeUploadHediff(currentPawn, null);
 
                     CompSurrogateOwner cso = Utils.getCachedCSO(skyCloudDownloadRecipient);
                     if (cso.skyCloudHost == null)
@@ -257,10 +263,10 @@ namespace MOARANDROIDS
                     csc.setMindInReplicationModeOff(skyCloudDownloadRecipient);
 
 
-                    Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudDownloadOK".Translate(), "ATPP_LetterSkyCloudDownloadOKDesc".Translate(skyCloudDownloadRecipient.LabelShortCap, cpawn.LabelShortCap), LetterDefOf.PositiveEvent, parent);
+                    Find.LetterStack.ReceiveLetter("ATPP_LetterSkyCloudDownloadOK".Translate(), "ATPP_LetterSkyCloudDownloadOKDesc".Translate(skyCloudDownloadRecipient.LabelShortCap, currentPawn.LabelShortCap), LetterDefOf.PositiveEvent, parent);
                     //On realise effectivement le download du core vers le cerveau
                     //Permutation
-                    Utils.PermutePawn(skyCloudDownloadRecipient, cpawn);
+                    Utils.PermutePawn(skyCloudDownloadRecipient, currentPawn);
 
                     //Report du blankAndroid pour le flagger dans la routine de kill
                     CompAndroidState cas = Utils.getCachedCAS(skyCloudDownloadRecipient);
@@ -268,10 +274,10 @@ namespace MOARANDROIDS
                         cas.isBlankAndroid = true;
 
                     //Clear du status de blank andorid si destinataire blank android
-                    Utils.clearBlankAndroid(cpawn);
+                    Utils.clearBlankAndroid(currentPawn);
 
                     //Si cpawn un T1 on lui ajoute le trait SimpleMinded
-                    Utils.addSimpleMindedTraitForT1(cpawn);
+                    Utils.addSimpleMindedTraitForT1(currentPawn);
 
                     
 
@@ -279,7 +285,7 @@ namespace MOARANDROIDS
                     csc.RemoveMind(skyCloudDownloadRecipient);
 
                     //Annulation status de prisonnier de l'esprit downloader
-                    dealWithPrisonerRecipientPermute(cpawn, skyCloudDownloadRecipient);
+                    dealWithPrisonerRecipientPermute(currentPawn, skyCloudDownloadRecipient);
 
                     Utils.playVocal("soundDefSkyCloudMindUploadCompleted");
 
@@ -294,21 +300,21 @@ namespace MOARANDROIDS
                     //Calcul moyenne point de skill du prisonnier
                     int sum = 0;
                     int average = 0;
-                    foreach (var sr in cpawn.skills.skills)
+                    foreach (var sr in currentPawn.skills.skills)
                     {
                         sum += sr.levelInt;
                     }
-                    average = (int)((float)sum / (float)cpawn.skills.skills.Count());
+                    average = (int)((float)sum / (float)currentPawn.skills.skills.Count());
 
                     int nbp = (int)((float)((float)average / (float)20) * Rand.Range(1000, 5000));
 
                     Utils.GCATPP.incSkillPoints(nbp);
 
-                    Find.LetterStack.ReceiveLetter("ATPP_MindAbsorptionDone".Translate(), "ATPP_MindAbsorptionDoneDesc".Translate(cpawn.LabelShortCap, nbp), LetterDefOf.PositiveEvent, cpawn);
+                    Find.LetterStack.ReceiveLetter("ATPP_MindAbsorptionDone".Translate(), "ATPP_MindAbsorptionDoneDesc".Translate(currentPawn.LabelShortCap, nbp), LetterDefOf.PositiveEvent, currentPawn);
 
                     resetUploadStuff();
 
-                    cpawn.Kill(null, null);
+                    currentPawn.Kill(null, null);
                 }
             }
         }
@@ -643,13 +649,11 @@ namespace MOARANDROIDS
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            Pawn pawn = (Pawn)parent;
-            bool isPrisonner = pawn.IsPrisoner;
-            CompAndroidState cas = Utils.getCachedCAS(pawn);
-            bool isBlankAndroid = (cas != null && cas.isBlankAndroid);
+            bool isPrisonner = currentPawn.IsPrisoner;
+            bool isBlankAndroid = (currentCAS != null && currentCAS.isBlankAndroid);
 
             //Si pas prisonier ET pas un surrogate non controlé && affecté au crafting
-            if (!isPrisonner && !(cas != null && cas.isSurrogate && cas.surrogateController == null) && pawn.workSettings != null && pawn.workSettings.WorkIsActive(Utils.WorkTypeDefSmithing) && Settings.androidsCanOnlyBeHealedByCrafter)
+            if (!isPrisonner && !(currentCAS != null && currentCAS.isSurrogate && currentCAS.surrogateController == null) && currentPawn.workSettings != null && currentPawn.workSettings.WorkIsActive(Utils.WorkTypeDefSmithing) && Settings.androidsCanOnlyBeHealedByCrafter)
             {
                 yield return new Command_Toggle
                 {
@@ -665,11 +669,11 @@ namespace MOARANDROIDS
             }
 
             //Possibilitée réservé uniquement aux pucés ET connectés aux SkyMind
-            if (!pawn.VXChipPresent())
+            if (!currentPawn.VXChipPresent())
                 yield break;
 
             //Les clones ne peuvent pas etre clone owner
-            if (cas != null && cas.isSurrogate)
+            if (currentCAS != null && currentCAS.isSurrogate)
                 yield break;
 
             if (!isPrisonner && !isBlankAndroid)
@@ -687,7 +691,7 @@ namespace MOARANDROIDS
                 };
             }
 
-            if (!Utils.GCATPP.isConnectedToSkyMind(pawn))
+            if (!Utils.GCATPP.isConnectedToSkyMind(currentPawn))
                 yield break;
 
 
@@ -718,7 +722,7 @@ namespace MOARANDROIDS
                                 mindAbsorptionStartGT = Find.TickManager.TicksGame;
                                 mindAbsorptionEndingGT = mindAbsorptionStartGT + 5000;
 
-                                Messages.Message("ATPP_MindAbsorptionStarted".Translate(pawn.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
+                                Messages.Message("ATPP_MindAbsorptionStarted".Translate(currentPawn.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
 
                             }, false));
                         }
@@ -729,7 +733,7 @@ namespace MOARANDROIDS
             //Si en mode controle alors on affiche le selecteur de SX
             if (controlMode && !isPrisonner)
             {
-                if ( (SX == null && availableSX.Count == 0) || (pawn.VX3ChipPresent() && availableSX.Count < Settings.VX3MaxSurrogateControllableAtOnce) )
+                if ( (SX == null && availableSX.Count == 0) || (currentPawn.VX3ChipPresent() && availableSX.Count < Settings.VX3MaxSurrogateControllableAtOnce) )
                 {
                     yield return new Command_Action
                     {
@@ -814,7 +818,7 @@ namespace MOARANDROIDS
             }
 
             //FOnctionnalitées réservées uniquement aux VX2
-            if (!pawn.VX2ChipPresent() && !pawn.VX3ChipPresent())
+            if (!currentPawn.VX2ChipPresent() && !currentPawn.VX3ChipPresent())
                 yield break;
 
             Texture2D selTex = Tex.Permute;
@@ -1773,6 +1777,8 @@ namespace MOARANDROIDS
             mindAbsorptionStartGT = -1;
         }
 
+        private Pawn currentPawn;
+        private CompAndroidState currentCAS;
         //Indique si le colon est en mode controle de clone
         public bool controlMode = false;
         //Désigne le SX visé

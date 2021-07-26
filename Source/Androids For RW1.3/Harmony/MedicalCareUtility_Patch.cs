@@ -58,7 +58,7 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    if (Utils.ExceptionAndroidList.Contains(pawn.def.defName) || pawn.IsCyberAnimal())
+                    if (pawn.IsAndroidTier() || pawn.IsCyberAnimal())
                     {
                         Func<Pawn, MedicalCareCategory> getPayload = new Func<Pawn, MedicalCareCategory>(MedicalCareSelectButton_GetMedicalCare);
                         Func<Pawn, IEnumerable<Widgets.DropdownMenuElement<MedicalCareCategory>>> menuGenerator = new Func<Pawn, IEnumerable<Widgets.DropdownMenuElement<MedicalCareCategory>>>(MedicalCareSelectButton_GenerateMenu);

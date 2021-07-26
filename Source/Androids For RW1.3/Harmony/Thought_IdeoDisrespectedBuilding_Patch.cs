@@ -18,7 +18,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn ___pawn, ref ThoughtState __result)
             {
-                if ((Utils.ExceptionAndroidListBasic.Contains(___pawn.def.defName) || (___pawn.story != null && ___pawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid))))
+                if (___pawn.IsBasicAndroidTier() || (___pawn.story != null && ___pawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)))
                 {
                     __result = ThoughtState.Inactive;
                 }

@@ -52,7 +52,7 @@ namespace MOARANDROIDS
             public static void Listener(Corpse __instance, ref Thought_Memory __result)
             {
                 if (__instance.InnerPawn.RaceProps.Humanlike
-                    && Utils.ExceptionAndroidList.Contains(__instance.InnerPawn.def.defName))
+                    && __instance.InnerPawn.IsAndroidTier())
                 {
                     __result = null;
                 }
@@ -69,8 +69,8 @@ namespace MOARANDROIDS
             public static void Listener(Corpse __instance, ref bool __result)
             {
                 if ((__instance.InnerPawn.RaceProps.Humanlike
-                    && Utils.ExceptionAndroidList.Contains(__instance.InnerPawn.def.defName))
-                    || Utils.ExceptionAndroidAnimals.Contains(__instance.InnerPawn.def.defName))
+                    && __instance.InnerPawn.IsAndroidTier())
+                    || __instance.InnerPawn.IsCyberAnimal())
                 {
                         __result = false;
                 }

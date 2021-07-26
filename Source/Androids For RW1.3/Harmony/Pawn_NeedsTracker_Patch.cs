@@ -18,15 +18,15 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    bool isAndroid = Utils.ExceptionAndroidList.Contains(___pawn.def.defName);
+                    bool isAndroid = ___pawn.IsAndroidTier();
 
                     //SI pas un androide on jerte
                     if (!isAndroid)
                         return;
 
-                    bool advancedAndroids = Utils.ExceptionAndroidListAdvanced.Contains(___pawn.def.defName);
+                    bool advancedAndroids = ___pawn.IsAdvancedAndroidTier();
 
-                    if ((Utils.ExceptionAndroidListBasic.Contains(___pawn.def.defName)
+                    if ((___pawn.IsBasicAndroidTier()
                         && (nd.defName == "Outdoors" ))
                         || (___pawn.def.defName == "Android1Tier" && nd.defName == "Beauty")
                         || (isAndroid && (nd.defName == "Hygiene" || nd.defName == "Bladder" || nd.defName ==  "DBHThirst"))

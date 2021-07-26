@@ -1159,6 +1159,16 @@ namespace MOARANDROIDS
             return Utils.ExceptionAndroidListBasic.Contains(pawn.def.defName);
         }
 
+        public static bool IsAdvancedAndroidTier(this Pawn pawn)
+        {
+            return Utils.ExceptionAndroidListAdvanced.Contains(pawn.def.defName);
+        }
+
+        public static bool IsAndroidCanReloadWithPower(this Pawn pawn)
+        {
+            return Utils.ExceptionAndroidCanReloadWithPowerList.Contains(pawn.def.defName);
+        }
+
         public static bool IsPoweredAnimalAndroids(this Pawn pawn)
         {
             return Utils.ExceptionAndroidAnimalPowered.Contains(pawn.def.defName);

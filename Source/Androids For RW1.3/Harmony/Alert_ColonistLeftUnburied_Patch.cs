@@ -20,7 +20,7 @@ namespace MOARANDROIDS
             public static void Listener(Corpse corpse, ref bool __result)
             {
                 Pawn p = corpse.InnerPawn;
-                if (p != null && (Utils.ExceptionAndroidListBasic.Contains(p.def.defName)) || Utils.pawnCurrentlyControlRemoteSurrogate(p) || (p.story != null && p.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)))
+                if (p != null && p.IsBasicAndroidTier() || Utils.pawnCurrentlyControlRemoteSurrogate(p) || (p.story != null && p.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)))
                     __result = false;
  
             }

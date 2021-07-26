@@ -41,7 +41,7 @@ namespace MOARANDROIDS
 
         public override bool CanBeUsedBy(Pawn p, out string failReason)
         {
-            if ( !Utils.ExceptionAndroidList.Contains(p.def.defName))
+            if ( !p.IsAndroidTier())
             {
                 failReason = "ATPP_CanOnlyBeUsedByAndroid".Translate();
                 return false;

@@ -66,11 +66,11 @@ namespace MOARANDROIDS
         private static bool shouldSkipCurrentMemory(ThoughtDef memDef, MemoryThoughtHandler __instance)
         {
             CompAndroidState cas = Utils.getCachedCAS(__instance.pawn);
-                return  ( Utils.ExceptionAndroidList.Contains(__instance.pawn.def.defName) && Utils.IgnoredThoughtsByAllAndroids.Contains(memDef.defName))
+                return  ( __instance.pawn.IsAndroidTier() && Utils.IgnoredThoughtsByAllAndroids.Contains(memDef.defName))
                         || Utils.lastButcheredPawnIsAndroid
                         || (cas != null && cas.isSurrogate && cas.surrogateController == null)
                         || Utils.pawnCurrentlyControlRemoteSurrogate(__instance.pawn)
-                        || ( (Utils.ExceptionAndroidListBasic.Contains(__instance.pawn.def.defName) || __instance.pawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)) && Utils.IgnoredThoughtsByBasicAndroids.Contains(memDef.defName));
+                        || ( (__instance.pawn.IsBasicAndroidTier() || __instance.pawn.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)) && Utils.IgnoredThoughtsByBasicAndroids.Contains(memDef.defName));
         }
     }
 }

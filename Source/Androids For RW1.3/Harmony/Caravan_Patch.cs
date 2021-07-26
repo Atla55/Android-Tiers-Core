@@ -22,7 +22,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ref bool __result, ref Caravan __instance)
             {
-                if( !__instance.pawns.InnerListForReading.Any(p => !(Utils.ExceptionAndroidList.Contains(p.def.defName) || Utils.ExceptionAndroidAnimals.Contains(p.def.defName))))
+                if( !__instance.pawns.InnerListForReading.Any(p => !(p.IsAndroidTier() ||p.IsCyberAnimal())))
                 {
                     __result = false;
                 }

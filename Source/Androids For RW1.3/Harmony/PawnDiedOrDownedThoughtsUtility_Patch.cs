@@ -21,7 +21,7 @@ namespace MOARANDROIDS
             public static bool Listener(ref Pawn victim)
             {
                 //Si android avec peu de logique alors tous le monde se fout de sa mort OU si Surrogate
-                if (Utils.ExceptionAndroidListBasic.Contains(victim.def.defName) || victim.IsSurrogateAndroid() || victim.IsBlankAndroid())
+                if (victim.IsBasicAndroidTier() || victim.IsSurrogateAndroid() || victim.IsBlankAndroid())
                     return false;
                 else
                     return true;

@@ -36,7 +36,7 @@ namespace MOARANDROIDS
                 if (def == TaleDefOf.KilledColonist)
                 {
                     CompAndroidState cas = Utils.getCachedCAS(p2);
-                    if ((p2 != null && (Utils.ExceptionAndroidListBasic.Contains(p2.def.defName) || (cas != null && cas.isSurrogate))))
+                    if ((p2 != null && (p2.IsBasicAndroidTier() || (cas != null && cas.isSurrogate))))
                         return false;
                 }
                 //Si androide butcherisé
@@ -48,7 +48,7 @@ namespace MOARANDROIDS
                 //SI viande humaine mangée par androide
                 else if (def == TaleDefOf.AteRawHumanlikeMeat)
                 {
-                    if (p1 != null && Utils.ExceptionAndroidList.Contains(p1.def.defName))
+                    if (p1 != null && p1.IsAndroidTier())
                         return false;
                 }
 

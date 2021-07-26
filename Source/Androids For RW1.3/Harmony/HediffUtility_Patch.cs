@@ -21,7 +21,7 @@ namespace MOARANDROIDS
                 CompSurrogateOwner cso = Utils.getCachedCSO(hs.pawn);
                 //Si transhumaniste et a un corp d'androide on simule +10 addedParts
                 if (hs.pawn.story != null && hs.pawn.story.traits.HasTrait(TraitDefOf.Transhumanist)
-                    && ((Utils.ExceptionAndroidList.Contains(hs.pawn.def.defName)) || (cso != null && cso.skyCloudHost != null)))
+                    && ((hs.pawn.IsAndroidTier()) || (cso != null && cso.skyCloudHost != null)))
                 {
                     __result += 20;
                 }

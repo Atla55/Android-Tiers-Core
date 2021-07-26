@@ -28,7 +28,7 @@ namespace MOARANDROIDS
 
                 foreach(var el in __result)
                 {
-                    if (Utils.ExceptionAndroidAnimals.Contains(el.def.defName))
+                    if (el.IsCyberAnimal())
                         ret.Add(el);
                 }
 
