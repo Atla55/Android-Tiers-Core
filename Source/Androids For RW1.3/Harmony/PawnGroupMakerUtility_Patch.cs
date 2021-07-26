@@ -199,7 +199,17 @@ namespace MOARANDROIDS
                             CompAndroidState cas = Utils.getCachedCAS(surrogate);
                             if (cas != null)
                             {
+                                cas.initAsSurrogate();
                                 cas.externalController = tmpListElem;
+
+                                //Add RX chip ?
+                                if (Rand.Chance(Settings.percentageOfOtherFactionSurrogateHavingAnRXChip))
+                                {
+                                    BodyPartRecord brain = surrogate.health.hediffSet.GetBrain();
+                                    if (surrogate.health != null && brain != null && surrogate.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffRXChip) == null)
+                                        surrogate.health.AddHediff(HediffDefOf.ATPP_HediffRXChip, brain);
+                                }
+
                                 CompSurrogateOwner cso = Utils.getCachedCSO(tmpListElem);
                                 if (cso != null)
                                 {

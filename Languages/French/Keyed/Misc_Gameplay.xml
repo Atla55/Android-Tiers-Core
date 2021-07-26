@@ -478,4 +478,5 @@
 	<ATPP_SettingsVX0KeepBodyBackstory>Garder la backstory des substituts (VX0)</ATPP_SettingsVX0KeepBodyBackstory>
 	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Autoriser le malus d'initialisation de la connexion aux substituts</ATPP_SettingsAllowSurrogateConnectionInitMalus>
 	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Autoriser les androides à utiliser des lits d'hôpitaux</ATPP_SettingsAllowSurrogateConnectionInitMalus>
+	<ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>Pourcentage de chance des androides de substitution des autres factions d'avoir une puce RX ({0}%)</ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>
 </LanguageData>

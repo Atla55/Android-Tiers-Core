@@ -9,6 +9,7 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static float percentageOfOtherFactionSurrogateHavingAnRXChip = 0.35f;
         public static bool allowAndroidToUseHospitalBed = true;
         public static bool allowSurrogateConnectionInitMalus = true;
         public static bool keepPuppetBackstory = false;
@@ -232,8 +233,11 @@ namespace MOARANDROIDS
             {
                 list.Label("ATPP_SettingsMaxAndroidByPortableLWPN".Translate(maxAndroidByPortableLWPN));
                 maxAndroidByPortableLWPN = (int)list.Slider(maxAndroidByPortableLWPN, 1, 100);
+
             }
 
+            list.Label("ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip".Translate((int)(percentageOfOtherFactionSurrogateHavingAnRXChip * 100)));
+            percentageOfOtherFactionSurrogateHavingAnRXChip = list.Slider(percentageOfOtherFactionSurrogateHavingAnRXChip, 0.0f, 1.0f);
 
             list.CheckboxLabeled("ATPP_SettingsAllowAutoRepaint".Translate(), ref allowAutoRepaint);
 
@@ -995,6 +999,7 @@ namespace MOARANDROIDS
             Scribe_Values.Look<bool>(ref keepPuppetBackstory, "keepPuppetBackstory", false);
             Scribe_Values.Look<bool>(ref allowSurrogateConnectionInitMalus, "allowSurrogateConnectionInitMalus", true);
             Scribe_Values.Look<bool>(ref allowAndroidToUseHospitalBed, "allowAndroidToUseHospitalBed", true);
+            Scribe_Values.Look<float>(ref percentageOfOtherFactionSurrogateHavingAnRXChip, "percentageOfOtherFactionSurrogateHavingAnRXChip", 0.35f);
             
 
         }

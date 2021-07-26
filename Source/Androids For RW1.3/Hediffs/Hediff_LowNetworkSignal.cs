@@ -48,8 +48,20 @@ namespace MOARANDROIDS
 
                     if (cas != null)
                     {
-                        if (cas.isSurrogate && cas.surrogateController != null && !Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map))
-                            lastCurrentlyLowNetworkSignal = 1;
+                        if (cas.isSurrogate && cas.surrogateController != null)
+                        {
+                            //Other factions surrogate always have the lowSkymind network debuff (except if generated with a RX chip)
+                            if(pawn.Faction != Faction.OfPlayer)
+                            {
+                                lastCurrentlyLowNetworkSignal = 1;
+                            }
+                            else{
+                                if (!Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map))
+                                    lastCurrentlyLowNetworkSignal = 1;
+                                else
+                                    lastCurrentlyLowNetworkSignal = 0;
+                            }
+                        }
                         else
                             lastCurrentlyLowNetworkSignal = 0;
                     }
