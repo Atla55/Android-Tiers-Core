@@ -21,25 +21,37 @@ namespace MOARANDROIDS
         }
 
     }
-    [HarmonyPatch(typeof(SickPawnVisitUtility), "CanVisit")]
+
+    /*[HarmonyPatch(typeof(SickPawnVisitUtility), "CanVisit")]
     static class Harmony_FindRandomSickPawn
     {
+        private static Need_Rest dummyNeed = new Need_Rest(null);
+        private static bool removeDummyNeed = false;
+
         [HarmonyPrefix]
         static bool Prefix(Pawn pawn, Pawn sick, JoyCategory maxPatientJoy, ref bool __result)
         {
             if (sick.needs.rest != null)
             {
+                removeDummyNeed = false;
                 return true;
             }
 
-            __result = sick.IsColonist && !sick.Dead && pawn != sick && sick.InBed()
-            && sick.Awake() && !sick.IsForbidden(pawn) && sick.needs.joy != null
-            && sick.needs.joy.CurCategory <= maxPatientJoy
-            && InteractionUtility.CanReceiveInteraction(sick) && !sick.needs.food.Starving
-            && pawn.CanReserveAndReach(sick, PathEndMode.InteractionCell, Danger.None, 1, -1, null, false);
-            return false;
+            sick.needs.rest = dummyNeed;
+            removeDummyNeed = true;
+            return true;
         }
-    }
+
+        [HarmonyPostfix]
+        static void Postfix(Pawn pawn, Pawn sick, JoyCategory maxPatientJoy, ref bool __result)
+        {
+            if (removeDummyNeed)
+            {
+                sick.needs.rest = null;
+                removeDummyNeed = false;
+            }
+        }
+    }*/
 
     /*[HarmonyPatch(typeof(RimWorld.HealthCardUtility))]
     [HarmonyPatch("DrawOverviewTab")]

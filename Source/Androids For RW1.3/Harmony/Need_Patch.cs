@@ -11,7 +11,11 @@ namespace MOARANDROIDS
 {
     internal class Need_Patch
     {
-        private static string energyTranslated;
+        private static string energyTranslated = "ATPP_EnergyNeed".Translate();
+
+
+        private static Pawn get_LabelCapPrevPawn;
+        private static bool get_LabelCapPrevIsAndroidTier;
 
         [HarmonyPatch(typeof(Need), "get_LabelCap")]
         public class get_LabelCap
@@ -19,15 +23,24 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener( ref string __result, Pawn ___pawn, Need __instance)
             {
-                if (__instance.def.defName == "Food" && ___pawn.IsAndroidTier())
+                if (__instance.def.defName == "Food")
                 {
-                    if(energyTranslated == null)
-                        energyTranslated = "ATPP_EnergyNeed".Translate();
+                    if (get_LabelCapPrevPawn != ___pawn)
+                    {
+                        get_LabelCapPrevPawn = ___pawn;
+                        get_LabelCapPrevIsAndroidTier = ___pawn.IsAndroidTier();
+                    }
 
-                    __result = energyTranslated;
+                    if (get_LabelCapPrevIsAndroidTier)
+                    {
+                        __result = energyTranslated;
+                    }
                 }
             }
         }
+
+        private static Pawn GetTipStringPrevPawn;
+        private static bool GetTipStringPrevIsAndroidTier;
 
         [HarmonyPatch(typeof(Need_Food), "GetTipString")]
         public class GetTipString_Patch
@@ -35,20 +48,29 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ref string __result, Pawn ___pawn, Need __instance)
             {
-                if (__instance.def.defName == "Food" && ___pawn.IsAndroidTier())
+                if (__instance.def.defName == "Food")
                 {
-                    __result = string.Concat(new string[]
-                        {
-                            __instance.LabelCap,
-                            ": ",
-                            __instance.CurLevelPercentage.ToStringPercent(),
-                            " (",
-                            __instance.CurLevel.ToString("0.##"),
-                            " / ",
-                            __instance.MaxLevel.ToString("0.##"),
-                            ")\n",
-                            "ATPP_EnergyNeedDesc".Translate()
-                        });
+                    if (GetTipStringPrevPawn != ___pawn)
+                    {
+                        GetTipStringPrevPawn = ___pawn;
+                        GetTipStringPrevIsAndroidTier = ___pawn.IsAndroidTier();
+                    }
+
+                    if (GetTipStringPrevIsAndroidTier)
+                    {
+                        __result = string.Concat(new string[]
+                            {
+                                __instance.LabelCap,
+                                ": ",
+                                __instance.CurLevelPercentage.ToStringPercent(),
+                                " (",
+                                __instance.CurLevel.ToString("0.##"),
+                                " / ",
+                                __instance.MaxLevel.ToString("0.##"),
+                                ")\n",
+                                "ATPP_EnergyNeedDesc".Translate()
+                            });
+                    }
                 }
             }
         }

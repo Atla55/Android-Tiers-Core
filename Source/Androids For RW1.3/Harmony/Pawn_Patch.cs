@@ -168,6 +168,11 @@ namespace MOARANDROIDS
                         }
                     }
                 }
+                //Set a fake rest need to prevent errors
+                if (__instance.IsAndroidTier() && __instance.needs != null)
+                {
+                    __instance.needs.rest = new Need_Rest_Fake(null);
+                }
             }
         }
 

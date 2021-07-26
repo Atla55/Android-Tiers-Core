@@ -209,6 +209,7 @@
     <Compile Include="Harmony\ToilEffects_Patch.cs" />
     <Compile Include="Hediffs\Hediff_LowNetworkSignal.cs" />
     <Compile Include="Hediffs\Hediff_AssistingMinds.cs" />
+    <Compile Include="Need_Rest_Fake.cs" />
     <Compile Include="Other\AndroidCapacityLabel.cs" />
     <Compile Include="AndroidTiers.cs" />
     <Compile Include="Buildings\Building_ReloadStation.cs" />
