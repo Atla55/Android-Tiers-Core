@@ -139,22 +139,21 @@ namespace MOARANDROIDS
                 //&& !externalController.Faction.HostileTo(Faction.OfPlayer)
                 && !parent.Map.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)))
             {
-                Pawn cp = (Pawn)parent;
                 Lord lordInvolved = null;
-                if (cp.Map.mapPawns.SpawnedPawnsInFaction(cp.Faction).Any((Pawn p) => p != cp))
+                if (currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction).Any((Pawn p) => p != currentPawn))
                 {
-                    Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(cp.Position, cp.Map.mapPawns.SpawnedPawnsInFaction(cp.Faction), 99999f, (Thing p) => p != cp && ((Pawn)p).GetLord() != null, null);
+                    Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(currentPawn.Position, currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction), 99999f, (Thing p) => p != currentPawn && ((Pawn)p).GetLord() != null, null);
                     lordInvolved = p2.GetLord();
                 }
-                if (lordInvolved == null && !cp.IsPrisoner)
+                if (lordInvolved == null && !currentPawn.IsPrisoner)
                 {
-                    LordJob_DefendPoint lordJob = new LordJob_DefendPoint(cp.Position);
-                    lordInvolved = LordMaker.MakeNewLord(cp.Faction, lordJob, Find.CurrentMap, null);
+                    LordJob_DefendPoint lordJob = new LordJob_DefendPoint(currentPawn.Position);
+                    lordInvolved = LordMaker.MakeNewLord(currentPawn.Faction, lordJob, Find.CurrentMap, null);
                 }
                 
 
                 //Si controlleur non player du surrogate mort OU surrogate hacké avais un lors il existe tjr mais il n'est plus actif
-                if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved== null && !cp.IsPrisoner) )
+                if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved== null && !currentPawn.IsPrisoner) )
                 {
                     //Rajout NoHost car comme en mode externalController on a pas remis le hediff pour eviter le bug bizard faisant que quand tentative integration ennemis hacké a un lord sa merdequand il a été down
                     addNoRemoteHostHediff();
@@ -169,16 +168,16 @@ namespace MOARANDROIDS
                         //Tentative de reconnection automatique du surrogate a son controlleur externe
                         CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
                         cso.setControlledSurrogate((Pawn)parent, true);
-                        cp.mindState.Reset();
-                        cp.mindState.duty = null;
-                        cp.jobs.StopAll();
-                        cp.jobs.ClearQueuedJobs();
-                        cp.ClearAllReservations();
-                        if (cp.drafter != null)
-                            cp.drafter.Drafted = false;
+                        currentPawn.mindState.Reset();
+                        currentPawn.mindState.duty = null;
+                        currentPawn.jobs.StopAll();
+                        currentPawn.jobs.ClearQueuedJobs();
+                        currentPawn.ClearAllReservations();
+                        if (currentPawn.drafter != null)
+                            currentPawn.drafter.Drafted = false;
 
-                        if(lordInvolved != null)
-                            lordInvolved.AddPawn(cp);
+                        if(lordInvolved != null && !currentPawn.Downed)
+                            lordInvolved.AddPawn(currentPawn);
                     }
                     catch(Exception)
                     {
@@ -223,8 +222,6 @@ namespace MOARANDROIDS
 
             if(GT % 120 == 0)
             {
-                Pawn cpawn = (Pawn)parent;
-
                 if (uploadEndingGT != -1)
                 {
                     checkInterruptedUpload();
@@ -236,17 +233,17 @@ namespace MOARANDROIDS
                         CompAndroidState cas = Utils.getCachedCAS(uploadRecipient);
                         cas.uploadEndingGT = -1;
 
-                        Utils.removeUploadHediff(cpawn, uploadRecipient);
+                        Utils.removeUploadHediff(currentPawn, uploadRecipient);
 
-                        Find.LetterStack.ReceiveLetter("ATPP_LetterUploadOK".Translate(), "ATPP_LetterUploadOKDesc".Translate(cpawn.LabelShortCap, uploadRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
+                        Find.LetterStack.ReceiveLetter("ATPP_LetterUploadOK".Translate(), "ATPP_LetterUploadOKDesc".Translate(currentPawn.LabelShortCap, uploadRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
 
-                        if (cpawn.def.defName == Utils.T1 && uploadRecipient.def.defName != Utils.T1)
-                            Utils.removeSimpleMindedTrait(cpawn);
+                        if (currentPawn.def.defName == Utils.T1 && uploadRecipient.def.defName != Utils.T1)
+                            Utils.removeSimpleMindedTrait(currentPawn);
                         else
                             Utils.addSimpleMindedTraitForT1(uploadRecipient);
 
                         //On realise effectivement la permutation puis le kill de la source
-                        Utils.PermutePawn(cpawn, uploadRecipient);
+                        Utils.PermutePawn(currentPawn, uploadRecipient);
 
                         Utils.clearBlankAndroid(uploadRecipient);
 
@@ -255,7 +252,7 @@ namespace MOARANDROIDS
 
 
                         //Si destinataire de la duplication prisonnier Et emetteur pas prisonier on enleve la condition 
-                        if (!cpawn.IsPrisoner && uploadRecipient.IsPrisoner)
+                        if (!currentPawn.IsPrisoner && uploadRecipient.IsPrisoner)
                         {
                             if (uploadRecipient.Faction != Faction.OfPlayer)
                             {
@@ -269,11 +266,11 @@ namespace MOARANDROIDS
                         }
 
                         //SI destinataire de la duplication colon regular et emetteur prisonnier 
-                        if (cpawn.IsPrisoner && !uploadRecipient.IsPrisoner)
+                        if (currentPawn.IsPrisoner && !uploadRecipient.IsPrisoner)
                         {
-                            if (uploadRecipient.Faction != cpawn.Faction)
+                            if (uploadRecipient.Faction != currentPawn.Faction)
                             {
-                                uploadRecipient.SetFaction(cpawn.Faction, null);
+                                uploadRecipient.SetFaction(currentPawn.Faction, null);
                             }
 
                             if (uploadRecipient.guest != null)
@@ -285,8 +282,8 @@ namespace MOARANDROIDS
                             }
                         }
 
-                        if (!cpawn.Dead)
-                            cpawn.Kill(null, null);
+                        if (!currentPawn.Dead)
+                            currentPawn.Kill(null, null);
 
 
                         resetUploadStuff();
@@ -295,13 +292,13 @@ namespace MOARANDROIDS
 
                 if(batteryExplosionEndingGT != -1 && batteryExplosionEndingGT < GT)
                 {
-                    Utils.makeAndroidBatteryOverload(cpawn);
+                    Utils.makeAndroidBatteryOverload(currentPawn);
 
                     return;
                 }
 
                 //Atteinte fin application des nanites sur un androide
-                if(frameworkNaniteEffectGTEnd != -1 && GT >= frameworkNaniteEffectGTEnd && !cpawn.Dead)
+                if(frameworkNaniteEffectGTEnd != -1 && GT >= frameworkNaniteEffectGTEnd && !currentPawn.Dead)
                 {
                     bool chance = false;
                     int nb = 0;
@@ -312,11 +309,11 @@ namespace MOARANDROIDS
                         //Le cas echeant on enleve le rusting
                         clearRusted();
 
-                        nb = cpawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (Utils.AndroidOldAgeHediffFramework.Contains(h.def.defName)));
-                        nb += cpawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (h.def == HediffDefOf.MissingBodyPart || ( Utils.ExceptionRepairableFrameworkHediff.Contains(h.def) && h.IsPermanent() )));
+                        nb = currentPawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (Utils.AndroidOldAgeHediffFramework.Contains(h.def.defName)));
+                        nb += currentPawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (h.def == HediffDefOf.MissingBodyPart || ( Utils.ExceptionRepairableFrameworkHediff.Contains(h.def) && h.IsPermanent() )));
                         if (nb > 0)
                         {
-                            Utils.refreshHediff(cpawn);
+                            Utils.refreshHediff(currentPawn);
                         }
                         chance = true;
                     }
@@ -324,12 +321,12 @@ namespace MOARANDROIDS
                     if (nb == 0)
                     {
                         if (chance)
-                            Messages.Message("ATPP_NoBrokenStuffFound".Translate(cpawn.LabelShort), cpawn, MessageTypeDefOf.NegativeEvent, true);
+                            Messages.Message("ATPP_NoBrokenStuffFound".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.NegativeEvent, true);
                         else
-                            Messages.Message("ATPP_BrokenStuffRepairFailed".Translate(cpawn.LabelShort), cpawn, MessageTypeDefOf.NegativeEvent, true);
+                            Messages.Message("ATPP_BrokenStuffRepairFailed".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.NegativeEvent, true);
                     }
                     else
-                        Messages.Message("ATPP_BrokenFrameworkRepaired".Translate(cpawn.LabelShort), cpawn, MessageTypeDefOf.PositiveEvent, true);
+                        Messages.Message("ATPP_BrokenFrameworkRepaired".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.PositiveEvent, true);
 
 
                     frameworkNaniteEffectGTEnd = -1;
@@ -1534,7 +1531,8 @@ namespace MOARANDROIDS
 
         public void initAsSurrogate()
         {
-            Pawn cpawn = (Pawn)parent;
+            if(currentPawn == null)
+                currentPawn = (Pawn)parent;
 
             isSurrogate = true;
             addNoRemoteHostHediff();
