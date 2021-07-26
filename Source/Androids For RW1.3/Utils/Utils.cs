@@ -1753,6 +1753,13 @@ namespace MOARANDROIDS
                 Pawn_NeedsTracker pn1 = new Pawn_NeedsTracker(p1);
                 Pawn_NeedsTracker pn2 = new Pawn_NeedsTracker(p2);
 
+
+                //If android create fake rest need
+                if (p1.IsAndroidTier())
+                    pn1.rest = new Need_Rest_Fake(p1);
+                if (p2.IsAndroidTier())
+                    pn2.rest = new Need_Rest_Fake(p2);
+
                 //Rajout des memoires personalisées
                 foreach (var x in p1.needs.mood.thoughts.memories.Memories)
                 {
