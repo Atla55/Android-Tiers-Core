@@ -23,7 +23,7 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    if (Settings.androidsCanOnlyBeHealedByCrafter && (patient.IsAndroidTier() || patient.IsCyberAnimal()))
+                    if (Settings.androidsCanOnlyBeHealedByCrafter && (patient.IsAndroidOrAnimalTier()))
                     {
                         Toil toil = new Toil();
                         toil.initAction = delegate

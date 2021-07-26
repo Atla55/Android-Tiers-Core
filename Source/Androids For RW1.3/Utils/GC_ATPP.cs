@@ -189,6 +189,9 @@ namespace MOARANDROIDS
                     Utils.ExceptionAndroidCanReloadWithPowerList.AddRange(Utils.ExceptionAndroidList);
                     Utils.ExceptionAndroidCanReloadWithPowerList.AddRange(Utils.ExceptionAndroidAnimalPowered);
 
+                    Utils.ExceptionAndroidListAll.AddRange(Utils.ExceptionAndroidList);
+                    Utils.ExceptionAndroidListAll.AddRange(Utils.ExceptionAndroidAnimals);
+
                     //RunTime patching
                     foreach (var td in DefDatabase<ThingDef>.AllDefsListForReading)
                     {

@@ -34,7 +34,7 @@ namespace MOARANDROIDS
                                 if (actor != null && actor.CurJob != null && actor.CurJob.targetA.Thing is Pawn)
                                 {
                                     Pawn deliveree = (Pawn)actor.CurJob.targetA.Thing;
-                                    if (deliveree.IsAndroidTier())
+                                    if (deliveree.IsAndroidOrAnimalTier())
                                         return SoundDefOfAT.Recipe_ButcherCorpseMechanoid;
                                 }
                                 return soundDef;

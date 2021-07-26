@@ -253,6 +253,7 @@ namespace MOARANDROIDS
         public static HashSet<string> ExceptionAndroidListAdvanced = new HashSet<string> { "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
         public static string[] ExceptionAndroidAnimalPowered = new string[] { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidFox" }.GetSortedArray();
         public static string[] ExceptionAndroidAnimals = new string[] { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidChicken", "AndroidFox" }.GetSortedArray();
+        public static HashSet<string> ExceptionAndroidListAll = new HashSet<string>();
 
         public static HashSet<string> BlacklistAndroidHediff = new HashSet<string> { "VacuumDamageHediff", "ZeroGSickness", "SpaceHypoxia", "ClinicalDeathAsphyxiation", "ClinicalDeathNoHeartbeat", "FatalRad", "RimatomicsRadiation", "RadiationIncurable" };
         public static string[] BlacklistMindTraits = new string[] { "NightOwl", "Insomniac", "Codependent", "HeavySleeper", "Polygamous", "Beauty", "Immunity" }.GetSortedArray();
@@ -773,12 +774,36 @@ namespace MOARANDROIDS
             Utils.FindBestMedicinePatient = null;
         }
 
+        private static Pawn genericPostFixExtraCrafterDoctorJobsPrevPawn;
+        private static CompSurrogateOwner genericPostFixExtraCrafterDoctorJobsPrevPawnCSO;
+        private static WorkGiverDef genericPostFixExtraCrafterDoctorJobsPrevJobDef;
+        private static bool genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob;
+
         public static void genericPostFixExtraCrafterDoctorJobs(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver __instance)
         {
+            Pawn pawnT = null;
+            if (t is Pawn)
+            {
+                pawnT = (Pawn)t;
+            }
+
+            //Caching pawn CSO to boost perfs
+            if(pawn != genericPostFixExtraCrafterDoctorJobsPrevPawn)
+            {
+                genericPostFixExtraCrafterDoctorJobsPrevPawn = pawn;
+                genericPostFixExtraCrafterDoctorJobsPrevPawnCSO = Utils.getCachedCSO(pawn);
+            }
+            //Caching WorkGiverDef check if in CrafterDoctor list jobs
+            if (genericPostFixExtraCrafterDoctorJobsPrevJobDef != __instance.def)
+            {
+                genericPostFixExtraCrafterDoctorJobsPrevJobDef = __instance.def;
+                genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob = Utils.CrafterDoctorJob.Contains(__instance.def);
+            }
+
             if (!Settings.androidsCanOnlyBeHealedByCrafter)
             {
                 //Si les jobs fake de docteur en mode crafter on les jertes
-                if (__instance.def.workType == Utils.WorkTypeDefSmithing && Utils.CrafterDoctorJob.Contains(__instance.def))
+                if (__instance.def.workType == Utils.WorkTypeDefSmithing && genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob)
                 {
                     __result = false;
                 }
@@ -789,19 +814,17 @@ namespace MOARANDROIDS
             //Medecin normal on jerte si t est un android
             if (__instance.def.workType == WorkTypeDefOf.Doctor)
             {
-                if (t is Pawn && ((Pawn)t).IsAndroidTier())
+                if (pawnT != null && pawnT.IsAndroidOrAnimalTier())
                     __result = false;
             }
             else
             {
-                if (Utils.CrafterDoctorJob.Contains(__instance.def))
+                if (genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob)
                 {
                     //Crafteur on jerte si patient pas un android
-                    if (t is Pawn && ((Pawn)t).IsAndroidTier())
+                    if (pawnT != null && pawnT.IsAndroidOrAnimalTier())
                     {
-                        CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
-
-                        if (cso == null || !cso.repairAndroids)
+                        if (genericPostFixExtraCrafterDoctorJobsPrevPawnCSO == null || !genericPostFixExtraCrafterDoctorJobsPrevPawnCSO.repairAndroids)
                             __result = false;
                     }
                     else
@@ -1142,6 +1165,11 @@ namespace MOARANDROIDS
         public static bool IsAndroidGen(this Pawn pawn)
         {
             return pawn.RaceProps.FleshType.defName == "Android" || pawn.RaceProps.FleshType.defName == "MechanisedInfantry" || pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
+        }
+
+        public static bool IsAndroidOrAnimalTier(this Pawn pawn)
+        {
+            return Utils.ExceptionAndroidListAll.Contains(pawn.def.defName);
         }
 
         public static bool IsAndroidTier(this Pawn pawn)
