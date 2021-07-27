@@ -103,7 +103,11 @@ namespace MOARANDROIDS
                 }
             }
 
-            if (GT % 180 == 0 && ( permuteEndingGT != -1 || duplicateEndingGT != -1 || uploadToSkyCloudEndingGT != -1 || migrationEndingGT != -1 || mindAbsorptionEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || (controlMode && SX != null)))
+            if (GT % 180 == 0 && ( permuteEndingGT != -1 || permuteRecipient != null
+                                   || duplicateEndingGT != -1 || duplicateRecipient != null 
+                                   || uploadToSkyCloudEndingGT != -1 || migrationEndingGT != -1 
+                                   || mindAbsorptionEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 
+                                   || (controlMode && SX != null)))
             {
                 checkInterruptedUpload();
 
@@ -147,7 +151,6 @@ namespace MOARANDROIDS
                 //Atteinte d'un chargement de duplication de conscience
                 if (duplicateEndingGT != -1 && duplicateEndingGT < GT)
                 {
-                    //Log.Message("DUPLICATION EFFECTIVE !!! ");
                     checkInterruptedUpload();
                     if (duplicateEndingGT == -1)
                         return;
@@ -179,7 +182,6 @@ namespace MOARANDROIDS
                 //Atteinte d'un chargement de upload vers SkyCloud
                 if (uploadToSkyCloudEndingGT != -1 && uploadToSkyCloudEndingGT < GT)
                 {
-                    //Log.Message("DUPLICATION EFFECTIVE !!! ");
                     checkInterruptedUpload();
                     if (uploadToSkyCloudEndingGT == -1)
                         return;
@@ -246,7 +248,6 @@ namespace MOARANDROIDS
                 //Atteinte d'un chargement de download depuis SkyCloud
                 if (downloadFromSkyCloudEndingGT != -1 && downloadFromSkyCloudEndingGT < GT)
                 {
-                    //Log.Message("DUPLICATION EFFECTIVE !!! ");
                     checkInterruptedUpload();
                     if (downloadFromSkyCloudEndingGT == -1)
                         return;
@@ -1522,7 +1523,7 @@ namespace MOARANDROIDS
 
             CompSurrogateOwner cso = Utils.getCachedCSO(dest);
             cso.showPermuteProgress = true;
-            cso.permuteRecipient = (Pawn)parent;
+            cso.permuteRecipient = source;
 
             Messages.Message("ATPP_StartPermute".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
         }
@@ -1609,7 +1610,9 @@ namespace MOARANDROIDS
             Pawn cpawn = (Pawn)parent;
            
             //Permutation ou duplication en cours on test si les conditions d'arret sont presentes
-            if (permuteEndingGT != -1 || duplicateEndingGT != -1 || uploadToSkyCloudEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || mindAbsorptionEndingGT != -1 || migrationEndingGT != -1 || replicationEndingGT != -1)
+            if (permuteEndingGT != -1 || permuteRecipient != null 
+                || duplicateEndingGT != -1 || duplicateRecipient != null
+                || uploadToSkyCloudEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || mindAbsorptionEndingGT != -1 || migrationEndingGT != -1 || replicationEndingGT != -1)
             {
                 bool permuteRecipientDead = false;
                 if (permuteRecipient != null)
@@ -1623,10 +1626,10 @@ namespace MOARANDROIDS
 
                 bool emitterConnected = false;
 
-                if (permuteRecipient != null && Utils.GCATPP.isConnectedToSkyMind(permuteRecipient, !lastSkymindDisconnectIsManual))
+                if (permuteRecipient != null && Utils.GCATPP.isConnectedToSkyMind(permuteRecipient, !lastSkymindDisconnectIsManual, false))
                     recipientConnected = true;
 
-                if (duplicateRecipient != null && Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient, !lastSkymindDisconnectIsManual))
+                if (duplicateRecipient != null && Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient, !lastSkymindDisconnectIsManual, false))
                     recipientConnected = true;
 
                 /*if (Utils.GCATPP.isThereSkillServers())
@@ -1653,7 +1656,7 @@ namespace MOARANDROIDS
                 //L'équivalence en mode migration est le check de si le host du mind est branché
                 if ( (replicationEndingGT != -1 && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
                     || (skyCloudHost != null && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
-                    || (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual)) )
+                    || (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual,false)) )
                     emitterConnected = true;
 
                 //Si hote plus valide alors on arrete le processus et on kill les deux androids
@@ -1710,19 +1713,13 @@ namespace MOARANDROIDS
                             reason = "ATPP_LetterInterruptedUploadDescCompDiconnectionError".Translate();
 
                             killSelf = true;
-                            if (permuteEndingGT != -1)
+                            if (permuteRecipient != null && !permuteRecipient.Dead)
                             {
-                                if (permuteRecipient != null && !permuteRecipient.Dead)
-                                {
-                                    permuteRecipient.Kill(null, null);
-                                }
+                                permuteRecipient.Kill(null, null);
                             }
-                            else if (duplicateEndingGT != -1)
-                            {
-                                if (duplicateRecipient != null && !duplicateRecipient.Dead)
-                                {
-                                    duplicateRecipient.Kill(null, null);
-                                }
+                            else if(duplicateRecipient != null && !duplicateRecipient.Dead)
+                            { 
+                                duplicateRecipient.Kill(null, null);
                             }
                         }
                     }

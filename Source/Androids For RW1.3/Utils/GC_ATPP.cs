@@ -1472,7 +1472,7 @@ namespace MOARANDROIDS
             }
         }
 
-        public bool isConnectedToSkyMind(Thing colonist, bool tryAutoConnect=false)
+        public bool isConnectedToSkyMind(Thing colonist, bool tryAutoConnect=false, bool broadcastEvent=true)
         {
             if (connectedThing.Contains(colonist))
                 return true;
@@ -1492,14 +1492,14 @@ namespace MOARANDROIDS
                 if (tryAutoConnect)
                 {
                     connectUser(colonist);
-                    return isConnectedToSkyMind(colonist, false);
+                    return isConnectedToSkyMind(colonist, false, broadcastEvent);
                 }
                 else
                     return false;
             }
         }
 
-        public bool connectUser(Thing thing)
+        public bool connectUser(Thing thing, bool broadcastEvent=true)
         {
             bool containsThing = connectedThing.Contains(thing);
             //Si déjà connecté return TRUE
@@ -1532,14 +1532,18 @@ namespace MOARANDROIDS
                     }
                     //Check if assisting minds bonus available
                     checkAssistingMindsBonusUnit(pawn);
-                    pawn.BroadcastCompSignal("SkyMindNetworkUserConnected");
+
+                    if(broadcastEvent)
+                        pawn.BroadcastCompSignal("SkyMindNetworkUserConnected");
                 }
                 else if(thing is Building)
                 {
                     Building build = (Building)thing;
                     if (!listerConnectedDevices.Contains(build))
                         listerConnectedDevices.Add(thing);
-                    build.BroadcastCompSignal("SkyMindNetworkUserConnected");
+
+                    if(broadcastEvent)
+                        build.BroadcastCompSignal("SkyMindNetworkUserConnected");
                 }
             }
 
