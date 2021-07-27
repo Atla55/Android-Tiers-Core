@@ -12,16 +12,23 @@ namespace MOARANDROIDS
     internal class ThoughtWorker_Precept_Patch
 
     {
-        /*
-         * Basic androids dont care about nudity stuff
-         */
         [HarmonyPatch(typeof(ThoughtWorker_Precept), "CurrentStateInternal")]
         public class CurrentStateInternal_Patch
         {
+            static private Pawn lastPawn;
+            static private bool lastShouldBeInactive = false;
+
             [HarmonyPostfix]
             public static void Listener(Pawn p, ref ThoughtState __result)
             {
-                if (p.IsBasicAndroidTier() || p.IsSurrogateAndroid(false, true))
+                //Caching result
+                if(p != lastPawn)
+                {
+                    lastPawn = p;
+                    lastShouldBeInactive = p.IsBasicAndroidTier() || p.IsSurrogateAndroid(false, true);
+                }
+
+                if (lastShouldBeInactive)
                 {
                     __result = ThoughtState.Inactive;
                 }

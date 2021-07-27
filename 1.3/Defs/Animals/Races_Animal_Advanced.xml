@@ -43,7 +43,7 @@
       <baseBodySize>1</baseBodySize>
       <baseHealthScale>1</baseHealthScale>
 	  <baseHungerRate>2</baseHungerRate>
-	  			<fleshType>Android</fleshType>
+	  			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
       			<needsRest>false</needsRest>
 			<foodType>OmnivoreRoughAnimal</foodType>
@@ -177,7 +177,7 @@
       <baseBodySize>1.25</baseBodySize>
       <baseHealthScale>1</baseHealthScale>
 	  <baseHungerRate>1.5</baseHungerRate>
-	  			<fleshType>Android</fleshType>
+	  			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
       			<needsRest>false</needsRest>
 			<foodType>OmnivoreRoughAnimal</foodType>

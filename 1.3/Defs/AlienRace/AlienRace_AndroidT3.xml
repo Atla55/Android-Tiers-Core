@@ -231,7 +231,7 @@
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreHuman</foodType>
 			<baseHungerRate>1</baseHungerRate>
-			<fleshType>Android</fleshType>
+			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<useMeatFrom>Alpaca</useMeatFrom>
 			<baseBodySize>1.4</baseBodySize>

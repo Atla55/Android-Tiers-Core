@@ -19,7 +19,7 @@
 			<hediffGiverSets>
 				<li>AndroidStandardAtlas</li>
 			</hediffGiverSets>
-			<fleshType>Android</fleshType>
+			<fleshType>AndroidTier</fleshType>
 		</race>
 		<modExtensions>
 			<li Class="MOARANDROIDS.AndroidTweaker">

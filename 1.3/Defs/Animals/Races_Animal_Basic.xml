@@ -33,7 +33,7 @@
 			<petness>0.5</petness>
 			<baseBodySize>5.0</baseBodySize>
 			<baseHealthScale>1.45</baseHealthScale>
-			<fleshType>Android</fleshType>
+			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreRoughAnimal</foodType>
@@ -163,7 +163,7 @@
 			<petness>0.5</petness>
 			<baseBodySize>0.3</baseBodySize>
 			<baseHealthScale>0.5</baseHealthScale>
-			<fleshType>Android</fleshType>
+			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreRoughAnimal</foodType>

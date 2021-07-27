@@ -27,9 +27,12 @@ namespace MOARANDROIDS
             [HarmonyPrefix]
             public static bool ListenerPrefix(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver_FeedPatient __instance)
             {
+                if (Utils.POWERPP_LOADED)
+                    return true;
+
                 //On va en plus checker si le eater est pas un android chargé sur un wireless powergrid pas de feed patients co 
                 Pawn pawn2 = t as Pawn;
-                if (pawn2 != null && pawn2.IsAndroidTier())
+                if (pawn2 != null && pawn2.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                 {
                     CompAndroidState cas = Utils.getCachedCAS(pawn2);
                     if (cas != null)

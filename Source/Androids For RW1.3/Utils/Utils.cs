@@ -814,7 +814,7 @@ namespace MOARANDROIDS
             //Medecin normal on jerte si t est un android
             if (__instance.def.workType == WorkTypeDefOf.Doctor)
             {
-                if (pawnT != null && pawnT.IsAndroidOrAnimalTier())
+                if (pawnT != null && (pawnT.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                     __result = false;
             }
             else
@@ -822,7 +822,7 @@ namespace MOARANDROIDS
                 if (genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob)
                 {
                     //Crafteur on jerte si patient pas un android
-                    if (pawnT != null && pawnT.IsAndroidOrAnimalTier())
+                    if (pawnT != null && (pawnT.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                     {
                         if (genericPostFixExtraCrafterDoctorJobsPrevPawnCSO == null || !genericPostFixExtraCrafterDoctorJobsPrevPawnCSO.repairAndroids)
                             __result = false;
@@ -1158,7 +1158,7 @@ namespace MOARANDROIDS
 
         public static bool IsAndroidGen(this Pawn pawn)
         {
-            return pawn.RaceProps.FleshType.defName == "Android" || pawn.RaceProps.FleshType.defName == "MechanisedInfantry" || pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
+            return pawn.RaceProps.FleshType.defName == "AndroidTier" || pawn.RaceProps.FleshType.defName == "ChJDroid" || pawn.def.defName == "ChjAndroid";
         }
 
         public static bool IsAndroidOrAnimalTier(this Pawn pawn)

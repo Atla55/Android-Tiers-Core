@@ -26,21 +26,21 @@ namespace MOARANDROIDS
                         Pawn patient = (Pawn)billGiver;
 
                         //We withdraw medicine other than nanokits
-                        if (patient.IsAndroidTier() || patient.IsCyberAnimal())
+                        if (patient.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                         {
-                            foreach (var el in relevantThings.ToList())
+                            for (int i = relevantThings.Count - 1; i >= 0; i--)
                             {
-                                if (!Utils.ExceptionNanoKits.Contains(el.def.defName))
-                                    relevantThings.Remove(el);
+                                if (!Utils.ExceptionNanoKits.Contains(relevantThings[i].def.defName))
+                                    relevantThings.RemoveAt(i);
                             }
                         }
                         //We remove the nanokits
                         else
                         {
-                            foreach (var el in relevantThings.ToList())
+                            for (int i = relevantThings.Count - 1; i >= 0; i--)
                             {
-                                if (Utils.ExceptionNanoKits.Contains(el.def.defName))
-                                    relevantThings.Remove(el);
+                                if (Utils.ExceptionNanoKits.Contains(relevantThings[i].def.defName))
+                                    relevantThings.RemoveAt(i);
                             }
                         }
                     }
@@ -79,7 +79,7 @@ namespace MOARANDROIDS
                     //Normal doctor we go out if t is an android
                     if (__instance.def.workType == WorkTypeDefOf.Doctor)
                     {
-                        if (cp != null && (cp.IsAndroidTier() || cp.IsCyberAnimal()))
+                        if (cp != null && (cp.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                             __result = null;
                     }
                     else
@@ -87,7 +87,7 @@ namespace MOARANDROIDS
                         if (Utils.CrafterDoctorJob.Contains(__instance.def))
                         {
                             //Crafter we go out if patient not an android or a cyber animal
-                            if (cp != null && (cp.IsAndroidTier() || cp.IsCyberAnimal()))
+                            if (cp != null && (cp.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                             {
                                 CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
                                 

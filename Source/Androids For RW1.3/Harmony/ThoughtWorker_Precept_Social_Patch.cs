@@ -15,10 +15,20 @@ namespace MOARANDROIDS
         [HarmonyPatch(typeof(ThoughtWorker_Precept_Social), "CurrentSocialStateInternal")]
         public class CurrentSocialStateInternal_Patch
         {
+            static private Pawn lastPawn;
+            static private bool lastShouldBeInactive = false;
+
             [HarmonyPostfix]
             public static void Listener(Pawn p, Pawn otherPawn, ref ThoughtState __result)
             {
-                if (p.IsBasicAndroidTier() || p.IsSurrogateAndroid(false, true))
+                //Caching result
+                if (p != lastPawn)
+                {
+                    lastPawn = p;
+                    lastShouldBeInactive = p.IsBasicAndroidTier() || p.IsSurrogateAndroid(false, true);
+                }
+
+                if (lastShouldBeInactive)
                 {
                     __result = ThoughtState.Inactive;
                 }

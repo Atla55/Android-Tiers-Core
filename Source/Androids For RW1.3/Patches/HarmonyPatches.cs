@@ -129,7 +129,7 @@ namespace MOARANDROIDS
     {
         public static bool Prefix(ref string __result, PawnCapacityDef __instance, Pawn pawn)
         {
-            if (pawn != null && pawn.RaceProps != null && pawn.RaceProps.FleshType == DefDatabase<FleshTypeDef>.GetNamed("Android"))
+            if (pawn != null && pawn.RaceProps != null && pawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
             {
                 if (__instance.GetModExtension<AndroidCapacityLabel>() != null)
                 {

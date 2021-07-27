@@ -182,6 +182,7 @@
     <Compile Include="Alerts\Alert_Hot2Devices.cs" />
     <Compile Include="Alerts\Alert_Hot3Devices.cs" />
     <Compile Include="Alerts\Alert_UnsecurisedClients.cs" />
+    <Compile Include="DefsOf\FleshTypeDefOfAT.cs" />
     <Compile Include="DefsOf\SoundDefOfAT.cs" />
     <Compile Include="Extensions\CollectionExtensions.cs" />
     <Compile Include="Extensions\StringBuilderExtensions.cs" />

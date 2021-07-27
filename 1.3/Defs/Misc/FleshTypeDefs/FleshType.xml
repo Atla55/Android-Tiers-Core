@@ -2,33 +2,7 @@
 
 <Defs>
   <FleshTypeDef>
-    <defName>Android</defName>
-    <corpseCategory>CorpsesMechanoid</corpseCategory>
-    <genericWounds>
-      <li>
-        <texture>Things/Wounds/WoundAndroidA</texture>
-      </li>
-      <li>
-        <texture>Things/Wounds/WoundAndroidB</texture>
-      </li>
-      <li>
-        <texture>Things/Wounds/WoundAndroidC</texture>
-      </li>
-      <li>
-        <texture>Things/Pawn/Wounds/WoundMechA</texture>
-      </li>
-      <li>
-        <texture>Things/Pawn/Wounds/WoundMechB</texture>
-      </li>
-      <li>
-        <texture>Things/Pawn/Wounds/WoundMechC</texture>
-      </li>
-    </genericWounds>
-  </FleshTypeDef>
-
- 
-  <FleshTypeDef>
-    <defName>MechanisedInfantry</defName>
+    <defName>AndroidTier</defName>
     <corpseCategory>CorpsesMechanoid</corpseCategory>
     <genericWounds>
       <li>

@@ -84,7 +84,7 @@
 			<petness>0.4</petness>
 			<baseBodySize>1.0</baseBodySize>
 			<baseHealthScale>1.15</baseHealthScale>
-			<fleshType>Android</fleshType>
+			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreRoughAnimal </foodType>

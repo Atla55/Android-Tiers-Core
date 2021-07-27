@@ -585,7 +585,7 @@ namespace MOARANDROIDS
                         }
                     }
 
-                    if (Utils.HOSPITALITY_LOADED)
+                    /*if (Utils.HOSPITALITY_LOADED)
                     {
                         try
                         {
@@ -599,7 +599,7 @@ namespace MOARANDROIDS
                         {
                             Log.Message("[ATPP] HospitalityPatching " + e.Message + " " + e.StackTrace);
                         }
-                    }
+                    }*/
 
                     if (Utils.POWERPP_LOADED)
                     {

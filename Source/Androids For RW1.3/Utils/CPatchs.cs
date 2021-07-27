@@ -90,7 +90,7 @@ namespace MOARANDROIDS
         }
 
 
-        public static bool HospitalityPatchInsideFindBedFor = false;
+        /*public static bool HospitalityPatchInsideFindBedFor = false;
 
         public static void Hopistality_FindBedForPrefix(Pawn guest)
         {
@@ -102,7 +102,7 @@ namespace MOARANDROIDS
         {
             HospitalityPatchInsideFindBedFor = false;
             //Log.Message("H2");
-        }
+        }*/
 
 
         public static void RimworldVanilla_PawnApparelGeneratorPossibleApparelSetPairOverlapsAnything(ThingStuffPair pair, ref bool __result, ThingDef ___raceDef, List<ThingStuffPair> ___aps)

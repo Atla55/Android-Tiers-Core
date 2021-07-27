@@ -363,6 +363,7 @@ namespace MOARANDROIDS
 
             if(GT % 120 == 0)
             {
+                Log.Message("=> " + currentPawn.LabelCap + " " + (currentPawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier));
                 if (uploadEndingGT != -1)
                 {
                     checkInterruptedUpload();

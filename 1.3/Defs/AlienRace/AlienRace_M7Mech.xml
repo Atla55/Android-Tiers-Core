@@ -269,7 +269,7 @@
 			<needsRest>false</needsRest>
 			<foodType>None</foodType>
 			<baseHungerRate>0.01</baseHungerRate>
-			<fleshType>MechanisedInfantry</fleshType>
+			<fleshType>AndroidTier</fleshType>
 			<bloodDef>CoolantAndroidTier</bloodDef>
 			<useMeatFrom>Alpaca</useMeatFrom>
 			<baseBodySize>5.2</baseBodySize>
