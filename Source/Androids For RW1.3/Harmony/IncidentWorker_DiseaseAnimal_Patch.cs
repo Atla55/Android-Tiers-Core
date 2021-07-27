@@ -28,7 +28,7 @@ namespace MOARANDROIDS
 
                 foreach(var el in __result)
                 {
-                    if (el.IsCyberAnimal())
+                    if (el.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                         ret.Add(el);
                 }
 

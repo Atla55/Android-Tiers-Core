@@ -56,9 +56,10 @@ namespace MOARANDROIDS
             int curGT = Find.TickManager.TicksGame;
             if ( curGT >= executorGT)
             {
+                int newVal = lastCurrentlyLowNetworkSignal;
                 //If low network perf disabled by settings or the pawn have an RX chip
                 if (Settings.disableLowNetworkMalus || (Settings.disableLowNetworkMalusInCaravans && pawn.Map == null) || pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffRXChip) != null)
-                    lastCurrentlyLowNetworkSignal = 0;
+                    newVal = 0;
                 else
                 {
                     //Caching CAS comp
@@ -72,23 +73,28 @@ namespace MOARANDROIDS
                             //Other factions surrogate always have the lowSkymind network debuff (except if generated with a RX chip)
                             if(pawn.Faction != Faction.OfPlayer)
                             {
-                                lastCurrentlyLowNetworkSignal = 1;
+                                newVal = 1;
                             }
                             else{
                                 if (!Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map))
-                                    lastCurrentlyLowNetworkSignal = 1;
+                                    newVal = 1;
                                 else
-                                    lastCurrentlyLowNetworkSignal = 0;
+                                    newVal = 0;
                             }
                         }
                         else
-                            lastCurrentlyLowNetworkSignal = 0;
+                            newVal = 0;
                     }
                     else
-                        lastCurrentlyLowNetworkSignal = 0;
+                        newVal = 0;
 
                     //Log.Message("H=> " + pawn.LabelCap + " controlled = " +(cas.surrogateController != null)+" ANtenna = "+ Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map)+" res = "+ lastCurrentlyLowNetworkSignal);
                 }
+
+                if (newVal != lastCurrentlyLowNetworkSignal)
+                    pawn.health.capacities.Notify_CapacityLevelsDirty();
+
+                lastCurrentlyLowNetworkSignal = newVal;
                 executorGT = curGT + Rand.Range(160, 420);
             }
             return lastCurrentlyLowNetworkSignal;

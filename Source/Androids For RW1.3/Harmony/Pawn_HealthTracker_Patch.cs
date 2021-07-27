@@ -139,7 +139,7 @@ namespace MOARANDROIDS
                         return false;
                     }
 
-                    if (___pawn.IsAndroidTier())
+                    if (___pawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                     {
                         //S'il sagit d'Hediff blacklistés 
                         if (Utils.BlacklistAndroidHediff.Contains(hediff.def.defName))

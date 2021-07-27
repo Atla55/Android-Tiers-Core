@@ -259,9 +259,6 @@ namespace MOARANDROIDS
         public override void CompTick()
         {
             base.CompTick();
-
-            //bool reconnectDirectExternalController = false;
-
             if (parent.Map == null || !parent.Spawned)
                 return;
 
@@ -274,11 +271,41 @@ namespace MOARANDROIDS
 
 
             //Reconnection auto de l'etranger à son surrogate que si pas de solar flare en cours et toujours dans un Lord (Si le cas d'un ennemis check de l'etat de son Lord)
-            if ( (GT % 120 == 0 && externalController != null 
+            if ( (GT % 120 == 0))
+            {
+                checkUploadInterruptStuffTick(GT);
+
+                //Check android battery explosion (overload)
+                if (batteryExplosionEndingGT != -1 && batteryExplosionEndingGT < GT)
+                {
+                    Utils.makeAndroidBatteryOverload(currentPawn);
+                    return;
+                }
+                checkNaniteApplyEffectEnd(GT);
+                checkExternalControllerReconnection();
+            }
+
+            if(GT % 300 == 0)
+            {
+                checkInfectionFix();
+                checkTXWithSkinFacialTextureUpdate();
+                reloadBatteryTick();
+                checkRusted();
+                checkBlankAndroid();
+                powerPPStuffTick();
+            }
+        }
+
+        /*
+         * If the surrogateis is controlled by an external controller and disconnected from it, check if we can reconnect him and re-add him into the lord
+         */
+        public void checkExternalControllerReconnection()
+        {
+            if (externalController != null
                 && surrogateController == null
                 && csm != null && csm.hacked != 3
                 //&& !externalController.Faction.HostileTo(Faction.OfPlayer)
-                && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)))
+                && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
             {
                 Lord lordInvolved = null;
                 if (currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction).Any((Pawn p) => p != currentPawn))
@@ -291,10 +318,10 @@ namespace MOARANDROIDS
                     LordJob_DefendPoint lordJob = new LordJob_DefendPoint(currentPawn.Position);
                     lordInvolved = LordMaker.MakeNewLord(currentPawn.Faction, lordJob, Find.CurrentMap, null);
                 }
-                
+
 
                 //Si controlleur non player du surrogate mort OU surrogate hacké avais un lors il existe tjr mais il n'est plus actif
-                if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved== null && !currentPawn.IsPrisoner) )
+                if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved == null && !currentPawn.IsPrisoner))
                 {
                     //Rajout NoHost car comme en mode externalController on a pas remis le hediff pour eviter le bug bizard faisant que quand tentative integration ennemis hacké a un lord sa merdequand il a été down
                     addNoRemoteHostHediff();
@@ -302,13 +329,11 @@ namespace MOARANDROIDS
                 }
                 else
                 {
-                    //try
-                    //
                     try
                     {
-                        //Tentative de reconnection automatique du surrogate a son controlleur externe
+                        //Try auto-reconnect to surrogate to his external controle (with this time the connection init malus)
                         CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
-                        cso.setControlledSurrogate((Pawn)parent, true);
+                        cso.setControlledSurrogate((Pawn)parent, true, true);
                         currentPawn.mindState.Reset();
                         currentPawn.mindState.duty = null;
                         currentPawn.jobs.StopAll();
@@ -317,26 +342,15 @@ namespace MOARANDROIDS
                         if (currentPawn.drafter != null)
                             currentPawn.drafter.Drafted = false;
 
-                        if(lordInvolved != null && !currentPawn.Downed)
+                        if (lordInvolved != null && !currentPawn.Downed)
                             lordInvolved.AddPawn(currentPawn);
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
 
                     }
-                    //cp.ClearMind();
-                    
-                    //lordInvolved.AddPawn((Pawn)parent);
-                    /*}
-                    catch(Exception e)
-                    {
 
-                    }*/
-
-                    //****************************************** Traitement des conditions spéciale de reintegration a certain Lords *************************************************************
-                    //Log.Message("=>"+ lordInvolved.CurLordToil.ToString());
-
-                   try
+                    try
                     {
                         if (lordInvolved != null && lordInvolved.CurLordToil is LordToil_Siege)
                         {
@@ -351,7 +365,7 @@ namespace MOARANDROIDS
                             st.UpdateAllDuties();
                         }
                     }
-                    catch(Exception)
+                    catch (Exception)
                     {
 
                     }
@@ -360,160 +374,156 @@ namespace MOARANDROIDS
                     //Log.Message("Current job ==>" + cp.CurJobDef.defName);
                 }
             }
+        }
 
-            if(GT % 120 == 0)
+        /*
+         * Check if the android reached some nanite effecter
+         */
+        public void checkNaniteApplyEffectEnd(int GT)
+        {
+            if (frameworkNaniteEffectGTEnd != -1 && GT >= frameworkNaniteEffectGTEnd && !currentPawn.Dead)
             {
-                Log.Message("=> " + currentPawn.LabelCap + " " + (currentPawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier));
-                if (uploadEndingGT != -1)
+                bool chance = false;
+                int nb = 0;
+
+                //Chance que nanite fail
+                if (!Rand.Chance(Settings.percentageNanitesFail))
                 {
-                    checkInterruptedUpload();
+                    //Le cas echeant on enleve le rusting
+                    clearRusted();
 
-                    //Atteinte d'un chargement d'upload de conscience
-                    if (uploadRecipient != null && uploadEndingGT != -1 && uploadEndingGT < GT)
+                    nb = currentPawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (Utils.AndroidOldAgeHediffFramework.Contains(h.def.defName)));
+                    nb += currentPawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (h.def == HediffDefOf.MissingBodyPart || (Utils.ExceptionRepairableFrameworkHediff.Contains(h.def) && h.IsPermanent())));
+                    if (nb > 0)
                     {
-                        uploadEndingGT = -1;
-                        CompAndroidState cas = Utils.getCachedCAS(uploadRecipient);
-                        cas.uploadEndingGT = -1;
-
-                        Utils.removeUploadHediff(currentPawn, uploadRecipient);
-
-                        Find.LetterStack.ReceiveLetter("ATPP_LetterUploadOK".Translate(), "ATPP_LetterUploadOKDesc".Translate(currentPawn.LabelShortCap, uploadRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
-
-                        if (currentPawn.def.defName == Utils.T1 && uploadRecipient.def.defName != Utils.T1)
-                            Utils.removeSimpleMindedTrait(currentPawn);
-                        else
-                            Utils.addSimpleMindedTraitForT1(uploadRecipient);
-
-                        //On realise effectivement la permutation puis le kill de la source
-                        Utils.PermutePawn(currentPawn, uploadRecipient);
-
-                        Utils.clearBlankAndroid(uploadRecipient);
-
-                        //Report du blankAndroid pour le flagger dans la routine de kill
-                        isBlankAndroid = true;
-
-
-                        //Si destinataire de la duplication prisonnier Et emetteur pas prisonier on enleve la condition 
-                        if (!currentPawn.IsPrisoner && uploadRecipient.IsPrisoner)
-                        {
-                            if (uploadRecipient.Faction != Faction.OfPlayer)
-                            {
-                                uploadRecipient.SetFaction(Faction.OfPlayer, null);
-                            }
-
-                            if (uploadRecipient.guest != null)
-                            {
-                                uploadRecipient.guest.SetGuestStatus(null);
-                            }
-                        }
-
-                        //SI destinataire de la duplication colon regular et emetteur prisonnier 
-                        if (currentPawn.IsPrisoner && !uploadRecipient.IsPrisoner)
-                        {
-                            if (uploadRecipient.Faction != currentPawn.Faction)
-                            {
-                                uploadRecipient.SetFaction(currentPawn.Faction, null);
-                            }
-
-                            if (uploadRecipient.guest != null)
-                            {
-                                if(uploadRecipient.IsSlave)
-                                    uploadRecipient.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Slave);
-                                else
-                                    uploadRecipient.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
-                            }
-                        }
-
-                        if (!currentPawn.Dead)
-                            currentPawn.Kill(null, null);
-
-
-                        resetUploadStuff();
+                        Utils.refreshHediff(currentPawn);
                     }
+                    chance = true;
                 }
 
-                if(batteryExplosionEndingGT != -1 && batteryExplosionEndingGT < GT)
+                if (nb == 0)
                 {
-                    Utils.makeAndroidBatteryOverload(currentPawn);
-
-                    return;
-                }
-
-                //Atteinte fin application des nanites sur un androide
-                if(frameworkNaniteEffectGTEnd != -1 && GT >= frameworkNaniteEffectGTEnd && !currentPawn.Dead)
-                {
-                    bool chance = false;
-                    int nb = 0;
-
-                    //Chance que nanite fail
-                    if (!Rand.Chance(Settings.percentageNanitesFail))
-                    {
-                        //Le cas echeant on enleve le rusting
-                        clearRusted();
-
-                        nb = currentPawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (Utils.AndroidOldAgeHediffFramework.Contains(h.def.defName)));
-                        nb += currentPawn.health.hediffSet.hediffs.RemoveAll((Hediff h) => (h.def == HediffDefOf.MissingBodyPart || ( Utils.ExceptionRepairableFrameworkHediff.Contains(h.def) && h.IsPermanent() )));
-                        if (nb > 0)
-                        {
-                            Utils.refreshHediff(currentPawn);
-                        }
-                        chance = true;
-                    }
-
-                    if (nb == 0)
-                    {
-                        if (chance)
-                            Messages.Message("ATPP_NoBrokenStuffFound".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.NegativeEvent, true);
-                        else
-                            Messages.Message("ATPP_BrokenStuffRepairFailed".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.NegativeEvent, true);
-                    }
+                    if (chance)
+                        Messages.Message("ATPP_NoBrokenStuffFound".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.NegativeEvent, true);
                     else
-                        Messages.Message("ATPP_BrokenFrameworkRepaired".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.PositiveEvent, true);
+                        Messages.Message("ATPP_BrokenStuffRepairFailed".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.NegativeEvent, true);
+                }
+                else
+                    Messages.Message("ATPP_BrokenFrameworkRepaired".Translate(currentPawn.LabelShort), currentPawn, MessageTypeDefOf.PositiveEvent, true);
 
 
-                    frameworkNaniteEffectGTEnd = -1;
-                    frameworkNaniteEffectGTStart = -1;
+                frameworkNaniteEffectGTEnd = -1;
+                frameworkNaniteEffectGTStart = -1;
+            }
+        }
+
+        /*
+         * Check mind upload stuff (if interrupted or if success)
+         */
+        public void checkUploadInterruptStuffTick(int GT)
+        {
+            if (uploadEndingGT != -1)
+            {
+                checkInterruptedUpload();
+
+                //Atteinte d'un chargement d'upload de conscience
+                if (uploadRecipient != null && uploadEndingGT != -1 && uploadEndingGT < GT)
+                {
+                    uploadEndingGT = -1;
+                    CompAndroidState cas = Utils.getCachedCAS(uploadRecipient);
+                    cas.uploadEndingGT = -1;
+
+                    Utils.removeUploadHediff(currentPawn, uploadRecipient);
+
+                    Find.LetterStack.ReceiveLetter("ATPP_LetterUploadOK".Translate(), "ATPP_LetterUploadOKDesc".Translate(currentPawn.LabelShortCap, uploadRecipient.LabelShortCap), LetterDefOf.PositiveEvent, parent);
+
+                    if (currentPawn.def.defName == Utils.T1 && uploadRecipient.def.defName != Utils.T1)
+                        Utils.removeSimpleMindedTrait(currentPawn);
+                    else
+                        Utils.addSimpleMindedTraitForT1(uploadRecipient);
+
+                    //On realise effectivement la permutation puis le kill de la source
+                    Utils.PermutePawn(currentPawn, uploadRecipient);
+
+                    Utils.clearBlankAndroid(uploadRecipient);
+
+                    //Report du blankAndroid pour le flagger dans la routine de kill
+                    isBlankAndroid = true;
+
+
+                    //Si destinataire de la duplication prisonnier Et emetteur pas prisonier on enleve la condition 
+                    if (!currentPawn.IsPrisoner && uploadRecipient.IsPrisoner)
+                    {
+                        if (uploadRecipient.Faction != Faction.OfPlayer)
+                        {
+                            uploadRecipient.SetFaction(Faction.OfPlayer, null);
+                        }
+
+                        if (uploadRecipient.guest != null)
+                        {
+                            uploadRecipient.guest.SetGuestStatus(null);
+                        }
+                    }
+
+                    //SI destinataire de la duplication colon regular et emetteur prisonnier 
+                    if (currentPawn.IsPrisoner && !uploadRecipient.IsPrisoner)
+                    {
+                        if (uploadRecipient.Faction != currentPawn.Faction)
+                        {
+                            uploadRecipient.SetFaction(currentPawn.Faction, null);
+                        }
+
+                        if (uploadRecipient.guest != null)
+                        {
+                            if (uploadRecipient.IsSlave)
+                                uploadRecipient.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Slave);
+                            else
+                                uploadRecipient.guest.SetGuestStatus(Faction.OfPlayer, GuestStatus.Prisoner);
+                        }
+                    }
+
+                    if (!currentPawn.Dead)
+                        currentPawn.Kill(null, null);
+
+
+                    resetUploadStuff();
                 }
             }
+        }
 
-            if(GT % 300 == 0)
+
+        /*
+         * If loaded, do Power++ stuff by tick
+         */
+        public void powerPPStuffTick()
+        {
+            if (Utils.POWERPP_LOADED)
             {
-                Pawn cp = (Pawn)parent;
-
-
-                checkInfectionFix();
-                checkTXWithSkinFacialTextureUpdate();
-
-                //SI surrogate d'une conscience numérisée ET à un mentalbreak => déconnection et mise en place d'un timeout de fin de mentalbreak
-
-                //Recharge auto de la barre de need food
-                if (csm != null && csm.Infected == -1)
+                //Tentative de reco auto
+                if (!connectedLWPNActive && connectedLWPN != null)
                 {
-                    //Recharge surrogate
-                    if (Utils.androidIsValidPodForCharging(cp) && !isOrganic)
-                    {
-                        //cpawn.needs.food.CurLevel = cpawn.needs.food.MaxLevel;
-                        cp.needs.food.CurLevelPercentage += Settings.percentageOfBatteryChargedEach6Sec;
-                        Utils.throwChargingMote(cp);
-                    }
-                    if(isSurrogate && surrogateController == null)
-                        addNoRemoteHostHediff();
+                    if (Utils.GCATPP.pushLWPNAndroid(connectedLWPN, currentPawn))
+                        connectedLWPNActive = true;
                 }
+            }
+        }
 
-                checkRusted();
-                checkBlankAndroid();
-
-
-                if (Utils.POWERPP_LOADED)
+        /*
+         * Reaload the energy (food) need if android resting in an valid android pod
+         */
+        public void reloadBatteryTick()
+        {
+            if (csm != null && csm.Infected == -1)
+            {
+                //Recharge surrogate
+                if (Utils.androidIsValidPodForCharging(currentPawn) && !isOrganic)
                 {
-                    //Tentative de reco auto
-                    if (!connectedLWPNActive && connectedLWPN != null)
-                    {
-                        if (Utils.GCATPP.pushLWPNAndroid(connectedLWPN, cp))
-                            connectedLWPNActive = true;
-                    }
+                    //cpawn.needs.food.CurLevel = cpawn.needs.food.MaxLevel;
+                    currentPawn.needs.food.CurLevelPercentage += Settings.percentageOfBatteryChargedEach6Sec;
+                    Utils.throwChargingMote(currentPawn);
                 }
-                
+                if (isSurrogate && surrogateController == null)
+                    addNoRemoteHostHediff();
             }
         }
 
@@ -1395,7 +1405,6 @@ namespace MOARANDROIDS
         public void checkInterruptedUpload()
         {
             bool killSelf = false;
-            Pawn cpawn = (Pawn)parent;
 
             bool recipientDeadOrNull = uploadRecipient == null || uploadRecipient.Dead;
             bool recipientConnected = false;
@@ -1403,7 +1412,7 @@ namespace MOARANDROIDS
             if (uploadRecipient != null && Utils.GCATPP.isConnectedToSkyMind(uploadRecipient, !lastSkymindDisconnectIsManual))
                 recipientConnected = true;
 
-            if (Utils.GCATPP.isConnectedToSkyMind(cpawn))
+            if (Utils.GCATPP.isConnectedToSkyMind(currentPawn))
                 emitterConnected = true;
 
             if (isSurrogate && surrogateController != null)
@@ -1423,18 +1432,18 @@ namespace MOARANDROIDS
                     else
                         hostBadConn = !Utils.GCATPP.isConnectedToSkyMind(surrogateController, !lastSkymindDisconnectIsManual);
 
-                    bool surrogateBadConn = !Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual);
+                    bool surrogateBadConn = !Utils.GCATPP.isConnectedToSkyMind(currentPawn, !lastSkymindDisconnectIsManual);
 
                     if (hostBadConn || surrogateBadConn)
                     {
                         //Log.Message("DDDDD==>"+ (!Utils.GCATPP.isConnectedToSkyMind(cpawn))+" "+ (!Utils.GCATPP.isConnectedToSkyMind(SX)));
 
-                        Pawn disconnectedPawn = cpawn;
+                        Pawn disconnectedPawn = currentPawn;
                         Pawn invertedPawn = surrogateController;
                         if (hostBadConn)
                         {
                             disconnectedPawn = surrogateController;
-                            invertedPawn = cpawn;
+                            invertedPawn = currentPawn;
                         }
 
                         //Notification de la deconnexion accidentelle
@@ -1442,13 +1451,13 @@ namespace MOARANDROIDS
                             Messages.Message("ATPP_SurrogateUnexpectedDisconnection".Translate(invertedPawn.LabelShortCap), disconnectedPawn, MessageTypeDefOf.NegativeEvent);
 
                         //un ou les deux des composantes sont déconnectés ===> on lance la deconnection du SX
-                        cso.stopControlledSurrogate(cpawn);
+                        cso.stopControlledSurrogate(currentPawn);
                     }
                 }
             }
 
             //Si hote plus valide alors on arrete le processus et on kill les deux androids
-            if (uploadEndingGT != -1 && (recipientDeadOrNull || cpawn.Dead || !emitterConnected || !recipientConnected))
+            if (uploadEndingGT != -1 && (recipientDeadOrNull || currentPawn.Dead || !emitterConnected || !recipientConnected))
             {
                 string reason = "";
                 if (recipientDeadOrNull)
@@ -1457,7 +1466,7 @@ namespace MOARANDROIDS
                     killSelf = true;
                 }
 
-                if(cpawn.Dead)
+                if(currentPawn.Dead)
                 {
                     reason = "ATPP_LetterInterruptedUploadDescCompSourceDead".Translate();
                     if (uploadRecipient != null && !uploadRecipient.Dead)
@@ -1485,8 +1494,8 @@ namespace MOARANDROIDS
 
                 if (killSelf)
                 {
-                    if(!cpawn.Dead)
-                        cpawn.Kill(null, null);
+                    if(!currentPawn.Dead)
+                        currentPawn.Kill(null, null);
                 }
 
                 Utils.showFailedLetterMindUpload(reason);

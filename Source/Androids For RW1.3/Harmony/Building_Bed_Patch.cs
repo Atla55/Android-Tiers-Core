@@ -45,7 +45,7 @@ namespace MOARANDROIDS
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
                         {
-                            if (el.def.defName != Utils.M7 && el.IsAndroidTier())
+                            if (el.def.defName != Utils.M7 && el.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                                 lst.Add(el);
                         }
 
@@ -74,7 +74,7 @@ namespace MOARANDROIDS
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
                         {
-                            if (!el.IsAndroidTier())
+                            if (!(el.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                                 lst.Add(el);
                         }
                         __result = lst;
@@ -136,7 +136,7 @@ namespace MOARANDROIDS
                 {
                     return new FloatMenuOption("CannotUseNoPower".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }
-                if (!myPawn.IsAndroidTier())
+                if (!(myPawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier ))
                 {
                     return new FloatMenuOption("ATPP_CanOnlyBeUsedByAndroid".Translate(), null, MenuOptionPriority.Default, null, null, 0f, null, null);
                 }

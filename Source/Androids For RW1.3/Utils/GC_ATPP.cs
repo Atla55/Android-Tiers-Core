@@ -873,7 +873,7 @@ namespace MOARANDROIDS
             {
                 foreach(var p in map.mapPawns.AllPawns)
                 {
-                    if (p.IsAndroidTier() && p.health != null && p.health.hediffSet != null)
+                    if ((p.RaceProps != null && p.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier) && p.health != null && p.health.hediffSet != null)
                     {
                         foreach(var he in p.health.hediffSet.hediffs)
                         {
@@ -1546,7 +1546,7 @@ namespace MOARANDROIDS
             return true;
         }
 
-        public void disconnectUser(Thing thing, bool manual=false)
+        public void disconnectUser(Thing thing, bool manual=false, bool broadcastEvent=true)
         {
             if (connectedThing.Contains(thing))
             {
@@ -1572,14 +1572,17 @@ namespace MOARANDROIDS
                     {
                         popSkyMindUser(pawn);
                     }
-                    pawn.BroadcastCompSignal(signal);
+                    if(broadcastEvent)
+                        pawn.BroadcastCompSignal(signal);
                 }
                 else if (thing is Building)
                 {
                     Building build = (Building)thing;
                     if(listerConnectedDevices.Contains(build))
                         listerConnectedDevices.Remove(thing);
-                    build.BroadcastCompSignal(signal);
+
+                    if (broadcastEvent)
+                        build.BroadcastCompSignal(signal);
                 }
             }
         }

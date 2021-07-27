@@ -1749,9 +1749,9 @@ namespace MOARANDROIDS
 
 
                 //If android create fake rest need
-                if (p1.IsAndroidTier())
+                if (p1.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                     pn1.rest = new Need_Rest_Fake(p1);
-                if (p2.IsAndroidTier())
+                if (p2.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                     pn2.rest = new Need_Rest_Fake(p2);
 
                 //Rajout des memoires personalisées

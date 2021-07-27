@@ -1074,7 +1074,7 @@ namespace MOARANDROIDS
         }
 
 
-        public void setControlledSurrogate(Pawn controlled, bool external=false)
+        public void setControlledSurrogate(Pawn controlled, bool external = false, bool forceExternalConnectionInitMalus = false)
         {
             Pawn cp = (Pawn)parent;
             if (cp == null)
@@ -1186,7 +1186,7 @@ namespace MOARANDROIDS
             }
 
             //Connection init malus
-            if(Settings.allowSurrogateConnectionInitMalus)
+            if(Settings.allowSurrogateConnectionInitMalus && (!externalController || forceExternalConnectionInitMalus))
             {
                 controlled.health.AddHediff(HediffDefOf.ATPP_SurrogateInit);
             }

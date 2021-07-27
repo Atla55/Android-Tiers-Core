@@ -71,8 +71,8 @@ namespace MOARANDROIDS
                             csm.tempHackingEnding();
                         }
                     }
-                    //disconnect killed user
-                    Utils.GCATPP.disconnectUser(__instance);
+                    //disconnect killed user and dont broadcast the message
+                    Utils.GCATPP.disconnectUser(__instance, false, false);
                     //Log.Message("YOU KILLED "+__instance.LabelCap);
                     //Is surrogate android used ?
                     if (__instance.IsSurrogateAndroid(true))

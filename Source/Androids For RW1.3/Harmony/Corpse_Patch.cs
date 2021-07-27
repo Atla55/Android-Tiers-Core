@@ -51,8 +51,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Corpse __instance, ref Thought_Memory __result)
             {
-                if (__instance.InnerPawn.RaceProps.Humanlike
-                    && __instance.InnerPawn.IsAndroidTier())
+                if (__instance.InnerPawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                 {
                     __result = null;
                 }
@@ -68,9 +67,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Corpse __instance, ref bool __result)
             {
-                if ((__instance.InnerPawn.RaceProps.Humanlike
-                    && __instance.InnerPawn.IsAndroidTier())
-                    || __instance.InnerPawn.IsCyberAnimal())
+                if (__instance.InnerPawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                 {
                         __result = false;
                 }

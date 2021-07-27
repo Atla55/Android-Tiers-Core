@@ -61,7 +61,7 @@ namespace MOARANDROIDS
                     if (Settings.androidsCanUseOrganicMedicine)
                         return;
 
-                    bool patientIsAndroid = patient.IsAndroidTier() || patient.IsCyberAnimal();
+                    bool patientIsAndroid = patient.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier;
 
                     if (patient.playerSettings == null || patient.playerSettings.medCare <= MedicalCareCategory.NoMeds)
                     {
