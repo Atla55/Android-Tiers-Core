@@ -13,7 +13,7 @@ namespace MOARANDROIDS
             {   
                 return false;
             }
-            if (!p.IsAndroidTier() && !p.VXChipPresent())
+            if (!(p.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier) && !p.VXChipPresent())
             {
                 return false;
             }

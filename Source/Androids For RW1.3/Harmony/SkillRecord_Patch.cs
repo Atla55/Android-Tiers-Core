@@ -20,7 +20,7 @@ namespace MOARANDROIDS
             [HarmonyPrefix]
             public static bool Listener(Pawn ___pawn )
             {
-                if (___pawn.IsAndroidTier())
+                if (___pawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                     return false;
                 return true;
             }

@@ -83,7 +83,7 @@ namespace MOARANDROIDS
 
         public static void SaveOurShip2_hasSpaceSuit(Pawn thePawn, ref bool __result)
         {
-            if (thePawn.IsAndroidTier())
+            if (thePawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
             {
                 __result = true;
             }

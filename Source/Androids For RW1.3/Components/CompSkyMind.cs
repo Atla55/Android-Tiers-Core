@@ -123,7 +123,7 @@ namespace MOARANDROIDS
             if (parent is Pawn)
             {
                 Pawn pawn = (Pawn)parent;
-                return pawn.VXChipPresent() || pawn.IsAndroidTier();
+                return pawn.VXChipPresent() || pawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier;
             }
             else
             {
@@ -142,7 +142,7 @@ namespace MOARANDROIDS
                 Pawn pawn = (Pawn)parent;
 
                 //Si ni un humain ou robot pucé ET pas un android Tier alors pas de possibilité de connection au SkyMind
-                if (!pawn.VXChipPresent() && !pawn.VX0ChipPresent() && !pawn.IsAndroidTier())
+                if (!pawn.VXChipPresent() && !pawn.VX0ChipPresent() && !(pawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                 {
                     yield break;
                 }

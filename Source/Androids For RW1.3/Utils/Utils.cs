@@ -1889,7 +1889,8 @@ namespace MOARANDROIDS
                         p1WS.EnableAndInitializeIfNotAlreadyInitialized();
                         foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
                         {
-                            p1WS.SetPriority(el, p1.workSettings.GetPriority(el));
+                            if(!p1.WorkTypeIsDisabled(el))
+                                p1WS.SetPriority(el, p1.workSettings.GetPriority(el));
                         }
                         Pawn_PlayerSettings p1PS = new Pawn_PlayerSettings(p1);
                         p1PS.AreaRestriction = p1.playerSettings.AreaRestriction;
@@ -1909,7 +1910,8 @@ namespace MOARANDROIDS
                         //-----------Report agenda worksettings and policies from P2 to P1
                         foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
                         {
-                            p1.workSettings.SetPriority(el, p2.workSettings.GetPriority(el));
+                            if (!p1.WorkTypeIsDisabled(el))
+                                p1.workSettings.SetPriority(el, p2.workSettings.GetPriority(el));
                         }
                         p1.playerSettings.AreaRestriction = p2.playerSettings.AreaRestriction;
                         p1.playerSettings.hostilityResponse = p2.playerSettings.hostilityResponse;
@@ -1926,7 +1928,8 @@ namespace MOARANDROIDS
                         //-----------Report agenda worksettings and policies from P1 to P2
                         foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
                         {
-                            p2.workSettings.SetPriority(el, p1WS.GetPriority(el));
+                            if (!p2.WorkTypeIsDisabled(el))
+                                p2.workSettings.SetPriority(el, p1WS.GetPriority(el));
                         }
                         p2.playerSettings.AreaRestriction = p1PS.AreaRestriction;
                         p2.playerSettings.hostilityResponse = p1PS.hostilityResponse;
