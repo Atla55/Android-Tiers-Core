@@ -1103,6 +1103,7 @@ namespace MOARANDROIDS
             }
             //Définition du controlleur
             cas.surrogateController = cp;
+            cas.surrogateControllerCAS = currentCAS;
             cas.lastController = cp;
 
             bool inMainSX = false;
@@ -1375,6 +1376,7 @@ namespace MOARANDROIDS
                 if (cas != null)
                 {
                     cas.surrogateController = null;
+                    cas.surrogateControllerCAS = null;
                     //Store the last way the surrogate was disconnected
                     cas.downedViaDisconnect = _downedViaDisconnect;
                 }
@@ -1520,10 +1522,12 @@ namespace MOARANDROIDS
             permuteRecipient = dest;
             permuteStartGT = CGT;
             permuteEndingGT = CGT + 60-(CGT%60) + Settings.mindPermutationHours * 2500;
-
+            
             CompSurrogateOwner cso = Utils.getCachedCSO(dest);
             cso.showPermuteProgress = true;
             cso.permuteRecipient = source;
+            cso.permuteRecipientCSO = this;
+            permuteRecipientCSO = cso;
 
             Messages.Message("ATPP_StartPermute".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
         }
@@ -1542,6 +1546,8 @@ namespace MOARANDROIDS
             CompSurrogateOwner cso = Utils.getCachedCSO(dest);
             cso.showDuplicateProgress = true;
             cso.duplicateRecipient = (Pawn)parent;
+            cso.duplicateRecipientCSO = this;
+            duplicateRecipientCSO = cso;
 
             //Log.Message("DUPLICATION STARTED !! ");
             Messages.Message("ATPP_StartDuplicate".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
@@ -1607,6 +1613,8 @@ namespace MOARANDROIDS
         public void checkInterruptedUpload()
         {
             bool killSelf = false;
+            bool permuteRecipientLastSkymindDisconnectIsManual = true;
+            bool duplicateRecipientLastSkymindDisconnectIsManual = true;
             Pawn cpawn = (Pawn)parent;
            
             //Permutation ou duplication en cours on test si les conditions d'arret sont presentes
@@ -1614,6 +1622,7 @@ namespace MOARANDROIDS
                 || duplicateEndingGT != -1 || duplicateRecipient != null
                 || uploadToSkyCloudEndingGT != -1 || downloadFromSkyCloudEndingGT != -1 || mindAbsorptionEndingGT != -1 || migrationEndingGT != -1 || replicationEndingGT != -1)
             {
+                
                 bool permuteRecipientDead = false;
                 if (permuteRecipient != null)
                     permuteRecipientDead = permuteRecipient.Dead;
@@ -1626,11 +1635,28 @@ namespace MOARANDROIDS
 
                 bool emitterConnected = false;
 
-                if (permuteRecipient != null && Utils.GCATPP.isConnectedToSkyMind(permuteRecipient, !lastSkymindDisconnectIsManual, false))
-                    recipientConnected = true;
+                if (permuteRecipient != null) {
+                    if (permuteRecipientCSO == null)
+                        permuteRecipientCSO = Utils.getCachedCSO(permuteRecipient);
 
-                if (duplicateRecipient != null && Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient, !lastSkymindDisconnectIsManual, false))
-                    recipientConnected = true;
+                    if (permuteRecipientCSO != null)
+                        permuteRecipientLastSkymindDisconnectIsManual = permuteRecipientCSO.lastSkymindDisconnectIsManual;
+
+                    if (Utils.GCATPP.isConnectedToSkyMind(permuteRecipient, !permuteRecipientLastSkymindDisconnectIsManual, false))
+                        recipientConnected = true;
+                }
+
+                if (duplicateRecipient != null)
+                {
+                    if (duplicateRecipientCSO == null)
+                        duplicateRecipientCSO = Utils.getCachedCSO(duplicateRecipient);
+
+                    if (duplicateRecipientCSO != null)
+                        duplicateRecipientLastSkymindDisconnectIsManual = duplicateRecipientCSO.lastSkymindDisconnectIsManual;
+
+                    if (Utils.GCATPP.isConnectedToSkyMind(duplicateRecipient, !duplicateRecipientLastSkymindDisconnectIsManual, false))
+                        recipientConnected = true;
+                }
 
                 /*if (Utils.GCATPP.isThereSkillServers())
                     recipientConnected = true;*/
@@ -1744,6 +1770,7 @@ namespace MOARANDROIDS
                 CompSurrogateOwner cso = Utils.getCachedCSO(duplicateRecipient);
                 cso.showDuplicateProgress = false;
                 cso.duplicateRecipient = null;
+                cso.duplicateRecipientCSO = null;
             }
 
             if (permuteRecipient != null)
@@ -1751,6 +1778,7 @@ namespace MOARANDROIDS
                 CompSurrogateOwner cso = Utils.getCachedCSO(permuteRecipient);
                 cso.showPermuteProgress = false;
                 cso.permuteRecipient = null;
+                cso.permuteRecipientCSO = null;
             }
 
             permuteStartGT = 0;
@@ -1801,7 +1829,9 @@ namespace MOARANDROIDS
         public Pawn skyCloudDownloadRecipient;
         public Building skyCloudRecipient;
         public Pawn permuteRecipient;
+        public CompSurrogateOwner permuteRecipientCSO;
         public Pawn duplicateRecipient;
+        public CompSurrogateOwner duplicateRecipientCSO;
 
         public bool showPermuteProgress = false;
         public bool showDuplicateProgress = false;

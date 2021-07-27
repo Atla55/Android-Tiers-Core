@@ -109,6 +109,7 @@ namespace MOARANDROIDS
             if (init)
                 return;
 
+            init = true;
             currentPawn = (Pawn)parent;
             csm = Utils.getCachedCSM(currentPawn);
             isAndroidWithSkin = Utils.ExceptionAndroidWithSkinList.Contains(currentPawn.def.defName);
@@ -230,7 +231,12 @@ namespace MOARANDROIDS
             addLowSignalHediff();
             addSolarFlareImpactHediff();
             checkTXWithSkinFacialTextureUpdate();
-            init = true;
+
+            if (uploadRecipient != null)
+                uploadRecipientCAS = Utils.getCachedCAS(uploadRecipient);
+            if (surrogateController != null)
+                surrogateControllerCAS = Utils.getCachedCAS(surrogateController);
+
             //Reconexion auto au LWPN le cas echeant
             if (Utils.POWERPP_LOADED)
             {
@@ -947,6 +953,7 @@ namespace MOARANDROIDS
                         lastSkymindDisconnectIsManual = true;
                     else
                         lastSkymindDisconnectIsManual = false;
+
                     //On va  invoquer le checkInterruption pour les duplicate et permutation 
                     checkInterruptedUpload();
                     break;
@@ -1405,12 +1412,22 @@ namespace MOARANDROIDS
         public void checkInterruptedUpload()
         {
             bool killSelf = false;
-
+            bool uploadRecipientLastSkymindDisconnectIsManual = true;
             bool recipientDeadOrNull = uploadRecipient == null || uploadRecipient.Dead;
             bool recipientConnected = false;
             bool emitterConnected = false;
-            if (uploadRecipient != null && Utils.GCATPP.isConnectedToSkyMind(uploadRecipient, !lastSkymindDisconnectIsManual))
-                recipientConnected = true;
+
+            if (uploadRecipient != null)
+            {
+                if (uploadRecipientCAS == null)
+                    uploadRecipientCAS = Utils.getCachedCAS(uploadRecipient);
+
+                if (uploadRecipientCAS != null)
+                    uploadRecipientLastSkymindDisconnectIsManual = uploadRecipientCAS.lastSkymindDisconnectIsManual;
+
+                if (Utils.GCATPP.isConnectedToSkyMind(uploadRecipient, !uploadRecipientLastSkymindDisconnectIsManual))
+                    recipientConnected = true;
+            }
 
             if (Utils.GCATPP.isConnectedToSkyMind(currentPawn))
                 emitterConnected = true;
@@ -1425,12 +1442,19 @@ namespace MOARANDROIDS
                 if (cso.isThereSX() && cso.availableSX != null)
                 {
                     bool hostBadConn = false;
+                    bool surrogateControllerLastSkymindDisconnectIsManual = true;
+
+                    if (surrogateControllerCAS == null)
+                        surrogateControllerCAS = Utils.getCachedCAS(surrogateController);
+
+                    if (surrogateControllerCAS != null)
+                        surrogateControllerLastSkymindDisconnectIsManual = surrogateControllerCAS.lastSkymindDisconnectIsManual;
 
                     //Si surrogateController stoclé dans le skyCloud
                     if (cso.skyCloudHost != null)
                         hostBadConn = !Utils.getCachedCSC(cso.skyCloudHost).isRunning();
                     else
-                        hostBadConn = !Utils.GCATPP.isConnectedToSkyMind(surrogateController, !lastSkymindDisconnectIsManual);
+                        hostBadConn = !Utils.GCATPP.isConnectedToSkyMind(surrogateController, !surrogateControllerLastSkymindDisconnectIsManual);
 
                     bool surrogateBadConn = !Utils.GCATPP.isConnectedToSkyMind(currentPawn, !lastSkymindDisconnectIsManual);
 
@@ -1524,6 +1548,7 @@ namespace MOARANDROIDS
                 CompAndroidState cab = Utils.getCachedCAS(uploadRecipient);
                 cab.showUploadProgress = false;
                 cab.uploadRecipient = null;
+                cab.uploadRecipientCAS = null;
             }
 
             uploadStartGT = 0;
@@ -1545,6 +1570,9 @@ namespace MOARANDROIDS
             CompAndroidState cab = Utils.getCachedCAS(dest);
             cab.showUploadProgress = true;
             cab.uploadRecipient = (Pawn)parent;
+            cab.uploadRecipientCAS = this;
+            //Cachin CAS of recipient
+            uploadRecipientCAS = cab;
 
             Messages.Message("ATPP_StartUpload".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
         }
@@ -1561,14 +1589,17 @@ namespace MOARANDROIDS
             }
         }
 
+        
         Pawn currentPawn = null;
         //Stock le signal indiquant si le pawn à été attribué par le systeme de job pour faire du guarding ou non
         public bool useBattery = false;
         public int uploadEndingGT = -1;
         public int uploadStartGT = 0;
         public Pawn uploadRecipient;
+        public CompAndroidState uploadRecipientCAS;
         public bool isSurrogate = false;
         public Pawn surrogateController;
+        public CompAndroidState surrogateControllerCAS;
 
         public bool isAndroidOrAnimalTier = false;
         //Sert a identifier les surrogates biologiques
