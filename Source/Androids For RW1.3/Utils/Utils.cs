@@ -1515,7 +1515,8 @@ namespace MOARANDROIDS
                     {
                         foreach (var el in DefDatabase<WorkTypeDef>.AllDefsListForReading)
                         {
-                            dest.workSettings.SetPriority(el, source.workSettings.GetPriority(el));
+                            if (!dest.WorkTypeIsDisabled(el))
+                                dest.workSettings.SetPriority(el, source.workSettings.GetPriority(el));
                         }
                     }
                     dest.playerSettings.AreaRestriction = source.playerSettings.AreaRestriction;
@@ -1638,6 +1639,34 @@ namespace MOARANDROIDS
                 Traverse.Create(p2.story).Field("headGraphicPath").SetValue(vhg2);
                 //Log.Message("L6");
 
+                /******************** Royal TITLES ******************************/
+
+                Pawn_RoyaltyTracker tmpRoyalty=null;
+                tmpRoyalty = p1.royalty;
+
+                if(p1.royalty != null)
+                    p1.royalty.pawn = p2;
+                if(p2.royalty != null)
+                    p2.royalty.pawn = p1;
+
+                p1.royalty = p2.royalty;
+                p2.royalty = tmpRoyalty;
+                if (p1.royalty != null)
+                {
+                    p1.royalty.UpdateAvailableAbilities();
+                    if (p1.needs != null)
+                        p1.needs.AddOrRemoveNeedsAsAppropriate();
+                    p1.abilities.Notify_TemporaryAbilitiesChanged();
+                }
+                if (p2.royalty != null)
+                {
+                    p2.royalty.UpdateAvailableAbilities();
+                    if (p2.needs != null)
+                        p2.needs.AddOrRemoveNeedsAsAppropriate();
+                    p2.abilities.Notify_TemporaryAbilitiesChanged();
+                }
+
+                /****************************************************************/
 
                 notifTraitsChanged(p1);
                 notifTraitsChanged(p2);
