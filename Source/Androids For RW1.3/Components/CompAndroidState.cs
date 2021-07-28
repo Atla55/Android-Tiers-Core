@@ -307,77 +307,85 @@ namespace MOARANDROIDS
          */
         public void checkExternalControllerReconnection()
         {
-            if (externalController != null
-                && surrogateController == null
-                && csm != null && csm.hacked != 3
-                //&& !externalController.Faction.HostileTo(Faction.OfPlayer)
-                && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
+            if (externalController != null)
             {
-                Lord lordInvolved = null;
-                if (currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction).Any((Pawn p) => p != currentPawn))
+                //Disconnection of externalControler if he is connected and there is a solarFlare (SkyMind infrastructures powered-off)
+                if (surrogateController != null && Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
                 {
-                    Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(currentPawn.Position, currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction), 99999f, (Thing p) => p != currentPawn && ((Pawn)p).GetLord() != null, null);
-                    lordInvolved = p2.GetLord();
+                    CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
+                    cso.stopControlledSurrogate((Pawn)parent, true);
                 }
-                if (lordInvolved == null && !currentPawn.IsPrisoner)
+                else if (surrogateController == null
+                 && csm != null && csm.hacked != 3
+                     //&& !externalController.Faction.HostileTo(Faction.OfPlayer)
+                     && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare))
                 {
-                    LordJob_DefendPoint lordJob = new LordJob_DefendPoint(currentPawn.Position);
-                    lordInvolved = LordMaker.MakeNewLord(currentPawn.Faction, lordJob, Find.CurrentMap, null);
-                }
-
-
-                //Si controlleur non player du surrogate mort OU surrogate hacké avais un lors il existe tjr mais il n'est plus actif
-                if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved == null && !currentPawn.IsPrisoner))
-                {
-                    //Rajout NoHost car comme en mode externalController on a pas remis le hediff pour eviter le bug bizard faisant que quand tentative integration ennemis hacké a un lord sa merdequand il a été down
-                    addNoRemoteHostHediff();
-                    externalController = null;
-                }
-                else
-                {
-                    try
+                    Lord lordInvolved = null;
+                    if (currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction).Any((Pawn p) => p != currentPawn))
                     {
-                        //Try auto-reconnect to surrogate to his external controle (with this time the connection init malus)
-                        CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
-                        cso.setControlledSurrogate((Pawn)parent, true, true);
-                        currentPawn.mindState.Reset();
-                        currentPawn.mindState.duty = null;
-                        currentPawn.jobs.StopAll();
-                        currentPawn.jobs.ClearQueuedJobs();
-                        currentPawn.ClearAllReservations();
-                        if (currentPawn.drafter != null)
-                            currentPawn.drafter.Drafted = false;
-
-                        if (lordInvolved != null && !currentPawn.Downed)
-                            lordInvolved.AddPawn(currentPawn);
+                        Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(currentPawn.Position, currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction), 99999f, (Thing p) => p != currentPawn && ((Pawn)p).GetLord() != null, null);
+                        lordInvolved = p2.GetLord();
                     }
-                    catch (Exception)
+                    if (lordInvolved == null && !currentPawn.IsPrisoner)
                     {
-
+                        LordJob_DefendPoint lordJob = new LordJob_DefendPoint(currentPawn.Position);
+                        lordInvolved = LordMaker.MakeNewLord(currentPawn.Faction, lordJob, Find.CurrentMap, null);
                     }
 
-                    try
+
+                    //Si controlleur non player du surrogate mort OU surrogate hacké avais un lors il existe tjr mais il n'est plus actif
+                    if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved == null && !currentPawn.IsPrisoner))
                     {
-                        if (lordInvolved != null && lordInvolved.CurLordToil is LordToil_Siege)
+                        //Rajout NoHost car comme en mode externalController on a pas remis le hediff pour eviter le bug bizard faisant que quand tentative integration ennemis hacké a un lord sa merdequand il a été down
+                        addNoRemoteHostHediff();
+                        externalController = null;
+                    }
+                    else
+                    {
+                        try
                         {
-                            LordToil_Siege st = (LordToil_Siege)lordInvolved.CurLordToil;
+                            //Try auto-reconnect to surrogate to his external controle (with this time the connection init malus)
+                            CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
+                            cso.setControlledSurrogate((Pawn)parent, true, true);
+                            currentPawn.mindState.Reset();
+                            currentPawn.mindState.duty = null;
+                            currentPawn.jobs.StopAll();
+                            currentPawn.jobs.ClearQueuedJobs();
+                            currentPawn.ClearAllReservations();
+                            if (currentPawn.drafter != null)
+                                currentPawn.drafter.Drafted = false;
 
-                            //Attribution job defender au pawn
-                            Pawn p = (Pawn)parent;
-                            //Traverse.Create( st ).Method("SetAsDefender").GetValue((Pawn)parent);
-                            LordToilData_Siege data = (LordToilData_Siege)Traverse.Create(st).Property("Data").GetValue();
-                            p.mindState.duty = new PawnDuty(DutyDefOf.Defend, data.siegeCenter, -1f);
-                            p.mindState.duty.radius = data.baseRadius;
-                            st.UpdateAllDuties();
+                            if (lordInvolved != null && !currentPawn.Downed)
+                                lordInvolved.AddPawn(currentPawn);
                         }
-                    }
-                    catch (Exception)
-                    {
+                        catch (Exception)
+                        {
 
-                    }
+                        }
 
-                    //Log.Message("Current duty ==>"+cp.mindState.duty.def.defName);
-                    //Log.Message("Current job ==>" + cp.CurJobDef.defName);
+                        try
+                        {
+                            if (lordInvolved != null && lordInvolved.CurLordToil is LordToil_Siege)
+                            {
+                                LordToil_Siege st = (LordToil_Siege)lordInvolved.CurLordToil;
+
+                                //Attribution job defender au pawn
+                                Pawn p = (Pawn)parent;
+                                //Traverse.Create( st ).Method("SetAsDefender").GetValue((Pawn)parent);
+                                LordToilData_Siege data = (LordToilData_Siege)Traverse.Create(st).Property("Data").GetValue();
+                                p.mindState.duty = new PawnDuty(DutyDefOf.Defend, data.siegeCenter, -1f);
+                                p.mindState.duty.radius = data.baseRadius;
+                                st.UpdateAllDuties();
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                        }
+
+                        //Log.Message("Current duty ==>"+cp.mindState.duty.def.defName);
+                        //Log.Message("Current job ==>" + cp.CurJobDef.defName);
+                    }
                 }
             }
         }
