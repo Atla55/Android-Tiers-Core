@@ -952,6 +952,7 @@ namespace MOARANDROIDS
             Scribe_Collections.Look(ref QEESkinColor, "ATPP_QEESkinColor", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref QEEAndroidHair, "ATPP_QEEAndroidHair", LookMode.Value, LookMode.Value);
             Scribe_Collections.Look(ref VatGrowerLastPawnIsTX, "ATPP_VatGrowerLastPawnIsTX", LookMode.Value, LookMode.Value);
+            Scribe_Collections.Look(ref this.externalSurrogateCJoiner, false, "ATPP_externalSurrogateCJoiner", LookMode.Deep);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
@@ -973,6 +974,60 @@ namespace MOARANDROIDS
 
                 if (Utils.POWERPP_LOADED)
                     checkDisconnectedFromLWPNAndroid();
+            }
+
+            if(CGT % 3600 == 0)
+            {
+                checkexternalSurrogateJoiner(CGT);
+            }
+        }
+
+        /*
+         * Check if there is pending external surrogate joiner (controller of surrogate captured and converted sucessfully)
+         */
+        public void checkexternalSurrogateJoiner(int GT)
+        {
+            for(int i= externalSurrogateCJoiner.Count-1; i >= 0; i--)
+            {
+                CompAndroidState cas = Utils.getCachedCAS(externalSurrogateCJoiner[i]);
+                if(cas != null)
+                {
+                    if(GT >= cas.externalControllerConvertedJoinGT)
+                    {
+                        Map targetMap = Utils.getRichestMapOfPlayer();
+                        IntVec3 intVec;
+                        if( CellFinder.TryFindRandomEdgeCellWith((IntVec3 c) => targetMap.reachability.CanReachColony(c) && !c.Fogged(targetMap), targetMap, CellFinder.EdgeRoadChance_Neutral, out intVec))
+                        {
+                            if(externalSurrogateCJoiner[i].Faction != Faction.OfPlayer)
+                            {
+                                externalSurrogateCJoiner[i].SetFaction(Faction.OfPlayer);
+                            }
+                            HediffDef chipToAdd;
+                            BodyPartRecord bpr = null;
+                            bpr = externalSurrogateCJoiner[i].health.hediffSet.GetBrain();
+                            //Add neural chip (VX1 or VX2)
+                            if (Rand.Chance(0.95f))
+                                chipToAdd = HediffDefOf.ATPP_HediffVX1Chip;
+                            else
+                                chipToAdd = HediffDefOf.ATPP_HediffVX2Chip;
+
+                            Hediff he = externalSurrogateCJoiner[i].health.hediffSet.GetFirstHediffOfDef(chipToAdd);
+                            if(he == null && bpr != null)
+                            {
+                                externalSurrogateCJoiner[i].health.AddHediff(chipToAdd, bpr);
+                            }
+
+                            GenSpawn.Spawn(externalSurrogateCJoiner[i], intVec, targetMap, WipeMode.Vanish);
+                            Find.LetterStack.ReceiveLetter("ATPP_LetterExternalSurrogateControllerJoin".Translate(), "ATPP_LetterExternalSurrogateControllerJoinDesc".Translate(externalSurrogateCJoiner[i].LabelCap), LetterDefOf.PositiveEvent, externalSurrogateCJoiner[i]);
+                        }
+                        else
+                        {
+                            Find.LetterStack.ReceiveLetter("ATPP_LetterExternalSurrogateControllerCannotJoin".Translate(), "ATPP_LetterExternalSurrogateControllerCannotJoinDesc".Translate(externalSurrogateCJoiner[i].LabelCap), LetterDefOf.NegativeEvent, externalSurrogateCJoiner[i]);
+                        }
+
+                        externalSurrogateCJoiner.RemoveAt(i);
+                    }
+                }
             }
         }
 
@@ -2372,6 +2427,8 @@ namespace MOARANDROIDS
                 VatGrowerLastPawnInProgress = new Dictionary<string, Pawn>();
             if (VatGrowerLastPawnIsTX == null)
                 VatGrowerLastPawnIsTX = new Dictionary<string, bool>();
+            if (externalSurrogateCJoiner == null)
+                externalSurrogateCJoiner = new List<Pawn>();
         }
 
         public Faction androidFactionCoalition;
@@ -2403,6 +2460,8 @@ namespace MOARANDROIDS
         private int nbHackingPoints = 0;
         private int nbSkillPoints = 0;
 
+
+        public List<Pawn> externalSurrogateCJoiner = new List<Pawn>();
         public HashSet<Thing> connectedThing = new HashSet<Thing>();
         private Dictionary<Building, IEnumerable<IntVec3>> cacheATN;
         private HashSet<Building> listerSkillServers = new HashSet<Building>();

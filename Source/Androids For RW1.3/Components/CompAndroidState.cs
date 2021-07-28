@@ -1619,7 +1619,7 @@ namespace MOARANDROIDS
 
         //Stocke le pawn externe (n'appartenant pas au joueur) controllant le surrogate (le cas des groupes de factions alliés/neutre/ennemis)
         public Pawn externalController;
-
+        public int externalControllerConvertedJoinGT = 0;
         public Pawn lastController;
 
         private CompSkyMind csm;

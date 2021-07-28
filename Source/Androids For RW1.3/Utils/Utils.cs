@@ -891,6 +891,25 @@ namespace MOARANDROIDS
             return ret;
         }
 
+        public static Map getRichestMapOfPlayer()
+        {
+            Map ret = null;
+            float prevWealth = 0.0f;
+
+            foreach (var map in Find.Maps)
+            {
+                if (map.IsPlayerHome)
+                {
+                    if (map.PlayerWealthForStoryteller > prevWealth)
+                    {
+                        ret = map;
+                        prevWealth = map.PlayerWealthForStoryteller;
+                    }
+                }
+            }
+            return ret;
+        }
+
 
         //Restauration d'un nom sauvegarder
         public static void restoreSavedSurrogateName(Pawn surrogate)

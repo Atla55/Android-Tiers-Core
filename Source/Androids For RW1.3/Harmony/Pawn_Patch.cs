@@ -30,11 +30,26 @@ namespace MOARANDROIDS
                     {
                         if (cas.surrogateController != null)
                         {
-                            //On affiche une notif
-                            Find.LetterStack.ReceiveLetter("ATPP_LetterTraitorOffline".Translate(), "ATPP_LetterTraitorOfflineDesc".Translate(__instance.LabelShortCap), LetterDefOf.NegativeEvent);
+                            //Recruited surrogate controller disconnect from the surrogate then escape from his base
+                            if (Rand.Chance(Settings.chanceRecruitedSurrogateControllerCanEscapeAndJoin))
+                            {
+                                Utils.GCATPP.externalSurrogateCJoiner.Add(cas.surrogateController);
+                                CompAndroidState casSC = Utils.getCachedCAS(cas.surrogateController);
+                                if(casSC != null)
+                                {
+                                    //Between 6h to 2d
+                                    casSC.externalControllerConvertedJoinGT = Find.TickManager.TicksGame + Rand.Range(15000, 120000);
+                                }
+                                Find.LetterStack.ReceiveLetter("ATPP_LetterExternalSurrogateEscape".Translate(), "ATPP_LetterExternalSurrogateEscapeDesc".Translate(__instance.LabelShortCap), LetterDefOf.NeutralEvent, __instance);
+                            }
+                            else
+                            {
+                                //Recruited surrogate controller is arrested and disconnected
+                                Find.LetterStack.ReceiveLetter("ATPP_LetterTraitorOffline".Translate(), "ATPP_LetterTraitorOfflineDesc".Translate(__instance.LabelShortCap), LetterDefOf.NegativeEvent, __instance);
+                            }
 
+                            //Disconnection of the external surrogate controller
                             CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
-                            //Le cas echeant on le deconnecte
                             if (cso != null)
                                 cso.disconnectControlledSurrogate(null);
                         }

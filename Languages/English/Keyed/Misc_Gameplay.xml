@@ -170,6 +170,15 @@
 	<ATPP_MindAbsorptionDone>Mind absorption done</ATPP_MindAbsorptionDone>
 	<ATPP_MindAbsorptionDoneDesc>Mind absorption of {0} done, {1} skill points earned</ATPP_MindAbsorptionDoneDesc>
 	
+	<ATPP_LetterExternalSurrogateEscape>Surrogate controller escape</ATPP_LetterExternalSurrogateEscape>
+	<ATPP_LetterExternalSurrogateEscapeDesc>{0} the controller of the surrogate you are trying to recruit has decided to join your colony, he will disconnect from his surrogate and flee discreetly the enemy base in which he is to join your colony within several days without knowing exactly when.</ATPP_LetterExternalSurrogateEscapeDesc>
+	
+	<ATPP_LetterExternalSurrogateControllerJoin>Ex-prisonner joined</ATPP_LetterExternalSurrogateControllerJoin>
+	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} a surrogate controller that you imprisoned and successfully converted has just arrived at your colony and joined you.</ATPP_LetterExternalSurrogateControllerJoinDesc>
+	
+	<ATPP_LetterExternalSurrogateControllerJoin>Ex-prisonner fail to join</ATPP_LetterExternalSurrogateControllerJoin>
+	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} a surrogate controller that you imprisoned and successfully converted has tried to reach your colony, but for some unknown reason was unsuccessful and therefore left.</ATPP_LetterExternalSurrogateControllerJoinDesc>
+	
 	<!-- Designators -->
 	<ATPP_DesignatorNeedSelectSX>Error: You must select a valid device connected to the SkyMind network!</ATPP_DesignatorNeedSelectSX>
 	<ATPP_DesignatorNeedSelectSXToHack>Error: You must select a surrogate android controlled by a faction other than yours!</ATPP_DesignatorNeedSelectSXToHack>
@@ -370,6 +379,7 @@
 	
 	<ATPP_MindAbsorptionStarted>Mind absorption of {0} started</ATPP_MindAbsorptionStarted>
 	<ATPP_NotEnoughtSkillPoints>Not enough available skill points ! ({0} points required)</ATPP_NotEnoughtSkillPoints>
+
 	
 	<!-- Settings -->
 	<ATPP_SettingsSectionGeneral>General</ATPP_SettingsSectionGeneral>
@@ -482,4 +492,5 @@
 	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Allow surrogate connection initialization penalty</ATPP_SettingsAllowSurrogateConnectionInitMalus>
 	<ATPP_SettingsAllowAndroidsToUseHospitalBeds>Allow androids to use hospital beds</ATPP_SettingsAllowAndroidsToUseHospitalBeds>
 	<ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>Percentage of chance of other factions surrogates to have an RX chip ({0}%)</ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>
+	<ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin>Chance recruited surrogate controller join your faction without being arrested ({0}%)</ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin>
 </LanguageData>

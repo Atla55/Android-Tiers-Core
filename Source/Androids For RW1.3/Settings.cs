@@ -9,6 +9,7 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static float chanceRecruitedSurrogateControllerCanEscapeAndJoin = 0.65f;
         public static float percentageOfOtherFactionSurrogateHavingAnRXChip = 0.35f;
         public static bool allowAndroidToUseHospitalBed = true;
         public static bool allowSurrogateConnectionInitMalus = true;
@@ -235,6 +236,9 @@ namespace MOARANDROIDS
                 maxAndroidByPortableLWPN = (int)list.Slider(maxAndroidByPortableLWPN, 1, 100);
 
             }
+
+            list.Label("ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin".Translate((int)(chanceRecruitedSurrogateControllerCanEscapeAndJoin * 100)));
+            chanceRecruitedSurrogateControllerCanEscapeAndJoin = list.Slider(chanceRecruitedSurrogateControllerCanEscapeAndJoin, 0.0f, 1.0f);
 
             list.Label("ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip".Translate((int)(percentageOfOtherFactionSurrogateHavingAnRXChip * 100)));
             percentageOfOtherFactionSurrogateHavingAnRXChip = list.Slider(percentageOfOtherFactionSurrogateHavingAnRXChip, 0.0f, 1.0f);
