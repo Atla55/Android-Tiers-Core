@@ -10,10 +10,7 @@ using System;
 namespace MOARANDROIDS
 {
     internal class WildManUtility_Patch
-
     {
-
-
         [HarmonyPatch(typeof(FoodUtility), "BestFoodSourceOnMap")]
         public class BestFoodSourceOnMap_Patch
         {

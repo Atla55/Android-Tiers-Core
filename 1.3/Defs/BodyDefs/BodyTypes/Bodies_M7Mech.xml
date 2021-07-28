@@ -96,6 +96,13 @@
                         <li>FullHead</li>
                       </groups>
                 </li>
+				<li>
+                  <def>VoiceSynthesizer</def>
+                  <coverage>0.14</coverage>
+                  <groups>
+                    <li>FullHead</li>
+                  </groups>
+                </li>
                 <li>
                   <def>LeftSightSensor</def>
                   <coverage>0.13</coverage>

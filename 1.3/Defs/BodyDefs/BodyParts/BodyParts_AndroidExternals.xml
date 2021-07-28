@@ -85,6 +85,20 @@
   </BodyPartDef>
 
   <BodyPartDef>
+    <defName>VoiceSynthesizer</defName>
+    <label>Voice synthesizer</label>
+    <hitPoints>15</hitPoints>
+    <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
+    <skinCovered>false</skinCovered>
+<bleedRate>0.2</bleedRate>
+    
+    <socketed>true</socketed>
+    <tags>
+      <li>TalkingSource</li>
+    </tags>
+  </BodyPartDef>
+
+  <BodyPartDef>
     <defName>LeftSightSensor</defName>
     <label>left sight sensor</label>
     <hitPoints>10</hitPoints>

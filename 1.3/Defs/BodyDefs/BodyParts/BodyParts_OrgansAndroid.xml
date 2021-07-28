@@ -83,6 +83,7 @@
 <bleedRate>1</bleedRate>
     <tags>
       <li>MetabolismSource</li>
+	  <li>EatingSource</li>
     </tags>
 	<canSuggestAmputation>false</canSuggestAmputation>
   </BodyPartDef>
