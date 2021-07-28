@@ -18,14 +18,21 @@ namespace MOARANDROIDS
         public class BestFoodSourceOnMap_Patch
         {
             /*
-             * Si option comme quoi android peut manger living plantes activés alors on va le faire passer en non humanlike pour que sa soit le code relatif aux animaux herbivores qui soit appliqué et non celui au humains (ce qui risque de faire lagguer aussinon)
+             * If option like what android can eat living plants activated then we will make it pass in non humanlike so that its is the code relating to herbivorous animals which is applied and not that to humans (which may cause lagging as well)
              */
             [HarmonyPrefix]
             public static bool Listener1(Pawn getter, Pawn eater, bool desperate, ThingDef foodDef, FoodPreferability maxPref = FoodPreferability.MealLavish, bool allowPlant = true, bool allowDrug = true, bool allowCorpse = true, bool allowDispenserFull = true, bool allowDispenserEmpty = true, bool allowForbidden = false, bool allowSociallyImproper = false, bool allowHarvest = false, bool forceScanWholeMap = false)
             {
                 if (Settings.androidsCanConsumeLivingPlants && eater != null && eater.IsAndroidTier() && eater == getter)
                 {
-                    getter.RaceProps.intelligence = Intelligence.Animal;
+                    //Log.Message(desperate + " " + maxPref + " " + allowPlant + " " + allowDrug + " " + allowCorpse + " " + allowDispenserFull + " " + allowDispenserEmpty + " " + allowForbidden + " " + allowSociallyImproper + " " + allowHarvest + " " + forceScanWholeMap);
+                    //If not desperate switch on standard way, because otherwise it will cause massive lag
+                    if(!desperate)
+                    {
+                        getter.RaceProps.foodType = FoodTypeFlags.OmnivoreHuman;
+                    }
+                    else
+                        getter.RaceProps.intelligence = Intelligence.Animal;
                 }
 
                 return true;
@@ -36,7 +43,13 @@ namespace MOARANDROIDS
             {
                 if (Settings.androidsCanConsumeLivingPlants && eater != null &&  eater.IsAndroidTier() && eater == getter)
                 {
-                    getter.RaceProps.intelligence = Intelligence.Humanlike;
+                    //If not desperate switch on standard way, because otherwise it will cause massive lag
+                    if (!desperate)
+                    {
+                        getter.RaceProps.foodType = Utils.FoodTypeBioGenerator;
+                    }
+                    else
+                        getter.RaceProps.intelligence = Intelligence.Humanlike;
                 }
 
             }

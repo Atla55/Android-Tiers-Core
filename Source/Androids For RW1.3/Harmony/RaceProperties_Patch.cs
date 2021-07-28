@@ -22,10 +22,13 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ThingDef t, ref bool __result, FleshTypeDef ___fleshType, float ___gestationPeriodDays)
             {
+                if (___fleshType != FleshTypeDefOfAT.AndroidTier)
+                    return;
+
                 //Si inside insideAddHumanlikeOrders et que param activé alors masquage capacité a forcer manger living plants
                 if (Utils.insideAddHumanlikeOrders && Settings.androidsCanConsumeLivingPlants && Settings.hideMenuAllowingForceEatingLivingPlants)
                 {
-                    if (___fleshType != null && t != null  && ___fleshType == FleshTypeDefOfAT.AndroidTier && t.plant != null)
+                    if ( t != null  && t.plant != null)
                     {
                         __result = false;
                     }
@@ -36,7 +39,7 @@ namespace MOARANDROIDS
                     return;
 
                 //Si android alors on desactive les drogues humaines
-                if(___fleshType != null && t != null && ___fleshType == FleshTypeDefOfAT.AndroidTier && Utils.BlacklistAndroidFood.Contains(t.defName) && !(Settings.allowHumanDrugsForT3PlusAndroids && ___gestationPeriodDays == 2))
+                if( t != null && Utils.BlacklistAndroidFood.Contains(t.defName) && !(Settings.allowHumanDrugsForT3PlusAndroids && ___gestationPeriodDays == 2))
                 {
                     __result = false;
                 }

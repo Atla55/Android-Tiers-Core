@@ -974,7 +974,7 @@ namespace MOARANDROIDS
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            Pawn pawn = currentPawn;
+            Pawn pawn = (Pawn)parent;
             bool isPrisoner = pawn.IsPrisoner;
             bool transfertAllowed = Utils.mindTransfertsAllowed((Pawn)parent);
 

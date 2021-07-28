@@ -68,6 +68,8 @@ namespace MOARANDROIDS
         public static BodyTypeDef insideResolveApparelGraphicsLastBodyTypeDef;
 
         public static bool insideAddHumanlikeOrders = false;
+        public static Pawn insideAddHumanlikeOrdersCurSelected;
+        public static bool insideAddHumanlikeOrdersCurSelectedIsAndroid;
 
         public static bool insideKillFuncSurrogate = false;
         public static string headGraphicPathToUse = "";
@@ -143,6 +145,7 @@ namespace MOARANDROIDS
         
         public static Color androidCustomColorRust = new Color(0.5607f, 0.2941f, 0.1764f);
 
+        public static FoodTypeFlags FoodTypeBioGenerator = (FoodTypeFlags)3963;
 
         public static Pawn FindBestMedicinePatient = null;
 
@@ -288,7 +291,7 @@ namespace MOARANDROIDS
         "AteFungusAsIngredient_Despised", "AteInsectMeat_Loved", "AteInsectMeatAsIngredient_Loved", "GotLovin_Abhorrent", "Lovin_Know_Abhorrent", "GotLovin_Horrible",
         "Lovin_Know_Horrible", "GotLovin_Disapproved", "Lovin_Know_Disapproved", "Lovin_Know_Approved", "AteMeat_Abhorrent", "AteMeat_Know_Abhorrent", "AteMeat_Horrible",
         "AteMeat_Know_Horrible","AteMeat_Disapproved", "AteMeat_Know_Disapproved", "AteNonMeat_Abhorrent", "AteNonMeat_Know_Abhorrent", "AteNonMeat_Horrible",
-        "AteNonMeat_Know_Horrible", "AteNonMeat_Disapproved", "AteNonMeat_Know_Disapproved"};
+        "AteNonMeat_Know_Horrible", "AteNonMeat_Disapproved", "AteNonMeat_Know_Disapproved", "AteFoodInappropriateForTitle"};
 
         //ObservedLayingCorpse
         public static HashSet<string> IgnoredThoughtsWhenSubjectIsBasicAndroids = new HashSet<string> { "ObservedLayingCorpse", "ObservedLayingRottingCorpse", "KnowPrisonerSold",
@@ -307,7 +310,7 @@ namespace MOARANDROIDS
             //Royalty DLC
             "PsychicEntropyOverloaded","DecreeUnmet", "AnimaScream", "Joyfuzz", "PsychicLove", "ListeningToHarp", "ListeningToHarpsichord", "ListeningToPiano",
             "DecreeMet", "DecreeFailed", "Disinherited", "NeuroquakeEcho", "ReignedInThroneroom", "TerribleBestowingCeremony","UnimpressiveBestowingCeremony","HonorableBestowingCeremony",
-            "GrandioseBestowingCeremony", "OtherTravelerArrested", "OtherTravelerSurgicallyViolated", "AteFoodInappropriateForTitle", "OtherTravelerDied",
+            "GrandioseBestowingCeremony", "OtherTravelerArrested", "OtherTravelerSurgicallyViolated", "OtherTravelerDied",
             //Ideology DLC
             "FailedConvertIdeoAttemptResentment", "PsychicArchotechEmanator_Grand", "PsychicArchotechEmanator_Major", "TerribleParty", "BoringParty",
             "FunParty", "UnforgettableParty", "TerribleFuneral", "LacklusterFuneral", "GoodFuneral", "HeartwarmingFuneral", "TerribleFestival", "BoringFestival",
@@ -2597,7 +2600,7 @@ namespace MOARANDROIDS
                 {
                     if (Settings.androidsCanConsumeLivingPlants)
                     {
-                        td.race.foodType = (FoodTypeFlags)3963;
+                        td.race.foodType = Utils.FoodTypeBioGenerator;
                     }
                     else
                     {
