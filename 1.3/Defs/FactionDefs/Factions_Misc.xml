@@ -56,6 +56,37 @@
 			</thingDefs>
 		</apparelStuffFilter>
 	</FactionDef>
+	
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>AndroidTiers_PlayerColonyROM</defName>
+		<label>Rise of the machines</label>
+		<description>Your Android colony.</description>
+		
+		<isPlayer>true</isPlayer>
+		<backstoryFilters>
+		  <li>
+			<categories>
+			  <li>Offworld</li>
+			</categories>
+		  </li>
+		</backstoryFilters>
+		<basicMemberKind>AndroidT4ColonistGeneral</basicMemberKind>
+		<pawnsPlural>colonists</pawnsPlural>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Industrial</techLevel>
+		<factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Synthread</li>
+				<li>Cloth</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
 
 
 	<FactionDef>

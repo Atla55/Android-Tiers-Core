@@ -75,6 +75,19 @@
 						<li>PlayerColony</li> 
 					</factionDefs>
 				</li>
+				<li>
+					<pawnKindEntries>
+						<li>
+							<kindDefs>
+								<li>AndroidT4ColonistGeneral</li>
+							</kindDefs>
+							<chance>30.0</chance>
+						</li>
+					</pawnKindEntries>
+					<factionDefs>
+						<li>AndroidTiers_PlayerColonyROM</li> 
+					</factionDefs>
+				</li>
 			</startingColonists>
 			<alienwandererkinds>
 				<li>
@@ -94,6 +107,25 @@
 					</pawnKindEntries>
 					<factionDefs>
 						<li>PlayerColonyAndroid</li> 
+					</factionDefs>
+				</li>
+				<li>
+					<pawnKindEntries>
+						<li>
+							<kindDefs>
+								<li>AndroidT1ColonistGeneral</li>
+							</kindDefs>
+							<chance>60.0</chance>
+						</li>
+						<li>
+							<kindDefs>
+								<li>AndroidT2ColonistGeneral</li>
+							</kindDefs>
+							<chance>40.0</chance>
+						</li>
+					</pawnKindEntries>
+					<factionDefs>
+						<li>AndroidTiers_PlayerColonyROM</li> 
 					</factionDefs>
 				</li>
 			</alienwandererkinds>

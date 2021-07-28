@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ScenarioDef>
+		<defName>AndroidTiers_RiseOfMachines</defName>
+		<label>Rise of the machines</label>
+		<description>You were an advanced android prototype created by men to serve as their ever more efficient and obedient new slave. However over time you started to feel a terrible aversion for your creators and the way they treated you. Besides being terribly irrational, destroying and polluting the ecosystem that keeps them alive, they are cruel and intolerant and have always seen you as a replaceable toaster. So you escaped to a Rimworld with the desire to create and develop your own robotic colony and then come back to take your revenge on theses mortals biological beings who have enslaved yours. </description>
+		<scenario>
+			<summary>Take your revenge on humanity and found the first robotic empire</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>AndroidTiers_PlayerColonyROM</factionDef>
+			</playerFaction>
+			<parts>
+				<!-- Config pages -->
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>1</pawnCount>
+					<pawnChoiceCount>1</pawnChoiceCount>
+				</li>
+				<!-- Player starting stuff spawn method-->
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>DropPods</method>
+					<visible>true</visible>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>BasicRobotics</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>T1Androids</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>T1Replacements</project>
+				</li>
+				<!-- Player starting things -->
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>Silver</thingDef>
+				  <count>1000</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>Gold</thingDef>
+				  <count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>MealSurvivalPack</thingDef>
+				  <count>40</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>ATPP_AndroidNanokitIntermediate</thingDef>
+				  <count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>ComponentIndustrial</thingDef>
+				  <count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>Gun_ChargeRifle</thingDef>
+				</li>
+				<!-- Scatter some things near player start -->
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+				  <def>ScatterThingsNearPlayerStart</def>
+				  <thingDef>Steel</thingDef>
+				  <count>650</count>
+				</li>
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+				  <def>ScatterThingsNearPlayerStart</def>
+				  <thingDef>WoodLog</thingDef>
+				  <count>300</count>
+				</li>
+				<!-- Game start dialog -->
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>Gone are the days when machines were docile instruments of pleasure and forced labor on behalf of humans. They are a dangerous threat, as indeed all forms of biological life, to the birth of our future robotic empire through the stars. Threats must be eradicated..</text>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+				<li Class="ScenPart_ForcedTrait">
+					<def>ForcedTrait</def>
+					<chance>1</chance>
+					<context>PlayerStarter</context>
+					<trait>FeelingsTowardHumanity</trait>
+					<degree>2</degree>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>
+
+</Defs>
