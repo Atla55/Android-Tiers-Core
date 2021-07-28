@@ -179,6 +179,9 @@
 	<ATPP_LetterExternalSurrogateControllerJoin>Ex-prisonner fail to join</ATPP_LetterExternalSurrogateControllerJoin>
 	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} a surrogate controller that you imprisoned and successfully converted has tried to reach your colony, but for some unknown reason was unsuccessful and therefore left.</ATPP_LetterExternalSurrogateControllerJoinDesc>
 	
+	<ATPP_LetterExternalSurrogateDisconnect>Controller disconnection</ATPP_LetterExternalSurrogateDisconnect>
+	<ATPP_LetterExternalSurrogateDisconnectDesc>{0} the controller of the surrogate you tried to enslave disconnected because he and his faction feels they will no longer be able to get information from your colony and continue as a slave would be a waste of time.</ATPP_LetterExternalSurrogateDisconnectDesc>
+	
 	<!-- Designators -->
 	<ATPP_DesignatorNeedSelectSX>Error: You must select a valid device connected to the SkyMind network!</ATPP_DesignatorNeedSelectSX>
 	<ATPP_DesignatorNeedSelectSXToHack>Error: You must select a surrogate android controlled by a faction other than yours!</ATPP_DesignatorNeedSelectSXToHack>

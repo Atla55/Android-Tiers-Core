@@ -13,59 +13,6 @@ namespace MOARANDROIDS
 
     internal class Pawn_Patch
     {
-        [HarmonyPatch(typeof(Pawn), "SetFaction")]
-        public class SetFaction_Patch
-        {
-            [HarmonyPostfix]
-            public static void Listener(Faction newFaction, Pawn recruiter, Pawn __instance)
-            {
-                try
-                {
-                    if (__instance == null)
-                        return;
-
-                    //Si surrogate on le deconnecte et on clear le controlleur (SI pas faisant suite à un piratage)
-                    CompAndroidState cas = Utils.getCachedCAS(__instance);
-                    if (cas != null && cas.isSurrogate && cas.externalController != null && newFaction != null && newFaction.IsPlayer && !(Find.DesignatorManager.SelectedDesignator != null && Find.DesignatorManager.SelectedDesignator is Designator_SurrogateToHack))
-                    {
-                        if (cas.surrogateController != null)
-                        {
-                            //Recruited surrogate controller disconnect from the surrogate then escape from his base
-                            if (Rand.Chance(Settings.chanceRecruitedSurrogateControllerCanEscapeAndJoin))
-                            {
-                                Utils.GCATPP.externalSurrogateCJoiner.Add(cas.surrogateController);
-                                CompAndroidState casSC = Utils.getCachedCAS(cas.surrogateController);
-                                if(casSC != null)
-                                {
-                                    //Between 6h to 2d
-                                    casSC.externalControllerConvertedJoinGT = Find.TickManager.TicksGame + Rand.Range(15000, 120000);
-                                }
-                                Find.LetterStack.ReceiveLetter("ATPP_LetterExternalSurrogateEscape".Translate(), "ATPP_LetterExternalSurrogateEscapeDesc".Translate(__instance.LabelShortCap), LetterDefOf.NeutralEvent, __instance);
-                            }
-                            else
-                            {
-                                //Recruited surrogate controller is arrested and disconnected
-                                Find.LetterStack.ReceiveLetter("ATPP_LetterTraitorOffline".Translate(), "ATPP_LetterTraitorOfflineDesc".Translate(__instance.LabelShortCap), LetterDefOf.NegativeEvent, __instance);
-                            }
-
-                            //Disconnection of the external surrogate controller
-                            CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
-                            if (cso != null)
-                                cso.disconnectControlledSurrogate(null);
-                        }
-
-                        //On vire l'external controller
-                        cas.externalController = null;
-                    }
-                }
-                catch(Exception e)
-                {
-                    Log.Message("[ATPP] Pawn.SetFaction " + e.Message + " " + e.StackTrace);
-                }
-            }
-        }
-
-
         [HarmonyPatch(typeof(Pawn), "Kill")]
         public class Kill
         {
