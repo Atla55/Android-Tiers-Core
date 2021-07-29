@@ -770,7 +770,7 @@
 	<costList>
       <Steel>2000</Steel>
 	  <Silver>1500</Silver>
-	  <Plasteel>400</Plasteel>
+	  <Plasteel>450</Plasteel>
 	  <Gold>350</Gold>
       <ComponentIndustrial>48</ComponentIndustrial>
 	  <ComponentSpacer>12</ComponentSpacer>

@@ -1,6 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
-
+  <ResearchProjectDef>
+    <defName>ATPP_ResearchM8</defName>
+    <label>M8 prototype serie</label>
+    <tab>AtlasAndroids</tab>
+    <description>Research how to build M8 an advanced battle surrogate series with a limited Sky Cloud core module .</description>
+    <baseCost>15500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>ATPP_ResearchSM7</li>
+	  <li>ATPP_ResearchSkyCloudCore</li>
+    </prerequisites>
+	<researchViewX>6</researchViewX>
+    <researchViewY>2</researchViewY>
+  </ResearchProjectDef>
+  
   <ResearchProjectDef>
     <defName>ATPP_ResearchSM7</defName>
     <label>SM7 battle surrogate series</label>
@@ -12,7 +26,7 @@
       <li>ATPP_ResearchSurrogateHost</li>
     </prerequisites>
 	<researchViewX>5</researchViewX>
-    <researchViewY>0</researchViewY>
+    <researchViewY>2</researchViewY>
   </ResearchProjectDef>
 
   <ResearchProjectDef>

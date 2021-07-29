@@ -24,7 +24,7 @@ namespace MOARANDROIDS
                     {
                         CompAndroidState cas = Utils.getCachedCAS(p);
 
-                        if (cas != null && cas.isSurrogate && cas.surrogateController == null && !cas.isOrganic && (!M7 || (p.def.defName == Utils.M7)))
+                        if (cas != null && cas.isSurrogate && cas.surrogateController == null && !cas.isOrganic && (!M7 || (p.def.defName == Utils.M7 || p.def.defName == Utils.M8)))
                         {
                             lst.Add(p);
                         }
@@ -60,7 +60,7 @@ namespace MOARANDROIDS
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
                         {
-                            if (el.def.defName == Utils.M7)
+                            if (el.def.defName == Utils.M7 || el.def.defName == Utils.M8)
                                 lst.Add(el);
                         }
                         //Si option masquant les surrogates activé alors ajout de ces derniers à la fin

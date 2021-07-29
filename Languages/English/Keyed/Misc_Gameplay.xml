@@ -341,8 +341,10 @@
 	<ATPP_StartPermute>The permutation of consciousnesses between {0} and {1} has begun!</ATPP_StartPermute>
 	<ATPP_StartDuplicate>The duplication of {0}'s consciousness to {1} has begun!</ATPP_StartDuplicate>
 	<ATPP_StartSkyCloudUpload>The upload of  {0}'s consciousness into {1} has begun!</ATPP_StartSkyCloudUpload>
+	<ATPP_StartSkyCloudUploadFailedFull>The upload of  {0}'s consciousness into {1} cannot be done, because there is not enought consciousness storage space in {1}</ATPP_StartSkyCloudUploadFailedFull>
 	<ATPP_StartSkyCloudDownload>The download of {0}'s consciousness into {1}'s brain has begun!</ATPP_StartSkyCloudDownload>
 	<ATPP_StartSkyCloudMigration>The migration of {0}'s consciousness from {1} to {2} has begun!</ATPP_StartSkyCloudMigration>
+	<ATPP_StartSkyCloudMigrationFailed>The migration of {0}'s consciousness in {1} cannot be done, because there is not enought consciousness storage space in {1}</ATPP_StartSkyCloudMigrationFailed>
 	
 	<ATPP_StartUpload>The uploading of {0}'s consciousness to {1} has begun!</ATPP_StartUpload>
 	
@@ -365,6 +367,7 @@
 	<ATPP_CannotHackNotEnoughtHackingPoints>Not enough hacking points, {0} are required to hack!</ATPP_CannotHackNotEnoughtHackingPoints>
 	
 	<ATPP_ProcessDuplicateOK>The neural network of {0} is being duplicated.</ATPP_ProcessDuplicateOK>
+	<ATPP_ProcessDuplicateFailed>Cannot duplicate neural network of {0}, not enough consciousness storage space in the core</ATPP_ProcessDuplicateFailed>
 	<ATPP_ProcessRemoveOK>The neural network of {0} has been removed.</ATPP_ProcessRemoveOK>
 	<ATPP_ProcessAssistOK>{0}'s consciousness is now assigned to assist connected colonists.</ATPP_ProcessAssistOK>
 	<ATPP_ProcessUnassistOK>{0}'s consciousness is no longer assigned to assist connected colonists.</ATPP_ProcessUnassistOK>

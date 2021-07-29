@@ -21,6 +21,7 @@ namespace MOARANDROIDS
             Scribe_Collections.Look(ref this.storedMinds, false, "ATPP_storedMinds", LookMode.Deep);
             Scribe_Collections.Look(ref this.assistingMinds, false, "ATPP_assistingMinds", LookMode.Reference);
             Scribe_Collections.Look(ref this.replicatingMinds, false, "ATPP_replicatingMinds", LookMode.Reference);
+            Scribe_Collections.Look(ref this.pendingUploads, false, "ATPP_pendingUploads", LookMode.Reference);
 
             Scribe_Collections.Look<Pawn, int>(ref this.inMentalBreak, "ATPP_inMentalBreak", LookMode.Reference, LookMode.Value, ref inMentalBreakKeys, ref inMentalBreakValues);
 
@@ -77,38 +78,21 @@ namespace MOARANDROIDS
         {
             base.PostSpawnSetup(respawningAfterLoad);
 
-            parentCPT = Utils.getCachedCPT((Building)parent);
-
-            if (SID == -1)
-            {
-                SID = Utils.GCATPP.getNextSkyCloudID();
-                Utils.GCATPP.incNextSkyCloudID();
-            }
-            if (Booted())
-            {
-                Utils.GCATPP.pushSkyCloudCore((Building)parent);
-            }
-
-            Utils.GCATPP.pushSkyCloudCoreAbs((Building)parent);
-
-
-            //Application retroactive de la surppression de traits blacklistés pour les minds
-            foreach(var m in storedMinds)
-            {
-                Utils.removeMindBlacklistedTrait(m);
-                Current.Game.tickManager.DeRegisterAllTickabilityFor(m);
-            }
+            if(!init)
+                initComp();
         }
 
         public override void PostDeSpawn(Map map)
         {
             base.PostDeSpawn(map);
 
-            stopAllMindsActivities();
-
-            //Retire de la liste des emetteurs de la map
-            Utils.GCATPP.popSkyCloudCore((Building)this.parent);
-            Utils.GCATPP.popSkyCloudCoreAbs((Building)this.parent);
+            //If despawn but it's an M8Mech host and he is alive then minds can continue their activities 
+            if (parentPawn == null || parentPawn.Dead)
+            {
+                stopAllMindsActivities();
+                Utils.GCATPP.popSkyCloudCore(this.parent);
+                Utils.GCATPP.popSkyCloudCoreAbs(this.parent);
+            }
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -121,7 +105,7 @@ namespace MOARANDROIDS
                 disconnectAllSurrogates();
                 disconnectAllRemotelyControlledTurrets();
                 //ATPP_destroyedMindsDueToDestroyedSkyCloudCore
-                Find.LetterStack.ReceiveLetter("ATPP_destroyedMindsDueToDestroyedSkyCloudCore".Translate(storedMinds.Count), "ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc".Translate(storedMinds.Count, getName()), LetterDefOf.ThreatBig);
+                Find.LetterStack.ReceiveLetter("ATPP_destroyedMindsDueToDestroyedSkyCloudCore".Translate(storedMinds.Count), "ATPP_destroyedMindsDueToDestroyedSkyCloudCoreDesc".Translate(getName(), storedMinds.Count), LetterDefOf.ThreatBig);
 
                 foreach (var p in storedMinds)
                 {
@@ -132,31 +116,91 @@ namespace MOARANDROIDS
 
         public override void ReceiveCompSignal(string signal)
         {
-            if (signal == "PowerTurnedOff")
+            if (parentBuilding != null)
             {
-                //Su systeme booté le serveur dit le power Failure
-                if (bootGT == -1)
-                    Utils.playVocal("soundDefSkyCloudPowerFailure");
+                if (signal == "PowerTurnedOff")
+                {
+                    //Su systeme booté le serveur dit le power Failure
+                    if (bootGT == -1)
+                        Utils.playVocal("soundDefSkyCloudPowerFailure");
 
-                bootGT = -2;
-                stopAllMindsActivities(true);
-                Utils.GCATPP.popSkyCloudCore((Building)parent);
-            }
+                    bootGT = -2;
+                    stopAllMindsActivities(true);
+                    Utils.GCATPP.popSkyCloudCore(parent);
+                }
 
-            //Redemarrage ambiance
-            if (signal == "PowerTurnedOn")
-            {
-                //Definition sec ou le core démarrera vraiment
-                bootGT = Find.TickManager.TicksGame + (Settings.secToBootSkyCloudCore * 60);
+                //Redemarrage ambiance
+                if (signal == "PowerTurnedOn")
+                {
+                    //Definition sec ou le core démarrera vraiment
+                    bootGT = Find.TickManager.TicksGame + (Settings.secToBootSkyCloudCore * 60);
+                }
             }
         }
 
+        public void initComp()
+        {
+            init = true;
+            if (parent is Pawn)
+            {
+                parentPawn = (Pawn)parent;
+                parentBuilding = null;
+            }
+            else
+            {
+                parentBuilding = (Building)parent;
+                parentPawn = null;
+                parentCPT = Utils.getCachedCPT((Building)parent);
+            }
+
+            if (SID == -1)
+            {
+                SID = Utils.GCATPP.getNextSkyCloudID();
+                Utils.GCATPP.incNextSkyCloudID();
+            }
+            if (Booted())
+            {
+                Utils.GCATPP.pushSkyCloudCore(parent);
+            }
+
+            Utils.GCATPP.pushSkyCloudCoreAbs(parent);
+
+
+            //Application retroactive de la surppression de traits blacklistés pour les minds
+            foreach (var m in storedMinds)
+            {
+                Utils.removeMindBlacklistedTrait(m);
+                Current.Game.tickManager.DeRegisterAllTickabilityFor(m);
+            }
+        }
+
+        public bool isFull()
+        {
+            if (parentBuilding != null)
+                return false;
+            else
+                return (10 - nbMindsAbsolute() <= 0);
+        }
+
+        public int nbMindsAbsolute()
+        {
+            return (storedMinds.Count + replicatingMinds.Count + pendingUploads.Count);
+        }
+
+        public bool isOnline()
+        {
+            if (parentBuilding != null)
+            {
+                return !parent.Destroyed && parentCPT.PowerOn;
+            }
+            else
+                return !parentPawn.Dead;
+        }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            Building build = (Building)parent;
             //If no minds stored
-            if (storedMinds.Count() == 0 || !parentCPT.PowerOn || !Booted())
+            if (storedMinds.Count() == 0 || !isOnline() || !Booted())
             {
                 yield break;
             }
@@ -193,7 +237,10 @@ namespace MOARANDROIDS
 
                             Messages.Message("ATPP_ProcessRemoveOK".Translate(p.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
                             
-                            Utils.playVocal("soundDefSkyCloudMindDeletionCompleted");
+                            if(parentPawn == null)
+                                Utils.playVocal("soundDefSkyCloudMindDeletionCompleted");
+                            else
+                                Utils.playVocal("soundDefM8MindDeletionCompleted");
 
                         }, false));
                     }, false, false, false, false);
@@ -215,13 +262,20 @@ namespace MOARANDROIDS
 
                         int GT = Find.TickManager.TicksGame;
 
-                        cso.replicationStartGT = GT;
-                        cso.replicationEndingGT = GT + (Settings.mindReplicationHours * 2500);
+                        if (isFull())
+                        {
+                            Messages.Message("ATPP_ProcessDuplicateFailed".Translate(p.LabelShortCap), parent, MessageTypeDefOf.NegativeEvent);
+                        }
+                        else
+                        {
+                            cso.replicationStartGT = GT;
+                            cso.replicationEndingGT = GT + (Settings.mindReplicationHours * 2500);
 
-                        replicatingMinds.Add(p);
-                        stopMindActivities(p);
+                            replicatingMinds.Add(p);
+                            stopMindActivities(p);
 
-                        Messages.Message("ATPP_ProcessDuplicateOK".Translate(p.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
+                            Messages.Message("ATPP_ProcessDuplicateOK".Translate(p.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
+                        }
 
                     }, false, false, false, false);
                 }
@@ -329,12 +383,12 @@ namespace MOARANDROIDS
                 {
                     showFloatMenuMindsStored(delegate (Pawn p)
                     {
-                        Utils.ShowFloatMenuSkyCloudCores(delegate (Building core)
+                        Utils.ShowFloatMenuSkyCloudCores(delegate (Thing core)
                         {
                             CompSurrogateOwner cso = Utils.getCachedCSO(p);
                             stopMindActivities(p);
                             cso.startMigration( core);
-                        }, (Building)parent);
+                        }, parent);
                     }, false, false, false, false);
                 }
             };
@@ -443,7 +497,10 @@ namespace MOARANDROIDS
                         {
                             disconnectAllSurrogates();
                             disconnectAllRemotelyControlledTurrets();
-                            Utils.playVocal("soundDefSkyCloudAllMindDisconnected");
+                            if(parentPawn == null)
+                                Utils.playVocal("soundDefSkyCloudAllMindDisconnected");
+                            else
+                                Utils.playVocal("soundDefM8AllMindDisconnected");
                         }, MenuOptionPriority.Default, null, null, 0f, null, null));
 
                         showFloatMenuMindsStored(delegate (Pawn p)
@@ -467,16 +524,19 @@ namespace MOARANDROIDS
         public override string CompInspectStringExtra()
         {
             StringBuilder ret = new StringBuilder();
-            Building build = (Building)parent;
 
             if (parent.Map == null)
                 return base.CompInspectStringExtra();
 
+            string limitStorage = "";
+            if (parentPawn != null)
+                limitStorage = "/10";
+
             ret.AppendLine(getName())
-               .AppendLine("ATPP_CentralCoreNbStoredMind".Translate(storedMinds.Count))
+               .AppendLine("ATPP_CentralCoreNbStoredMind".Translate(storedMinds.Count+limitStorage))
                .AppendLine("ATPP_CentralCoreNbAssistingMinds".Translate(assistingMinds.Count));
 
-            if(parentCPT.PowerOn)
+            if(isOnline())
             {
 
                 if (!Booted())
@@ -523,7 +583,23 @@ namespace MOARANDROIDS
 
         public bool Booted()
         {
-            return bootGT == -1;
+            if (parentPawn != null)
+                return !parentPawn.Dead;
+            else
+                return bootGT == -1;
+        }
+
+        public override void CompTickRare()
+        {
+            base.CompTickRare();
+
+            //Allow init of the core if pawn SkyCore and is in an caravan 
+            if (!init)
+                initComp();
+
+            //Minds processing stuff
+            checkMindsStuffTick();
+            checkCoreHealthStatus();
         }
 
         public override void CompTick()
@@ -540,13 +616,13 @@ namespace MOARANDROIDS
                 refreshPowerConsumed();
 
                 //Check si demarrage du core
-                if (bootGT > 0 && bootGT < CGT)
+                if (parentBuilding != null && bootGT > 0 && bootGT < CGT)
                 {
                     //On rend accessible les controles
                     bootGT = -1;
 
                     if (parentCPT.PowerOn)
-                        Utils.GCATPP.pushSkyCloudCore((Building)parent);
+                        Utils.GCATPP.pushSkyCloudCore(parent);
 
                     //ATPP_SkyCloudCoreBooted
                     Find.LetterStack.ReceiveLetter("ATPP_SkyCloudCoreBooted".Translate(getName()), "ATPP_SkyCloudCoreBootedDesc".Translate(getName()), LetterDefOf.NeutralEvent, parent);
@@ -554,59 +630,97 @@ namespace MOARANDROIDS
                     //Play sound
                     Utils.playVocal("soundDefSkyCloudPrimarySystemsOnline");
                 }
-
-                for (int i = storedMinds.Count - 1; i >= 0; i--)
-                {
-                    Pawn m = storedMinds[i];
-                    CompSurrogateOwner cso = Utils.getCachedCSO(m);
-                    if (cso == null)
-                        continue;
-
-                    cso.checkInterruptedUpload();
-
-                    //Atteinte fin attente de la replication d'un mind
-                    if (cso.replicationEndingGT != -1 && cso.replicationEndingGT < CGT)
-                        replicationDone.Add(cso);
-
-                    if (cso.migrationEndingGT != -1 && cso.migrationEndingGT < CGT)
-                        migrationsDone.Add(cso);
-                }
-
-                if(migrationsDone.Count != 0)
-                {
-                    foreach(var md in migrationsDone)
-                    {
-                        md.OnMigrated();
-                    }
-                    migrationsDone.Clear();
-                    Utils.playVocal("soundDefSkyCloudMindMigrationCompleted");
-                }
-                if (replicationDone.Count != 0)
-                {
-                    foreach (var md in replicationDone)
-                    {
-                        md.OnReplicate();
-                    }
-                    replicationDone.Clear();
-                    Utils.playVocal("soundDefSkyCloudMindReplicationCompleted");
-                }
             }
 
-            if(CGT % 3600 == 0)
+            if(parentBuilding != null && CGT % 250 == 0)
             {
-                //CHECK de la fin des mental breaks des minds stockés --  decrementation temps 
-                if (parentCPT.PowerOn && inMentalBreak.Count > 0)
-                {
-                    var keys = new List<Pawn>(inMentalBreak.Keys);
-                    foreach (var ck in keys)
-                    {
-                        inMentalBreak[ck] -= 3600;
-                        if (inMentalBreak[ck] <= 0)
-                        {
-                            inMentalBreak.Remove(ck);
+                checkMindsStuffTick();
+                checkCoreHealthStatus();
+            }
+        }
 
-                            Messages.Message("ATPP_ProcessNoLongerInMentalBreak".Translate(ck.LabelShortCap, getName()), parent, MessageTypeDefOf.PositiveEvent);
-                        }
+        public void checkCoreHealthStatus()
+        {
+            int CGT = Find.TickManager.TicksGame;
+            if (CGT >= nextCoreHealthWarningGT)
+            {
+                if (parentPawn != null)
+                {
+                    if (!parentPawn.Dead && parentPawn.health.summaryHealth.SummaryHealthPercent < 0.55f)
+                    {
+                        nextCoreHealthWarningGT = CGT + Rand.Range(2700, 5400);
+                        Utils.playVocal("soundDefM8IntegrityCompromised");
+                    }
+                }
+                else
+                {
+                    float num = (float)parentBuilding.HitPoints / (float)parentBuilding.MaxHitPoints;
+                    if (num < 0.55f)
+                    {
+                        nextCoreHealthWarningGT = CGT + Rand.Range(2700, 5400);
+                        Utils.playVocal("soundDefSkyCoreIntegrityCompromised");
+                    }
+                }
+            }
+        }
+
+        public void checkMindsStuffTick()
+        {
+            int CGT = Find.TickManager.TicksGame;
+            for (int i = storedMinds.Count - 1; i >= 0; i--)
+            {
+                Pawn m = storedMinds[i];
+                CompSurrogateOwner cso = Utils.getCachedCSO(m);
+                if (cso == null)
+                    continue;
+
+                cso.checkInterruptedUpload();
+
+                //Atteinte fin attente de la replication d'un mind
+                if (cso.replicationEndingGT != -1 && cso.replicationEndingGT < CGT)
+                    replicationDone.Add(cso);
+
+                if (cso.migrationEndingGT != -1 && cso.migrationEndingGT < CGT)
+                    migrationsDone.Add(cso);
+            }
+
+            if (migrationsDone.Count != 0)
+            {
+                foreach (var md in migrationsDone)
+                {
+                    md.OnMigrated();
+                }
+                migrationsDone.Clear();
+                if (parentPawn == null)
+                    Utils.playVocal("soundDefSkyCloudMindMigrationCompleted");
+                else
+                    Utils.playVocal("soundDefM8MindMigrationCompleted");
+            }
+            if (replicationDone.Count != 0)
+            {
+                foreach (var md in replicationDone)
+                {
+                    md.OnReplicate();
+                }
+                replicationDone.Clear();
+                if (parentPawn == null)
+                    Utils.playVocal("soundDefSkyCloudMindReplicationCompleted");
+                else
+                    Utils.playVocal("soundDefM8MindReplicationCompleted");
+            }
+
+            //CHECK de la fin des mental breaks des minds stockés --  decrementation temps 
+            if (isOnline() && inMentalBreak.Count > 0)
+            {
+                var keys = new List<Pawn>(inMentalBreak.Keys);
+                foreach (var ck in keys)
+                {
+                    inMentalBreak[ck] -= 3600;
+                    if (inMentalBreak[ck] <= 0)
+                    {
+                        inMentalBreak.Remove(ck);
+
+                        Messages.Message("ATPP_ProcessNoLongerInMentalBreak".Translate(ck.LabelShortCap, getName()), parent, MessageTypeDefOf.PositiveEvent);
                     }
                 }
             }
@@ -634,7 +748,10 @@ namespace MOARANDROIDS
             stopMindActivities(mind);
 
             inMentalBreak[mind] = Rand.Range(Settings.minDurationMentalBreakOfDigitisedMinds, Settings.maxDurationMentalBreakOfDigitisedMinds) * 2500;
-            Utils.playVocal("soundDefSkyCloudMindQuarantineMentalState");
+            if(parentPawn == null)
+                Utils.playVocal("soundDefSkyCloudMindQuarantineMentalState");
+            else
+                Utils.playVocal("soundDefM8MindQuarantineMentalState");
         }
 
         public int getNbMindsConnectedToSurrogate()
@@ -680,8 +797,10 @@ namespace MOARANDROIDS
 
         public bool isRunning()
         {
-            Building build = (Building)parent;
-            return !build.Destroyed && !build.IsBrokenDown() && parentCPT.PowerOn;
+            if (parentPawn != null)
+                return !parentPawn.Dead;
+            else
+                return !parentBuilding.Destroyed && !parentBuilding.IsBrokenDown() && parentCPT.PowerOn;
         }
 
         public string getName()
@@ -711,7 +830,8 @@ namespace MOARANDROIDS
 
         public void refreshPowerConsumed()
         {
-            parentCPT.powerOutputInt = -(getPowerConsumed());
+            if(parentBuilding != null)
+                parentCPT.powerOutputInt = -(getPowerConsumed());
         }
 
 
@@ -724,7 +844,7 @@ namespace MOARANDROIDS
             crt.controller = mind;
             controlledTurrets[mind] = turret;
 
-            Utils.soundDefTurretConnection.PlayOneShot(null);
+            SoundDefOfAT.ATPP_SoundTurretConnection.PlayOneShot(null);
             FleckMaker.ThrowDustPuffThick(turret.Position.ToVector3Shifted(), turret.Map, 4.0f, Color.blue);
 
             Messages.Message("ATPP_SurrogateConnectionOK".Translate(mind.LabelShortCap, turret.LabelShortCap), turret, MessageTypeDefOf.PositiveEvent);
@@ -756,7 +876,7 @@ namespace MOARANDROIDS
             crt.controller =null;
 
             controlledTurrets.Remove(mind);
-            Utils.soundDefTurretConnectionStopped.PlayOneShot(null);
+            SoundDefOfAT.ATPP_SoundTurretDisconnect.PlayOneShot(null);
         }
 
         private void disconnectAllRemotelyControlledTurrets()
@@ -890,6 +1010,9 @@ namespace MOARANDROIDS
             Find.WindowStack.Add(floatMenuMap);
         }
 
+        Pawn parentPawn;
+        Building parentBuilding;
+
         CompPowerTrader parentCPT;
         List<CompSurrogateOwner> migrationsDone = new List<CompSurrogateOwner>();
         List<CompSurrogateOwner> replicationDone = new List<CompSurrogateOwner>();
@@ -898,6 +1021,7 @@ namespace MOARANDROIDS
         public Dictionary<Pawn, Building> controlledTurrets = new Dictionary<Pawn, Building>();
         public List<Pawn> assistingMinds = new List<Pawn>();
         public List<Pawn> replicatingMinds = new List<Pawn>();
+        public List<Pawn> pendingUploads = new List<Pawn>();
         public Dictionary<Pawn, int> inMentalBreak = new Dictionary<Pawn, int>();
 
         public List<Pawn> controlledTurretsKeys = new List<Pawn>();
@@ -909,5 +1033,7 @@ namespace MOARANDROIDS
         public int SID = -1;
 
         public int bootGT = -2;
+        private int nextCoreHealthWarningGT = -1;
+        public bool init = false;
     }
 }

@@ -16,5 +16,21 @@
       </rulesRaw>
     </rulePack>
   </RulePackDef>
+  
+  <RulePackDef>
+    <defName>AndroidTiers_AndroidAtlas8Mech</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[AndroidAtlas8MechNames]</li>
+
+      </rulesStrings>
+      <rulesRaw>
+        <li Class="Rule_File">
+          <keyword>AndroidAtlas8MechNames</keyword>
+          <path>AndroidAtlas_Names/Mech8Name</path>
+        </li>
+      </rulesRaw>
+    </rulePack>
+  </RulePackDef>
 
 </Defs>

@@ -338,8 +338,10 @@
 	<ATPP_StartPermute>La permutation de conscience de {0} avec {1} à commencé !</ATPP_StartPermute>
 	<ATPP_StartDuplicate>La duplication de conscience de {0} vers {1} à commencé !</ATPP_StartDuplicate>
 	<ATPP_StartSkyCloudUpload>Le téléchargement de la conscience de {0} dans {1} à commencé !</ATPP_StartSkyCloudUpload>
+	<ATPP_StartSkyCloudUploadFailed>Le téléchargement de la conscience de {0} dans {1} ne peut se faire ! il n'y à pas assez d'espace de stockage de consciences dans {1}</ATPP_StartSkyCloudUploadFailed>
 	<ATPP_StartSkyCloudDownload>Le téléchargement  de la conscience de {0} dans le cerveau de {1} à commencé !</ATPP_StartSkyCloudDownload>
 	<ATPP_StartSkyCloudMigration>La migration de la conscience de {0} de {1} à {2} a commencé!</ATPP_StartSkyCloudMigration>
+	<ATPP_StartSkyCloudMigration>La migration de la conscience de {0} dans {1} ne peut se faire car il n'y à pas assez d'espace de stockage de consciences dans {1}!</ATPP_StartSkyCloudMigration>
 	
 	<ATPP_StartUpload>Le transfert de conscience de {0} vers {1} à commencé !</ATPP_StartUpload>
 	
@@ -362,6 +364,7 @@
 	<ATPP_CannotHackNotEnoughtHackingPoints>Pas assez de points de piratage, {0} sont requis pour procéder au piratage</ATPP_CannotHackNotEnoughtHackingPoints>
 	
 	<ATPP_ProcessDuplicateOK>Le réseau neuronal de {0} est en train d'être dupliqué</ATPP_ProcessDuplicateOK>
+	<ATPP_ProcessDuplicateFailed>Impossible de dupliquer le réseau neuronal de {0}, pas assez d'espace de stockage de consciences dans le serveur !</ATPP_ProcessDuplicateFailed>
 	<ATPP_ProcessRemoveOK>Le réseau neuronal de {0} à bien été supprimé</ATPP_ProcessRemoveOK>
 	<ATPP_ProcessAssistOK>La conscience {0} est maintenant affecté à l'assistance des colons connectés</ATPP_ProcessAssistOK>
 	<ATPP_ProcessUnassistOK>La conscience {0} n'est plus affectée pour assister les colons connectés</ATPP_ProcessUnassistOK>

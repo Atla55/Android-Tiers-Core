@@ -997,4 +997,88 @@
 		  <ATPP_NanitesFrameSerum>1</ATPP_NanitesFrameSerum>
 		</products>
   </RecipeDef>
+  <RecipeDef>
+      <defName>ATPP_CreateM8</defName>
+      <label>Create M8 SkyCore Mechanoid prototype</label>
+      <description>Create a prototype M8 Surrogate mechanoid from Plasteel and components.</description>
+      <jobString>Making a prototype M8 mechanoid</jobString>  
+      <allowMixingIngredients>false</allowMixingIngredients>
+	  <skillRequirements>
+		<Crafting>14</Crafting>
+      </skillRequirements>
+	  <researchPrerequisite>ATPP_ResearchM8</researchPrerequisite>
+      <ingredients>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Plasteel</li>
+               </thingDefs>
+            </filter>
+            <count>550</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>Steel</li>
+               </thingDefs>
+            </filter>
+            <count>800</count>
+         </li>
+		 <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentIndustrial</li>
+               </thingDefs>
+            </filter>
+            <count>48</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>ComponentSpacer</li>
+               </thingDefs>
+            </filter>
+            <count>6</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Uranium</li>
+               </thingDefs>
+            </filter>
+            <count>120</count>
+         </li>
+         <li>
+            <filter>
+               <thingDefs>
+                  <li>Gold</li>
+               </thingDefs>
+            </filter>
+            <count>12</count>
+         </li>
+      </ingredients>
+      <products>
+         <ATPP_M8GeneratorAI>1</ATPP_M8GeneratorAI>
+      </products>
+      <workAmount>95000</workAmount>
+	  <unfinishedThingDef>UnfinishedAndroid</unfinishedThingDef>
+      <workSkill>Crafting</workSkill>
+    <effectWorking>Repair</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workSpeedStat>ButcheryMechanoidSpeed</workSpeedStat>
+	 <recipeUsers>
+		<li>AndroidProductionVat</li>
+      </recipeUsers>
+	</RecipeDef>
+	
+	<ThingDef ParentName="ATPP_GeneratorAI">
+        <defName>ATPP_M8GeneratorAI</defName>
+        <label>M8 prototype Mech</label>
+        <comps>
+		<li Class="MOARANDROIDS.SpawnerCompProperties_GenericSpawner">
+            <compClass>MOARANDROIDS.CompAndroidSpawnerGeneric</compClass>
+			<Pawnkind>M8MechPawn</Pawnkind>
+		</li>
+        </comps>
+    </ThingDef>
 </Defs>

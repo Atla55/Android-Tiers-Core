@@ -272,13 +272,13 @@ namespace MOARANDROIDS
 
             Utils.GCATPP.decHackingPoints(nbpToConsume);
 
-            Utils.soundDefSurrogateHacked.PlayOneShot(null);
+            SoundDefOfAT.ATPP_SoundSurrogateHacked.PlayOneShot(null);
 
             //Notif d'applciation de l'effet
             Messages.Message("ATPP_SurrogateHackOK".Translate(surrogateName), target, MessageTypeDefOf.PositiveEvent);
 
             //ANimation sonore et visuelle
-            Utils.soundDefSurrogateConnection.PlayOneShot(null);
+            SoundDefOfAT.ATPP_SoundSurrogateConnection.PlayOneShot(null);
             FleckMaker.ThrowDustPuffThick(pos.ToVector3Shifted(), cmap, 4.0f, Color.red);
 
             Find.DesignatorManager.Deselect();

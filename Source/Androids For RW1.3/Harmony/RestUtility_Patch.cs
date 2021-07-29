@@ -30,6 +30,7 @@ namespace MOARANDROIDS
                     bool sleeperIsSurrogate = sleeper.IsSurrogateAndroid();
                     bool sleeperIsRegularAndroid = Utils.ExceptionRegularAndroidList.Contains(sleeper.def.defName);
                     bool isSurrogateM7 = (sleeper.def == ThingDefOfAT.M7Mech && sleeperIsSurrogate);
+                    bool isM8 = sleeper.def == ThingDefOfAT.M8Mech;
                     bool isHospitalBed = bedThing.def.defName == "HospitalBed";
                     //bool isSleepingSpot = bedThing.def.defName == "SleepingSpot" || bedThing.def.defName == "DoubleSleepingSpot";
 
@@ -37,8 +38,8 @@ namespace MOARANDROIDS
                     //PodM7
                     if (bedIsAndroidM7Pod)
                     {
-                        //SI pas un surrogate M7 alors pas d'utilisation possible
-                        if (! isSurrogateM7)
+                        //SI pas un surrogate M7 ou M8 alors pas d'utilisation possible
+                        if (!(isSurrogateM7 || isM8))
                         {
                             __result = false;
                         }
@@ -46,7 +47,7 @@ namespace MOARANDROIDS
                     else if (bedIsAndroidPod)
                     {
                         //Si pas un surrogate standard alors utilisation pas possible
-                        if (!(sleeperIsRegularAndroid && sleeper.def.defName != Utils.M7))
+                        if (!(sleeperIsRegularAndroid && (sleeper.def.defName != Utils.M7 && sleeper.def.defName != Utils.M8)))
                             __result = false;
                     }
                     else if(!Settings.allowAndroidToUseHospitalBed && isHospitalBed && sleeperIsRegularAndroid)

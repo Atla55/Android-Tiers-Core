@@ -47,6 +47,8 @@ namespace MOARANDROIDS
         public static int lastDeviceActivatedVocalGT = 0;
         public static int lastDeviceDeactivatedVocalGT = 0;
 
+        public static int lastSkyCoreIntegrityCompromisedVocalGT = 0;
+
         public static Pawn lastInstallImplantBillDoer;
 
         public static bool forceGeneratedAndroidToBeDefaultPainted = false;
@@ -99,27 +101,6 @@ namespace MOARANDROIDS
         public static WorkTypeDef WorkTypeDefSmithing;
 
         public static ThoughtDef thoughtDefVX0Puppet;
-
-        public static SoundDef soundDefSkyCloudMindQuarantineMentalState;
-        public static SoundDef soundDefSkyCloudMindUploadCompleted;
-        public static SoundDef soundDefSkyCloudMindDownloadCompleted;
-        public static SoundDef soundDefSkyCloudDeviceActivated;
-        public static SoundDef soundDefSkyCloudDeviceDeactivated;
-        public static SoundDef soundDefSkyCloudDoorOpened;
-        public static SoundDef soundDefSkyCloudDoorClosed;
-        public static SoundDef soundDefSkyCloudSkyMindNetworkOffline;
-        public static SoundDef soundDefSkyCloudPowerFailure;
-        public static SoundDef soundDefSkyCloudMindReplicationCompleted;
-        public static SoundDef soundDefSkyCloudMindMigrationCompleted;
-        public static SoundDef soundDefSkyCloudMindDeletionCompleted;
-        public static SoundDef soundDefSkyCloudAllMindDisconnected;
-        public static SoundDef soundDefSkyCloudPrimarySystemsOnline;
-        public static SoundDef soundDefSurrogateConnection;
-        public static SoundDef soundDefSurrogateConnectionStopped;
-        public static SoundDef soundDefTurretConnection;
-        public static SoundDef soundDefTurretConnectionStopped;
-        public static SoundDef soundDefSurrogateHacked;
-
         public static StatDef statDefAndroidTending;
         public static StatDef statDefAndroidSurgerySuccessChance;
 
@@ -165,6 +146,7 @@ namespace MOARANDROIDS
         public const string T4 = "Android4Tier";
         public const string T5 = "Android5Tier";
         public const string M7 = "M7Mech";
+        public const string M8 = "M8Mech";
         public const string HU = "AT_HellUnit";
         public const string K9 = "AndroidDog";
         public const string MUFF = "AndroidMuff";
@@ -250,9 +232,9 @@ namespace MOARANDROIDS
 
         public static string[] ExceptionNanoKits = new string[] { "ATPP_AndroidNanokitBasic", "ATPP_AndroidNanokitIntermediate", "ATPP_AndroidNanokitAdvanced" }.GetSortedArray();
         public static HashSet<string> ExceptionRegularAndroidList = new HashSet<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
-        public static HashSet<string> ExceptionAndroidList = new HashSet<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "M7Mech", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
-        public static HashSet<string> ExceptionAndroidCorpseList = new HashSet<string> { "Corpse_Android1Tier", "Corpse_Android2Tier", "Corpse_Android3Tier", "Corpse_Android4Tier", "Corpse_Android5Tier", "Corpse_AT_HellUnit", "Corpse_M7Mech" };
-        public static string[] ExceptionAndroidListBasic = new string[] { "Android1Tier", "Android2Tier", "M7Mech", "ATPP_Android2TX", "ATPP_Android2KTX", "ATPP_Android2ITX" }.GetSortedArray();
+        public static HashSet<string> ExceptionAndroidList = new HashSet<string> { "Android1Tier", "Android2Tier", "Android3Tier", "Android4Tier", "Android5Tier", "M7Mech", "M8Mech", "AT_HellUnit", "ATPP_Android2TX", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android2KTX", "ATPP_Android2ITX", "ATPP_Android2KITX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
+        public static HashSet<string> ExceptionAndroidCorpseList = new HashSet<string> { "Corpse_Android1Tier", "Corpse_Android2Tier", "Corpse_Android3Tier", "Corpse_Android4Tier", "Corpse_Android5Tier", "Corpse_AT_HellUnit", "Corpse_M7Mech", "Corpse_M8Mech" };
+        public static string[] ExceptionAndroidListBasic = new string[] { "Android1Tier", "Android2Tier", "M7Mech", "M8Mech", "ATPP_Android2TX", "ATPP_Android2KTX", "ATPP_Android2ITX" }.GetSortedArray();
         public static HashSet<string> ExceptionAndroidListAdvanced = new HashSet<string> { "Android3Tier", "Android4Tier", "Android5Tier", "AT_HellUnit", "ATPP_Android3TX", "ATPP_Android4TX", "ATPP_Android3ITX", "ATPP_Android4ITX" };
         public static string[] ExceptionAndroidAnimalPowered = new string[] { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidFox" }.GetSortedArray();
         public static string[] ExceptionAndroidAnimals = new string[] { "AndroidMuff", "AndroidDog", "RoboticSheep", "RoboticCow", "AndroidChicken", "AndroidFox" }.GetSortedArray();
@@ -653,68 +635,137 @@ namespace MOARANDROIDS
             switch (vocal)
             {
                 case "soundDefSkyCloudMindQuarantineMentalState":
-                    Utils.soundDefSkyCloudMindQuarantineMentalState.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudMindQuarantineMentalState.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudMindDownloadCompleted":
-                    Utils.soundDefSkyCloudMindDownloadCompleted.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudMindDownloadCompleted.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudMindUploadCompleted":
-                    Utils.soundDefSkyCloudMindUploadCompleted.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudMindUploadCompleted.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudDoorOpened":
                     if ((CGT - Utils.lastDoorOpenedVocalGT) >= 300)
                     {
-                        Utils.soundDefSkyCloudDoorOpened.PlayOneShot(null);
+                        SoundDefOfAT.ATPP_SoundSkyCloudDoorOpened.PlayOneShot(null);
                         Utils.lastDoorOpenedVocalGT = CGT;
                     }
                     break;
                 case "soundDefSkyCloudDoorClosed":
                     if ((CGT - lastDoorClosedVocalGT) >= 300)
                     {
-                        soundDefSkyCloudDoorClosed.PlayOneShot(null);
+                        SoundDefOfAT.ATPP_SoundSkyCloudDoorClosed.PlayOneShot(null);
                         lastDoorClosedVocalGT = CGT;
                     }
                     break;
                 case "soundDefSkyCloudSkyMindNetworkOffline":
                     if ((CGT - lastPlayedVocalWarningNoSkyMindNetGT) >= 900)
                     {
-                        Utils.soundDefSkyCloudSkyMindNetworkOffline.PlayOneShot(null);
+                        SoundDefOfAT.ATPP_SoundSkyCloudSkyMindNetworkOffline.PlayOneShot(null);
                         lastPlayedVocalWarningNoSkyMindNetGT = CGT;
                     }
                     break;
                 case "soundDefSkyCloudMindReplicationCompleted":
-                    Utils.soundDefSkyCloudMindReplicationCompleted.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudMindReplicationCompleted.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudMindMigrationCompleted":
-                    Utils.soundDefSkyCloudMindMigrationCompleted.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudMindMigrationCompleted.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudPrimarySystemsOnline":
-                    Utils.soundDefSkyCloudPrimarySystemsOnline.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudPrimarySystemsOnline.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudAllMindDisconnected":
-                    Utils.soundDefSkyCloudAllMindDisconnected.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudAllMindDisconnected.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudMindDeletionCompleted":
-                    Utils.soundDefSkyCloudMindDeletionCompleted.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudMindDeletionCompleted.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudPowerFailure":
-                    Utils.soundDefSkyCloudPowerFailure.PlayOneShot(null);
+                    SoundDefOfAT.ATPP_SoundSkyCloudPowerFailure.PlayOneShot(null);
                     break;
                 case "soundDefSkyCloudDeviceDeactivated":
                     if ((CGT - Utils.lastDeviceActivatedVocalGT) > 300)
                     {
-                        Utils.soundDefSkyCloudDeviceDeactivated.PlayOneShot(null);
+                        SoundDefOfAT.ATPP_SoundSkyCloudDeviceDeactivated.PlayOneShot(null);
                         Utils.lastDeviceActivatedVocalGT = CGT;
                     }
                     break;
                 case "soundDefSkyCloudDeviceActivated":
                     if ((CGT - Utils.lastDeviceDeactivatedVocalGT) > 300)
                     {
-                        Utils.soundDefSkyCloudDeviceActivated.PlayOneShot(null);
+                        SoundDefOfAT.ATPP_SoundSkyCloudDeviceActivated.PlayOneShot(null);
                         Utils.lastDeviceDeactivatedVocalGT = CGT;
                     }
                     break;
-
+                case "soundDefSkyCoreIntegrityCompromised":
+                    if ((CGT - Utils.lastSkyCoreIntegrityCompromisedVocalGT) > 300)
+                    {
+                        SoundDefOfAT.ATPP_SoundSkyCloudIntegrityCompromised.PlayOneShot(null);
+                        Utils.lastSkyCoreIntegrityCompromisedVocalGT = CGT;
+                    }
+                    break;
+                case "soundDefM8MindQuarantineMentalState":
+                    SoundDefOfAT.ATPP_SoundM8MindQuarantineMentalState.PlayOneShot(null);
+                    break;
+                case "soundDefM8MindDownloadCompleted":
+                    SoundDefOfAT.ATPP_SoundM8MindDownloadCompleted.PlayOneShot(null);
+                    break;
+                case "soundDefM8MindUploadCompleted":
+                    SoundDefOfAT.ATPP_SoundM8MindUploadCompleted.PlayOneShot(null);
+                    break;
+                case "soundDefM8DoorOpened":
+                    if ((CGT - Utils.lastDoorOpenedVocalGT) >= 300)
+                    {
+                        SoundDefOfAT.ATPP_SoundM8DoorOpened.PlayOneShot(null);
+                        Utils.lastDoorOpenedVocalGT = CGT;
+                    }
+                    break;
+                case "soundDefM8DoorClosed":
+                    if ((CGT - lastDoorClosedVocalGT) >= 300)
+                    {
+                        SoundDefOfAT.ATPP_SoundM8DoorClosed.PlayOneShot(null);
+                        lastDoorClosedVocalGT = CGT;
+                    }
+                    break;
+                case "soundDefM8SkyMindNetworkOffline":
+                    if ((CGT - lastPlayedVocalWarningNoSkyMindNetGT) >= 900)
+                    {
+                        SoundDefOfAT.ATPP_SoundM8SkyMindNetworkOffline.PlayOneShot(null);
+                        lastPlayedVocalWarningNoSkyMindNetGT = CGT;
+                    }
+                    break;
+                case "soundDefM8MindReplicationCompleted":
+                    SoundDefOfAT.ATPP_SoundM8MindReplicationCompleted.PlayOneShot(null);
+                    break;
+                case "soundDefM8MindMigrationCompleted":
+                    SoundDefOfAT.ATPP_SoundM8MindMigrationCompleted.PlayOneShot(null);
+                    break;
+                case "soundDefM8AllMindDisconnected":
+                    SoundDefOfAT.ATPP_SoundM8AllMindDisconnected.PlayOneShot(null);
+                    break;
+                case "soundDefM8MindDeletionCompleted":
+                    SoundDefOfAT.ATPP_SoundM8MindDeletionCompleted.PlayOneShot(null);
+                    break;
+                case "soundDefM8DeviceDeactivated":
+                    if ((CGT - Utils.lastDeviceActivatedVocalGT) > 300)
+                    {
+                        SoundDefOfAT.ATPP_SoundM8DeviceDeactivated.PlayOneShot(null);
+                        Utils.lastDeviceActivatedVocalGT = CGT;
+                    }
+                    break;
+                case "soundDefM8DeviceActivated":
+                    if ((CGT - Utils.lastDeviceDeactivatedVocalGT) > 300)
+                    {
+                        SoundDefOfAT.ATPP_SoundM8DeviceActivated.PlayOneShot(null);
+                        Utils.lastDeviceDeactivatedVocalGT = CGT;
+                    }
+                    break;
+                case "soundDefM8IntegrityCompromised":
+                    if ((CGT - Utils.lastSkyCoreIntegrityCompromisedVocalGT) > 300)
+                    {
+                        SoundDefOfAT.ATPP_SoundM8IntegrityCompromised.PlayOneShot(null);
+                        Utils.lastSkyCoreIntegrityCompromisedVocalGT = CGT;
+                    }
+                    break;
             }
         }
 
@@ -1375,7 +1426,7 @@ namespace MOARANDROIDS
         }
 
 
-        public static void ShowFloatMenuSkyCloudCores(Action<Building> onClick, Building self = null)
+        public static void ShowFloatMenuSkyCloudCores(Action<Thing> onClick, Thing self = null)
         {
             List<FloatMenuOption> opts = new List<FloatMenuOption>();
             FloatMenu floatMenuMap;
@@ -1386,9 +1437,9 @@ namespace MOARANDROIDS
                 if (core == self)
                     continue;
 
-                CompPowerTrader cpt = Utils.getCachedCPT(core);
+                CompSkyCloudCore csc = Utils.getCachedCSC(core);
                 //SI colon vivant et relié au RimNet et pas dans la liste d'exception et possede une PUCE RIMNET
-                if (!core.Destroyed && cpt.PowerOn)
+                if (!core.Destroyed && csc.isOnline())
                 {
                     CompSkyCloudCore ccore = Utils.getCachedCSC(core);
                     if (ccore == null)

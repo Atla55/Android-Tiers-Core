@@ -398,4 +398,298 @@
       </li>
     </subSounds>
   </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundSkyCloudIntegrityCompromised</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>SkyCloudCore/SkyCoreIntegrityCompromised</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+    <SoundDef>
+    <defName>ATPP_SoundM8MindReplicationCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/MindReplicationCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8MindMigrationCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/MindMigrationCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8MindDeletionCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/MindDeletionCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8AllMindDisconnected</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/AllMindDisconnected</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8SkyMindNetworkOffline</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/SkyMindNetworkOffline</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8DoorOpened</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/DoorOpened</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8DoorClosed</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/DoorClosed</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8DeviceActivated</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/DeviceActivated</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8DeviceDeactivated</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/DeviceDeactivated</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8MindDownloadCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/MindDownloadCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+    <SoundDef>
+    <defName>ATPP_SoundM8MindUploadCompleted</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/MindUploadCompleted</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8MindQuarantineMentalState</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/QuarantineMentalState</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+  
+  <SoundDef>
+    <defName>ATPP_SoundM8IntegrityCompromised</defName>  
+    <eventNames />  
+    <maxVoices>1</maxVoices>  
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <onCamera>True</onCamera>      
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>M8/SkyCoreIntegrityCompromised</clipPath>
+          </li>
+        </grains>      
+        <volumeRange>
+          <min>50</min>        
+          <max>50</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
 </Defs>

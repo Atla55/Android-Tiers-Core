@@ -39,29 +39,7 @@ namespace MOARANDROIDS
                     }
                     Utils.CrafterDoctorJob = new HashSet<WorkGiverDef>();
 
-
-                    Utils.soundDefSurrogateConnection = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateConnection");
-                    Utils.soundDefSurrogateConnectionStopped = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateDisconnect");
-                    Utils.soundDefTurretConnection = DefDatabase<SoundDef>.GetNamed("ATPP_SoundTurretConnection");
-                    Utils.soundDefTurretConnectionStopped = DefDatabase<SoundDef>.GetNamed("ATPP_SoundTurretDisconnect");
-                    Utils.soundDefSkyCloudPrimarySystemsOnline = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudPrimarySystemsOnline");
-                    Utils.soundDefSkyCloudAllMindDisconnected = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudAllMindDisconnected");
-                    Utils.soundDefSkyCloudMindDeletionCompleted = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudMindDeletionCompleted");
-                    Utils.soundDefSkyCloudMindMigrationCompleted = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudMindMigrationCompleted");
-                    Utils.soundDefSkyCloudMindReplicationCompleted = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudMindReplicationCompleted");
-                    Utils.soundDefSkyCloudPowerFailure = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudPowerFailure");
-                    Utils.soundDefSkyCloudSkyMindNetworkOffline = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudSkyMindNetworkOffline");
-                    Utils.soundDefSkyCloudDoorOpened = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudDoorOpened");
-                    Utils.soundDefSkyCloudDoorClosed = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudDoorClosed");
-                    Utils.soundDefSkyCloudDeviceActivated = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudDeviceActivated");
-                    Utils.soundDefSkyCloudDeviceDeactivated = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudDeviceDeactivated");
-                    Utils.soundDefSkyCloudMindDownloadCompleted = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudMindDownloadCompleted");
-                    Utils.soundDefSkyCloudMindUploadCompleted = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudMindUploadCompleted");
-                    Utils.soundDefSkyCloudMindQuarantineMentalState = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSkyCloudMindQuarantineMentalState");
-
                     Utils.thoughtDefVX0Puppet = DefDatabase<ThoughtDef>.GetNamed("ATPP_VX0PuppetThought");
-
-                    Utils.soundDefSurrogateHacked = DefDatabase<SoundDef>.GetNamed("ATPP_SoundSurrogateHacked");
                     Utils.dummyHeddif = DefDatabase<HediffDef>.GetNamed("ATPP_DummyHediff");
                     Utils.ResearchProjectSkyMindLAN = DefDatabase<ResearchProjectDef>.GetNamed("ATPP_ResearchSkyMindLAN");
                     Utils.ResearchProjectSkyMindWAN = DefDatabase<ResearchProjectDef>.GetNamed("ATPP_ResearchSkyMindWAN");
@@ -75,6 +53,10 @@ namespace MOARANDROIDS
                     Utils.ATPP_MoteBII = DefDatabase<ThingDef>.GetNamed("ATPP_MoteBII", true);
                     Utils.ATPP_MoteBI = DefDatabase<ThingDef>.GetNamed("ATPP_MoteBI", true);
 
+                    //Prevent M7/M8 to generate error on item placements
+                    StatDef csStatDef = DefDatabase<StatDef>.GetNamed("ConstructionSpeed",false);
+                    if(csStatDef != null )
+                        csStatDef.supressDisabledError = true;
 
                     //generating list of androids without skin
                     foreach (var el in Utils.ExceptionAndroidList)
@@ -254,11 +236,14 @@ namespace MOARANDROIDS
 
                                 if (td.race.intelligence == Intelligence.Humanlike)
                                 {
-
+                                    CompProperties cp;
                                     //SkyMind
-                                    CompProperties cp = new CompProperties();
-                                    cp.compClass = typeof(CompSkyMind);
-                                    td.comps.Add(cp);
+                                    if (td.defName != "M8Mech")
+                                    {
+                                        cp = new CompProperties();
+                                        cp.compClass = typeof(CompSkyMind);
+                                        td.comps.Add(cp);
+                                    }
 
                                     //CompSurrogate
                                     if (td.defName != "M7Mech")
@@ -2152,7 +2137,7 @@ namespace MOARANDROIDS
         }
 
 
-        public void pushSkyCloudCore(Building build)
+        public void pushSkyCloudCore(Thing build)
         {
             if (listerSkyCloudCores.Contains(build))
                 return;
@@ -2161,7 +2146,7 @@ namespace MOARANDROIDS
         }
 
 
-        public void popSkyCloudCoreAbs(Building build)
+        public void popSkyCloudCoreAbs(Thing build)
         {
             if (!listerSkyCloudCoresAbs.Contains(build))
                 return;
@@ -2169,7 +2154,7 @@ namespace MOARANDROIDS
             listerSkyCloudCoresAbs.Remove(build);
         }
 
-        public void pushSkyCloudCoreAbs(Building build)
+        public void pushSkyCloudCoreAbs(Thing build)
         {
             if (listerSkyCloudCoresAbs.Contains(build))
                 return;
@@ -2178,7 +2163,7 @@ namespace MOARANDROIDS
         }
 
 
-        public void popSkyCloudCore(Building build)
+        public void popSkyCloudCore(Thing build)
         {
             if (!listerSkyCloudCores.Contains(build))
                 return;
@@ -2186,7 +2171,7 @@ namespace MOARANDROIDS
             listerSkyCloudCores.Remove(build);
         }
 
-        public HashSet<Building> getAvailableSkyCloudCores()
+        public HashSet<Thing> getAvailableSkyCloudCores()
         {
             return listerSkyCloudCores;
         }
@@ -2400,7 +2385,7 @@ namespace MOARANDROIDS
             if (listerSkyMindRelays == null)
                 listerSkyMindRelays = new Dictionary<Map, HashSet<Building>>();
             if (listerSkyCloudCores == null)
-                listerSkyCloudCores = new HashSet<Building>();
+                listerSkyCloudCores = new HashSet<Thing>();
             if (listerSkyMindable == null)
                 listerSkyMindable = new HashSet<Thing>();
             if (listerConnectedDevices == null)
@@ -2408,7 +2393,7 @@ namespace MOARANDROIDS
             if (listerVirusedThings == null)
                 listerVirusedThings = new HashSet<Thing>();
             if (listerSkyCloudCoresAbs == null)
-                listerSkyCloudCoresAbs = new HashSet<Building>();
+                listerSkyCloudCoresAbs = new HashSet<Thing>();
             if (listerSkillServers == null)
                 listerSkillServers = new HashSet<Building>();
             if (savedIASCoalition == null)
@@ -2467,8 +2452,8 @@ namespace MOARANDROIDS
         private HashSet<Building> listerSkillServers = new HashSet<Building>();
         private HashSet<Building> listerSecurityServers = new HashSet<Building>();
         private HashSet<Building> listerHackingServers = new HashSet<Building>();
-        private HashSet<Building> listerSkyCloudCores = new HashSet<Building>();
-        private HashSet<Building> listerSkyCloudCoresAbs = new HashSet<Building>();
+        private HashSet<Thing> listerSkyCloudCores = new HashSet<Thing>();
+        private HashSet<Thing> listerSkyCloudCoresAbs = new HashSet<Thing>();
         private HashSet<Thing> listerSkyMindable = new HashSet<Thing>();
         private HashSet<Thing> listerConnectedDevices = new HashSet<Thing>();
         private HashSet<Thing> listerVirusedThings = new HashSet<Thing>();

@@ -18,7 +18,7 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn ___pawn, ref Rot4 __result)
             {
-                if (___pawn.def.defName == Utils.M7)
+                if (___pawn.def.defName == Utils.M7 || ___pawn.def.defName == Utils.M8)
                     __result = Rot4.South;
             }
         }

@@ -899,7 +899,7 @@ namespace MOARANDROIDS
                         if ((!transfertAllowed || isPrisonner))
                             return;
 
-                        Utils.ShowFloatMenuSkyCloudCores( delegate (Building target)
+                        Utils.ShowFloatMenuSkyCloudCores( delegate (Thing target)
                         {
                             Find.WindowStack.Add(new Dialog_Msg("ATPP_MoveToSkyCloud".Translate(), "ATPP_MoveToSkyCloudDesc".Translate() + "\n" + ("ATPP_WarningSkyMindDisconnectionRisk").Translate(), delegate
                             {
@@ -928,7 +928,7 @@ namespace MOARANDROIDS
                         if (!transfertAllowed2)
                             return;
 
-                        Utils.ShowFloatMenuSkyCloudCores(delegate (Building target)
+                        Utils.ShowFloatMenuSkyCloudCores(delegate (Thing target)
                         {
                             CompSkyCloudCore csc = Utils.getCachedCSC(target);
 
@@ -1098,7 +1098,7 @@ namespace MOARANDROIDS
 
             if (!external)
             {
-                Utils.soundDefSurrogateConnection.PlayOneShot(null);
+                SoundDefOfAT.ATPP_SoundSurrogateConnection.PlayOneShot(null);
                 FleckMaker.ThrowDustPuffThick(controlled.Position.ToVector3Shifted(), controlled.Map, 4.0f, Color.blue);
             }
             //Définition du controlleur
@@ -1195,7 +1195,7 @@ namespace MOARANDROIDS
         }
 
         /*
-         * Check s'il y a au moin un SX de connecté a ce controller 
+         * Check if there is at least one SX controller connected to this
          */
         public bool isThereSX()
         {
@@ -1204,7 +1204,7 @@ namespace MOARANDROIDS
 
         public void stopControlledSurrogate(Pawn surrogate, bool externalController=false, bool preventNoHost=false,bool noPrisonedSurrogateConversion=false, bool _downedViaDisconnect = true)
         {
-            //Log.Message("SetControlledSurrogate DEB");
+            Log.Message("SetControlledSurrogate DEB");
             Pawn cp = (Pawn)parent;
 
             //Pas de surrogate controllé
@@ -1429,7 +1429,7 @@ namespace MOARANDROIDS
 
                 //Utils.disableGlobalKill = false;
 
-                Utils.soundDefSurrogateConnectionStopped.PlayOneShot(null);
+                SoundDefOfAT.ATPP_SoundSurrogateDisconnect.PlayOneShot(null);
 
                 //Si surrogate est prisonnier on le met comme non prisonnier et le controlleur comme prisonnier
                 if (csurrogate.IsPrisoner && !noPrisonedSurrogateConversion)
@@ -1553,18 +1553,24 @@ namespace MOARANDROIDS
             Messages.Message("ATPP_StartDuplicate".Translate(source.LabelShortCap, dest.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
         }
 
-        private void OnMoveConsciousnessToSkyCloudCore(Pawn source, Building dest)
+        private void OnMoveConsciousnessToSkyCloudCore(Pawn source, Thing dest)
         {
-            source.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
-
             int CGT = Find.TickManager.TicksGame;
-            skyCloudRecipient = dest;
-            uploadToSkyCloudStartGT = CGT;
-            uploadToSkyCloudEndingGT = CGT + 60 - (CGT % 60) + Settings.mindUploadToSkyCloudHours * 2500;
 
             CompSkyCloudCore csc = Utils.getCachedCSC(dest);
-
-            Messages.Message("ATPP_StartSkyCloudUpload".Translate(source.LabelShortCap, csc.getName()), parent, MessageTypeDefOf.PositiveEvent);
+            if (csc.isFull())
+            {
+                Messages.Message("ATPP_StartSkyCloudUploadFailedFull".Translate(source.LabelShortCap, csc.getName()), parent, MessageTypeDefOf.NegativeEvent);
+            }
+            else
+            {
+                source.health.AddHediff(HediffDefOf.ATPP_ConsciousnessUpload);
+                skyCloudRecipient = dest;
+                uploadToSkyCloudStartGT = CGT;
+                uploadToSkyCloudEndingGT = CGT + 60 - (CGT % 60) + Settings.mindUploadToSkyCloudHours * 2500;
+                csc.pendingUploads.Add(source);
+                Messages.Message("ATPP_StartSkyCloudUpload".Translate(source.LabelShortCap, csc.getName()), parent, MessageTypeDefOf.PositiveEvent);
+            }
         }
 
         private void OnMoveConsciousnessFromSkyCloudCore(Pawn source)
@@ -1595,16 +1601,24 @@ namespace MOARANDROIDS
             }
         }
 
-        public void startMigration(Building dest)
+        public void startMigration(Thing dest)
         {
             CompSkyCloudCore csc2 = Utils.getCachedCSC(dest);
 
             int CGT = Find.TickManager.TicksGame;
-            migrationSkyCloudHostDest = dest;
-            migrationStartGT = CGT;
-            migrationEndingGT = CGT + 60 - (CGT % 60) + Settings.mindSkyCloudMigrationHours * 2500;
 
-            Messages.Message("ATPP_StartSkyCloudMigration".Translate(((Pawn)parent).LabelShortCap, Utils.getCachedCSC(skyCloudHost).getName(), csc2.getName()), parent, MessageTypeDefOf.PositiveEvent);
+            if (csc2.isFull())
+            {
+                Messages.Message("ATPP_StartSkyCloudMigrationFailed".Translate(((Pawn)parent).LabelShortCap, csc2.getName()), parent, MessageTypeDefOf.NegativeEvent);
+            }
+            else
+            {
+                migrationSkyCloudHostDest = dest;
+                migrationStartGT = CGT;
+                migrationEndingGT = CGT + 60 - (CGT % 60) + Settings.mindSkyCloudMigrationHours * 2500;
+
+                Messages.Message("ATPP_StartSkyCloudMigration".Translate(((Pawn)parent).LabelShortCap, Utils.getCachedCSC(skyCloudHost).getName(), csc2.getName()), parent, MessageTypeDefOf.PositiveEvent);
+            }
         }
 
         /*
@@ -1662,26 +1676,26 @@ namespace MOARANDROIDS
                     recipientConnected = true;*/
 
                 CompSurrogateOwner csoSkyCloudRecipient = Utils.getCachedCSO(skyCloudDownloadRecipient);
-                CompPowerTrader cptSkyCloudRecipient = Utils.getCachedCPT(skyCloudRecipient);
-                CompPowerTrader cptSkyCloudHost = Utils.getCachedCPT(skyCloudHost);
-                CompPowerTrader cptMigrationSkyCloudHostDest = Utils.getCachedCPT(migrationSkyCloudHostDest);
-                CompPowerTrader cptCsoSkyCloudRecipientSkyCloudHost = null;
+                CompSkyCloudCore cscSkyCloudRecipient = Utils.getCachedCSC(skyCloudRecipient);
+                CompSkyCloudCore cscSkyCloudHost = Utils.getCachedCSC(skyCloudHost);
+                CompSkyCloudCore cscMigrationSkyCloudHostDest = Utils.getCachedCSC(migrationSkyCloudHostDest);
+                CompSkyCloudCore cscCsoSkyCloudRecipientSkyCloudHost = null;
 
                 if(csoSkyCloudRecipient != null)
-                    cptCsoSkyCloudRecipientSkyCloudHost = Utils.getCachedCPT(csoSkyCloudRecipient.skyCloudHost);
+                    cscCsoSkyCloudRecipientSkyCloudHost = Utils.getCachedCSC(csoSkyCloudRecipient.skyCloudHost);
 
                 //L'équivalence du EST connecté sur le COre s'est si il est bien alimenté en elec
-                if ( (skyCloudRecipient != null && cptSkyCloudRecipient != null && cptSkyCloudRecipient.PowerOn)
-                    || (replicationEndingGT != -1 && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
-                    || (migrationSkyCloudHostDest != null && cptMigrationSkyCloudHostDest.PowerOn)
-                    || (skyCloudDownloadRecipient != null && csoSkyCloudRecipient != null && cptCsoSkyCloudRecipientSkyCloudHost.PowerOn))
+                if ( (skyCloudRecipient != null && cscSkyCloudRecipient != null && cscSkyCloudRecipient.isOnline())
+                    || (replicationEndingGT != -1 && cscSkyCloudHost != null && cscSkyCloudHost.isOnline())
+                    || (migrationSkyCloudHostDest != null && cscMigrationSkyCloudHostDest.isOnline())
+                    || (skyCloudDownloadRecipient != null && csoSkyCloudRecipient != null && cscCsoSkyCloudRecipientSkyCloudHost.isOnline()))
                 {
                     recipientConnected = true;
                 }
 
                 //L'équivalence en mode migration est le check de si le host du mind est branché
-                if ( (replicationEndingGT != -1 && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
-                    || (skyCloudHost != null && cptSkyCloudHost != null && cptSkyCloudHost.PowerOn)
+                if ( (replicationEndingGT != -1 && cscSkyCloudHost != null && cscSkyCloudHost.isOnline())
+                    || (skyCloudHost != null && cscSkyCloudHost != null && cscSkyCloudHost.isOnline())
                     || (Utils.GCATPP.isConnectedToSkyMind(cpawn, !lastSkymindDisconnectIsManual,false)) )
                     emitterConnected = true;
 
@@ -1729,6 +1743,9 @@ namespace MOARANDROIDS
                             CompSkyCloudCore csc = Utils.getCachedCSC(skyCloudHost);
                             //Remove mind from the source SkyCore
                             csc.RemoveMind(cpawn);
+                            //Remove mind from the destination SkyCore in pending uploads
+                            if(cscMigrationSkyCloudHostDest != null)
+                                cscMigrationSkyCloudHostDest.pendingUploads.Remove(cpawn);
                             //mind failing the migration are killed (corrupted)
                             cpawn.Kill(null,null);
                             showMindUploadNotif = false;
@@ -1737,6 +1754,12 @@ namespace MOARANDROIDS
                         else if (!recipientConnected || !emitterConnected)
                         {
                             reason = "ATPP_LetterInterruptedUploadDescCompDiconnectionError".Translate();
+
+                            //If mind upload then we remove it from the pending upload table of the destination SkyCore
+                            if(uploadToSkyCloudEndingGT != -1 && cscSkyCloudRecipient != null)
+                            {
+                                cscSkyCloudRecipient.pendingUploads.Remove(cpawn);
+                            }
 
                             killSelf = true;
                             if (permuteRecipient != null && !permuteRecipient.Dead)
@@ -1827,7 +1850,7 @@ namespace MOARANDROIDS
         public int downloadFromSkyCloudEndingGT = -1;
 
         public Pawn skyCloudDownloadRecipient;
-        public Building skyCloudRecipient;
+        public Thing skyCloudRecipient;
         public Pawn permuteRecipient;
         public CompSurrogateOwner permuteRecipientCSO;
         public Pawn duplicateRecipient;
@@ -1842,9 +1865,9 @@ namespace MOARANDROIDS
 
         public bool externalController = true;
 
-        public Building skyCloudHost;
+        public Thing skyCloudHost;
         //Migration stuff related
-        public Building migrationSkyCloudHostDest;
+        public Thing migrationSkyCloudHostDest;
         public int migrationStartGT = 0;
         public int migrationEndingGT = -1;
         //Replication stuff related

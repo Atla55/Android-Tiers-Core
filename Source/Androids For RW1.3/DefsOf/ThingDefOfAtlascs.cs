@@ -23,6 +23,8 @@ namespace MOARANDROIDS
 
         public static ThingDef M7Mech;
 
+        public static ThingDef M8Mech;
+
         public static ThingDef Mech40MMCannon;
 
         public static ThingDef MechMastiffGun;
