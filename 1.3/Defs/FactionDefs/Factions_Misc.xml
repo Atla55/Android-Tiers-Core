@@ -88,7 +88,37 @@
 		</apparelStuffFilter>
 	</FactionDef>
 
-
+	<FactionDef ParentName="PlayerFactionBase">
+		<defName>AndroidTiers_PlayerColonyApocalypse</defName>
+		<label>Last hope for humanity</label>
+		<description>Your human digitized mind colony.</description>
+		
+		<isPlayer>true</isPlayer>
+		<backstoryFilters>
+		  <li>
+			<categories>
+			  <li>Offworld</li>
+			</categories>
+		  </li>
+		</backstoryFilters>
+		<basicMemberKind>M8MechPawn</basicMemberKind>
+		<pawnsPlural>colonists</pawnsPlural>
+		<playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
+		<factionNameMaker>NamerFactionOutlander</factionNameMaker>
+		<settlementNameMaker>NamerSettlementOutlander</settlementNameMaker>
+		<techLevel>Industrial</techLevel>
+		<factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+		<startingResearchTags>
+			<li>ClassicStart</li>
+		</startingResearchTags>
+		<apparelStuffFilter>
+			<thingDefs>
+				<li>Synthread</li>
+				<li>Cloth</li>
+			</thingDefs>
+		</apparelStuffFilter>
+	</FactionDef>
+	
 	<FactionDef>
 		<defName>AndroidRebellionAtlas</defName>
 		<label>Android Insurrection</label>

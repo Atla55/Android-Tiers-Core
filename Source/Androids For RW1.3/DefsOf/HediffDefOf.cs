@@ -39,6 +39,8 @@ namespace MOARANDROIDS
 
         public static HediffDef SurgicalCut;
 
+        public static HediffDef DecayedFrame;
+
         public static HediffDef ATPP_ConsciousnessUpload;
 
         public static HediffDef ATPP_Rusted;

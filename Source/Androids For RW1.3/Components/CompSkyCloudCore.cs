@@ -7,6 +7,7 @@ using UnityEngine;
 using System.Text;
 using System.Text.RegularExpressions;
 using Verse.Sound;
+using RimWorld.Planet;
 
 namespace MOARANDROIDS
 {
@@ -97,6 +98,8 @@ namespace MOARANDROIDS
                 }
             }
 
+            generateInitialSurvivorsMinds();
+
             if(!init)
                 initComp();
         }
@@ -135,10 +138,15 @@ namespace MOARANDROIDS
 
         public override void ReceiveCompSignal(string signal)
         {
-            if (parentBuilding != null)
+            base.ReceiveCompSignal(signal);
+
+            switch (signal)
             {
-                if (signal == "PowerTurnedOff")
-                {
+                case "PowerTurnedOn":
+                    //Definition sec ou le core démarrera vraiment
+                    bootGT = Find.TickManager.TicksGame + (Settings.secToBootSkyCloudCore * 60);
+                    break;
+                case "PowerTurnedOff":
                     //Su systeme booté le serveur dit le power Failure
                     if (bootGT == -1)
                         Utils.playVocal("soundDefSkyCloudPowerFailure");
@@ -146,29 +154,105 @@ namespace MOARANDROIDS
                     bootGT = -2;
                     stopAllMindsActivities(true);
                     Utils.GCATPP.popSkyCloudCore(parent);
+                    break;
+                case "AndroidTiers_CaravanInit":
+                    if (parent is Pawn)
+                    {
+                        Pawn cp = (Pawn)parent;
+                            if (!init)
+                                initComp();
+                    }
+                    break;
+            }
+        }
+
+        public void generateInitialSurvivorsMinds()
+        {
+            //If scenario apocalypse then generate 3 human conscioussness
+            if (Current.Game.tickManager.TicksGame == 0 && Current.Game.Scenario.name == "Androids apocalypse")
+            {
+                Pawn cp = (Pawn)parent;
+                //Set the initial M8 damage
+                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.DecayedFrame);
+                if(he == null)
+                    cp.health.AddHediff(HediffDefOf.DecayedFrame);
+
+                Pawn mind;
+                CompSurrogateOwner cso;
+                PawnGenerationRequest pgr = new PawnGenerationRequest(PawnKindDefOf.AncientSoldier, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, newborn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, colonistRelationChanceFactor:1f, forceAddFreeWarmLayerIfNeeded: true, allowGay: true, allowFood: false, allowAddictions: false, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 0f, forceNoBackstory:false);
+                //Generate the 3 humans minds
+                for (int i = 0; i != 3; i++)
+                {
+                    mind = PawnGenerator.GeneratePawn(pgr);
+                    setInitialChildhood(mind, "ApocalypseSurvivor23");
+                    mind.story.adulthood = null;
+                    cso = Utils.getCachedCSO(mind);
+                    cso.skyCloudHost = parent;
+                    Utils.ResetCachedIncapableOf(mind);
+                    Utils.removeMindBlacklistedTrait(mind);
+                    Current.Game.tickManager.DeRegisterAllTickabilityFor(mind);
+                    storedMinds.Add(mind);
                 }
 
-                //Redemarrage ambiance
-                if (signal == "PowerTurnedOn")
+                //Generate the defense Bot
+                pgr = new PawnGenerationRequest(PawnKindDefOf.AndroidT2Colonist, Faction.OfPlayer, PawnGenerationContext.NonPlayer, -1, forceGenerateNewPawn: true, newborn: false, allowDead: false, allowDowned: false, canGeneratePawnRelations: true, mustBeCapableOfViolence: false, colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: true, allowGay: true, allowFood: false, allowAddictions: false, inhabitant: false, certainlyBeenInCryptosleep: false, forceRedressWorldPawnIfFormerColonist: false, worldPawnFactionDoesntMatter: false, biocodeWeaponChance: 0f, forceNoBackstory: false);
+                mind = PawnGenerator.GeneratePawn(pgr);
+                setInitialChildhood(mind,"");
+                mind.story.adulthood = null;
+                cso = Utils.getCachedCSO(mind);
+                cso.skyCloudHost = parent;
+                Utils.ResetCachedIncapableOf(mind);
+                Utils.removeMindBlacklistedTrait(mind);
+                int skillbot = Rand.Range(8, 15);
+
+                foreach (var sk in DefDatabase<SkillDef>.AllDefs)
                 {
-                    //Definition sec ou le core démarrera vraiment
-                    bootGT = Find.TickManager.TicksGame + (Settings.secToBootSkyCloudCore * 60);
+                    SkillRecord sr = mind.skills.GetSkill(sk);
+                    if (sr != null)
+                    {
+                        if (sk == SkillDefOf.Shooting || sk == SkillDefOf.Melee)
+                        {
+                            sr.Level = skillbot;
+                        }
+                        else
+                        {
+                            sr.Level = 0;
+                            sr.passion = Passion.None;
+                            sr.levelInt = 0;
+                            sr.xpSinceMidnight = 0;
+                            sr.xpSinceLastLevel = 0;
+                        }
+                    }
                 }
+                //Basic robot so simple minded trait
+                if(!mind.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid))
+                    mind.story.traits.GainTrait(new Trait(TraitDefOf.SimpleMindedAndroid, 0, true));
+
+                mind.Name = new NameTriple("", "CERBERUS-BOT", "");
+
+                Current.Game.tickManager.DeRegisterAllTickabilityFor(mind);
+                storedMinds.Add(mind);
+
+                //Unit talk about the fact there is physical damages
+                forceIntegrityWarning = 4;
             }
+        }
+
+        private void setInitialChildhood(Pawn mind, string id)
+        {
+            Backstory bs = null;
+            BackstoryDatabase.TryGetWithIdentifier(id, out bs);
+            if (bs != null)
+                mind.story.childhood = bs;
         }
 
         public void initComp()
         {
             init = true;
-            if (parent is Pawn)
+            initSelfReference();
+
+            if (parentBuilding != null)
             {
-                parentPawn = (Pawn)parent;
-                parentBuilding = null;
-            }
-            else
-            {
-                parentBuilding = (Building)parent;
-                parentPawn = null;
                 parentCPT = Utils.getCachedCPT((Building)parent);
             }
 
@@ -210,8 +294,21 @@ namespace MOARANDROIDS
             return (storedMinds.Count + replicatingMinds.Count + pendingUploads.Count);
         }
 
+        public void initSelfReference()
+        {
+            if (parentBuilding == null && parentPawn == null)
+            {
+                if (parent is Building)
+                    parentBuilding = (Building)parent;
+                else
+                    parentPawn = (Pawn)parent;
+            }
+        }
+
         public bool isOnline()
         {
+            initSelfReference();
+
             if (parentBuilding != null)
             {
                 return !parent.Destroyed && parentCPT.PowerOn;
@@ -219,7 +316,7 @@ namespace MOARANDROIDS
             else
             {
                 //PowerOn if M8 not dead And not kidnapped Or kidnapped but within the exception time
-                return !parentPawn.Dead && (!isKidnapped || (kidnappedM8DisconnectionGT != -1));
+                return !parentPawn.Dead && (!isKidnapped || (KidnappedPendingDisconnectionGT != -1));
             }
         }
 
@@ -630,7 +727,11 @@ namespace MOARANDROIDS
                 if (KidnappedPendingDisconnectionGT != -1 && KidnappedPendingDisconnectionGT <= Find.TickManager.TicksGame)
                 {
                     KidnappedPendingDisconnectionGT = -1;
+                    //Stop all minds activities
                     stopAllMindsActivities();
+                    //Stop skymind abilities
+                    Utils.GCATPP.popSkyMindServer(parent);
+
                     Find.LetterStack.ReceiveLetter("ATPP_LetterKidnappedM8Disconnected".Translate(), "ATPP_LetterKidnappedM8DisconnectedDesc".Translate(parentPawn.LabelCap, getName()), LetterDefOf.NegativeEvent);
                 }
 
@@ -686,8 +787,12 @@ namespace MOARANDROIDS
             {
                 if (parentPawn != null)
                 {
-                    if (!parentPawn.Dead && parentPawn.health.summaryHealth.SummaryHealthPercent < 0.55f)
+                    if (forceIntegrityWarning != -1)
+                        forceIntegrityWarning--;
+
+                    if (forceIntegrityWarning == 0 || (!parentPawn.Dead && parentPawn.health.summaryHealth.SummaryHealthPercent < 0.55f))
                     {
+                        forceIntegrityWarning = -1;
                         nextCoreHealthWarningGT = CGT + Rand.Range(2700, 5400);
                         Utils.playVocal("soundDefM8IntegrityCompromised");
                     }
@@ -749,7 +854,7 @@ namespace MOARANDROIDS
                     Utils.playVocal("soundDefM8MindReplicationCompleted");
             }
 
-            //CHECK de la fin des mental breaks des minds stockés --  decrementation temps 
+            //CHECK of the end of the mental breaks of the stored minds - decrementation time
             if (isOnline() && inMentalBreak.Count > 0)
             {
                 var keys = new List<Pawn>(inMentalBreak.Keys);
@@ -1056,7 +1161,6 @@ namespace MOARANDROIDS
         CompPowerTrader parentCPT;
         List<CompSurrogateOwner> migrationsDone = new List<CompSurrogateOwner>();
         List<CompSurrogateOwner> replicationDone = new List<CompSurrogateOwner>();
-        public int kidnappedM8DisconnectionGT = -1;
 
         public List<Pawn> storedMinds = new List<Pawn>();
         public Dictionary<Pawn, Building> controlledTurrets = new Dictionary<Pawn, Building>();
@@ -1077,6 +1181,7 @@ namespace MOARANDROIDS
         private int nextCoreHealthWarningGT = -1;
         public bool init = false;
 
+        public int forceIntegrityWarning = -1;
         public bool isKidnapped = false;
         public int KidnappedPendingDisconnectionGT = -1;
     }

@@ -21,13 +21,13 @@ namespace MOARANDROIDS
             Building build = (Building)this.parent;
 
             //if (this.parent.TryGetComp<CompPowerTrader>().PowerOn)
-                Utils.GCATPP.popSkyMindWANServer(build, map);
+                Utils.GCATPP.popSkyMindWANServer(build);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            Utils.GCATPP.popSkyMindWANServer((Building)this.parent, previousMap);
+            Utils.GCATPP.popSkyMindWANServer(this.parent);
         }
 
 
@@ -40,10 +40,10 @@ namespace MOARANDROIDS
             switch (signal)
             {
                 case "PowerTurnedOn":
-                    Utils.GCATPP.pushSkyMindWANServer(build);
+                    Utils.GCATPP.pushSkyMindWANServer(build, build.Map.GetUniqueLoadID());
                     break;
                 case "PowerTurnedOff":
-                    Utils.GCATPP.popSkyMindWANServer(build, build.Map);
+                    Utils.GCATPP.popSkyMindWANServer(build);
                     break;
             }
         }
@@ -66,7 +66,7 @@ namespace MOARANDROIDS
             base.PostSpawnSetup(respawningAfterLoad);
             CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
             if (cpt.PowerOn)
-                Utils.GCATPP.pushSkyMindWANServer((Building)this.parent);
+                Utils.GCATPP.pushSkyMindWANServer(this.parent, this.parent.Map.GetUniqueLoadID());
         }
     }
 }

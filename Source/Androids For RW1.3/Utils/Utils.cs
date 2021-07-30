@@ -377,7 +377,38 @@ namespace MOARANDROIDS
         private static Dictionary<Thing, CompPowerTrader> cachedCPT = new Dictionary<Thing, CompPowerTrader>();
         private static Dictionary<Thing, CompReloadStation> cachedReloadStations = new Dictionary<Thing, CompReloadStation>();
         private static Dictionary<Thing, CompSkyCloudCore> cachedCSC = new Dictionary<Thing, CompSkyCloudCore>();
+        private static Dictionary<Thing, CompBuildingSkyMindLAN> cachedSML = new Dictionary<Thing, CompBuildingSkyMindLAN>();
+        private static Dictionary<Thing, CompBuildingSkyMindWAN> cachedSMW = new Dictionary<Thing, CompBuildingSkyMindWAN>();
 
+        public static CompBuildingSkyMindWAN getCachedCMW(Thing build)
+        {
+            if (build == null)
+                return null;
+
+            CompBuildingSkyMindWAN cpt;
+            cachedSMW.TryGetValue(build, out cpt);
+            if (cpt == null)
+            {
+                cpt = build.TryGetComp<CompBuildingSkyMindWAN>();
+                cachedSMW[build] = cpt;
+            }
+            return cpt;
+        }
+
+        public static CompBuildingSkyMindLAN getCachedCML(Thing build)
+        {
+            if (build == null)
+                return null;
+
+            CompBuildingSkyMindLAN cpt;
+            cachedSML.TryGetValue(build, out cpt);
+            if (cpt == null)
+            {
+                cpt = build.TryGetComp<CompBuildingSkyMindLAN>();
+                cachedSML[build] = cpt;
+            }
+            return cpt;
+        }
 
         public static CompPowerTrader getCachedCPT(Thing build)
         {
@@ -1050,20 +1081,18 @@ namespace MOARANDROIDS
 
             PawnGenerationRequest request = new PawnGenerationRequest(kindDef, faction, PawnGenerationContext.NonPlayer, tile, false, false, false, false, true, true, 1f, false, true, allowFood, false,inhabitant, false, false, fixedGender : gender);
             Pawn surrogate = PawnGenerator.GeneratePawn(request);
-            if (spawn)
-                GenSpawn.Spawn(surrogate, pos, map, WipeMode.Vanish);
-
             initBodyAsSurrogate(surrogate);
-
-            setSurrogateName(surrogate, external);
-
-
             //On va le définir comme étant un surrogate 
             CompAndroidState cas = Utils.getCachedCAS(surrogate);
             if (cas != null)
             {
                 cas.initAsSurrogate();
             }
+
+            if (spawn)
+                GenSpawn.Spawn(surrogate, pos, map, WipeMode.Vanish);
+
+            setSurrogateName(surrogate, external);
 
             return surrogate;
         }

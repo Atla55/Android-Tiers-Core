@@ -88,6 +88,19 @@
 						<li>AndroidTiers_PlayerColonyROM</li> 
 					</factionDefs>
 				</li>
+				<li>
+					<pawnKindEntries>
+						<li>
+							<kindDefs>
+								<li>M8MechPawn</li>
+							</kindDefs>
+							<chance>30.0</chance>
+						</li>
+					</pawnKindEntries>
+					<factionDefs>
+						<li>AndroidTiers_PlayerColonyApocalypse</li> 
+					</factionDefs>
+				</li>
 			</startingColonists>
 			<alienwandererkinds>
 				<li>

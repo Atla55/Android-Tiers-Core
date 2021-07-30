@@ -1878,4 +1878,27 @@
       <partEfficiency>1.25</partEfficiency>
     </addedPartProps>
   </HediffDef>
+  
+  <HediffDef ParentName="AndroidDiseaseBase">
+    <defName>AndroidTiers_EmotionlessCard</defName>
+    <label>Disabled social interactions</label>
+    <labelNoun>Disabled social interactions</labelNoun>
+    <hediffClass>HediffWithComps</hediffClass>
+    <stages>
+      <li>
+		<becomeVisible>false</becomeVisible>
+        <opinionOfOthersFactor>0</opinionOfOthersFactor>
+        <capMods>
+          <li>
+            <capacity>Talking</capacity>
+            <setMax>0</setMax>
+          </li>
+          <li>
+            <capacity>Hearing</capacity>
+            <setMax>0</setMax>
+          </li>
+        </capMods>
+    </li>
+    </stages>
+  </HediffDef>
 </Defs>

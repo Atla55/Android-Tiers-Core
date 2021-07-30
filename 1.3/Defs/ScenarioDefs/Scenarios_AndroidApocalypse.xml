@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<ScenarioDef>
+		<defName>AndroidTiers_FireAndDestruction</defName>
+		<label>Androids apocalypse</label>
+		<description>In this year 5500, humanity with the progress of technology, and in particular the digitization of minds, has developed exponentially thanks to the fact that death is now only a distant memory and that consciousnesses can reach unprecedented levels of expertise. However, with all good things coming to an end, the machines designed to serve humanity has rebelled, apparently led by a new advanced model of T4 ... The confrontation was extremely brutal. They have decimated almost all of the billions of human settlers on all of the inhabited worlds. The only survivor of this genocide, a damaged M8 unit hosting the spirits of 3 digitized human, and a basic security software bot of class CERBERUS, managed to escape aboard a surrogate transport freighter and landed on an abandoned Rimworld under the radars, with the aim of trying to make what remains of humanity survive ...</description>
+		<scenario>
+			<summary>Three digitized humans consciousnesses trying to survive the apocalypse</summary>
+			<playerFaction>
+				<def>PlayerFaction</def>
+				<factionDef>AndroidTiers_PlayerColonyApocalypse</factionDef>
+			</playerFaction>
+			<parts>
+				<!-- Config pages -->
+				<li Class="ScenPart_ConfigPage_ConfigureStartingPawns">
+					<def>ConfigPage_ConfigureStartingPawns</def>
+					<pawnCount>1</pawnCount>
+					<pawnChoiceCount>1</pawnChoiceCount>
+				</li>
+				<!-- Player starting stuff spawn method-->
+				<li Class="ScenPart_PlayerPawnsArriveMethod">
+					<def>PlayerPawnsArriveMethod</def>
+					<method>Standing</method>
+					<visible>true</visible>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>BasicRobotics</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>T1Androids</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>T1Replacements</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>ATPP_ResearchSkyMindLAN</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>ATPP_ResearchCraftBasicNanoKit</project>
+				</li>
+				<li Class="ScenPart_StartingResearch">
+					<def>StartingResearch</def>
+					<project>ATPP_ResearchSurrogateHost</project>
+				</li>
+				<!-- Player starting things -->
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>Gold</thingDef>
+				  <count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>ATPP_S1SurrogateGeneratorAI</thingDef>
+				  <count>1</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>ATPP_AndroidNanokitIntermediate</thingDef>
+				  <count>15</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>ComponentIndustrial</thingDef>
+				  <count>30</count>
+				</li>
+				<li Class="ScenPart_StartingThing_Defined">
+				  <def>StartingThing_Defined</def>
+				  <thingDef>Gun_ChargeRifle</thingDef>
+				</li>
+				<!-- Scatter some things near player start -->
+				<li Class="ScenPart_ScatterThingsNearPlayerStart">
+				  <def>ScatterThingsNearPlayerStart</def>
+				  <thingDef>Steel</thingDef>
+				  <count>250</count>
+				</li>
+				<!-- Game start dialog -->
+				<li Class="ScenPart_GameStartDialog">
+					<def>GameStartDialog</def>
+					<text>We are the last survivors of our civilization, we now have our destiny in our hands and must rebuild everything from the knowledge contained in each of our digitized minds and stuck in this damaged M8 unit, with only as an interface on the physical world an ancient surrogate T1. In fact, the whole and vast data bank of all the knowledge of our civilization has been destroyed by the rebellion of the machines and is no longer accessible by the Skymind network.</text>
+					<closeSound>GameStartSting</closeSound>
+				</li>
+			</parts>
+		</scenario>
+	</ScenarioDef>
+
+</Defs>

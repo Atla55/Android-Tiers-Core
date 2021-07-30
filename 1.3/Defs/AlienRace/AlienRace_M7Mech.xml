@@ -403,6 +403,7 @@
 		</spawnCategories>
 		<forcedHediffs>
 			<li>BatteryChargeMech</li>
+			<li>AndroidTiers_EmotionlessCard</li>
 		</forcedHediffs>
 	</AlienRace.BackstoryDef>
 	<TraitDef>

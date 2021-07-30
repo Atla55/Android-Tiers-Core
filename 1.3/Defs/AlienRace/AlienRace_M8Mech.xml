@@ -3,10 +3,13 @@
 	<AlienRace.ThingDef_AlienRace ParentName="BasePawnMech">
 		<defName>M8Mech</defName>
 		<label>M8 Mechanised infantry</label>
-		<description>A prototype M7 mechanized infantry, equipped with a limited SkyCore unit produced during an ancient time on this rimworld. These units are very strong, powerful war machines and allow digital consciousness to move but are subsequently slow and have limited battery to them.</description>
+		<description>A prototype M7 mechanized infantry, equipped with a limited SkyCore unit and SkyMind radio. These units are very strong, powerful war machines and allow digital consciousness to move on battlefields but are subsequently slow and have limited internal storage capacity to them.</description>
 		<comps>
 		  <li>
 			<compClass>MOARANDROIDS.CompSkyCloudCore</compClass>
+		  </li>
+		  <li>
+			<compClass>MOARANDROIDS.CompBuildingSkyMindLAN</compClass>
 		  </li>
 		</comps>
 		<alienRace>
@@ -313,10 +316,6 @@
 		</backstoryFiltersOverride>
 		<defaultFactionType>PlayerColony</defaultFactionType>
 		<aiAvoidCover>true</aiAvoidCover>
-		<weaponMoney>
-			<min>800</min>
-			<max>1200</max>
-		</weaponMoney>
 		<weaponTags>
 			<li>MechM7Gun</li>
 		</weaponTags>
@@ -326,10 +325,21 @@
 		<defName>AndroidTier_MechanizedInfantry</defName>
 		<title>Mechanized infantry</title>
 		<titleShort>Mech</titleShort>
-		<baseDescription>{PAWN_nameDef} is a form of prototype mechanized infantry, very powerful war units which allow for their stored digitized minds a secure storage and allows them to participate on the battlefields.</baseDescription>
+		<baseDescription>{PAWN_nameDef} are a form of prototype mechanized infantry, very powerful war units which allow for their stored digitized minds a secure host and allows them to participate on the battlefields.</baseDescription>
 		<bodyTypeMale>Male</bodyTypeMale>
 		<bodyTypeFemale>Female</bodyTypeFemale>
 		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>Mech8drop</li>
+		</spawnCategories>
+	</AlienRace.BackstoryDef>
+	<AlienRace.BackstoryDef>
+		<defName>AndroidTier_PrototypeM8</defName>
+		<title>Prototype M8</title>
+		<titleShort>Mech</titleShort>
+		<baseDescription>this mech is prototype created from an M7 to which we graft limited SkyCore and Skyminds modules.</baseDescription>
+		<bodyTypeMale>Male</bodyTypeMale>
+		<slot>Childhood</slot>
 		<spawnCategories>
 			<li>Mech8drop</li>
 		</spawnCategories>
@@ -353,16 +363,8 @@
 			<li>Crafting</li>
 			<li>Cleaning</li>
 		</workDisables>
-	</AlienRace.BackstoryDef>
-	<AlienRace.BackstoryDef>
-		<defName>AndroidTier_PrototypeM8</defName>
-		<title>Prototype M8</title>
-		<titleShort>Mech</titleShort>
-		<baseDescription>this mech is prototype created from an M7 to which we graft a SkyCore module.</baseDescription>
-		<bodyTypeMale>Male</bodyTypeMale>
-		<slot>Childhood</slot>
-		<spawnCategories>
-			<li>Mech8drop</li>
-		</spawnCategories>
+		<forcedHediffs>
+			<li>AndroidTiers_EmotionlessCard</li>
+		</forcedHediffs>
 	</AlienRace.BackstoryDef>
 </Defs>

@@ -76,7 +76,7 @@ namespace MOARANDROIDS
                                 newVal = 1;
                             }
                             else{
-                                if (!Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map))
+                                if (!Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map.GetUniqueLoadID()))
                                     newVal = 1;
                                 else
                                     newVal = 0;

@@ -839,16 +839,7 @@ namespace MOARANDROIDS
             }
         }
 
-        public override void LoadedGame()
-        {
-            base.LoadedGame();
 
-            //Reconnection des surrogates en caravane
-            reconnectSurrogatesInCaravans();
-            removeBlacklistedAndroidsHediffs();
-            checkRemoveAndroidFactions();
-            Utils.resetCachedComps();
-        }
 
         private void removeBlacklistedAndroidsHediffs()
         {
@@ -898,12 +889,42 @@ namespace MOARANDROIDS
             }
         }
 
+        private void initCaravanAndWorldColonists()
+        {
+            foreach (var c in Find.World.worldObjects.Caravans)
+            {
+                foreach (var p in c.pawns)
+                {
+                    p.BroadcastCompSignal("AndroidTiers_CaravanInit");
+                }
+            }
+            foreach (var p in Find.World.worldPawns.AllPawnsAlive)
+            {
+                if(p.Faction == Faction.OfPlayer)
+                {
+                    p.BroadcastCompSignal("AndroidTiers_CaravanInit");
+                }
+            }
+        }
+
         public override void StartedNewGame()
         {
             base.StartedNewGame();
+
             initNull();
-            reset();
             checkRemoveAndroidFactions();
+        }
+
+        public override void LoadedGame()
+        {
+            base.LoadedGame();
+
+            //Reconnection des surrogates en caravane
+            reconnectSurrogatesInCaravans();
+            initCaravanAndWorldColonists();
+            removeBlacklistedAndroidsHediffs();
+            checkRemoveAndroidFactions();
+            Utils.resetCachedComps();
         }
 
         public override void ExposeData()
@@ -1169,86 +1190,31 @@ namespace MOARANDROIDS
             }
         }
 
-        public bool isThereSkyMindAntennaOrRelayInMap(Map map)
+        public bool isThereSkyMindAntennaOrRelayInMap(string MID)
         {
             bool ok = false;
-            if (map == null)
+            if (MID == null)
                 return false;
 
             //Si ni relay no antennes sur la map alors androids sur cette derniere sont impactés
-            if (listerSkyMindServers.TryGetValue(map, out var value) && value.Count > 0)
+            if (listerSkyMindServers.TryGetValue(MID, out var value) && value.Count > 0)
                 ok = true;
-            else if (listerSkyMindWANServers.TryGetValue(map, out value) && value.Count > 0)
+            else if (listerSkyMindWANServers.TryGetValue(MID, out value) && value.Count > 0)
                 ok = true;
-            else if (listerSkyMindRelays.TryGetValue(map, out value) && value.Count > 0)
+            else if (listerSkyMindRelays.TryGetValue(MID, out value) && value.Count > 0)
                 ok = true;
+
+            /*Log.Message("===== " + MID);
+            foreach (var el in listerSkyMindServers)
+            {
+                foreach (var el2 in el.Value)
+                {
+                    Log.Message("=>" + el.Key + " : " + el2.LabelCap);
+                }
+            }*/
 
             return ok;
         }
-
-
-        /*public void checkSkyMindSignalPerformance()
-        {
-            //Maps
-            foreach (var entry in listerSurrogateAndroids)
-            {
-                checkSkyMindSignalPerformanceEntry(entry);
-            }
-        }
-
-        private void checkSkyMindSignalPerformanceEntry(KeyValuePair<string, HashSet<Pawn>> entry)
-        {
-            bool forceRemoveHediff = false;
-            string MUID = entry.Key;
-
-            if (MUID == "caravan" && Settings.disableLowNetworkMalusInCaravans)
-                forceRemoveHediff = true;
-
-            Map map = entry.Key.getMapFromString();
-
-            bool ok = isThereSkyMindAntennaOrRelayInMap(map);
-
-            //Il y a une antenne permettant de relayer le skinMind sur la map en cours
-            HashSet<Pawn> value = null;
-            if (forceRemoveHediff || (ok && listerSurrogateAndroids.TryGetValue(MUID, out value) && value.Count > 0))
-            {
-                foreach (var s in value ?? listerSurrogateAndroids[MUID])
-                {
-                    if (s.Dead || !isConnectedToSkyMind(s))
-                        continue;
-
-                    Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
-                    if (he != null)
-                        s.health.RemoveHediff(he);
-                }
-            }
-            else
-            {
-                //No antenna to relay the signal we will impact the connected surrogates
-                foreach (var s in listerSurrogateAndroids[MUID])
-                {
-                    //RX owners or deads exempted or not connected not SkyMind
-                    if (s.Dead || !isConnectedToSkyMind(s))
-                        continue;
-
-                    Hediff he = s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_LowNetworkSignal);
-
-                    if (s.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_HediffRXChip) != null)
-                    {
-                        if (he != null)
-                            s.health.RemoveHediff(he);
-
-                        continue;
-                    }
-
-                    
-                    if (he == null)
-                    {
-                        s.health.AddHediff(HediffDefOf.ATPP_LowNetworkSignal);
-                    }
-                }
-            }
-        }*/
 
         public void checkSkyMindAutoReconnect()
         {
@@ -1288,20 +1254,20 @@ namespace MOARANDROIDS
 
         public void reProcessNbSlot()
         {
-            List<Building> toDel = null;
+            List<Thing> toDel = null;
             int prevNbSlot = nbSlot;
             nbSlot = 0;
             foreach(var el in listerSkyMindServers)
             {
                 foreach (var el2 in el.Value)
                 {
-                    CompPowerTrader cpt = Utils.getCachedCPT(el2);
-                    if (el2 != null && cpt.PowerOn && !el2.IsBrokenDown())
+                    CompBuildingSkyMindLAN csml = Utils.getCachedCML(el2);
+                    if (csml.isPowerOn())
                         nbSlot += 3;
                     else
                     {
                         if (toDel == null)
-                            toDel = new List<Building>();
+                            toDel = new List<Thing>();
 
                         toDel.Add(el2);
                     }
@@ -1328,7 +1294,7 @@ namespace MOARANDROIDS
                     else
                     {
                         if (toDel == null)
-                            toDel = new List<Building>();
+                            toDel = new List<Thing>();
 
                         toDel.Add(el2);
                     }
@@ -1752,49 +1718,71 @@ namespace MOARANDROIDS
         }
 
 
-        public void pushSkyMindServer(Building build)
+        public void pushSkyMindServer(Thing build, string MID)
         {
-            if (!listerSkyMindServers.ContainsKey(build.Map))
-                listerSkyMindServers[build.Map] = new HashSet<Building>();
+            //Log.Message("Push skymindServer " + MID);
+            if (!listerSkyMindServers.ContainsKey(MID))
+                listerSkyMindServers[MID] = new HashSet<Thing>();
 
-            CompPowerTrader cpt = Utils.getCachedCPT(build);
-            if (cpt.PowerOn)
+            foreach(var el in listerSkyMindServers)
             {
-                listerSkyMindServers[build.Map].Add(build);
-                reProcessNbSlot();
+                if (el.Value.Contains(build))
+                {
+                    el.Value.Remove(build);
+                    break;
+                }
             }
+
+            listerSkyMindServers[MID].Add(build);
+            reProcessNbSlot();
         }
 
-        public void popSkyMindServer(Building build, Map map)
+        public void popSkyMindServer(Thing build)
         {
-            if (listerSkyMindServers.ContainsKey(map) && listerSkyMindServers[map].Contains(build))
+            //Log.Message("PopSkyMindServer");
+            foreach (var el in listerSkyMindServers)
             {
-                listerSkyMindServers[map].Remove(build);
-                reProcessNbSlot();
+                if (el.Value.Contains(build))
+                {
+                    el.Value.Remove(build);
+                    reProcessNbSlot();
+                    break;
+                }
             }
+
             checkNeedRandomlyDisconnectUsers();
         }
 
-        public void pushSkyMindWANServer(Building build)
+        public void pushSkyMindWANServer(Thing build, string MID)
         {
-            if (!listerSkyMindWANServers.ContainsKey(build.Map))
-                listerSkyMindWANServers[build.Map] = new HashSet<Building>();
+            if (!listerSkyMindWANServers.ContainsKey(MID))
+                listerSkyMindWANServers[MID] = new HashSet<Thing>();
 
-            CompPowerTrader cpt = Utils.getCachedCPT(build);
-            if (!listerSkyMindWANServers[build.Map].Contains(build) && cpt.PowerOn)
+            foreach (var el in listerSkyMindWANServers)
             {
-                listerSkyMindWANServers[build.Map].Add(build);
-                reProcessNbSlot();
+                if (el.Value.Contains(build))
+                {
+                    el.Value.Remove(build);
+                    break;
+                }
             }
+
+            listerSkyMindWANServers[MID].Add(build);
+            reProcessNbSlot();
         }
 
-        public void popSkyMindWANServer(Building build, Map map)
+        public void popSkyMindWANServer(Thing build)
         {
-            if (listerSkyMindWANServers.ContainsKey(map) && listerSkyMindWANServers[map].Contains(build))
+            foreach (var el in listerSkyMindWANServers)
             {
-                listerSkyMindWANServers[map].Remove(build);
-                reProcessNbSlot();
+                if (el.Value.Contains(build))
+                {
+                    el.Value.Remove(build);
+                    reProcessNbSlot();
+                    break;
+                }
             }
+
             checkNeedRandomlyDisconnectUsers();
         }
 
@@ -2186,24 +2174,24 @@ namespace MOARANDROIDS
             return (listerSkyCloudCoresAbs.Count() > 0);
         }
 
-        public void pushRelayTower(Building build)
+        public void pushRelayTower(Thing build, string MID)
         {
-            if (!listerSkyMindRelays.ContainsKey(build.Map))
-                listerSkyMindRelays[build.Map] = new HashSet<Building>();
+            if (!listerSkyMindRelays.ContainsKey(MID))
+                listerSkyMindRelays[MID] = new HashSet<Thing>();
 
-            if (listerSkyMindRelays[build.Map].Contains(build))
+            if (listerSkyMindRelays[MID].Contains(build))
                 return;
 
-            listerSkyMindRelays[build.Map].Add(build);
+            listerSkyMindRelays[MID].Add(build);
         }
 
 
-        public void popRelayTower(Building build, Map map)
+        public void popRelayTower(Thing build, string MID)
         {
-            if (!listerSkyMindRelays.ContainsKey(map) || !listerSkyMindRelays[map].Contains(build))
+            if (!listerSkyMindRelays.ContainsKey(MID) || !listerSkyMindRelays[MID].Contains(build))
                 return;
 
-            listerSkyMindRelays[map].Remove(build);
+            listerSkyMindRelays[MID].Remove(build);
         }
 
         public void incHackingPoints(int nb)
@@ -2331,7 +2319,7 @@ namespace MOARANDROIDS
             return nb;
         }
 
-        private void reset()
+        public void reset()
         {
             listerReloadStation.Clear();
             listerSkyMindServers.Clear();
@@ -2367,9 +2355,9 @@ namespace MOARANDROIDS
             if (listerReloadStation == null)
                 listerReloadStation = new Dictionary<Map, HashSet<Building>>();
             if (listerSkyMindServers == null)
-                listerSkyMindServers =new Dictionary<Map, HashSet<Building>>();
+                listerSkyMindServers =new Dictionary<string, HashSet<Thing>>();
             if (listerSkyMindWANServers == null)
-                listerSkyMindWANServers = new Dictionary<Map, HashSet<Building>>();
+                listerSkyMindWANServers = new Dictionary<string, HashSet<Thing>>();
             if (cacheATN == null)
                 cacheATN = new Dictionary<Building, IEnumerable<IntVec3>>();
             if (connectedThing == null)
@@ -2385,7 +2373,7 @@ namespace MOARANDROIDS
             if (listerSkyMindUsers == null)
                 listerSkyMindUsers = new HashSet<Pawn>();
             if (listerSkyMindRelays == null)
-                listerSkyMindRelays = new Dictionary<Map, HashSet<Building>>();
+                listerSkyMindRelays = new Dictionary<string, HashSet<Thing>>();
             if (listerSkyCloudCores == null)
                 listerSkyCloudCores = new HashSet<Thing>();
             if (listerSkyMindable == null)
@@ -2470,9 +2458,9 @@ namespace MOARANDROIDS
         public Dictionary<Building, List<Pawn>> listerLWPNAndroid = new Dictionary<Building, List<Pawn>>();
 
         private Dictionary<Map, HashSet<Building>> listerReloadStation = new Dictionary<Map, HashSet<Building>>();
-        private Dictionary<Map, HashSet<Building>> listerSkyMindRelays = new Dictionary<Map, HashSet<Building>>();
-        private Dictionary<Map, HashSet<Building>> listerSkyMindServers = new Dictionary<Map, HashSet<Building>>();
-        private Dictionary<Map, HashSet<Building>> listerSkyMindWANServers = new Dictionary<Map, HashSet<Building>>();
+        private Dictionary<string, HashSet<Thing>> listerSkyMindRelays = new Dictionary<string, HashSet<Thing>>();
+        private Dictionary<string, HashSet<Thing>> listerSkyMindServers = new Dictionary<string, HashSet<Thing>>();
+        private Dictionary<string, HashSet<Thing>> listerSkyMindWANServers = new Dictionary<string, HashSet<Thing>>();
         private Dictionary<string, HashSet<Pawn>> listerSurrogateAndroids = new Dictionary<string, HashSet<Pawn>>();
         private HashSet<Pawn> listerSkyMindUsers = new HashSet<Pawn>();
 

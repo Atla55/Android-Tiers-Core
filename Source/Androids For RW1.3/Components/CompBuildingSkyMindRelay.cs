@@ -19,13 +19,13 @@ namespace MOARANDROIDS
             base.PostDeSpawn(map);
 
             
-                Utils.GCATPP.popRelayTower((Building)this.parent, map);
+                Utils.GCATPP.popRelayTower(this.parent, map.GetUniqueLoadID());
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            Utils.GCATPP.popRelayTower((Building)this.parent, previousMap);
+            Utils.GCATPP.popRelayTower((Building)this.parent, previousMap.GetUniqueLoadID());
         }
 
         public override void ReceiveCompSignal(string signal)
@@ -37,10 +37,10 @@ namespace MOARANDROIDS
             switch (signal)
             {
                 case "PowerTurnedOn":
-                    Utils.GCATPP.pushRelayTower(build);
+                    Utils.GCATPP.pushRelayTower(build, build.Map.GetUniqueLoadID());
                     break;
                 case "PowerTurnedOff":
-                    Utils.GCATPP.popRelayTower(build, build.Map);
+                    Utils.GCATPP.popRelayTower(build, build.Map.GetUniqueLoadID());
                     break;
             }
         }
@@ -51,7 +51,7 @@ namespace MOARANDROIDS
             base.PostSpawnSetup(respawningAfterLoad);
             CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
             if (cpt.PowerOn)
-                Utils.GCATPP.pushRelayTower((Building)this.parent);
+                Utils.GCATPP.pushRelayTower(this.parent, this.parent.Map.GetUniqueLoadID());
         }
     }
 }

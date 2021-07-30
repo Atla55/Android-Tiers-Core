@@ -1102,9 +1102,13 @@ namespace MOARANDROIDS
                 {
                     //Control allowed if SkyCore not kidnapped or kidnapped but within time between kidnapping and disconnection from faction
                     if (!tcsc.isKidnapped || tcsc.KidnappedPendingDisconnectionGT != -1)
+                    {
                         genControlMode = true;
+                    }
                     else
+                    {
                         genControlMode = false;
+                    }
                 }
                 else
                     genControlMode = false;

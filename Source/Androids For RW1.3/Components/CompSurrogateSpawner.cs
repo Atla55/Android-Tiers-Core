@@ -4,11 +4,8 @@ using Verse;
 
 namespace MOARANDROIDS
 {
-    // Token: 0x02000020 RID: 32
     public class CompSurrogateSpawner : ThingComp
     {
-        // Token: 0x17000006 RID: 6
-        // (get) Token: 0x06000041 RID: 65 RVA: 0x00003478 File Offset: 0x00001678
         public CompProperties_SurrogateSpawner Spawnprops
         {
             get
@@ -17,7 +14,6 @@ namespace MOARANDROIDS
             }
         }
 
-        // Token: 0x06000042 RID: 66 RVA: 0x00003495 File Offset: 0x00001695
         public override void CompTick()
         {
             this.Spawn();

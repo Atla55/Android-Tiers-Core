@@ -26,7 +26,8 @@ namespace MOARANDROIDS
                     if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner || ___pawn.IsSlave))
                     {
                         CompAndroidState cas = Utils.getCachedCAS(___pawn);
-                        if (cas == null || cas.isSurrogate)
+                        //Prevent add VX0 to surrogates or M8Mech
+                        if (cas == null || cas.isSurrogate || ___pawn.def == ThingDefOfAT.M8Mech)
                             return;
 
                         if (___pawn.Faction.IsPlayer && !Utils.preventVX0Thought)

@@ -9,6 +9,7 @@ using Verse.AI.Group;
 using System.Linq;
 using HarmonyLib;
 using System.Reflection;
+using RimWorld.Planet;
 
 namespace MOARANDROIDS
 {
@@ -18,29 +19,42 @@ namespace MOARANDROIDS
         {
             base.PostDeSpawn(map);
 
-            Building build = (Building)this.parent;
-            Utils.GCATPP.popSkyMindServer(build, map);
+            Utils.GCATPP.popSkyMindServer(this.parent);
+
+            if(parentPawn != null && parentPawn.IsCaravanMember())
+            {
+                Utils.GCATPP.pushSkyMindServer(this.parent, "caravan");
+            }
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
             base.PostDestroy(mode, previousMap);
-            Utils.GCATPP.popSkyMindServer((Building)this.parent, previousMap);
+            if (Utils.GCATPP == null)
+                return;
+
+            Utils.GCATPP.popSkyMindServer(this.parent);
         }
 
         public override void ReceiveCompSignal(string signal)
         {
             base.ReceiveCompSignal(signal);
 
-            Building build = (Building)this.parent;
-
             switch (signal)
             {
                 case "PowerTurnedOn":
-                    Utils.GCATPP.pushSkyMindServer(build);
+                    Utils.GCATPP.pushSkyMindServer(this.parent, this.parent.Map.GetUniqueLoadID());
                     break;
                 case "PowerTurnedOff":
-                    Utils.GCATPP.popSkyMindServer(build,build.Map);
+                    Utils.GCATPP.popSkyMindServer(this.parent);
+                    break;
+                case "AndroidTiers_CaravanInit":
+                    if(parent is Pawn)
+                    {
+                        Pawn cp = (Pawn)parent;
+                        if (!init)
+                            initComp();
+                    }
                     break;
             }
         }
@@ -61,9 +75,57 @@ namespace MOARANDROIDS
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
-            CompPowerTrader cpt = Utils.getCachedCPT(this.parent);
-            if (cpt.PowerOn)
-                Utils.GCATPP.pushSkyMindServer((Building)this.parent);
+            init = false;
+            initComp();
         }
+
+        public bool isPowerOn()
+        {
+            if (parentPawn == null)
+            {
+                return parentCPT != null && parentCPT.PowerOn && !parent.IsBrokenDown();
+            }
+            else
+                return !parentPawn.Dead;
+        }
+
+        public void initComp()
+        {
+            if (init)
+                return;
+            init = true;
+
+            if (parent is Pawn)
+            {
+                parentPawn = (Pawn)parent;
+                parentBuilding = null;
+
+                parentCSC = Utils.getCachedCSC(parent);
+
+                if (parentCSC != null && !parentCSC.isOnline())
+                {
+                    return;
+                }
+
+                if (this.parent.Map == null)
+                    Utils.GCATPP.pushSkyMindServer(this.parent, "caravan");
+                else
+                    Utils.GCATPP.pushSkyMindServer(this.parent, this.parent.Map.GetUniqueLoadID());
+            }
+            else
+            {
+                parentPawn = null;
+                parentBuilding = (Building)parent;
+                parentCPT = Utils.getCachedCPT(this.parent);
+                if (parentCPT.PowerOn)
+                    Utils.GCATPP.pushSkyMindServer(this.parent, this.parent.Map.GetUniqueLoadID());
+            }
+        }
+
+        private CompSkyCloudCore parentCSC;
+        private CompPowerTrader parentCPT;
+        private Pawn parentPawn;
+        private Building parentBuilding;
+        private bool init = false;
     }
 }
