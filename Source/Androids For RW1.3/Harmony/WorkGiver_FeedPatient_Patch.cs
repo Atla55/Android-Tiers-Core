@@ -18,29 +18,30 @@ namespace MOARANDROIDS
         [HarmonyPatch(typeof(WorkGiver_FeedPatient), "HasJobOnThing")]
         public class HasJobOnThing_Patch
         {
-            [HarmonyPostfix]
-            public static void ListenerPostfix(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver_FeedPatient __instance)
-            {
-                Utils.genericPostFixExtraCrafterDoctorJobs(pawn, t, forced, ref __result, __instance);
-            }
-
             [HarmonyPrefix]
             public static bool ListenerPrefix(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver_FeedPatient __instance)
             {
-                if (Utils.POWERPP_LOADED)
-                    return true;
-
-                //On va en plus checker si le eater est pas un android chargé sur un wireless powergrid pas de feed patients co 
-                Pawn pawn2 = t as Pawn;
-                if (pawn2 != null && pawn2.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
+                bool ret = Utils.genericPostFixExtraCrafterDoctorJobs(pawn, t, forced, __instance);
+                if (!ret)
                 {
-                    CompAndroidState cas = Utils.getCachedCAS(pawn2);
-                    if (cas != null)
+                    __result = false;
+                    return false;
+                }
+
+                if (Utils.POWERPP_LOADED)
+                {
+                    //On va en plus checker si le eater est pas un android chargé sur un wireless powergrid pas de feed patients co 
+                    Pawn pawn2 = t as Pawn;
+                    if (pawn2 != null && pawn2.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                     {
-                        if (cas.connectedLWPNActive && cas.connectedLWPN != null)
+                        CompAndroidState cas = Utils.getCachedCAS(pawn2);
+                        if (cas != null)
                         {
-                            __result = false;
-                            return false;
+                            if (cas.connectedLWPNActive && cas.connectedLWPN != null)
+                            {
+                                __result = false;
+                                return false;
+                            }
                         }
                     }
                 }

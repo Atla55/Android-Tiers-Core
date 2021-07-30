@@ -38,6 +38,7 @@ namespace MOARANDROIDS
             cas.isBlankAndroid = true;
             pawn.health.AddHediff(HediffDefOf.ATPP_BlankAndroid);
             pawn.BroadcastCompSignal("ATPP_SurrogateConvertedToBlankNNAndroid");
+            Utils.removeDownedSurrogateToLister(pawn);
         }
 
     }

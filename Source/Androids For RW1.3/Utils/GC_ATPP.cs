@@ -2358,6 +2358,8 @@ namespace MOARANDROIDS
             QEEAndroidHair.Clear();
             VatGrowerLastPawnInProgress.Clear();
             VatGrowerLastPawnIsTX.Clear();
+            Utils.listerDownedSurrogatesThing.Clear();
+            Utils.listerDownedSurrogatesCAS.Clear();
         }
 
         private void initNull()
@@ -2473,6 +2475,7 @@ namespace MOARANDROIDS
         private Dictionary<Map, HashSet<Building>> listerSkyMindWANServers = new Dictionary<Map, HashSet<Building>>();
         private Dictionary<string, HashSet<Pawn>> listerSurrogateAndroids = new Dictionary<string, HashSet<Pawn>>();
         private HashSet<Pawn> listerSkyMindUsers = new HashSet<Pawn>();
+
         private Game game;
 
     }

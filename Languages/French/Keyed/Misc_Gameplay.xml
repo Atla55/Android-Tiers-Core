@@ -179,6 +179,9 @@
 	<ATPP_LetterExternalSurrogateDisconnect>Déconnexion contrôlleur</ATPP_LetterExternalSurrogateDisconnect>
 	<ATPP_LetterExternalSurrogateDisconnectDesc>{0} le contrôleur de l'androide de substitution que vous avez essayé de mettre en esclavage s'est déconnecté, parce que lui et sa faction pensent qu'ils ne pourront plus obtenir d'informations de votre colonie, continuer en tant qu'esclave serait une perte de temps.</ATPP_LetterExternalSurrogateDisconnectDesc>
 	
+	<ATPP_LetterKidnappedM8Disconnected>M8 déconnexion</ATPP_LetterKidnappedM8Disconnected>
+	<ATPP_LetterKidnappedM8DisconnectedDesc>Les kidnappeurs de votre M8 ({0} hébergeant {1}), ont finis par accéder à ses circuits de communications, se rendant compte que la machine continue à communiquer par le biais de son antenne SkyMind intégrée, ils l'ont déconnecté. Ainsi vous ne pourrez désormais plus vous connectez à {1}.</ATPP_LetterKidnappedM8DisconnectedDesc>
+	
 	<!-- Designators -->
 	<ATPP_DesignatorNeedSelectSX>Erreur vous devez selectionner un dispositif valide et connecté au réseau SkyMind !</ATPP_DesignatorNeedSelectSX>
 	<ATPP_DesignatorNeedSelectSXToHack>Erreur vous devez selectionner un androide de substitution controllé par une faction autre que la votre !</ATPP_DesignatorNeedSelectSXToHack>
@@ -201,6 +204,8 @@
 	<ATPP_ThisCurrentMap>Cette map</ATPP_ThisCurrentMap>
 	<ATPP_AndroidToControlTargetRecoverCaravan>Récupérer</ATPP_AndroidToControlTargetRecoverCaravan>
 	<ATPP_AndroidToControlTargetRecoverCaravanDesc>Récupérer un androide de substitution déconnecté dans une caravane.</ATPP_AndroidToControlTargetRecoverCaravanDesc>
+	<ATPP_FreeControllerInCaravan>Caravane</ATPP_FreeControllerInCaravan>
+	<ATPP_FreeControllerInCaravanDesc>Connectez cet androide de substitution à un controleur disposant de slot libres pour pouvoir le contrôler</ATPP_FreeControllerInCaravanDesc>
 	<ATPP_AndroidSurrogateReconnectToLastController>Reconnexion</ATPP_AndroidSurrogateReconnectToLastController>
 	<ATPP_AndroidSurrogateReconnectToLastControllerDesc>Permet de reconnecter l'androide de substitution (si possible) au dernier utilisateur s'en ayant servis</ATPP_AndroidSurrogateReconnectToLastControllerDesc>
 	
@@ -496,4 +501,6 @@
 	<ATPP_SettingsAllowSurrogateConnectionInitMalus>Autoriser les androides à utiliser des lits d'hôpitaux</ATPP_SettingsAllowSurrogateConnectionInitMalus>
 	<ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>Pourcentage de chance des androides de substitution des autres factions d'avoir une puce RX ({0}%)</ATPP_SettingsPercentageOfOtherFactionSurrogateHavingAnRXChip>
 	<ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin>Chance qu'un controleur d'androide de substitution puisse rejoindre votre faction sans être arrêté ({0}%)</ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin>
+	<ATPP_SettingsMinHourBeforeKidnapperDisconnectM8>Nombre minimum d'heures avant qu'un M8 kidnappé soit déconnecté de SkyMind ({0}h)</ATPP_SettingsMinHourBeforeKidnapperDisconnectM8>
+	<ATPP_SettingsMaxHourBeforeKidnapperDisconnectM8>Nombre maximum d'heures avant qu'un M8 kidnappé soit déconnecté de SkyMind ({0}h)</ATPP_SettingsMaxHourBeforeKidnapperDisconnectM8>
 </LanguageData>

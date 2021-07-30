@@ -168,6 +168,8 @@ namespace MOARANDROIDS
                 toggleAction = delegate ()
                 {
                     autoconn = !autoconn;
+                    if (autoconn && canBeConnectedToSkyMind())
+                        Utils.GCATPP.connectUser(parent);
                 }
             };
 

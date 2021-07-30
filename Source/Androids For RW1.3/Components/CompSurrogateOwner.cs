@@ -1074,6 +1074,15 @@ namespace MOARANDROIDS
             }
         }
 
+        /*
+         * Check if there are remaining free slot for the controller
+         */
+        public bool controllingSurrogateSlotsFull()
+        {
+            Pawn cp = (Pawn)parent;
+            bool VX3Host = cp.VX3ChipPresent();
+            return (SX != null && !VX3Host) || (VX3Host && availableSX.Count >= Settings.VX3MaxSurrogateControllableAtOnce);
+        }
 
         public void setControlledSurrogate(Pawn controlled, bool external = false, bool forceExternalConnectionInitMalus = false)
         {
@@ -1084,10 +1093,22 @@ namespace MOARANDROIDS
             if (controlled == null)
                 return;
             CompAndroidState cas = Utils.getCachedCAS(controlled);
-            //If regular pawn check the controlMode BUT if stored mind no check (senseless) just set as if the controlmode is enabled
+            //If regular pawn check the controlMode BUT if stored mind no check (senseless) just set as if the controlmode is enabled (and not kidnapped)
             bool genControlMode = controlMode;
             if (skyCloudHost != null)
-                genControlMode = true;
+            {
+                CompSkyCloudCore tcsc = Utils.getCachedCSC(skyCloudHost);
+                if (tcsc != null)
+                {
+                    //Control allowed if SkyCore not kidnapped or kidnapped but within time between kidnapping and disconnection from faction
+                    if (!tcsc.isKidnapped || tcsc.KidnappedPendingDisconnectionGT != -1)
+                        genControlMode = true;
+                    else
+                        genControlMode = false;
+                }
+                else
+                    genControlMode = false;
+            }
 
             if (cas == null 
                 || ((SX != null && !VX3Host) || (VX3Host && availableSX.Count+1 > Settings.VX3MaxSurrogateControllableAtOnce)) 
@@ -1204,7 +1225,6 @@ namespace MOARANDROIDS
 
         public void stopControlledSurrogate(Pawn surrogate, bool externalController=false, bool preventNoHost=false,bool noPrisonedSurrogateConversion=false, bool _downedViaDisconnect = true)
         {
-            Log.Message("SetControlledSurrogate DEB");
             Pawn cp = (Pawn)parent;
 
             //Pas de surrogate controllé

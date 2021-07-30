@@ -833,7 +833,7 @@ namespace MOARANDROIDS
         private static WorkGiverDef genericPostFixExtraCrafterDoctorJobsPrevJobDef;
         private static bool genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob;
 
-        public static void genericPostFixExtraCrafterDoctorJobs(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver __instance)
+        public static bool genericPostFixExtraCrafterDoctorJobs(Pawn pawn, Thing t, bool forced, WorkGiver __instance)
         {
             Pawn pawnT = null;
             if (t is Pawn)
@@ -859,17 +859,15 @@ namespace MOARANDROIDS
                 //Si les jobs fake de docteur en mode crafter on les jertes
                 if (__instance.def.workType == Utils.WorkTypeDefSmithing && genericPostFixExtraCrafterDoctorJobsPrevJobDefContainedInCrafterDoctorJob)
                 {
-                    __result = false;
+                    return false;
                 }
-
-                return;
             }
 
             //Medecin normal on jerte si t est un android
             if (__instance.def.workType == WorkTypeDefOf.Doctor)
             {
                 if (pawnT != null && (pawnT.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
-                    __result = false;
+                    return false;
             }
             else
             {
@@ -879,12 +877,13 @@ namespace MOARANDROIDS
                     if (pawnT != null && (pawnT.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
                     {
                         if (genericPostFixExtraCrafterDoctorJobsPrevPawnCSO == null || !genericPostFixExtraCrafterDoctorJobsPrevPawnCSO.repairAndroids)
-                            __result = false;
+                            return false;
                     }
                     else
-                        __result = false;
+                        return false;
                 }
             }
+            return true;
         }
 
         public static Map getMapFromString(this string MUID)
@@ -2333,7 +2332,10 @@ namespace MOARANDROIDS
             return true && !Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare);
         }
 
-
+        
+        /*
+         * Search for not controlled surrogates in caravans
+         */
         public static bool isThereNotControlledSurrogateInCaravan()
         {
             foreach(var c in Find.World.worldObjects.Caravans)
@@ -2345,6 +2347,44 @@ namespace MOARANDROIDS
                     {
                         CompAndroidState cas = Utils.getCachedCAS(p);
                         if (cas.surrogateController == null)
+                            return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        /*
+         * Search for free controllers in caravans
+         */
+        public static bool isThereFreeControllerInCaravan()
+        {
+            foreach (var c in Find.World.worldObjects.Caravans)
+            {
+                foreach (var p in c.pawns)
+                {
+                    //Mobile SkyCore ? look at stored minds
+                    if(p.def == ThingDefOfAT.M8Mech)
+                    {
+                        CompSkyCloudCore csc = getCachedCSC(p);
+                        if(csc != null)
+                        {
+                            foreach(var m in csc.storedMinds)
+                            {
+                                CompSurrogateOwner cso = getCachedCSO(m);
+                                //Free minds ? (not assisting, not quarantined, not in control mode)
+                                if(cso != null && !csc.assistingMinds.Contains(m) && cso.SX == null && !csc.inMentalBreak.ContainsKey(m))
+                                {
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                    else if (!p.Dead && !p.Destroyed && p.VXChipPresent())
+                    {
+                        CompSurrogateOwner cso = getCachedCSO(p);
+                        if(cso != null && !cso.controllingSurrogateSlotsFull())
                             return true;
                     }
                 }
@@ -2371,6 +2411,58 @@ namespace MOARANDROIDS
                         {
                             onClick(colon);
                         }, MenuOptionPriority.Default, null, null, 0f, null, null));
+                    }
+                }
+            }
+            opts.SortBy((x) => x.Label);
+
+            //SI pas choix affichage de la raison 
+            if (opts.Count == 0)
+                return;
+
+            floatMenuMap = new FloatMenu(opts, "");
+            Find.WindowStack.Add(floatMenuMap);
+        }
+
+        public static void ShowFloatMenuNotControllingSurrogateControllerInCaravan(Pawn emitter, Action<Pawn> onClick)
+        {
+            List<FloatMenuOption> opts = new List<FloatMenuOption>();
+            FloatMenu floatMenuMap;
+
+            foreach (var c in Find.World.worldObjects.Caravans)
+            {
+                foreach (var p in c.pawns)
+                {
+                    //Mobile SkyCore ? look at stored minds
+                    if (p.def == ThingDefOfAT.M8Mech)
+                    {
+                        CompSkyCloudCore csc = getCachedCSC(p);
+                        if (csc != null)
+                        {
+                            foreach (var m in csc.storedMinds)
+                            {
+                                CompSurrogateOwner cso = getCachedCSO(m);
+                                //Free minds ? (not assisting, not quarantined, not in control mode)
+                                if (!csc.assistingMinds.Contains(m) && cso.SX == null && !csc.inMentalBreak.ContainsKey(m))
+                                {
+                                    opts.Add(new FloatMenuOption(csc.getName() + " > " + m.LabelShortCap, delegate
+                                        {
+                                            onClick(m);
+                                        }, MenuOptionPriority.Default, null, null, 0f, null, null));
+                                }
+                            }
+                        }
+                    }
+                    else if (!p.Dead && !p.Destroyed && p.VXChipPresent())
+                    {
+                        CompSurrogateOwner cso = getCachedCSO(p);
+                        if (p != null && !cso.controllingSurrogateSlotsFull())
+                        {
+                            opts.Add(new FloatMenuOption(p.LabelShortCap, delegate
+                            {
+                                onClick(p);
+                            }, MenuOptionPriority.Default, null, null, 0f, null, null));
+                        }
                     }
                 }
             }

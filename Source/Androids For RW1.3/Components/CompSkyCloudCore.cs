@@ -18,6 +18,9 @@ namespace MOARANDROIDS
 
             Scribe_Values.Look<int>(ref SID, "ATPP_SID", -1);
             Scribe_Values.Look<int>(ref bootGT, "ATPP_bootGT", -2);
+            Scribe_Values.Look<bool>(ref isKidnapped, "ATPP_isKidnapped", false);
+            Scribe_Values.Look<int>(ref KidnappedPendingDisconnectionGT, "ATPP_KidnappedPendingDisconnectionGT", -1);
+            
             Scribe_Collections.Look(ref this.storedMinds, false, "ATPP_storedMinds", LookMode.Deep);
             Scribe_Collections.Look(ref this.assistingMinds, false, "ATPP_assistingMinds", LookMode.Reference);
             Scribe_Collections.Look(ref this.replicatingMinds, false, "ATPP_replicatingMinds", LookMode.Reference);
@@ -77,6 +80,22 @@ namespace MOARANDROIDS
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
             base.PostSpawnSetup(respawningAfterLoad);
+
+            //Allow to reset kidnapped state if the M8 come back (spawn with isKinapped enabled but not Kidnapped infact)
+            if (isKidnapped)
+            {
+                if (parent is Pawn)
+                {
+                    Pawn cp = (Pawn)parent;
+
+                    if (!cp.IsKidnapped())
+                    {
+                        isKidnapped = false;
+                        KidnappedPendingDisconnectionGT = -1;
+                        init = false;
+                    }
+                }
+            }
 
             if(!init)
                 initComp();
@@ -158,12 +177,16 @@ namespace MOARANDROIDS
                 SID = Utils.GCATPP.getNextSkyCloudID();
                 Utils.GCATPP.incNextSkyCloudID();
             }
-            if (Booted())
-            {
-                Utils.GCATPP.pushSkyCloudCore(parent);
-            }
 
-            Utils.GCATPP.pushSkyCloudCoreAbs(parent);
+            if (!isKidnapped)
+            {
+                if (Booted())
+                {
+                    Utils.GCATPP.pushSkyCloudCore(parent);
+                }
+
+                Utils.GCATPP.pushSkyCloudCoreAbs(parent);
+            }
 
 
             //Application retroactive de la surppression de traits blacklistés pour les minds
@@ -194,7 +217,10 @@ namespace MOARANDROIDS
                 return !parent.Destroyed && parentCPT.PowerOn;
             }
             else
-                return !parentPawn.Dead;
+            {
+                //PowerOn if M8 not dead And not kidnapped Or kidnapped but within the exception time
+                return !parentPawn.Dead && (!isKidnapped || (kidnappedM8DisconnectionGT != -1));
+            }
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -596,6 +622,20 @@ namespace MOARANDROIDS
             //Allow init of the core if pawn SkyCore and is in an caravan 
             if (!init)
                 initComp();
+
+            //Kidnapped M8 ? no more interpretation to minds
+            if (parentPawn != null && isKidnapped)
+            {
+                //Check if we need to proceed to the disconnection
+                if (KidnappedPendingDisconnectionGT != -1 && KidnappedPendingDisconnectionGT <= Find.TickManager.TicksGame)
+                {
+                    KidnappedPendingDisconnectionGT = -1;
+                    stopAllMindsActivities();
+                    Find.LetterStack.ReceiveLetter("ATPP_LetterKidnappedM8Disconnected".Translate(), "ATPP_LetterKidnappedM8DisconnectedDesc".Translate(parentPawn.LabelCap, getName()), LetterDefOf.NegativeEvent);
+                }
+
+                return;
+            }
 
             //Minds processing stuff
             checkMindsStuffTick();
@@ -1016,6 +1056,7 @@ namespace MOARANDROIDS
         CompPowerTrader parentCPT;
         List<CompSurrogateOwner> migrationsDone = new List<CompSurrogateOwner>();
         List<CompSurrogateOwner> replicationDone = new List<CompSurrogateOwner>();
+        public int kidnappedM8DisconnectionGT = -1;
 
         public List<Pawn> storedMinds = new List<Pawn>();
         public Dictionary<Pawn, Building> controlledTurrets = new Dictionary<Pawn, Building>();
@@ -1035,5 +1076,8 @@ namespace MOARANDROIDS
         public int bootGT = -2;
         private int nextCoreHealthWarningGT = -1;
         public bool init = false;
+
+        public bool isKidnapped = false;
+        public int KidnappedPendingDisconnectionGT = -1;
     }
 }

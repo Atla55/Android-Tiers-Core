@@ -18,10 +18,16 @@ namespace MOARANDROIDS
         [HarmonyPatch(typeof(WorkGiver_TendOtherUrgent), "HasJobOnThing")]
         public class HasJobOnThing_Patch
         {
-            [HarmonyPostfix]
-            public static void Listener(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver_TendOtherUrgent __instance)
+            [HarmonyPrefix]
+            public static bool Listener(Pawn pawn, Thing t, bool forced, ref bool __result, WorkGiver_TendOtherUrgent __instance)
             {
-                Utils.genericPostFixExtraCrafterDoctorJobs(pawn, t, forced, ref __result, __instance);
+                bool ret = Utils.genericPostFixExtraCrafterDoctorJobs(pawn, t, forced, __instance);
+                if (!ret)
+                {
+                    __result = false;
+                    return false;
+                }
+                return true;
             }
         }
     }

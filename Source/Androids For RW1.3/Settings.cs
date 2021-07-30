@@ -9,6 +9,8 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static int nbMinHoursBeforeKidnappedM8Disconnected = 6;
+        public static int nbMaxHoursBeforeKidnappedM8Disconnected = 48;
         public static float chanceRecruitedSurrogateControllerCanEscapeAndJoin = 0.65f;
         public static float percentageOfOtherFactionSurrogateHavingAnRXChip = 0.35f;
         public static bool allowAndroidToUseHospitalBed = true;
@@ -650,6 +652,12 @@ namespace MOARANDROIDS
 
             list.CheckboxLabeled("ATPP_SettingsDisableAbilityOfSkyCloudServersToTalk".Translate(), ref disableAbilitySkyCloudServerToTalk);
 
+            list.Label("ATPP_SettingsMinHourBeforeKidnapperDisconnectM8".Translate(nbMinHoursBeforeKidnappedM8Disconnected));
+            nbMinHoursBeforeKidnappedM8Disconnected = (int)list.Slider(nbMinHoursBeforeKidnappedM8Disconnected, 1, 200);
+
+            list.Label("ATPP_SettingsMaxHourBeforeKidnapperDisconnectM8".Translate(nbMaxHoursBeforeKidnappedM8Disconnected));
+            nbMaxHoursBeforeKidnappedM8Disconnected = (int)list.Slider(nbMaxHoursBeforeKidnappedM8Disconnected, 1, 200);
+
             list.Gap(3);
             list.GapLine();
             list.Gap(10);
@@ -1004,7 +1012,8 @@ namespace MOARANDROIDS
             Scribe_Values.Look<bool>(ref allowSurrogateConnectionInitMalus, "allowSurrogateConnectionInitMalus", true);
             Scribe_Values.Look<bool>(ref allowAndroidToUseHospitalBed, "allowAndroidToUseHospitalBed", true);
             Scribe_Values.Look<float>(ref percentageOfOtherFactionSurrogateHavingAnRXChip, "percentageOfOtherFactionSurrogateHavingAnRXChip", 0.35f);
-            
+            Scribe_Values.Look<int>(ref nbMaxHoursBeforeKidnappedM8Disconnected, "nbMaxHoursBeforeKidnappedM8Disconnected", 48);
+            Scribe_Values.Look<int>(ref nbMinHoursBeforeKidnappedM8Disconnected, "nbMinHoursBeforeKidnappedM8Disconnected", 6);
 
         }
     }

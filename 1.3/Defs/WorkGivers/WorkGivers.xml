@@ -24,7 +24,7 @@
     <defName>AT_RescueSurrogates</defName>
     <label>rescue surrogate</label>
     <giverClass>MOARANDROIDS.WorkGiver_RescueSurrogates</giverClass>
-    <workType>Doctor</workType>
+    <workType>Smithing</workType>
     <priorityInType>135</priorityInType>
     <verb>rescue surrogate</verb>
     <gerund>rescuing surrogate</gerund>

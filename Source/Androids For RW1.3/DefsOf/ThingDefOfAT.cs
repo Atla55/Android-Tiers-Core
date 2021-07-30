@@ -32,6 +32,8 @@ namespace MOARANDROIDS
         public static ThingDef MechHandCannon;
 
         public static ThingDef MeleeWeapon_MechKnife;
+
+        public static ThingDef HospitalBed;
     }
 
 }

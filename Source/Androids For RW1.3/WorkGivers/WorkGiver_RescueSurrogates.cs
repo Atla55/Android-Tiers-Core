@@ -17,16 +17,16 @@ namespace MOARANDROIDS
 
         public override bool ShouldSkip(Pawn pawn, bool forced = false)
         {
+            if (!Settings.hideInactiveSurrogates)
+                return true;
+
             List<CompAndroidState> list = Utils.listerDownedSurrogatesCAS;
             for (int i = 0; i < list.Count; i++)
             {
-                if (list[i] != null && list[i].parent.Spawned)
+                Pawn surrogate = (Pawn)list[i].parent;
+                if (surrogate.Downed && !surrogate.InBed() && list[i].isSurrogate && list[i].surrogateController == null)
                 {
-                    Pawn surrogate = (Pawn)list[i].parent;
-                    if (surrogate.Downed && !surrogate.InBed() && list[i].isSurrogate && list[i].surrogateController == null)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
             }
             return true;

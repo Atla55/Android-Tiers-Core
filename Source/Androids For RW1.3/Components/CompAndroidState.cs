@@ -138,9 +138,11 @@ namespace MOARANDROIDS
 
             if (isAndroidTier)
             {
-                //Remove ideo if basic android
-                if (currentPawn.IsBasicAndroidTier())
+                //Remove ideo if basic android or surrogate
+                if (currentPawn.IsBasicAndroidTier() || isSurrogate)
+                {
                     currentPawn.ideo = null;
+                }
 
                 if (isAndroidWithSkin)
                 {
@@ -922,6 +924,8 @@ namespace MOARANDROIDS
             {
                 Pawn pawn = (Pawn)parent;
                 Utils.GCATPP.pushSurrogateAndroid((Pawn)this.parent);
+
+                Utils.removeDownedSurrogateToLister(pawn);
             }
         }
 
@@ -1258,7 +1262,28 @@ namespace MOARANDROIDS
                                 }
                             }
                         };
-                    }   
+                    }
+                    if (Utils.isThereFreeControllerInCaravan())
+                    {
+                        yield return new Command_Action
+                        {
+                            icon = Tex.AndroidToControlTargetRecovery,
+                            defaultLabel = "ATPP_FreeControllerInCaravan".Translate(),
+                            defaultDesc = "ATPP_FreeControllerInCaravanDesc".Translate(),
+                            action = delegate ()
+                            {
+                                Utils.ShowFloatMenuNotControllingSurrogateControllerInCaravan((Pawn)parent, delegate (Pawn controller)
+                                {
+                                    CompSurrogateOwner cso = Utils.getCachedCSO(controller);
+                                    //OK only if controller can be connected OR reside in a M8 (no check for connection on SkyMind)
+                                    if (cso != null && (cso.skyCloudHost != null || Utils.GCATPP.isConnectedToSkyMind(controller, true)))
+                                    {
+                                        cso.setControlledSurrogate(currentPawn);
+                                    }
+                                });
+                            }
+                        };
+                    }
                 }
             }
             else

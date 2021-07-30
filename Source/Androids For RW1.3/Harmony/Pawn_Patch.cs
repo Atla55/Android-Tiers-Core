@@ -77,7 +77,37 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    if ((__instance.IsAndroidTier() || __instance.VXChipPresent() || __instance.IsSurrogateAndroid()))
+                    if(__instance.def == ThingDefOfAT.M8Mech)
+                    {
+                        bool activeConn = false;
+                        CompSkyCloudCore csc = Utils.getCachedCSC(__instance);
+                        csc.isKidnapped = true;
+
+                        if (csc != null) {
+                            if (csc.controlledTurrets.Count > 0)
+                                activeConn = true;
+                            if (!activeConn)
+                            {
+                                //Check if there are active minds/surrogate connections 
+                                foreach (var m in csc.storedMinds)
+                                {
+                                    CompSurrogateOwner cso = Utils.getCachedCSO(m);
+                                    if (cso != null && cso.isThereSX())
+                                    {
+                                        activeConn = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            //Active connections then program a random disconnection
+                            if (activeConn)
+                            {
+                                csc.KidnappedPendingDisconnectionGT = Find.TickManager.TicksGame + Rand.Range(Settings.nbMinHoursBeforeKidnappedM8Disconnected*2500, Settings.nbMaxHoursBeforeKidnappedM8Disconnected*2500);
+                            }
+                        }
+                    }
+                    else if ((__instance.IsAndroidTier() || __instance.VXChipPresent() || __instance.IsSurrogateAndroid()))
                     {
                         //On deconnecte l'user de force le cas echeant
                         Utils.GCATPP.disconnectUser(__instance);
