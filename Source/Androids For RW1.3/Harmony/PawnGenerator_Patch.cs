@@ -129,11 +129,19 @@ namespace MOARANDROIDS
                             __result = PawnGenerator.GeneratePawn(r);
                         }
                     }
+                    bool isBasicAndroid = __result.IsBasicAndroidTier();
+
+                    //Remove Ideology equippements on M7/M8 and basic androids
+                    if (isBasicAndroid)
+                    {
+                        if(__result.apparel != null)
+                            __result.apparel.DestroyAll();
+                    }
 
                     if (!Settings.notRemoveAllSkillPassionsForBasicAndroids)
                     {
                         //Si T1/T2
-                        if (__result.IsBasicAndroidTier() && __result.def.defName != "M7Mech" && __result.skills != null && __result.skills.skills != null)
+                        if (isBasicAndroid && __result.def.defName != "M7Mech" && __result.skills != null && __result.skills.skills != null)
                         {
                             foreach(var sr in __result.skills.skills)
                             {
