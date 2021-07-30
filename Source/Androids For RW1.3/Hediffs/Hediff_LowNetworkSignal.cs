@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using RimWorld;
+using RimWorld.Planet;
 using Verse;
 
 namespace MOARANDROIDS
@@ -76,10 +77,42 @@ namespace MOARANDROIDS
                                 newVal = 1;
                             }
                             else{
-                                if (!Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map.GetUniqueLoadID()))
-                                    newVal = 1;
+                                //Pawn in caravan ? check for the presence of an M8 unit in this caravan
+                                if (pawn.Map == null)
+                                {
+                                    if (pawn.IsCaravanMember())
+                                    {
+                                        Caravan caravan = pawn.GetCaravan();
+                                        bool m8Found = false;
+                                        if (caravan != null)
+                                        {
+                                            foreach (var p in caravan.pawns)
+                                            {
+                                                if (p.def == ThingDefOfAT.M8Mech)
+                                                {
+                                                    m8Found = true;
+                                                    break;
+                                                }
+                                            }
+                                            //No skymind relay in the caravan
+                                            if (!m8Found)
+                                                newVal = 1;
+                                            else
+                                                newVal = 0;
+                                        }
+                                        else
+                                            newVal = 1;
+                                    }
+                                    else
+                                        newVal = 1;
+                                }
                                 else
-                                    newVal = 0;
+                                {
+                                    if (!Utils.GCATPP.isThereSkyMindAntennaOrRelayInMap(pawn.Map.GetUniqueLoadID()))
+                                        newVal = 1;
+                                    else
+                                        newVal = 0;
+                                }
                             }
                         }
                         else

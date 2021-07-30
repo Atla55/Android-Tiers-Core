@@ -21,8 +21,9 @@ namespace MOARANDROIDS
 
             Utils.GCATPP.popSkyMindServer(this.parent);
 
-            if(parentPawn != null && parentPawn.IsCaravanMember())
+            if(parentPawn != null && (parentPawn.IsFormingCaravan() || parentPawn.IsCaravanMember()))
             {
+                Log.Message("HERE");
                 Utils.GCATPP.pushSkyMindServer(this.parent, "caravan");
             }
         }

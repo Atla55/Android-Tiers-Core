@@ -117,7 +117,7 @@ namespace MOARANDROIDS
                     //Prevent generation M7/T5 dans ecran style EBDPrep carefully
                     if(Settings.preventM7T5AppearingInCharacterScreen &&  Current.ProgramState == ProgramState.Entry )
                     {
-                        if(__result.def.defName == Utils.M7 || __result.def.defName == Utils.T5 || (__result.def.defName == Utils.M8 && Current.Game.Scenario.name != "Androids apocalypse"))
+                        if(__result.def.defName == Utils.M7 || __result.def.defName == Utils.T5 || (__result.def.defName == Utils.M8 && Current.Game.Scenario != null && Current.Game.Scenario.name != "Androids apocalypse"))
                         {
                             Log.Message("=>"+Current.Game.Scenario.name);
                             PawnGenerationRequest r = new PawnGenerationRequest(Utils.AndroidsPKDNeutral.RandomElement(), request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn,

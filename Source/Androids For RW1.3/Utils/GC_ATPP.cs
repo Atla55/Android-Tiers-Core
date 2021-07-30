@@ -1263,7 +1263,9 @@ namespace MOARANDROIDS
                 {
                     CompBuildingSkyMindLAN csml = Utils.getCachedCML(el2);
                     if (csml.isPowerOn())
+                    {
                         nbSlot += 3;
+                    }
                     else
                     {
                         if (toDel == null)
