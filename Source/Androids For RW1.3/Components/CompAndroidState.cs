@@ -37,7 +37,7 @@ namespace MOARANDROIDS
             Scribe_Values.Look<bool>(ref this.paintingIsRusted, "ATPP_paintingIsRusted", false);
             Scribe_Values.Look<bool>(ref this.downedViaDisconnect, "ATPP_downedViaDisconnect", true);
             Scribe_Values.Look<bool>(ref this.lastSkymindDisconnectIsManual, "ATPP_lastSkymindDisconnectIsManualCAS", false);
-   
+            Scribe_References.Look(ref droppedWeapon, "ATPP_droppedWeapon");
 
             Scribe_Values.Look<int>(ref batteryExplosionEndingGT, "ATPP_batteryExplosionEndingGT", -1);
 
@@ -385,7 +385,19 @@ namespace MOARANDROIDS
                         //Log.Message("Current duty ==>"+cp.mindState.duty.def.defName);
                         //Log.Message("Current job ==>" + cp.CurJobDef.defName);
 
-                    
+                        //Ordering surrogate to go search his dropped weapon (if applicable)
+                        if(droppedWeapon != null)
+                        {
+                            if(currentPawn.CanReach(droppedWeapon, PathEndMode.OnCell, Danger.Deadly))
+                            {
+                                if (!currentPawn.CanReserve(droppedWeapon))
+                                    currentPawn.Map.reservationManager.ReleaseAllForTarget(droppedWeapon);
+
+                                Job job = JobMaker.MakeJob(JobDefOf.Equip, droppedWeapon);
+                                currentPawn.jobs.StartJob(job, JobCondition.None);
+                            }
+                            droppedWeapon = null;
+                        }
                     }
                 }
             }
@@ -1683,6 +1695,6 @@ namespace MOARANDROIDS
         public bool downedViaDisconnect = true;
         public bool lastSkymindDisconnectIsManual = false;
 
-       
+        public Thing droppedWeapon;
     }
 }

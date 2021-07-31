@@ -313,7 +313,10 @@ namespace MOARANDROIDS
         {
             CompAndroidState cas = Utils.getCachedCAS(___pawn);
             Pawn value = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
-            
+            if (cas != null && cas.isSurrogate)
+            {
+                cas.droppedWeapon = value.equipment.Primary;
+            }
             
             if(value.kindDef == MOARANDROIDS.PawnKindDefOf.MicroScyther || value.kindDef == MOARANDROIDS.PawnKindDefOf.AbominationAtlas || (value.kindDef == MOARANDROIDS.PawnKindDefOf.M7MechPawn && !cas.isSurrogate))
             {
