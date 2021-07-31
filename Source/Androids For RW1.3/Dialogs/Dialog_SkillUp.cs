@@ -95,7 +95,7 @@ namespace MOARANDROIDS
             if(pointsNeededPerSkill != 0)
                 nbPointsBuyable = (int)Math.Floor((double)(availableSkillPoints / pointsNeededPerSkill));
 
-            //Controles de selection des points a acheter
+            //Selection controls for points to buy
             for (int i = 0; i != sd.Count; i++)
             {
                 int p = points[i];
@@ -114,15 +114,15 @@ namespace MOARANDROIDS
 
                     p = (int)list.Slider(p, 0, 20);
 
-                    //Check possibilité action
-                    if(p+sr.levelInt < 20 &&  (p+ getNbPointsWantedToBuy(i)) <= nbPointsBuyable )
+                    //Check possibility of action
+                    if (p+sr.levelInt < 20 &&  (p+ getNbPointsWantedToBuy(i)) <= nbPointsBuyable )
                     {
-                        //On peut les acheter 
+                        //We can buy them
                         points[i] = p;
                     }
 
-                    //Partie gestion des passions
-                    if(passionsState[i] == -1)
+                    //Passion management part
+                    if (passionsState[i] == -1)
                     {
                         list.ButtonImage(Tex.PassionDisabled, 24, 24);
                     }
@@ -142,7 +142,7 @@ namespace MOARANDROIDS
                         {
                             if (!max)
                             {
-                                //Check player a les moyens 
+                                //Check player has the means
                                 int locNbWantedPoints = getNbPointsWantedToBuy();
                                 int locAvailablePoints = nbPointsBuyable - locNbWantedPoints;
 
@@ -174,7 +174,7 @@ namespace MOARANDROIDS
             list.End();
             Widgets.EndScrollView();
 
-            //Affichage nb points 
+            //Display nb points
             if (availablePoints > 0)
                 GUI.color = Color.green;
             Widgets.Label(new Rect(0, inRect.height - 115f, inRect.width - 30f, 35f),"ATPP_SkillsWorkshopAvailablePoints".Translate(availablePoints));
@@ -196,10 +196,10 @@ namespace MOARANDROIDS
 
                 GUI.color = Color.white;
 
-                //Decrementation des points de skills
+                //Decrement skill points
                 Utils.GCATPP.decSkillPoints(nbWantedPoints * pointsNeededPerSkill);
 
-                //Incrementation effective des points
+                //Effective point incrementation
                 for (int i = 0; i != sd.Count; i++)
                 {
                     sr = android.skills.GetSkill(sd[i]);
@@ -220,7 +220,7 @@ namespace MOARANDROIDS
                 Find.WindowStack.TryRemove(this, true);
             }
             GUI.color = Color.white;
-            //Annulation
+            //Cancel
             GUI.color = Color.red;
             if (Widgets.ButtonText(new Rect(0, inRect.height - 10f, inRect.width, 35f), "Back".Translate(), true, false, true))
             {

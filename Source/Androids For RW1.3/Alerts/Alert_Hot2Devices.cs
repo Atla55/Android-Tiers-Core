@@ -5,7 +5,6 @@ using RimWorld;
 
 namespace MOARANDROIDS
 {
-    // Token: 0x020007C0 RID: 1984
     public class Alert_Hot2Devices : Alert
     {
         public Alert_Hot2Devices()

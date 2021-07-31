@@ -22,7 +22,7 @@ namespace MOARANDROIDS
                     if (hediff == null)
                         return;
 
-                    //Si il sagit d'une VX0 alors passation du pawn en mode surrogate
+                    //If it is a VX0 then passing the pawn in surrogate mode
                     if (hediff.def == HediffDefOf.ATPP_HediffVX0Chip && (___pawn.Faction == Faction.OfPlayer || ___pawn.IsPrisoner || ___pawn.IsSlave))
                     {
                         CompAndroidState cas = Utils.getCachedCAS(___pawn);
@@ -33,7 +33,7 @@ namespace MOARANDROIDS
                         if (___pawn.Faction.IsPlayer && !Utils.preventVX0Thought)
                         {
 
-                            //Simulation mort surrogate organic
+                            //Simulation death surrogate organic
                             PawnDiedOrDownedThoughtsUtility.TryGiveThoughts(___pawn, null, PawnDiedOrDownedThoughtsKind.Died);
 
                             Pawn spouse = ___pawn.GetSpouse();
@@ -49,21 +49,21 @@ namespace MOARANDROIDS
                         }
                         else
                         {
-                            //Si pas de la faction du player alors on va changer sa faction dans simuler de mort
+                            //If not from the player's faction then we will change his faction in simulate death
                             if (!___pawn.Faction.IsPlayer)
                                 ___pawn.SetFaction(Faction.OfPlayer, null);
                         }
 
                         cas.initAsSurrogate();
 
-                        //SKills vierges
+                        //Blank skills
                         ___pawn.skills = new Pawn_SkillTracker(___pawn);
                         ___pawn.needs = new Pawn_NeedsTracker(___pawn);
 
-                        //Effacement des relations
+                        //Erasing relationships
                         ___pawn.relations = new Pawn_RelationsTracker(___pawn);
 
-                        //TOuts les SX sont simple minded et ont aucuns autres traits
+                        //ALL SX are simple minded and have no other traits
                         TraitDef td = TraitDefOf.SimpleMindedAndroid;
                         Trait t = null;
                         if (td != null)
@@ -76,7 +76,7 @@ namespace MOARANDROIDS
 
                         if (!___pawn.IsAndroidTier())
                         {
-                            //Reset du child et adulthood
+                            //Reset child and adulthood
                             if (!Settings.keepPuppetBackstory && ___pawn.story.childhood != null)
                             {
                                 Backstory bs = null;
@@ -93,13 +93,13 @@ namespace MOARANDROIDS
                         //Reset incapable of
                         Utils.ResetCachedIncapableOf(___pawn);
 
-                        //Définition nouveau nom
+                        //New name definition
                         ___pawn.Name = new NameTriple("", "S" + 0 + "-" + Utils.GCATPP.getNextSXID(0), "");
                         Utils.GCATPP.incNextSXID(0);
 
                         if (!Utils.preventVX0Thought)
                         {
-                            //Ajout du thought de PUPPET
+                            //Addition of the thought of PUPPET
                             foreach (Pawn current in PawnsFinder.AllMapsCaravansAndTravelingTransportPods_Alive_FreeColonistsAndPrisoners)
                             {
                                 current.needs.mood.thoughts.memories.TryGainMemory(ThoughtMaker.MakeThought(Utils.thoughtDefVX0Puppet, 0), null);
@@ -142,7 +142,7 @@ namespace MOARANDROIDS
 
                     if (___pawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                     {
-                        //S'il sagit d'Hediff blacklistés 
+                        //If it is blacklisted Hediff 
                         if (Utils.BlacklistAndroidHediff.Contains(hediff.def.defName))
                             return false;
                     }
@@ -155,12 +155,12 @@ namespace MOARANDROIDS
                         }
                     }
 
-                    //gére le cas des empilements de chips afin de restituer celles déjà présentes
+                    //manages the case of stacks of chips in order to restore those already present
                     if (Utils.ExceptionNeuralChip.Contains(hediff.def.defName))
                     {
                         CompAndroidState cas = Utils.getCachedCAS(___pawn);
 
-                        //Interdiction ajouté VX puces dans un surrogate, on restitue la puce et on se barre
+                        //Prohibition added VX chips in a surrogate, we return the chip and we cross
                         if (cas != null && cas.isSurrogate)
                         {
                             IntVec3 pos1;
@@ -188,7 +188,7 @@ namespace MOARANDROIDS
                         }
 
                         Hediff he = ___pawn.HaveNotStackableVXChip();
-                        //Avant l'ajout de la VXChip le colon possédés déjà une puce on va la restaurer au joueur
+                        //Before the addition of the VXChip, the colonist already possessed a chip, we will restore it to the player
                         if (he != null)
                         {
                             ___pawn.health.RemoveHediff(he);
@@ -226,14 +226,14 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Hediff hediff, Pawn ___pawn)
             {
-                //Si il sagit d'une VX0 
+                //If it is a VX0
                 if (hediff != null && hediff.def == HediffDefOf.ATPP_HediffVX0Chip)
                 {
                     CompAndroidState cas = Utils.getCachedCAS(___pawn);
                     if (cas == null)
                         return;
 
-                    //Mort de l'hote
+                    //Death of the host
                     ___pawn.Kill(null, null);
                 }
             }
@@ -253,15 +253,15 @@ namespace MOARANDROIDS
                         //Add surrogate to the list of downed surrogates
                         Utils.addDownedSurrogateToLister(___pawn);
 
-                        // Deconnexion of Is surrogate android used et que appartenant au joueur ====>>>> POUR eviter les problemes de reminescence fantome de surrogates d'autres factions dans des Lord qui reste a cause du fait que le MakeDown les enleves de la liste mais le disconnect va essayer de relancer un CONNECT (dans le cadre des surrogates externes)
+                        // Disconnection of android surrogate used and owned by player ==== >>>> TO avoid ghost remodeling problems of surrogates from other factions in Lord which remains due to MakeDown removing them from the list but the disconnect will try to restart a CONNECT (in the context of external surrogates)
                         if (___pawn.IsSurrogateAndroid(true))
                         {
-                            //Obtention controlleur
+                            //Obtaining controller
                             CompAndroidState cas = Utils.getCachedCAS(___pawn);
                             if (cas == null)
                                 return;
 
-                            //Arret du mode de control chez le controller
+                            //Stop of the control mode at the controller
                             CompSurrogateOwner cso = Utils.getCachedCSO(cas.surrogateController);
                             //If surrogate downed due to another reason that skymind disconnection then we notice it to force map despawn on downed surrogate in hostile map 
                             bool downedViaDisconnect = true;
@@ -289,11 +289,11 @@ namespace MOARANDROIDS
             {
                 try
                 {
-                    //Blank android pas de notification de la mort
+                    //Blank android no death notification
                     if (___pawn.IsBlankAndroid())
                         return false;
 
-                    //Si surrogate
+                    //If surrogate
                     if (___pawn.IsSurrogateAndroid() && !___pawn.IsPrisoner)
                     {
                         Find.LetterStack.ReceiveLetter("ATPP_LetterSurrogateDisabled".Translate(___pawn.LabelShortCap), "ATPP_LetterSurrogateDisabledDesc".Translate(___pawn.LabelShortCap), LetterDefOf.Death, ___pawn, null, null);
