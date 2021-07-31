@@ -341,6 +341,7 @@ namespace MOARANDROIDS
                     }
                     else
                     {
+                        bool isLordSiege = (lordInvolved != null && (lordInvolved.CurLordToil is LordToil_Siege));
                         try
                         {
                             //Try auto-reconnect to surrogate to his external controller (with this time the connection init malus)
@@ -354,18 +355,17 @@ namespace MOARANDROIDS
                             if (currentPawn.drafter != null)
                                 currentPawn.drafter.Drafted = false;
 
-                            if (lordInvolved != null && !currentPawn.Downed)
+                            if (lordInvolved != null && !currentPawn.Downed && !isLordSiege)
                                 lordInvolved.AddPawn(currentPawn);
                         }
                         catch (Exception)
                         {
-
                         }
 
                         try
                         {
                             //If the lord is a siege lord, then proceed to some custom adaptations
-                            if (lordInvolved != null && lordInvolved.CurLordToil is LordToil_Siege)
+                            if (isLordSiege)
                             {
                                 LordToil_Siege st = (LordToil_Siege)lordInvolved.CurLordToil;
 
@@ -375,15 +375,13 @@ namespace MOARANDROIDS
                                 LordToilData_Siege data = (LordToilData_Siege)Traverse.Create(st).Property("Data").GetValue();
                                 p.mindState.duty = new PawnDuty(DutyDefOf.Defend, data.siegeCenter, -1f);
                                 p.mindState.duty.radius = data.baseRadius;
-                                st.UpdateAllDuties();
+                                lordInvolved.AddPawn(currentPawn);
                             }
                         }
                         catch (Exception)
                         {
 
                         }
-                        //Log.Message("Current duty ==>"+cp.mindState.duty.def.defName);
-                        //Log.Message("Current job ==>" + cp.CurJobDef.defName);
 
                         //Ordering surrogate to go search his dropped weapon (if applicable)
                         if(droppedWeapon != null)
