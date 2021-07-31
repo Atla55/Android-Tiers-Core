@@ -1600,13 +1600,14 @@ namespace MOARANDROIDS
                     if (source.workSettings == null)
                     {
                         source.workSettings = new Pawn_WorkSettings(source);
-                        source.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
                     }
+                    source.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
+
                     if (dest.workSettings == null)
                     {
                         dest.workSettings = new Pawn_WorkSettings(dest);
-                        dest.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
                     }
+                    dest.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
 
                     if (source.workSettings != null && source.workSettings.EverWork)
                     {
@@ -1997,13 +1998,14 @@ namespace MOARANDROIDS
                 if (p1.workSettings == null)
                 {
                     p1.workSettings = new Pawn_WorkSettings(p1);
-                    p1.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
                 }
+                p1.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
 
-                if (p2.workSettings == null) {
+                if (p2.workSettings == null)
+                {
                     p2.workSettings = new Pawn_WorkSettings(p2);
-                    p2.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
                 }
+                p2.workSettings.EnableAndInitializeIfNotAlreadyInitialized();
 
                 /*************************************** PERMUTATION of Settings,restrictions********************************/
                 if (allowSettingsPermutation && p1.Faction == Faction.OfPlayer && p2.Faction == Faction.OfPlayer)
