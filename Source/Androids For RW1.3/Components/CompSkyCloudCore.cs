@@ -234,7 +234,7 @@ namespace MOARANDROIDS
                 storedMinds.Add(mind);
 
                 //Unit talk about the fact there is physical damages
-                forceIntegrityWarning = 4;
+                forceIntegrityWarning = 5;
             }
         }
 

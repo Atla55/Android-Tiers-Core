@@ -1468,7 +1468,6 @@ namespace MOARANDROIDS
             {
                 foreach (Thing t in th)
                 {
-                    //Log.Message("2) " + t.LabelShortCap);
                     Pawn cp=null;
                     if(t is Pawn)
                         cp = (Pawn)t;

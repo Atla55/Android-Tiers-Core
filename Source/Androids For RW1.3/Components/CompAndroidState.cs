@@ -1284,9 +1284,16 @@ namespace MOARANDROIDS
                                 Utils.ShowFloatMenuNotControllingSurrogateControllerInCaravan((Pawn)parent, delegate (Pawn controller)
                                 {
                                     CompSurrogateOwner cso = Utils.getCachedCSO(controller);
+                                    bool m8Mind = (cso.skyCloudHost != null);
+
                                     //OK only if controller can be connected OR reside in a M8 (no check for connection on SkyMind)
-                                    if (cso != null && (cso.skyCloudHost != null || Utils.GCATPP.isConnectedToSkyMind(controller, true)))
+                                    if (cso != null && (m8Mind || Utils.GCATPP.isConnectedToSkyMind(controller, true)))
                                     {
+                                        //If not a hosted mind then we try to enable the controlMode if not already enabled
+                                        if (!m8Mind && !cso.controlMode)
+                                        {
+                                            cso.toggleControlMode();
+                                        }
                                         cso.setControlledSurrogate(currentPawn);
                                     }
                                 });

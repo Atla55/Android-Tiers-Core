@@ -10,6 +10,7 @@ using System.Linq;
 using HarmonyLib;
 using System.Reflection;
 using Verse.Sound;
+using RimWorld.Planet;
 using System.Text.RegularExpressions;
 
 namespace MOARANDROIDS
@@ -611,7 +612,7 @@ namespace MOARANDROIDS
             }
         }
 
-        private void toggleControlMode()
+        public void toggleControlMode()
         {
             Pawn cpawn = (Pawn)parent;
 
@@ -1525,6 +1526,15 @@ namespace MOARANDROIDS
                 {
                     availableSX.Remove(SX);
                     SX = null;
+                }
+            }
+
+            //If the controller is in a caravan, not a hosted mind and there is no other controlled surrogate then we stop the controlMode (=> no longer downed)
+            if (!externalController && cp.Faction == Faction.OfPlayer && skyCloudHost == null && cp.IsCaravanMember() && !isThereSX())
+            {
+                if (controlMode)
+                {
+                    toggleControlMode();
                 }
             }
         }
