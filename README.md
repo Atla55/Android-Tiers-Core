@@ -4,14 +4,14 @@
 
 <p align="center">
 	<a href="https://github.com/Atla55/Android-Tiers-Core/releases/">
-		<img src="https://img.shields.io/badge/release-2.0.1-4BC51D.svg?style=flat" alt="v2.0.1" />
+		<img src="https://img.shields.io/badge/release-3.0.0-4BC51D.svg?style=flat" alt="v3.0.0" />
     </a>
-	<img src="https://img.shields.io/github/downloads-pre/Atla55/Android-Tiers-Core/total.svg?style=popout-square&color=green" alt="Github Total Downloads" />
 	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1386412863">
-		<img src="https://img.shields.io/badge/RimWorld-1.1-purple.svg?longCache=true&style=plastic)" alt="Compatible Rimworld 1.1" />
+		<img src="https://img.shields.io/badge/RimWorld-1.3-purple.svg?longCache=true&style=plastic)" alt="Compatible Rimworld 1.3" />
     </a>
 	<a href="https://steamcommunity.com/sharedfiles/filedetails/?id=1386412863&tscn=1583030222">
 		<img src="https://img.shields.io/badge/documentation-%F0%9F%94%8D-blue?style=flat" />
+	</a>
 	<a href="https://discordapp.com/invite/qVJzeB8">
 		<img src="https://img.shields.io/discord/448503707525709847.svg?style=flat&logo=discord&label=discord" />
 	</a>
@@ -34,7 +34,7 @@
 * 2 New Android Factions
 * 70 Android backstories
 * 5 Tiers of android
-* Mech and 5 Mech Weapons
+* 2 Mech and 5 Mech Weapons
 * 5 Robotic animals
 * AI Skycloud
 * Allow to digitize and store your colonists minds in supercomputers
@@ -48,7 +48,7 @@
 * Custom body layouts for androids and animals
 * Artificial brain implants that alter abilities
 * Ai Persona Fabrication
-* 2 New Incidents
+* 4 New Incidents
 * 5 Android specific "drugs"
 * Android specific capacities
 
@@ -65,6 +65,8 @@
 **Mechanite Storage Upgrades**: Each tier of Mechanite storage upgrade increases or decreases health regen speed, with an archotech mechanite storage upgrade halving the time it takes an android to recover from injuries.
 
 **SkyCloud**: Allow to digitize and store your colonists minds in supercomputers, from which you can control your entire colony.
+
+**M8 Mech Unit**: A limited mobile SkyCloud Core also equipped with a Skymind radio, allowing to store 10 minds and provide 3 SkyMind slots wherever the mech is
 
 ## Androids
 
