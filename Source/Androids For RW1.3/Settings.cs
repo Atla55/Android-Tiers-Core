@@ -42,11 +42,11 @@ namespace MOARANDROIDS
         public static bool allowHumanDrugsForAndroids = false;
 
         public static bool removeComfortNeedForT3T4 = true;
-        public static int nbSkillPointsPerSkillT1 = 150;
-        public static int nbSkillPointsPerSkillT2 = 250;
-        public static int nbSkillPointsPerSkillT3 = 600;
-        public static int nbSkillPointsPerSkillT4 = 1000;
-        public static int nbSkillPointsPerSkillT5 = 1250;
+        public static int nbSkillPointsPerSkillT1 = 300;
+        public static int nbSkillPointsPerSkillT2 = 500;
+        public static int nbSkillPointsPerSkillT3 = 850;
+        public static int nbSkillPointsPerSkillT4 = 1500;
+        public static int nbSkillPointsPerSkillT5 = 1800;
 
         public static int minHoursNaniteFramework = 8;
         public static int maxHoursNaniteFramework = 48;
@@ -965,11 +965,11 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref minHoursNaniteFramework, "minHoursNaniteFramework", 8);
             Scribe_Values.Look<int>(ref maxHoursNaniteFramework, "maxHoursNaniteFramework", 48);
 
-            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT1, "nbSkillPointsPerSkillT1", 150);
-            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT2, "nbSkillPointsPerSkillT2", 250);
-            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT3, "nbSkillPointsPerSkillT3", 600);
-            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT4, "nbSkillPointsPerSkillT4", 1000);
-            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT5, "nbSkillPointsPerSkillT5", 1250);
+            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT1, "nbSkillPointsPerSkillT1", 300);
+            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT2, "nbSkillPointsPerSkillT2", 500);
+            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT3, "nbSkillPointsPerSkillT3", 850);
+            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT4, "nbSkillPointsPerSkillT4", 1500);
+            Scribe_Values.Look<int>(ref nbSkillPointsPerSkillT5, "nbSkillPointsPerSkillT5", 1800);
 
             Scribe_Values.Look<bool>(ref removeComfortNeedForT3T4, "removeComfortNeedForT3T4", true);
 
