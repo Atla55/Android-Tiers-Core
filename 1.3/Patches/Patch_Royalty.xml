@@ -6,6 +6,7 @@
 	    <value>
 	    	<li>PlayerColonyAndroid</li>
 			<li>AndroidFriendliesAtlas</li>
+			<li>AndroidTiers_PlayerColonyApocalypse</li>
 		</value>
 	</Operation>
 </Patch>
