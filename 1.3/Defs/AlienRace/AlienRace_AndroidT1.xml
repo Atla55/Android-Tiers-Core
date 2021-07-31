@@ -150,6 +150,9 @@
 					<li>NeedFood</li>
                     <li>Naked</li>
                     <li>Pain</li>
+					<li>DeadMansApparel</li>
+					<li>EnvironmentCold</li>
+					<li>EnvironmentHot</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

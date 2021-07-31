@@ -22,6 +22,10 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ref bool __result, Thing bedThing, Pawn sleeper, Pawn traveler, bool checkSocialProperness, bool allowMedBedEvenIfSetToNoCare, bool ignoreOtherReservations, GuestStatus? guestStatus = null)
             {
+                //Prevent extra-processing 
+                if (!__result)
+                    return;
+
                 bool bedIsAndroidM7Pod = Utils.ExceptionSurrogateM7Pod.Contains(bedThing.def.defName);
                 bool bedIsAndroidPod = Utils.ExceptionSurrogatePod.Contains(bedThing.def.defName);
                 //bool sleeperIsNotControlledSurrogate = sleeper.IsSurrogateAndroid(false, true);

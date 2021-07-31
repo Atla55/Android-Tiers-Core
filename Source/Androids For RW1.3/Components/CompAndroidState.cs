@@ -37,10 +37,7 @@ namespace MOARANDROIDS
             Scribe_Values.Look<bool>(ref this.paintingIsRusted, "ATPP_paintingIsRusted", false);
             Scribe_Values.Look<bool>(ref this.downedViaDisconnect, "ATPP_downedViaDisconnect", true);
             Scribe_Values.Look<bool>(ref this.lastSkymindDisconnectIsManual, "ATPP_lastSkymindDisconnectIsManualCAS", false);
-            
-
-
-
+   
 
             Scribe_Values.Look<int>(ref batteryExplosionEndingGT, "ATPP_batteryExplosionEndingGT", -1);
 
@@ -328,17 +325,17 @@ namespace MOARANDROIDS
                         Pawn p2 = (Pawn)GenClosest.ClosestThing_Global(currentPawn.Position, currentPawn.Map.mapPawns.SpawnedPawnsInFaction(currentPawn.Faction), 99999f, (Thing p) => p != currentPawn && ((Pawn)p).GetLord() != null, null);
                         lordInvolved = p2.GetLord();
                     }
-                    if (lordInvolved == null && !currentPawn.IsPrisoner)
+                    if (lordInvolved == null && !(currentPawn.IsPrisoner || currentPawn.IsSlave))
                     {
-                        LordJob_DefendPoint lordJob = new LordJob_DefendPoint(currentPawn.Position);
+                        LordJob_ExitMapBest lordJob = new LordJob_ExitMapBest();
                         lordInvolved = LordMaker.MakeNewLord(currentPawn.Faction, lordJob, Find.CurrentMap, null);
                     }
 
 
-                    //Si controlleur non player du surrogate mort OU surrogate hacké avais un lors il existe tjr mais il n'est plus actif
+                    //If non-player controller of the surrogate id dead OR hacked surrogate had one when it still exists but it is no longer active
                     if (externalController.Dead || (csm != null && csm.hackOrigFaction.HostileTo(Faction.OfPlayer) && lordInvolved == null && !currentPawn.IsPrisoner))
                     {
-                        //Rajout NoHost car comme en mode externalController on a pas remis le hediff pour eviter le bug bizard faisant que quand tentative integration ennemis hacké a un lord sa merdequand il a été down
+                        //Addition of NoHost because as in externalController mode we have not reset the hediff to avoid the weird bug that when attempting to integrate enemies hacked has a lord its bug when it was down
                         addNoRemoteHostHediff();
                         externalController = null;
                     }
@@ -346,7 +343,7 @@ namespace MOARANDROIDS
                     {
                         try
                         {
-                            //Try auto-reconnect to surrogate to his external controle (with this time the connection init malus)
+                            //Try auto-reconnect to surrogate to his external controller (with this time the connection init malus)
                             CompSurrogateOwner cso = Utils.getCachedCSO(externalController);
                             cso.setControlledSurrogate((Pawn)parent, true, true);
                             currentPawn.mindState.Reset();
@@ -367,11 +364,12 @@ namespace MOARANDROIDS
 
                         try
                         {
+                            //If the lord is a siege lord, then proceed to some custom adaptations
                             if (lordInvolved != null && lordInvolved.CurLordToil is LordToil_Siege)
                             {
                                 LordToil_Siege st = (LordToil_Siege)lordInvolved.CurLordToil;
 
-                                //Attribution job defender au pawn
+                                //Job defender attribution to the pawn
                                 Pawn p = (Pawn)parent;
                                 //Traverse.Create( st ).Method("SetAsDefender").GetValue((Pawn)parent);
                                 LordToilData_Siege data = (LordToilData_Siege)Traverse.Create(st).Property("Data").GetValue();
@@ -384,9 +382,10 @@ namespace MOARANDROIDS
                         {
 
                         }
-
                         //Log.Message("Current duty ==>"+cp.mindState.duty.def.defName);
                         //Log.Message("Current job ==>" + cp.CurJobDef.defName);
+
+                    
                     }
                 }
             }
@@ -1683,5 +1682,7 @@ namespace MOARANDROIDS
         //Store if for the last downing of the surrogate, if it was downed via disconnect or other way
         public bool downedViaDisconnect = true;
         public bool lastSkymindDisconnectIsManual = false;
+
+       
     }
 }

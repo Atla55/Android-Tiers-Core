@@ -19,6 +19,10 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Corpse corpse, ref bool __result)
             {
+                //No need for extra processing
+                if (!__result)
+                    return;
+
                 Pawn p = corpse.InnerPawn;
                 if (p != null && p.IsBasicAndroidTier() || Utils.pawnCurrentlyControlRemoteSurrogate(p) || (p.story != null && p.story.traits.HasTrait(TraitDefOf.SimpleMindedAndroid)))
                     __result = false;

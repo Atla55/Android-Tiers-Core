@@ -67,6 +67,9 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Corpse __instance, ref bool __result)
             {
+                if (!__result)
+                    return;
+
                 if (__instance.InnerPawn.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
                 {
                         __result = false;

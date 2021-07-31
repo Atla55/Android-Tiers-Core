@@ -153,6 +153,8 @@
 					<li>Pain</li>
 					<li>ArtifactMoodBoost</li>
 					<li>DeadMansApparel</li>
+					<li>EnvironmentCold</li>
+					<li>EnvironmentHot</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

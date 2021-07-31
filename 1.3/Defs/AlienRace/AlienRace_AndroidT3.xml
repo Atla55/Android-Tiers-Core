@@ -135,6 +135,8 @@
 					<li>NeedFood</li>
 					<li>Naked</li>
 					<li>Pain</li>
+					<li>EnvironmentCold</li>
+					<li>EnvironmentHot</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

@@ -162,6 +162,8 @@
 					<li>KnowColonistDied</li>
 					<li>PawnWithGoodOpinionDied</li>
 					<li>KindWordsMood</li>
+					<li>EnvironmentCold</li>
+					<li>EnvironmentHot</li>
 				</cannotReceiveThoughts>
 			</thoughtSettings>
 			<relationSettings>

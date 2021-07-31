@@ -313,6 +313,8 @@ namespace MOARANDROIDS
         {
             CompAndroidState cas = Utils.getCachedCAS(___pawn);
             Pawn value = Traverse.Create(__instance).Field("pawn").GetValue<Pawn>();
+            
+            
             if(value.kindDef == MOARANDROIDS.PawnKindDefOf.MicroScyther || value.kindDef == MOARANDROIDS.PawnKindDefOf.AbominationAtlas || (value.kindDef == MOARANDROIDS.PawnKindDefOf.M7MechPawn && !cas.isSurrogate))
             {
                 value.Kill(null);

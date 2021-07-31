@@ -36,22 +36,5 @@ namespace MOARANDROIDS
                 }
             }
         }
-
-        /*
-         * Pawn inside SkyCloud are not interpreted and suspended 
-         */
-        /*[HarmonyPatch(typeof(Thing), "get_Suspended")]
-        public class Suspended_Patch
-        {
-            [HarmonyPostfix]
-            public static void Listener(Thing __instance, ref bool __result)
-            {
-                if (!__instance.Spawned && __instance is Pawn) {
-                    CompSurrogateOwner cso = ((Pawn)__instance).TryGetComp<CompSurrogateOwner>();
-                    if (cso != null && cso.skyCloudHost != null)
-                        __result = true;
-                }
-            }
-        }*/
     }
 }

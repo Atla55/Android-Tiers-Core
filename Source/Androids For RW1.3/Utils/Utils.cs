@@ -90,13 +90,9 @@ namespace MOARANDROIDS
         public static bool preventVX0Thought = false;
 
 
-
-
-        
         public static ThingDef ATPP_MoteBIII;
         public static ThingDef ATPP_MoteBII;
         public static ThingDef ATPP_MoteBI;
-
 
         public static WorkTypeDef WorkTypeDefSmithing;
 

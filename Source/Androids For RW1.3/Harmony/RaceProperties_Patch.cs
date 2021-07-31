@@ -22,6 +22,10 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ThingDef t, ref bool __result, FleshTypeDef ___fleshType, float ___gestationPeriodDays)
             {
+                //Prevent extra-processing
+                if (!__result)
+                    return;
+
                 if (___fleshType != FleshTypeDefOfAT.AndroidTier)
                     return;
 

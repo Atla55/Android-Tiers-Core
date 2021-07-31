@@ -20,6 +20,9 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Thing thing, ref bool __result)
             {
+                if (!__result)
+                    return;
+
                 if(thing is Corpse)
                 {
                     Corpse cp = (Corpse)thing;

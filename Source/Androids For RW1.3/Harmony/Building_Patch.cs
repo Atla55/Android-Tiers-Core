@@ -20,6 +20,9 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Replacement(Building __instance, ref bool __result, Faction by)
             {
+                if (!__result)
+                    return;
+
                 CompSkyMind csm = Utils.getCachedCSM(__instance);
                 //Added check if building is virused or hacked => no claim possible
                 if ( (csm != null && csm.Infected != -1))

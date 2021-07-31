@@ -21,6 +21,10 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(Pawn p, ref ThoughtState __result)
             {
+                //Already disabled => no more processing required
+                if (!__result.Active)
+                    return;
+
                 if (p.IsBasicAndroidTier() || p.IsSurrogateAndroid(false, true))
                 {
                     __result = ThoughtState.Inactive;

@@ -1224,7 +1224,7 @@ namespace MOARANDROIDS
          */
         public bool isThereSX()
         {
-            return SX != null || extraSX.Count > 0;
+            return SX != null || (extraSX != null && extraSX.Count > 0);
         }
 
         public void stopControlledSurrogate(Pawn surrogate, bool externalController=false, bool preventNoHost=false,bool noPrisonedSurrogateConversion=false, bool _downedViaDisconnect = true)

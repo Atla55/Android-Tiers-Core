@@ -18,6 +18,9 @@ namespace MOARANDROIDS
             [HarmonyPostfix]
             public static void Listener(ref bool __result, ref Caravan __instance)
             {
+                if (!__result)
+                    return;
+
                 if( !__instance.pawns.InnerListForReading.Any(p => !(p.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)))
                 {
                     __result = false;
