@@ -51,7 +51,7 @@
 
 	<ResearchProjectDef>
 		<defName>BasicEnhancement</defName>
-		<label>Basic enchancements</label>
+		<label>Basic enhancements</label>
 		<tab>AtlasAndroids</tab>
 		<description>Research into basic consumable enhancements that aid mechanical pawns for a short amount of time.</description>
 		<baseCost>400</baseCost>
@@ -63,7 +63,7 @@
 	
 	<ResearchProjectDef>
 		<defName>AdvEnhancement</defName>
-		<label>Advanced enchancements</label>
+		<label>Advanced enhancements</label>
 		<tab>AtlasAndroids</tab>
 		<description>Research into highly advanced consumable enhancements that give the pawn an immense level of ability for a short amount of time.</description>
 		<baseCost>1200</baseCost>
