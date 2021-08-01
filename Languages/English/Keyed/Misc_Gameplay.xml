@@ -176,8 +176,8 @@
 	<ATPP_LetterExternalSurrogateControllerJoin>Ex-prisonner joined</ATPP_LetterExternalSurrogateControllerJoin>
 	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} a surrogate controller that you imprisoned and successfully converted has just arrived at your colony and joined you.</ATPP_LetterExternalSurrogateControllerJoinDesc>
 	
-	<ATPP_LetterExternalSurrogateControllerJoin>Ex-prisonner fail to join</ATPP_LetterExternalSurrogateControllerJoin>
-	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} a surrogate controller that you imprisoned and successfully converted has tried to reach your colony, but for some unknown reason was unsuccessful and therefore left.</ATPP_LetterExternalSurrogateControllerJoinDesc>
+	<ATPP_LetterExternalSurrogateControllerCannotJoin>Ex-prisonner fail to join</ATPP_LetterExternalSurrogateControllerCannotJoin>
+	<ATPP_LetterExternalSurrogateControllerCannotJoinDesc>{0} a surrogate controller that you imprisoned and successfully converted has tried to reach your colony, but for some unknown reason was unsuccessful and therefore left.</ATPP_LetterExternalSurrogateControllerCannotJoinDesc>
 	
 	<ATPP_LetterExternalSurrogateDisconnect>Controller disconnection</ATPP_LetterExternalSurrogateDisconnect>
 	<ATPP_LetterExternalSurrogateDisconnectDesc>{0} the controller of the surrogate you tried to enslave disconnected because he and his faction feels they will no longer be able to get information from your colony and continue as a slave would be a waste of time.</ATPP_LetterExternalSurrogateDisconnectDesc>

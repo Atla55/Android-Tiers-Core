@@ -173,8 +173,8 @@
 	<ATPP_LetterExternalSurrogateControllerJoin>Ancien prisonnier joint</ATPP_LetterExternalSurrogateControllerJoin>
 	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} un contrôleur d'androide de substitution que vous aviez emprisonné puis converti avec succès vient d'arriver dans votre colonie et vous a rejoint.</ATPP_LetterExternalSurrogateControllerJoinDesc>
 	
-	<ATPP_LetterExternalSurrogateControllerJoin>Ancien prisonnier ne peut pas joindre</ATPP_LetterExternalSurrogateControllerJoin>
-	<ATPP_LetterExternalSurrogateControllerJoinDesc>{0} un contrôleur d'androide de substitution que vous aviez emprisonné puis converti avec succès à essayé de rejoindre votre colonie mais n'à pas réussi et est donc repartis.</ATPP_LetterExternalSurrogateControllerJoinDesc>
+	<ATPP_LetterExternalSurrogateControllerCannotJoin>Ancien prisonnier ne peut pas joindre</ATPP_LetterExternalSurrogateControllerCannotJoin>
+	<ATPP_LetterExternalSurrogateControllerCannotJoinDesc>{0} un contrôleur d'androide de substitution que vous aviez emprisonné puis converti avec succès à essayé de rejoindre votre colonie mais n'à pas réussi et est donc repartis.</ATPP_LetterExternalSurrogateControllerCannotJoinDesc>
 	
 	<ATPP_LetterExternalSurrogateDisconnect>Déconnexion contrôlleur</ATPP_LetterExternalSurrogateDisconnect>
 	<ATPP_LetterExternalSurrogateDisconnectDesc>{0} le contrôleur de l'androide de substitution que vous avez essayé de mettre en esclavage s'est déconnecté, parce que lui et sa faction pensent qu'ils ne pourront plus obtenir d'informations de votre colonie, continuer en tant qu'esclave serait une perte de temps.</ATPP_LetterExternalSurrogateDisconnectDesc>
