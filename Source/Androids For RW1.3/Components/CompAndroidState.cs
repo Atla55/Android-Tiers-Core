@@ -40,6 +40,7 @@ namespace MOARANDROIDS
             Scribe_References.Look(ref droppedWeapon, "ATPP_droppedWeapon");
 
             Scribe_Values.Look<int>(ref batteryExplosionEndingGT, "ATPP_batteryExplosionEndingGT", -1);
+            Scribe_Values.Look<int>(ref batteryExplosionStartingGT, "ATPP_batteryExplosionStartingGT", -1);
 
 
             Scribe_Values.Look<int>(ref customColor, "ATPP_customColor", (int)AndroidPaintColor.Default);
