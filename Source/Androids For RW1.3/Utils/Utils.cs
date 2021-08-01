@@ -888,6 +888,8 @@ namespace MOARANDROIDS
                 {
                     return false;
                 }
+                else
+                    return true;
             }
 
             //Medecin normal on jerte si t est un android
