@@ -124,7 +124,8 @@ namespace MOARANDROIDS
             if (isOrganic)
                 useBattery = false;
 
-            Utils.GCATPP.pushSurrogateAndroid(currentPawn);
+            if(isSurrogate)
+                Utils.GCATPP.pushSurrogateAndroid(currentPawn);
 
             //Suppression traits blacklistés le cas echeant
             if (isAndroidTier && (!isSurrogate || (isSurrogate && surrogateController != null && surrogateController.IsAndroidTier())))
