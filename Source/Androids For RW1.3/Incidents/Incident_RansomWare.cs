@@ -52,10 +52,15 @@ namespace MOARANDROIDS
             //Bad traits added
             if (Rand.Chance(0.5f))
             {
-                List<TraitDef> tr = Utils.RansomAddedBadTraits.ToList();
+                List<TraitDef> tr;
+                if (victim.IsAndroid())
+                    tr = Utils.RansomAddedBadTraitsAndroid.ToList();
+                else
+                    tr = Utils.RansomAddedBadTraits.ToList();
+
 
                 //Purge des traits deja possédé par la victime ET incompatibles avec ceux present
-                foreach(var t in Utils.RansomAddedBadTraits)
+                foreach (var t in Utils.RansomAddedBadTraits)
                 {
                     foreach(var t2 in victim.story.traits.allTraits)
                     {
@@ -71,6 +76,13 @@ namespace MOARANDROIDS
                 //Selection trait aleatoire ajouté
                 cso.ransomwareTraitAdded = tr.RandomElement();
                 victim.story.traits.GainTrait(new Trait(cso.ransomwareTraitAdded, 0, true));
+
+                //If trait is disabled or cannot be applied then we cancel this incident
+                if (!victim.story.traits.HasTrait(cso.ransomwareTraitAdded))
+                {
+                    cso.clearRansomwareVar();
+                    return false;
+                }
 
                 fee = Rand.Range(Settings.ransomwareMinSilverToPayForBasTrait, Settings.ransomwareMaxSilverToPayForBasTrait);
 

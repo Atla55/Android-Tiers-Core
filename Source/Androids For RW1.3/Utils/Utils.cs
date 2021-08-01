@@ -103,7 +103,8 @@ namespace MOARANDROIDS
         public static List<MentalBreakDef> VirusedRandomMentalBreak = new List<MentalBreakDef>();
 
         public static List<TraitDef> RansomAddedBadTraits = new List<TraitDef>();
-        
+        public static List<TraitDef> RansomAddedBadTraitsAndroid = new List<TraitDef>();
+
         //public static Color SXColor = new Color(0.463f, 0.62f, 0.463f);
         public static Color SXColor = new Color(0.280f, 0.280f, 0.280f);
 

@@ -810,6 +810,15 @@ namespace MOARANDROIDS
                             Utils.RansomAddedBadTraits.Add(t);
                     }
 
+                    selTraits = new List<string> { "Brawler", "Ascetic", "Gourmand", "SlowLearner", "Undergrounder", "DislikesMen", "DislikesWomen" };
+
+                    foreach (var st in selTraits)
+                    {
+                        t = DefDatabase<TraitDef>.GetNamed(st, false);
+                        if (t != null)
+                            Utils.RansomAddedBadTraitsAndroid.Add(t);
+                    }
+
                     //Si presence HellUnit ajout schema creation surrogate, sinon suppression recipedefs
                     RecipeDef recipHU = DefDatabase<RecipeDef>.GetNamed("ATPP_CreateHellDrone");
                     ThingDef tdHU = DefDatabase<ThingDef>.GetNamed("ATPP_SHUSurrogateGeneratorAI");
