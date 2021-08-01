@@ -9,6 +9,10 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static bool batteryLevelDetermineExplosionIntensity = true;
+        public static int androidOverloadExplosionType = 0;
+        public static int m7OverloadRadius = 12;
+        public static int androidOverloadRadius = 5;
         public static int nbMinHoursBeforeKidnappedM8Disconnected = 6;
         public static int nbMaxHoursBeforeKidnappedM8Disconnected = 48;
         public static float chanceRecruitedSurrogateControllerCanEscapeAndJoin = 0.65f;
@@ -216,6 +220,12 @@ namespace MOARANDROIDS
             list.CheckboxLabeled("ATPP_SettingsAllowAndroidsToUseHospitalBeds".Translate(), ref allowAndroidToUseHospitalBed);
             list.CheckboxLabeled("ATPP_SettingsAllowSurrogateConnectionInitMalus".Translate(), ref allowSurrogateConnectionInitMalus);
             list.CheckboxLabeled("ATPP_SettingsVX0KeepBodyBackstory".Translate(), ref keepPuppetBackstory);
+
+            list.Label("ATPP_SettingsMinDaysBeforeAndroidsPaintingCanRust".Translate(minDaysAndroidPaintingCanRust));
+            minDaysAndroidPaintingCanRust = (int)list.Slider(minDaysAndroidPaintingCanRust, 1, 200);
+
+            list.Label("ATPP_SettingsMinDaysBeforeAndroidsPaintingCanRust".Translate(minDaysAndroidPaintingCanRust));
+            minDaysAndroidPaintingCanRust = (int)list.Slider(minDaysAndroidPaintingCanRust, 1, 200);
 
             if (Utils.ANDROIDTIERSGYNOID_LOADED)
             {
@@ -499,8 +509,6 @@ namespace MOARANDROIDS
 
             list.Label("ATPP_SettingsCharchingStationWattIncrease".Translate("NSolution"));
             list.TextFieldNumeric(ref wattConsumedByFENNEC, ref buffWattConsumedByFENNEC, 1, 999999);
-
-            
 
 
             list.GapLine();
@@ -816,8 +824,31 @@ namespace MOARANDROIDS
             list.Label("ATPP_SettingsMindDuplicationDuration".Translate((int)(mindDuplicationHours)));
             mindDuplicationHours = (int)list.Slider(mindDuplicationHours, 1, 72);
 
+            list.Gap(3);
+            list.GapLine();
+            list.Gap(10);
+            GUI.color = Color.cyan;
+            list.Label("ATPP_SettingsSectionBatteryOverload".Translate());
+            GUI.color = Color.white;
+            list.Gap(10);
+            list.GapLine();
 
-            
+            list.CheckboxLabeled("ATPP_SettingsAndroidOverloadBatteryProrata".Translate(), ref batteryLevelDetermineExplosionIntensity);
+
+            list.Label("ATPP_SettingsAndroidOverloadRadius".Translate(androidOverloadRadius));
+            androidOverloadRadius = (int)list.Slider(androidOverloadRadius, 1, 50);
+
+            list.Label("ATPP_SettingsM7OverloadRadius".Translate(m7OverloadRadius));
+            m7OverloadRadius = (int)list.Slider(m7OverloadRadius, 1, 50);
+
+            GUI.color = Color.yellow;
+            list.Label("ATPP_SettingsAndroidOverloadExplosionType".Translate());
+            GUI.color = Color.white;
+            if (list.RadioButton("ATPP_SettingsAndroidOverloadExplosionTypeDefault".Translate(), (androidOverloadExplosionType == 0)))
+                androidOverloadExplosionType = 0;
+            if (list.RadioButton("ATPP_SettingsAndroidOverloadExplosionTypeFire".Translate(), (androidOverloadExplosionType == 1)))
+                androidOverloadExplosionType = 1;
+
 
             list.End();
             Widgets.EndScrollView();
@@ -1015,6 +1046,11 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref nbMaxHoursBeforeKidnappedM8Disconnected, "nbMaxHoursBeforeKidnappedM8Disconnected", 48);
             Scribe_Values.Look<int>(ref nbMinHoursBeforeKidnappedM8Disconnected, "nbMinHoursBeforeKidnappedM8Disconnected", 6);
 
+            Scribe_Values.Look<int>(ref androidOverloadExplosionType, "androidOverloadExplosionType", 0);
+            Scribe_Values.Look<int>(ref androidOverloadRadius, "androidOverloadRadius", 5);
+            Scribe_Values.Look<int>(ref m7OverloadRadius, "m7OverloadRadius", 12);
+            Scribe_Values.Look<bool>(ref batteryLevelDetermineExplosionIntensity, "batteryLevelDetermineExplosionIntensity", true);
+            
         }
     }
 }

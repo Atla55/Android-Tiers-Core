@@ -399,6 +399,7 @@
 	<ATPP_SettingsSectionVX2>VX2 Neural Chip</ATPP_SettingsSectionVX2>
 	<ATPP_SettingsSectionVX3>VX3 Neural Chip</ATPP_SettingsSectionVX3>
 	<ATPP_SettingsSectionSkills>T1/T2 skills</ATPP_SettingsSectionSkills>
+	<ATPP_SettingsSectionBatteryOverload>Battery overload</ATPP_SettingsSectionBatteryOverload>
 	
 	<ATPP_SettingsDefaultAndroidGeneratorMode>Android default energy mode:</ATPP_SettingsDefaultAndroidGeneratorMode>
 	<ATPP_SettingsDefaultAndroidGeneratorModeBiomass>Use biomass generator (they eat)</ATPP_SettingsDefaultAndroidGeneratorModeBiomass>
@@ -506,4 +507,11 @@
 	<ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin>Chance recruited surrogate controller join your faction without being arrested ({0}%)</ATPP_SettingsChanceRecruitedSurrogateControllerCanEscapeAndJoin>
 	<ATPP_SettingsMinHourBeforeKidnapperDisconnectM8>Minimum number of hours before kidnapped M8 will be disconnected from SkyMind ({0}h)</ATPP_SettingsMinHourBeforeKidnapperDisconnectM8>
 	<ATPP_SettingsMaxHourBeforeKidnapperDisconnectM8>Maximum number of hours before kidnapped M8 will be disconnected from SkyMind ({0}h)</ATPP_SettingsMaxHourBeforeKidnapperDisconnectM8>
+	
+	<ATPP_SettingsAndroidOverloadBatteryProrata>The power of the explosion and proportional to the battery level</ATPP_SettingsAndroidOverloadBatteryProrata>
+	<ATPP_SettingsAndroidOverloadRadius>Android explosion radius ({0})</ATPP_SettingsAndroidOverloadRadius>
+	<ATPP_SettingsM7OverloadRadius>M7 explosion radius ({0})</ATPP_SettingsM7OverloadRadius>
+	<ATPP_SettingsAndroidOverloadExplosionType>Type of explosion</ATPP_SettingsAndroidOverloadExplosionType>
+	<ATPP_SettingsAndroidOverloadExplosionTypeDefault>Fragmentation</ATPP_SettingsAndroidOverloadExplosionTypeDefault>
+	<ATPP_SettingsAndroidOverloadExplosionTypeFire>Incendiary</ATPP_SettingsAndroidOverloadExplosionTypeFire>
 </LanguageData>

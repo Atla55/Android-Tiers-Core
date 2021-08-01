@@ -2885,24 +2885,31 @@ namespace MOARANDROIDS
         {
             float batteryLevel = 1.0f;
 
-            if(android.needs.food != null)
-                batteryLevel = android.needs.food.CurLevelPercentage;
+            if (Settings.batteryLevelDetermineExplosionIntensity)
+            {
+                if (android.needs.food != null)
+                    batteryLevel = android.needs.food.CurLevelPercentage;
+            }
 
             float radius = 0;
 
             if (android.def.defName == Utils.M7)
             {
-                radius =  12 * batteryLevel;
+                radius =  Settings.m7OverloadRadius * batteryLevel;
             }
             else
             {
-                radius = 5 * batteryLevel;
+                radius = Settings.androidOverloadRadius * batteryLevel;
             }
 
             if (radius == 0)
                 radius = 1;
 
-            GenExplosion.DoExplosion(android.Position, android.Map, radius, DamageDefOf.Bomb, android, -1, -1f, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
+            DamageDef ddf = DamageDefOf.Bomb;
+            if (Settings.androidOverloadExplosionType == 1)
+                ddf = DamageDefOf.Flame;
+
+            GenExplosion.DoExplosion(android.Position, android.Map, radius, ddf, android, -1, -1f, null, null, null, null, null, 0f, 1, false, null, 0f, 1, 0f, false);
 
             if (!android.Dead)
                 android.Kill(null, null);
