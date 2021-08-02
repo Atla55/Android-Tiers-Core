@@ -201,8 +201,11 @@ namespace MOARANDROIDS
             Listing_Standard list = new Listing_Standard() { ColumnWidth = defaultColumnWidth };
 
 
+            float coef = 12f;
+            if (!basicAndroidsRandomSKills)
+                coef = 16f;
             var outRect = new Rect(inRect.x, inRect.y, inRect.width, inRect.height);
-            var scrollRect = new Rect(0f, 0f, inRect.width - 16f, inRect.height * 12f);
+            var scrollRect = new Rect(0f, 0f, inRect.width - 16f, inRect.height * coef);
             Widgets.BeginScrollView(outRect, ref scrollPosition, scrollRect, true);
 
             list.Begin(scrollRect);
