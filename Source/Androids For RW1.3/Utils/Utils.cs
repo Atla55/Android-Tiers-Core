@@ -2803,6 +2803,22 @@ namespace MOARANDROIDS
 
         }
 
+        public static void applyT1TechResearch()
+        {
+            ResearchProjectDef rd = DefDatabase<ResearchProjectDef>.GetNamed("T1Androids", false);
+            if (rd == null)
+                return;
+
+            if (Settings.setT1ResearchToIndustrialTechLevel)
+            {
+                rd.techLevel = TechLevel.Industrial;
+            }
+            else
+            {
+                rd.techLevel = TechLevel.Spacer;
+            }
+        }
+
         public static void applyT5ClothesPolicy()
         {
             try

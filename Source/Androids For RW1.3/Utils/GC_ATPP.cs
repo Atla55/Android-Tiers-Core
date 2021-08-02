@@ -126,6 +126,16 @@ namespace MOARANDROIDS
                         Log.Message("[ATPP] applyT5ClothesPolicy " + ex.Message + " " + ex.StackTrace);
                     }
 
+                    //Apply T1 tech research policy
+                    try
+                    {
+                        Utils.applyT1TechResearch();
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Message("[ATPP] applyT1TechResearch " + ex.Message + " " + ex.StackTrace);
+                    }
+
                     RecipeDef r = DefDatabase<RecipeDef>.GetNamed("ATPP_DisassembleAndroid", false);
                     //add to disallowedThings all alien race creatures except those provided by this pod ATPP_DisassembleAndroid
                     ThingCategoryDef tcd = DefDatabase<ThingCategoryDef>.GetNamed("alienCorpseCategory", false);

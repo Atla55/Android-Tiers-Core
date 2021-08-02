@@ -9,6 +9,7 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static bool setT1ResearchToIndustrialTechLevel = false;
         public static bool batteryLevelDetermineExplosionIntensity = true;
         public static int androidOverloadExplosionType = 0;
         public static int m7OverloadRadius = 12;
@@ -233,11 +234,19 @@ namespace MOARANDROIDS
 
 
             bool prevAllowT5ToWearClothes = allowT5ToWearClothes;
+            bool prevSetT1ResearchToIndustrialTechLevel = setT1ResearchToIndustrialTechLevel;
             list.CheckboxLabeled("ATPP_SettingsAllowT5ToWearClothes".Translate(), ref allowT5ToWearClothes);
+            list.CheckboxLabeled("ATPP_SettingsSetT1ResearchToIndustrialTechLevel".Translate(), ref setT1ResearchToIndustrialTechLevel);
+            
 
-            if(allowT5ToWearClothes != prevAllowT5ToWearClothes)
+            if (allowT5ToWearClothes != prevAllowT5ToWearClothes)
             {
                 Utils.applyT5ClothesPolicy();
+            }
+
+            if (setT1ResearchToIndustrialTechLevel != prevSetT1ResearchToIndustrialTechLevel)
+            {
+                Utils.applyT1TechResearch();
             }
 
             if (Utils.POWERPP_LOADED)
@@ -1049,7 +1058,7 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref androidOverloadRadius, "androidOverloadRadius", 5);
             Scribe_Values.Look<int>(ref m7OverloadRadius, "m7OverloadRadius", 12);
             Scribe_Values.Look<bool>(ref batteryLevelDetermineExplosionIntensity, "batteryLevelDetermineExplosionIntensity", true);
-            
+            Scribe_Values.Look<bool>(ref setT1ResearchToIndustrialTechLevel, "setT1ResearchToIndustrialTechLevel", false);
         }
     }
 }

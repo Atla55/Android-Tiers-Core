@@ -514,4 +514,5 @@
 	<ATPP_SettingsAndroidOverloadExplosionType>Type of explosion</ATPP_SettingsAndroidOverloadExplosionType>
 	<ATPP_SettingsAndroidOverloadExplosionTypeDefault>Fragmentation</ATPP_SettingsAndroidOverloadExplosionTypeDefault>
 	<ATPP_SettingsAndroidOverloadExplosionTypeFire>Incendiary</ATPP_SettingsAndroidOverloadExplosionTypeFire>
+	<ATPP_SettingsSetT1ResearchToIndustrialTechLevel>Change T1 research to be industrial tech level instead of spacer</ATPP_SettingsSetT1ResearchToIndustrialTechLevel>
 </LanguageData>
