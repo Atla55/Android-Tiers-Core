@@ -1041,6 +1041,7 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref nbMaxHoursBeforeKidnappedM8Disconnected, "nbMaxHoursBeforeKidnappedM8Disconnected", 48);
             Scribe_Values.Look<int>(ref nbMinHoursBeforeKidnappedM8Disconnected, "nbMinHoursBeforeKidnappedM8Disconnected", 6);
 
+            Scribe_Values.Look<float>(ref chanceRecruitedSurrogateControllerCanEscapeAndJoin, "chanceRecruitedSurrogateControllerCanEscapeAndJoin", 0.65f);
             Scribe_Values.Look<int>(ref androidOverloadExplosionType, "androidOverloadExplosionType", 0);
             Scribe_Values.Look<int>(ref androidOverloadRadius, "androidOverloadRadius", 5);
             Scribe_Values.Look<int>(ref m7OverloadRadius, "m7OverloadRadius", 12);
