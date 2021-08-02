@@ -59,14 +59,6 @@ namespace MOARANDROIDS
                 Log.Message("[ATPP] BIRDS AND BEES found");
             }
 
-            Assembly assemblyPrisonLabor = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault((Assembly assembly) => assembly.FullName.ToLower().StartsWith("prisonlabor"));
-            if (assemblyPrisonLabor != null)
-            {
-                Utils.PRISONLABOR_LOADED = true;
-                Utils.prisonLaborAssembly = assemblyPrisonLabor;
-                Log.Message("[ATPP] Prison Labor found");
-            }
-
             Assembly assemblySaveOurShip2 = AppDomain.CurrentDomain.GetAssemblies().FirstOrDefault((Assembly assembly) => assembly.FullName.ToLower().StartsWith("shipshaveinsides"));
             if (assemblySaveOurShip2 != null)
             {

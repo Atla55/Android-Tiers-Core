@@ -521,49 +521,6 @@ namespace MOARANDROIDS
                         }
                     }*/
 
-                    //PRISON LABOR Patching
-                    if (Utils.PRISONLABOR_LOADED)
-                    {
-                        try
-                        {
-                            MethodInfo postfix = null;
-                            MethodInfo original =null;
-                            MethodInfo prefix = null;
-
-                            //Utils.harmonyInstance;
-                            Type t1 = Utils.prisonLaborAssembly.GetType("PrisonLabor.Core.PrisonLaborUtility");
-
-                            //Try for old release
-                            if (t1 == null)
-                            {
-                                Log.Message("[ATPP] PrisonLabor V1 not detected trying add compatibility with old release");
-
-                                original = Utils.prisonLaborAssembly.GetType("PrisonLabor.PrisonLaborUtility").GetMethod("WorkTime", BindingFlags.Static | BindingFlags.Public);
-                                prefix = typeof(CPaths).GetMethod("PrisonLabor_WorkTimePrefix", BindingFlags.Static | BindingFlags.Public);
-                                Utils.harmonyInstance.Patch(original, new HarmonyMethod(prefix));
-
-                                original = Utils.prisonLaborAssembly.GetType("PrisonLabor.Need_Motivation").GetMethod("get_LazinessRate", BindingFlags.Instance | BindingFlags.NonPublic);
-                                prefix = typeof(CPaths).GetMethod("PrisonLabor_GetChangePointsPrefix", BindingFlags.Static | BindingFlags.Public);
-                                postfix = typeof(CPaths).GetMethod("PrisonLabor_GetChangePointsPostfix", BindingFlags.Static | BindingFlags.Public);
-                            }
-                            else {
-                                original = t1.GetMethod("WorkTime", BindingFlags.Static | BindingFlags.Public);
-                                prefix = typeof(CPaths).GetMethod("PrisonLabor_WorkTimePrefix", BindingFlags.Static | BindingFlags.Public);
-                                Utils.harmonyInstance.Patch(original, new HarmonyMethod(prefix));
-
-                                original = Utils.prisonLaborAssembly.GetType("PrisonLabor.Core.Needs.Need_Motivation").GetMethod("GetChangePoints", BindingFlags.Instance | BindingFlags.NonPublic);
-                                prefix = typeof(CPaths).GetMethod("PrisonLabor_GetChangePointsPrefix", BindingFlags.Static | BindingFlags.Public);
-                                postfix = typeof(CPaths).GetMethod("PrisonLabor_GetChangePointsPostfix", BindingFlags.Static | BindingFlags.Public);
-                            }
-
-                            Utils.harmonyInstance.Patch(original, new HarmonyMethod(prefix), new HarmonyMethod(postfix));
-                        }
-                        catch (Exception e)
-                        {
-                            Log.Message("[ATPP] PrisonLaborPatching " + e.Message + " " + e.StackTrace);
-                        }
-                    }
-
                     //SoS2 patching
                     if (Utils.SAVEOURSHIP2_LOADED)
                     {

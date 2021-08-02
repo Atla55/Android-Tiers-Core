@@ -27,7 +27,6 @@ namespace MOARANDROIDS
         static public bool CELOADED = false;
         static public bool MEDICINEPATCH_LOADED = false;
         static public bool BIRDSANDBEES_LOADED = false;
-        static public bool PRISONLABOR_LOADED = false;
         static public bool SAVEOURSHIP2_LOADED = false;
         static public bool WORKTAB_LOADED = false;
         static public bool HOSPITALITY_LOADED = false;
@@ -57,7 +56,6 @@ namespace MOARANDROIDS
         public static Assembly smartMedicineAssembly;
         public static Assembly medicinePatchAssembly;
         public static Assembly androidTiersAssembly;
-        public static Assembly prisonLaborAssembly;
         public static Assembly saveOurShip2Assembly;
         public static Assembly hospitalityAssembly;
         public static Assembly searchAndDestroyAssembly;

@@ -36,49 +36,6 @@ namespace MOARANDROIDS
 
         public static Need_DummyRest dummyRest;
 
-        public static bool PrisonLabor_WorkTimePrefix(Pawn pawn, ref bool __result)
-        {
-            if (pawn != null && pawn.IsAndroidTier())
-            {
-                if (pawn.timetable == null)
-                    __result = true;
-                else if (pawn.timetable.CurrentAssignment == TimeAssignmentDefOf.Work)
-                    __result = true;
-                else if (pawn.timetable.CurrentAssignment == TimeAssignmentDefOf.Anything)
-                {
-                    if (HealthAIUtility.ShouldSeekMedicalRest(pawn) ||
-                        pawn.health.hediffSet.HasTemperatureInjury(TemperatureInjuryStage.Serious) ||
-                        pawn.needs.food.CurCategory > HungerCategory.Hungry)
-                        __result = false;
-                    else
-                        __result = true;
-                }
-                else
-                    __result = false;
-
-                return false;
-            }
-
-            return true;
-        }
-
-        public static bool PrisonLabor_GetChangePointsPrefix(ref bool __result, Pawn ___pawn)
-        {
-            if (___pawn.IsAndroidTier())
-            {
-                ___pawn.needs.rest = (Need_Rest)dummyRest;
-            }
-            return true;
-        }
-
-        public static void PrisonLabor_GetChangePointsPostfix(ref bool __result, Pawn ___pawn)
-        {
-            if (___pawn.IsAndroidTier())
-            {
-                ___pawn.needs.rest = null;
-            }
-        }
-
 
 
         public static void SaveOurShip2_hasSpaceSuit(Pawn thePawn, ref bool __result)
