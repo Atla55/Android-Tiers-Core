@@ -30,7 +30,6 @@ namespace MOARANDROIDS
                     {
                         if (list[i].Ideo != p.Ideo)
                         {
-                            Log.Message("=>" + list[i].LabelCap);
                             __result = false;
                             return false;
                         }

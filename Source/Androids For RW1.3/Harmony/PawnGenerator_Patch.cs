@@ -119,7 +119,6 @@ namespace MOARANDROIDS
                     {
                         if(__result.def.defName == Utils.M7 || __result.def.defName == Utils.T5 || (__result.def.defName == Utils.M8 && Current.Game.Scenario != null && Current.Game.Scenario.name != "Androids apocalypse"))
                         {
-                            Log.Message("=>"+Current.Game.Scenario.name);
                             PawnGenerationRequest r = new PawnGenerationRequest(Utils.AndroidsPKDNeutral.RandomElement(), request.Faction, request.Context, request.Tile, request.ForceGenerateNewPawn, request.Newborn,
                                 request.AllowDead, request.AllowDowned, request.CanGeneratePawnRelations, request.MustBeCapableOfViolence, request.ColonistRelationChanceFactor,
                                 request.ForceAddFreeWarmLayerIfNeeded, request.AllowGay, request.AllowFood, request.AllowAddictions, request.Inhabitant, request.CertainlyBeenInCryptosleep,
