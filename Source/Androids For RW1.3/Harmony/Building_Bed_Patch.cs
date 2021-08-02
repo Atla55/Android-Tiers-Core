@@ -13,45 +13,45 @@ namespace MOARANDROIDS
 
     {
 
-        [HarmonyPatch(typeof(CompAssignableToPawn), "get_AssigningCandidates")]
+        [HarmonyPatch(typeof(CompAssignableToPawn_Bed), "get_AssigningCandidates")]
         public class get_AssigningCandidates
         {
-            private static void addInactiveSurrogates(ref List<Pawn> lst, Map map, bool M7)
+            private static void addInactiveSurrogates(ref List<Pawn> lst, Map map, bool M7, CompAssignableToPawn_Bed inst)
             {
-                foreach(var p in map.mapPawns.AllPawns)
+                foreach(var cas in Utils.listerDownedSurrogatesCAS)
                 {
-                    if (p.Faction == Faction.OfPlayer)
+                    Pawn cp =(Pawn)cas.parent;
+                    if (cp != null)
+                        Log.Message("=>" + cp.LabelCap);
+                    if (cas != null && cp != null && inst.CanAssignTo(cp) && cas.isSurrogate && cas.surrogateController == null && !cas.isOrganic && (!M7 || (cp.def.defName == Utils.M7 || cp.def.defName == Utils.M8)))
                     {
-                        CompAndroidState cas = Utils.getCachedCAS(p);
-
-                        if (cas != null && cas.isSurrogate && cas.surrogateController == null && !cas.isOrganic && (!M7 || (p.def.defName == Utils.M7 || p.def.defName == Utils.M8)))
-                        {
-                            lst.Add(p);
-                        }
+                        lst.Add(cp);
                     }
                 }
             }
 
             [HarmonyPostfix]
-            public static void Listener(ref IEnumerable<Pawn> __result, CompAssignableToPawn __instance)
+            public static void Listener(ref IEnumerable<Pawn> __result, CompAssignableToPawn_Bed __instance)
             {
                 IEnumerable<Pawn> orig = __result;
                 try
                 {
                     Building_Bed bed = (Building_Bed)__instance.parent;
+                    if (!bed.Spawned)
+                        return;
 
                     if (bed.def.defName == "ATPP_AndroidPod")
                     {
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
                         {
-                            if (el.def.defName != Utils.M7 && el.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier)
+                            if (el.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier && (el.def != ThingDefOfAT.M7Mech && el.def != ThingDefOfAT.M8Mech))
                                 lst.Add(el);
                         }
 
                         //Si option masquant les surrogates activé alors ajout de ces derniers à la fin
                         if (Settings.hideInactiveSurrogates)
-                            addInactiveSurrogates(ref lst, bed.Map, false);
+                            addInactiveSurrogates(ref lst, bed.Map, false, __instance);
 
                         __result = lst;
                     }
@@ -60,23 +60,28 @@ namespace MOARANDROIDS
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
                         {
-                            if (el.def.defName == Utils.M7 || el.def.defName == Utils.M8)
+                            if (el.def == ThingDefOfAT.M7Mech || el.def == ThingDefOfAT.M8Mech)
                                 lst.Add(el);
                         }
                         //Si option masquant les surrogates activé alors ajout de ces derniers à la fin
                         if (Settings.hideInactiveSurrogates)
-                            addInactiveSurrogates(ref lst, bed.Map, false);
+                            addInactiveSurrogates(ref lst, bed.Map, true, __instance);
 
                         __result = lst;
                     }
-                    else if (bed.def.defName != "SleepingSpot")
+                    else
                     {
                         List<Pawn> lst = new List<Pawn>();
                         foreach (var el in __result)
                         {
-                            if (!(el.RaceProps.FleshType == FleshTypeDefOfAT.AndroidTier))
+                            if (el.def != ThingDefOfAT.M7Mech && el.def != ThingDefOfAT.M8Mech)
                                 lst.Add(el);
                         }
+
+                        //Si option masquant les surrogates activé alors ajout de ces derniers à la fin
+                        if (Settings.hideInactiveSurrogates)
+                            addInactiveSurrogates(ref lst, bed.Map, false, __instance);
+
                         __result = lst;
                     }
                 }
