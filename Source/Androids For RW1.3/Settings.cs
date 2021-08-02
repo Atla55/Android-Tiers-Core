@@ -221,11 +221,6 @@ namespace MOARANDROIDS
             list.CheckboxLabeled("ATPP_SettingsAllowSurrogateConnectionInitMalus".Translate(), ref allowSurrogateConnectionInitMalus);
             list.CheckboxLabeled("ATPP_SettingsVX0KeepBodyBackstory".Translate(), ref keepPuppetBackstory);
 
-            list.Label("ATPP_SettingsMinDaysBeforeAndroidsPaintingCanRust".Translate(minDaysAndroidPaintingCanRust));
-            minDaysAndroidPaintingCanRust = (int)list.Slider(minDaysAndroidPaintingCanRust, 1, 200);
-
-            list.Label("ATPP_SettingsMinDaysBeforeAndroidsPaintingCanRust".Translate(minDaysAndroidPaintingCanRust));
-            minDaysAndroidPaintingCanRust = (int)list.Slider(minDaysAndroidPaintingCanRust, 1, 200);
 
             if (Utils.ANDROIDTIERSGYNOID_LOADED)
             {
