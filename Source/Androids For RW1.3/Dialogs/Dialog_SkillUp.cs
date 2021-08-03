@@ -115,7 +115,7 @@ namespace MOARANDROIDS
                     p = (int)list.Slider(p, 0, 20);
 
                     //Check possibility of action
-                    if (p+sr.levelInt < 20 &&  (p+ getNbPointsWantedToBuy(i)) <= nbPointsBuyable )
+                    if (p+sr.levelInt <= 20 &&  (p+ getNbPointsWantedToBuy(i)) <= nbPointsBuyable )
                     {
                         //We can buy them
                         points[i] = p;
