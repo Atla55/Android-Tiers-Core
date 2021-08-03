@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <Atlas_FactionChange>{0}被成功地重新编程了。他们现在是殖民地的一部分。</Atlas_FactionChange>
+  <LetterLabelAtlas_FactionChange>新殖民者</LetterLabelAtlas_FactionChange>
+  <Atlas_LossOfSelfWill>{0}他们的自由意志被抑制了。因此，他们现在无法自由思考或感受情感，也不会像往常一样与其他殖民者互动。更重要的是：在这个过程中，他们已经失去了所有的特征。使得他们只是一个顺从的机器。</Atlas_LossOfSelfWill>
+  <LetterLabelAtlas_LossOfSelfWill>智能人形自由意志</LetterLabelAtlas_LossOfSelfWill>
+  <Atlas_Mutation>{0}已经变异成分形。由分形药丸造成的扭曲肉体的野兽!</Atlas_Mutation>
+  <LetterLabelAtlas_Mutation>变异殖民者</LetterLabelAtlas_Mutation>
+  <Atlas_TraitReroll>{0}已经改变了他们的性格，他们的特质也被重新调整了。</Atlas_TraitReroll>
+  <LetterLabelAtlas_TraitReroll>智能人形性格改变</LetterLabelAtlas_TraitReroll>
+</LanguageData>

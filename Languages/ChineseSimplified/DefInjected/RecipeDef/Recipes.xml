@@ -1,37 +1,171 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ATPP_DisassembleAndroid.label>拆卸智能人形</ATPP_DisassembleAndroid.label>
   <ATPP_DisassembleAndroid.description>将坏掉的智能人形拆卸成其组成部分。</ATPP_DisassembleAndroid.description>
   <ATPP_DisassembleAndroid.jobString>正在拆卸智能人形。</ATPP_DisassembleAndroid.jobString>
-
-  <ATPP_Make_VX0Chip.label>制作VX0神经芯片</ATPP_Make_VX0Chip.label>
-  <ATPP_Make_VX0Chip.description>制作VX0芯片，宿主思维转变为生物植入。</ATPP_Make_VX0Chip.description>
-  <ATPP_Make_VX0Chip.jobString>正在制作VX0神经芯片。</ATPP_Make_VX0Chip.jobString>
-
-  <ATPP_Make_VX1Chip.label>制作VX1神经芯片</ATPP_Make_VX1Chip.label>
-  <ATPP_Make_VX1Chip.description>制作VX1芯片，宿主可以远程控制智能人形。</ATPP_Make_VX1Chip.description>
-  <ATPP_Make_VX1Chip.jobString>正在制作VX1神经芯片。</ATPP_Make_VX1Chip.jobString>
-
-  <ATPP_Make_VX2Chip.label>制作VX2神经芯片</ATPP_Make_VX2Chip.label>
-  <ATPP_Make_VX2Chip.description>制作VX2芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_Make_VX2Chip.description>
-  <ATPP_Make_VX2Chip.jobString>正在制作VX2神经芯片。</ATPP_Make_VX2Chip.jobString>
-
   <ATPP_Make_NanitesHydraulicSerum.label>制作智能人形纳米液</ATPP_Make_NanitesHydraulicSerum.label>
   <ATPP_Make_NanitesHydraulicSerum.description>实用智能人形纳米液可以修复智能人形。</ATPP_Make_NanitesHydraulicSerum.description>
   <ATPP_Make_NanitesHydraulicSerum.jobString>正在制作智能人形纳米液。</ATPP_Make_NanitesHydraulicSerum.jobString>
-
   <ATPP_Make_NanitesCPUSerum.label>制作智能人形思维容器纳米液</ATPP_Make_NanitesCPUSerum.label>
   <ATPP_Make_NanitesCPUSerum.description>制作智能人形思维容器纳米液。</ATPP_Make_NanitesCPUSerum.description>
   <ATPP_Make_NanitesCPUSerum.jobString>正在制作智能人形思维容器纳米液。</ATPP_Make_NanitesCPUSerum.jobString>
-
   <ATPP_Make_NanitesCoolingSerum.label>制作智能人形纳米冷却液</ATPP_Make_NanitesCoolingSerum.label>
   <ATPP_Make_NanitesCoolingSerum.description>制作智能人形纳米冷却液。</ATPP_Make_NanitesCoolingSerum.description>
   <ATPP_Make_NanitesCoolingSerum.jobString>正在制作智能人形纳米冷却液。</ATPP_Make_NanitesCoolingSerum.jobString>
-
   <ATPP_Make_NanitesFrameSerum.label>制作智能人形纳米骨架液</ATPP_Make_NanitesFrameSerum.label>
   <ATPP_Make_NanitesFrameSerum.description>制作智能人形纳米骨架液。</ATPP_Make_NanitesFrameSerum.description>
   <ATPP_Make_NanitesFrameSerum.jobString>正在制作智能人形纳米骨架液。</ATPP_Make_NanitesFrameSerum.jobString>
-
-
+  <ATPP_Make_RXChip.label>制作RX神经芯片</ATPP_Make_RXChip.label>
+  <ATPP_Make_RXChip.description>一种作为个人天维中继器的神经芯片。</ATPP_Make_RXChip.description>
+  <ATPP_Make_RXChip.jobString>正在制作RX神经芯片。</ATPP_Make_RXChip.jobString>
+  <ATPP_Make_VX0Chip.label>制作VX0神经芯片</ATPP_Make_VX0Chip.label>
+  <ATPP_Make_VX0Chip.description>制作VX0芯片，宿主思维转变为生物植入。</ATPP_Make_VX0Chip.description>
+  <ATPP_Make_VX0Chip.jobString>正在制作VX0神经芯片。</ATPP_Make_VX0Chip.jobString>
+  <ATPP_Make_VX1Chip.label>制作VX1神经芯片</ATPP_Make_VX1Chip.label>
+  <ATPP_Make_VX1Chip.description>制作VX1芯片，宿主可以远程控制智能人形。</ATPP_Make_VX1Chip.description>
+  <ATPP_Make_VX1Chip.jobString>正在制作VX1神经芯片。</ATPP_Make_VX1Chip.jobString>
+  <ATPP_Make_VX2Chip.label>制作VX2神经芯片</ATPP_Make_VX2Chip.label>
+  <ATPP_Make_VX2Chip.description>制作VX2芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_Make_VX2Chip.description>
+  <ATPP_Make_VX2Chip.jobString>正在制作VX2神经芯片。</ATPP_Make_VX2Chip.jobString>
+  <ATPP_Make_VX3Chip.label>制作VX3神经芯片</ATPP_Make_VX3Chip.label>
+  <ATPP_Make_VX3Chip.description>制作VX3芯片，这是一种神经芯片，允许其主机同时远程控制多个SX智能人形或生物宿主，并复制/置换他们的思维。</ATPP_Make_VX3Chip.description>
+  <ATPP_Make_VX3Chip.jobString>正在制作VX3神经芯片。</ATPP_Make_VX3Chip.jobString>
+  <ATPP_InstallVX2Chip.label>植入VX2神经芯片</ATPP_InstallVX2Chip.label>
+  <ATPP_InstallVX2Chip.description>植入VX2神经芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_InstallVX2Chip.description>
+  <ATPP_InstallVX2Chip.jobString>正在植入VX12神经芯片。</ATPP_InstallVX2Chip.jobString>
+  <ATPP_InstallVX2ChipOnAndroid.label>植入VX2神经芯片</ATPP_InstallVX2ChipOnAndroid.label>
+  <ATPP_InstallVX2ChipOnAndroid.description>植入VX2神经芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_InstallVX2ChipOnAndroid.description>
+  <ATPP_InstallVX2ChipOnAndroid.jobString>正在植入VX2神经芯片。</ATPP_InstallVX2ChipOnAndroid.jobString>
+  <ATPP_InstallVX3Chip.label>植入VX3神经芯片</ATPP_InstallVX3Chip.label>
+  <ATPP_InstallVX3Chip.description>植入VX3神经芯片，允许其主机同时远程控制多个SX智能人形或生物宿主，并复制/置换他们的思维。</ATPP_InstallVX3Chip.description>
+  <ATPP_InstallVX3Chip.jobString>正在植入VX3神经芯片。</ATPP_InstallVX3Chip.jobString>
+  <ATPP_InstallVX3ChipOnAndroid.label>为智能人形植入VX3神经芯片</ATPP_InstallVX3ChipOnAndroid.label>
+  <ATPP_InstallVX3ChipOnAndroid.description>为智能人形植入VX3神经芯片，允许其主机同时远程控制多个SX智能人形或生物宿主，并复制/置换他们的思维。</ATPP_InstallVX3ChipOnAndroid.description>
+  <ATPP_InstallVX3ChipOnAndroid.jobString>正在为智能人形植入VX3神经芯片</ATPP_InstallVX3ChipOnAndroid.jobString>
+  <ATPP_InstallRXChip.label>植入RX神经芯片</ATPP_InstallRXChip.label>
+  <ATPP_InstallRXChip.description>植入RX神经芯片，这个芯片作为主机的个人天维中继。</ATPP_InstallRXChip.description>
+  <ATPP_InstallRXChip.jobString>正在植入RX神经芯片。</ATPP_InstallRXChip.jobString>
+  <ATPP_InstallRXChipOnAndroid.label>植入RX神经芯片</ATPP_InstallRXChipOnAndroid.label>
+  <ATPP_InstallRXChipOnAndroid.description>植入RX神经芯片，这个芯片作为主机的个人天维中继。</ATPP_InstallRXChipOnAndroid.description>
+  <ATPP_InstallRXChipOnAndroid.jobString>正在植入RX神经芯片。</ATPP_InstallRXChipOnAndroid.jobString>
+  <ATPP_InstallVX0ChipOnAndroid.label>植入VX0神经芯片</ATPP_InstallVX0ChipOnAndroid.label>
+  <ATPP_InstallVX0ChipOnAndroid.description>植入VX0芯片，宿主思维转变为生物植入。</ATPP_InstallVX0ChipOnAndroid.description>
+  <ATPP_InstallVX0ChipOnAndroid.jobString>正在植入VX0神经芯片。</ATPP_InstallVX0ChipOnAndroid.jobString>
+  <ATPP_InstallVX0Chip.label>植入VX0神经芯片</ATPP_InstallVX0Chip.label>
+  <ATPP_InstallVX0Chip.description>植入VX0芯片，宿主思维转变为生物植入。</ATPP_InstallVX0Chip.description>
+  <ATPP_InstallVX0Chip.jobString>正在植入VX0神经芯片。</ATPP_InstallVX0Chip.jobString>
+  <ATPP_InstallVX1Chip.label>植入VX1神经芯片</ATPP_InstallVX1Chip.label>
+  <ATPP_InstallVX1Chip.description>植入VX1神经芯片， 宿主可以远程控制智能人形。</ATPP_InstallVX1Chip.description>
+  <ATPP_InstallVX1Chip.jobString>正在植入VX1神经芯片。</ATPP_InstallVX1Chip.jobString>
+  <ATPP_InstallVX1ChipOnAndroid.label>植入VX1神经芯片</ATPP_InstallVX1ChipOnAndroid.label>
+  <ATPP_InstallVX1ChipOnAndroid.description>植入VX1神经芯片， 宿主可以远程控制智能人形。</ATPP_InstallVX1ChipOnAndroid.description>
+  <ATPP_InstallVX1ChipOnAndroid.jobString>正在植入VX1神经芯片。</ATPP_InstallVX1ChipOnAndroid.jobString>
+  <ATPP_CreateS1.label>制造T1智能人形</ATPP_CreateS1.label>
+  <ATPP_CreateS1.description>使用玻璃钢和零部件制造一个初始设置的S1智能人形。</ATPP_CreateS1.description>
+  <ATPP_CreateS1.jobString>正在制造智能人形。</ATPP_CreateS1.jobString>
+  <ATPP_CreateS2.label>制造T2智能人形</ATPP_CreateS2.label>
+  <ATPP_CreateS2.description>使用玻璃钢和零部件制造一个初始设置的S2智能人形。</ATPP_CreateS2.description>
+  <ATPP_CreateS2.jobString>正在制造智能人形。</ATPP_CreateS2.jobString>
+  <ATPP_CreateS3.label>制造T3智能人形</ATPP_CreateS3.label>
+  <ATPP_CreateS3.description>使用玻璃钢和零部件制造一个初始设置的S3智能人形。</ATPP_CreateS3.description>
+  <ATPP_CreateS3.jobString>正在制造智能人形。</ATPP_CreateS3.jobString>
+  <ATPP_CreateS4.label>制造T4智能人形</ATPP_CreateS4.label>
+  <ATPP_CreateS4.description>使用玻璃钢和零部件制造一个初始设置的S4智能人形。</ATPP_CreateS4.description>
+  <ATPP_CreateS4.jobString>正在制造智能人形。</ATPP_CreateS4.jobString>
+  <ATPP_CreateHellDrone.label>制造炼狱部队智能人形</ATPP_CreateHellDrone.label>
+  <ATPP_CreateHellDrone.description>使用玻璃钢和零部件制造一个初始设置的S-炼狱部队智能人形。</ATPP_CreateHellDrone.description>
+  <ATPP_CreateHellDrone.jobString>正在制造智能人形。</ATPP_CreateHellDrone.jobString>
+  <ATPP_CreateM7.label>制造M7智能人形</ATPP_CreateM7.label>
+  <ATPP_CreateM7.description>使用玻璃钢和零部件制造一个初始设置的M7智能人形。</ATPP_CreateM7.description>
+  <ATPP_CreateM7.jobString>正在制造智能人形。</ATPP_CreateM7.jobString>
+  <ATPP_CreateBlankT3.label>创建初始化的神经网络T3智能人形</ATPP_CreateBlankT3.label>
+  <ATPP_CreateBlankT3.description>创建初始化的神经网络T3智能人形</ATPP_CreateBlankT3.description>
+  <ATPP_CreateBlankT3.jobString>正在创建初始化的神经网络T3智能人形</ATPP_CreateBlankT3.jobString>
+  <ATPP_CreateBlankT4.label>创建初始化的神经网络T4智能人形</ATPP_CreateBlankT4.label>
+  <ATPP_CreateBlankT4.description>创建初始化的神经网络T4智能人形</ATPP_CreateBlankT4.description>
+  <ATPP_CreateBlankT4.jobString>正在创建初始化的神经网络T4智能人形</ATPP_CreateBlankT4.jobString>
+  <ATPP_Make_SM7Mech40MMCannon.label>制造40mm炮(SM7武器)</ATPP_Make_SM7Mech40MMCannon.label>
+  <ATPP_Make_SM7Mech40MMCannon.description>制造40mm炮(SM7武器)</ATPP_Make_SM7Mech40MMCannon.description>
+  <ATPP_Make_SM7Mech40MMCannon.jobString>制造40mm炮(SM7武器)</ATPP_Make_SM7Mech40MMCannon.jobString>
+  <ATPP_Make_SM7MechMastiffGun.label>制作马士提夫霰弹枪（SM7武器)</ATPP_Make_SM7MechMastiffGun.label>
+  <ATPP_Make_SM7MechMastiffGun.description>制作马士提夫霰弹枪（SM7武器)</ATPP_Make_SM7MechMastiffGun.description>
+  <ATPP_Make_SM7MechMastiffGun.jobString>制作马士提夫霰弹枪（SM7武器)</ATPP_Make_SM7MechMastiffGun.jobString>
+  <ATPP_Make_SM7MechHandCannon.label>制作X-5手炮(SM7武器)</ATPP_Make_SM7MechHandCannon.label>
+  <ATPP_Make_SM7MechHandCannon.description>制作X-5手炮(SM7武器)</ATPP_Make_SM7MechHandCannon.description>
+  <ATPP_Make_SM7MechHandCannon.jobString>制作X-5手炮(SM7武器)</ATPP_Make_SM7MechHandCannon.jobString>
+  <ATPP_PaintAndroidFrameworkKhaki.label>将智能人形的骨架涂成卡其色</ATPP_PaintAndroidFrameworkKhaki.label>
+  <ATPP_PaintAndroidFrameworkKhaki.description>将智能人形的骨架涂成卡其色</ATPP_PaintAndroidFrameworkKhaki.description>
+  <ATPP_PaintAndroidFrameworkKhaki.jobString>用卡其色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkKhaki.jobString>
+  <ATPP_PaintAndroidFrameworkGreen.label>将智能人形的骨架涂成绿色</ATPP_PaintAndroidFrameworkGreen.label>
+  <ATPP_PaintAndroidFrameworkGreen.description>将智能人形的骨架涂成绿色</ATPP_PaintAndroidFrameworkGreen.description>
+  <ATPP_PaintAndroidFrameworkGreen.jobString>用绿色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkGreen.jobString>
+  <ATPP_PaintAndroidFrameworkBlue.label>将智能人形的骨架涂成蓝色</ATPP_PaintAndroidFrameworkBlue.label>
+  <ATPP_PaintAndroidFrameworkBlue.description>将智能人形的骨架涂成蓝色</ATPP_PaintAndroidFrameworkBlue.description>
+  <ATPP_PaintAndroidFrameworkBlue.jobString>用蓝色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkBlue.jobString>
+  <ATPP_PaintAndroidFrameworkRed.label>将智能人形的骨架涂成红色</ATPP_PaintAndroidFrameworkRed.label>
+  <ATPP_PaintAndroidFrameworkRed.description>将智能人形的骨架涂成红色</ATPP_PaintAndroidFrameworkRed.description>
+  <ATPP_PaintAndroidFrameworkRed.jobString>用红色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkRed.jobString>
+  <ATPP_PaintAndroidFrameworkYellow.label>将智能人形的骨架涂成黄色</ATPP_PaintAndroidFrameworkYellow.label>
+  <ATPP_PaintAndroidFrameworkYellow.description>将智能人形的骨架涂成黄色</ATPP_PaintAndroidFrameworkYellow.description>
+  <ATPP_PaintAndroidFrameworkYellow.jobString>用黄色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkYellow.jobString>
+  <ATPP_PaintAndroidFrameworkOrange.label>将智能人形的骨架涂成橙色</ATPP_PaintAndroidFrameworkOrange.label>
+  <ATPP_PaintAndroidFrameworkOrange.description>将智能人形的骨架涂成橙色</ATPP_PaintAndroidFrameworkOrange.description>
+  <ATPP_PaintAndroidFrameworkOrange.jobString>用橙色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkOrange.jobString>
+  <ATPP_PaintAndroidFrameworkBlack.label>将智能人形的骨架涂成黑色</ATPP_PaintAndroidFrameworkBlack.label>
+  <ATPP_PaintAndroidFrameworkBlack.description>将智能人形的骨架涂成黑色</ATPP_PaintAndroidFrameworkBlack.description>
+  <ATPP_PaintAndroidFrameworkBlack.jobString>用黑色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkBlack.jobString>
+  <ATPP_PaintAndroidFrameworkWhite.label>将智能人形的骨架涂成白色</ATPP_PaintAndroidFrameworkWhite.label>
+  <ATPP_PaintAndroidFrameworkWhite.description>将智能人形的骨架涂成白色</ATPP_PaintAndroidFrameworkWhite.description>
+  <ATPP_PaintAndroidFrameworkWhite.jobString>用白色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkWhite.jobString>
+  <ATPP_PaintAndroidFrameworkGray.label>将智能人形的骨架涂成灰色</ATPP_PaintAndroidFrameworkGray.label>
+  <ATPP_PaintAndroidFrameworkGray.description>将智能人形的骨架涂成灰色</ATPP_PaintAndroidFrameworkGray.description>
+  <ATPP_PaintAndroidFrameworkGray.jobString>用灰色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkGray.jobString>
+  <ATPP_PaintAndroidFrameworkPurple.label>将智能人形的骨架涂成紫色</ATPP_PaintAndroidFrameworkPurple.label>
+  <ATPP_PaintAndroidFrameworkPurple.description>将智能人形的骨架涂成紫色</ATPP_PaintAndroidFrameworkPurple.description>
+  <ATPP_PaintAndroidFrameworkPurple.jobString>用紫色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkPurple.jobString>
+  <ATPP_PaintAndroidFrameworkPink.label>将智能人形的骨架涂成粉色</ATPP_PaintAndroidFrameworkPink.label>
+  <ATPP_PaintAndroidFrameworkPink.description>将智能人形的骨架涂成粉色</ATPP_PaintAndroidFrameworkPink.description>
+  <ATPP_PaintAndroidFrameworkPink.jobString>用粉色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkPink.jobString>
+  <ATPP_PaintAndroidFrameworkCyan.label>将智能人形的骨架涂成青色</ATPP_PaintAndroidFrameworkCyan.label>
+  <ATPP_PaintAndroidFrameworkCyan.description>将智能人形的骨架涂成青色</ATPP_PaintAndroidFrameworkCyan.description>
+  <ATPP_PaintAndroidFrameworkCyan.jobString>用青色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkCyan.jobString>
+  <ATPP_PaintAndroidFrameworkDefault.label>将智能人形的骨架涂成默认颜色</ATPP_PaintAndroidFrameworkDefault.label>
+  <ATPP_PaintAndroidFrameworkDefault.description>将智能人形的骨架涂成默认颜色</ATPP_PaintAndroidFrameworkDefault.description>
+  <ATPP_PaintAndroidFrameworkDefault.jobString>用默认颜色绘制智能人形的骨架</ATPP_PaintAndroidFrameworkDefault.jobString>
+  <ATPP_ApplyHydraulicNaniteBank.label>使用液压纳米修复液</ATPP_ApplyHydraulicNaniteBank.label>
+  <ATPP_ApplyHydraulicNaniteBank.description>使用一次性的纳米粒子修复损坏的智能人形液压系统。</ATPP_ApplyHydraulicNaniteBank.description>
+  <ATPP_ApplyHydraulicNaniteBank.jobString>使用纳米液来修复智能人形的老化问题</ATPP_ApplyHydraulicNaniteBank.jobString>
+  <ATPP_ApplyHealFrameworkSystem.label>使用纳米骨架液</ATPP_ApplyHealFrameworkSystem.label>
+  <ATPP_ApplyHealFrameworkSystem.description>使用一次性的纳米骨架液来修复损坏的智能人形外骨骼。</ATPP_ApplyHealFrameworkSystem.description>
+  <ATPP_ApplyHealFrameworkSystem.jobString>使用纳米液来修复智能人形的老化问题</ATPP_ApplyHealFrameworkSystem.jobString>
+  <ATPP_ApplyHealCoolingSystem.label>使用纳米冷却液</ATPP_ApplyHealCoolingSystem.label>
+  <ATPP_ApplyHealCoolingSystem.description>使用一次性的纳米冷却液，以修复过热损坏的智能人形冷却系统。</ATPP_ApplyHealCoolingSystem.description>
+  <ATPP_ApplyHealCoolingSystem.jobString>使用纳米液来修复智能人形的老化问题</ATPP_ApplyHealCoolingSystem.jobString>
+  <ATPP_ApplyHealCPUSerum.label>使用CPU纳米修复液</ATPP_ApplyHealCPUSerum.label>
+  <ATPP_ApplyHealCPUSerum.description>使用一次性的CPU纳米修复液，以修复损坏的智能人形思维容器系统。</ATPP_ApplyHealCPUSerum.description>
+  <ATPP_ApplyHealCPUSerum.jobString>使用纳米液来修复智能人形的老化问题</ATPP_ApplyHealCPUSerum.jobString>
+  <ATPP_Make_T1ArtificialBrain.label>制造思维容器T1</ATPP_Make_T1ArtificialBrain.label>
+  <ATPP_Make_T1ArtificialBrain.description>制造思维容器T1，植入转化为一个初始化的神经网络智能人形。</ATPP_Make_T1ArtificialBrain.description>
+  <ATPP_Make_T1ArtificialBrain.jobString>制造思维容器T1。</ATPP_Make_T1ArtificialBrain.jobString>
+  <ATPP_Make_T2ArtificialBrain.label>制造思维容器T2</ATPP_Make_T2ArtificialBrain.label>
+  <ATPP_Make_T2ArtificialBrain.description>制造思维容器T2，植入转化为一个初始化的神经网络智能人形。</ATPP_Make_T2ArtificialBrain.description>
+  <ATPP_Make_T2ArtificialBrain.jobString>制造思维容器T2。</ATPP_Make_T2ArtificialBrain.jobString>
+  <ATPP_Make_T3ArtificialBrain.label>制造思维容器T3</ATPP_Make_T3ArtificialBrain.label>
+  <ATPP_Make_T3ArtificialBrain.description>制造思维容器T3，植入转化为一个初始化的神经网络智能人形。</ATPP_Make_T3ArtificialBrain.description>
+  <ATPP_Make_T3ArtificialBrain.jobString>制造思维容器T3。</ATPP_Make_T3ArtificialBrain.jobString>
+  <ATPP_Make_T4ArtificialBrain.label>制造思维容器T4</ATPP_Make_T4ArtificialBrain.label>
+  <ATPP_Make_T4ArtificialBrain.description>制造思维容器T4，植入转化为一个初始化的神经网络智能人形。</ATPP_Make_T4ArtificialBrain.description>
+  <ATPP_Make_T4ArtificialBrain.jobString>制造思维容器T4。</ATPP_Make_T4ArtificialBrain.jobString>
+  <ATPP_InstallT1ArtificialBrain.label>植入思维容器T1</ATPP_InstallT1ArtificialBrain.label>
+  <ATPP_InstallT1ArtificialBrain.description>植入思维容器T1，允许将T1植入转化为一个初始化的神经网络智能人形</ATPP_InstallT1ArtificialBrain.description>
+  <ATPP_InstallT1ArtificialBrain.jobString>植入思维容器T1。</ATPP_InstallT1ArtificialBrain.jobString>
+  <ATPP_InstallT2ArtificialBrain.label>植入思维容器T2</ATPP_InstallT2ArtificialBrain.label>
+  <ATPP_InstallT2ArtificialBrain.description>植入思维容器T2，允许将T2植入转化为一个初始化的神经网络智能人形</ATPP_InstallT2ArtificialBrain.description>
+  <ATPP_InstallT2ArtificialBrain.jobString>植入思维容器T2。</ATPP_InstallT2ArtificialBrain.jobString>
+  <ATPP_InstallT3ArtificialBrain.label>植入思维容器T3</ATPP_InstallT3ArtificialBrain.label>
+  <ATPP_InstallT3ArtificialBrain.description>植入思维容器T3，允许将T3植入转化为一个初始化的神经网络智能人形</ATPP_InstallT3ArtificialBrain.description>
+  <ATPP_InstallT3ArtificialBrain.jobString>植入思维容器T3。</ATPP_InstallT3ArtificialBrain.jobString>
+  <ATPP_InstallT4ArtificialBrain.label>植入思维容器T4</ATPP_InstallT4ArtificialBrain.label>
+  <ATPP_InstallT4ArtificialBrain.description>植入思维容器T4，允许将T4植入转化为一个初始化的神经网络智能人形</ATPP_InstallT4ArtificialBrain.description>
+  <ATPP_InstallT4ArtificialBrain.jobString>植入思维容器T4。</ATPP_InstallT4ArtificialBrain.jobString>
 </LanguageData>

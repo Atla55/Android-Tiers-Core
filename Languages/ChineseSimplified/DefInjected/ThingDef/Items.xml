@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ATPP_NanitesHydraulicSerum.label>液压纳米修复液</ATPP_NanitesHydraulicSerum.label>
   <ATPP_NanitesHydraulicSerum.description>一次性使用液压纳米修复液，可修复损坏的智能人形液压系统。</ATPP_NanitesHydraulicSerum.description>
-  <ATPP_NanitesHydraulicSerum.comps.1.useLabel>使用这种纳米级精华液修复智能人形的老化问题。</ATPP_NanitesHydraulicSerum.comps.1.useLabel>
-
+  <ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>使用纳米液来修复智能人形的老化问题</ATPP_NanitesHydraulicSerum.comps.CompUsable.useLabel>
   <ATPP_NanitesCPUSerum.label>CPU纳米修复液</ATPP_NanitesCPUSerum.label>
   <ATPP_NanitesCPUSerum.description>一次性使用的CPU纳米修复液，可以修复损坏的智能人形思维容器系统。</ATPP_NanitesCPUSerum.description>
-  <ATPP_NanitesCPUSerum.comps.1.useLabel>使用这种纳米级精华液修复智能人形的老化问题。</ATPP_NanitesCPUSerum.comps.1.useLabel>
-
+  <ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>使用纳米液来修复智能人形的老化问题</ATPP_NanitesCPUSerum.comps.CompUsable.useLabel>
   <ATPP_NanitesCoolingSerum.label>纳米冷却液</ATPP_NanitesCoolingSerum.label>
   <ATPP_NanitesCoolingSerum.description>一次性使用的纳米冷却液，可以修复过热损坏的智能人形冷却系统。</ATPP_NanitesCoolingSerum.description>
-  <ATPP_NanitesCoolingSerum.comps.1.useLabel>使用这种纳米级精华液修复智能人形的老化问题。</ATPP_NanitesCoolingSerum.comps.1.useLabel>
-
+  <ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>使用纳米液来修复智能人形的老化问题</ATPP_NanitesCoolingSerum.comps.CompUsable.useLabel>
   <ATPP_NanitesFrameSerum.label>纳米骨架液</ATPP_NanitesFrameSerum.label>
   <ATPP_NanitesFrameSerum.description>一次性使用的纳米骨架液，专门用于修复损坏的智能人形机体骨架。</ATPP_NanitesFrameSerum.description>
-  <ATPP_NanitesFrameSerum.comps.1.useLabel>使用这种纳米级精华液修复智能人形的老化问题。</ATPP_NanitesFrameSerum.comps.1.useLabel>
-
+  <ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>使用纳米液来修复智能人形的老化问题</ATPP_NanitesFrameSerum.comps.CompUsable.useLabel>
   <ATPP_AndroidNanokitBasic.label>初级纳米修复套件</ATPP_AndroidNanokitBasic.label>
   <ATPP_AndroidNanokitBasic.description>包含纳米智能人形的修复套件，可修复智能人形的损坏。</ATPP_AndroidNanokitBasic.description>
-
   <ATPP_AndroidNanokitIntermediate.label>中级纳米修复套件</ATPP_AndroidNanokitIntermediate.label>
   <ATPP_AndroidNanokitIntermediate.description>包含纳米智能人形的修复套件，可修复智能人形的损坏。</ATPP_AndroidNanokitIntermediate.description>
-
   <ATPP_AndroidNanokitAdvanced.label>高级纳米修复套件</ATPP_AndroidNanokitAdvanced.label>
   <ATPP_AndroidNanokitAdvanced.description>包含纳米智能人形的修复套件，可修复智能人形的损坏。</ATPP_AndroidNanokitAdvanced.description>
-
-  <ATPP_VX1Chip.label>VX1神经芯片</ATPP_VX1Chip.label>
-  <ATPP_VX1Chip.description>一种神经芯片，宿主可以远程控制智能人形。</ATPP_VX1Chip.description>
-
-  <ATPP_VX2Chip.label>VX2神经芯片</ATPP_VX2Chip.label>
-  <ATPP_VX2Chip.description>一种神经芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_VX2Chip.description>
-
+  <ATPP_RXChip.label>RX神经芯片</ATPP_RXChip.label>
+  <ATPP_RXChip.description>一种作为个人天维中继器的神经芯片。</ATPP_RXChip.description>
   <ATPP_VX0Chip.label>VX0神经芯片</ATPP_VX0Chip.label>
   <ATPP_VX0Chip.description>一种神经芯片，宿主思维转变为生物植入。</ATPP_VX0Chip.description>
-
-
+  <ATPP_VX1Chip.label>VX1神经芯片</ATPP_VX1Chip.label>
+  <ATPP_VX1Chip.description>一种神经芯片，宿主可以远程控制智能人形。</ATPP_VX1Chip.description>
+  <ATPP_VX2Chip.label>VX2神经芯片</ATPP_VX2Chip.label>
+  <ATPP_VX2Chip.description>一种神经芯片，宿主可以远程控制智能人形并将其思维传输复制。</ATPP_VX2Chip.description>
+  <ATPP_VX3Chip.label>VX3神经芯片</ATPP_VX3Chip.label>
+  <ATPP_VX3Chip.description>一种神经芯片，允许其主机同时远程控制多个SX智能人形或生物宿主，并复制/置换他们的思维。</ATPP_VX3Chip.description>
+  <ATPP_T1ArtificialBrain.label>思维容器T1</ATPP_T1ArtificialBrain.label>
+  <ATPP_T1ArtificialBrain.description>思维容器T1，可以将T1植入转化为一个初始化的神经网络智能人形</ATPP_T1ArtificialBrain.description>
+  <ATPP_T2ArtificialBrain.label>思维容器T2</ATPP_T2ArtificialBrain.label>
+  <ATPP_T2ArtificialBrain.description>思维容器T2，可以将T2植入转化为一个初始化的神经网络智能人形</ATPP_T2ArtificialBrain.description>
+  <ATPP_T3ArtificialBrain.label>思维容器T3</ATPP_T3ArtificialBrain.label>
+  <ATPP_T3ArtificialBrain.description>思维容器T3，可以将T3植入转化为一个初始化的神经网络智能人形</ATPP_T3ArtificialBrain.description>
+  <ATPP_T4ArtificialBrain.label>思维容器T4</ATPP_T4ArtificialBrain.label>
+  <ATPP_T4ArtificialBrain.description>思维容器T4，可以将T4植入转化为一个初始化的神经网络智能人形</ATPP_T4ArtificialBrain.description>
 </LanguageData>
