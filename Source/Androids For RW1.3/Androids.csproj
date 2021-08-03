@@ -199,8 +199,10 @@
     <Compile Include="Harmony\SkillRecord_Patch.cs" />
     <Compile Include="Harmony\Pawn_StyleTracker_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_BondedAnimalMaster_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Precept_GroinOrChestUncovered_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_Precept_IdeoDiversity_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_Precept_IdeoDiversity_Uniform_Patch.cs" />
+    <Compile Include="Harmony\ThoughtWorker_Precept_GroinUncovered_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_Precept_Social_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_SharedBed_Patch.cs" />
     <Compile Include="Harmony\ThoughtWorker_PsychicArchotechEmanator_Patch.cs" />

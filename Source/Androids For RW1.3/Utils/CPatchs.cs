@@ -46,7 +46,6 @@ namespace MOARANDROIDS
             }
         }
 
-
         /*public static bool HospitalityPatchInsideFindBedFor = false;
 
         public static void Hopistality_FindBedForPrefix(Pawn guest)
