@@ -1,107 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
   <ATPP_ReloadStation.label>智能人形充电站</ATPP_ReloadStation.label>
   <ATPP_ReloadStation.description>允许最多8个智能人形同时充电。</ATPP_ReloadStation.description>
-  <ATPP_ReloadStation_Blueprint.label>智能人形充电站（蓝图）</ATPP_ReloadStation_Blueprint.label>
-  <ATPP_ReloadStation_Blueprint_Install.label>智能人形充电站（蓝图）</ATPP_ReloadStation_Blueprint_Install.label>
-  <ATPP_ReloadStation_Frame.label>智能人形充电站（建造）</ATPP_ReloadStation_Frame.label>
-  <ATPP_ReloadStation_Frame.description>允许最多8个智能人形同时充电。</ATPP_ReloadStation_Frame.description>
-
   <ATPP_SkyMindLAN.label>天维V1天线</ATPP_SkyMindLAN.label>
   <ATPP_SkyMindLAN.description>天维V1天线发出一个无线网络作为思维传输的基础，并允许最多3个思维线程同时通过V1天线链接，并远程控制SX系列智能人形。</ATPP_SkyMindLAN.description>
-  <ATPP_SkyMindLAN_Blueprint.label>天维V1天线（蓝图）</ATPP_SkyMindLAN_Blueprint.label>
-  <ATPP_SkyMindLAN_Blueprint_Install.label>天维V1天线（蓝图）</ATPP_SkyMindLAN_Blueprint_Install.label>
-  <ATPP_SkyMindLAN_Frame.label>天维V1天线（建造）</ATPP_SkyMindLAN_Frame.label>
-  <ATPP_SkyMindLAN_Frame.description>天维V1天线发出一个无线网络作为思维传输的基础，并允许最多3个思维线程同时通过V1天线链接，并远程控制SX系列智能人形。</ATPP_SkyMindLAN_Frame.description>
-
-  <ATPP_SkyMindRelayTower.label>天维中继塔</ATPP_SkyMindRelayTower.label>
-  <ATPP_SkyMindRelayTower.description>天维中继塔可放大信号并防止长距离智慧人形的控制性能下降。</ATPP_SkyMindRelayTower.description>
-  <ATPP_SkyMindRelayTower_Blueprint.label>天维中继塔（蓝图）</ATPP_SkyMindRelayTower_Blueprint.label>
-  <ATPP_SkyMindRelayTower_Blueprint_Install.label>天维中继塔（蓝图）</ATPP_SkyMindRelayTower_Blueprint_Install.label>
-  <ATPP_SkyMindRelayTower_Frame.label>天维中继塔（建造）</ATPP_SkyMindRelayTower_Frame.label>
-  <ATPP_SkyMindRelayTower_Frame.description>天维中继塔可放大信号并防止长距离智慧人形的控制性能下降。</ATPP_SkyMindRelayTower_Frame.description>
-
   <ATPP_SkyMindWAN.label>天维V2天线</ATPP_SkyMindWAN.label>
   <ATPP_SkyMindWAN.description>天维V2天线发出一个无线网络作为思维传输的基础，并允许最多15个思维线程同时通过V2天线链接，并远程控制SX系列智能人形。</ATPP_SkyMindWAN.description>
-  <ATPP_SkyMindWAN_Blueprint.label>天维V2天线（蓝图）</ATPP_SkyMindWAN_Blueprint.label>
-  <ATPP_SkyMindWAN_Blueprint_Install.label>天维V2天线（蓝图）</ATPP_SkyMindWAN_Blueprint_Install.label>
-  <ATPP_SkyMindWAN_Frame.label>天维V2天线（建造）</ATPP_SkyMindWAN_Frame.label>
-  <ATPP_SkyMindWAN_Frame.description>天维V2天线发出一个无线网络作为思维传输的基础，并允许最多15个思维线程同时通过V2天线链接，并远程控制SX系列智能人形。</ATPP_SkyMindWAN_Frame.description>
-
-
-  <!-- Old -->
-
+  <ATPP_SkyMindRelayTower.label>天维中继塔</ATPP_SkyMindRelayTower.label>
+  <ATPP_SkyMindRelayTower.description>天维中继塔可放大信号并防止长距离智慧人形的控制性能下降。</ATPP_SkyMindRelayTower.description>
   <ATPP_I100Security.label>I-100（防护）</ATPP_I100Security.label>
   <ATPP_I100Security.description>防火墙服务器负责保护您的天维网络免受网络攻击和病毒。</ATPP_I100Security.description>
-  <ATPP_I100Security_Blueprint.label>I-100（防护）（蓝图）</ATPP_I100Security_Blueprint.label>
-  <ATPP_I100Security_Blueprint_Install.label>I-100（防护）（蓝图）</ATPP_I100Security_Blueprint_Install.label>
-  <ATPP_I100Security_Frame.label>I-100（防护）（建造）</ATPP_I100Security_Frame.label>
-  <ATPP_I100Security_Frame.description>防火墙服务器负责保护您的天维网络免受网络攻击和病毒。</ATPP_I100Security_Frame.description>
-
   <ATPP_I100Hacking.label>I-100（骇客）</ATPP_I100Hacking.label>
-  <ATPP_I100Hacking.description>入侵服务器，允许您入侵天维网络上的已链接终端。<</ATPP_I100Hacking.description>
-  <ATPP_I100Hacking_Blueprint.label>I-100（骇客）（蓝图）</ATPP_I100Hacking_Blueprint.label>
-  <ATPP_I100Hacking_Blueprint_Install.label>I-100（骇客）（蓝图）</ATPP_I100Hacking_Blueprint_Install.label>
-  <ATPP_I100Hacking_Frame.label>I-100（骇客）（建造）</ATPP_I100Hacking_Frame.label>
-  <ATPP_I100Hacking_Frame.description>入侵服务器，允许您入侵天维网络上的已链接终端。</ATPP_I100Hacking_Frame.description>
-
-
-  <!-- Basic -->
-
+  <ATPP_I100Hacking.description>入侵服务器，允许您入侵天维网络上的已链接终端。</ATPP_I100Hacking.description>
+  <ATPP_I100Skill.label>I-100（技能）</ATPP_I100Skill.label>
+  <ATPP_I100Skill.description>技能服务器允许你在天维网络上增加连接智能人形的技能点。</ATPP_I100Skill.description>
   <ATPP_I300Security.label>I-300（防护）</ATPP_I300Security.label>
   <ATPP_I300Security.description>防火墙服务器负责保护您的天维网络免受网络攻击和病毒。</ATPP_I300Security.description>
-  <ATPP_I300Security_Blueprint.label>I-300（防护）（蓝图）</ATPP_I300Security_Blueprint.label>
-  <ATPP_I300Security_Blueprint_Install.label>I-300（防护）（蓝图）</ATPP_I300Security_Blueprint_Install.label>
-  <ATPP_I300Security_Frame.label>I-300（防护）（建造）</ATPP_I300Security_Frame.label>
-  <ATPP_I300Security_Frame.description>防火墙服务器负责保护您的天维网络免受网络攻击和病毒。</ATPP_I300Security_Frame.description>
-
   <ATPP_I300Hacking.label>I-300（骇客）</ATPP_I300Hacking.label>
-  <ATPP_I300Hacking.description>入侵服务器，允许您入侵天维网络上的已链接终端。<</ATPP_I300Hacking.description>
-  <ATPP_I300Hacking_Blueprint.label>I-300（骇客）（蓝图）</ATPP_I300Hacking_Blueprint.label>
-  <ATPP_I300Hacking_Blueprint_Install.label>I-300（骇客）（蓝图）</ATPP_I300Hacking_Blueprint_Install.label>
-  <ATPP_I300Hacking_Frame.label>I-300（骇客）（建造）</ATPP_I300Hacking_Frame.label>
-  <ATPP_I300Hacking_Frame.description>入侵服务器，允许您入侵天维网络上的已链接终端。<</ATPP_I300Hacking_Frame.description>
-
-
-  <!-- Advanced -->
-
+  <ATPP_I300Hacking.description>入侵服务器，允许您入侵天维网络上的已链接终端。</ATPP_I300Hacking.description>
+  <ATPP_I300Skill.label>I-300 (技能)</ATPP_I300Skill.label>
+  <ATPP_I300Skill.description>技能服务器允许你在天维网络上增加连接智能人形的技能点。</ATPP_I300Skill.description>
   <ATPP_I500Security.label>I-500（防护）</ATPP_I500Security.label>
   <ATPP_I500Security.description>防火墙服务器负责保护您的天维网络免受网络攻击和病毒。</ATPP_I500Security.description>
-  <ATPP_I500Security_Blueprint.label>I-500（防护）（蓝图）</ATPP_I500Security_Blueprint.label>
-  <ATPP_I500Security_Blueprint_Install.label>I-500（防护）（蓝图）</ATPP_I500Security_Blueprint_Install.label>
-  <ATPP_I500Security_Frame.label>I-500（防护）（建造）</ATPP_I500Security_Frame.label>
-  <ATPP_I500Security_Frame.description>防火墙服务器负责保护您的天维网络免受网络攻击和病毒。</ATPP_I500Security_Frame.description>
-
   <ATPP_I500Hacking.label>I-500（骇客）</ATPP_I500Hacking.label>
-  <ATPP_I500Hacking.description>入侵服务器，允许您入侵天维网络上的已链接终端。<</ATPP_I500Hacking.description>
-  <ATPP_I500Hacking_Blueprint.label>I-500（骇客）（蓝图）</ATPP_I500Hacking_Blueprint.label>
-  <ATPP_I500Hacking_Blueprint_Install.label>I-500（骇客）（蓝图）</ATPP_I500Hacking_Blueprint_Install.label>
-  <ATPP_I500Hacking_Frame.label>I-500（骇客）（建造）</ATPP_I500Hacking_Frame.label>
-  <ATPP_I500Hacking_Frame.description>入侵服务器，允许您入侵天维网络上的已链接终端。<</ATPP_I500Hacking_Frame.description>
-
-
-  <!-- Surrogate POD -->
-
+  <ATPP_I500Hacking.description>入侵服务器，允许您入侵天维网络上的已链接终端。</ATPP_I500Hacking.description>
+  <ATPP_I500Skill.label>I-500 (技能)</ATPP_I500Skill.label>
+  <ATPP_I500Skill.description>技能服务器允许你在天维网络上增加连接智能人形的技能点。</ATPP_I500Skill.description>
   <ATPP_AndroidPod.label>智能人形舱</ATPP_AndroidPod.label>
   <ATPP_AndroidPod.description>一个智能人形修复舱，智能人形在其中可以修复，在等待宿主链接时存储智能人形，如果接通电源则可以充电。</ATPP_AndroidPod.description>
-  <ATPP_AndroidPod_Blueprint.label>智能人形舱（蓝图）</ATPP_AndroidPod_Blueprint.label>
-  <ATPP_AndroidPod_Blueprint_Install.label>智能人形舱（蓝图）</ATPP_AndroidPod_Blueprint_Install.label>
-  <ATPP_AndroidPod_Frame.label>智能人形舱（建造）</ATPP_AndroidPod_Frame.label>
-  <ATPP_AndroidPod_Frame.description>一个智能人形修复舱，智能人形在其中可以修复，在等待宿主链接时存储智能人形，如果接通电源则可以充电。</ATPP_AndroidPod_Frame.description>
-
   <ATPP_AndroidPodMech.label>M7智能人形舱</ATPP_AndroidPodMech.label>
   <ATPP_AndroidPodMech.description>一个M7智能人形巨型修复舱，智能人形在其中可以修复，在等待宿主链接时存储智能人形，如果接通电源则可以充电。</ATPP_AndroidPodMech.description>
-  <ATPP_AndroidPodMech_Blueprint.label>M7智能人形舱（蓝图）</ATPP_AndroidPodMech_Blueprint.label>
-  <ATPP_AndroidPodMech_Blueprint_Install.label>M7智能人形舱（蓝图）</ATPP_AndroidPodMech_Blueprint_Install.label>
-  <ATPP_AndroidPodMech_Frame.label>M7智能人形舱（建造）</ATPP_AndroidPodMech_Frame.label>
-  <ATPP_AndroidPodMech_Frame.description>一个M7智能人形巨型修复舱，智能人形在其中可以修复，在等待宿主链接时存储智能人形，如果接通电源则可以充电。</ATPP_AndroidPodMech_Frame.description>
-
   <ATPP_SkyCloudCore.label>天云核心</ATPP_SkyCloudCore.label>
   <ATPP_SkyCloudCore.description>一台超级计算机，可以控制链接到天维网络的所有终端，并可以在其内存中上传殖民者的数字化思维，从而使它们几乎是不朽且无所不知的。</ATPP_SkyCloudCore.description>
-  <ATPP_SkyCloudCore_Blueprint.label>天云核心（蓝图）</ATPP_SkyCloudCore_Blueprint.label>
-  <ATPP_SkyCloudCore_Frame.label>天云核心（建造）</ATPP_SkyCloudCore_Frame.label>
-  <ATPP_SkyCloudCore_Frame.description>一台超级计算机，可以控制链接到天维网络的所有终端，并可以在其内存中上传殖民者的数字化思维，从而使它们几乎是不朽且无所不知的。</ATPP_SkyCloudCore_Frame.description>
-
-
 </LanguageData>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <AndroidFactionGreetingHostileI>自动播放的信息，要求你做出善意的姿态，举例说；给{0_possessive}的一个定居点送去礼物，或者毫发无损地释放{0_possessive}派系的囚犯。在那之前，{0}不愿意与你交谈。</AndroidFactionGreetingHostileI>
+  <AndroidFactionGreetingHostileII>{0}将你的殖民地比作野蛮的部落，表示如果你想更好地发展自己，你可以给{0_possessive}定居点之一带来礼物，或者毫发无损地释放{0_possessive}派系的囚犯。</AndroidFactionGreetingHostileII>
+  <AndroidFactionGreetingHostileIII>{0}在迅速切断所有通信之前，称你为冷酷无情的畸形怪物。</AndroidFactionGreetingHostileIII>
+  <AndroidFactionGreetingWaryI>{0}低沉的机械声音招呼着{NEGOTIATOR_labelShort}，问你想处理什么业务。</AndroidFactionGreetingWaryI>
+  <AndroidFactionGreetingWaryII>一条自动开始的信息，询问{NEGOTIATOR_labelShort}他们有什么业务。</AndroidFactionGreetingWaryII>
+  <AndroidFactionGreetingWaryIII>{0}对{NEGOTIATOR_labelShort}战战兢兢地打开通讯，询问你想谈什么生意。</AndroidFactionGreetingWaryIII>
+  <AndroidFactionGreetingWarmI>{0}热情地问候{NEGOTIATOR_labelShort}，询问他们能做些什么来帮助你。</AndroidFactionGreetingWarmI>
+  <AndroidFactionGreetingWarmII>{NEGOTIATOR_labelShort}在打开通讯时，遇到了亲切的问候，{0}询问他们能为同伴的盟友做些什么。</AndroidFactionGreetingWarmII>
+  <AndroidFactionGreetingWarmIII>{0}张开双臂问候{NEGOTIATOR_labelShort}，询问他们能为你做什么。</AndroidFactionGreetingWarmIII>
+</LanguageData>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <MessageMedicalOperationFailureMinorAndroid>{0} 在处理 {1} 时出现了轻微的故障。</MessageMedicalOperationFailureMinorAndroid>
+  <MessageMedicalOperationFailureCatastrophicAndroid>{0} 在处理 {1} 时出现了灾难性的故障。</MessageMedicalOperationFailureCatastrophicAndroid>
+  <MessageMedicalOperationFailureRidiculousAndroid>{0} 在处理 {1} 时以荒谬的方式失败了。</MessageMedicalOperationFailureRidiculousAndroid>
+  <MessageMedicalOperationFailureFatalAndroid>由于{2}的特殊挑战，{0}在{1}上工作时犯了一个致命错误</MessageMedicalOperationFailureFatalAndroid>
+</LanguageData>

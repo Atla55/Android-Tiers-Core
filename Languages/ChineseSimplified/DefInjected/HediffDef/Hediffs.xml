@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <ATPP_ConsciousnessUpload.label>思维上传</ATPP_ConsciousnessUpload.label>
+  <ATPP_ConsciousnessUpload.labelNoun>思维上传中</ATPP_ConsciousnessUpload.labelNoun>
+  <ATPP_NoHost.label>未链接宿主</ATPP_NoHost.label>
+  <ATPP_NoHost.labelNoun>未链接宿主</ATPP_NoHost.labelNoun>
+  <ATPP_HediffRXChip.label>RX神经芯片</ATPP_HediffRXChip.label>
+  <ATPP_HediffRXChip.labelNoun>一种作为个人天维中继器的神经芯片。</ATPP_HediffRXChip.labelNoun>
+  <ATPP_HediffVX0Chip.label>VX0 神经芯片</ATPP_HediffVX0Chip.label>
+  <ATPP_HediffVX0Chip.labelNoun>一种将宿主思维转化为生物植入的神经芯片</ATPP_HediffVX0Chip.labelNoun>
+  <ATPP_HediffVX1Chip.label>VX1 神经芯片</ATPP_HediffVX1Chip.label>
+  <ATPP_HediffVX1Chip.labelNoun>一种允许宿主远程控制智能人形的神经芯片</ATPP_HediffVX1Chip.labelNoun>
+  <ATPP_HediffVX2Chip.label>VX2 神经芯片</ATPP_HediffVX2Chip.label>
+  <ATPP_HediffVX2Chip.labelNoun>一种允许宿主遥控智能人形，传输复制思维的神经芯片</ATPP_HediffVX2Chip.labelNoun>
+  <ATPP_HediffVX3Chip.label>VX3神经芯片</ATPP_HediffVX3Chip.label>
+  <ATPP_HediffVX3Chip.labelNoun>VX3神经芯片</ATPP_HediffVX3Chip.labelNoun>
+  <ATPP_InRemoteControlMode.label>启用远程控制模式</ATPP_InRemoteControlMode.label>
+  <ATPP_InRemoteControlMode.labelNoun>启用远程控制模式</ATPP_InRemoteControlMode.labelNoun>
+  <ATPP_RemotelyControlled.label>远程控制中</ATPP_RemotelyControlled.label>
+  <ATPP_RemotelyControlled.labelNoun>远程控制中</ATPP_RemotelyControlled.labelNoun>
+  <ATPP_SolarFlareAndroidImpact.label>太阳耀斑</ATPP_SolarFlareAndroidImpact.label>
+  <ATPP_SolarFlareAndroidImpact.LabelNoun>太阳耀斑</ATPP_SolarFlareAndroidImpact.LabelNoun>
+  <ATPP_LowNetworkSignal.label>思维控制网络信号弱</ATPP_LowNetworkSignal.label>
+  <ATPP_LowNetworkSignal.labelNoun>思维控制网络信号弱</ATPP_LowNetworkSignal.labelNoun>
+  <ATPP_Rusted.label>锈蚀</ATPP_Rusted.label>
+  <ATPP_Rusted.labelNoun>锈蚀</ATPP_Rusted.labelNoun>
+  <ATPP_BlankAndroid.label>初始化的神经网络</ATPP_BlankAndroid.label>
+  <ATPP_BlankAndroid.labelNoun>初始化的神经网络</ATPP_BlankAndroid.labelNoun>
+  <ATPP_SurrogateInit.label>连接初始化</ATPP_SurrogateInit.label>
+  <ATPP_SurrogateInit.labelNoun>连接初始化</ATPP_SurrogateInit.labelNoun>
+  <ATPP_AssistingMinds.label>来自天云核心的思维协助</ATPP_AssistingMinds.label>
+  <ATPP_AssistingMinds.labelNoun>来自天云核心的思维协助</ATPP_AssistingMinds.labelNoun>
+</LanguageData>
