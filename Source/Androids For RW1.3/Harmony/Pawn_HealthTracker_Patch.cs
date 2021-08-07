@@ -155,11 +155,19 @@ namespace MOARANDROIDS
                         }
                     }
 
+                    //If surrogate prevent appending VX1-3 neural chips
+                    CompAndroidState cas = Utils.getCachedCAS(___pawn);
+                    if(cas != null && cas.isSurrogate 
+                        && hediff.def.defName != HediffDefOf.ATPP_HediffVX0Chip.defName 
+                        && Utils.ExceptionNeuralChip.Contains(hediff.def.defName))
+                    {
+                        Messages.Message("ATPP_CannotAddVXNeuralChipInSurrogates".Translate(), ___pawn, MessageTypeDefOf.NegativeEvent);
+                        return false;
+                    }
+
                     //manages the case of stacks of chips in order to restore those already present
                     if (Utils.ExceptionNeuralChip.Contains(hediff.def.defName))
                     {
-                        CompAndroidState cas = Utils.getCachedCAS(___pawn);
-
                         //Prohibition added VX chips in a surrogate, we return the chip and we cross
                         if (cas != null && cas.isSurrogate)
                         {

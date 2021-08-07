@@ -386,7 +386,7 @@
 	
 	<ATPP_MindAbsorptionStarted>Absorption de la conscience de {0} démarrée</ATPP_MindAbsorptionStarted>
 	<ATPP_NotEnoughtSkillPoints>Pas assez de points de compétence available ! ({0} points requis)</ATPP_NotEnoughtSkillPoints>
-	
+	<ATPP_CannotAddVXNeuralChipInSurrogates>Impossible d'ajouter ce type de puce dans un androide de substitution ! la puce à été endommagée et n'est plus utilisable !</ATPP_CannotAddVXNeuralChipInSurrogates>
 	
 	<!-- Settings -->
 	<ATPP_SettingsSectionGeneral>Générale</ATPP_SettingsSectionGeneral>

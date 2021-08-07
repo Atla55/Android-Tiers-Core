@@ -38,7 +38,6 @@ namespace MOARANDROIDS
         static public bool TXSERIE_LOADED = false;
 
         public static bool MentalBreakerTryDoRandomMoodCausedMentalBreak_lastPawnIsAndroid = false;
-        public static Pawn curSelPatientDrawMedOperationsTab;
 
         public static int lastDoorOpenedVocalGT = 0;
         public static int lastDoorClosedVocalGT = 0;

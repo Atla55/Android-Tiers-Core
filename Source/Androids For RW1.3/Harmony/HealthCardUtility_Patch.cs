@@ -21,19 +21,12 @@ namespace MOARANDROIDS
             [HarmonyPrefix]
             public static bool Prefix(Rect outRect, Pawn pawn, bool allowOperations, bool showBloodLoss, Thing thingForMedBills)
             {
-                Utils.curSelPatientDrawMedOperationsTab = pawn;
                 CompSurrogateOwner cso = Utils.getCachedCSO(pawn);
                 if(cso != null && cso.skyCloudHost != null)
                 {
                     return false;
                 }
                 return true;
-            }
-
-            [HarmonyPostfix]
-            public static void Postfix(Rect outRect, Pawn pawn, bool allowOperations, bool showBloodLoss, Thing thingForMedBills)
-            {
-                Utils.curSelPatientDrawMedOperationsTab = null;
             }
         }
     }

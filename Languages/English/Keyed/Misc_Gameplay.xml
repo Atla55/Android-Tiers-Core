@@ -390,6 +390,7 @@
 	
 	<ATPP_MindAbsorptionStarted>Mind absorption of {0} started</ATPP_MindAbsorptionStarted>
 	<ATPP_NotEnoughtSkillPoints>Not enough available skill points ! ({0} points required)</ATPP_NotEnoughtSkillPoints>
+	<ATPP_CannotAddVXNeuralChipInSurrogates>Cannot add this kind of chip in a surrogate! the chip has been damaged and can no longer be used!</ATPP_CannotAddVXNeuralChipInSurrogates>
 
 	
 	<!-- Settings -->
