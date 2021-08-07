@@ -129,6 +129,8 @@
 			</fixedLeaderKinds>
 		<settlementGenerationWeight>0.3</settlementGenerationWeight>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
+		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>20</configurationListOrderPriority>
 		<maxCountAtGameStart>1</maxCountAtGameStart>
 		<canMakeRandomly>true</canMakeRandomly>
 		<canSiege>true</canSiege>
@@ -220,6 +222,8 @@
 		<pawnsPlural>androids</pawnsPlural>
 		<listOrderPriority>35</listOrderPriority>
 		<settlementGenerationWeight>0.5</settlementGenerationWeight>
+		<maxConfigurableAtWorldCreation>9999</maxConfigurableAtWorldCreation>
+        <configurationListOrderPriority>20</configurationListOrderPriority>
 		<requiredCountAtGameStart>1</requiredCountAtGameStart>
 		<canMakeRandomly>true</canMakeRandomly>
 		<canSiege>true</canSiege>
