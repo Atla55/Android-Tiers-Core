@@ -1635,7 +1635,38 @@ namespace MOARANDROIDS
 
                 }
 
-                //Ajout malus de la mort du destinataire
+                /*************************************** Ideo duplication *******************************/
+                
+                if (source.ideo != null)
+                {
+                    Pawn_IdeoTracker pit = new Pawn_IdeoTracker(dest);
+
+                    foreach (var precept in source.ideo.Ideo.RolesListForReading)
+                    {
+                        if (precept.IsAssigned(source))
+                        {
+                            bool singleRolePrecept = precept is Precept_RoleSingle;
+
+                            if (singleRolePrecept && Settings.onDuplicationSingleRolesAreTransferedToDestinationMind)
+                                precept.Unassign(source, false);
+
+                            if(!singleRolePrecept || Settings.onDuplicationSingleRolesAreTransferedToDestinationMind)
+                                precept.Assign(dest, false);
+                        }
+                    }
+                }
+
+                //Report abilities
+                if (source.abilities != null) {
+                    Pawn_AbilityTracker pat = new Pawn_AbilityTracker(dest);
+
+                    foreach (var a in source.abilities.AllAbilitiesForReading)
+                    {
+                        pat.GainAbility(a.def);
+                    }
+
+                    dest.abilities = pat;
+                }
             }
             catch(Exception e)
             {

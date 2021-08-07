@@ -9,6 +9,7 @@ namespace MOARANDROIDS
 {
     public class Settings : ModSettings
     {
+        public static bool onDuplicationSingleRolesAreTransferedToDestinationMind = true;
         public static bool setT1ResearchToIndustrialTechLevel = false;
         public static bool batteryLevelDetermineExplosionIntensity = true;
         public static int androidOverloadExplosionType = 0;
@@ -220,7 +221,7 @@ namespace MOARANDROIDS
             list.Gap(10);
             list.GapLine();
 
-
+            list.CheckboxLabeled("ATPP_SettingsOnDuplicationSingleRolesAreTransferedToDestinationMind".Translate(), ref onDuplicationSingleRolesAreTransferedToDestinationMind);
             list.CheckboxLabeled("ATPP_SettingsAllowAndroidsToUseHospitalBeds".Translate(), ref allowAndroidToUseHospitalBed);
             list.CheckboxLabeled("ATPP_SettingsAllowSurrogateConnectionInitMalus".Translate(), ref allowSurrogateConnectionInitMalus);
             list.CheckboxLabeled("ATPP_SettingsVX0KeepBodyBackstory".Translate(), ref keepPuppetBackstory);
@@ -1059,6 +1060,8 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref m7OverloadRadius, "m7OverloadRadius", 12);
             Scribe_Values.Look<bool>(ref batteryLevelDetermineExplosionIntensity, "batteryLevelDetermineExplosionIntensity", true);
             Scribe_Values.Look<bool>(ref setT1ResearchToIndustrialTechLevel, "setT1ResearchToIndustrialTechLevel", false);
+            Scribe_Values.Look<bool>(ref onDuplicationSingleRolesAreTransferedToDestinationMind, "onDuplicationSingleRolesAreTransferedToDestinationMind", true);
+            
         }
     }
 }

@@ -515,4 +515,5 @@
 	<ATPP_SettingsAndroidOverloadExplosionTypeDefault>Fragmentation</ATPP_SettingsAndroidOverloadExplosionTypeDefault>
 	<ATPP_SettingsAndroidOverloadExplosionTypeFire>Incendiary</ATPP_SettingsAndroidOverloadExplosionTypeFire>
 	<ATPP_SettingsSetT1ResearchToIndustrialTechLevel>Change T1 research to be industrial tech level instead of spacer</ATPP_SettingsSetT1ResearchToIndustrialTechLevel>
+	<ATPP_SettingsOnDuplicationSingleRolesAreTransferedToDestinationMind>On mind duplication, single roles abilities are transfered to destination mind</ATPP_SettingsOnDuplicationSingleRolesAreTransferedToDestinationMind>
 </LanguageData>

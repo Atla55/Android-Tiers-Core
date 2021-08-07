@@ -512,4 +512,5 @@
 	<ATPP_SettingsAndroidOverloadExplosionTypeDefault>Fragmentation</ATPP_SettingsAndroidOverloadExplosionTypeDefault>
 	<ATPP_SettingsAndroidOverloadExplosionTypeFire>Incendiaire</ATPP_SettingsAndroidOverloadExplosionTypeFire>
 	<ATPP_SettingsSetT1ResearchToIndustrialTechLevel>Changer la recherche des T1 pour nécessiter le niveau technologique industriel et non spacial</ATPP_SettingsSetT1ResearchToIndustrialTechLevel>
+	<ATPP_SettingsOnDuplicationSingleRolesAreTransferedToDestinationMind>Lors d'une duplication, les rôles uniques sont transférés à l'esprit de destination</ATPP_SettingsOnDuplicationSingleRolesAreTransferedToDestinationMind>
 </LanguageData>
