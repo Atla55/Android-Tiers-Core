@@ -126,6 +126,13 @@ namespace MOARANDROIDS
 
             if(isSurrogate)
                 Utils.GCATPP.pushSurrogateAndroid(currentPawn);
+            else
+            {
+                //Check if there is no weird stuff about noHost on nonSurrogates
+                Hediff he = currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
+                if (he != null)
+                    currentPawn.health.RemoveHediff(he);
+            }
 
             //Suppression traits blacklistés le cas echeant
             if (isAndroidTier && (!isSurrogate || (isSurrogate && surrogateController != null && surrogateController.IsAndroidTier())))
@@ -138,7 +145,7 @@ namespace MOARANDROIDS
             if (isAndroidTier)
             {
                 //Remove ideo if basic android or surrogate
-                if (currentPawn.IsBasicAndroidTier() || isSurrogate)
+                if (currentPawn.IsBasicAndroidTier() || (isSurrogate && surrogateController == null))
                 {
                     currentPawn.ideo = null;
                 }
@@ -564,10 +571,13 @@ namespace MOARANDROIDS
             if (csm != null && csm.Infected == 4 && !cp.InMentalState)
             {
                 csm.Infected = -1;
-                Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
-                if (he == null)
+                if (isSurrogate)
                 {
-                    cp.health.AddHediff(HediffDefOf.ATPP_NoHost);
+                    Hediff he = cp.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost);
+                    if (he == null)
+                    {
+                        cp.health.AddHediff(HediffDefOf.ATPP_NoHost);
+                    }
                 }
             }
         }
@@ -904,7 +914,7 @@ namespace MOARANDROIDS
         public void addNoRemoteHostHediff()
         {
             //Check si surrogate et pas de controlleur ET possede pas de noHost alors on l'ajoute (===> effet d'un item externe cleanant les heddifs)
-            if (currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost) == null)
+            if (isSurrogate && currentPawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.ATPP_NoHost) == null)
                 currentPawn.health.AddHediff(HediffDefOf.ATPP_NoHost);
         }
 
@@ -1584,6 +1594,8 @@ namespace MOARANDROIDS
 
             isSurrogate = true;
             addNoRemoteHostHediff();
+            if(surrogateController == null)
+                currentPawn.ideo = null;
             addLowSignalHediff();
         }
 

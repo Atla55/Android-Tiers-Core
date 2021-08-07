@@ -1425,7 +1425,7 @@ namespace MOARANDROIDS
                 }
 
                 //On remet le hediff de no host au clone
-                if (!externalController && !preventNoHost)
+                if (!externalController && !preventNoHost && cas != null && cas.isSurrogate)
                 {
                     if (Utils.insideKillFuncSurrogate)
                         csurrogate.health.hediffSet.AddDirect(HediffMaker.MakeHediff(HediffDefOf.ATPP_NoHost, csurrogate, null));
