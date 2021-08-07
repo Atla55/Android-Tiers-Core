@@ -59,7 +59,7 @@ namespace MOARANDROIDS
                     int newVal = lastStage;
                     executorGT = curGT + Rand.Range(360, 900);
 
-                    if (Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare)
+                    if (Find.World.gameConditionManager.ConditionIsActive(GameConditionDefOf.SolarFlare) || (pawn.Map != null && pawn.Map.GameConditionManager.ConditionIsActive(GameConditionDefOf.EMIField))
                     && ((isAndroid && !isTXWithSKin) || (isOrganic && withVXChip)))
                     {
                         newVal = 1;
