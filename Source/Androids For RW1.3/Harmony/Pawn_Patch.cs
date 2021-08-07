@@ -188,7 +188,7 @@ namespace MOARANDROIDS
                 }
 
                 //Si prisonnier et possede une VX2 on va obtenir les GIZMOS associés OU virusé
-                if ((__instance.IsPrisoner || __instance.IsSlave) || (Pawn_GetGizmosPrevCSM != null && Pawn_GetGizmosPrevCSM.Hacked == 1))
+                if ((__instance.IsPrisoner) || (Pawn_GetGizmosPrevCSM != null && Pawn_GetGizmosPrevCSM.Hacked == 1))
                 {
                     IEnumerable<Gizmo> tmp;
                     //Si posseseur d'une VX2
