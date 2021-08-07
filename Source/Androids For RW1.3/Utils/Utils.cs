@@ -1764,7 +1764,6 @@ namespace MOARANDROIDS
                         p2.needs.AddOrRemoveNeedsAsAppropriate();
                     p2.abilities.Notify_TemporaryAbilitiesChanged();
                 }
-
                 /****************************************************************/
 
                 notifTraitsChanged(p1);
@@ -2077,23 +2076,53 @@ namespace MOARANDROIDS
 
                     }
 
-                    /*************************************** PERMUTATION des LITS ********************************/
-                    /*Building_Bed bedP1 = p1.ownership.OwnedBed;
-                    Building_Bed bedP2 = p2.ownership.OwnedBed;
+                    /*************************************** Ideo permutation *******************************/
+                    Pawn_IdeoTracker pit = p1.ideo;
+                    p1.ideo = p2.ideo;
+                    p2.ideo = pit;
 
-                    if (bedP1 != null)
-                        p1.ownership.UnclaimBed();
-                    if (bedP2 != null)
-                        p2.ownership.UnclaimBed();
-
-                    if (bedP1 != null)
+                    if(p1.ideo != null)
                     {
-                        p2.ownership.ClaimBedIfNonMedical(bedP1);
+                        Traverse.Create(p1.ideo).Field("pawn").SetValue(p1);
+                        //Permutation into roles assignements
+                        foreach (var precept in p2.ideo.Ideo.RolesListForReading)
+                        {
+                            if (precept.IsAssigned(p2))
+                            {
+                                precept.Unassign(p2, false);
+                                precept.Assign(p1, false);
+                            }
+                        }
                     }
-                    if (bedP2 != null)
+                    if (p2.ideo != null)
                     {
-                        p1.ownership.ClaimBedIfNonMedical(bedP2);
-                    }*/
+                        Traverse.Create(p2.ideo).Field("pawn").SetValue(p2);
+                        //Permutation into roles assignements
+                        foreach(var precept in p2.ideo.Ideo.RolesListForReading)
+                        {
+                            if (precept.IsAssigned(p1))
+                            {
+                                precept.Unassign(p1,false);
+                                precept.Assign(p2, false);
+                            }
+                        }
+                    }
+
+                    Pawn_AbilityTracker pat = p1.abilities;
+                    p1.abilities = p2.abilities;
+                    p2.abilities = pat;
+
+                    if(p1.abilities != null)
+                    {
+                        p1.abilities.pawn = p1;
+                        p1.abilities.Notify_TemporaryAbilitiesChanged();
+                    }
+                    if (p2.abilities != null)
+                    {
+                        p2.abilities.pawn = p2;
+                        p2.abilities.Notify_TemporaryAbilitiesChanged();
+                    }
+
                 }
             }
             catch(Exception e)

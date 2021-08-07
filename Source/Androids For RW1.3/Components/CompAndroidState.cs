@@ -144,8 +144,8 @@ namespace MOARANDROIDS
 
             if (isAndroidTier)
             {
-                //Remove ideo if basic android or surrogate
-                if (currentPawn.IsBasicAndroidTier() || (isSurrogate && surrogateController == null))
+                //Remove ideo if there is no surrogate controller contected (OR controller is basic android) OR the android is basic OR it's a surrogate (implied without host)
+                if ((surrogateController == null || surrogateController.IsBasicAndroidTier()) && (currentPawn.IsBasicAndroidTier() || isSurrogate ))
                 {
                     currentPawn.ideo = null;
                 }
@@ -1594,9 +1594,9 @@ namespace MOARANDROIDS
 
             isSurrogate = true;
             addNoRemoteHostHediff();
-            if(surrogateController == null)
-                currentPawn.ideo = null;
             addLowSignalHediff();
+            if (surrogateController == null)
+                currentPawn.ideo = null;
         }
 
         public void resetInternalState()
