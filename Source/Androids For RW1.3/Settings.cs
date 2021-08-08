@@ -182,7 +182,7 @@ namespace MOARANDROIDS
 
         public static int ransomwareSilverToPayToRestoreSkillPerLevel = 175;
 
-        public static int costPlayerHack = 1200;
+        public static int costPlayerHack = 1500;
         public static int costPlayerHackTemp = 150;
         public static int costPlayerVirus = 500;
         public static int costPlayerExplosiveVirus = 1000;
@@ -1046,6 +1046,12 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref nbSkillPointsPassionT3, "nbSkillPointsPassionT3", 6);
             Scribe_Values.Look<int>(ref nbSkillPointsPassionT4, "nbSkillPointsPassionT4", 7);
             Scribe_Values.Look<int>(ref nbSkillPointsPassionT5, "nbSkillPointsPassionT5", 8);
+
+            Scribe_Values.Look<bool>(ref disableSkyMindSecurityStuff, "disableSkyMindSecurityStuff", false);
+            Scribe_Values.Look<int>(ref ransomwareMinSilverToPayForBasTrait, "ransomwareMinSilverToPayForBasTrait", 500);
+            Scribe_Values.Look<int>(ref ransomwareMaxSilverToPayForBasTrait, "ransomwareMaxSilverToPayForBasTrait", 2500);
+            Scribe_Values.Look<int>(ref ransomwareSilverToPayToRestoreSkillPerLevel, "ransomwareSilverToPayToRestoreSkillPerLevel", 175);
+            
 
             Scribe_Values.Look<bool>(ref keepPuppetBackstory, "keepPuppetBackstory", false);
             Scribe_Values.Look<bool>(ref allowSurrogateConnectionInitMalus, "allowSurrogateConnectionInitMalus", true);
