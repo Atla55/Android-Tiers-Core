@@ -63,9 +63,9 @@ namespace MOARANDROIDS
 
 
 
-        public static void SaveOurShip2_hasSpaceSuit(Pawn thePawn, ref bool __result)
+        public static void SaveOurShip2_hasSpaceSuit(Pawn pawn, ref bool __result)
         {
-            if (thePawn.IsAndroidTier())
+            if (pawn.IsAndroidTier())
             {
                 __result = true;
             }
