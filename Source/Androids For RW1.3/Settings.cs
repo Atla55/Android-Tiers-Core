@@ -926,7 +926,8 @@ namespace MOARANDROIDS
             Scribe_Values.Look<int>(ref nbSecDurationTempHack, "nbSecDurationTempHack", 40);
 
             Scribe_Values.Look<bool>(ref duringSolarFlaresAndroidsShouldBeDowned, "duringSolarFlaresAndroidsShouldBeDowned", false);
-
+            Scribe_Values.Look<bool>(ref disableSolarFlareEffect, "disableSolarFlareEffect", false);
+            
             Scribe_Values.Look<bool>(ref disableServersAlarm, "disableServersAlarm", true);
             Scribe_Values.Look<bool>(ref disableServersAmbiance, "disableServersAmbiance", false);
             Scribe_Values.Look<bool>(ref disableLowNetworkMalus, "disableLowNetworkMalus", false);
