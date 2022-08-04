@@ -293,7 +293,8 @@ namespace MOARANDROIDS
                 List<Thing> thingList = c.GetThingList(base.Map);
                 for (int i = 0; i < thingList.Count; i++)
                 {
-                    if (thingList[i] is Pawn && this.CanDesignateThing(thingList[i]).Accepted)
+                    Thing thing = thingList[i];
+                    if (thing is Pawn && this.CanDesignateThing(thing).Accepted)
                     {
                         return true;
                     }

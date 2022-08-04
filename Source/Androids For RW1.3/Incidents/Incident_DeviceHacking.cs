@@ -8,6 +8,7 @@ using Verse.AI;
 using RimWorld.Planet;
 using UnityEngine;
 using Verse.Sound;
+using System.Text;
 
 namespace MOARANDROIDS
 {
@@ -24,9 +25,9 @@ namespace MOARANDROIDS
             if (Settings.disableSkyMindSecurityStuff)
                 return false;
 
-            List<Thing> victims;
+            HashSet<Thing> victims;
             string title = "";
-            string msg = "";
+            var msg = new StringBuilder();
             int nbConnectedClients = Utils.GCATPP.getNbThingsConnected();
             HashSet<string> cryptolockedThings = new HashSet<string>();
             int nbDevices = Utils.GCATPP.getNbDevices();
@@ -84,7 +85,7 @@ namespace MOARANDROIDS
 
 
                 title = "ATPP_IncidentDeviceHackingVirus".Translate();
-                msg = "ATPP_IncidentDeviceHackingLiteDesc".Translate(nb);
+                msg.Append("ATPP_IncidentDeviceHackingLiteDesc".Translate(nb));
 
                 victims = Utils.GCATPP.getRandomDevices(nb);
                 if (victims.Count != nb)
@@ -120,21 +121,21 @@ namespace MOARANDROIDS
                 else
                     nb = 1;
 
-                msg = "ATPP_IncidentDeviceHackingHardDesc".Translate(nb) + "\n";
+                msg.AppendLine("ATPP_IncidentDeviceHackingHardDesc".Translate(nb));
 
                 switch (attackType)
                 {
                     case 1:
                         title = "ATPP_IncidentDeviceHackingVirus".Translate();
-                        msg += "ATPP_IncidentDeviceVirusedDesc".Translate();
+                        msg.Append("ATPP_IncidentDeviceVirusedDesc".Translate());
                         break;
                     case 2:
                         title = "ATPP_IncidentDeviceHackingExplosiveVirus".Translate();
-                        msg += "ATPP_IncidentDeviceVirusedExplosiveDesc".Translate();
+                        msg.Append("ATPP_IncidentDeviceVirusedExplosiveDesc".Translate());
                         break;
                     case 3:
                         title = "ATPP_IncidentDeviceHackingCryptolocker".Translate();
-                        msg += "ATPP_IncidentDeviceCryptolockerDesc".Translate();
+                        msg.Append("ATPP_IncidentDeviceCryptolockerDesc".Translate());
                         break;
                 }
 
@@ -160,7 +161,7 @@ namespace MOARANDROIDS
                 }
             }
 
-            Find.LetterStack.ReceiveLetter(title, msg, letter, (LookTargets) victims, null, null);
+            Find.LetterStack.ReceiveLetter(title, msg.ToString(), letter, new LookTargets(victims), null, null);
 
             
             if (attackType == 3)

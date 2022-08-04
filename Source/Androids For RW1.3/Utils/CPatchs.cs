@@ -93,8 +93,8 @@ namespace MOARANDROIDS
             Building build = (Building)__instance.parent;
 
             int nbConn = 0;
-            if (Utils.GCATPP.listerLWPNAndroid.ContainsKey(build))
-                nbConn = Utils.GCATPP.listerLWPNAndroid[build].Count();
+            if (Utils.GCATPP.listerLWPNAndroid.TryGetValue(build, out var list))
+                nbConn = list.Count;
 
             if (__instance.parent.def.defName == "ARKPPP_LocalWirelessPortablePowerEmitter")
             {
@@ -366,14 +366,14 @@ namespace MOARANDROIDS
                 string BUID = __instance.GetUniqueLoadID();
 
                 //Si plus de refgerence au pawnBeingGrown (suite a un rechargement) on essait de reresoudre ce dernier
-                if (Utils.GCATPP.VatGrowerLastPawnIsTX.ContainsKey(BUID) && Utils.GCATPP.VatGrowerLastPawnIsTX[BUID] && !Utils.GCATPP.VatGrowerLastPawnInProgress.ContainsKey(BUID))
+                if (Utils.GCATPP.VatGrowerLastPawnIsTX.TryGetValue(BUID, out bool vatGrowerLastPawnIsTX) && vatGrowerLastPawnIsTX && !Utils.GCATPP.VatGrowerLastPawnInProgress.ContainsKey(BUID))
                 {
                     Utils.GCATPP.VatGrowerLastPawnInProgress[BUID] = (Pawn)Traverse.Create(__instance).Field("pawnBeingGrown").GetValue();
                 }
 
 
                 //Si le GS chargé dans le VAT est un exosquelette d'androide TX alors pas de reduction
-                if (Utils.GCATPP.VatGrowerLastPawnInProgress.ContainsKey(BUID) && Utils.GCATPP.VatGrowerLastPawnInProgress[BUID] != null)
+                if (Utils.GCATPP.VatGrowerLastPawnInProgress.TryGetValue(BUID, out Pawn vatGrowerLastPawnInProgress) && vatGrowerLastPawnInProgress != null)
                 {
                     CompAndroidState cas = Utils.getCachedCAS(Utils.GCATPP.VatGrowerLastPawnInProgress[BUID]);
                     if (cas != null)

@@ -833,7 +833,7 @@ namespace MOARANDROIDS
                                 toDel.Add(he);
                         }
 
-                        if(toDel.Count() > 0)
+                        if(toDel.Count > 0)
                         {
                             foreach(var h in toDel)
                             {
@@ -1218,9 +1218,9 @@ namespace MOARANDROIDS
          */
         public void checkNeedRandomlyDisconnectUsers()
         {
-            if(nbSlot < connectedThing.Count())
+            if(nbSlot < connectedThing.Count)
             {
-                while(nbSlot < connectedThing.Count())
+                while(nbSlot < connectedThing.Count)
                 {
                     Thing c = connectedThing.RandomElement();
                     disconnectUser(c);
@@ -1394,12 +1394,12 @@ namespace MOARANDROIDS
 
         public int getNbThingsConnected()
         {
-            return connectedThing.Count();
+            return connectedThing.Count;
         }
 
         public int getNbSkyMindUsers()
         {
-            return listerSkyMindUsers.Count();
+            return listerSkyMindUsers.Count;
         }
 
         public int getNbSurrogateAndroids()
@@ -1407,7 +1407,7 @@ namespace MOARANDROIDS
             int ret = 0;
             foreach(var el in listerSurrogateAndroids)
             {
-                ret+= el.Value.Count();
+                ret+= el.Value.Count;
             }
 
             return ret;
@@ -1492,7 +1492,7 @@ namespace MOARANDROIDS
             }
 
             //Nbslot available exceeded ? ==> no Skymind connection
-            if(connectedThing.Count() >= nbSlot)
+            if(connectedThing.Count >= nbSlot)
             {
                 return false;
             }
@@ -1648,14 +1648,13 @@ namespace MOARANDROIDS
             return ret;
         }
 
-        public List<Thing> getRandomDevices(int nb, bool withoutVirus = true)
+        public HashSet<Thing> getRandomDevices(int nb, bool withoutVirus = true)
         {
-            List<Thing> ret = listerConnectedDevices.ToList();
-            List<Thing> tmp = ret.ToList();
+            HashSet<Thing> ret = listerConnectedDevices.ToHashSet();
 
             if (withoutVirus)
             {
-                foreach (var e in tmp)
+                foreach (var e in listerConnectedDevices)
                 {
                     CompSkyMind csm = Utils.getCachedCSM(e);
                     if (csm != null)
@@ -1815,10 +1814,10 @@ namespace MOARANDROIDS
         public Building getFreeReloadStation(Map map, Pawn android)
         {
             //Log.Message("Nb RS en stock " + listerReloadStation.Count);
-            if (listerReloadStation.ContainsKey(map))
+            if (listerReloadStation.TryGetValue(map, out HashSet<Building> buildings))
             {
                 //Log.Message("ICI DISPONIBLE !!!!!");
-                foreach(var el in listerReloadStation[map].OrderBy((Building b) => b.Position.DistanceToSquared(android.Position)))
+                foreach(var el in buildings.OrderBy((Building b) => b.Position.DistanceToSquared(android.Position)))
                 {
                     CompPowerTrader cpt = Utils.getCachedCPT(el);
                     if (el == null || el.Destroyed || el.IsBrokenDown() || !cpt.PowerOn || !el.Position.InAllowedArea(android))
@@ -2002,7 +2001,7 @@ namespace MOARANDROIDS
 
         public int getNbDevices()
         {
-            return listerConnectedDevices.Count();
+            return listerConnectedDevices.Count;
         }
 
 
@@ -2055,7 +2054,7 @@ namespace MOARANDROIDS
 
         public bool isThereSkillServers()
         {
-            return listerSkillServers.Count() != 0;
+            return listerSkillServers.Count != 0;
         }
 
 
@@ -2143,12 +2142,12 @@ namespace MOARANDROIDS
 
         public bool isThereSkyCloudCore()
         {
-            return (listerSkyCloudCores.Count() > 0);
+            return (listerSkyCloudCores.Count > 0);
         }
 
         public bool isThereSkyCloudCoreAbs()
         {
-            return (listerSkyCloudCoresAbs.Count() > 0);
+            return (listerSkyCloudCoresAbs.Count > 0);
         }
 
         public void pushRelayTower(Thing build, string MID)
@@ -2255,7 +2254,7 @@ namespace MOARANDROIDS
             int qtConsumed = Utils.getConsumedPowerByAndroid(android.def.defName);
             if (LWPN != null 
                 && !LWPN.Destroyed 
-                && ( LWPN.def.defName == "ARKPPP_LocalWirelessPowerEmitter" || ( LWPN.def.defName == "ARKPPP_LocalWirelessPortablePowerEmitter" && listerLWPNAndroid[LWPN].Count() < Settings.maxAndroidByPortableLWPN ))
+                && ( LWPN.def.defName == "ARKPPP_LocalWirelessPowerEmitter" || ( LWPN.def.defName == "ARKPPP_LocalWirelessPortablePowerEmitter" && listerLWPNAndroid[LWPN].Count < Settings.maxAndroidByPortableLWPN ))
                 && cpt.PowerOn 
                 && Utils.getCurrentAvailableEnergy(LWPN.PowerComp.PowerNet) - qtConsumed > 0)
             {
@@ -2290,7 +2289,7 @@ namespace MOARANDROIDS
                 CompSkyCloudCore csc = Utils.getCachedCSC(c);
                 //Comptabilisation que si le systeme à bouté
                 if(csc != null && csc.Booted())
-                    nb +=csc.assistingMinds.Count();
+                    nb +=csc.assistingMinds.Count;
             }
 
             return nb;

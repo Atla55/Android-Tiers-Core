@@ -8,9 +8,10 @@ namespace MOARANDROIDS
 {
     public class Dialog_SkillUp : Window
     {
+        private static List<string> libs = new List<string> { "Shooting".Translate(), "Melee".Translate(), "Construction".Translate(), "Mining".Translate(), "Cooking".Translate(), "Plants".Translate(), "Animals".Translate(), "Crafting".Translate(), "Artistic".Translate(), "Medicine".Translate(), "Social".Translate(), "Intellectual".Translate() };
+        private static List<SkillDef> sd = new List<SkillDef> { SkillDefOf.Shooting, SkillDefOf.Melee, SkillDefOf.Construction, SkillDefOf.Mining, SkillDefOf.Cooking, SkillDefOf.Plants, SkillDefOf.Animals, SkillDefOf.Crafting, SkillDefOf.Artistic, SkillDefOf.Medicine, SkillDefOf.Social, SkillDefOf.Intellectual };
+
         Pawn android;
-        List<string> libs;
-        List<SkillDef> sd;
         List<int> points;
         List<int> passionsState;
 
@@ -41,9 +42,6 @@ namespace MOARANDROIDS
 
             points = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             passionsState = new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-
-            libs = new List<string> { "Shooting".Translate(), "Melee".Translate(), "Construction".Translate(), "Mining".Translate(), "Cooking".Translate(), "Plants".Translate(), "Animals".Translate(), "Crafting".Translate(), "Artistic".Translate(), "Medicine".Translate(), "Social".Translate(), "Intellectual".Translate()};
-            sd = new List<SkillDef> { SkillDefOf.Shooting, SkillDefOf.Melee, SkillDefOf.Construction, SkillDefOf.Mining, SkillDefOf.Cooking, SkillDefOf.Plants, SkillDefOf.Animals, SkillDefOf.Crafting, SkillDefOf.Artistic, SkillDefOf.Medicine, SkillDefOf.Social, SkillDefOf.Intellectual };
 
             int i = 0;
             foreach(var csd in sd)

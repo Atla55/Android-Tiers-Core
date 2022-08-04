@@ -623,12 +623,12 @@ namespace MOARANDROIDS
 
                     if (!bed.Medical
                     && (android.IsPrisoner == bed.ForPrisoners)
-                    && !(bed.GetCurOccupant(0) != null || (bed.OwnersForReading.Count() != 0 && !bed.OwnersForReading.Contains(android)))
+                    && !(bed.GetCurOccupant(0) != null || (bed.OwnersForReading.Count != 0 && !bed.OwnersForReading.Contains(android)))
                     && cpt.PowerOn
                     && el.Position.InAllowedArea(android)
                     && android.CanReserveAndReach(el, PathEndMode.OnCell, Danger.Deadly, 1, -1, null, false))
                     {
-                        float cdist = android.Position.DistanceTo(el.Position);
+                        float cdist = android.Position.DistanceToSquared(el.Position);
 
                         if (dist == -1 || cdist < dist)
                         {
@@ -998,7 +998,7 @@ namespace MOARANDROIDS
 
             string[] tmp = cas.savedName.Split('§');
 
-            if (tmp.Count() != 3)
+            if (tmp.Length != 3)
                 return;
 
             surrogate.Name = new NameTriple(tmp[0], tmp[1], tmp[2]);
@@ -1013,7 +1013,7 @@ namespace MOARANDROIDS
 
             string[] tmp = cas.savedName.Split('§');
 
-            if (tmp.Count() != 3)
+            if (tmp.Length != 3)
                 return "";
 
             return tmp[1];
@@ -2203,7 +2203,7 @@ namespace MOARANDROIDS
         {
             if (pawn != null)
             {
-                typeof(Pawn).GetField("cachedDisabledWorkTypes", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(pawn, null);
+                pawn.Notify_DisabledWorkTypesChanged();
             }
         }
 
@@ -2211,10 +2211,9 @@ namespace MOARANDROIDS
         {
             if (pawn.skills != null && pawn.skills.skills != null)
             {
-                FieldInfo field = typeof(SkillRecord).GetField("cachedTotallyDisabled", BindingFlags.NonPublic | BindingFlags.Instance);
                 foreach (var record in pawn.skills.skills)
                 {
-                    field.SetValue(record, BoolUnknown.Unknown);
+                    record.Notify_SkillDisablesChanged();
                 }
             }
         }
@@ -2607,7 +2606,7 @@ namespace MOARANDROIDS
 
             if (pawn.equipment != null && p.equipment != null)
             {
-                foreach (var e in pawn.equipment.AllEquipmentListForReading.ToList())
+                foreach (var e in pawn.equipment.AllEquipmentListForReading.FastToList())
                 {
                     try
                     {
@@ -2627,7 +2626,7 @@ namespace MOARANDROIDS
                 p.apparel.DestroyAll();
 
                 //Log.Message("--Traitement des vetements");
-                foreach (var e in pawn.apparel.WornApparel.ToList())
+                foreach (var e in pawn.apparel.WornApparel.FastToList())
                 {
                     pawn.apparel.Remove(e);
                     p.apparel.Wear(e);
@@ -2638,7 +2637,7 @@ namespace MOARANDROIDS
             p.health.hediffSet.Clear();
 
             //Ajout des hediffs
-            foreach (var h in pawn.health.hediffSet.hediffs.ToList())
+            foreach (var h in pawn.health.hediffSet.hediffs.FastToList())
             {
                 try
                 {

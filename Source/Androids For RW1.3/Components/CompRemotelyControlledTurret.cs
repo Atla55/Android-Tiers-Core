@@ -142,12 +142,12 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            var ret = new StringBuilder();
 
             if(controller != null)
-                ret += "ATPP_RemotelyControlledBy".Translate(controller.LabelShortCap) + "\n";
+                ret.AppendLine("ATPP_RemotelyControlledBy".Translate(controller.LabelShortCap));
 
-            return ret.TrimEnd('\r', '\n') + base.CompInspectStringExtra();
+            return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
         }
 
         public override void PostDeSpawn(Map map)

@@ -323,7 +323,7 @@ namespace MOARANDROIDS
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             //If no minds stored
-            if (storedMinds.Count() == 0 || !isOnline() || !Booted())
+            if (storedMinds.Count == 0 || !isOnline() || !Booted())
             {
                 yield break;
             }
@@ -606,7 +606,7 @@ namespace MOARANDROIDS
                 };
             }
 
-            if (getNbMindsConnectedToSurrogate() != 0 || controlledTurrets.Count() != 0)
+            if (getNbMindsConnectedToSurrogate() != 0 || controlledTurrets.Count != 0)
             {
                 yield return new Command_Action
                 {
@@ -956,7 +956,7 @@ namespace MOARANDROIDS
         public float getPowerConsumed()
         {
             CompPowerTrader cpt = Utils.getCachedCPT((Building)this.parent);
-            return (storedMinds.Count()*Settings.powerConsumedByStoredMind) + cpt.Props.basePowerConsumption;
+            return (storedMinds.Count*Settings.powerConsumedByStoredMind) + cpt.Props.basePowerConsumption;
         }
 
 
@@ -1026,10 +1026,8 @@ namespace MOARANDROIDS
 
         private void disconnectAllRemotelyControlledTurrets()
         {
-            List<KeyValuePair<Pawn, Building>> list = controlledTurrets.FastToList();
-            for (int i = 0; i < list.Count; i++)
+            foreach(var e in controlledTurrets)
             {
-                KeyValuePair<Pawn, Building> e = list[i];
                 stopRemotelyControlledTurret(e.Key);
             }
         }

@@ -306,7 +306,7 @@ namespace MOARANDROIDS
                     {
                         sum += sr.levelInt;
                     }
-                    average = (int)((float)sum / (float)currentPawn.skills.skills.Count());
+                    average = (int)((float)sum / (float)currentPawn.skills.skills.Count);
 
                     int nbp = (int)((float)((float)average / (float)20) * Rand.Range(1000, 5000));
 
@@ -958,7 +958,7 @@ namespace MOARANDROIDS
 
         public override string CompInspectStringExtra()
         {
-            string ret = "";
+            var ret = new StringBuilder();
             try
             {
                 if (parent.Map == null)
@@ -977,7 +977,7 @@ namespace MOARANDROIDS
                     {
                         p = p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - permuteStartGT) / (float)(permuteEndingGT - permuteStartGT));
                     }
-                    ret += "ATPP_PermutationPercentage".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                    ret.AppendLine("ATPP_PermutationPercentage".Translate(((int)(p * (float)100)).ToString()));
                 }
 
 
@@ -994,7 +994,7 @@ namespace MOARANDROIDS
                     {
                         p = p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - duplicateStartGT) / (float)(duplicateEndingGT - duplicateStartGT));
                     }
-                    ret += "ATPP_DuplicationPercentage".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                    ret.AppendLine("ATPP_DuplicationPercentage".Translate(((int)(p * (float)100)).ToString()));
                 }
 
                 if (uploadToSkyCloudEndingGT != -1)
@@ -1003,7 +1003,7 @@ namespace MOARANDROIDS
                     float p;
 
                     p = p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - uploadToSkyCloudStartGT) / (float)(uploadToSkyCloudEndingGT - uploadToSkyCloudStartGT));
-                    ret += "ATPP_UploadSkyCloudPercentage".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                    ret.AppendLine("ATPP_UploadSkyCloudPercentage".Translate(((int)(p * (float)100)).ToString()));
                 }
 
                 if (downloadFromSkyCloudEndingGT != -1)
@@ -1012,7 +1012,7 @@ namespace MOARANDROIDS
                     float p;
 
                     p = p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - downloadFromSkyCloudStartGT) / (float)(downloadFromSkyCloudEndingGT - downloadFromSkyCloudStartGT));
-                    ret += "ATPP_DownloadFromSkyCloudPercentage".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                    ret.AppendLine("ATPP_DownloadFromSkyCloudPercentage".Translate(((int)(p * (float)100)).ToString()));
                 }
 
                 if (mindAbsorptionEndingGT != -1)
@@ -1021,7 +1021,7 @@ namespace MOARANDROIDS
                     float p;
 
                     p = p = Math.Min(1.0f, (float)(Find.TickManager.TicksGame - mindAbsorptionStartGT) / (float)(mindAbsorptionEndingGT - mindAbsorptionStartGT));
-                    ret += "ATPP_MindAbsorptionProgress".Translate(((int)(p * (float)100)).ToString()) + "\n";
+                    ret.AppendLine("ATPP_MindAbsorptionProgress".Translate(((int)(p * (float)100)).ToString()));
                 }
 
                 if (controlMode && availableSX.Count > 0)
@@ -1039,15 +1039,16 @@ namespace MOARANDROIDS
                         }
                     }
 
-                    ret += "ATPP_RemotelyControl".Translate(lst.TrimEnd(' ', ',')) + "\n";
+                    ret.AppendLine("ATPP_RemotelyControl".Translate(lst.TrimEnd(' ', ',')));
                 }
 
-                return ret.TrimEnd('\r', '\n', ' ') + base.CompInspectStringExtra();
+                
+                return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
             }
             catch(Exception e)
             {
                 Log.Message("[ATPP] CompSurrogateOwner.CompInspectStringExtra "+e.Message+" "+e.StackTrace);
-                return ret.TrimEnd('\r', '\n', ' ') + base.CompInspectStringExtra();
+                return ret.TrimEnd().Append(base.CompInspectStringExtra()).ToString();
             }
         }
 
