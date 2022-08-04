@@ -54,9 +54,9 @@ namespace MOARANDROIDS
             {
                 List<TraitDef> tr;
                 if (victim.IsAndroid())
-                    tr = Utils.RansomAddedBadTraitsAndroid.ToList();
+                    tr = Utils.RansomAddedBadTraitsAndroid.FastToList();
                 else
-                    tr = Utils.RansomAddedBadTraits.ToList();
+                    tr = Utils.RansomAddedBadTraits.FastToList();
 
 
                 //Purge des traits deja possédé par la victime ET incompatibles avec ceux present

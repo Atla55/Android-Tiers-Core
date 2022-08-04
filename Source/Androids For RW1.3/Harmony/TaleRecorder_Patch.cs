@@ -20,7 +20,7 @@ namespace MOARANDROIDS
             {
                 Pawn p1 = null;
                 Pawn p2 = null;
-                int nba = args.Count();
+                int nba = args.Length;
 
                 if (nba >= 2)
                 {

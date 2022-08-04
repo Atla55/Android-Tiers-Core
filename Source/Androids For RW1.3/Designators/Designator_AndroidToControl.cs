@@ -177,7 +177,8 @@ namespace MOARANDROIDS
                 List<Thing> thingList = c.GetThingList(base.Map);
                 for (int i = 0; i < thingList.Count; i++)
                 {
-                    if (thingList[i] is Pawn && this.CanDesignateThing(thingList[i]).Accepted)
+                    Thing thing = thingList[i];
+                    if (thing is Pawn && this.CanDesignateThing(thing).Accepted)
                     {
                         return true;
                     }
@@ -194,7 +195,8 @@ namespace MOARANDROIDS
                 List<Thing> thingList = c.GetThingList(base.Map);
                 for (int i = 0; i < thingList.Count; i++)
                 {
-                    if (thingList[i] != null && (thingList[i].def.thingClass == typeof(Building_Turret) || thingList[i].def.thingClass.IsSubclassOf(typeof(Building_Turret)) ) && this.CanDesignateThing(thingList[i]).Accepted)
+                    Thing thing = thingList[i];
+                    if (thing != null && (thing.def.thingClass == typeof(Building_Turret) || thing.def.thingClass.IsSubclassOf(typeof(Building_Turret)) ) && this.CanDesignateThing(thing).Accepted)
                     {
                         return true;
                     }

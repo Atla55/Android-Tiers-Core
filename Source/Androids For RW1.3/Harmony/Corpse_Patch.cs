@@ -29,7 +29,7 @@ namespace MOARANDROIDS
                     if (cas.isSurrogate)
                     {
                         List<Thing> res = new List<Thing>();
-                        foreach(var r in __result.ToList())
+                        foreach(var r in __result)
                         {
                             if (r.def != null && r.def.defName != "AIPersonaCore")
                                 res.Add(r);

@@ -82,7 +82,7 @@ namespace MOARANDROIDS
 
                         if (Utils.RIMMSQOL_LOADED && Utils.lastResolveAllGraphicsHeadGraphicPath != null)
                         {
-                            __result.story.GetType().GetField("headGraphicPath", BindingFlags.NonPublic | BindingFlags.Instance).SetValue(__result.story, Utils.lastResolveAllGraphicsHeadGraphicPath);
+                            Traverse.Create(__result.story).Field("headGraphicPath").SetValue(Utils.lastResolveAllGraphicsHeadGraphicPath);
                             Utils.lastResolveAllGraphicsHeadGraphicPath = null;
                         }
                     }

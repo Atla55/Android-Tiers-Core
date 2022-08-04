@@ -84,7 +84,7 @@ namespace MOARANDROIDS
                             tmp.Remove(p);
                         }
 
-                        List<Pawn> tmpList = tmp.FastToList();
+                        IEnumerator<Pawn> tmpList = tmp.GetEnumerator();
 
                         //On va se servir des nb pawn pregénéré par la fonction patché comme controller
                         for (int i = 0; i != nb; i++)
@@ -93,7 +93,8 @@ namespace MOARANDROIDS
                             //Pawn surrogate = PawnGenerator.GeneratePawn(request);
 
                             PawnKindDef rpkd = null;
-                            var tmpListElem = tmpList[i];
+                            tmpList.MoveNext();
+                            var tmpListElem = tmpList.Current;
 
                             if (parms.groupKind == PawnGroupKindDefOf.Peaceful || parms.groupKind == PawnGroupKindDefOf.Trader)
                             {

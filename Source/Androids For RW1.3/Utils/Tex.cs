@@ -125,9 +125,9 @@ namespace MOARANDROIDS
             string path;
 
             Graphic res;
-            if (eyeGlowEffectCache.ContainsKey(key))
+            if (eyeGlowEffectCache.TryGetValue(key, out Graphic graphic))
             {
-                res = eyeGlowEffectCache[key];
+                res = graphic;
             }
             else
             {
